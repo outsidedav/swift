@@ -51,14 +51,14 @@ $ cat .swift-version
 
 Puisque le langage Swift est fréquemment mis à jour, vous devez toujours inclure un fichier `.swift-version` de façon à ce que votre application soit "épinglée" à la version Swift avec laquelle sa compatibilité est reconnue.
 
-Notez que vous pouvez spécifier toute version valide de Swift dans votre fichier `.swift-version`. Ces autres versions, qui doivent correspondre aux dénominations utilisées, sont extraites directement de [Swift.org![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://swift.org/download/). Alors que l'utilisation d'une version non mise en cache prendra un peu plus de temps lors de sa mise à disposition, il n'y a pas de différence de performance au niveau de l'exécution de votre application Swift.
+Notez que vous pouvez spécifier toute version valide de Swift dans votre fichier `.swift-version`. Ces autres versions, qui doivent correspondre aux dénominations utilisées, sont extraites directement de [Swift.org![External link icon](../../icons/launch-glyph.svg "External link icon")](https://swift.org/download/). Alors que l'utilisation d'une version non mise en cache prendra un peu plus de temps lors de sa mise à disposition, il n'y a pas de différence de performance au niveau de l'exécution de votre application Swift.
 
 Le pack de construction swift_buildpack par défaut dans {{site.data.keyword.Bluemix}} est utilisé si le répertoire racine de votre application contient un fichier `Package.swift`.  Si vous voulez utiliser un autre pack de construction, vous devez le spécifier en ajoutant une entrée `buildpack: {buildpackUrl}` dans le fichier manifest.yml de votre application. Il vous est aussi possible, si vous préférez, de définir ceci au moment du déploiement, en utilisant l'argument de commande `cf push -b {buildpackUrl}`.
 
 
 ## Environnements de développeurs
 
-Les développeurs disposent de plusieurs options lors de la création d'applications côté serveur avec Swift. Ceux utilisant un périphérique MacOS d'Apple peuvent préférer se servir de l'environnement IDE Xcode, même si ce n'est pas obligatoire.  Les applications basées sur Swift qui seront déployées et s'exécuteront sur {{site.data.keyword.Bluemix}} peuvent utiliser l'éditeur de programmation ou l'environnement IDE de leur choix.  Les fonctions de mise en évidence de syntaxe et d'analyse de code pour Swift sont disponibles pour la plupart des éditeurs couramment utilisés. L'outil de ligne de commande Swift REPL inclus dans les binaires en provenance de [Swift.org![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://swift.org/) permet une compilation locale et un test avant le déploiement dans {{site.data.keyword.Bluemix}}.
+Les développeurs disposent de plusieurs options lors de la création d'applications côté serveur avec Swift. Ceux utilisant un périphérique MacOS d'Apple peuvent préférer se servir de l'environnement IDE Xcode, même si ce n'est pas obligatoire.  Les applications basées sur Swift qui seront déployées et s'exécuteront sur {{site.data.keyword.Bluemix}} peuvent utiliser l'éditeur de programmation ou l'environnement IDE de leur choix.  Les fonctions de mise en évidence de syntaxe et d'analyse de code pour Swift sont disponibles pour la plupart des éditeurs couramment utilisés. L'outil de ligne de commande Swift REPL inclus dans les binaires en provenance de [Swift.org![External link icon](../../icons/launch-glyph.svg "External link icon")](https://swift.org/) permet une compilation locale et un test avant le déploiement dans {{site.data.keyword.Bluemix}}.
 
 Pour les utilisateurs MaxOS, vous pouvez vous servir des outils [IBM Cloud Tools for Swift](http://cloudtools.bluemix.net/) qui simplifient la création, le déploiement, la gestion et le contrôle des applications Swift côté serveur s'exécutant sur {{site.data.keyword.Bluemix}}.  
 
@@ -96,5 +96,5 @@ D'autres outils en ligne sont également proposés par IBM au développeur Swift
 * [Application de démarrage Kitura pour Bluemix](https://github.com/IBM-Bluemix/Kitura-Starter)
 * [Pack de construction IBM Bluemix pour Swift](https://github.com/IBM-Swift/swift-buildpack)
 * [Pack de construction IBM Bluemix pour Swift - Notes sur l'édition](https://github.com/IBM-Swift/swift-buildpack/releases)
-* [Swift.org ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://swift.org/)
-* [Documentation du langage Swift ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://swift.org/documentation)
+* [Swift.org ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://swift.org/)
+* [Documentation du langage Swift ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://swift.org/documentation)

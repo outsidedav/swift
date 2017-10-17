@@ -51,7 +51,7 @@ $ cat .swift-version
 
 因為 Swift 語言經常更新，所以您應該一律包括 `.swift-version` 檔案，使您的應用程式「固定」使用該應用程式已知可以搭配運作的 Swift 版本。
 
-請注意，您可以在 `.swift-version` 檔案中指定任何有效的 Swift 版本。這些替代版本必須符合命名，而且直接從 [Swift.org ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://swift.org/download/) 取回。儘管使用非快取版本將需要有點長的時間來佈建，但您的 Swift 應用程式沒有運行環境效能差異。
+請注意，您可以在 `.swift-version` 檔案中指定任何有效的 Swift 版本。這些替代版本必須符合 [Swift.org ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://swift.org/download/) 命名，而且直接從該處取回。儘管使用非快取版本將需要有點長的時間來佈建，但您的 Swift 應用程式沒有運行環境效能差異。
 
 如果您應用程式的根目錄包含 `Package.swift` 檔案，則會使用 {{site.data.keyword.Bluemix}} 中的預設 swift_buildpack。如果您喜歡使用替代建置套件，則必須將 `buildpack: {buildpackUrl}` 項目新增至應用程式的 manifest.yml 檔案來指定此建置套件。或者，您可以在部署時使用 `cf push -b {buildpackUrl}` 指令引數，來定義此建置套件。
 
@@ -74,7 +74,7 @@ $ cat .swift-version
 - [Apache Cassandra](https://swiftpkgs.ng.bluemix.net/package/IBM-Swift/Kassandra)
 - [Aphid MQTT](https://swiftpkgs.ng.bluemix.net/package/IBM-Swift/Aphid)
 
-若要尋找要包含在您應用程式中的其他 Swift 套件，請移至 [IBM Swift 套件型錄](https://swiftpkgs.ng.bluemix.net/)，並在您的目標服務或資料庫上執行搜尋。「套件型錄」提供一種簡易方法，以找出您可以包含在 Swift 應用程式中的套件，套件可以新增至 Swift 應用程式，方法為將套件的 Git URL 及版本詳細資料包含在應用程式的 `Package.swift` 檔案中。如需套件管理的其他詳細資料，請參閱 [Swift.org 的套件管理小節](https://swift.org/package-manager/)，
+若要尋找要併入您應用程式中的其他 Swift 套件，請移至 [IBM Swift 套件型錄](https://swiftpkgs.ng.bluemix.net/)，並在您的目標服務或資料庫上執行搜尋。「套件型錄」提供一種簡易方法，以找出您可以併入 Swift 應用程式中的套件，套件可以新增至 Swift 應用程式，方法為將套件的 Git URL 及版本詳細資料併入應用程式的 `Package.swift` 檔案中。如需套件管理的其他詳細資料，請參閱 [Swift.org 的套件管理小節](https://swift.org/package-manager/)，
 
 
 ## 相關資訊

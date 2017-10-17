@@ -21,7 +21,7 @@ El paquete de compilación proporciona un entorno de ejecución completo para ap
 
 {{site.data.keyword.Bluemix}} proporciona una [aplicación de inicio](https://github.com/IBM-Bluemix/Kitura-Starter) Swift basada en Kitura. La app de inicio de Kitura es una app de Swift sencilla que puede utilizar para obtener más información sobre los tipos de aplicaciones de servidor que puede desarrollar utilizando el lenguaje de programación Swift. Esta app de ejemplo crea un servidor HTTP Kitura básico que devuelve el contenido HTML al cliente.
 
-**Nota:** la aplicación de inicio de Kitura está pensada para utilizarse para fines educativos. Puede experimentar con la app de inicio realizando mejoras y enviar por push dichos cambios al entorno de {{site.data.keyword.Bluemix}}. Consulte [Utilización de las aplicaciones de inicio](../../cfapps/starter_app_usage.html) para obtener ayuda con el uso de la aplicación de inicio.
+**Nota:** la app de inicio de Kitura está pensada para utilizarse para fines educativos. Puede experimentar con la app de inicio realizando mejoras y enviar por push dichos cambios al entorno de {{site.data.keyword.Bluemix}}. Consulte [Utilización de las aplicaciones de inicio](../../cfapps/starter_app_usage.html) para obtener ayuda con el uso de la aplicación de inicio.
 
 ## Cambiar el nombre de la app
 {: #renaming_your_app}
