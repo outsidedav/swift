@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-06"
+lastupdated: "2017-10-30"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2017-09-06"
 
 * {: download} Congratulations, you deployed a Hello World sample application on {{site.data.keyword.Bluemix}}!  To get started, follow this step-by-step guide. Or, <a class="xref" href="http://bluemix.net" target="_blank" title="(Download sample code)"><img class="hidden" src="../../images/btn_starter-code.svg" alt="Download application code" />download the sample code</a> and explore on your own.
 
-By following this tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.Bluemix}}, and integrate a {{site.data.keyword.Bluemix}} database service in your app.
+By following this tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.Bluemix_notm}}, and integrate a {{site.data.keyword.Bluemix_notm}} database service in your app.
 
 ## Before you begin
 {: #prereqs}
@@ -108,7 +108,7 @@ Replace the *API-endpoint* in the command with an API endpoint from the followin
 | US South       |https://api.ng.bluemix.net     |
 | United Kingdom | https://api.eu-gb.bluemix.net  |
 | Sydney         | https://api.au-syd.bluemix.net |
-| Frankfurt     | https://api.eu-de.bluemix.net | 
+| Frankfurt     | https://api.eu-de.bluemix.net |
 
 Login to your {{site.data.keyword.Bluemix_notm}} account
 
@@ -116,7 +116,7 @@ Login to your {{site.data.keyword.Bluemix_notm}} account
  cf login
    ```
    {: pre}
-   
+
 If you cannot log in using the `cf login` or `bx login` commands because you have a federated user ID, use either the `cf login --sso` or `bx login --sso` commands to log in with your single sign on ID. See [Logging in with a federated ID](https://console.bluemix.net/docs/cli/login_federated_id.html#federated_id) to learn more.
 
 From within the *get-started-swift* directory push your app to {{site.data.keyword.Bluemix_notm}}
@@ -137,7 +137,7 @@ Next, we'll add a NoSQL database to this application and set up the application 
 1. Log in to {{site.data.keyword.Bluemix_notm}} in your Browser. Browse to the `Dashboard`. Select your application by clicking on its name in the `Name` column.
 2. Click on `Connections` then `Connect new`.
 3. In the `Data & Analytics` section, select `Cloudant NoSQL DB`
-4. Select a pricing plan. Bluemix offers free `Lite` plans for a select collection of its cloud services with enough capacity to get you started
+4. Select a pricing plan. {{site.data.keyword.Bluemix_notm}} offers free `Lite` plans for a select collection of its cloud services with enough capacity to get you started
 5. Select `Restage` when prompted. {{site.data.keyword.Bluemix_notm}} will restart your application and provide the database credentials to your application using the `VCAP_SERVICES` environment variable. This environment variable is only available to the application when it is running on {{site.data.keyword.Bluemix_notm}}.
 
 Environment variables enable you to separate deployment settings from your source code. For example, instead of hardcoding a database password, you can store this in an environment variable which you reference in your source code. [Learn more...](/docs/manageapps/depapps.html#app_env)
@@ -172,7 +172,7 @@ Create a file called `config.json` in the `Sources` directory with the following
  ```
 {: pre}
 
-This sample application uses the Swift-cfenv package to interact with Bluemix to parse environment variables. [Learn more...](https://packagecatalog.com/package/IBM-Swift/Swift-cfenv)
+This sample application uses the Swift-cfenv package to interact with {{site.data.keyword.Bluemix_notm}} to parse environment variables. [Learn more...](https://packagecatalog.com/package/IBM-Swift/Swift-cfenv)
 
 Back in the {{site.data.keyword.Bluemix_notm}} UI, select your App -> Connections -> Cloudant -> View Credentials
 
