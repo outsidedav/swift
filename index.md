@@ -58,7 +58,7 @@ The default swift_buildpack in {{site.data.keyword.Bluemix_notm}} is used if you
 
 ## Developer Environments
 
-Developers have several options when creating server-side applications with Swift. Those using a Apple's MacOS device might prefer to use the Xcode IDE, although this is not a requirement.  Swift-based apps that will be deployed and run on {{site.data.keyword.Bluemix}} can use any programming editor or IDE.  Syntax highlighting and linting for Swift are available for many popular editors. The Swift REPL command line tool included in the binaries from [Swift.org ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://swift.org/), allow for local compilation and testing prior to deployment to {{site.data.keyword.Bluemix}}.
+Developers have several options when creating server-side applications with Swift. Those using a Apple's MacOS device might prefer to use the Xcode IDE, although this is not a requirement.  Swift-based apps that will be deployed and run on {{site.data.keyword.Bluemix_notm}} can use any programming editor or IDE.  Syntax highlighting and linting for Swift are available for many popular editors. The Swift REPL command line tool included in the binaries from [Swift.org ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://swift.org/), allow for local compilation and testing prior to deployment to {{site.data.keyword.Bluemix_notm}}.
 
 For MaxOS users, you can use the [IBM Cloud Tools for Swift](http://cloudtools.bluemix.net/) which simplifies the creation, deployment, management, and control of server-side Swift apps running on {{site.data.keyword.Bluemix_notm}}.  
 
