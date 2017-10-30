@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-10-30"
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,16 +12,16 @@ lastupdated: "2017-03-23"
 # IBM Bluemix Runtime for Swift
 {: #swift_runtime}
 
-The Runtime for Swift on {{site.data.keyword.Bluemix}} is powered by the [IBM Bluemix buildpack for Swift](https://github.com/IBM-Swift/swift-buildpack) (i.e. swift_buildpack).
+The Runtime for Swift on {{site.data.keyword.Bluemix}} is powered by the [{{site.data.keyword.Bluemix_notm}} buildpack for Swift](https://github.com/IBM-Swift/swift-buildpack) (i.e. swift_buildpack).
 This buildpack provides a complete runtime environment for Swift applications.
 {: shortdesc}
 
 ## Starter application
 {: #starter_application}
 
-{{site.data.keyword.Bluemix}} provides a Kitura-based Swift [starter application](https://github.com/IBM-Bluemix/Kitura-Starter). The Kitura starter app is a simple Swift app that you can use to learn about the types of server applications you can develop by using the Swift programming language. This sample app creates a basic Kitura HTTP server that returns HTML content to the client.
+{{site.data.keyword.Bluemix_notm}} provides a Kitura-based Swift [starter application](https://github.com/IBM-Bluemix/Kitura-Starter). The Kitura starter app is a simple Swift app that you can use to learn about the types of server applications you can develop by using the Swift programming language. This sample app creates a basic Kitura HTTP server that returns HTML content to the client.
 
-**Note:** The Kitura starter app is meant to be used for educational purposes. You can experiment with the starter app by making enhancements, and push those changes to the {{site.data.keyword.Bluemix}} environment. See [Using the starter applications](../../cfapps/starter_app_usage.html) for help with using the starter application.
+**Note:** The Kitura starter app is meant to be used for educational purposes. You can experiment with the starter app by making enhancements, and push those changes to the {{site.data.keyword.Bluemix_notm}} environment. See [Using the starter applications](../../cfapps/starter_app_usage.html) for help with using the starter application.
 
 ## Renaming your app
 {: #renaming_your_app}
@@ -39,9 +39,9 @@ If you want to rename your app, either from the Kitura starter, or more generall
 ## Runtime versions
 {: #runtime_versions}
 
-By default, the Runtime for Swift (swift_buildpack) hosted on {{site.data.keyword.Bluemix}} uses the latest GA version of the Swift binaries. This is the only version of Swift directly supported by IBM, and is the recommended version to use in your app. You can determine this supported version by examining the swift_buildpack's [latest release information](https://github.com/IBM-Swift/swift-buildpack/releases). The buildpack may list other Swift versions as shown within it's [manifest.yml](https://github.com/IBM-Swift/swift-buildpack/blob/master/manifest.yml) file. These common, but unsupported, versions of Swift are pre-cached within the buildpack, which provide reduced provisioning time.
+By default, the Runtime for Swift (swift_buildpack) hosted on {{site.data.keyword.Bluemix_notm}} uses the latest GA version of the Swift binaries. This is the only version of Swift directly supported by {{site.data.keyword.IBM_notm}}, and is the recommended version to use in your app. You can determine this supported version by examining the swift_buildpack's [latest release information](https://github.com/IBM-Swift/swift-buildpack/releases). The buildpack may list other Swift versions as shown within it's [manifest.yml](https://github.com/IBM-Swift/swift-buildpack/blob/master/manifest.yml) file. These common, but unsupported, versions of Swift are pre-cached within the buildpack, which provide reduced provisioning time.
 
-If you'd like to use a different version of Swift on {{site.data.keyword.Bluemix}} for your application, you can specify the version with a `.swift-version` file in the root of your repository. This `.swift-version` file defines which Swift version is to be used by the swift_buildpack.
+If you'd like to use a different version of Swift on {{site.data.keyword.Bluemix_notm}} for your application, you can specify the version with a `.swift-version` file in the root of your repository. This `.swift-version` file defines which Swift version is to be used by the swift_buildpack.
 
 ```
 $ cat .swift-version
@@ -53,14 +53,14 @@ Because there are frequent Swift language updates, you should always include a `
 
 Please note that you can specify any valid version of Swift in your `.swift-version` file. These alternate versions must match the naming of and are pulled directly from [Swift.org ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://swift.org/download/). While using a non-cache version will take a bit longer to provision, there is no runtime performance difference of your Swift app.
 
-The default swift_buildpack in {{site.data.keyword.Bluemix}} is used if your app's root directory contains a `Package.swift` file.  If you'd like to use use an alternate buildpack, you must specify this by adding a `buildpack: {buildpackUrl}` entry to your app's manifest.yml file. Alternatively, you can define this at deployment time, using the `cf push -b {buildpackUrl}` command argument.
+The default swift_buildpack in {{site.data.keyword.Bluemix_notm}} is used if your app's root directory contains a `Package.swift` file.  If you'd like to use use an alternate buildpack, you must specify this by adding a `buildpack: {buildpackUrl}` entry to your app's manifest.yml file. Alternatively, you can define this at deployment time, using the `cf push -b {buildpackUrl}` command argument.
 
 
 ## Developer Environments
 
 Developers have several options when creating server-side applications with Swift. Those using a Apple's MacOS device might prefer to use the Xcode IDE, although this is not a requirement.  Swift-based apps that will be deployed and run on {{site.data.keyword.Bluemix}} can use any programming editor or IDE.  Syntax highlighting and linting for Swift are available for many popular editors. The Swift REPL command line tool included in the binaries from [Swift.org ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://swift.org/), allow for local compilation and testing prior to deployment to {{site.data.keyword.Bluemix}}.
 
-For MaxOS users, you can use the [IBM Cloud Tools for Swift](http://cloudtools.bluemix.net/) which simplifies the creation, deployment, management, and control of server-side Swift apps running on {{site.data.keyword.Bluemix}}.  
+For MaxOS users, you can use the [IBM Cloud Tools for Swift](http://cloudtools.bluemix.net/) which simplifies the creation, deployment, management, and control of server-side Swift apps running on {{site.data.keyword.Bluemix_notm}}.  
 
 
 ## Enhanced Integration
