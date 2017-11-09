@@ -2,14 +2,14 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-10-30"
+lastupdated: "2017-11-08"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 {:codeblock: .codeblock}
 
-# IBM Bluemix Runtime for Swift
+# IBM Cloud Runtime for Swift
 {: #swift_runtime}
 
 The Runtime for Swift on {{site.data.keyword.Bluemix}} is powered by the [{{site.data.keyword.Bluemix_notm}} buildpack for Swift](https://github.com/IBM-Swift/swift-buildpack) (i.e. swift_buildpack).
