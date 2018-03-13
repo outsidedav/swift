@@ -1,26 +1,87 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="Swift" audience="runtime"}
-Swift
+{: .toc subcollection="swift" audience="platform" href="/docs/swift/index.html"}
+Programming with Swift on IBM Cloud
 
     {: .navgroup id="learn"}
-    getting-started.md
     index.md
-    {: .navgroup-end}
+    apple_development.md
 
-    {: .navgroup id="reference"}
     {: .topicgroup}
-    Starter applications and community buildpacks
-        [Using the starter applications](../../cfapps/starter_app_usage.html)
-        [Using community buildpacks](../../cfapps/byob.html)
+    Backend Components for iOS applications
+        backend/intro.md
+        backend/mbaas.md
+        backend/serverless.md
+        backend/sample_mbaas.md
+        backend/sample_cloud.md
+
+    security/advanced_security.md
+
+    {: .topicgroup}
+    Getting Started
+        getting_started/set_up.md
+        getting_started/sdks.md
+        getting_started/services.md
+        getting_started/installing.md
+        getting_started/projects.md
+
+    starter_kit/starter_kits.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    [Work with a proxy](../../manageapps/workingWithProxy.html)
+    authenticate/app_id.md
+
+    {: .topicgroup}
+    Store &amp; Share Data
+        data/cloudant.md
+        data/sql.md
+        data/object.md
+
+    push/push_notifications.md
+    analytics/mobile_analytics.md
+    app_launch/mobile_applaunch.md
+
+    {: .topicgroup}
+    Use IBM Cloud Hyper Protect DBaaS
+        hypersecure_dbaas/use-steps.md
+        hypersecure_dbaas/use-step1.md
+        hypersecure_dbaas/use-step2.md
+        hypersecure_dbaas/use-step3.md
+        hypersecure_dbaas/use-step4.md
+        hypersecure_dbaas/use-step5.md
+        hypersecure_dbaas/use-step6.md
+
+    machine_learning/dsx.md
+
+    {: .topicgroup}
+    AI with Watson
+        machine_learning/conversation.md
+        machine_learning/recognition.md
+        machine_learning/tone.md
+
+    machine_learning/coreml.md
+
+    {: .topicgroup}
+    Add Cloud Logic
+        backend/functions.md
+        backend/kitura.md
+        backend/api_management.md
+        backend/containers.md
+        backend/paas.md
+        security/containers.md
+        security/crypto.md
+
+    backend/developinglocally.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    sdk.md
+    api.md
+    samples.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    runtimeVersions.md
-    [Buildpack support statement](../../manageapps/buildpackSupport.html)
+    [StackOverflow](https://stackoverflow.com/search?q=iOS+ibm-cloud)
+    [Swift@IBM Slack](https://swift-at-ibm-slack.mybluemix.net)
     {: .navgroup-end}
