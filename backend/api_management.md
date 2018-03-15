@@ -19,7 +19,7 @@ The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{s
 
 This {{site.data.keyword.IBM_notm}} SDK Generator plug-in allows you to easily integrate your backend services to your app with a generated SDK. When a change to a REST API occurs, you can re-generate the SDK and replace the old one for a seamless SDK upgrade. You can also integrate the CLI into a devops pipeline and ensure that the SDK is always consistent with the API spec each time the app is built.
 
-The REST API definition must be valid and either hosted on a live server endpoint or a local file on your system. 
+The REST API definition must be valid and either hosted on a live server endpoint or a local file on your system.
 
 
 ## Requirements
@@ -68,7 +68,6 @@ Use `bx sdk generate [arguments...] [command options]`.
 {: #gen-options}
 
 * `PLATFORM` (required)
-   * `--android` - generate an Android SDK
    * `--ios` - generate an iOS Swift SDK
    * `--swift` - generate a Swift server SDK
    * `--js` - generate a JavaScript SDK

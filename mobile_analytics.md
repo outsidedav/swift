@@ -145,7 +145,7 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 
 3. Initialize Analytics by using your application object and giving it your application’s name.
 
-	The name that you select for your application (`your_app_name_here`) displays in the {{site.data.keyword.mobileanalytics_short}} console as the application name. The application name is used as a filter to search for application logs in the dashboard. When you use the same application name across platforms (for example, Android and iOS), you can see all logs from that application under the same name, regardless of which platform the logs were sent from.
+	The name that you select for your application (`your_app_name_here`) displays in the {{site.data.keyword.mobileanalytics_short}} console as the application name. The application name is used as a filter to search for application logs in the dashboard. When you use the same application name across platforms (for example, iOS), you can see all logs from that application under the same name, regardless of which platform the logs were sent from.
 
 	You also need the [API Key](#analytics-clientkey) value.
 

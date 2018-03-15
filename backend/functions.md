@@ -86,7 +86,7 @@ $ curl https://openwhisk.ng.bluemix.net/api/v1/web/aaron.m.liberatore_dev/MyPack
 ```
 
 ### SDK
-OpenWhisk provides a [mobile SDK](https://console.bluemix.net/docs/openwhisk/openwhisk_mobile_sdk.html#mobile-sdk) for iOS and watchOS devices that enables mobile apps to easily fire remote Triggers and invoke remote Actions. A version for Android is not available so Android developers can use the OpenWhisk REST API directly.
+OpenWhisk provides a [mobile SDK](https://console.bluemix.net/docs/openwhisk/openwhisk_mobile_sdk.html#mobile-sdk) for iOS and watchOS devices that enables mobile apps to easily fire remote Triggers and invoke remote Actions.
 
 ## API Reference
 {: #openwhisk_start_api notoc}

@@ -106,7 +106,7 @@ To create a feature, complete the following steps: :
 
 7. Click **Update** Status.
 
-8. Update your app to include the newly created attributes and feature codes in your iOS or Android App.
+8. Update your app to include the newly created attributes and feature codes in your iOS App.
 
 9. The feature is now ready to be used.
 
