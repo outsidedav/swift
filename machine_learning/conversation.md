@@ -14,7 +14,7 @@ lastupdated: "2018-03-13"
 # {{site.data.keyword.conversationshort}}
 {: #conversation}
 
-The IBM Watson Conversation service makes it easy to integrate a chat bot into your apps. It enables you to build applications that understand natural-language input and respond to users with human-like conversation.
+The {{site.data.keyword.conversationshort}} service makes it easy to integrate a chat bot into your apps. It enables you to build applications that understand natural-language input and respond to users with human-like conversation.
 
 ## How it works
 {: ##how-it-works}
@@ -28,7 +28,7 @@ The IBM Watson Conversation service makes it easy to integrate a chat bot into y
 ## Getting started
 {: ##getting-started}
 
-It's easy to get started with the Conversation service. The following steps will show you how to integrate a chat bot into your app.
+It's easy to get started with the {{site.data.keyword.conversationshort}} service. The following steps will show you how to integrate a chat bot into your app.
 
 ### Before you begin
 {: ###before-you-begin}
@@ -48,21 +48,21 @@ $ brew update
 $ brew install carthage
 ```
 
-### Create and configure an instance of Conversation
-{: ###create-and-configure-an-instance-of-conversation}
+### Create and configure an instance of {{site.data.keyword.conversationshort}}
+{: ###create-and-configure-a-service-instance}
 
 Provision an instance of the service to start building your chat bot.
 
-1. In the {{site.data.keyword.cloud_notm}} catalog, select Conversation. The service configuration screen opens.
+1. In the {{site.data.keyword.cloud_notm}} catalog, select {{site.data.keyword.conversationshort}}. The service configuration screen opens.
 1. Give your service instance a name, or use the preset name.
 1. Select an app from the Connect menu if you'd like to bind your instance to an app.
 1. Select a pricing plan and click Create.
-1. Click "Launch Tool" to open the Conversation tool.
+1. Click "Launch Tool" to open the {{site.data.keyword.conversationshort}} tool.
 1. Click "Edit Sample" to create a new workspace using the Cognitive Car sample.
 1. Choose "Deploy" from the left-hand navigation menu (it's the third icon from the top).
 1. Select the "Credentials" tab to view your service credentials and workspace id. We will use these values to connect to the service from your app.
 
-If you'd like to learn more about the Conversation tool, click the information icon at the top-right corner.
+If you'd like to learn more about the {{site.data.keyword.conversationshort}} tool, click the information icon at the top-right corner.
 
 ### Download and build dependencies
 {: ###download-and-build-dependencies}
@@ -86,19 +86,19 @@ Carthage will download the Watson Swift SDK and build its frameworks in the `Car
 ### Add frameworks to your app
 {: ###add-frameworks-to-your-app}
 
-Now that the Watson Swift SDK frameworks have been built by Carthage, we need to link the Conversation framework with your app.
+Now that the Watson Swift SDK frameworks have been built by Carthage, we need to link the {{site.data.keyword.conversationshort}} framework with your app.
 
 1. Open your app in Xcode then select your project at the top of the Navigator to open its settings.
 1. Select your app target then open the General tab.
 1. Scroll down to "Linked Frameworks and Libraries" section and click the `+` icon.
 1. In the window that appears, choose "Add Other..." and navigate to the `Carthage/Build/iOS` directory. Select `ConversationV1.framework` to link it with your app.
 
-In addition to _linking_ the Conversation framework we also need to _copy_ it into the app to make it accessible at runtime. Xcode has several different ways to copy or embed a framework, but we'll use a Carthage script to avoid a particular [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216).
+In addition to _linking_ the {{site.data.keyword.conversationshort}} framework we also need to _copy_ it into the app to make it accessible at runtime. Xcode has several different ways to copy or embed a framework, but we'll use a Carthage script to avoid a particular [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216).
 
 1. With your app target's settings open in Xcode, navigate to the "Build Phases" tab.
 1. Click the `+` icon then select "New Run Script Phase."
 1. Add the following command to the run script phase: `/usr/local/bin/carthage copy-frameworks`
-1. Add the Conversation framework to the "Input Files" list: `$(SRCROOT)/Carthage/Build/iOS/ConversationV1.framework`.
+1. Add the {{site.data.keyword.conversationshort}} framework to the "Input Files" list: `$(SRCROOT)/Carthage/Build/iOS/ConversationV1.framework`.
 
 Now we're ready to start working with the Watson Swift SDK in your app!
 
@@ -106,7 +106,7 @@ Now we're ready to start working with the Watson Swift SDK in your app!
 {: ###add-a-chat-bot-to-your-app}
 
 1. Open your `ViewController.swift` in Xcode.
-1. Add an import statement for Conversation: `import ConversationV1`.
+1. Add an import statement for {{site.data.keyword.conversationshort}}: `import ConversationV1`.
 1. Create an empty function called `conversationExample` then call it from `viewDidLoad`.
 1. Add the code below for the `conversationExample` function. Be sure to update your username, password, and workspace id!
 
@@ -168,13 +168,13 @@ Response: Sure thing! Which genre would you prefer? Jazz is my personal favorite
 ## Quick start with starter kits
 {: #conversation_starterkits}
 
-Starter kits are one of the fastest way to leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.conversationshort}} to any server-side backend by using the starter kits.  The **Conversation for iOS with Watson** starter kit illustrates how to use Watson Conversation's deep learning capabilities to add a natural language interface to your application to automate interactions with your end users.
+Starter kits are one of the fastest way to leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.conversationshort}} to any server-side backend by using the starter kits.  The **Chatbot for iOS with Watson** starter kit illustrates how to use {{site.data.keyword.conversationshort}}'s deep learning capabilities to add a natural language interface to your application to automate interactions with your end users.
 
 To add {{site.data.keyword.conversationshort}} to a starter kit:
 
 1. Select the [Starter Kit](https://console.bluemix.net/developer/appledevelopment/starter-kits) with which you'd like to work.
 2. Create the project with the default services.
-3. Select **Add Resources > Watson > Conversation**.
+3. Select **Add Resources > Watson > {{site.data.keyword.conversationshort}}**.
 4. Download the project by clicking **Download Code**. Service credentials can be found in the `config/local-dev.json` file.
 
 ## Next steps
@@ -185,4 +185,3 @@ Great job! You've added a level of conversation to your app. Keep the momentum g
 * View the [Watson Swift SDK on GitHub](https://github.com/watson-developer-cloud/swift-sdk).
 * Learn more about and take advantage of all of the features that [IBM Watson {{site.data.keyword.conversationshort}}](https://www.ibm.com/watson/services/conversation/) has to offer!
 * View the source code for the [Simple Chat sample app](https://github.com/watson-developer-cloud/simple-chat-swift) demonstrating the Watson Developer Cloud Swift SDK on GitHub.
-

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-19"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -11,52 +11,46 @@ lastupdated: "2018-01-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# SDK Generator
+# Integrating back-end services to your app with a generated SDK
 {: #sdk-cli}
 
 The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/index.html).
 
 
-This {{site.data.keyword.IBM_notm}} SDK Generator plug-in allows you to easily integrate your backend services to your app with a generated SDK. When a change to a REST API occurs, you can re-generate the SDK and replace the old one for a seamless SDK upgrade. You can also integrate the CLI into a devops pipeline and ensure that the SDK is always consistent with the API spec each time the app is built.
+This {{site.data.keyword.IBM_notm}} SDK Generator plug-in enables you to easily integrate your back-end services to your app with a generated SDK. When a change to a REST API occurs, you can regenerate the SDK and replace the old one for a seamless SDK upgrade. You can also integrate the CLI into a devops pipeline and ensure that the SDK is always consistent with the API spec each time the app is built.
 
 The REST API definition must be valid and either hosted on a live server endpoint or a local file on your system.
 
 
-## Requirements
+## Before you begin
 {: #prereqs}
 
-Ensure that you satisfy the following requirements.
+Ensure that you have:
 
-* You have a [{{site.data.keyword.Bluemix_notm}} ![External link icon](../icons/launch-glyph.svg "External link icon")](http://bluemix.net) account
+* An [{{site.data.keyword.Bluemix_notm}} ![External link icon](../icons/launch-glyph.svg "External link icon")](http://bluemix.net) account
 * A valid API definition that conforms to the [Open API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.openapis.org/) specification
 
 
-## Installation
+## Step 1. Installing the SDK plug-in
 {: #installation}
 
-1. [Install the {{site.data.keyword.Bluemix}} CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html).
+1. [Install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/get_started.html).
 
 2. [Install the plug-in ![External link icon](../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/index.html#install_plug-in).
 
-	```
-	bx plugin install sdk-gen
-	```
-	{: codeblock}
+  ```
+  bx plugin install sdk-gen
+  ```
+  {: codeblock}
 
 
-## Commands
+## Step 2. Generate the SDK
 {: #commands}
 
-Use the following commands to generate an SDK, validate Open API definition files, or list Cloud Foundry apps.
+Generate an SDK by entering: `bx sdk generate [arguments...] [command options]`
 
 
-### Generating an SDK
-{: #gen}
-
-Use `bx sdk generate [arguments...] [command options]`.
-
-
-#### Arguments
+### Arguments
 {: #gen-args}
 
 * `APP_NAME` - the name of the Cloud Foundry app in your current space
@@ -64,7 +58,7 @@ Use `bx sdk generate [arguments...] [command options]`.
 * `GENERATED_SDK_NAME` (optional) - the name of the generated SDK
 
 
-#### Options
+### Options
 {: #gen-options}
 
 * `PLATFORM` (required)
@@ -80,7 +74,7 @@ Use `bx sdk generate [arguments...] [command options]`.
 * `--unzip` (optional) - extracts the generated SDK (overwrites if existing SDK artifacts are present)
 
 
-#### Usage
+### Usage
 {: #gen-usage}
 
 To generate an SDK from a Cloud Foundry app that is running in {{site.data.keyword.Bluemix_notm}}, you can use the app's name as a parameter to the CLI. The following command uses the app's name as the `SDK_Name`.
@@ -98,41 +92,30 @@ bx sdk generate [OPENAPI_DOC_LOCATION] [SDK_Name] [LOCATION] [PLATFORM]
 {: codeblock}
 
 
-### Validating Open API definitions
+## Step 3. Validate the Open API definitions
 {: #validating}
 
-Use `bx sdk validate [argument]`.
+Run the following command: `bx sdk validate [argument]`
 
 
-#### Arguments
+### Arguments
 {: #val-args}
 
 * `APP_NAME` - the name of the Cloud Foundry app in your current space
 * `OPENAPI_DOC_LOCATION` - a URL or a relative file path to the raw REST API definition JSON or Yaml
 
 
-#### Usage
+### Usage
 {: #val-usage}
 
 To validate a Cloud Foundry app's API spec that is running in {{site.data.keyword.Bluemix_notm}}, you can use the app's name as a parameter to the CLI.
-
 ```
 bx sdk validate [APP_NAME] [LOCATION]
 ```
 {: codeblock}
 
-To validate an SDK from the URL to an API spec document or a local JSON or Yaml file, use the following command.
-
+To validate an SDK from the URL to an API spec document or a local JSON or Yaml file, use the following command:
 ```
 bx sdk validate [OPENAPI_DOC_LOCATION] [LOCATION]
 ```
 {: codeblock}
-
-
-
-
-## Learn more about
-{: #api_management_learn}
-
-To learn more about the Crypto service, see these references for more information:
-  *  

@@ -15,7 +15,7 @@ lastupdated: "2018-02-05"
 {: #api}
 
 ## Mobile Services
-- [{{site.data.keyword.engage_full}}](/docs/services/app-launch/index.html)
+- [{{site.data.keyword.engage_short}}](/docs/services/app-launch/index.html)
 - [{{site.data.keyword.appid_short}}](/docs/services/appid/index.html)
 - [{{site.data.keyword.mobileanalytics_short}}](/docs/services/mobileanalytics/index.html)
 - [Mobile Foundation](/docs/services/mobilefoundation/index.html)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-03-15"
 
 ---
 {:new_window: target="_blank"}
@@ -12,57 +12,54 @@ lastupdated: "2018-03-13"
 {:pre: .pre}
 
 # Developing Locally
+Developing locally enable you to easily build, run, and test your application. You use the {{site.data.keyword.dev_cli_short}} to execute these actions with standard commands. 
 
-## Prerequisites to Developing Locally
+You can use the {{site.data.keyword.dev_cli_short}} to manage your server-side applications with more than a dozen commands. Learn more about the various commands at [IBM Cloud Developer Tools CLI (bx dev) commands](/docs/cli/idt/commands.html).
 
-In order to develop locally, you must install the {{site.data.keyword.dev_cli_notm}}, formerly referred to as the Bluemix CLI Developer Plug-in. To install the tool, execute the following command to run our installation script:
+## Before you begin
 
-```
-	curl -sL https://ibm.biz/idt-installer | bash
-```
-{:codeblock}
-
-The installation guide can be found [here](/docs/cli/idt/setting_up_idt.md).
-
-## How to Develop Locally
-
-Developing locally allows you to easily build, run, and test your application. The {{site.data.keyword.dev_cli_short}} allows you to execute these actions with standard commands. 
-
-After you clone your application from Git, you must retrieve the credentials for the services bound to your application since these are not stored in the git repo for your application. This will allow you to enable the use of bound services. You can easily download the credentials by running the following command in the root of the application directory:
+To develop locally, you must install the {{site.data.keyword.dev_cli_notm}}. Execute the following command to run our installation script:
 
 ```
-	idt get-credentials
+curl -sL https://ibm.biz/idt-installer | bash
 ```
 {:codeblock}
 
+See [Setting up the IBM Cloud Developer Tools CLI](/docs/cli/idt/setting_up_idt.html) to learn more about the set up and use of the {{site.data.keyword.dev_cli_notm}}.
 
-## Developing Backend/Server-side Applications
+## Step 1. Retrieve the service credentials
+After you clone your application from Git, you must retrieve the credentials for the services bound to your application because these are not stored in the git repo for your application. This enables the use of bound services. You can easily download the credentials by running the following command in the root of the application directory:
 
-You can use the {{site.data.keyword.dev_cli_short}} to manage your server-side applications with more than a dozen commands. More information of the various commands can be found [here](/docs/cli/idt/commands.md)
+```
+idt get-credentials
+```
+{:codeblock}
 
+
+## Step 2. Build your application
 You can now `build` your application, which is a prerequisite to `run` your application.
 
 Use the following command in the root of the application directory to build your app:
 
 ```
-	idt build
+idt build
 ```
 {:codeblock}
 
-Only after a successful `build` can you `run` your application in a local container with the following command:
+## Step 3. Run your application
+After a successful `build` you can `run` your application in a local container with the following command:
 
 ```
-	idt run
-```
-{:codeblock}
-
-Upon successful execution of the `run` command, the {{site.data.keyword.dev_cli_short}} will present you with a local host and port to view your application's landing page.
-
-Furthermore, you can deploy your application to the {{site.data.keyword.Bluemix_notm}} with the `deploy` command:
-
-```
-	idt deploy
+idt run
 ```
 {:codeblock}
 
-Find more information about deployments [here](/docs/cli/idt/commands.md#deploy)
+A local host and port to view your application's landing page will be displayed if the command runs successfully.
+
+## Step 4. Deploy your application
+Deploy your application to the {{site.data.keyword.Bluemix_notm}} with the `deploy` command:
+
+```
+idt deploy
+```
+{:codeblock}

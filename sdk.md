@@ -11,7 +11,7 @@ lastupdated: "2017-12-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# iOS SDKs
+# Swift SDKs
 {: #sdk}
 
 To add {{site.data.keyword.Bluemix}} SDKs to your app, choose the SDKs that you want to use and configure your dependency manager to pull the SDKs into your app.
@@ -26,7 +26,7 @@ You can use the following SDKs in your mobile application to leverage their resp
 - [{{site.data.keyword.appid_short}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-cloud-security/appid-clientsdk-swift)
 - [{{site.data.keyword.mobileanalytics_short}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)
 - [{{site.data.keyword.mobilepushshort}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push)
--[{{site.data.keyword.applaunchshort}} SDK![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch)
+- [{{site.data.keyword.applaunchshort}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch)
 - [Watson Swift SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/swift-sdk)
 
 #### Storage

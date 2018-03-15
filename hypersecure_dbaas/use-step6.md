@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -64,10 +64,9 @@ You can download Docker from https://www.docker.com/community-edition#/download.
 	<pre><code class="hljs">
     $ bx login -a https://api.ng.bluemix.net
 	...
-	$ bx cs region-set us-south
-	...
 	$ bx target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
     </code></pre>
+    **Note:** Issuing the command **bx login -a https://api.ng.bluemix.net** automatically sets the region to **us-south**.    
 3. To deploy the application to the Cloud Foundry, enter this command:
 	 ```
     $ bx dev deploy
@@ -101,10 +100,9 @@ database clusters, cloud foundry apps, cloud foundry services.
 	<pre><code class="hljs">
     $ bx login -a https://api.ng.bluemix.net
 	...
-	$ bx cs region-set us-south
-	...
 	$ bx target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
     </code></pre>
+    **Note:** Issuing the command **bx login -a https://api.ng.bluemix.net** automatically sets the region to **us-south**.  
 3. To deploy your application in Kubernetes, enter this command:
 	```
     $ bx dev deploy -t container
