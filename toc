@@ -13,7 +13,6 @@ Programming with Swift on IBM Cloud
         backend/intro.md
         backend/mbaas.md
         backend/serverless.md
-        backend/sample_mbaas.md
         backend/sample_cloud.md
 
     security/advanced_security.md
@@ -60,16 +59,12 @@ Programming with Swift on IBM Cloud
         machine_learning/recognition.md
         machine_learning/tone.md
 
-    machine_learning/coreml.md
-
     {: .topicgroup}
     Add Cloud Logic
         backend/functions.md
         backend/kitura.md
         backend/api_management.md
         backend/containers.md
-        backend/paas.md
-        security/containers.md
         security/crypto.md
 
     backend/developinglocally.md

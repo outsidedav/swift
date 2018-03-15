@@ -15,7 +15,7 @@ lastupdated: "2017-02-19"
 {: #overview}
 
 ![IBM Cloud](images/Swift_graphic.png)
-
+<br>
 This programming guide provides an overview of the capabilities that iOS developers can use to learn, experiment, and enhance existing applications.  It is intended to define the architectures, paradigms, and conventions of web and backend programming to a mobile audience while highlighting services created to facilitate mobile development.
 
 This guide will show you how to quickly integrate services into your existing applications, with the exact prerequisites, steps, code snippets, and expected outcomes for each. Additionally, you will find resources for rapid prototyping new applications that utilize these services, such as Starter Kits in the Apple Developer Console as well as Sample Apps. This guide will also discuss how to best develop traditional and mobile-first end-to-end solutions in cloud environments.

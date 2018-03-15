@@ -32,13 +32,31 @@ Today users expect more from their applications than ever before.  They want app
 * *Devops specialists* are experts in resolving deployment and toolchain issues, and they may serve one for many development teams.  For simple apps, dedicated specialists are usually not needed as development team members manage devops with the squad. But for complex enterprise applications with many dependencies, devops specialists are essential in keeping your production app running smoothly.
 {: tip}
 
+## One Development Platform: IBM Cloud
+{: #platform}
+
+ ![Developer types](images/IBM_Cloud_icon.png "IBM Cloud")
+
+The developer capabilities built in to {{site.data.keyword.cloud_notm}} align to various skill sets and allow you to use one platform to produce, deliver, run, and manage your app.  For example, in the cognitive app mentioned above, the following {{site.data.keyword.cloud_notm}} are of interest:
+
+* The **{{site.data.keyword.cloud_notm}} Developer Experience** is not a service, but rather is a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and cloud native developers get quickly started building production-ready apps. It includes automatic provisioning of services and one-click deployment to a devops toolchain.  More on this in the Starting Right section.
+
+* [**IBM Watson Data Platform**](https://console.bluemix.net/developer/dataplatform/dashboard) <!--[IBM Watson Data Platform](https://dataplatform.ibm.com)--> makes it simple to assemble data collections, refine the data, and then visualize, discover insights, and build models for use in your cognitive app.
+
+* [**IBM Streaming Analytics**](../services/StreamingAnalytics/index.html#gettingstarted) helps wrangle and analyze data streams. It is an advanced analytic platform that you can use to ingest, analyze, and correlate information as it arrives from different types of data sources in real time.
+
+* The [**{{site.data.keyword.cloud_notm}} Continuous Delivery service**](../services/ContinuousDelivery/index.html#cd_getting_started) lets you easily set up a devops toolchain to automate continuous delivery of your app.  You can easily enhance the toolchain to include management functions like monitoring, logging, tracking, and alerting.  You can even apply advanced machine learning to your toolchain using the [DevOps Insights service](../services/DevOpsInsights/index.html#gettingstarted).
+
+
+The {{site.data.keyword.cloud_notm}} platform offers many, many more capabilities than mentioned above.  You can use {{site.data.keyword.cloud_notm}} as your comprehensive development platform.
+
 ## Overview of {{site.data.keyword.cloud_notm}} Capabilities
 {: #capabilities}
 
 The {{site.data.keyword.cloud}} Developer Experience is not service, but rather it is a set of capabilities in the {{site.data.keyword.cloud_notm}} platform that gets you started building apps the "right" way in minutes. Essential elements of the Developer Experience are:
 
 * a set of topic- or channel-centric developer consoles found across the {{site.data.keyword.cloud_notm}} platform
-* use-case-specific starter kits that produce production-ready starter apps in a variety of [languages](languages.html) and architectural [patterns](patterns.html)
+* use-case-specific starter kits that produce production-ready starter apps in a variety of languages and architectural patterns
 * automatic provisioning of services
 * a portable app project structure that allows you manage components of your app
 * one-click creation of a [devops toolchain](../services/ContinuousDelivery/index.html#cd_getting_started).
@@ -64,10 +82,6 @@ The {{site.data.keyword.cloud_notm}} Developer Experience manifests in various d
 
 Each developer console provides starter kits relevant to the console's focus area and offers a consistent, intutive workflow then enables you to create a working production-ready app project in minutes.
 
-Ready to jump in?  Visit the [{{site.data.keyword.cloud_notm}} Web App developer console](https://console.bluemix.net/developer/appservice) now or click [here](../apps/index.html) for help getting started.
-{: tip}
-
-
 ## App Projects
 {: #apps}
 
@@ -75,4 +89,4 @@ An app project is the association of code, data, services, and toolchains that c
 
 ![Reuse](images/garage_reuse2.png "Developer Experience lets you reuse and avoid re-invent")
 
- You can create and manage an app project by using any {{site.data.keyword.cloud_notm}} developer console.  App projects are created from [Starter Kits](/docs/appledevelopment/starter_kit/starter_kits.html).
+ You can create and manage an app project by using any {{site.data.keyword.cloud_notm}} developer console.  App projects are created from [Starter Kits](starter_kit/starter_kits.html).
