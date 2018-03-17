@@ -14,7 +14,7 @@ lastupdated: "2018-03-15"
 # Integrating back-end services to your app with a generated SDK
 {: #sdk-cli}
 
-The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/index.html).
+The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/index.html){: new_window}.
 
 
 This {{site.data.keyword.IBM_notm}} SDK Generator plug-in enables you to easily integrate your back-end services to your app with a generated SDK. When a change to a REST API occurs, you can regenerate the SDK and replace the old one for a seamless SDK upgrade. You can also integrate the CLI into a devops pipeline and ensure that the SDK is always consistent with the API spec each time the app is built.
@@ -27,8 +27,8 @@ The REST API definition must be valid and either hosted on a live server endpoin
 
 Ensure that you have:
 
-* An [{{site.data.keyword.Bluemix_notm}} ![External link icon](../icons/launch-glyph.svg "External link icon")](http://bluemix.net) account
-* A valid API definition that conforms to the [Open API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.openapis.org/) specification
+* An [{{site.data.keyword.Bluemix_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){: new_window} account
+* A valid API definition that conforms to the [Open API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.openapis.org/){: new_window} specification
 
 
 ## Step 1. Installing the SDK plug-in
@@ -36,7 +36,7 @@ Ensure that you have:
 
 1. [Install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/get_started.html).
 
-2. [Install the plug-in ![External link icon](../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/index.html#install_plug-in).
+2. [Install the plug-in ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/index.html#install_plug-in){: new_window}.
 
   ```
   bx plugin install sdk-gen

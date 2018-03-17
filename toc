@@ -5,26 +5,24 @@
 Programming with Swift on IBM Cloud
 
     {: .navgroup id="learn"}
-    index.md
     apple_development.md
 
     {: .topicgroup}
-    Backend Components for iOS applications
+    Getting started
+        getting_started/set_up.md
+        getting_started/sdks.md
+        getting_started/services.md
+        getting_started/installing.md
+        getting_started/projects.mdindex.md
+
+    {: .topicgroup}
+    Back-end components for iOS applications
         backend/intro.md
         backend/mbaas.md
         backend/serverless.md
         backend/sample_cloud.md
 
     security/advanced_security.md
-
-    {: .topicgroup}
-    Getting Started
-        getting_started/set_up.md
-        getting_started/sdks.md
-        getting_started/services.md
-        getting_started/installing.md
-        getting_started/projects.md
-
     starter_kit/starter_kits.md
     {: .navgroup-end}
 
@@ -32,7 +30,7 @@ Programming with Swift on IBM Cloud
     authenticate/app_id.md
 
     {: .topicgroup}
-    Store &amp; Share Data
+    Storing and sharing data
         data/cloudant.md
         data/sql.md
         data/object.md
@@ -60,7 +58,7 @@ Programming with Swift on IBM Cloud
         machine_learning/tone.md
 
     {: .topicgroup}
-    Add Cloud Logic
+    Adding cloud logic
         backend/functions.md
         backend/kitura.md
         backend/api_management.md

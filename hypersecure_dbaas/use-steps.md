@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-08"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -18,7 +18,7 @@ To take full advantage of a highly available and secure database, you embed
 additional logic into your application. The embedded code snippets enable the
 creation and the access to a MongoDB database.
 
-Presently, the supported programming language for using IBM Cloud Hyper Protect DBaaS
+Currently, the supported programming language for using IBM Cloud Hyper Protect DBaaS
 is Swift 4.0 with MongoKitten SDK 4.0.0.
 
 Follow these steps to create, test, build, and run your application:

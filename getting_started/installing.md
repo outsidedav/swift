@@ -11,15 +11,15 @@ lastupdated: "2018-03-01"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Installing SDKs into Client Apps
+# Installing SDKs into client apps
 {: #installing}
 
-{{site.data.keyword.cloud_notm}} iOS SDKs support a variety of popular dependency managers, allowing you to easily install and use {{site.data.keyword.cloud}} services within your own applications.
+{{site.data.keyword.cloud_notm}} iOS SDKs support a variety of popular dependency managers, enabling you to easily install and use {{site.data.keyword.cloud}} services within your own applications.
 
 ## Installing with CocoaPods
 {: #installing_with_cocoapods}
 
-To install an SDK using Cocoapods, add it to your Podfile. If your project does not have a Podfile yet, use the `pod init` command.
+To install an SDK by using Cocoapods, add it to your `Podfile`. If your project does not have a `Podfile` yet, use the `pod init` command.
 
 ```ruby
 use_frameworks!
@@ -28,41 +28,41 @@ target 'MyApp' do
     pod '<SDK Name>'
 end
 ```
-{: screen}
+{: codeblock}
 
 Then run `pod install`, and open the generated `.xcworkspace` file.
 
-For more information on using Cocoapods, refer to the [Cocoapods Guides](https://guides.cocoapods.org/using/index.html).
+For more information on using Cocoapods, see the [Cocoapods Guides](https://guides.cocoapods.org/using/index.html).
 
 ## Installing with Carthage
 {: #installing_with_carthage}
 
-To install an SDK with Carthage, simply add this line to your Cartfile:
+To install an SDK with Carthage, add this line to your `Cartfile`:
 
 ```
 github "<github org name>/<github project name>"
 ```
-{: screen}
+{: codeblock}
 
-Then run `carthage update`. Once the build is finished, add the generated frameworks to your project. 
+Then run `carthage update`. After the build is finished, add the generated frameworks to your project. 
 
-For more information on using Carthage, refer to the [Carthage README](https://github.com/Carthage/Carthage#getting-started).
+For more information on using Carthage, see the [Carthage README](https://github.com/Carthage/Carthage#getting-started).
 
-## Installing with Swift Package Manager
+## Installing with Swift package manager
 {: #installing_with_swift_package_manager}
 
-To install an SDK using Swift Package Manager, simply add the following line to your dependencies in your Package.swift:
+To install an SDK using Swift Package Manager, add the following line to your dependencies in your `Package.swift`:
 
 ```
 .Package(url: "<SDK git url>")
 ```
-{: screen}
+{: codeblock}
 
 Then run `swift build`.
 
-For more information on using Swift Package Manager, refer to the [Swift Package Manager Overview](https://swift.org/package-manager/).
+For more information on using Swift Package Manager, see the [Swift Package Manager Overview](https://swift.org/package-manager/).
 
-## Installing Manually
+## Installing manually
 {: #installing_manually}
 
 To install an SDK manually, download the SDK and manually add the source files into your project.

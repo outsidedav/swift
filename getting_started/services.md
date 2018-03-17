@@ -11,21 +11,21 @@ lastupdated: "2018-03-01"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Provisioning Services
+# Provisioning services
 {: #services}
 
-{{site.data.keyword.cloud_notm}} provides a broad portfolio of industry-leading cloud services for developers to use within their applications.
+{{site.data.keyword.cloud_notm}} provides a broad portfolio of industry-leading cloud services for you to use within your applications.
 
-## Hosted Services
+## Hosted services
 {: #hosted_services}
 
-Hosted Services provides developers with a variety of easy to use services for their backend, with the tested reliability, scalability, and security of the {{site.data.keyword.cloud_notm}} infrastructure.
+Hosted services provide you with a variety of easy to use services with your back-end, with the tested reliability, scalability, and security of the {{site.data.keyword.cloud_notm}} infrastructure.
 
 For more information, see the complete list of [{{site.data.keyword.cloud}} products](https://www.ibm.com/cloud/products/).
 
-## Cloud Logic
+## Cloud logic
 {: #cloud_logic}
 
-{{site.data.keyword.openwhisk}} provides developers with the ability to build out server side logic in stateless containers, allowing users to focus on writing code without needing to worrying about managing frameworks or scaling infrastructure. This helps speed up and simplify deployment, enabling developers to quickly build apps with action sequences that execute in response to calls from your mobile app.
+{{site.data.keyword.openwhisk}} provides developers with the ability to build out server-side logic in stateless containers, enabling you to focus on writing code without needing to worrying about managing frameworks or scaling infrastructure. This helps speed up and simplify deployment, enabling you to quickly build apps with action sequences that execute in response to calls from your mobile app.
 
 For more information, see [Cloud Functions](/docs/swift/backend/functions.html#cloud-functions){:new_window}.

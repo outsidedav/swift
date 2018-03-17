@@ -24,12 +24,8 @@ The IBM Watson Tone Analyzer service enables your app to understand emotions and
 1. The service analyzes the text using linguistic analysis to identify emotions and tones.
 1. The service's analysis is returned to your app by the Watson Swift SDK.
 
-## Getting started
-{: #getting-started}
 
-It's easy to get started with the {{site.data.keyword.toneanalyzershort}} service. The following steps will show you how to analyze text in your app.
-
-### Before you begin
+## Before you begin
 {: ###before-you-begin}
 
 First, be sure you have the following prerequisites ready to go:
@@ -46,8 +42,9 @@ We recommend using [Carthage](https://github.com/Carthage/Carthage) to manage de
 $ brew update
 $ brew install carthage
 ```
+{: codeblock}
 
-### Create and configure an instance of Tone Analyzer
+## Step1. Create and configure an instance of Tone Analyzer
 {: ###create-and-configure-an-instance-of-tone-analyzer}
 
 Provision an instance of the {{site.data.keyword.toneanalyzershort}} service:
@@ -55,29 +52,31 @@ Provision an instance of the {{site.data.keyword.toneanalyzershort}} service:
 1. In the {{site.data.keyword.cloud_notm}} catalog, select {{site.data.keyword.toneanalyzershort}}. The service configuration screen opens.
 1. Give your service instance a name, or use the preset name.
 1. Select an app from the Connect menu if you'd like to bind your instance to an app.
-1. Select a pricing plan and click Create.
-1. Select the "Credentials" tab to view your service credentials. We will use these values to connect to the service from your app.
+1. Select a pricing plan and click **Create**.
+1. Select the **Credentials** tab to view your service credentials. We will use these values to connect to the service from your app.
 
-### Download and build dependencies
+## Step 2. Download and build dependencies
 {: ###download-and-build-dependencies}
 
 Using your favorite text editor, create a new filed called `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located). Then add a line to specify the Watson Swift SDK as a dependency:
 
-```
-github "watson-developer-cloud/swift-sdk"
-```
+  ```
+  github "watson-developer-cloud/swift-sdk"
+  ```
+  {: codeblock}
 
-For a production app, you may also want to specify a particular [version requirement](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement) to avoid unexpected changes from new releases of the Watson Swift SDK.
+For a production app, you might also want to specify a particular [version requirement](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement) to avoid unexpected changes from new releases of the Watson Swift SDK.
 
 With your `Cartfile` in place, let's download and build the dependencies. Use a terminal to navigate to the root directory of your project then run Carthage:
-
-```bash
-$ carthage update --platform iOS
-```
+  
+  ```bash
+  $ carthage update --platform iOS
+  ```
+  {: codeblock}
 
 Carthage will download the Watson Swift SDK and build its frameworks in the `Carthage/Build/iOS` folder of your project.
 
-### Add frameworks to your app
+## Step 3. Add frameworks to your app
 {: ###add-frameworks-to-your-app}
 
 Now that the Watson Swift SDK frameworks have been built by Carthage, we need to link the Tone Analyzer framework with your app.
@@ -96,7 +95,7 @@ In addition to _linking_ the Tone Analyzer framework we also need to _copy_ it i
 
 Now we're ready to start working with the Watson Swift SDK in your app!
 
-### Analyze text in your app
+## Step 4. Analyze text in your app
 {: ###analyze-text-in-your-app}
 
 1. Open your `ViewController.swift` in Xcode.

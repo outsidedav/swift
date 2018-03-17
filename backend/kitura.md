@@ -89,27 +89,27 @@ A skeleton Kitura server is created, but it does not provide any REST APIs that 
 
 2. Add a Dictionary to the `Sources/Application/Application.swift` file to store `Meal` objects by adding `let cloudEnv = CloudEnv()` to the following code section:
  
-```swift
-private var mealStore: [String: Meal] = [:]
-```
-{: codeblock}
+  ```swift
+  private var mealStore: [String: Meal] = [:]
+  ```
+  {: codeblock}
 
 3. Add a handler for `GET` requests on `/meals` to the `Sources/Application/Application.swift` file by adding the following into the postInit() function:  
 
-```swift
-router.get("/meals", handler: loadHandler)
-```
-{: codeblock}
+  ```swift
+  router.get("/meals", handler: loadHandler)
+  ```
+  {: codeblock}
 
 4. Implement the loadHandler function to the `Sources/Application/Application.swift` file by adding the following as another function in the `App` class:  
 
-```swift
-func loadHandler(completion: ([Meal]?, RequestError?) -> Void ) {
-    let meals: [Meal] = self.mealStore.map({ $0.value })
-  completion(meals, nil)
-}
-```
-{: codeblock"}
+  ```swift
+  func loadHandler(completion: ([Meal]?, RequestError?) -> Void ) {
+      let meals: [Meal] = self.mealStore.map({ $0.value })
+    completion(meals, nil)
+  }
+  ```
+  {: codeblock"}
 
 You now have a REST API for `GET` requests on `/meals` that responds with an array of `Meals` or an error.
 
@@ -136,75 +136,70 @@ KituraKit provides a mirror image of the router handler APIs used in Kitura, mak
 The following steps show how to install KituraKit into your iOS application, and use it to call the `GET /meals` REST API created by using Kitura:
 
 1. Create a Podfile in the root of your iOS application directory if you do not have one already:
-
-```
-pod init
-```
-{: codeblock}
+  ```
+  pod init
+  ```
+  {: codeblock}
 
 2. Edit the Podfile to set a global platform of iOS 11 for your project by replacing the following line:
+  ```
+  # platform :ios, '9.0'
+  ```
 
-```
-# platform :ios, '9.0'
-```
-
-with
+  with
 	
-```
-platform :ios, '11.0'
-```
+  ```
+  platform :ios, '11.0'
+  ```
 
 3. Add KituraKit to the Podfile by adding the following under `# Pods for <application name>`:
-
-```
-pod 'KituraKit', :git => 'https://github.com/IBM-Swift/KituraKit.git', :branch => 'pod'
-```
-{: codeblock}
+  ```
+  pod 'KituraKit', :git => 'https://github.com/IBM-Swift/KituraKit.git', :branch => 'pod'
+  ```
+  {: codeblock}
 
 4. Save the Podfile and install KituraKit by using the following on the command line:
-
-```
-pod install
-```
-{: codeblock}
+  ```
+  pod install
+  ```
+  {: codeblock}
 
 5. Reopen the application in Xcode by opening the workspace (not project). You can now add the same `Meal` definition to your iOS application as used in the Kitura server:
+  ```swift
+  struct Meal: Codable {    
+      var name: String
+      var photo: Data
+      var rating: Int
+  }
+  ```
+  {: codeblock}
 
-```swift
-struct Meal: Codable {    
-    var name: String
-    var photo: Data
-    var rating: Int
-}
-```
-{: codeblock}
-
-And use the following code to make a connection to the Kitura server:
-
-```swift
-import KituraKit
-
-// Connect to the Kitura server on http://localhost:8080
-guard let client = KituraKit(baseURL: "http://localhost:8080") else {
-    print("Error creating KituraKit client")
-    return
-}
-
-// Make a request to `GET /meals`, expecting a [Meal] or a RequestError
-client.get("/meals") { (meals: [Meal]?, error: RequestError?) in
-    // Check for an error
-    guard error == nil else {
-        print("Error saving meal to Kitura: \(error!)")
-        return
-    }
-    // Check for meals
-    guard let meals = meals else {
-        print("Received Meals!")
-        return
-    }
-}
-```
-{: codeblock}
+  And use the following code to make a connection to the Kitura server:
+  
+  ```swift
+  import KituraKit
+  
+  // Connect to the Kitura server on http://localhost:8080
+  guard let client = KituraKit(baseURL: "http://localhost:8080") else {
+      print("Error creating KituraKit client")
+      return
+  }
+  
+  // Make a request to `GET /meals`, expecting a [Meal] or a RequestError
+  client.get("/meals") { (meals: [Meal]?, error: RequestError?) in
+      // Check for an error
+      guard error == nil else {
+          print("Error saving meal to Kitura: \(error!)")
+          return
+      }
+      // Check for meals
+      guard let meals = meals else {
+          print("Received Meals!")
+          return
+      }
+  }
+  ```
+  {: codeblock}
 
 This calls the Kitura server byusing `client.get("/meals")` with a callback that matches the parameters from Kitura's completion handler.
 

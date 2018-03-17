@@ -24,12 +24,7 @@ The IBM Watson Visual Recognition service enables your app to quickly and accura
 1. The service analyzes the image using classification analysis to identify scenes, objects, faces, and more.
 1. The service's analysis is returned to your app by the Watson Swift SDK.
 
-## Getting started
-{: #getting-started}
-
-It's easy to get started with the {{site.data.keyword.visualrecognitionshort}} service. The following steps will show you how to analyze images in your app.
-
-### Before you begin
+## Before you begin
 {: ###before-you-begin}
 
 First, be sure you have the following prerequisites ready to go:
@@ -47,7 +42,7 @@ $ brew update
 $ brew install carthage
 ```
 
-### Create and configure an instance of Visual Recognition
+## Step 1. Create and configure an instance of Visual Recognition
 {: ###create-and-configure-an-instance-of-visual-recognition}
 
 Provision an instance of the {{site.data.keyword.visualrecognitionshort}} service:
@@ -58,7 +53,7 @@ Provision an instance of the {{site.data.keyword.visualrecognitionshort}} servic
 1. Select a pricing plan and click Create.
 1. Select the "Credentials" tab to view your service credentials. We will use these values to connect to the service from your app.
 
-### Download and build dependencies
+## Step 2. Download and build dependencies
 {: ###download-and-build-dependencies}
 
 Using your favorite text editor, create a new filed called `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located). Then add a line to specify the Watson Swift SDK as a dependency:
@@ -77,7 +72,7 @@ $ carthage update --platform iOS
 
 Carthage will download the Watson Swift SDK and build its frameworks in the `Carthage/Build/iOS` folder of your project.
 
-### Add frameworks to your app
+## Step 3. Add frameworks to your app
 {: ###add-frameworks-to-your-app}
 
 Now that the Watson Swift SDK frameworks have been built by Carthage, we need to link the Visual Recognition framework with your app.
@@ -96,7 +91,7 @@ In addition to _linking_ the Visual Recognition framework we also need to _copy_
 
 Now we're ready to start working with the Watson Swift SDK in your app!
 
-### Analyze images in your app
+## Step 4. Analyze images in your app
 {: ###analyze-images-in-your-app}
 
 1. Open your `ViewController.swift` in Xcode.
