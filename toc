@@ -5,6 +5,7 @@
 Programming with Swift on IBM Cloud
 
     {: .navgroup id="learn"}
+    index.md
     apple_development.md
 
     {: .topicgroup}
