@@ -28,8 +28,6 @@ To help you understand the architectural benefits of switching to FaaS, let's co
 
 In a more traditional architecture, your iOS application will likely offload network intensive tasks or process data remotely on a centralized server, which itself is connected to its own services or storage options.
 
-// {{Insert image of server-side architecture}}
-
 With this system, the heavy lifting is placed on a singular server that will handle any authentication or processing intensive tasks to minimize stress on the client and provide synchronization across its user base.
 
 A serverless architecture might alter this structure to look more like the following image.
