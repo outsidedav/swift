@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-11"
+lastupdated: "2018-03-16"
 
 ---
 {:new_window: target="_blank"}
@@ -71,7 +71,7 @@ To learn more about {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS, see [G
 
 {{site.data.keyword.hscontainers}} delivers powerful tools by combining Docker and Kubernetes technologies, an intuitive user experience, and built-in security and isolation to automate the deployment, operation, scaling, and monitoring of containerized apps in a cluster of compute hosts.
 
-{{site.data.keyword.hscontainers}} is now available to sponsor users only. If you expect dedicated security support, [register as sponsor users](Cloud product landing page) to deploy your application to the {{site.data.keyword.hscontainers}} cluster.
+Note that {{site.data.keyword.hscontainers}} is now available to only sponsor users. If you expect dedicated security support, register as sponsor users with the [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml) to deploy your application to the {{site.data.keyword.hscontainers}} cluster.
 {: tip}
 
 Before you become a sponsor user, you can use {{site.data.keyword.containershort_notm}} to secure your application. For more information, see [Getting started with {{site.data.keyword.containershort_notm}}](/docs/containers/container_index.html#container_index).

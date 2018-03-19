@@ -14,7 +14,7 @@ lastupdated: "2018-03-15"
 # Developing Locally
 Developing locally enable you to easily build, run, and test your application. You use the {{site.data.keyword.dev_cli_short}} to execute these actions with standard commands. 
 
-You can use the {{site.data.keyword.dev_cli_short}} to manage your server-side applications with more than a dozen commands. Learn more about the various commands at [IBM Cloud Developer Tools CLI (bx dev) commands](/docs/cloudnative/idt/commands.html).
+You can use the {{site.data.keyword.dev_cli_short}} to manage your server-side applications with more than a dozen commands. Learn more about the various commands at [IBM Cloud Developer Tools CLI (bx dev) commands](/docs/cli/idt/commands.html).
 
 ## Before you begin
 
@@ -25,7 +25,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 ```
 {:codeblock}
 
-See [Setting up the IBM Cloud Developer Tools CLI](/docs/cloudnative/idt/setting_up_idt.html) to learn more about the set up and use of the {{site.data.keyword.dev_cli_notm}}.
+See [Setting up the IBM Cloud Developer Tools CLI](/docs/cli/idt/setting_up_idt.html) to learn more about the set up and use of the {{site.data.keyword.dev_cli_notm}}.
 
 ## Step 1. Retrieve the service credentials
 After you clone your application from Git, you must retrieve the credentials for the services bound to your application because these are not stored in the git repo for your application. This enables the use of bound services. You can easily download the credentials by running the following command in the root of the application directory:
