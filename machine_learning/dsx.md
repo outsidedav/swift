@@ -18,10 +18,10 @@ Watson Studio provides you with the environment and tools to solve your business
 
 Watson Studio is structured around a project based architecture, which organizes your resources for solving a business problem. Resources include connections to cloud and on-premises data stores, data files, collaborators, and analytic assets like models. Learn more at https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics.
 
-## Machine learning for {{site.data.keyword.DSX_short}}
+## Machine learning for {{site.data.keyword.DSX}}
 {: #dsx}
 
-By using the {{site.data.keyword.DSX_short}} it is possible to train models and deploy them and then consume the results by using APIs. These APIs can then be used in your iOS or Swift applications.
+By using the {{site.data.keyword.DSX}} it is possible to train models and deploy them and then consume the results by using APIs. These APIs can then be used in your iOS or Swift applications.
 
 With IBM Watson Machine Learning, after you set up your environment, you can create models, deploy them to the cloud, and train them. For more information, see [Create, deploy, and train models with {{site.data.keyword.pm_full}} and {{site.data.keyword.DSX}}](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics).
 
@@ -29,7 +29,7 @@ With IBM Watson Machine Learning, after you set up your environment, you can cre
 - [Build a logistic regression model with {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics)
 - [Build a naive-Bayes model with {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics)
 
-## Setting up {{site.data.keyword.DSX_short}} with iOS and Swift
+## Setting up {{site.data.keyword.DSX}} with iOS and Swift
 {: #dsx_ios}
 
 1. To make the integration of the credentials easier you will need to add the {{site.data.keyword.pm_short}} instance to your iOS app or back-end app. For ease of accessibility, your credentials are included on your project dashboard.
@@ -217,5 +217,5 @@ Great job! You've added a way to analyze data sets using custom generated machin
 
 ### Related Links
 * [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling/index.html#using-machine-learning-with-data-science-experience)
-* [{{site.data.keyword.DSX_short}}](https://datascience.ibm.com/)
-* [{{site.data.keyword.DSX_short}} documentation](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics)
+* [{{site.data.keyword.DSX}}](https://datascience.ibm.com/)
+* [{{site.data.keyword.DSX}} documentation](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics)
