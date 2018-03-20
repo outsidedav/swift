@@ -14,11 +14,9 @@ lastupdated: "2018-03-15"
 
 # Analyzing data sets with custom generated machine learning models
 
-IBM Watson Data Platform brings together data management, data policies, data preparation, and analysis capabilities into a common framework. The platform integrates the {{site.data.keyword.DSX_full}} and the IBM Data Catalog, as well as tools like Data Refinery and IBM Streams Designer. Watson Data Platform also integrates a wide range of {{site.data.keyword.cloud_notm}} services and connections to cloud and on-premises data stores. You can index, discover, control, and share data with the Data Catalog, refine and prepare the data with Data Refinery, then organize resources to analyze the same data with {{site.data.keyword.DSX_short}}. Learn more at [https://dataplatform.ibm.com/](https://dataplatform.ibm.com/).
+Watson Studio provides you with the environment and tools to solve your business problems by collaboratively analyzing data. You can choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models. Watson Studio integrates with a wide range of IBM Cloud services and Watson Knowledge Catalog, which provides data policy management to control access to assets and catalogs to index and find assets. Learn more at https://dataplatform.ibm.com/.
 
-## {{site.data.keyword.DSX_short}}
-
-{{site.data.keyword.DSX_short}} provides you with the environment and tools to solve your business problems by collaboratively analyzing data. {{site.data.keyword.DSX_short}} is structured around a project based architecture, which organizes your resources for solving a business problem. For more information, see [{{site.data.keyword.DSX_short}} overview](https://datascience.ibm.com/docs/content/getting-started/architecture.html?context=analytics).
+Watson Studio is structured around a project based architecture, which organizes your resources for solving a business problem. Resources include connections to cloud and on-premises data stores, data files, collaborators, and analytic assets like models. Learn more at https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics.
 
 ## Machine learning for {{site.data.keyword.DSX_short}}
 {: #dsx}

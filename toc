@@ -58,6 +58,8 @@ Programming with Swift on IBM Cloud
         machine_learning/recognition.md
         machine_learning/tone.md
 
+    machine_learning/coreml.md
+
     {: .topicgroup}
     Adding cloud logic
         backend/functions.md
