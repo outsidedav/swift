@@ -36,11 +36,35 @@ $ brew install carthage
 ## Step 1. Training a model with {{site.data.keyword.watson}} {{site.data.keyword.visualrecognitionshort}}
 {: #training-your-model}
 
-1. Navigate to your {{site.data.keyword.ibmwatson}} {{site.data.keyword.visualrecognitionshort}} service dashboard.
-2. Launch the {{site.data.keyword.visualrecognitionshort}} Tool and click **Create Model** under the Custom tile.
-3. From the right pane, import your training sets, select them, and then click **Add to model** from the drop down.
-4. Select the **Train Model** button at the upper-right side of the page and simply wait for the model to be fully created!
-5. You're all set! Now, you're ready to download your Core ML model and integrate it into your app by using the [{{site.data.keyword.watson}} Developer Cloud Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window}.
+If a current model does not exist, the first model found remotely or any one that exists locally will be used. The gif and accompanying instruction below show you how to link your service to the Watson Studio and train your model.
+
+![Core ML Model Walkthrough](images/CoreMLWalkthrough.gif)
+
+### Setup the service from your Core ML App dashboard
+1. Launch the Visual Recognition Tool from your Starter Kit's dashboard by selecting **Launch Tool**.
+2. Begin creating your model by selecting **Create Model**.
+2. If a project is not yet associated with the Visual Recognition instance you created, a project will be created. Otherwise, skip to 'Create Model' below.
+3. Name your project and click Create.
+    - Tip: If no storage is defined, click refresh.
+
+### Bind Service to project
+1. After creating your project, you will be moved to your project dashboard.
+2. Go to the settings tab, scroll down to **Associated Services**, select **Add Service** -> **Watson**.
+3. From the Watson services page, select Visual Recognition.
+4. Select the **Existing** tab on the service info page and then select your service instance from the dashboard.
+5. Now that your service has been bound you can begin creating your model by selecting **Assets** from your Project dashboard and then clicking **Add Visual Recognition Model**.
+
+### Create Model
+
+1. From the model creation tool, modify the classifier name if desired. By default, the application will use the first available unless specified. If you would like to use a specific model, make sure to modify the `defaultClassifierID` field in main View Controller.
+
+2. From the sidebar, upload the model training corpuses in .zip files. Then, select each dataset and add them to your model from the drop-down menu. Feel free to add more classes using your own image sets to enhance the classifier!
+
+![Adding Classes](images/add_classes.png)
+
+3. Select `Train Model` in the upper-right corner then simply wait for the model to be fully trained and you'll be good to go!
+
+You're all set! Now, you're ready to download your Core ML model and integrate it into your app by using the [{{site.data.keyword.watson}} Developer Cloud Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window}.
 
 ## Step 2. Downloading and building dependencies
 {: #installing-dependencies}
