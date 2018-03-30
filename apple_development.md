@@ -16,12 +16,12 @@ lastupdated: "2018-02-06"
 # Apple Development and {{site.data.keyword.cloud_notm}}
 {: #ios_dev}
 
-{{site.data.keyword.cloud_notm}} offers solutions and services to empower iOS developers and applications with the security, AI, and value demanded by your customers. With a broad portfolio of offerings and SDKs, you can quickly leverage these services when bringing your cutting-edge applications to market.
+{{site.data.keyword.cloud_notm}} offers solutions and services to empower Swift developers and applications with the security, AI, and value demanded by your customers. With a broad portfolio of offerings and SDKs, you can quickly leverage these services when bringing your cutting-edge applications to market.
 
 ## Modern Apps: A Melting Pot of Skills
 {: #skills}
 
-Today users expect more from their applications than ever before.  They want apps to deliver deep insights from stored and real-time data, to be always-available, and to match their individual needs preferences more closely with each passing day. To meet these expectations app creators need to bring together many different skill sets.  For example, a sophisticated cognitive application might require contributions from digital developers, cloud native developers, streams developers, data scientists, and devop specialists.
+Today, users expect more from their applications than ever before.  They want apps to deliver deep insights from stored and real-time data, to be always-available, and to match their individual preferences more closely with each passing day. To meet these expectations, app creators need to bring together many different skill sets.  For example, a sophisticated cognitive application might require contributions from digital developers, cloud native developers, streams developers, data scientists, and devop specialists.
 
  ![Developer types](images/developer_skills.png "Developer relationships")
 
@@ -29,7 +29,7 @@ Today users expect more from their applications than ever before.  They want app
 * *Cloud native devlopers* specialize in constructing and interconnecting cloud components. Microservice and back-end-for-frontend authors fall into this category.<br>
 * *Streams developers* focus on processing and gaining insight from streams of data. For example, as streams developer might analyze and intiate action on incoming text, speech, or video streams.<br>
 * *Data scientists* utilize analytics and machine learning to produce predictive models. These models are used in business metrics and also provide deep insights to application users.
-* *Devops specialists* are experts in resolving deployment and toolchain issues, and they may serve one for many development teams.  For simple apps, dedicated specialists are usually not needed as development team members manage devops with the squad. But for complex enterprise applications with many dependencies, devops specialists are essential in keeping your production app running smoothly.
+* *Devops specialists* are experts in resolving deployment and toolchain issues, and they may serve one or many development teams.  For simple apps, dedicated specialists are usually not needed as development team members manage devops with the squad. But for complex enterprise applications with many dependencies, devops specialists are essential in keeping your production app running smoothly.
 {: tip}
 
 ## One Development Platform: IBM Cloud
@@ -41,19 +41,19 @@ The developer capabilities built in to {{site.data.keyword.cloud_notm}} align to
 
 * The **{{site.data.keyword.cloud_notm}} Developer Experience** is not a service, but rather is a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and cloud native developers get quickly started building production-ready apps. It includes automatic provisioning of services and one-click deployment to a devops toolchain.  More on this in the Starting Right section.
 
-* [**IBM Watson Data Platform**](https://console.bluemix.net/developer/dataplatform/dashboard) <!--[IBM Watson Data Platform](https://dataplatform.ibm.com)--> makes it simple to assemble data collections, refine the data, and then visualize, discover insights, and build models for use in your cognitive app.
+* [**IBM Watson Data Platform**](https://console.bluemix.net/developer/dataplatform/dashboard) <!--[IBM Watson Data Platform](https://dataplatform.ibm.com)--> makes it simple to assemble data collections, refine the data, then visualize, discover insights, and build models for use in your cognitive app.
 
 * [**IBM Streaming Analytics**](../services/StreamingAnalytics/index.html#gettingstarted) helps wrangle and analyze data streams. It is an advanced analytic platform that you can use to ingest, analyze, and correlate information as it arrives from different types of data sources in real time.
 
 * The [**{{site.data.keyword.cloud_notm}} Continuous Delivery service**](../services/ContinuousDelivery/index.html#cd_getting_started) lets you easily set up a devops toolchain to automate continuous delivery of your app.  You can easily enhance the toolchain to include management functions like monitoring, logging, tracking, and alerting.  You can even apply advanced machine learning to your toolchain using the [DevOps Insights service](../services/DevOpsInsights/index.html#gettingstarted).
 
 
-The {{site.data.keyword.cloud_notm}} platform offers many, many more capabilities than mentioned above.  You can use {{site.data.keyword.cloud_notm}} as your comprehensive development platform.
+The {{site.data.keyword.cloud_notm}} platform offers many more capabilities than mentioned above.  You can use {{site.data.keyword.cloud_notm}} as your comprehensive development platform.
 
 ## Overview of {{site.data.keyword.cloud_notm}} Capabilities
 {: #capabilities}
 
-The {{site.data.keyword.cloud}} Developer Experience is not service, but rather it is a set of capabilities in the {{site.data.keyword.cloud_notm}} platform that gets you started building apps the "right" way in minutes. Essential elements of the Developer Experience are:
+The {{site.data.keyword.cloud}} Developer Experience is not a service, but rather it is a set of capabilities in the {{site.data.keyword.cloud_notm}} platform that gets you started building apps the "right" way in minutes. Essential elements of the Developer Experience are:
 
 * a set of topic- or channel-centric developer consoles found across the {{site.data.keyword.cloud_notm}} platform
 * use-case-specific starter kits that produce production-ready starter apps in a variety of languages and architectural patterns
