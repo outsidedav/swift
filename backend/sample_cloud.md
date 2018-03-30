@@ -15,7 +15,7 @@ lastupdated: "2018-02-06"
 # iOS & Cloud Logic Use Case
 {: #sample_cloud}
 
-An example of an iOS application using a Backend For Frontend (BFF) can be seen through the BluePic photo and image sharing sample application. BluePic utilizes the following:
+An example of an iOS application using a Backend For Frontend (BFF) can be seen through the [BluePic photo and image sharing sample application](https://github.com/IBM/BluePic). BluePic utilizes the following:
 
 * Object Storage and Cloudant to store the image data.
 * Watson Visual Recognition and the IBM Weather Company service to add additional information to the images.
