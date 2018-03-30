@@ -14,9 +14,9 @@ lastupdated: "2018-03-09"
 # {{site.data.keyword.cloud_notm}} Developer Console for Apple
 {: #intro}
 
-The {{site.data.keyword.cloud_notm}} Developer Console enables Apple developers to create apps from a variety of starter kits, provision and connect key {{site.data.keyword.Bluemix_notm}}-optimized services, and then quickly download working code or set up for continuous delivery. Users are able to create, view, configure, and manage your app, as well as download your app's code. This will allow you to quickly evaluate and test {{site.data.keyword.cloud_notm}} services with a brand new app.
+The {{site.data.keyword.cloud_notm}} Developer Console for Apple enables Apple developers to create apps from a variety of starter kits, provision and connect key {{site.data.keyword.Bluemix_notm}}-optimized services, and then quickly download working code or set up for continuous delivery. Users are able to create, view, configure, and manage your app, as well as download your app's code. This will allow you to quickly evaluate and test {{site.data.keyword.cloud_notm}} services with a brand new app.
 
-Ready to jump in?  Visit the [{{site.data.keyword.cloud_notm}} Developer Console](https://console.bluemix.net/developer/appledevelopment/starter-kits) now to get started.
+Ready to jump in?  Visit the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) now to get started.
 {: tip}
 
 ## Starter Kits
@@ -32,7 +32,7 @@ Developers often rely on pre-written code like snippets, demos, and samples.  Ho
 * A **sample** is a small example of a specific feature, function, service, or user journey. A sample can be reused or included in a production application. It is typically used to show technical capabilities and a possible approach to solving a technical problem.<br>
 * An **{{site.data.keyword.cloud_notm}} starter kit** is a production-ready pattern which can be integrated with a set of services to generate a production-ready asset that can be deployed directly into a devops pipeline and a Kubernetes cluster. A Starter Kit contains descriptive metadata providing the end user with enough information to know what the kit is and does. It also contains instructions that tell {{site.data.keyword.cloud_notm}} what to produce. The output is production-ready out of the box, and can be iterated on for further enhancements, based on IBM best practices. Starter Kit content is not as complex as a demo and not as trivial as a snippet or sample. They are dynamically created based on the developer’s requirements.
 
-Starter kits are production-ready and focus on demonstrating a key pattern implementation using a runtime (for example Node.js + Express). In some cases, starter kits offer a simple user experience to highlight the integration of the service. In other cases stater kits represent a customizable implementation of a sophisticated use case.
+Starter kits are production-ready and focus on demonstrating a key pattern implementation using a runtime (for example Swift + Kitura). In some cases, starter kits offer a simple user experience to highlight the integration of the service. In other cases stater kits represent a customizable implementation of a sophisticated use case.
 
 Starter kits contain instructions that allow {{site.data.keyword.cloud_notm}} to automatically produce scaffolded app projects with portable code, and they may also specify resources that will be auto-provisioned when you create a project from the starter kit.
 
@@ -58,41 +58,41 @@ The app produced by {{site.data.keyword.cloud_notm}} is not only architecturally
 
 Note the project includes a README file. This file will contain technical details of the project and explain what is needed to get your app running if it does not run out-of-the-box.
 
-## Your journey through the {{site.data.keyword.cloud_notm}} Developer Console
+## Your journey through the {{site.data.keyword.cloud_notm}} Developer Console for Apple
 {: #journey}
-The {{site.data.keyword.cloud_notm}} Developer Console gives you a seamless path to building a starter app for your specific use case.  Let's look at the steps you might take in your journey.
+The {{site.data.keyword.cloud_notm}} Developer Console for Apple gives you a seamless path to building a Swift starter app for your specific use case.  Let's look at the steps you might take in your journey.
 
 ### Overview screen
 {: #overview_screen}
 
 The Overview screen gives you content tailored to a set of use cases like Watson, Weather, and more. From the overview screen you can see documentation, access learning resources, browse services, see featured starter kits, or link to a larger collection of starter kits. Click `Starter Kits` in the left hand navigation area to step into the Starter Kits view.
 
-![{{site.data.keyword.cloud_notm}} Developer Console Overview screen](images/overview_screen.png "Overview screen") <br> *{{site.data.keyword.cloud_notm}} Developer Console Overview screen*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple Overview screen](images/overview_screen.png "Overview screen") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple Overview screen*
 
 ### Starter Kits view
 {: #starter_kits_view}
 
 The Starter Kits view shows the collection of starter kits specific to a use case area.  You can click various links on a starter kit card to see demos and more information. Select a starter kit to move to the Create New Project view.
 
-![{{site.data.keyword.cloud_notm}} Developer Console Starter Kits view](images/starter_kits_screen.png "Starter Kits view") <br> *{{site.data.keyword.cloud_notm}} Developer Console Starter Kits view*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple Starter Kits view](images/starter_kits_screen.png "Starter Kits view") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple Starter Kits view*
 
 ### Create New Project view
 {: #create_new_project_view}
 
 From the Create New Project view, you can name your app, as well as provide deployment and routing information. Notice on the right you can also see the services that will automatically  provision when you create your app along with pricing plans and terms for each.  Click `Create Project` to move to the Project Details view.  If you are not already logged in to {{site.data.keyword.cloud_notm}}, you will need to do so at this point.
 
-![{{site.data.keyword.cloud_notm}} Developer Console Create New Project view](images/create_new_project_screen.png "Create New Project view") <br> *{{site.data.keyword.cloud_notm}} Developer Console Create New Project view*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple Create New Project view](images/create_new_project_screen.png "Create New Project view") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple Create New Project view*
 
 ## Project Details view
 {: #project_details_view}
 
 The Project Details view displays list of services that are configured for your app. For each item in the list, you will see the service name, links to other information, and an *actions* button with three vertically-aligned dots. The *actions* button options are to remove service from app, open dashboard for service, and delete service. Please note that removing a service instance only removes the association to this app and does not delete the service instance. Also notice service credentials are consolidated on this view so you don't have to visit each individual service instance views to get them.
 
-![{{site.data.keyword.cloud_notm}} Developer Console Project Details view](images/project_details_screen.png "Project Details view") <br> *{{site.data.keyword.cloud_notm}} Developer Console Project Details view*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple Project Details view](images/project_details_screen.png "Project Details view") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple Project Details view*
 
 The Project Details view also allows you to add new or existing services to your app that were not part of the original starter kit. Click the `Add Resource` link in the service list box to do this. The available services are dependent on the type of app and the services that are available in a given region, so not all services will be available to associate with all apps.
 
-![{{site.data.keyword.cloud_notm}} Developer Console Add Resource dialog](images/add_resource_screen.png "Add Resource dialog") <br> *{{site.data.keyword.cloud_notm}} Developer Console Add Resource dialog*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple Add Resource dialog](images/add_resource_screen.png "Add Resource dialog") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple Add Resource dialog*
 
 On the Project Details view you will have access to your code in two ways:
 *  Select `Download Code` to generate and download the code for your app. For more information about downloading the code, click [here](get_code.html).
@@ -103,7 +103,7 @@ On the Project Details view you will have access to your code in two ways:
 
 You can see a list of all the apps you have created from the Projects List view. You can rename or delete your apps from here. Click on a project name row to return to the Project Details view.
 
-![{{site.data.keyword.cloud_notm}} Developer Console Project List view](images/project_list_screen.png "Project List view") <br> *{{site.data.keyword.cloud_notm}} Developer Console Project List view*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple Project List view](images/project_list_screen.png "Project List view") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple Project List view*
 
-For more information, visit the [{{site.data.keyword.cloud_notm}} Developer Console Learning Resources](https://console.bluemix.net/developer/appledevelopment/learning-resources).
+For more information, visit the [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://console.bluemix.net/developer/appledevelopment/learning-resources).
 {: tip}
