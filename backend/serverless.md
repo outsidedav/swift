@@ -17,7 +17,7 @@ lastupdated: "2018-02-015"
 
 What is serverless? The serverless development pattern refers to application development where server-side logic is run in stateless containers that are event-triggered, ephemeral (lasting for a single execution), and fully managed by a third party. This paradigm, also known as Functions as a Service (FaaS), is where the developer provides a stateless function that can be triggered and executed without explicitly provisioning or managing a server.
 
-By abstracting away the infrastructure and frameworks necessary for server-side development, serverless architecture allows developers to focus on building their application and write code required to run reactively to change data. This paradigm particularly valuable within mobile development.
+By abstracting away the infrastructure and frameworks necessary for server-side development, serverless architecture allows developers to focus on building their application and writing code required to run reactively to change data. This paradigm is  particularly valuable within mobile development.
 
 IBM's FaaS offering, [{{site.data.keyword.openwhisk}}](https://console.bluemix.net/openwhisk/), strives to provide a seamless server-side development experience without needing any specialized server-side knowledge. This allows you to quickly develop scalable backend solutions to meet practically any demand in workload without the need to provision resources ahead of time. For applications that have unpredictable load patterns or high server down time, {{site.data.keyword.openwhisk_short}} can be an excellent cloud solution for improved performance while its "pay for what you use" system can help decrease costs.
 
@@ -40,8 +40,8 @@ When looking at the schematic, we see:
 
 1. The client authenticates against an Identity Provider such as AppID.
 2. Calls to the FaaS backend API including the access token.
-3. The backend is implementation with {{site.data.keyword.openwhisk_short}}. The serverless actions, exposed as web actions, expect the token to be sent in the request headers and verify its validity (signature and expiration date) before allowing access to the actual API.
-4. When the client submits data, the feedback is stored in {{site.data.keyword.cloudant_short_notm}}.
+3. The backend is implementated with {{site.data.keyword.openwhisk_short}}. The serverless actions, exposed as web actions, expect the token to be sent in the request headers and verify its validity (signature and expiration date) before allowing access to the actual API.
+4. When the client submits data, the feedback is stored in a {{site.data.keyword.cloudant_short_notm}}.
 5. The feedback text is processed with {{site.data.keyword.toneanalyzershort}}.
 6. Based on the analysis result, a notification is sent back to the client by {{site.data.keyword.mobilepushshort}}.
 7. The client receives the notification.
