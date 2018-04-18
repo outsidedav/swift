@@ -56,7 +56,7 @@ Provision an instance of the {{site.data.keyword.visualrecognitionshort}} servic
 ## Step 2. Download and build dependencies
 {: ###download-and-build-dependencies}
 
-Using your favorite text editor, create a new filed called `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located). Then add a line to specify the Watson Swift SDK as a dependency:
+Using your favorite text editor, create a new file called `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located). Then add a line to specify the Watson Swift SDK as a dependency:
 
 ```
 github "watson-developer-cloud/swift-sdk"
@@ -95,25 +95,27 @@ Now we're ready to start working with the Watson Swift SDK in your app!
 {: ###analyze-images-in-your-app}
 
 1. Open your `ViewController.swift` in Xcode.
-1. Add an import statement for Visual Recognition: 
-	```swift
-	import VisualRecognitionV3
-	```.
+
+1. Add an import statement for Visual Recognition:
+    ```swift
+    import VisualRecognitionV3
+    ```
+
 1. Pass the API key and version (you can use today's date) to initialize the SDK:
-	```swift
-    let visualRecognition = VisualRecognition(apiKey: <your-api-key>, version: <YYYY-MM-DD>)
+    ```swift
+    let visualRecognition = VisualRecognition(apiKey: "your-api-key", version: "yyyy-mm-dd")
     ```
     {: pre}
-1. Add the code below to complete an example for facial recognition
 
-	```swift
-	let url = "your-image-url"
-	let failure = { (error: Error) in print(error) }
-	visualRecognition.classify(image: url, failure: failure) { classifiedImages in
-    	print(classifiedImages)
-	}
-	```
-	{: pre}
+1. Add the following code to classify an image:
+    ```swift
+    let url = "your-image-url"
+    let failure = { (error: Error) in print(error) }
+    visualRecognition.classify(url: url, failure: failure) { classifiedImages in
+        print(classifiedImages)
+    }
+    ```
+    {: pre}
 
 ## Quick start with starter kits
 {: #recognition_starterkits}
