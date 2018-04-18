@@ -47,7 +47,7 @@ $ brew install carthage
 ## Step 1. Downloading and building dependencies
 {: #download-and-build-dependencies}
 
-1. Using your favorite text editor, create a new filed named `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located).
+1. Using your favorite text editor, create a new file named `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located).
 2. Add a line to specify the Watson Swift SDK as a dependency:
 
   ```
@@ -68,7 +68,7 @@ $ brew install carthage
 ## Step 2. Adding frameworks to your app
 {: #add-frameworks-to-your-app}
 
-Now that the {{site.data.keyword.watson}} Swift SDK frameworks have been built by Carthage, you need to link and copy the {{site.data.keyword.conversationshort}} framework with your app.
+Now that the {{site.data.keyword.watson}} Swift SDK frameworks have been built by Carthage, you need to link and copy the {{site.data.keyword.conversationshort}} framework into your app.
 
 1. Open your app in Xcode and select your project at the top of the Navigator to open its settings.
 2. Select your app target and open the **General** tab.
@@ -76,7 +76,7 @@ Now that the {{site.data.keyword.watson}} Swift SDK frameworks have been built b
 4. In the new window that is displayed, click **Add Other** and navigate to the `Carthage/Build/iOS` directory.
 5. Select `AssistantV1.framework` to link it with your app.
 
-In addition to linking the {{site.data.keyword.conversationshort}} framework, you also need to copy it into the app to make it accessible at runtime. Use a Carthage script to avoid a particular [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216){:new_window}.
+In addition to linking the {{site.data.keyword.conversationshort}} framework, you also need to copy it into the app to make it accessible at runtime. We will use a Carthage script to avoid a particular [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216){:new_window}.
 
 1. With your app target's settings open in Xcode, navigate to the **Build Phases** tab.
 2. Click the `+` icon and select **New Run Script Phase**.
@@ -126,7 +126,7 @@ class ViewController: UIViewController {
 
         // start a conversation
         assistant.message(workspaceID: workspace) { response in
-            print("Assistant ID: \(response.context.assistantID)")
+            print("Conversation ID: \(response.context.conversationID!)")
             print("Response: \(response.output.text.joined())")
 
             // continue assistant
@@ -144,7 +144,7 @@ class ViewController: UIViewController {
 When you run your app, the following messages are displayed in the console:
 
 ```
-Assistant ID: 56698937-538b-4e05-9aa3-c8d6c1f9f549
+Conversation ID: cbb18524-1e78-4bb5-a6ea-ceb9311da391
 Response: Hi. It looks like a nice drive today. What would you like me to do?
 Request: turn the radio on
 Response: Sure thing! Which genre would you prefer? Jazz is my personal favorite..
