@@ -58,7 +58,7 @@ Provision an instance of the {{site.data.keyword.toneanalyzershort}} service:
 ## Step 2. Download and build dependencies
 {: ###download-and-build-dependencies}
 
-Using your favorite text editor, create a new filed called `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located). Then add a line to specify the Watson Swift SDK as a dependency:
+Using your favorite text editor, create a new file called `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located). Then add a line to specify the Watson Swift SDK as a dependency:
 
   ```
   github "watson-developer-cloud/swift-sdk"
@@ -102,7 +102,7 @@ Now we're ready to start working with the Watson Swift SDK in your app!
 1. Add an import statement for Tone Analyzer: 
     ```swift
     import ToneAnalyzerV3
-    ```.
+    ```
 1. Create an empty function called `toneAnalyzerExample` then call it from `viewDidLoad`.
 1. Add the code below for the `toneAnalyzerExample` function. Be sure to update your service's username and password!
 
@@ -123,7 +123,7 @@ class ViewController: UIViewController {
         let toneAnalyzer = ToneAnalyzer(
             username: "your-username-here",
             password: "your-password-here",
-            version: "2017-07-06"
+            version: "yyyy-mm-dd"
         )
 
         // text to analyze
@@ -138,14 +138,11 @@ class ViewController: UIViewController {
         """
 
         // analyze text
+        let toneInput = ToneInput(text: review)
         let failure = { (error: Error) in print(error) }
-        toneAnalyzer.getTone(ofText: review, failure: failure) { toneAnalysis in
-            for toneCategory in toneAnalysis.documentTone {
-                print("-- \(toneCategory.name) --")
-                for tone in toneCategory.tones {
-                    print("\(tone.name): \(tone.score)")
-                }
-                print()
+        toneAnalyzer.tone(toneInput: toneInput, contentType: "application/json", failure: failure) { analysis in
+            for tone in analysis.documentTone.tones! {
+                print("\(tone.toneName): \(tone.score)")
             }
         }
     }
@@ -155,24 +152,8 @@ class ViewController: UIViewController {
 When you run your app, you should see the following analysis in the console:
 
 ```
--- Emotion Tone --
-Anger: 0.111405
-Disgust: 0.483788
-Fear: 0.14809
-Joy: 0.110929
 Sadness: 0.575803
-
--- Language Tone --
-Analytical: 0.372312
-Confident: 0.0
 Tentative: 0.867377
-
--- Social Tone --
-Openness: 0.683923
-Conscientiousness: 0.145055
-Extraversion: 0.546317
-Agreeableness: 0.352523
-Emotional Range: 0.492552
 ```
 
 ## Quick start with starter kits
