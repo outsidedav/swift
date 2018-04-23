@@ -30,14 +30,14 @@ As an easy approach, you can directly use the recently launched experimental {{s
 
 {{site.data.keyword.hscrypto}} is also the key store for the {{site.data.keyword.keymanagementserviceshort}} service.
 
-For more information about {{site.data.keyword.hscrypto}}, see [Getting started with {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/services/zcrypto/index.html).
+For more information about {{site.data.keyword.hscrypto}}, see [Getting started with {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/services/hs-crypto/index.html){:new_window}.
 
 
 ## **{{site.data.keyword.cloud_notm}} {{site.data.keyword.keymanagementserviceshort}}**
 
 {{site.data.keyword.keymanagementserviceshort}} helps you provision encrypted keys for apps across {{site.data.keyword.cloud_notm}} services. As you manage the lifecycle of your keys, you can benefit from knowing that your keys are secured by cloud-based hardware security modules (HSMs) that protect against the theft of information. Together with {{site.data.keyword.hscrypto}}, your keys are secured at the highest security level of FIPS 140-2 Level 4 certificate.
 
-For more information about {{site.data.keyword.keymanagementserviceshort}}, see [Getting started with {{site.data.keyword.keymanagementserviceshort}}](/docs/services/keymgmt/index.html).
+For more information about {{site.data.keyword.keymanagementserviceshort}}, see [Getting started with {{site.data.keyword.keymanagementserviceshort}}](/docs/services/keymgmt/index.html){:new_window}.
 
 
 ## **{{site.data.keyword.cloud_notm}} Hyper Protect DBaaS**
