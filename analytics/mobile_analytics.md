@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-02-05"
+lastupdated: "2018-05-15"
 
 ---
 {:new_window: target="_blank"}
@@ -64,31 +64,31 @@ First, be sure you have the following prerequisites ready to go:
 
 ## Step 2. Installing the iOS Swift SDK
 
-The service provides platform specific SDKs to simplify application development. The {{site.data.keyword.cloud_notm}} Mobile Services Swift SDKs can be installed with either Cocoapods or Carthage. For more information on installation, see [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics).
+The service provides platform-specific SDKs to simplify application development. The {{site.data.keyword.cloud_notm}} Mobile Services Swift SDKs can be installed with either Cocoapods or Carthage. For more information, see [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics).
 
 The {{site.data.keyword.mobileanalytics_full}} SDK enables you to instrument your mobile application. The Swift SDK is available for iOS and watchOS.
 
 1. Make sure that you correctly set up Xcode. To learn how to set up your iOS development environment, see the [Apple Developer website ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.apple.com/support/xcode/){: new_window}. Read about the [Xcode requirements ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#requirements){: new_window} for Client SDK Swift Analytics.
 
-2. Enable the location API by adding a property in the `Info.plist` file in the project folder of your app. For example,  `Privacy - Location Usage Description` and give proper justification for adding the location API, such as as "The app requires location service to be enabled".
+2. Enable the location API by adding a property in the `Info.plist` file in the project folder of your app. For example,  `Privacy - Location Usage Description` and give proper justification for adding the location API, such as "The app requires location service to be enabled".
 
-The {{site.data.keyword.mobileanalytics_short}} SDK is distributed with [CocoaPods ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cocoapods.org/){: new_window} and [Carthage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Carthage/Carthage#getting-started){: new_window}, which are dependency managers for Cocoa projects. CocoaPods and Carthage automatically download artifacts from repositories and makes them available to your application. Select CocoaPods or Carthage:
+The {{site.data.keyword.mobileanalytics_short}} SDK is distributed with [CocoaPods ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cocoapods.org/){: new_window} and [Carthage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Carthage/Carthage#getting-started){: new_window}, which are dependency managers for Cocoa projects. CocoaPods and Carthage automatically download artifacts from repositories to make them available to your application. Select CocoaPods or Carthage:
 
 ### CocoaPods
 {: #cocoapods notoc}
 
 1. Follow the [{{site.data.keyword.Bluemix_notm}} Mobile Services Swift SDK instructions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window} on GitHub to install `BMSAnalytics` by using Cocoapods and add it to your Podfile.
 
-2. After you have installed the iOS Client SDK, [import and initialize](sdk.html#initalize-ma-sdk) the Analytics Client SDK.   
+2. After installing the iOS Client SDK, [import and initialize](sdk.html#initalize-ma-sdk) the Analytics Client SDK.   
 
 ### Carthage
 {: #carthage notoc}
 
-If you are not using using CocoaPods, you can add frameworks to your project by using [Carthage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos){: new_window}.
+If you are not using CocoaPods, you can add frameworks to your project by using [Carthage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos){: new_window}.
 
 1. Follow the [Carthage installation instructions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#carthage){: new_window} on GitHub to install `BMSAnalytics`.
 
-2. After you have installed the iOS Client SDK, import and initialize the Analytics Client SDK.
+2. After installing the iOS Client SDK, import and initialize the Analytics Client SDK.
 
 ## Step 3. Initializing the SDK
 
@@ -100,7 +100,7 @@ If you are not using using CocoaPods, you can add frameworks to your project by 
 
  - **Application log messages**
 
-	This category enables the developer to add lines of code throughout the application that log custom messages to assist in development and debugging. The developer assigns a severity/verbosity level to each log message.
+	This category enables the developer to add lines of code throughout the application that can log custom messages to assist with development and debugging. The developer assigns a severity/verbosity level to each log message.
 
  - **Custom events**
 
@@ -112,7 +112,7 @@ If you are not using using CocoaPods, you can add frameworks to your project by 
 Identify your **API Key** value before you set up the client SDK. The API key is required for initializing the client SDK.
 
 1. Open your {{site.data.keyword.mobileanalytics_short}} service dashboard.
-2. Expand **View Credentials** to reveal your API Key value. You will need the API key value when you initialize the {{site.data.keyword.mobileanalytics_short}} Client SDK.
+2. Expand **View Credentials** to reveal your API Key value. You need the API key value when you initialize the {{site.data.keyword.mobileanalytics_short}} Client SDK.
 
 
 ## Step 5.  Initializing your application to collect analytics
@@ -153,7 +153,7 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 	```
     {: codeblock}
 
-4. You have now initialized your application to collect analytics. Next, you can [send analytics data] to the {{site.data.keyword.mobileanalytics_short}} service.		
+4. The application is now initialized and ready to collect analytics. Next, you can [send analytics data] to the {{site.data.keyword.mobileanalytics_short}} service.		
 
 ## Step 6. Gathering usage analytics
 {: #app-monitoring-gathering-analytics}
@@ -199,7 +199,7 @@ Use the following APIs to start recording and sending usage analytics:
 
 The {{site.data.keyword.mobileanalytics_full}} Client SDK provides a logging framework that is similar to other log frameworks that you might be familiar with, such as `java.util.logging` or `log4j`. The logging framework supports multiple per-package logger instances, different log levels, capturing of stack traces for an application crash, and more.
 
-You can also configure the logged data to be stored on the device where the application is running and send these device logs to the {{site.data.keyword.mobileanalytics_short}} Service at a later time.
+You can also configure the logged data to be stored on the device where the application is running and send the device logs to the {{site.data.keyword.mobileanalytics_short}} Service at a later time.
 
 The {{site.data.keyword.mobileanalytics_short}} Client SDK logging framework supports the following log levels, which are listed from least to most verbose, with recommended use guidelines:
 
@@ -221,7 +221,7 @@ When the logger level is set `DEBUG`, you also get Mobile Analytics Client SDK l
 ### Sample Logger usage
 {: #sample-logger-usage notoc}
 
-**Note:** Make sure that you have instrumented your application to use the {{site.data.keyword.mobileanalytics_short}} Client SDK before you use the logging framework.
+**Note:** Make sure that your application is configured to use the {{site.data.keyword.mobileanalytics_short}} Client SDK before using the logging framework.
 
 The following code snippets show sample Logger usage:
 
@@ -275,7 +275,7 @@ Analytics.logLocation();
 ```
 This API enables the app to send its location as latitude, longitude to the server in between app sessions. Other than these explicit calls to the location-logging API, the SDK sends device location for every App-Session, both for initial app session context and user switch app session (that is, a switch of a user between an app session) context. The location API must be enabled in the initialization of SDK.
 
-1. To call this location logging API set the `collectLocation` parameter to true in SDK initialization:
+1. To call this location logging API, set the `collectLocation` parameter to true in SDK initialization:
 ```
 Analytics.initialize(appName, apiKey,  hasUserContext, collectLocation, [BMSAnalytics.ALL])
 
@@ -317,7 +317,7 @@ Enable user tracking by initializing {{site.data.keyword.mobileanalytics_short}}
 ## Step 12. Testing your app
 {: #appid_testing}
 
-Think you've got everything set up correctly? Let's test it out!
+Is everything set-up correctly? Time to test it out!
 
 1. Open your app. If you have a web application, use a browser. If you have an iOS client application with the Xcode emulator.
 2. Compile and run the application on your emulator or device.
@@ -327,10 +327,10 @@ Think you've got everything set up correctly? Let's test it out!
 ## What to do next
 {: #what-to-do-next notoc}
 
- - To learn more about the service, read through our [documentation](/docs/services/mobileanalytics/index.html#getting-started-tutorial).
+ - To learn more about the service, read through the [documentation](/docs/services/mobileanalytics/index.html#getting-started-tutorial).
 
  - For an introduction to working with mobile services and {{site.data.keyword.Bluemix_notm}}, see [Getting started with Mobile apps on IBM Cloud](/docs/services/mobile/index.html).
 
- - Starter Kits are one of the fastest way to leverage the capabilities of {{site.data.keyword.cloud_notm}}. View all the available starter kits in the [Mobile developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
+ - Starter Kits are one of the fastest ways to leverage the capabilities of {{site.data.keyword.cloud_notm}}. View all the available starter kits in the [Mobile developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
 
  - You can use the [Swagger UI](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/) to quickly review REST API documentation.
