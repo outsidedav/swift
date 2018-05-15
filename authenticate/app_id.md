@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-05-15"
 
 ---
 
@@ -34,25 +34,25 @@ First, be sure you have the following prerequisites ready to go:
 
 Provision an instance of the service:
 
-1. In the {{site.data.keyword.cloud_notm}} catalog, select {{site.data.keyword.appid_short_notm}}. The service configuration screen opens.
+1. In the [{{site.data.keyword.cloud_notm}} catalog](https://console.bluemix.net/catalog/), select {{site.data.keyword.appid_short_notm}}. The service configuration screen opens.
 2. Give your service instance a name, or use the preset name.
-3. To bind your instance, select an app from the Connect to menu. You can bind the service instance to your app later if you leave it unbound during creation.
-4. Select your pricing plan and click **Create**.
-
+3. Select your pricing plan and click **Create**.
 
 ## Step 2. Installing the iOS Swift SDK
 
 The service provides an SDK to help make coding your app easier. The SDK must be installed in your app code.
 
 1. Open your existing Xcode project directory to the `Podfile`.
+
 2. Under your projects target, add a dependency for the `BluemixAppID` pod. Ensure the `use_frameworks!` command is also under your target as shown in the following example.
-    ```
+    ```swift
     target '<yourTarget>' do
       use_frameworks!
         pod 'BluemixAppID'
     end
     ```
-    {: screen}
+    {: pre}
+
 3. Download the `BluemixAppID` dependency.
     ```
     pod install --repo-update
@@ -64,6 +64,7 @@ The service provides an SDK to help make coding your app easier. The SDK must be
 After you initialize the SDK in your app, you can start configuring your {{site.data.keyword.appid_short_notm}} preferences.
 
 1. Go to **Project Settings > Capabilities > Keychain sharing** and enable keychain sharing in your Xcode project.
+
 2. Go to **Project Settings > Info >URL Types** and add the following value to both the **URL Scheme** and the **Identifier** text boxes.
     ```
     $(PRODUCT_BUNDLE_IDENTIFIER)
@@ -71,10 +72,11 @@ After you initialize the SDK in your app, you can start configuring your {{site.
     {: pre}
 
 3. Add the following import to your `AppDelegate.swift` file.
-    ```
+    ```swift
     import BluemixAppID
     ```
     {:pre}
+
 4. Pass the tenant ID and region parameters to initialize the SDK. A common, though not mandatory, place to put the code is in the `application:didFinishLaunchingWithOptions` method of the AppDelegate in your app.
     ```swift
     AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
@@ -95,6 +97,7 @@ After you initialize the SDK in your app, you can start configuring your {{site.
       </tr>
     </tbody>
   </table>
+
 5. Add the following code to your AppDelegate file.
     ```swift
     func application(_ application: UIApplication, open url: URL, options :[UIApplicationOpenURLOptionsKey : Any]) -> Bool {
