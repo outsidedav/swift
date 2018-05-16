@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-05-16"
 
 ---
 
@@ -31,7 +31,7 @@ Ensure that you have:
 * A valid API definition that conforms to the [Open API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.openapis.org/){: new_window} specification
 
 
-## Step 1. Installing the SDK plug-in
+## Installing the SDK plug-in
 {: #installation}
 
 1. [Install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/get_started.html).
@@ -44,7 +44,7 @@ Ensure that you have:
   {: codeblock}
 
 
-## Step 2. Generate the SDK
+## Generating the SDK
 {: #commands}
 
 Generate an SDK by entering: `bx sdk generate [arguments...] [command options]`
@@ -92,7 +92,7 @@ bx sdk generate [OPENAPI_DOC_LOCATION] [SDK_Name] [LOCATION] [PLATFORM]
 {: codeblock}
 
 
-## Step 3. Validate the Open API definitions
+## Validating the Open API definitions
 {: #validating}
 
 Run the following command: `bx sdk validate [argument]`

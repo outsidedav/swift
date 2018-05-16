@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-02-05"
+lastupdated: "2018-05-16"
 
 ---
 {:new_window: target="_blank"}
@@ -15,48 +15,45 @@ lastupdated: "2018-02-05"
 # Creating an application with Kitura
 {: #kitura}
 
-[Kitura](http://www.kitura.io) is a server-side Swift framework for building iOS backends and web applications. This is used to create REST APIs that can be invoked from the iOS application using URLSession, SDKs such as Alamofire or RestKit, or the [KituraKit](https://github.com/ibm-swift/kiturakit) SDK provided by Kitura itself.
+[Kitura](http://www.kitura.io) is a server-side Swift framework for building iOS backends and web applications. This framework creates REST APIs that can be invoked from the iOS application by using URLSession SDKs such as Alamofire, RestKit, or the [KituraKit](https://github.com/ibm-swift/kiturakit) SDK provided by Kitura itself.
 
-Kitura is able to integrate with all of the services and capabilties provided by {{site.data.keyword.cloud}}, including {{site.data.keyword. appid_short}}, {{site.data.keyword.mobilepushshort}}, and {{site.data.keyword.mobileanalytics_short}}, as well as databases, machine learning, and other services. Kitura can then be deployed and automatically scaled using either of the Cloud Foundry or Docker and Kubernetes plaforms in {{site.data.keyword.cloud}}.
+Kitura is able to integrate with all of the services and capabilities that are provided by {{site.data.keyword.cloud}}, including {{site.data.keyword. appid_short}}, {{site.data.keyword.mobilepushshort}}, and {{site.data.keyword.mobileanalytics_short}}, as well as databases, machine learning, and other services. Kitura can then be deployed and automatically scaled by using either of the Cloud Foundry or Docker (Kubernetes-based) platforms in {{site.data.keyword.cloud}}.
 
-Kitura provides a `kitura` [command line interface (CLI)](http://www.kitura.io/en/starter/gettingstarted.html) that simplifies creating, building, testing, and deploying Kitura applications. Applications built by using the Kitura CLI include full support for deploying to any cloud that supports any of Cloud Foundry, Docker and Kubernetes technologies. However if you are building specifically for {{site.data.keyword.cloud}} it is recommended that you use either the IBM Apple Development Console in the browser, or use the {{site.data.keyword.dev_cli_notm}}. These all share the same underlying technology, but the Apple Development Console and the IBM Developer Tools will additionally create a hosted project and deployment pipeline for you, as well as provision the services your application needs.
+Kitura provides a `kitura` [command line interface (CLI)](http://www.kitura.io/en/starter/gettingstarted.html) that simplifies creating, building, testing, and deploying Kitura applications. Applications that are built by using the Kitura CLI include full support for deploying to any cloud that supports Cloud Foundry, Docker, and Kubernetes technologies. However, if you are building specifically for {{site.data.keyword.cloud}}, it is recommended that you use either the IBM Apple Development Console in the browser or use the {{site.data.keyword.dev_cli_notm}}. While both methods share the same underlying technology, the Apple Development Console and the IBM Developer Tools additionally create a hosted project and deployment pipeline for you, as well as provision the services that your application needs.
 
 ## Before you begin
 
-First, be sure you have the following prerequisites ready to go:  
+First, be sure that you have the following prerequisites ready to go:  
 
 * iOS 11.0+  
 * Xcode 9.0  
 * Swift 4.0+  
 * Cocoapods  
 
-
-## Step 1. Create a Kitura project by using the browser
+## Creating a Kitura project by using the browser
 
 1. Go to the Starter Kits section of the Apple Development Console. Select a pre-defined starter, such as the "Swift for Backend for Frontend API" or create a custom project by using the **Create Project** tile. Click **Create Project**.
-2. Give your project a name and select where you want your project to be deployed. If you are unsure where the application should be deployed use the default values. These can be changed later.
-3. Select the Swift language. A server-side Swift project is created.
-  This also displays the Host and Domain options, which forms the URL for the application. If you are unsure, use the defaults and you can also provide your own custom domain from a domain provider where the application will appear.
-
-4. Optionally, provide an OpenAPI (also known as Swagger) definition for the REST API that you want to build. If you have a definition, a REST API is created including the corresponding handler functions in Kitura. If you don't have an OpenAPI definition, don't worry as Kitura makes it easy for you to manually create REST APIs by using its Router APIs.
+2. Give your project a name and select where you want your project to be deployed. If you are unsure where the application is to be deployed, use the default values, as they can be changed later.
+3. Select the Swift language. A server-side Swift project is created. Also displayed, is the Host and Domain options, which forms the URL for the application. If you are unsure, use the defaults and you can also provide your own custom domain from a domain provider where the application is to reside.
+4. You can provide an OpenAPI (also known as Swagger) definition for the REST API that you want to build. If you have such a definition, a REST API is created that includes the corresponding handler functions in Kitura. If you don't have an OpenAPI definition, don't worry as Kitura makes it easy for you to manually create REST APIs by using its Router APIs.
 5. Click **Create Project**.
 
-A project is created, but one that does not yet use any additional services or capabilities. You can optionally add those by using the **Add Resource** button, or by clicking the **Download Code** button to get the code for the project. You can also easily add services to an existing project.
+A project is created, but one that does not yet use any additional services or capabilities. You can add services by using the **Add Resource** button, or by clicking the **Download Code** button to get the code for the project. You can also easily add services to an existing project.
 
-## (Optional) Step 2. Add additional services
+## Adding services
 
-1. Click the **Add Resource** button to add additional services. This provide a panel of service categories. For example, select **Data** to look at the available databases, and select **Cloudant NoSQL DB**.
+1. Click the **Add Resource** button to add services. A panel of service categories is displayed. For example, select **Data** to look at the available databases, and select **Cloudant NoSQL DB**.
 2. Select a pricing plan for the service, for example Lite, and click **Create**.
 
-This creates an instance of the service and provides you with the service credentials for use in your application, and in some cases also adds the necessary code to your project to set up the connection to the service with the correct configuration.  You can now optionally add more services by using the **Add Resource** button, or by clicking the **Download Code** button to get the code for the project.
+An instance of the service is created that provides you with the service credentials for use in your application, and in some cases adds the necessary code to your project to set up the connection to the service with the correct configuration.  You can now add more services by using the **Add Resource** button, or by clicking the **Download Code** button to get the code for the project.
 
-After you have downloaded your project you can begin working with your app.
+After downloading your project, you can begin working with your app.
 
-## Step 3. Developing your application with Xcode
-After you have downloaded your project, you are able to modify and develop it by using Xcode, and then upload your modified application for deployment to the cloud.
+## Developing your application with Xcode
+After downloading your project, you are able to modify and develop it by using Xcode, and then upload your modified application for deployment to the cloud.
 
 1. Create an Xcode project.  
-  Before using your project in Xcode, you need to create an Xcode project file. This can be done using the following Swift Package Manager command from the root directory of your downloaded project (which will contain a `Package.swift` file):
+  Before you can use your project in Xcode, you need to create an Xcode project file by using the following Swift Package Manager command from the root directory of your downloaded project (which contains a `Package.swift` file):
   ```
   swift package generate-xcodeproj
   ```
@@ -65,16 +62,15 @@ After you have downloaded your project, you are able to modify and develop it by
   This creates an Xcode project in the same directory that you can then open.
 
 2. Set the Xcode target for the project.  
-  To run the Kitura server, you must edit the scheme by clicking on the **project_name-Package** section on the toolbar and selecting the **project_name** target from the menu. You should also check that the target device is set to **My Mac**.
+  To run the Kitura server, you must edit the scheme by clicking the **project_name-Package** section on the toolbar and selecting the **project_name** target from the menu. Check that the target device is set to **My Mac**.
 
 3. Run the Kitura server locally  
-  Click on the **Run** button or use the `⌘+R` key shortcut to start the Kitura server. After the server has started you can check that some of the standard Kitura URLs are running:
+  Click on the **Run** button or use the `⌘+R` key shortcut to start the Kitura server. After the server has started, you can check that the following standard Kitura URLs are running:
   * Kitura Monitoring: [http://localhost:8080/swiftmetrics-dash/]()
   * Kitura Health check: [http://localhost:8080/health]()
 
-
-## Step 4. Adding additional REST APIs
-A skeleton Kitura server is created, but it does not provide any REST APIs that can be used by an iOS application. Adding REST APIs in Kitura requires very little code. The following steps show how to add a REST API for `GET` request on `/meals`, which is designed to return the `Meal` objects stored by the Kitura server.
+## Adding REST APIs
+A skeleton Kitura server is created, but it does not provide any REST APIs that can be used by an iOS application. Add REST APIs in Kitura with minimal coding. The following steps show how to add a REST API for `GET` request on `/meals`, which is designed to return the `Meal` objects that are stored by the Kitura server.
 
 1. Add a `Meal` struct to the `Sources/Application/Application.swift` file:  
   Before the declaration of the App class, add the following to create a Meal struct that conforms to the Codable protocol:  
@@ -94,7 +90,7 @@ A skeleton Kitura server is created, but it does not provide any REST APIs that 
   ```
   {: codeblock}
 
-3. Add a handler for `GET` requests on `/meals` to the `Sources/Application/Application.swift` file by adding the following into the postInit() function:  
+3. Add a handler for `GET` requests on `/meals` to the `Sources/Application/Application.swift` file by adding the following into the `postInit()` function:  
 
   ```swift
   router.get("/meals", handler: loadHandler)
@@ -117,21 +113,20 @@ You now have a REST API for `GET` requests on `/meals` that responds with an arr
   Press the **Run** button or use the `⌘+R` key shortcut. If prompted, select **Allow incoming network connections**.
 
 6. Test the REST API. 
-  As this is a `GET` request, which matches how web browsers request data from a server, you can test the REST API by using the following URL:  
-
+  By using a `GET` request, which matches how web browsers request data from a server, you can test the REST API by using the following URL:  
   ```
   * `GET /meals`:	[http://localhost:8080/meals]()
   ```
 
-  This should return an empty array, eg. `[]` as there are no `Meal` objects currently stored in the `mealStore`. 
+  An empty array is returned `[]`, as there are no `Meal` objects currently stored in the `mealStore`. 
 
-A full tutorial called [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) is available that helps you build a set of REST APIs for storing, fetching, and deleting `Meal` objects from an iOS application, including storing the data in a database.
+You can use the [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) tutorial, which helps you build a set of REST APIs for storing, fetching, and deleting `Meal` objects from an iOS application, including storing the data in a database.
 {: tip}
 
-## Step 5. Install KituraKit into your iOS application
-The REST APIs built by using the Kitura server are standard web APIs, usable from any application regardless of client library used or which language the client is written in. This means that you can use Alamofire, RestKit or URLSession to make connections to the server. Kitura also provides a bespoke, optimized client connector in order to simplify calling its REST APIs from iOS, in the form of KituraKit. 
+## Installing KituraKit into your iOS application
+The REST APIs built by using the Kitura server are standard web APIs, usable from any application regardless of client library that is used or which language the client is written in. Meaning that you can use Alamofire, RestKit, or URLSession to make connections to the server. Kitura also provides a bespoke, optimized client connector in order to simplify calling its REST APIs from iOS, in the form of KituraKit. 
 
-KituraKit provides a mirror image of the router handler APIs used in Kitura, making it possible to share Swift types between the client and the server with little effort, and removes the need to explicitly carry out JSON encoding and decoding of the data being sent to or received from the server.
+KituraKit provides a mirror image of the router handler APIs used in Kitura, making it possible to share Swift types between the client and the server with little effort. This feature removes the need to explicitly carry out JSON encoding, and decoding of the data being sent to or received from the server.
 
 The following steps show how to install KituraKit into your iOS application, and use it to call the `GET /meals` REST API created by using Kitura:
 
@@ -145,12 +140,13 @@ The following steps show how to install KituraKit into your iOS application, and
   ```
   # platform :ios, '9.0'
   ```
+  {: codeblock}
 
-  with
-	
-  ```
+  with the following code:
+	```
   platform :ios, '11.0'
   ```
+  {: codeblock}
 
 3. Add KituraKit to the Podfile by adding the following under `# Pods for <application name>`:
   ```
@@ -158,7 +154,7 @@ The following steps show how to install KituraKit into your iOS application, and
   ```
   {: codeblock}
 
-4. Save the Podfile and install KituraKit by using the following on the command line:
+4. Save the Podfile and install KituraKit by using the following command:
   ```
   pod install
   ```
@@ -201,10 +197,10 @@ The following steps show how to install KituraKit into your iOS application, and
   ```
   {: codeblock}
 
-This calls the Kitura server byusing `client.get("/meals")` with a callback that matches the parameters from Kitura's completion handler.
+The Kitura server is called by using `client.get("/meals")` with a callback that matches the parameters from Kitura's completion handler.
 
-A full tutorial called [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) is available that helps you build a set of REST APIs for storing, fetchin,g and deleting `Meal` objects from an iOS application, including storing the data in a database.
+You can use the [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) tutorial, which helps you build a set of REST APIs for storing, fetching, and deleting `Meal` objects from an iOS application, including storing the data in a database.
 {: tip}
 
 ## Next Steps
-Now that you have a Kitura server providing a REST API that is being called by your iOS application, you are ready to deploy your server to IBM Cloud. This can be done using Containers with Kubernetes, Secure Containers, or Cloud Foundry.
+Now that you have a Kitura server that provides a REST API that can be called by your iOS application, you are ready to deploy your server to IBM Cloud. Deployment can be done using Containers with Kubernetes, Secure Containers, or Cloud Foundry.
