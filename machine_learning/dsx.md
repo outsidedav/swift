@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-31"
+lastupdated: "2018-06-04"
 
 ---
 {:new_window: target="_blank"}
@@ -14,14 +14,14 @@ lastupdated: "2018-05-31"
 
 # Analyzing data sets with custom generated models
 
-Watson Studio provides you with the environment and tools to solve your business problems by collaboratively analyzing data. You can choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models. Watson Studio integrates with a wide range of IBM Cloud services and Watson Knowledge Catalog, which provides data policy management to control access to assets and catalogs to index and find assets. Learn more at https://dataplatform.ibm.com/.
+Watson Studio provides you with the environment and tools to solve your business problems by collaboratively analyzing data. You can choose the tools that you need to analyze, cleanse, and organize data. Learn to ingest streaming data, or to create, train, and deploy machine learning models. Watson Studio integrates with a wide range of {{site.data.keyword.cloud}} services and Watson Knowledge Catalog, which provides policy management to control assets, and catalogs to index for locating them. Learn more at https://dataplatform.ibm.com/.
 
-Watson Studio is structured around a project based architecture, which organizes your resources for solving a business problem. Resources include connections to cloud and on-premises data stores, data files, collaborators, and analytic assets like models. Learn more at https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics.
+Watson Studio is structured around a project-based architecture, which organizes your resources for solving a business problem. Resources include connections to cloud and on-premises data stores, data files, collaborators, and analytic assets like models. Learn more at https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics.
 
 ## Machine learning for {{site.data.keyword.DSX}}
 {: #dsx}
 
-By using the {{site.data.keyword.DSX}} it is possible to train models and deploy them and then consume the results by using APIs. These APIs can then be used in your iOS or Swift applications.
+By using the {{site.data.keyword.DSX}}, it is possible to train models and deploy them and then consume the results by using APIs. These APIs can then be used in your iOS or Swift applications.
 
 With IBM Watson Machine Learning, after you set up your environment, you can create models, deploy them to the cloud, and train them. For more information, see [Create, deploy, and train models with {{site.data.keyword.pm_full}} and {{site.data.keyword.DSX}}](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics).
 
@@ -32,14 +32,14 @@ With IBM Watson Machine Learning, after you set up your environment, you can cre
 ## Setting up {{site.data.keyword.DSX}} with iOS and Swift
 {: #dsx_ios}
 
-1. To make the integration of the credentials easier you will need to add the {{site.data.keyword.pm_short}} instance to your iOS app or back-end app. For ease of accessibility, your credentials are included on your project dashboard.
+1. To make the integration of the credentials easier, you must add the {{site.data.keyword.pm_short}} instance to your iOS app or back-end app. For ease of accessibility, your credentials are included on your project dashboard.
 
 ![Machine Learning in your App](images/ios-machinelearning-app.png)
 
 2. Download the app code.
 3. Initialization
   * For an iOS project, simply by adding the {{site.data.keyword.pm_short}} resource to your iOS project, the credentials are instantly injected into your app.
-    To access the credentials from your application, copy and paste the code snippet below. Also, be sure to add the scoring end-point to your app, which can be found inside your model's deployment `implementation` tab.
+    To access the credentials from your application, copy and paste the following code snippet. Also, be sure to add the scoring end point to your app, which can be found inside your model's deployment `implementation` tab.
 
     ```Swift
     // The url to your model's scoring endpoint
@@ -62,7 +62,7 @@ With IBM Watson Machine Learning, after you set up your environment, you can cre
     ```
     {: codeblock}
 
-  * For server-side application, you will need to manually add your username and password to your application as well as the scoring end-point, which can be found inside your model's deployment `implementation` tab.
+  * For server-side application, manually add your username and password to your application as well as the scoring end point, which can be found inside your model's deployment `implementation` tab.
 
     ```Swift
     // Your Machine Learning Credentials
@@ -177,11 +177,11 @@ With IBM Watson Machine Learning, after you set up your environment, you can cre
 ### Example
 {: #example}
 
-**Scenario name:** Product line prediction.
+**Scenario name:** Product line prediction
 
 **Scenario description:** A company that sells outdoor equipment builds and deploys a model to predict client interest in its product line. Your task is to make score requests against the deployed model.
 
-After deploying your model, we can perform predictive analysis using the scoring end point.
+Once the model is deployed, you can perform predictive analysis by using the scoring end point.
 
 ```Swift
 // The data you want to have analyzed
@@ -206,14 +206,13 @@ client.retrieveToken { token in
         print(dict)
     }
 }
-
 ```
 {: codeblock}
 
 ## Next steps
 {: #dsx_next}
 
-Great job! You've added a way to analyze data sets using custom generated machine learning models. Keep the momentum going by learning more about the features that {{site.data.keyword.pm_short}} has to offer at [Data science and machine learning](https://www.ibm.com/analytics/data-science/machine-learning).
+Great job! Now you can analyze data sets by using custom generated machine learning models. Keep the momentum by learning more about the features that {{site.data.keyword.pm_short}} has to offer at [Data science and machine learning](https://www.ibm.com/analytics/data-science/machine-learning).
 
 ### Related Links
 * [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling/index.html#using-machine-learning-with-data-science-experience)
