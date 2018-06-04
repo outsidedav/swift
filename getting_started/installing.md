@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-29"
+lastupdated: "2018-06-04"
 
 ---
 {:new_window: target="_blank"}
@@ -14,7 +14,7 @@ lastupdated: "2018-05-29"
 # Installing SDKs into client apps
 {: #installing}
 
-{{site.data.keyword.cloud_notm}} iOS SDKs support various of popular dependency managers, enabling you to easily install, and use {{site.data.keyword.cloud}} services within your own applications.
+{{site.data.keyword.cloud}} iOS SDKs support various of popular dependency managers, enabling you to easily install, and use {{site.data.keyword.cloud_notm}} services within your own applications.
 
 ## Installing with CocoaPods
 {: #installing_with_cocoapods}
@@ -46,10 +46,10 @@ Then run `carthage update`. After the build is finished, add the generated frame
 
 For more information, see the [Carthage README](https://github.com/Carthage/Carthage#getting-started).
 
-## Installing with Swift package manager
+## Installing with the Swift package manager
 {: #installing_with_swift_package_manager}
 
-To install an SDK using Swift Package Manager, add the following line to your dependencies in your `Package.swift`:
+To install an SDK by using the Swift Package Manager, add the following line to your dependencies in your `Package.swift`:
 ```
 .Package(url: "<SDK git url>")
 ```
