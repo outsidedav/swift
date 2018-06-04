@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-16"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -13,14 +13,14 @@ lastupdated: "2018-03-16"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Integrating a chatbot into your app
+# Adding a chatbot
 {: #assistant}
 
 You can use the {{site.data.keyword.conversationshort}} service to build applications that understand natural-language input and respond to users with human-like conversation.
 
 The following list outlines the flow of how the integration works:
 
-  1. Users interact with the interface implemented in your app.
+  1. Users interact with the interface that is implemented in your app.
   2. Your app sends user input to the {{site.data.keyword.conversationshort}} by using the {{site.data.keyword.watson}} Swift SDK.
   3. The {{site.data.keyword.watson}} Swift SDK connects to a workspace, which is a container for your dialog flow and training data.
   4. The workspace interprets the user input and directs the flow of the conversation, sending a response to your app.
@@ -29,7 +29,7 @@ The following list outlines the flow of how the integration works:
 ## Before you begin
 {: #before-you-begin}
 
-Make sure you have the following prerequisites in place:
+Ensure that you have the following prerequisites in place:
 
   * An instance of the [{{site.data.keyword.conversationshort}} service](/docs/services/conversation/getting-started.html)
   * iOS 8.0+
@@ -37,24 +37,25 @@ Make sure you have the following prerequisites in place:
   * Swift 3.2+ or Swift 4.0+
   * Carthage
 
-Use [Carthage](https://github.com/Carthage/Carthage){:new_window} to manage dependencies and build the {{site.data.keyword.watson}} Swift SDK for your application. If you haven't used Carthage before, you can install it with [Homebrew](http://brew.sh/){:new_window}:
+Use [Carthage](https://github.com/Carthage/Carthage){:new_window} to manage dependencies, and build the {{site.data.keyword.watson}} Swift SDK for your application. If you are new to Carthage, you can install it with [Homebrew](http://brew.sh/){:new_window}:
 
 ```bash
 $ brew update
 $ brew install carthage
 ```
 
-## Step 1. Downloading and building dependencies
+## Downloading and building dependencies
 {: #download-and-build-dependencies}
 
-1. Using your favorite text editor, create a new file named `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located).
+1. Using your favorite text editor, create a new file that is named `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located).
+
 2. Add a line to specify the Watson Swift SDK as a dependency:
 
   ```
   github "watson-developer-cloud/swift-sdk"
   ```
 
-  For a production app, you may also want to specify a particular [version requirement](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement){:new_window} to avoid unexpected changes from new releases of the {{site.data.keyword.watson}} Swift SDK.
+  For a production app, you can specify a [version requirement](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement){:new_window} to avoid unexpected changes from new releases of the {{site.data.keyword.watson}} Swift SDK.
   {: tip}
 
 3. Use a terminal to navigate to the root directory of your project and then run Carthage:
@@ -65,18 +66,18 @@ $ brew install carthage
 
   The {{site.data.keyword.watson}} Swift SDK is then downloaded, and its framework is built in the `Carthage/Build/iOS` folder of your project.
 
-## Step 2. Adding frameworks to your app
+## Adding frameworks to your app
 {: #add-frameworks-to-your-app}
 
-Now that the {{site.data.keyword.watson}} Swift SDK frameworks have been built by Carthage, you need to link and copy the {{site.data.keyword.conversationshort}} framework into your app.
+Now that the {{site.data.keyword.watson}} Swift SDK framework has been built by Carthage, you need to link and copy the {{site.data.keyword.conversationshort}} framework into your app.
 
-1. Open your app in Xcode and select your project at the top of the Navigator to open its settings.
+1. Open your app in Xcode and select your project in the Navigator to open its settings.
 2. Select your app target and open the **General** tab.
 3. Scroll to the Linked Frameworks and Libraries section and click the `+` icon.
 4. In the new window that is displayed, click **Add Other** and navigate to the `Carthage/Build/iOS` directory.
 5. Select `AssistantV1.framework` to link it with your app.
 
-In addition to linking the {{site.data.keyword.conversationshort}} framework, you also need to copy it into the app to make it accessible at runtime. We will use a Carthage script to avoid a particular [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216){:new_window}.
+In addition to linking the {{site.data.keyword.conversationshort}} framework, you also need to copy it into the app to make it accessible at run time. We will use a Carthage script to avoid a particular [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216){:new_window}.
 
 1. With your app target's settings open in Xcode, navigate to the **Build Phases** tab.
 2. Click the `+` icon and select **New Run Script Phase**.
@@ -88,7 +89,7 @@ In addition to linking the {{site.data.keyword.conversationshort}} framework, yo
 
   ```
 
-## Step 3. Add a virtual assistant to your app
+## Add a virtual assistant to your app
 {: #add-a-virtual-assistant-to-your-app}
 
 1. Open your `ViewController.swift` in Xcode.
@@ -149,7 +150,7 @@ Response: Hi. It looks like a nice drive today. What would you like me to do?
 Request: turn the radio on
 Response: Sure thing! Which genre would you prefer? Jazz is my personal favorite..
 ```
-## Step 4. Using starter kits
+## Using starter kits
 {: #conversation_starterkits}
 
 With starter kits, you can quickly and easily leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.conversationshort}} to any server-side back end by using the starter kits. The Chatbot for iOS with Watson starter kit illustrates how to use the deep learning capabilities of {{site.data.keyword.conversationshort}} to add a natural language interface to your application to automate interactions with your end users.
@@ -162,7 +163,7 @@ With starter kits, you can quickly and easily leverage the capabilities of {{sit
 ## Next steps
 {: #assistant_next}
 
-Great job! You added an ai assistant to your app. Keep the momentum going by trying one of the following options:
+Great job! You added an AI assistant to your app. Keep the momentum by trying one of the following options:
 
 * Check out the [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window}.
 * Take advantage of all of the features that [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html) has to offer.

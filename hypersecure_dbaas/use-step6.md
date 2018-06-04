@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-05-29"
 
 ---
 
@@ -11,11 +11,10 @@ lastupdated: "2018-03-15"
 {:screen: .screen}
 {:codeblock: .codeblock}
 
-
 # Step 6: Deploying your application
 
 You can run the application locally on your host system if you install the necessary
-build tools, or in the IBM Cloud (Cloud Foundry or Kubernetes Cluster) via IBM Cloud Developer Tools CLI.
+build tools, or in the {{site.data.keyword.cloud}} (Cloud Foundry or Kubernetes Cluster) through the {{site.data.keyword.dev_cli_long}} CLI.
 
 ## Procedure
 
@@ -43,37 +42,40 @@ You can download Docker from https://www.docker.com/community-edition#/download.
 
 ### Procedure
 
-1. Switch to the directory containing your project files.
-2. To deploy the application on your local computer, enter the commands:
+1. Switch to the directory that contains your project files.
+
+2. To deploy the application on your local computer, enter the following commands:
     ```
     $ bx dev build
 	...
 	$ bx dev run
     ```
     {: pre}
-	This step will build your application and run it locally on your computer inside a Docker container.
 
+	This step builds your application, and run it locally inside a Docker container.
 
 ## Deploying the application to the Cloud Foundry
 {: #deploy-foundry}
 
 ### Procedure
 
-1. Switch to the directory containing your project files.
-2. Log in to your IBM Cloud account, and set the region to `us-south`, as shown here:
+1. Switch to the directory that contains your project files.
+
+2. Log in to your {{site.data.keyword.cloud_notm}} account, and set the region to `us-south`, as shown here:
 	<pre><code class="hljs">
     $ bx login -a https://api.ng.bluemix.net
 	...
 	$ bx target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
     </code></pre>
-    **Note:** Issuing the command **bx login -a https://api.ng.bluemix.net** automatically sets the region to **us-south**.    
+    **Note:** Issuing the command **bx login -a https://api.ng.bluemix.net** automatically sets the region to **us-south**.
+
 3. To deploy the application to the Cloud Foundry, enter this command:
-	 ```
+	```
     $ bx dev deploy
     ```
     {: pre}
-	You will receive a clickable link to the location where your application is hosted.
 
+	You receive a clickable link to the location where your application is hosted.
 
 ## Deploying the application to a Kubernetes Cluster
 {: #deploy-kube}
@@ -96,20 +98,23 @@ database clusters, cloud foundry apps, cloud foundry services.
 ### Procedure
 
 1. Switch to the directory containing your project files.
+
 2. Log in to your IBM Cloud account, and set the region to us-south, as shown here:
 	<pre><code class="hljs">
     $ bx login -a https://api.ng.bluemix.net
 	...
 	$ bx target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
     </code></pre>
-    **Note:** Issuing the command **bx login -a https://api.ng.bluemix.net** automatically sets the region to **us-south**.  
+    **Note:** Issuing the command **bx login -a https://api.ng.bluemix.net** automatically sets the region to **us-south**.
+
 3. To deploy your application in Kubernetes, enter this command:
 	```
     $ bx dev deploy -t container
     ```
     {: pre}
-	You will be prompted for:
+
+	You are prompted for:
 	1. The name of your Kubernetes cluster
 	2. The Docker registry
 	
-After entering these values, your application is deployed to the Kubernetes cluster.
+Once the information is provided, your application is deployed to the Kubernetes cluster.

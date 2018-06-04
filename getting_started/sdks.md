@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-01"
+lastupdated: "2018-05-30"
 
 ---
 {:new_window: target="_blank"}
@@ -11,10 +11,10 @@ lastupdated: "2018-03-01"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Available services as SDKs
+# Available SDK services
 {: #sdks}
 
-{{site.data.keyword.cloud_notm}} provides the following services as consumable SDKs, enabling you to quickly and easily leverage {{site.data.keyword.cloud}} services within your own applications.
+{{site.data.keyword.cloud_notm}} provides the following services as consumable SDKs, that enable you to quickly and easily leverage {{site.data.keyword.cloud}} services within your own applications.
 
 ## Available SDKs
 {: #available_sdks}
@@ -25,5 +25,5 @@ lastupdated: "2018-03-01"
 | [BMSGoogleAuthentication](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security-googleauthentication) | 2.0.4 | Y | Y | N |
 | [BMSPush](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push) | 3.2.7 | Y | Y | N |
 | [BMSSecurity](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security) | 2.0.10 | Y | Y | N |
-| [{{site.data.keyword.openwhisk_short}} for iOS] | | | | Y |
+| [{{site.data.keyword.openwhisk_short}} for iOS](https://console.bluemix.net/openwhisk/learn/ios-sdk) | | | | Y |
 | [KituraKit](https://github.com/IBM-Swift/KituraKit) | 0.0.19 | | | Y |

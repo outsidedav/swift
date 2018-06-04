@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-15"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2018-05-15"
 {:tip: .tip}
 {:note: .note}
 
-# Authenticating users
+# Adding user authentication
 
 Application security can be incredibly complicated. For most developers, it's one of the hardest parts of creating an app. How can you be sure that you are protecting your users information? By integrating {{site.data.keyword.appid_full}} into your apps, you can secure resources and add authentication; even when you don't have much security experience.
 

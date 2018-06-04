@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-08"
+lastupdated: "2018-05-29"
 
 ---
 
@@ -11,12 +11,9 @@ lastupdated: "2018-03-08"
 {:screen: .screen}
 {:codeblock: .codeblock}
 
-
 # Step 5: Embedding your application code
 
-You might want to add your own application code to the project at this point. You
-can find more information about working with the MongoKitten API at
-http://beta.openkitten.org/tutorials/.
+You can now add your own application code to the projec. For more information about working with the MongoKitten API, see http://beta.openkitten.org/tutorials/.
 
 ## What to do next
 

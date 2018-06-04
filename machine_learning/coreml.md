@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -13,7 +13,7 @@ lastupdated: "2018-03-15"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Integrating machine learning into your app
+# Adding machine learning to an app
 {: #overview}
 
 With [Core ML](https://developer.apple.com/documentation/coreml){:new_window}, you can integrate a broad variety of machine learning model types into your app. In addition to supporting extensive deep learning with over 30 layer types, it also supports standard models such as tree ensembles, SVMs, and generalized linear models. Instead of sending data remotely to be analyzed, Core ML is built on top of low level technologies, such as Metal and Accelerate, to seamlessly take advantage of the CPU and GPU to provide maximum performance and efficiency.
@@ -21,17 +21,19 @@ With [Core ML](https://developer.apple.com/documentation/coreml){:new_window}, y
 ## Before you begin
 {: #before-you-begin}
 
-To use Core ML and Watson Visualization, you need the following requirements:
+To use Core ML and Watson Visualization, you need the following components:
 
   * iOS 11.0+
   * Xcode 9.0+
   * Swift 4.0+
   * Carthage
 
+To install Carthage, use the following `brew` commands:
 ```
 $ brew update
 $ brew install carthage
 ```
+{: codeblock}
 
 ## Step 1. Training a model with {{site.data.keyword.watson}} {{site.data.keyword.visualrecognitionshort}}
 {: #training-your-model}
@@ -41,6 +43,7 @@ If a current model does not exist, the first model found remotely or any one tha
 ![Core ML Model Walkthrough](images/CoreMLWalkthrough.gif)
 
 ### Setup the service from your Core ML App dashboard
+
 1. Launch the Visual Recognition Tool from your Starter Kit's dashboard by selecting **Launch Tool**.
 2. Begin creating your model by selecting **Create Model**.
 2. If a project is not yet associated with the Visual Recognition instance you created, a project will be created. Otherwise, skip to 'Create Model' below.
@@ -48,6 +51,7 @@ If a current model does not exist, the first model found remotely or any one tha
     - Tip: If no storage is defined, click refresh.
 
 ### Bind Service to project
+
 1. After creating your project, you will be moved to your project dashboard.
 2. Go to the settings tab, scroll down to **Associated Services**, select **Add Service** -> **Watson**.
 3. From the Watson services page, select Visual Recognition.
@@ -70,11 +74,13 @@ You're all set! Now, you're ready to download your Core ML model and integrate i
 {: #installing-dependencies}
 
 1. Using your favorite text editor, create a new filed named Cartfile in the root directory of your project where your `.xcodeproj` file is located.
+
 2. Add a line to specify the {{site.data.keyword.watson}} Developer Cloud Swift SDK as a dependency, for example:
 
   ```
   github "watson-developer-cloud/swift-sdk"
   ```
+  {: pre}
 
   For a production app, you might also want to specify a particular version requirement to avoid unexpected changes from new releases of the SDK.
   {: tip}
@@ -84,6 +90,7 @@ You're all set! Now, you're ready to download your Core ML model and integrate i
   ```
   $ carthage update --platform iOS
   ```
+  {: pre}
 
   The {{site.data.keyword.watson}} Developer Cloud Swift SDK is then downloaded, and its framework is built in the `Carthage/Build/iOS` folder of your project.
 

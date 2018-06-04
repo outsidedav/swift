@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-08"
+lastupdated: "2018-05-29"
 
 ---
 
@@ -11,17 +11,14 @@ lastupdated: "2018-03-08"
 {:screen: .screen}
 {:codeblock: .codeblock}
 
-
 # Step 1: Creating a database cluster
 
-You can create a database cluster by accessing the IBM Cloud 
-Hyper Protect DBaaS service configuration screen.
-
+You can create a database cluster by accessing the {{site.data.keyword.cloud}} Hyper Protect DBaaS service configuration screen.
 
 ## Procedure
 
 <ol>
-<li>Access the IBM Cloud Hyper Protect DBaaS service configuration screen at 
+<li>Access the {{site.data.keyword.cloud}} Hyper Protect DBaaS service configuration screen at 
 https://console.bluemix.net/catalog/services/hypersecure-dbaas.</li>
 <li>Enter the required values.
 	<dl>
@@ -29,7 +26,7 @@ https://console.bluemix.net/catalog/services/hypersecure-dbaas.</li>
 		<dd>A name for the database service.</dd>
 
     <dt>Choose a region/location to deploy in:</dt>
-    <dd>Select the data center where the database will be located.</dd>
+    <dd>Select the data center where the database is located.</dd>
 
     <dt>Select a resource group:</dt>
     <dd>If no resource group is selectable, you can create one on the IBM Cloud dashboard.</dd>
@@ -50,11 +47,11 @@ https://console.bluemix.net/catalog/services/hypersecure-dbaas.</li>
 		<dd>Select the database type. Currently, only MongoDB is supported.</dd>
 
     <dt>License Agreement:</dt>
-    <dd>After reading the license agreement, check the box to confirm your agreement.</dd>
+    <dd>Read the license agreement, and check the box to confirm your agreement.</dd>
 
     <dt>Pricing:</dt>
 		<dd>The current solution provides only one pricing category, which is free
-		of charge. In later versions, you will be able to select the pricing category.</dd>
+		of charge. In later versions, you can select the pricing category.</dd>
 	</dl>
 </li>
 <li>Click **Create**.
@@ -65,13 +62,10 @@ which is listed in the Services section.</p></li>
 <li>When you select the service, the cluster information is displayed.</li>
 <li>In the Manage tab of the cluster information, click **OPEN**.
 	<p>The IBM Cloud Hyper Protect DBaaS dashboard is displayed.</p></li>
-<li>Obtain the host names and the port numbers of the three created database
-instances belonging to your database cluster.</li>
+<li>Obtain the host names and the port numbers of the three created database instances belonging to your database cluster.
+	<p> You will need the host names, the port numbers, and the user credentials in [Step 3](use-step3.html).
+</p></li>
 </ol>
-
-
-<p> You will need the host names, the port numbers, and the user credentials in [Step 3](use-step3.html).
-</p>
 
 ## What to do next
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-16"
+lastupdated: "2018-05-30"
 
 ---
 {:new_window: target="_blank"}
@@ -12,11 +12,13 @@ lastupdated: "2018-05-16"
 {:pre: .pre}
 
 # Developing Locally
+
 Developing locally enables you to easily build, run, and test your application. You use the {{site.data.keyword.dev_cli_short}} to execute these actions with standard commands. 
 
-You can use the {{site.data.keyword.dev_cli_short}} to manage your server-side applications with more than a dozen commands. Learn more about the various commands at [IBM Cloud Developer Tools CLI (bx dev) commands](/docs/cli/idt/commands.html).
+You can use the {{site.data.keyword.dev_cli_short}} to manage your server-side applications with more than a dozen commands. Learn more about the various commands at [IBM Cloud Developer Tools CLI `ibmcloud dev` commands](/docs/cli/idt/commands.html).
 
 ## Before you begin
+
 To develop locally, you must install the {{site.data.keyword.dev_cli_notm}}. Execute the following command to run the installation script:
 ```
 curl -sL https://ibm.biz/idt-installer | bash
@@ -26,13 +28,15 @@ curl -sL https://ibm.biz/idt-installer | bash
 See [Setting up the IBM Cloud Developer Tools CLI](/docs/cli/idt/setting_up_idt.html) to learn more about the set-up and use of the {{site.data.keyword.dev_cli_notm}}.
 
 ## Retrieving the service credentials
+
 After you clone your application from Git, you must retrieve the credentials for the services that are bound to your application because they are not stored in the git repo for your application. Retrieving the credentials allows the use of bound services. You can easily download the credentials by running the following command in the root of the application directory:
 ```
 idt get-credentials
 ```
 {:codeblock}
 
-## Build, Test, and Run your application
+## Build, Run, and Deploy your application
+
 1. **Build** - You can now `build` your application, which is a prerequisite to `run` your application.
   Use the following command in the root of the application directory to build your app:
   ```

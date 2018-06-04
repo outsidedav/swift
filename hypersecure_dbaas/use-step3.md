@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-08"
+lastupdated: "2018-05-29"
 
 ---
 
@@ -11,10 +11,9 @@ lastupdated: "2018-03-08"
 {:screen: .screen}
 {:codeblock: .codeblock}
 
-
 # Step 3: Connecting to the database
 
-Connect a Swift application to the MongoDB instance using the MongoKitten SDK.
+Connect a Swift application to the MongoDB instance by using the MongoKitten SDK.
 
 ## Before you begin
 
@@ -27,10 +26,10 @@ https://api.hypersecuredbaas.ibm.com/cert.pem and copy it to your project direct
 <li> Change to your project directory, which contains the expanded download code
 files. </li>
 
-<li> Create a JSON file named `cred.json` to store your
+<li> Create a JSON file that is named `cred.json` to store your
 access credentials to the database cluster.<br>
-<p> Enter the values you obtained as a result of [Step 1](use-step1.html).<br>
-**Note:** Please be aware that the values must be specified in a single line. 
+<p> Enter the values that you obtained as a result of [Step 1](use-step1.html).<br>
+**Note:** Be aware that the values must be specified in a single line. 
 
 <table>
   <tr>
@@ -52,24 +51,24 @@ Where:
   </tr>
   <tr>
     <td> &lt;<em>admin_ID</em>&gt; </td>
-    <td> Is the user ID of the database administrator as specified in [Step 1](use-step1.html).
+    <td> The user ID of the database administrator as specified in [Step 1](use-step1.html).
   </td>
   </tr>
   <tr>
     <td> &lt;<em>admin_pwd</em>&gt; </td>
-    <td> Is the user ID of the administrator password as specified in [Step 1](use-step1.html). </td>
+    <td> The administrator password as specified in [Step 1](use-step1.html). </td>
   </tr>
   <tr>
     <td> &lt;<em>Hostname_i</em>&gt; </td>
-    <td> Is a database replica <em>i</em> (<em>i</em>=1,2,3) as returned in [Step 1](use-step1.html). </td>
+    <td> Database replica <em>i</em> (<em>i</em>=1,2,3) as returned in [Step 1](use-step1.html). </td>
   </tr>
   <tr>
     <td> &lt;<em>PortNumber_i</em>&gt; </td>
-    <td> Is a port number <em>i</em> (<em>i</em>=1,2,3) as returned in [Step 1](use-step1.html). </td>
+    <td> Port number <em>i</em> (<em>i</em>=1,2,3) as returned in [Step 1](use-step1.html). </td>
   </tr>
   <tr>
     <td> &lt;<em>CA_file</em>&gt; </td>
-    <td> Is the file name of the downloaded CA file. During deployment, it will be copied to the directory `/swift-project`.</td>
+    <td> The file name of the downloaded CA file. During deployment, it is copied to the directory `/swift-project`.</td>
   </tr>
 </table>
 </p>

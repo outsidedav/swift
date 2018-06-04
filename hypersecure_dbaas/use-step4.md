@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-06"
+lastupdated: "2018-05-29"
 
 ---
 
@@ -10,7 +10,6 @@ lastupdated: "2018-03-06"
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
-
 
 # Step 4: Verifying the database connection
 
@@ -38,7 +37,7 @@ class ApplicationServices {
 
 ### What to do next
 
-After having deployed your application in [Step 6](use-step6.html), the following message is displayed, if
+Once the application has completed deployment in [Step 6](use-step6.html), the following message is displayed, if
 your connection to the database succeeds:
 
 <pre><code class="hljs">

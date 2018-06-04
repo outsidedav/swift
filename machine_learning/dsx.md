@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-05-31"
 
 ---
 {:new_window: target="_blank"}
@@ -12,7 +12,7 @@ lastupdated: "2018-03-15"
 {:pre: .pre}
 {:tip: .tip}
 
-# Analyzing data sets with custom generated machine learning models
+# Analyzing data sets with custom generated models
 
 Watson Studio provides you with the environment and tools to solve your business problems by collaboratively analyzing data. You can choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models. Watson Studio integrates with a wide range of IBM Cloud services and Watson Knowledge Catalog, which provides data policy management to control access to assets and catalogs to index and find assets. Learn more at https://dataplatform.ibm.com/.
 

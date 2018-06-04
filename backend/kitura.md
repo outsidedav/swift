@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-16"
+lastupdated: "2018-05-30"
 
 ---
 {:new_window: target="_blank"}
@@ -12,7 +12,7 @@ lastupdated: "2018-05-16"
 {:pre: .pre}
 {:tip: .tip}
 
-# Creating an application with Kitura
+# Creating an app with Kitura
 {: #kitura}
 
 [Kitura](http://www.kitura.io) is a server-side Swift framework for building iOS backends and web applications. This framework creates REST APIs that can be invoked from the iOS application by using URLSession SDKs such as Alamofire, RestKit, or the [KituraKit](https://github.com/ibm-swift/kiturakit) SDK provided by Kitura itself.
@@ -30,7 +30,7 @@ First, be sure that you have the following prerequisites ready to go:
 * Swift 4.0+  
 * Cocoapods  
 
-## Creating a Kitura project by using the browser
+## Step 1. Creating a Kitura project by using the browser
 
 1. Go to the Starter Kits section of the Apple Development Console. Select a pre-defined starter, such as the "Swift for Backend for Frontend API" or create a custom project by using the **Create Project** tile. Click **Create Project**.
 2. Give your project a name and select where you want your project to be deployed. If you are unsure where the application is to be deployed, use the default values, as they can be changed later.
@@ -40,7 +40,7 @@ First, be sure that you have the following prerequisites ready to go:
 
 A project is created, but one that does not yet use any additional services or capabilities. You can add services by using the **Add Resource** button, or by clicking the **Download Code** button to get the code for the project. You can also easily add services to an existing project.
 
-## Adding services
+## Step 2. Adding services
 
 1. Click the **Add Resource** button to add services. A panel of service categories is displayed. For example, select **Data** to look at the available databases, and select **Cloudant NoSQL DB**.
 2. Select a pricing plan for the service, for example Lite, and click **Create**.
@@ -49,7 +49,7 @@ An instance of the service is created that provides you with the service credent
 
 After downloading your project, you can begin working with your app.
 
-## Developing your application with Xcode
+## Step 3. Developing your application with Xcode
 After downloading your project, you are able to modify and develop it by using Xcode, and then upload your modified application for deployment to the cloud.
 
 1. Create an Xcode project.  
@@ -69,7 +69,7 @@ After downloading your project, you are able to modify and develop it by using X
   * Kitura Monitoring: [http://localhost:8080/swiftmetrics-dash/]()
   * Kitura Health check: [http://localhost:8080/health]()
 
-## Adding REST APIs
+## Step 5. Adding REST APIs
 A skeleton Kitura server is created, but it does not provide any REST APIs that can be used by an iOS application. Add REST APIs in Kitura with minimal coding. The following steps show how to add a REST API for `GET` request on `/meals`, which is designed to return the `Meal` objects that are stored by the Kitura server.
 
 1. Add a `Meal` struct to the `Sources/Application/Application.swift` file:  
@@ -123,7 +123,7 @@ You now have a REST API for `GET` requests on `/meals` that responds with an arr
 You can use the [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) tutorial, which helps you build a set of REST APIs for storing, fetching, and deleting `Meal` objects from an iOS application, including storing the data in a database.
 {: tip}
 
-## Installing KituraKit into your iOS application
+## Step 6. Installing KituraKit into your iOS application
 The REST APIs built by using the Kitura server are standard web APIs, usable from any application regardless of client library that is used or which language the client is written in. Meaning that you can use Alamofire, RestKit, or URLSession to make connections to the server. Kitura also provides a bespoke, optimized client connector in order to simplify calling its REST APIs from iOS, in the form of KituraKit. 
 
 KituraKit provides a mirror image of the router handler APIs used in Kitura, making it possible to share Swift types between the client and the server with little effort. This feature removes the need to explicitly carry out JSON encoding, and decoding of the data being sent to or received from the server.
