@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-06-04"
 
 ---
 {:new_window: target="_blank"}
@@ -14,7 +14,7 @@ lastupdated: "2018-05-30"
 # Available SDK services
 {: #sdks}
 
-{{site.data.keyword.cloud_notm}} provides the following services as consumable SDKs, that enable you to quickly and easily leverage {{site.data.keyword.cloud}} services within your own applications.
+{{site.data.keyword.cloud_notm}} provides the following services as consumable SDKs, which can be used to quickly and easily leverage {{site.data.keyword.cloud}} services within your own applications.
 
 ## Available SDKs
 {: #available_sdks}
