@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-31"
+lastupdated: "2018-06-04"
 
 ---
 
@@ -85,7 +85,7 @@ Use an existing project that was created from this starter kit, or create a new 
 
 2. Select the **Starter Kits** tab.
 
-3. Select the **Swift Kitura** Backend for Frontend starter kit. Be sure not to confuse it with the Swift Kitura Basic Web-App Starter Kit.
+3. Select the **Swift Kitura** Backend for Frontend starter kit. Be sure not to confuse it with the Swift Kitura Basic web-App Starter Kit.
   The Create new project page is displayed.
 
 4. Enter the project details and click **Create Project**.
@@ -154,13 +154,15 @@ MongoKitten SDK.
 			 .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
 			```
 			{: codeblock}
-	b. In the targets section, add the dependency "MongoKitten" to the following line. **Note:** Be aware that the values must be specified in a single line.
+
+	b. In the targets section, add the dependency "MongoKitten" to the following line. **Note:** The values must be specified in a single line.
 			```hljs
 			 .target(name: "Application", dependencies: [ "Kitura",
                         				"CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
 			```
 			{: codeblock}
-5. Edit the `Sources/Application/Application.swift` file to initialize a connectivity to MongoDB using MongoKitten.
+
+5. Edit the `Sources/Application/Application.swift` file to initialize connectivity to MongoDB by using MongoKitten.
 
 	a. Import the MongoKitten SDK:
 		```
@@ -260,7 +262,7 @@ You can run your application locally on your host system, in Cloud Foundry, or i
 
 3. Deploy the application to a [local system](#deploy_local), [Cloud Foundry](#deploy_cf), or [Kubernetes cluster](#deploy_cluster).
 
-### Deploy the application locally
+### Deploying locally
 {: #deploy_local}
 
 1. Ensure that Docker is installed and running on your local host system. You can download Docker from https://www.docker.com/community-edition#/download.
@@ -277,10 +279,10 @@ You can run your application locally on your host system, in Cloud Foundry, or i
 
 	This step builds your application, and runs it locally inside a Docker container.
 
-### Deploying the application to Cloud Foundry
+### Deploying to Cloud Foundry
 {: #deploy_cf}
 
-1. Switch to the directory containing your project files.
+1. Switch to the directory that contains your project files.
 
 2. Log in to your IBM Cloud account, and set the region to `us-south`, as shown here:
 	```hljs
@@ -300,7 +302,7 @@ You can run your application locally on your host system, in Cloud Foundry, or i
 
 	You receive a clickable link to the location where your application is hosted.
 
-### Deploying the application to a Kubernetes Cluster
+### Deploying to a Kubernetes Cluster
 {: #deploy_cluster}
 
 1. Create a Kubernetes cluster at https://console.bluemix.net/containers-kubernetes/clusters.
@@ -309,7 +311,7 @@ You can run your application locally on your host system, in Cloud Foundry, or i
 
 3. To display information about the Kubernetes cluster, open the {{site.data.keyword.cloud_notm}} app dashboard. The dashboard displays a list of your services, such as created clusters, database clusters, cloud foundry apps, and cloud foundry services.
 
-4. Switch to the directory containing your project files.
+4. Switch to the directory that contains your project files.
 
 5. Log in to your {{site.data.keyword.cloud_notm}} account, and set the region to us-south, as shown here:
 	```hljs

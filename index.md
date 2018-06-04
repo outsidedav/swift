@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-01"
+lastupdated: "2018-06-04"
 
 ---
 
@@ -16,8 +16,7 @@ lastupdated: "2018-06-01"
 # Getting started tutorial
 {: #set_up}
 
-{{site.data.keyword.cloud}} offers solutions and services to empower Swift developers and applications with the security, AI, and value demanded by your customers. With a broad portfolio of offerings and SDKs, you can leverage these services, and bring your cutting-edge applications to market quickly.
-This Swift programming guide teaches you how to add services to a new or existing application, whether it is an  iOS client or server-side Swift.
+{{site.data.keyword.cloud}} offers solutions and services to empower Swift developers and applications with the security, AI, and value demanded by your customers. With a broad portfolio of offerings and SDKs, you can leverage these services, and bring your cutting-edge applications to market quickly. This Swift programming guide teaches you how to add services to a new or existing application, whether it is an iOS client or server-side Swift.
 {: shortdesc}
 
 The following tutorial is a starting point that is intended to help you build, run, and deploy a server-side Swift app locally. Learn how to use the {{site.data.keyword.dev_cli_long}} to execute these actions with standard commands.
@@ -30,9 +29,9 @@ To get started with {{site.data.keyword.cloud_notm}}, make sure that you meet th
 
 ### Operating System
 
-It is best practice to develop Swift apps by using the latest machines running MacOS, and testing with the latest iOS releases. Sign up for an [Apple Developer](https://developer.apple.com/) account to enable testing on a physical device.
+It is best practice to develop Swift apps by using the latest MacOS supported hardware, and testing with the latest iOS releases. Sign up for an [Apple Developer](https://developer.apple.com/) account to enable testing on a physical device.
 
-### iOS & Xcode
+### iOS and Xcode
 {: #ios_and_xcode}
 
 - [Install Xcode 8+ (or higher)](https://developer.apple.com/xcode/)
@@ -41,7 +40,7 @@ It is best practice to develop Swift apps by using the latest machines running M
 
 ### SDKs and Dependency management
 
-The following tools are required to ensure you can install the native SDKs to work with the various IBM Cloud Services.
+The following tools ensure that you can install the native SDKs to work with the various {{site.data.keyword.cloud_notm}} Services.
 
 - [Install CocoaPods for IBM Cloud SDKs](https://cocoapods.org/)
   ```
@@ -63,7 +62,7 @@ The following tools are required to ensure you can install the native SDKs to wo
 
 ## Step 2. Installing tools for local development
 
-The {{site.data.keyword.cloud}} provides local CLI tools that help you work with various aspects of the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.dev_cli_long}} Information](https://www.ibm.com/cloud/cli). It is recommended to install them for testing a Swift backend in a local Docker image before deploying to the cloud.
+The {{site.data.keyword.cloud}} provides local CLI tools that help you work with various aspects of the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.dev_cli_long}} Information](https://www.ibm.com/cloud/cli). It is recommended to install them for testing a Swift backend in a local Docker image prior to cloud deployment.
 
 -  Install {{site.data.keyword.dev_cli_notm}}:
   ```
@@ -79,7 +78,7 @@ The {{site.data.keyword.cloud}} provides local CLI tools that help you work with
   ```
   {: codeblock}
 
-  Be sure to log in with an {{site.data.keyword.cloud_notm}} account to create a project. First-time users can [register ![External link icon](../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) for a free account. Use the `ibmcloud login` command to login on the command line.
+  Be sure to log in with an {{site.data.keyword.cloud_notm}} account to create a project. First-time users can [register ![External link icon](../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) for a free account. Use the `ibmcloud login` command to log in on the command line.
   {: tip}
 
 2. When prompted, choose options 1, then 6, and lastly 2, as displayed in the following example:
@@ -160,9 +159,9 @@ You can now build, run, and deploy your application by using the {{site.data.key
 
 ## Next steps
 
-Learn to use the {{site.data.keyword.cloud_notm}} Developer Console for Apple that enables developers to create apps from a variety of starter kits, provision and connect key {{site.data.keyword.cloud_notm}} optimized services, and then quickly download working code or set up for continuous delivery. Users are able to create, view, configure, and manage your app, as well as download your app's code. This allows you to quickly evaluate and test {{site.data.keyword.cloud_notm}} services with a brand new app.
+Learn to use the {{site.data.keyword.cloud_notm}} Developer Console for Apple that enables developers to create apps from various starter kits, provision and connect key {{site.data.keyword.cloud_notm}} optimized services, and then quickly download working code or set up for continuous delivery. Users are able to create, view, configure, and manage your app, as well as download your app's code. Using the Developer Console for Apples allows you to quickly evaluate, and test {{site.data.keyword.cloud_notm}} services with a brand new app.
 
-Ready to jump in?  Visit the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) now to get started.
+Ready to jump in? Visit the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) now to get started.
 {: tip}
 
 For more information, see [Developing Swift apps with Starter Kits](/docs/swift/starter_kit/starter_kits.html).
