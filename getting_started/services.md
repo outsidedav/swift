@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-04"
+lastupdated: "2018-06-05"
 
 ---
 {:new_window: target="_blank"}
@@ -26,6 +26,6 @@ For more information, see the complete list of [{{site.data.keyword.cloud}} prod
 ## Serverless advantage
 {: #cloud_logic}
 
-{{site.data.keyword.openwhisk}} provides developers with the ability to build out server-side logic in stateless containers, so they can focus on writing code without needing to worrying about managing frameworks or scaling infrastructure. This serverless design helps speed up and simplify deployment by quickly build apps with action sequences that execute in response to calls from your mobile app.
+{{site.data.keyword.openwhisk}} provides developers with the ability to build out server-side logic in stateless containers, so they can focus on writing code without needing to worrying about managing frameworks or scaling infrastructure. This serverless design helps to simplify deployment by quickly building apps with action sequences that execute in response to calls from your mobile app.
 
 For more information, see [Cloud Functions](/docs/swift/backend/functions.html#cloud-functions){:new_window}.
