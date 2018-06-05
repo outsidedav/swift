@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-16"
+lastupdated: "2018-06-05"
 
 ---
 {:new_window: target="_blank"}
@@ -23,4 +23,4 @@ An example of an iOS application that uses a Backend For Frontend (BFF) can be s
 
 ![BluePic](images/cloudlogic.png "BluePic Flow")
 
-In the BluePic example, when an image is posted, its data is recorded in Cloudant, and the image binary is stored in Object Storage. From there, a {{site.data.keyword.openwhisk_short}} sequence is invoked, and causes weather data such as temperature and current condition (e.g. sunny, cloudy), to be calculated based on the location where an image was uploaded from. Watson Visual Recognition is also used in the IBM Cloud Functions sequence to analyze the image and extract text tags based on the content of the image. Finally, a push notification is sent to the user, informing them that the image was processed, and now includes weather and tag data.
+In the BluePic example, when an image is posted, its data is recorded in Cloudant, and the image binary is stored in Object Storage. From there, a {{site.data.keyword.openwhisk_short}} sequence is invoked, and causes weather data such as temperature and current condition (for example, sunny, cloudy) to be calculated based on the location where an image was uploaded from. Watson Visual Recognition is also used in the {{site.data.keyword.openwhisk_short}} sequence to analyze the image and extract text tags based on the content of the image. Finally, a push notification is sent to the user, informing them that the image was processed, and now includes weather and tag data.
