@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-04"
+lastupdated: "2018-06-05"
 
 ---
 {:new_window: target="_blank"}
@@ -29,7 +29,7 @@ end
 ```
 {: codeblock}
 
-Then run `pod install`, and open the generated `.xcworkspace` file.
+Run `pod install`, and open the generated `.xcworkspace` file.
 
 For more information, see the [Cocoapods Guides](https://guides.cocoapods.org/using/index.html).
 
@@ -42,7 +42,7 @@ github "<github org name>/<github project name>"
 ```
 {: codeblock}
 
-Then run `carthage update`. After the build is finished, add the generated frameworks to your project. 
+Run `carthage update` to start the build process. After the build is finished, add the generated frameworks to your project. 
 
 For more information, see the [Carthage README](https://github.com/Carthage/Carthage#getting-started).
 
@@ -55,7 +55,7 @@ To install an SDK by using the Swift Package Manager, add the following line to 
 ```
 {: codeblock}
 
-Then run `swift build`.
+Run `swift build` to start the build process.
 
 For more information, see the [Swift Package Manager Overview](https://swift.org/package-manager/).
 
