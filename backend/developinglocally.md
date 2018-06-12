@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-06-12"
 
 ---
 {:new_window: target="_blank"}
@@ -31,7 +31,7 @@ See [Setting up the IBM Cloud Developer Tools CLI](/docs/cli/idt/setting_up_idt.
 
 After you clone your application from Git, you must retrieve the credentials for the services that are bound to your application because they are not stored in the git repo for your application. Retrieving the credentials allows the use of bound services. You can easily download the credentials by running the following command in the root of the application directory:
 ```
-idt get-credentials
+ibmcloud dev get-credentials
 ```
 {:codeblock}
 
@@ -40,13 +40,13 @@ idt get-credentials
 1. **Build** - You can now `build` your application, which is a prerequisite to `run` your application.
   Use the following command in the root of the application directory to build your app:
   ```
-  idt build
+  ibmcloud dev build
   ```
   {:codeblock}
 
 2. **Run** - After a successful `build`, you can `run` your application in a local container with the following command:
   ```
-  idt run
+  ibmcloud dev run
   ```
   {:codeblock}
 
@@ -54,6 +54,6 @@ idt get-credentials
 
 3. **Deploy** - Deploy your application to the {{site.data.keyword.Bluemix_notm}} with the `deploy` command:
   ```
-  idt deploy
+  ibmcloud dev deploy
   ```
   {:codeblock}
