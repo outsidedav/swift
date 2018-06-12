@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-06-04"
+lastupdated: "2017-06-12"
 
 ---
 {:new_window: target="_blank"}
@@ -65,6 +65,7 @@ The definition can be customized to support Rate limiting for calls from your iO
 
 ![API](images/apidefinition.png)
 
+<!--
 ## Managing your iOS app
 
 Once you have created your Functions App, you can manage it with the cloud.
@@ -74,6 +75,7 @@ Once you have created your Functions App, you can manage it with the cloud.
 Some information about how it works etc and wskdeploy, also about git clone and running ibmcloud wsk deploy from CLI etc. Maybe link to the Electron tool.
 
 (Andy T) to add some content here
+-->
 
 ## Consuming the API in your iOS App
 

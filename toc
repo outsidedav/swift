@@ -54,7 +54,7 @@ Programming with Swift on IBM Cloud
         machine_learning/dsx.md
 
     {: .topicgroup}
-    Adding cloud logic
+    Deploying with cloud services
         backend/functions.md
         backend/kitura.md
         backend/api_management.md
