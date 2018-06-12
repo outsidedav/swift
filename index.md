@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-04"
+lastupdated: "2018-06-12"
 
 ---
 
@@ -21,7 +21,7 @@ lastupdated: "2018-06-04"
 
 The following tutorial is a starting point that is intended to help you build, run, and deploy a server-side Swift app locally. Learn how to use the {{site.data.keyword.dev_cli_long}} to execute these actions with standard commands.
 
-You can use the {{site.data.keyword.dev_cli_short}} to manage your server-side applications with more than a dozen commands. Learn more about the `idt` commands at [IBM Cloud Developer Tools CLI](/docs/cli/idt/commands.html).
+You can use the {{site.data.keyword.dev_cli_short}} to manage your server-side applications with more than a dozen commands. Learn more about the `ibmcloud dev` commands at [IBM Cloud Developer Tools CLI](/docs/cli/idt/commands.html).
 
 ## Step 1. Requirements for Developers
 
@@ -72,9 +72,9 @@ The {{site.data.keyword.cloud}} provides local CLI tools that help you work with
 
 ## Step 3. Creating a Swift project
 
-1. Use the `idt create` command from {{site.data.keyword.dev_cli_short}} CLI to generate a pre-configured starter. 
+1. Use the `ibmcloud dev create` command from {{site.data.keyword.dev_cli_short}} CLI to generate a pre-configured starter. 
   ```
-  idt create
+  ibmcloud dev create
   ```
   {: codeblock}
 
@@ -135,7 +135,7 @@ You can now build, run, and deploy your application by using the {{site.data.key
 
   You can now `build` your application, which is a prerequisite to `run` your application. Use the following command in the root of the application directory to build your app:
   ```
-  idt build
+  ibmcloud dev build
   ```
   {:codeblock}
 
@@ -143,7 +143,7 @@ You can now build, run, and deploy your application by using the {{site.data.key
 
   After a successful `build`, you can `run` your application in a local container with the following command:
   ```
-  idt run
+  ibmcloud dev run
   ```
   {:codeblock}
 
@@ -153,7 +153,7 @@ You can now build, run, and deploy your application by using the {{site.data.key
 
   Deploy your application to the {{site.data.keyword.cloud_notm}} with the `deploy` command:
   ```
-  idt deploy
+  ibmcloud dev deploy
   ```
   {:codeblock}
 
