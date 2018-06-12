@@ -24,11 +24,11 @@ Programming with Swift on IBM Cloud
         backend/serverless.md
         backend/sample_cloud.md
 
-    security/advanced_security.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     authenticate/app_id.md
+    security/advanced_security.md
     hypersecure_dbaas/database-cluster.md
     analytics/mobile_analytics.md
     functions.md
