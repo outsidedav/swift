@@ -7,6 +7,7 @@ Programming with Swift on IBM Cloud
     {: .navgroup id="learn"}
     index.md
     apple_development.md
+    starter_kit/starter_kits.md
 
     {: .topicgroup}
     Getting started
@@ -17,18 +18,20 @@ Programming with Swift on IBM Cloud
         getting_started/projects.mdindex.md
 
     {: .topicgroup}
-    Back-end components for iOS applications
+    Developing back-end components
         backend/intro.md
         backend/mbaas.md
         backend/serverless.md
         backend/sample_cloud.md
 
     security/advanced_security.md
-    starter_kit/starter_kits.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     authenticate/app_id.md
+    hypersecure_dbaas/database-cluster.md
+    analytics/mobile_analytics.md
+    functions.md
 
     {: .topicgroup}
     Storing and sharing data
@@ -37,28 +40,18 @@ Programming with Swift on IBM Cloud
         data/object.md
 
     push/push_notifications.md
-    analytics/mobile_analytics.md
     app_launch/mobile_applaunch.md
-
+    
     {: .topicgroup}
-    Use IBM Cloud Hyper Protect DBaaS
-        hypersecure_dbaas/use-steps.md
-        hypersecure_dbaas/use-step1.md
-        hypersecure_dbaas/use-step2.md
-        hypersecure_dbaas/use-step3.md
-        hypersecure_dbaas/use-step4.md
-        hypersecure_dbaas/use-step5.md
-        hypersecure_dbaas/use-step6.md
-
-    machine_learning/dsx.md
-
-    {: .topicgroup}
-    AI with Watson
+    Adding Watson AI services
         machine_learning/conversation.md
         machine_learning/recognition.md
         machine_learning/tone.md
 
-    machine_learning/coreml.md
+    {: .topicgroup}
+    Using machine learning
+        machine_learning/coreml.md
+        machine_learning/dsx.md
 
     {: .topicgroup}
     Adding cloud logic
@@ -75,6 +68,7 @@ Programming with Swift on IBM Cloud
     sdk.md
     api.md
     samples.md
+    [IBM Cloud Developer Center](https://developer.ibm.com/swift/)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
