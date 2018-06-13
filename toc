@@ -18,21 +18,24 @@ Programming with Swift on IBM Cloud
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    authenticate/app_id.md
-    security/advanced_security.md
-    hypersecure_dbaas/database-cluster.md
+    push/push_notifications.md
+    app_launch/mobile_applaunch.md
     analytics/mobile_analytics.md
-    functions.md
+
+    {: .topicgroup}
+    Securing Swift apps
+        authenticate/app_id.md
+        security/advanced_security.md
 
     {: .topicgroup}
     Storing and sharing data
         data/cloudant.md
         data/sql.md
         data/object.md
-
-    push/push_notifications.md
-    app_launch/mobile_applaunch.md
     
+    hypersecure_dbaas/database-cluster.md
+    functions.md
+
     {: .topicgroup}
     Adding Watson AI services
         machine_learning/conversation.md
