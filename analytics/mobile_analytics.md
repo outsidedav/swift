@@ -80,17 +80,14 @@ If you are not using CocoaPods, you can add frameworks to your project by using 
 
 {{site.data.keyword.mobileanalytics_short}} enables you to collect the following categories of data, and each requires a different degree of instrumentation:
 
-**Pre-defined data**
+**Pre-defined data**:
+This category includes generic usage and device information that applies to all applications. It indicates the volume, frequency, or duration of application use. Predefined data is collected automatically after you initialize the {{site.data.keyword.mobileanalytics_short}} SDK in your application.
 
-	This category includes generic usage and device information that applies to all applications. It indicates the volume, frequency, or duration of application use. Predefined data is collected automatically after you initialize the {{site.data.keyword.mobileanalytics_short}} SDK in your application.
+**Application log messages**: 
+This category enables the developer to add lines of code throughout the application that can log custom messages to assist with development and debugging. The developer assigns a severity/verbosity level to each log message.
 
- **Application log messages**
-
-	This category enables the developer to add lines of code throughout the application that can log custom messages to assist with development and debugging. The developer assigns a severity/verbosity level to each log message.
-
- **Custom events**
-
-	This category includes data that you define yourself and that is specific to your app. This data represents events that occur within your app, such as page views, button taps, or in-app purchases. In addition to initializing the {{site.data.keyword.mobileanalytics_short}} SDK in your app, you must add a line of code for each custom event that you want to track.
+**Custom events**: 
+This category includes data that you define yourself and that is specific to your app. This data represents events that occur within your app, such as page views, button taps, or in-app purchases. In addition to initializing the {{site.data.keyword.mobileanalytics_short}} SDK in your app, you must add a line of code for each custom event that you want to track.
 
 ## Step 4. Identifying your service credentials API Key value
 {: #analytics-clientkey}
@@ -134,7 +131,7 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 	```
     {: codeblock}
 
-4. The application is now initialized and ready to collect analytics. Next, you can [send analytics data] to the {{site.data.keyword.mobileanalytics_short}} service.		
+4. The application is now initialized and ready to collect analytics. Next, you can send analytics data to the {{site.data.keyword.mobileanalytics_short}} service.		
 
 ## Step 6. Gathering usage analytics
 {: #app-monitoring-gathering-analytics}
@@ -142,37 +139,37 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 You can configure the {{site.data.keyword.mobileanalytics_short}} client SDK to record usage analytics and send the recorded data to the {{site.data.keyword.mobileanalytics_short}} service.
 
 Use the following APIs to start recording and sending usage analytics:
-	```
-	// Disable recording of usage analytics (eg: to save disk space)
-	// Recording is enabled by default
+```
+// Disable recording of usage analytics (eg: to save disk space)
+// Recording is enabled by default
 
-	Analytics.isEnabled = false
+Analytics.isEnabled = false
 
-	// Enable recording of usage analytics
+// Enable recording of usage analytics
 
-	Analytics.isEnabled = true
+Analytics.isEnabled = true
 
-	// Send recorded usage analytics to the Mobile Analytics Service
+// Send recorded usage analytics to the Mobile Analytics Service
 
-	Analytics.send(completionHandler: { (response: Response?, error: Error?) in
-	    if let response = response {
+Analytics.send(completionHandler: { (response: Response?, error: Error?) in
+    if let response = response {
 
-		  // Handle Analytics send success here.
-	    }
-	    if let error = error {
-	        // Handle Analytics send failure here.
-	    }
-	})
-	```
-	{: codeblock}
+	  // Handle Analytics send success here.
+    }
+    if let error = error {
+        // Handle Analytics send failure here.
+    }
+})
+```
+{: codeblock}
 
-	Sample usage analytics for logging an event:
-	```
-	// Log a custom analytics event
-	let eventObject = ["customProperty": "propertyValue"]
-	Analytics.log(metadata: eventObject)
-	```
-	{: codeblock}
+Sample usage analytics for logging an event:
+```
+// Log a custom analytics event
+let eventObject = ["customProperty": "propertyValue"]
+Analytics.log(metadata: eventObject)
+```
+{: codeblock}
 
 ## Step 7. Enabling, configuring, and using Logger
 
@@ -201,44 +198,44 @@ When the logger level is set `DEBUG`, you also get Mobile Analytics Client SDK l
 **Note:** Make sure that your application is configured to use the {{site.data.keyword.mobileanalytics_short}} Client SDK before using the logging framework.
 
 The following code snippets show sample Logger usage:
-	```
-	// Configure Logger. Disabled by default;
+```
+// Configure Logger. Disabled by default;
 
-	Logger.isLogStorageEnabled = true
+Logger.isLogStorageEnabled = true
 
-	// Change the minimum log level (optional). Default is - LogLevel.debug
+// Change the minimum log level (optional). Default is - LogLevel.debug
 
-	Logger.logLevelFilter = LogLevel.info
+Logger.logLevelFilter = LogLevel.info
 
-	// Multiple log instances can be created to organize your logs
+// Multiple log instances can be created to organize your logs
 
-	let logger1 = Logger.logger(name: "feature1Logger")
-	let logger2 = Logger.logger(name: "feature2Logger")
+let logger1 = Logger.logger(name: "feature1Logger")
+let logger2 = Logger.logger(name: "feature2Logger")
 
-	// Log messages with different levels
+// Log messages with different levels
 
-	logger1.debug(message: "debug message for feature 1")
+logger1.debug(message: "debug message for feature 1")
 
-	// logger1.debug message isn't logged as logLevelFilter is set to info
+// logger1.debug message isn't logged as logLevelFilter is set to info
 
-	logger2.info(message: "info message for feature 2")
+logger2.info(message: "info message for feature 2")
 
-	// Send logs to the Mobile Analytics Service
+// Send logs to the Mobile Analytics Service
 
-	Logger.send(completionHandler: { (response: Response?, error: Error?) in
-	        if let response = response {
-	        logger.debug(message: "Status code: \(response.statusCode)")
-	        logger.debug(message: "Response: \(response.responseText)")
-	    }
-	    if let error = error {
-	        logger.error(message: "Error: \(error)")
-	    }
-	})
-	```
-	{: codeblock}
+Logger.send(completionHandler: { (response: Response?, error: Error?) in
+        if let response = response {
+        logger.debug(message: "Status code: \(response.statusCode)")
+        logger.debug(message: "Response: \(response.responseText)")
+    }
+    if let error = error {
+        logger.error(message: "Error: \(error)")
+    }
+})
+```
+{: codeblock}
 
-	For privacy concerns, you can disable Logger output for applications that are built in release mode. By default, the Logger class prints logs to the Xcode console. In the build settings for your target, add a `-D RELEASE_BUILD` flag to the **Other Swift Flags** section of the release build configuration.
-	{: tip}
+For privacy concerns, you can disable Logger output for applications that are built in release mode. By default, the Logger class prints logs to the Xcode console. In the build settings for your target, add a `-D RELEASE_BUILD` flag to the **Other Swift Flags** section of the release build configuration.
+{: tip}
 
 ## Step 8. Location Data Logging
 {: #location-logging}
@@ -268,12 +265,12 @@ You can see [application crash data](app-monitoring.html#monitor-app-crash) by s
 The `Analytics.send()` method populates the **Crash Overview** and **Crashes** tables on the **Crashes** page. Charts in this section are enabled by using the initialization and sending process for analytics; no special configuration is necessary.
 
 The `Logger.send()` method populates the the **Crash Summary** and **Crash Details** tables on the **Troubleshooting** page. You must enable your application to store and send logs to populate the charts in this section, by adding an additional statement in your application code:
-	```
-	Logger.isLogStorageEnabled = true
-	Logger.logLevelFilter = LogLevel.Fatal // or greater
-	```
+```
+Logger.isLogStorageEnabled = true
+Logger.logLevelFilter = LogLevel.Fatal // or greater
+```
 
-	See the iOS [sample logger usage](sdk.html##sample-logger-usage).
+See the iOS [sample logger usage](sdk.html##sample-logger-usage).
 
 ## Step 11. Tracking active users
 {: #trackingusers}
@@ -282,11 +279,11 @@ If your application can recognize unique users on a device, you can optionally t
 
 Enable user tracking by initializing {{site.data.keyword.mobileanalytics_short}} with `hasUserContext=true`. Otherwise, {{site.data.keyword.mobileanalytics_short}} captures only one user per device.
 
-	Add the following code to track when the user logs in:
-	```
-	Analytics.userIdentity = "username"
-	```
-	{: codeblock}
+Add the following code to track when the user logs in:
+```
+Analytics.userIdentity = "username"
+```
+{: codeblock}
 
 ## Step 12. Testing your app
 {: #appid_testing}
