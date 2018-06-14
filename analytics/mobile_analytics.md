@@ -17,33 +17,19 @@ lastupdated: "2018-06-14"
 
 {{site.data.keyword.mobileanalytics_short}} on {{site.data.keyword.cloud_notm}} provides developers, IT administrators, and business stakeholders insight into how their mobile apps are performing and how it is being used. With the {{site.data.keyword.mobileanalytics_short}} service you can:
 
- - **Gain immediate insight**
+ - **Gain immediate insight** - See performance and usage metrics in real time.
 
-    See performance and usage metrics in real time.
+ - **Implement in minutes** - Create a service instance in {{site.data.keyword.cloud_notm}}, add the SDK to your project, paste two lines of code into your application and you are ready to collect dozens of pre-defined metrics.
 
- - **Implement in minutes**
+ - **Collect data you want** - Instrument apps with custom events, discover how users are interacting with your app, track purchases, and monitor app activity.
 
-    Create a service instance in {{site.data.keyword.cloud_notm}}, add the SDK to your project, paste two lines of code into your application and you are ready to collect dozens of pre-defined metrics.
+ - **View metrics at-a-glance** - The {{site.data.keyword.mobileanalytics_short}} console offers ready-made charts, without the need to write queries.
 
- - **Collect data you want**
+ - **Focus on what is important to you** - Filter metrics by time, adapter, application, application version, OS, OS version, or device model.
 
-    Instrument apps with custom events, discover how users are interacting with your app, track purchases, and monitor app activity.
+ - **Rapidly discover issues** - Monitor crash status. Set alert triggers on critical metrics and route alerts to any REST endpoint.
 
- - **See metrics for all of your applications at-a-glance**
-
-    The {{site.data.keyword.mobileanalytics_short}} console offers ready-made charts, without the need to write queries.
-
- - **Focus on what is important to you**
-
-    Filter metrics by time, adapter, application, application version, OS, OS version, or device model.
-
- - **Rapidly discover issues**
-
-    Monitor crash status. Set alert triggers on critical metrics and route alerts to any REST endpoint.
-
- - **Troubleshoot to root cause**
-
-    Use custom logging in your application and automatically upload the logs and search them from the console. Drill down on crash events to see stack traces.
+ - **Troubleshoot to root cause** - Use custom logging in your application and automatically upload the logs and search them from the console. Drill down on crash events to see stack traces.
 
 ## Before you begin
 
@@ -55,7 +41,7 @@ First, be sure you have the following prerequisites ready to go:
  - Cocoapods or Carthage
 
 ## Step 1. Creating an instance of {{site.data.keyword.mobileanalytics_short}}
-{: ##mobile_analytics_create}
+{: #mobile_analytics_create}
 
 1. In the {{site.data.keyword.cloud_notm}} catalog, click **Mobile** > **{{site.data.keyword.mobileanalytics_short}}**. The service configuration screen opens.
 2. Give your service instance a name, or use the preset name.
@@ -94,15 +80,15 @@ If you are not using CocoaPods, you can add frameworks to your project by using 
 
 {{site.data.keyword.mobileanalytics_short}} enables you to collect the following categories of data, and each requires a different degree of instrumentation:
 
-- **Pre-defined data**
+**Pre-defined data**
 
 	This category includes generic usage and device information that applies to all applications. It indicates the volume, frequency, or duration of application use. Predefined data is collected automatically after you initialize the {{site.data.keyword.mobileanalytics_short}} SDK in your application.
 
- - **Application log messages**
+ **Application log messages**
 
 	This category enables the developer to add lines of code throughout the application that can log custom messages to assist with development and debugging. The developer assigns a severity/verbosity level to each log message.
 
- - **Custom events**
+ **Custom events**
 
 	This category includes data that you define yourself and that is specific to your app. This data represents events that occur within your app, such as page views, button taps, or in-app purchases. In addition to initializing the {{site.data.keyword.mobileanalytics_short}} SDK in your app, you must add a line of code for each custom event that you want to track.
 
@@ -122,19 +108,19 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 1. Import the Client SDK.
 
     The Swift SDK is available for iOS and watchOS. Import the `BMSCore` and `BMSAnalytics` frameworks by adding the following `import` statements to the beginning of your `AppDelegate.swift` project file:
-		```swift
-		import BMSCore
-		import BMSAnalytics
-		```
-		{: codeblock}  
+	```
+	import BMSCore
+	import BMSAnalytics
+	```
+	{: codeblock}  
 
 2. Initialize the {{site.data.keyword.mobileanalytics_short}} Client SDK in your application.
 
 	First initialize the `BMSClient` class by placing the initialization code in the `application(_:didFinishLaunchingWithOptions:)` method of your application delegate, or in a location that works best for your project.
-		```swift
-		BMSClient.sharedInstance.initialize(bluemixRegion: BMSClient.Region.usSouth) // Make sure that you point to your region
-		```
-		{: codeblock}
+	```
+	BMSClient.sharedInstance.initialize(bluemixRegion: BMSClient.Region.usSouth) // Make sure that you point to your region
+	```
+	{: codeblock}
 
 	You must initialize the `BMSClient` with the **bluemixRegion** parameter. In the initializer, the **bluemixRegion** value specifies which {{site.data.keyword.Bluemix_notm}} deployment you are using.
 
@@ -143,8 +129,7 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 	The name that you select for your application (`your_app_name_here`) displays in the {{site.data.keyword.mobileanalytics_short}} console as the application name. The application name is used as a filter to search for application logs in the dashboard. When you use the same application name across platforms (for example, iOS), you can see all logs from that application under the same name, regardless of which platform the logs were sent from.
 
 	You also need the [API Key](#analytics-clientkey) value.
-
-	```swift
+	```
 	Analytics.initialize(appName: "your_app_name_here", apiKey: "your_api_key_here", hasUserContext: false, collectLocation: true, deviceEvents: .lifecycle, .network)
 	```
     {: codeblock}
@@ -182,8 +167,7 @@ Use the following APIs to start recording and sending usage analytics:
 	{: codeblock}
 
 	Sample usage analytics for logging an event:
-
-	```swift
+	```
 	// Log a custom analytics event
 	let eventObject = ["customProperty": "propertyValue"]
 	Analytics.log(metadata: eventObject)
