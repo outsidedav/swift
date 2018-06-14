@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-15"
+lastupdated: "2018-06-14"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-05-15"
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
-
+{:tip: .tip}
 
 # Collecting mobile analytics
 {: #mobile_analytics}
@@ -114,7 +114,6 @@ Identify your **API Key** value before you set up the client SDK. The API key is
 1. Open your {{site.data.keyword.mobileanalytics_short}} service dashboard.
 2. Expand **View Credentials** to reveal your API Key value. You need the API key value when you initialize the {{site.data.keyword.mobileanalytics_short}} Client SDK.
 
-
 ## Step 5.  Initializing your application to collect analytics
 {: #initalize-ma-sdk}
 
@@ -123,8 +122,7 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 1. Import the Client SDK.
 
     The Swift SDK is available for iOS and watchOS. Import the `BMSCore` and `BMSAnalytics` frameworks by adding the following `import` statements to the beginning of your `AppDelegate.swift` project file:
-
-		```Swift
+		```swift
 		import BMSCore
 		import BMSAnalytics
 		```
@@ -133,14 +131,12 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 2. Initialize the {{site.data.keyword.mobileanalytics_short}} Client SDK in your application.
 
 	First initialize the `BMSClient` class by placing the initialization code in the `application(_:didFinishLaunchingWithOptions:)` method of your application delegate, or in a location that works best for your project.
-
-		```Swift
+		```swift
 		BMSClient.sharedInstance.initialize(bluemixRegion: BMSClient.Region.usSouth) // Make sure that you point to your region
 		```
 		{: codeblock}
 
 	You must initialize the `BMSClient` with the **bluemixRegion** parameter. In the initializer, the **bluemixRegion** value specifies which {{site.data.keyword.Bluemix_notm}} deployment you are using.
-
 
 3. Initialize Analytics by using your application object and giving it your application’s name.
 
@@ -148,8 +144,8 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 
 	You also need the [API Key](#analytics-clientkey) value.
 
-	```Swift
-		Analytics.initialize(appName: "your_app_name_here", apiKey: "your_api_key_here", hasUserContext: false, collectLocation: true, deviceEvents: .lifecycle, .network)
+	```swift
+	Analytics.initialize(appName: "your_app_name_here", apiKey: "your_api_key_here", hasUserContext: false, collectLocation: true, deviceEvents: .lifecycle, .network)
 	```
     {: codeblock}
 
@@ -161,7 +157,6 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 You can configure the {{site.data.keyword.mobileanalytics_short}} client SDK to record usage analytics and send the recorded data to the {{site.data.keyword.mobileanalytics_short}} service.
 
 Use the following APIs to start recording and sending usage analytics:
-
 	```
 	// Disable recording of usage analytics (eg: to save disk space)
 	// Recording is enabled by default
@@ -188,7 +183,7 @@ Use the following APIs to start recording and sending usage analytics:
 
 	Sample usage analytics for logging an event:
 
-	```Swift
+	```swift
 	// Log a custom analytics event
 	let eventObject = ["customProperty": "propertyValue"]
 	Analytics.log(metadata: eventObject)
@@ -209,7 +204,6 @@ The {{site.data.keyword.mobileanalytics_short}} Client SDK logging framework sup
   * `INFO` - Use for reporting initialization events and other data that might be important, but not urgent
   * `DEBUG` - Use for reporting debug statements to help developers resolve application defects
 
-
 ### Log level scenario
 {: #log-level-scenario notoc}
 
@@ -217,15 +211,12 @@ When the logger level is configured to `FATAL`, the logger captures uncaught exc
 
 When the logger level is set `DEBUG`, you also get Mobile Analytics Client SDK logs, which are included when you send logs.
 
-
 ### Sample Logger usage
 {: #sample-logger-usage notoc}
 
 **Note:** Make sure that your application is configured to use the {{site.data.keyword.mobileanalytics_short}} Client SDK before using the logging framework.
 
 The following code snippets show sample Logger usage:
-
-
 	```
 	// Configure Logger. Disabled by default;
 
@@ -262,8 +253,8 @@ The following code snippets show sample Logger usage:
 	```
 	{: codeblock}
 
-	**Tip:** For privacy concerns, you can disable Logger output for applications that are built in release mode. By default, the Logger class prints logs to the Xcode console. In the build settings for your target, add a `-D RELEASE_BUILD` flag to the **Other Swift Flags** section of the release build configuration.
-
+	For privacy concerns, you can disable Logger output for applications that are built in release mode. By default, the Logger class prints logs to the Xcode console. In the build settings for your target, add a `-D RELEASE_BUILD` flag to the **Other Swift Flags** section of the release build configuration.
+	{: tip}
 
 ## Step 8. Location Data Logging
 {: #location-logging}
@@ -271,14 +262,13 @@ The following code snippets show sample Logger usage:
 Location of the mobile device might be logged from the app through this provided API:
 ```
 Analytics.logLocation();
-
 ```
+
 This API enables the app to send its location as latitude, longitude to the server in between app sessions. Other than these explicit calls to the location-logging API, the SDK sends device location for every App-Session, both for initial app session context and user switch app session (that is, a switch of a user between an app session) context. The location API must be enabled in the initialization of SDK.
 
-1. To call this location logging API, set the `collectLocation` parameter to true in SDK initialization:
+To call this location logging API, set the `collectLocation` parameter to true in SDK initialization:
 ```
 Analytics.initialize(appName, apiKey,  hasUserContext, collectLocation, [BMSAnalytics.ALL])
-
 ```
 
 ## Step 9. Making a network request
@@ -294,9 +284,10 @@ You can see [application crash data](app-monitoring.html#monitor-app-crash) by s
 The `Analytics.send()` method populates the **Crash Overview** and **Crashes** tables on the **Crashes** page. Charts in this section are enabled by using the initialization and sending process for analytics; no special configuration is necessary.
 
 The `Logger.send()` method populates the the **Crash Summary** and **Crash Details** tables on the **Troubleshooting** page. You must enable your application to store and send logs to populate the charts in this section, by adding an additional statement in your application code:
-
-	`Logger.isLogStorageEnabled = true`
-	<!-- * `Logger.logLevelFilter = LogLevel.Fatal // or greater` -->
+	```
+	Logger.isLogStorageEnabled = true
+	Logger.logLevelFilter = LogLevel.Fatal // or greater
+	```
 
 	See the iOS [sample logger usage](sdk.html##sample-logger-usage).
 
@@ -308,7 +299,6 @@ If your application can recognize unique users on a device, you can optionally t
 Enable user tracking by initializing {{site.data.keyword.mobileanalytics_short}} with `hasUserContext=true`. Otherwise, {{site.data.keyword.mobileanalytics_short}} captures only one user per device.
 
 	Add the following code to track when the user logs in:
-
 	```
 	Analytics.userIdentity = "username"
 	```

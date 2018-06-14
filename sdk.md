@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-06-05"
+lastupdated: "2017-06-14"
 
 ---
 {:new_window: target="_blank"}
@@ -26,7 +26,7 @@ You can use the following SDKs in your mobile application to leverage their resp
 - [{{site.data.keyword.appid_short}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-cloud-security/appid-clientsdk-swift)
 - [{{site.data.keyword.mobileanalytics_short}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)
 - [{{site.data.keyword.mobilepushshort}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push)
-- [{{site.data.keyword.applaunchshort}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch)
+- [{{site.data.keyword.engage_short}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch)
 - [Watson Swift SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/swift-sdk)
 
 ### Storage
