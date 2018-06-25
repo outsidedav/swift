@@ -58,6 +58,8 @@ Programming with Swift on IBM Cloud
         getting_started/services.md
         backend/functions.md
         backend/kitura.md
+        api/api.md
+        api/sdk.md
         backend/containers.md
         security/crypto.md
     {: .navgroup-end}
