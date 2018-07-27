@@ -34,7 +34,6 @@ Programming with Swift on IBM Cloud
         data/object.md
     
     hypersecure_dbaas/database-cluster.md
-    functions.md
 
     {: .topicgroup}
     Adding Watson AI services
@@ -60,8 +59,6 @@ Programming with Swift on IBM Cloud
         backend/kitura.md
         api/api.md
         api/sdk.md
-        backend/containers.md
-        security/crypto.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
