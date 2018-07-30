@@ -7,8 +7,7 @@ Programming with Swift on IBM Cloud
     {: .navgroup id="learn"}
     index.md
     apple_development.md
-    starter_kit/starter_kits.md
-
+                    
     {: .topicgroup}
     Developing back-end components
         backend/intro.md
@@ -18,10 +17,11 @@ Programming with Swift on IBM Cloud
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
+    starter_kit/starter_kits.md
+    analytics/mobile_analytics.md
     push/push_notifications.md
     app_launch/mobile_applaunch.md
-    analytics/mobile_analytics.md
-
+    
     {: .topicgroup}
     Securing Swift apps
         authenticate/app_id.md
@@ -32,7 +32,7 @@ Programming with Swift on IBM Cloud
         data/cloudant.md
         data/sql.md
         data/object.md
-    
+
     hypersecure_dbaas/database-cluster.md
 
     {: .topicgroup}
@@ -51,7 +51,7 @@ Programming with Swift on IBM Cloud
         getting_started/sdks.md
         getting_started/installing.md
         backend/cli_sdkgen.md
-
+    
     {: .topicgroup}
     Deploying with cloud services
         getting_started/services.md
@@ -59,16 +59,19 @@ Programming with Swift on IBM Cloud
         backend/kitura.md
         api/api.md
         api/sdk.md
+
+    create_app_cli.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     sdk.md
-    api.md
-    samples.md
+    [API Docs](https://console.bluemix.net/apidocs)
+    [Sample apps on IBM Code](https://developer.ibm.com/code/technologies/swift-on-the-server/)
     [IBM Cloud Developer Center](https://developer.ibm.com/swift/)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
+    [dW Answers](https://developer.ibm.com/answers/topics/swift.html)
     [StackOverflow](https://stackoverflow.com/search?q=iOS+ibm-cloud)
     [Swift@IBM Slack](https://swift-at-ibm-slack.mybluemix.net)
     {: .navgroup-end}

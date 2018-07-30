@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-29"
+lastupdated: "2018-06-13"
 
 ---
 {:new_window: target="_blank"}
@@ -11,14 +11,14 @@ lastupdated: "2018-05-29"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Object Storage
+# Using Object Storage for static content
 {: #object}
 
 Object Storage is a fundamental component of cloud computing, and provides powerful capabilities to Apple developers and their applications. Unlike storing information in a file hierarchy (such as Block or File storage), an object store consists only of the files and their metadata, stored in collections known as buckets. By definition, these objects are immutable, which makes them perfect for data such as images, videos, and other static documents. For data that changes often or is relational, you can use [NoSQL](/docs/swift/data/nosql.html), [Cloudant](/docs/swift/data/cloudant.html), and [SQL](/docs/swift/data/sql.html) database services.
 
 {{site.data.keyword.cos_full_notm}} (COS) is a storage system that can be used to store unstructured data that is flexible, cost-effective, and scalable. The data is accessible through SDKs or by using the IBM user interface. You can use {{site.data.keyword.cos_full_notm}} to access your unstructured data through a self-service portal that is backed by Restful APIs and SDKs. 
 
-Depending on your needs, you can use Cloud Object Storage for the following services:
+Depending on your needs, you can use {{site.data.keyword.cos_short}} for the following services:
 
 * Content repository
 * Backup and recovery

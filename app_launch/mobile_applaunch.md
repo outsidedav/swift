@@ -5,13 +5,13 @@ copyright:
 lastupdated: "2018-05-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:gif: data-image-type='gif'}
-
 
 # Managing app feature releases
 {: #mobile_applaunch}
