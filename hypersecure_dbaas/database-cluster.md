@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-04"
+lastupdated: "2018-08-01"
 
 ---
 
@@ -24,7 +24,7 @@ is Swift 4.0 with MongoKitten SDK 4.0.0.
 {: #create_dbcluster}
 
 1. Access the {{site.data.keyword.ihsdbaas_full}} service configuration screen at
-https://console.bluemix.net/catalog/services/hypersecure-dbaas.
+https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
 
 2. Provide the following information:
 

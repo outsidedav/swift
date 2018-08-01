@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-15"
+lastupdated: "2018-08-01"
 
 ---
 {:new_window: target="_blank"}
@@ -59,12 +59,12 @@ With this service, you can create database clusters in the {{site.data.keyword.c
 ### Adding {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS logic to your application
 
 To use a MongoDB database in your application, see
-[Getting started with using a database](../hypersecure_dbaas/use-steps.html).  
+[Getting started with using a database](../hypersecure_dbaas/database-cluster.html).  
 
 
 ### Learn more about {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS
 
-To learn more about {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS, see [Getting Started with IBM Cloud Hyper Protect DBaaS](/docs/services/hypersecure-dbaas/index.html).
+To learn more about {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS, see [Getting Started with IBM Cloud Hyper Protect DBaaS](/docs/services/hyper-protect-dbaas/index.html).
 
 
 ## **{{site.data.keyword.cloud_notm}} {{site.data.keyword.hscontainers}}**  
