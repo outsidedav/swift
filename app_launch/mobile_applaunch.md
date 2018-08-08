@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-15"
+lastupdated: "2018-08-07"
 
 ---
 
@@ -16,9 +16,9 @@ lastupdated: "2018-05-15"
 # Managing app feature releases
 {: #mobile_applaunch}
 
-{{site.data.keyword.engage_full}} lets developers build engaging apps by controlling reach, and roll out, of app features while measuring the defined metrics. The service helps developers to remove the coupling that exists today between app feature rollout, and app updates to production. You can now publish features without exposing it to production, which enables you to gradually release new versions of an app in a controlled manner. With the {{site.data.keyword.engage_short}} service, app owners have full control over feature rollout for a targeted segment.
+{{site.data.keyword.engage_full}} lets developers build engaging apps by controlling reach, and roll out of app features that can provide measurable metrics. The service helps developers to remove the coupling that exists today between app feature rollout, and app updates to production. You can now publish features without exposing it to production to gradually release new versions of an app in a controlled manner. With the {{site.data.keyword.engage_short}} service, app owners have full control over feature rollout for a targeted segment.
 
-The {{site.data.keyword.engage_short}} service lets you define a feature, create audiences based on device platforms, create custom audience attributes, and finally define an engagement that choreographs the timing and placement of the feature. After using the SDKs, along with the feature and metrics attributes that are incorporated in the application, the service starts measuring audience experiences. You can now leverage your app based on this information to create customized customer engagements across various categories of your app users.
+The {{site.data.keyword.engage_short}} service defines a feature, creates an audience based on device platforms (including custom audience attributes), and finally defines an engagement that choreographs the timing and placement of the feature. After SDKs are used, along with the feature and metrics attributes that are incorporated in the application, the service starts measuring audience experiences. You can now leverage your app based on this information to create customized customer engagements across various categories of your app users.
 
 ![Cognitive Engage overview](images/process_app_launch.png) Figure 1. Overview of the {{site.data.keyword.engage_short}} service life cycle
 
@@ -67,19 +67,19 @@ First, ensure that you have the following prerequisites ready to go:
 The service provides platform-specific SDKs to simplify application development. The {{site.data.keyword.cloud_notm}} Mobile Services Swift SDKs can be installed with either Cocoapods or Carthage.
 
 1. Click **Settings**.
-2. Install the [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). See the readme for detailed information on installation and technical concepts.
+2. Install the [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). For more information, see the readme that includes installation steps and technical concepts.
 3. Copy the configuration keys to initialize your app. Use the app secret, app GUID, and client secret to configure your app and create engagements.
 
 ## Step 3. Creating a feature
 {: #step3}
 
-The {{site.data.keyword.engage_short}} service enables you to create and test responses to features.
+The {{site.data.keyword.engage_short}} service creates and tests responses to features.
 
 ![Feature Details](images/feature_creation_animated.gif){: gif}
 
 To create a feature, complete the following steps: 
 1. In the navigation pane, click **Features** > **Create New Feature**.
-2. Update the Create New Feature and Metrics form with a feature name and description. You can also define the feature properties and add metrics to measure the impact of your engagement. Click **Bulk edit** to add multiple properties by editing the JSON.
+2. Update the Create New F veature and Metrics form with a feature name and description. You can also define the feature properties and add metrics to measure the impact of your engagement. Click **Bulk edit** to add multiple properties by editing the JSON.
 3. Click **Create**. The new feature now appears on the Features panel.
 4. Enable the feature after it is developed.
 5. To enable a feature to be used as an engagement, click the Feature that you created.
@@ -88,7 +88,7 @@ To create a feature, complete the following steps:
 8. Update your app to include the newly created attributes and feature codes in your iOS app.
 9. The feature is now ready to be used.
 
-The Feature Details window has an option to export the feature as a JSON file, which can be used in the client application to load the default values.
+The Feature Details window can export the feature as a JSON file, which can be used in the client application to load the default values.
 
 ## Step 4. Creating an audience
 {: #step4}
@@ -97,7 +97,7 @@ The Feature Details window has an option to export the feature as a JSON file, w
 
 To create an audience, complete the following steps:
 
-1. Create an **audience attribute**.
+1. Create an **audience attribute**:
 
 	a. Click **Audience** > **Create Attribute**.
 	b. Provide the following values:
@@ -109,7 +109,7 @@ To create an audience, complete the following steps:
   You can choose to create multiple audience attributes, as listed in the following image, based on your requirement.
 
 
-2. Create an **audience**.
+2. Create an **audience**:
 
 	a. Click **Create Audience**.
 	b. Provide an appropriate name and description on the New Audience window.
@@ -120,7 +120,7 @@ To create an audience, complete the following steps:
 
 You can now create an Engagement.
 
-## Step 5. Create an Engagement
+## Step 5. Creating an Engagement
 
 An Engagement is an instantiation of a Feature with properties initialized and attaching one of the pre-defined audiences. You can either create an engagement by using **Feature Control** or **In-App Messaging**.
 
@@ -128,7 +128,7 @@ An Engagement is an instantiation of a Feature with properties initialized and a
 
 Through this engagement, an app owner can control the visibility of a feature by enabling or disabling it at run time. A feature can be enabled or disabled to all the application users or to a specific set of users and devices.
 
-Feature roll outs can be scheduled and coordinated by defining a start or end time and date. You can also choose a specific day on which a defined feature is to be be enabled or disabled.
+Feature roll outs can be scheduled and coordinated by defining a start or end time and date. You can also choose a specific day on which a defined feature is to be enabled or disabled.
 
 ![animated gif](images/create_engagement.gif){: gif}
 

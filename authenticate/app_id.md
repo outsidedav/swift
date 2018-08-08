@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-08-07"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-05-30"
 
 Application security can be incredibly complicated. For most developers, it's one of the hardest parts of creating an app. How can you be sure that you are protecting your users information? By integrating {{site.data.keyword.appid_full}} into your apps, you can secure resources and add authentication; even when you don't have much security experience.
 
-By requiring users to sign in to your app, you can store user data such as app preferences (or information from public social profiles), and then leverage that data to customize each users experience within the app. {{site.data.keyword.appid_short_notm}} provides a log in framework for you, but you can also bring your own branded sign in screens to use with cloud directory.
+By requiring users to sign in, you can store user data such as app preferences (or information from public social profiles), and then leverage that data to customize each users experience within the app. {{site.data.keyword.appid_short_notm}} provides a log in framework for you, but you can also bring your own branded sign-in screens to use with cloud directory.
 
 For all of the ways that you can use {{site.data.keyword.appid_short_notm}} and architecture information, see [About {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
 
@@ -93,7 +93,7 @@ After you initialize the SDK in your app, you can start configuring your {{site.
       </tr>
       <tr>
         <td><em>AppID_region</em></td>
-        <td>The {{site.data.keyword.appid_short_notm}} region is the IBM Cloud region in which you are working with the service. This can be found in the service dashboard and can be <em>AppID.REGION_US_SOUTH</em>,<em>AppID.REGION_SYDNEY</em>,<em>AppID.REGION_UK</em>.</td>
+        <td>The {{site.data.keyword.appid_short_notm}} region is the IBM Cloud region in which you are working with the service. This region can be found in the service dashboard and can be <em>AppID.REGION_US_SOUTH</em>,<em>AppID.REGION_SYDNEY</em>,<em>AppID.REGION_UK</em>.</td>
       </tr>
     </tbody>
   </table>

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-04"
+lastupdated: "2018-08-07"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-06-04"
 
 The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/index.html){: new_window}.
 
-This {{site.data.keyword.IBM_notm}} SDK Generator plug-in enables you to easily integrate your back-end services to your app with a generated SDK. When a change to a REST API occurs, you can regenerate the SDK and replace the old one for a seamless SDK upgrade. You can also integrate the CLI into a devops pipeline and ensure that the SDK is always consistent with the API spec each time the app is built.
+This {{site.data.keyword.IBM_notm}} SDK Generator plug-in integrates your back-end services to your app with a generated SDK. When a change to a REST API occurs, you can regenerate the SDK and replace the old one for a seamless SDK upgrade. You can also integrate the CLI into a devops pipeline and ensure that the SDK is always consistent with the API spec each time the app is built.
 
 The REST API definition must be valid and either hosted on a live server endpoint or a local file on your system.
 
@@ -64,8 +64,8 @@ Generate an SDK by entering: `ibmcloud sdk generate [arguments...] [command opti
    * `-f` - file
    * `-a` - app that runs on {{site.data.keyword.Bluemix_notm}}
    * `-l` - localhost URL
-* `--output "YOUR_RELATIVE_PATH"` (optional) - places the generated SDK in the directory that is specified by `YOUR_RELATIVE_PATH` (overwrites if existing SDK is present)
-* `--unzip` (optional) - extracts the generated SDK (overwrites if existing SDK artifacts are present)
+* `--output "YOUR_RELATIVE_PATH"` (optional) - places the generated SDK in the directory that is specified by `YOUR_RELATIVE_PATH` (If an existing SDK is present, it is overwritten.)
+* `--unzip` (optional) - extracts the generated SDK (If existing SDK artifacts are present, they are overwritten.)
 
 ### Usage
 {: #gen-usage}

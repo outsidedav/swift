@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-14"
+lastupdated: "2018-08-07"
 
 ---
 {:new_window: target="_blank"}
@@ -21,7 +21,7 @@ lastupdated: "2018-06-14"
 
  - **Implement in minutes** - Create a service instance in {{site.data.keyword.cloud_notm}}, add the SDK to your project, paste two lines of code into your application and you are ready to collect dozens of pre-defined metrics.
 
- - **Collect data you want** - Instrument apps with custom events, discover how users are interacting with your app, track purchases, and monitor app activity.
+ - **Collect data that you want** - Instrument apps with custom events, discover how users are interacting with your app, track purchases, and monitor app activity.
 
  - **View metrics at-a-glance** - The {{site.data.keyword.mobileanalytics_short}} console offers ready-made charts, without the need to write queries.
 
@@ -33,7 +33,7 @@ lastupdated: "2018-06-14"
 
 ## Before you begin
 
-First, be sure you have the following prerequisites ready to go:
+First, be sur that you have the following prerequisites ready to go:
 
  - iOS 8.0+ / watchOS 2.0+
  - Xcode 7.3, 8.0
@@ -52,7 +52,7 @@ First, be sure you have the following prerequisites ready to go:
 
 The service provides platform-specific SDKs to simplify application development. The {{site.data.keyword.cloud_notm}} Mobile Services Swift SDKs can be installed with either Cocoapods or Carthage. For more information, see [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics).
 
-The {{site.data.keyword.mobileanalytics_full}} SDK enables you to instrument your mobile application. The Swift SDK is available for iOS and watchOS.
+You can instrument your mobile applilcation by using the {{site.data.keyword.mobileanalytics_full}} SDK. The Swift SDK is available for iOS and watchOS.
 
 1. Make sure that you correctly set up Xcode. To learn how to set up your iOS development environment, see the [Apple Developer website ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.apple.com/support/xcode/){: new_window}. Read about the [Xcode requirements ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#requirements){: new_window} for Client SDK Swift Analytics.
 
@@ -61,24 +61,24 @@ The {{site.data.keyword.mobileanalytics_full}} SDK enables you to instrument you
 The {{site.data.keyword.mobileanalytics_short}} SDK is distributed with [CocoaPods ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cocoapods.org/){: new_window} and [Carthage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Carthage/Carthage#getting-started){: new_window}, which are dependency managers for Cocoa projects. CocoaPods and Carthage automatically download artifacts from repositories to make them available to your application. Select CocoaPods or Carthage:
 
 ### CocoaPods
-{: #cocoapods notoc}
+{: #cocoapods}
 
 1. Follow the [{{site.data.keyword.Bluemix_notm}} Mobile Services Swift SDK instructions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window} on GitHub to install `BMSAnalytics` by using Cocoapods and add it to your Podfile.
 
 2. After installing the iOS Client SDK, [import and initialize](sdk.html#initalize-ma-sdk) the Analytics Client SDK.   
 
 ### Carthage
-{: #carthage notoc}
+{: #carthage}
 
 If you are not using CocoaPods, you can add frameworks to your project by using [Carthage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos){: new_window}.
 
 1. Follow the [Carthage installation instructions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#carthage){: new_window} on GitHub to install `BMSAnalytics`.
 
-2. After installing the iOS Client SDK, import and initialize the Analytics Client SDK.
+2. After you install the iOS Client SDK, import, and then initialize the Analytics Client SDK.
 
 ## Step 3. Initializing the SDK
 
-{{site.data.keyword.mobileanalytics_short}} enables you to collect the following categories of data, and each requires a different degree of instrumentation:
+By using the {{site.data.keyword.mobileanalytics_short}} you can collect the following categories of data, each of which require a different degree of instrumentation:
 
 **Pre-defined data**:
 This category includes generic usage and device information that applies to all applications. It indicates the volume, frequency, or duration of application use. Predefined data is collected automatically after you initialize the {{site.data.keyword.mobileanalytics_short}} SDK in your application.
@@ -113,7 +113,7 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 
 2. Initialize the {{site.data.keyword.mobileanalytics_short}} Client SDK in your application.
 
-	First initialize the `BMSClient` class by placing the initialization code in the `application(_:didFinishLaunchingWithOptions:)` method of your application delegate, or in a location that works best for your project.
+	First, initialize the `BMSClient` class by placing the initialization code in the `application(_:didFinishLaunchingWithOptions:)` method of your application delegate, or in a location that works best for your project.
 	```
 	BMSClient.sharedInstance.initialize(bluemixRegion: BMSClient.Region.usSouth) // Make sure that you point to your region
 	```
@@ -171,11 +171,11 @@ Analytics.log(metadata: eventObject)
 ```
 {: codeblock}
 
-## Step 7. Enabling, configuring, and using Logger
+## Step 7. Using Logger
 
 The {{site.data.keyword.mobileanalytics_full}} Client SDK provides a logging framework that is similar to other log frameworks that you might be familiar with, such as `java.util.logging` or `log4j`. The logging framework supports multiple per-package logger instances, different log levels, capturing of stack traces for an application crash, and more.
 
-You can also configure the logged data to be stored on the device where the application is running and send the device logs to the {{site.data.keyword.mobileanalytics_short}} Service at a later time.
+You can also configure the logged data to be stored on the device where the application is running and send the device logs to the {{site.data.keyword.mobileanalytics_short}} Service later.
 
 The {{site.data.keyword.mobileanalytics_short}} Client SDK logging framework supports the following log levels, which are listed from least to most verbose, with recommended use guidelines:
 
@@ -186,16 +186,16 @@ The {{site.data.keyword.mobileanalytics_short}} Client SDK logging framework sup
   * `DEBUG` - Use for reporting debug statements to help developers resolve application defects
 
 ### Log level scenario
-{: #log-level-scenario notoc}
+{: #log-level-scenario}
 
 When the logger level is configured to `FATAL`, the logger captures uncaught exceptions, but does not capture any logs that lead up to the crash event. You can set a more verbose logger level to ensure that logs that might lead to a `FATAL` logger entry, such as `WARN` and `ERROR`, are also captured.
 
 When the logger level is set `DEBUG`, you also get Mobile Analytics Client SDK logs, which are included when you send logs.
 
 ### Sample Logger usage
-{: #sample-logger-usage notoc}
+{: #sample-logger-usage}
 
-**Note:** Make sure that your application is configured to use the {{site.data.keyword.mobileanalytics_short}} Client SDK before using the logging framework.
+**Note:** Make sure that your application is configured to use the {{site.data.keyword.mobileanalytics_short}} Client SDK before you use the logging framework.
 
 The following code snippets show sample Logger usage:
 ```
@@ -237,7 +237,7 @@ Logger.send(completionHandler: { (response: Response?, error: Error?) in
 For privacy concerns, you can disable Logger output for applications that are built in release mode. By default, the Logger class prints logs to the Xcode console. In the build settings for your target, add a `-D RELEASE_BUILD` flag to the **Other Swift Flags** section of the release build configuration.
 {: tip}
 
-## Step 8. Location Data Logging
+## Step 8. Logging Location Data
 {: #location-logging}
 
 Location of the mobile device might be logged from the app through this provided API:
@@ -245,9 +245,9 @@ Location of the mobile device might be logged from the app through this provided
 Analytics.logLocation();
 ```
 
-This API enables the app to send its location as latitude, longitude to the server in between app sessions. Other than these explicit calls to the location-logging API, the SDK sends device location for every App-Session, both for initial app session context and user switch app session (that is, a switch of a user between an app session) context. The location API must be enabled in the initialization of SDK.
+The API enables the app to send its location (as latitude and longitude), to the server in between app sessions. Other than explicit calls to the `location-logging` API, the SDK sends device location for every App-Session. The location is sent for the initial app session context, and user switch app session (that is, a switch of a user between an app session) context. The location API must be enabled in the initialization of the SDK.
 
-To call this location logging API, set the `collectLocation` parameter to true in SDK initialization:
+To call the `location-logging` API, set the `collectLocation` parameter to `true` in the SDK initialization:
 ```
 Analytics.initialize(appName, apiKey,  hasUserContext, collectLocation, [BMSAnalytics.ALL])
 ```
@@ -262,20 +262,21 @@ You can configure the {{site.data.keyword.mobileanalytics_short}} Client SDK to 
 
 You can see [application crash data](app-monitoring.html#monitor-app-crash) by sending analytics and log information to {{site.data.keyword.mobileanalytics_short}}.
 
-The `Analytics.send()` method populates the **Crash Overview** and **Crashes** tables on the **Crashes** page. Charts in this section are enabled by using the initialization and sending process for analytics; no special configuration is necessary.
+The `Analytics.send()` method populates the **Crash Overview** and **Crashes** tables on the **Crashes** page. Charts are enabled by using the initialization and sending process for analytics; no special configuration is necessary.
 
-The `Logger.send()` method populates the the **Crash Summary** and **Crash Details** tables on the **Troubleshooting** page. You must enable your application to store and send logs to populate the charts in this section, by adding an additional statement in your application code:
+The `Logger.send()` method populates the **Crash Summary** and **Crash Details** tables on the **Troubleshooting** page. You must enable your application to store and send logs to populate the charts by adding a statement in your application code:
 ```
 Logger.isLogStorageEnabled = true
 Logger.logLevelFilter = LogLevel.Fatal // or greater
 ```
+{: codeblock}
 
 See the iOS [sample logger usage](sdk.html##sample-logger-usage).
 
 ## Step 11. Tracking active users
 {: #trackingusers}
 
-If your application can recognize unique users on a device, you can optionally track how many users are actively using your application by passing the user name of the active user to {{site.data.keyword.mobileanalytics_short}}.
+If your application can recognize unique users on a device, you can track how many users are actively using the application by passing the user name of the active user to {{site.data.keyword.mobileanalytics_short}}.
 
 Enable user tracking by initializing {{site.data.keyword.mobileanalytics_short}} with `hasUserContext=true`. Otherwise, {{site.data.keyword.mobileanalytics_short}} captures only one user per device.
 

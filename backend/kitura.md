@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-08-07"
 
 ---
 {:new_window: target="_blank"}
@@ -19,7 +19,7 @@ lastupdated: "2018-05-30"
 
 Kitura is able to integrate with all of the services and capabilities that are provided by {{site.data.keyword.cloud}}, including {{site.data.keyword. appid_short}}, {{site.data.keyword.mobilepushshort}}, and {{site.data.keyword.mobileanalytics_short}}, as well as databases, machine learning, and other services. Kitura can then be deployed and automatically scaled by using either of the Cloud Foundry or Docker (Kubernetes-based) platforms in {{site.data.keyword.cloud}}.
 
-Kitura provides a `kitura` [command line interface (CLI)](http://www.kitura.io/en/starter/gettingstarted.html) that simplifies creating, building, testing, and deploying Kitura applications. Applications that are built by using the Kitura CLI include full support for deploying to any cloud that supports Cloud Foundry, Docker, and Kubernetes technologies. However, if you are building specifically for {{site.data.keyword.cloud}}, it is recommended that you use either the IBM Apple Development Console in the browser or use the {{site.data.keyword.dev_cli_notm}}. While both methods share the same underlying technology, the Apple Development Console and the IBM Developer Tools additionally create a hosted project and deployment pipeline for you, as well as provision the services that your application needs.
+Kitura provides a `kitura` [command line interface (CLI)](http://www.kitura.io/en/starter/gettingstarted.html) that simplifies creating, building, testing, and deploying Kitura applications. Applications that are built by using the Kitura CLI include full support for deploying to any cloud that supports Cloud Foundry, Docker, and Kubernetes technologies. However, if you are building specifically for {{site.data.keyword.cloud}}, it is recommended that you use either the IBM Apple Development Console in the browser or use the {{site.data.keyword.dev_cli_notm}}. Additionally, while both methods share underlying technology, the Apple Development Console and the IBM Developer Tools create a hosted project and deployment pipeline for you, as well as provision the services that your application needs.
 
 ## Before you begin
 
@@ -45,27 +45,27 @@ A project is created, but one that does not yet use any additional services or c
 1. Click the **Add Resource** button to add services. A panel of service categories is displayed. For example, select **Data** to look at the available databases, and select **Cloudant NoSQL DB**.
 2. Select a pricing plan for the service, for example Lite, and click **Create**.
 
-An instance of the service is created that provides you with the service credentials for use in your application, and in some cases adds the necessary code to your project to set up the connection to the service with the correct configuration.  You can now add more services by using the **Add Resource** button, or by clicking the **Download Code** button to get the code for the project.
+An instance of the service is created that provides you with service credentials for the application, and in some cases adds the necessary code to your project to include the correct connection to the service. You can now add more services by using the **Add Resource** button, or by clicking the **Download Code** button to get the code for the project.
 
 After downloading your project, you can begin working with your app.
 
 ## Step 3. Developing your application with Xcode
-After downloading your project, you are able to modify and develop it by using Xcode, and then upload your modified application for deployment to the cloud.
+After you download your project, you can modify and develop it by using Xcode, and then upload your modified application for deployment to the cloud.
 
 1. Create an Xcode project.  
-  Before you can use your project in Xcode, you need to create an Xcode project file by using the following Swift Package Manager command from the root directory of your downloaded project (which contains a `Package.swift` file):
+  Before you can use your project in Xcode, you must create an Xcode project file by using the Swift Package Manager command. Run the following command from the root directory of your downloaded project (which contains a `Package.swift` file):
   ```
   swift package generate-xcodeproj
   ```
   {: codeblock}
 
-  This creates an Xcode project in the same directory that you can then open.
+  An Xcode project is created in the same directory that you can then open.
 
 2. Set the Xcode target for the project.  
   To run the Kitura server, you must edit the scheme by clicking the **project_name-Package** section on the toolbar and selecting the **project_name** target from the menu. Check that the target device is set to **My Mac**.
 
 3. Run the Kitura server locally  
-  Click on the **Run** button or use the `⌘+R` key shortcut to start the Kitura server. After the server has started, you can check that the following standard Kitura URLs are running:
+  Click on the **Run** button or use the `⌘+R` key shortcut to start the Kitura server. Once the server is started, you can check that the following standard Kitura URLs are running:
   * Kitura Monitoring: [http://localhost:8080/swiftmetrics-dash/]()
   * Kitura Health check: [http://localhost:8080/health]()
 
@@ -90,14 +90,14 @@ A skeleton Kitura server is created, but it does not provide any REST APIs that 
   ```
   {: codeblock}
 
-3. Add a handler for `GET` requests on `/meals` to the `Sources/Application/Application.swift` file by adding the following into the `postInit()` function:  
+3. Add a handler for `GET` requests on `/meals` to the `Sources/Application/Application.swift` file by adding the following code into the `postInit()` function:  
 
   ```swift
   router.get("/meals", handler: loadHandler)
   ```
   {: codeblock}
 
-4. Implement the loadHandler function to the `Sources/Application/Application.swift` file by adding the following as another function in the `App` class:  
+4. Implement the loadHandler function to the `Sources/Application/Application.swift` file by adding the following code as another function in the `App` class:  
 
   ```swift
   func loadHandler(completion: ([Meal]?, RequestError?) -> Void ) {
@@ -118,7 +118,7 @@ You now have a REST API for `GET` requests on `/meals` that responds with an arr
   * `GET /meals`:	[http://localhost:8080/meals]()
   ```
 
-  An empty array is returned `[]`, as there are no `Meal` objects currently stored in the `mealStore`. 
+  An empty array is returned `[]` because there are no `Meal` objects currently stored in the `mealStore`. 
 
 You can use the [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) tutorial, which helps you build a set of REST APIs for storing, fetching, and deleting `Meal` objects from an iOS application, including storing the data in a database.
 {: tip}
@@ -126,7 +126,7 @@ You can use the [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) 
 ## Step 6. Installing KituraKit into your iOS application
 The REST APIs built by using the Kitura server are standard web APIs, usable from any application regardless of client library that is used or which language the client is written in. Meaning that you can use Alamofire, RestKit, or URLSession to make connections to the server. Kitura also provides a bespoke, optimized client connector in order to simplify calling its REST APIs from iOS, in the form of KituraKit. 
 
-KituraKit provides a mirror image of the router handler APIs used in Kitura, making it possible to share Swift types between the client and the server with little effort. This feature removes the need to explicitly carry out JSON encoding, and decoding of the data being sent to or received from the server.
+KituraKit provides a mirror image of the router handler APIs used in Kitura, making it possible to share Swift types between the client and the server with little effort. This feature removes the need to explicitly carry out JSON encoding and decoding of the data that is sent to, or received from, the server.
 
 The following steps show how to install KituraKit into your iOS application, and use it to call the `GET /meals` REST API created by using Kitura:
 
@@ -142,7 +142,7 @@ The following steps show how to install KituraKit into your iOS application, and
   ```
   {: codeblock}
 
-  with the following code:
+  With the following code:
 	```
   platform :ios, '11.0'
   ```
@@ -203,4 +203,4 @@ You can use the [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) 
 {: tip}
 
 ## Next Steps
-Now that you have a Kitura server that provides a REST API that can be called by your iOS application, you are ready to deploy your server to IBM Cloud. Deployment can be done using Containers with Kubernetes, Secure Containers, or Cloud Foundry.
+Now that you have a Kitura server that provides a REST API that can be called by your iOS application, you are ready to deploy your server to {{site.data.keyword.cloud_notm}}. Deployments can be done by using Containers with Kubernetes, Secure Containers, or Cloud Foundry.

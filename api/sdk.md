@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-08-07"
 
 ---
 {:new_window: target="_blank"}
@@ -17,14 +17,14 @@ lastupdated: "2018-05-30"
 
 The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/bluemix_cli/get_started.html).
 
-With the {{site.data.keyword.IBM_notm}} SDK Generator plug-in, you can to easily integrate your back-end services to your app by using a generated SDK. When a change to a REST API occurs, you can regenerate the SDK, and replace the old one for a seamless SDK upgrade. You can also integrate the CLI into a devops pipeline, and ensure that the SDK is always consistent with the API spec each time the app is built.
+With the {{site.data.keyword.IBM_notm}} SDK Generator plug-in, you can easily integrate your back-end services to your app by using a generated SDK. When a change to a REST API occurs, you can regenerate the SDK, and replace the old one for a seamless SDK upgrade. You can also integrate the CLI into a devops pipeline, and ensure that the SDK is always consistent with the API spec each time the app is built.
 
 The REST API definition must be valid and either hosted on a live server endpoint or a local file on your system.
 
 ## Before you begin
 {: #prereqs}
 
-Ensure that you have the following:
+Ensure that you have the following prerequisites:
 
 * An [{{site.data.keyword.cloud_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){: new_window} account.
 * A valid API definition that conforms to the [Open API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.openapis.org/){: new_window} specification.
@@ -75,7 +75,7 @@ Specifies the type for the `OPENAPI_DOC_LOCATION` argument.
 
 **Optional**:
   * `--output "YOUR_RELATIVE_PATH"` - Places the generated SDK in the directory that is specified by `YOUR_RELATIVE_PATH` (Existing SDKs are overwritten if present).
-  * `--unzip` - Extracts the generated SDK (overwrites if existing SDK artifacts are present).
+  * `--unzip` - Extracts the generated SDK (overwrites data if there are existing SDK artifacts are present).
 
 ### Usage
 {: #gen-usage}
@@ -120,3 +120,4 @@ To validate an SDK from the URL to an API spec document or a local JSON or Yaml 
 ibmcloud sdk validate [OPENAPI_DOC_LOCATION] [LOCATION]
 ```
 {: codeblock}
+

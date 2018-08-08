@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-04"
+lastupdated: "2018-08-07"
 
 ---
 {:tip: .tip}
@@ -68,7 +68,7 @@ $ brew install carthage
 ## Adding frameworks to your app
 {: #add-frameworks-to-your-app}
 
-Now that the {{site.data.keyword.watson}} Swift SDK framework is built, you must to link and copy the {{site.data.keyword.conversationshort}} framework into your app.
+Now that the {{site.data.keyword.watson}} Swift SDK framework is built, you must link and copy the {{site.data.keyword.conversationshort}} framework into your app.
 
 1. Open your app in Xcode and select your project in the Navigator to open its settings.
 2. Select your app target and open the **General** tab.
@@ -153,7 +153,7 @@ Response: Sure thing! Which genre would you prefer? Jazz is my personal favorite
 ## Using starter kits
 {: #conversation_starterkits}
 
-With starter kits, you can quickly and easily leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.conversationshort}} to any server-side back end by using the starter kits. The Chatbot for iOS with Watson starter kit illustrates how to use the deep learning capabilities of {{site.data.keyword.conversationshort}}, by adding a natural language interface to your application that automates interactions with your end users.
+With starter kits, you can quickly and easily leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.conversationshort}} to any server-side back end by using the starter kits. The Chatbot for iOS with Watson Starter Kit illustrates how to use the deep learning capabilities of {{site.data.keyword.conversationshort}} by adding a natural language interface to your application that automates interactions with your end users.
 
 1. Select the [starter kit](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} with which you want to work.
 2. Create the project with the default services.

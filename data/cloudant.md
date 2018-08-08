@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017-2018
-lastupdated: "2018-06-13"
+lastupdated: "2018-08-07"
 
 ---
 {:new_window: target="_blank"}
@@ -134,16 +134,16 @@ Is everything set-up correctly? Test it out!
 
 1. Run your application, making sure to invoke the initialization and respective operations, such as creating a document.
 2. Return to the {{site.data.keyword.cloudant_short_notm}} service instance previously created in your web browser, and open the service dashboard.
-3. Select the database that is used, and you should see that you freshly created documents in the dashboard.
+3. Select the database that is used, and you can see the documents in the dashboard.
 
 Having trouble? Check out the [{{site.data.keyword.cloudant_short_notm}} API Reference](/docs/services/Cloudant/api/index.html#api-reference-overview).
 
 
 ## Next steps
-{: #cloudant_next}
+{: #cloudant_next notoc}
 
 Great job! You added a level of secure persistence to your app. Keep the momentum by trying one of the following options:
 
-* View the  [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudant/swift-cloudant) source code.
+* View the [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudant/swift-cloudant) source code.
 * Starter Kits are one of the fastest ways to leverage the capabilities of IBM Cloud. The **Infinite Scrolling with Cloudant NoSQL for iOS** starter kit illustrates how to extend a ViewController to display data by using pagination. This pattern of app is common for iOS developers, and is a great example for illustrating the capabilities of {{site.data.keyword.cloudant_short_notm}}. View the available starter kits in the [Mobile developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
 * Learn more about and take advantage of all of the features that {{site.data.keyword.cloudant_short_notm}} has to offer, [check out the docs](/docs/services/Cloudant/index.html)!

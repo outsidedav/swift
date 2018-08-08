@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-13"
+lastupdated: "2018-08-07"
 
 ---
 {:new_window: target="_blank"}
@@ -30,7 +30,7 @@ For this example, the [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-Postg
 
 ## Step 2. Importing ORM into your application
 
-1. Update `Package.swift` by adding the Swift-Kuery-ORM and Swift-Kuery-PostgreSQL packages:
+1. Update the `Package.swift` file by adding the `Swift-Kuery-ORM` and `Swift-Kuery-PostgreSQL` packages:
   ```swift
      dependencies: [
       ...

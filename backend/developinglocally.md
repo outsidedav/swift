@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-12"
+lastupdated: "2018-08-07"
 
 ---
 {:new_window: target="_blank"}
@@ -13,7 +13,7 @@ lastupdated: "2018-06-12"
 
 # Developing Locally
 
-Developing locally enables you to easily build, run, and test your application. You use the {{site.data.keyword.dev_cli_short}} to execute these actions with standard commands. 
+By developing locally, you can easily build, run, and test Swift apps. You use the {{site.data.keyword.dev_cli_short}} to perform these actions by usings standard commands. 
 
 You can use the {{site.data.keyword.dev_cli_short}} to manage your server-side applications with more than a dozen commands. Learn more about the various commands at [IBM Cloud Developer Tools CLI `ibmcloud dev` commands](/docs/cli/idt/commands.html).
 
@@ -29,22 +29,22 @@ See [Setting up the IBM Cloud Developer Tools CLI](/docs/cli/idt/setting_up_idt.
 
 ## Retrieving the service credentials
 
-After you clone your application from Git, you must retrieve the credentials for the services that are bound to your application because they are not stored in the git repo for your application. Retrieving the credentials allows the use of bound services. You can easily download the credentials by running the following command in the root of the application directory:
+After you clone your application from Git, you must retrieve the credentials for services that are bound to your application, as they are not stored in the git repo for your application. Retrieving the credentials allows the use of bound services. You can easily download the credentials by running the following command in the root of the application directory:
 ```
 ibmcloud dev get-credentials
 ```
 {:codeblock}
 
-## Build, Run, and Deploy your application
+## Building, running, and deploying your application
 
-1. **Build** - You can now `build` your application, which is a prerequisite to `run` your application.
+1. **Build** - You can now build your application, which is a prerequisite to running your application.
   Use the following command in the root of the application directory to build your app:
   ```
   ibmcloud dev build
   ```
   {:codeblock}
 
-2. **Run** - After a successful `build`, you can `run` your application in a local container with the following command:
+2. **Run** - After a successful build, you can run your application in a local container with the following command:
   ```
   ibmcloud dev run
   ```

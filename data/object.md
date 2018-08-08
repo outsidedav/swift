@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-13"
+lastupdated: "2018-08-07"
 
 ---
 {:new_window: target="_blank"}
@@ -53,13 +53,13 @@ Data at rest is encrypted with automatic provider side Advanced Encryption Stand
 
 Server-side encryption is always ON for customer data. Compared to the hashing that is required in authentication, and the erasure coding, encryption is not a significant part of the processing cost of Cloud Object Storage.
 
-You can provide your own key for encryption since SSE-C is supported in {{site.data.keyword.cos_full_notm}}, but the responsibility is on you to manage your key, provide the key for storing, and retrieving the data.
+You can provide your own key for encryption since SSE-C is supported in {{site.data.keyword.cos_full_notm}}. However, the responsibility is on you to manage and provide the key for storing, and retrieve the data.
 
 ## Resiliency
 
 When you create a bucket, you must select a resiliency level (cross-region or regional). Based on your selection, your data is dispersed, and stored across multiple geographic locations.
 
-Regional resiliency is for low latency and your data is distributed in 3 centers within a single region. Cross region resiliency if for mission critical availability and your data is stored in 3 or more different regions. Cross region offers geographic resiliency and is available across multiple endpoints. Consider your application needs to decide between the two.
+Regional resiliency is for low latency and your data is distributed in three centers within a single region. Cross region resiliency if for mission critical availability and your data is stored in 3 or more different regions. Cross region offers geographic resiliency and is available across multiple endpoints. Consider your application needs to decide between the two.
 
 ### Geographies
 
@@ -75,7 +75,7 @@ Consider the following factors to select the geographic location of your object 
 
 ## Use Cases and Storage Classes
 
-Depending on your use case, you can reduce costs by selecting a service plan that meets your needs. Archival operations that involve minimal access to the object store do not need the speed and durability of a frequently accessed object, and this distinction is reflected in the Storage Class support and pricing plan for your applications. Storage classes are defined at the bucket level, so you can use a combination of plans to suit your needs. Simply create a new bucket that is set to the desired storage class.
+Depending on your use case, you can reduce costs by selecting a service plan that meets your needs. Archival operations that involve minimal access to the object store, do not need the speed and durability of a frequently accessed object, and this distinction is reflected in the Storage Class support and pricing plan for your applications. Storage classes are defined at the bucket level, so you can use a combination of plans to suit your needs. Simply create a new bucket that is set to the desired storage class.
 
 More information about the pricing is available from the [{{site.data.keyword.cos_short}} Storage Class](/docs/services/cloud-object-storage/help/billing.html#ibm-cos-pricing) documentation.
 

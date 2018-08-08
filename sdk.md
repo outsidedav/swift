@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-06-14"
+  years: 2017, 2018
+lastupdated: "2017-08-01"
 
 ---
 {:new_window: target="_blank"}
@@ -26,7 +26,9 @@ You can use the following SDKs in your mobile application to leverage their resp
 - [{{site.data.keyword.appid_short}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-cloud-security/appid-clientsdk-swift)
 - [{{site.data.keyword.mobileanalytics_short}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)
 - [{{site.data.keyword.mobilepushshort}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push)
+- [BMSSecurity ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security)
 - [{{site.data.keyword.engage_short}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch)
+- [BMSGoogleAuthentication SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security-googleauthentication)
 - [Watson Swift SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/swift-sdk)
 
 ### Storage
@@ -39,6 +41,8 @@ If you have a Swift server application, you can use the following SDKs to commun
 
 ### Services
 - [{{site.data.keyword.appid_short}} Swift Server SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-cloud-security/appid-serversdk-swift)
+- [{{site.data.keyword.openwhisk_short}} for iOS ![External link icon](../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/openwhisk/learn/ios-sdk)
+- [KituraKit ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Swift/KituraKit)
 - [{{site.data.keyword.mobilepushshort}} Swift Server SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-pushnotifications-serversdk-swift)
 - [Watson Swift SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/swift-sdk)
 

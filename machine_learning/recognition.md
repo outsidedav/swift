@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-04"
+lastupdated: "2018-08-07"
 
 ---
 {:new_window: target="_blank"}
@@ -14,13 +14,13 @@ lastupdated: "2018-06-04"
 # {{site.data.keyword.visualrecognitionshort}}
 {: #recognition}
 
-The IBM Watson Visual Recognition service enables your app to quickly and accurately tag, classify, and train visual content by using machine learning. The service can help to classify virtually any visual content, train your own custom model in minutes, and detect faces.
+The {{site.data.keyword.visualrecognitionfull}} service enables your app to quickly and accurately tag, classify, and train visual content by using machine learning. The service can help to classify virtually any visual content, train your own custom model in minutes, and detect faces.
 
 ## How it works
 {: ##how-it-works}
 
 1. Your app chooses a selection of images to analyze.
-2. Your app sends the image to the {{site.data.keyword.visualrecognitionshort}} service using the Watson Swift SDK.
+2. Your app sends the image to the {{site.data.keyword.visualrecognitionshort}} service by using the Watson Swift SDK.
 3. The service analyzes the image by using classification analysis to identify scenes, objects, faces, and more.
 4. The service's analysis is returned to your app by the Watson Swift SDK.
 
@@ -35,7 +35,7 @@ First, be sure that you have the following prerequisites ready to go:
   <li>Carthage</li>
 </ul>
 
-It is recommended to use [Carthage](https://github.com/Carthage/Carthage) to manage dependencies, and build the Watson Swift SDK for your application. If you you are new to Carthage, you can install it with [Homebrew](http://brew.sh/):
+It is recommended to use [Carthage](https://github.com/Carthage/Carthage) to manage dependencies, and build the Watson Swift SDK for your application. If you are new to Carthage, you can install it with [Homebrew](http://brew.sh/):
 
 ```bash
 $ brew update
@@ -56,13 +56,13 @@ Provision an instance of the {{site.data.keyword.visualrecognitionshort}} servic
 ## Step 2. Downloading and building dependencies
 {: ###download-and-build-dependencies}
 
-Using your favorite text editor, create a new file called `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located). Then add a line to specify the Watson Swift SDK as a dependency:
+Using your favorite text editor, create a file that is called `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located). Then, add a line to specify the Watson Swift SDK as a dependency:
 ```
 github "watson-developer-cloud/swift-sdk"
 ```
 {: pre}
 
-For a production app, you may also want to specify a particular [version requirement](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement) to avoid unexpected changes from new releases of the Watson Swift SDK.
+For a production app, you can specify a particular [version requirement](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement) to avoid unexpected changes from new releases of the Watson Swift SDK.
 
 With the `Cartfile` in place, now you can download and build the dependencies. Use a terminal to navigate to the root directory of your project, then run Carthage:
 
@@ -71,7 +71,7 @@ carthage update --platform iOS
 ```
 {: pre}
 
-Carthage will download the Watson Swift SDK and build its frameworks in the `Carthage/Build/iOS` folder of your project.
+Carthage downloads the Watson Swift SDK, and build its frameworks in the `Carthage/Build/iOS` folder of your project.
 
 ## Step 3. Adding frameworks to your app
 {: ###add-frameworks-to-your-app}
@@ -80,7 +80,7 @@ Carthage will download the Watson Swift SDK and build its frameworks in the `Car
 
 Now that the Watson Swift SDK frameworks are built by Carthage, you must link the Visual Recognition framework with your app.
 
-1. Open your app in Xcode, and select your project at the top of the Navigator to open its settings.
+1. Open your app in Xcode, and select your project to open its settings.
 2. Select your app target then open the **General** tab.
 3. Scroll down to the "Linked Frameworks and Libraries" section, and click the `+` icon.
 4. In the window that appears, choose **Add Other...**, and navigate to the `Carthage/Build/iOS` directory. Select **VisualRecognitionV3.framework** to link it with your app.
@@ -126,7 +126,7 @@ Now you are ready to start working with the Watson Swift SDK in your app!
 ## Using starter kits
 {: #recognition_starterkits}
 
-[Starter kits](https://console.bluemix.net/developer/appledevelopment/starter-kits) are one of the fastest ways to leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can make use of the {{site.data.keyword.visualrecognitionshort}} service by selecting the **Visual Recognition for iOS with Watson** starter kit. This service evaluates and classifies your images. Upload new or existing images from your mobile device, and the Visual Recognition app quickly tags and classifies the image content.
+[Starter kits](https://console.bluemix.net/developer/appledevelopment/starter-kits) are one of the fastest ways to leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can use the {{site.data.keyword.visualrecognitionshort}} service by selecting the **Visual Recognition for iOS with Watson** starter kit. This service evaluates and classifies your images. Upload new or existing images from your mobile device, and the Visual Recognition app quickly tags and classifies the image content.
 
 To get started:
 1. Select the starter kit found [here](https://console.bluemix.net/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson).

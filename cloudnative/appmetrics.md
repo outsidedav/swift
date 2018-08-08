@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-08-07"
 
 ---
 
@@ -32,18 +32,11 @@ Application Metrics can help you to identify common performance problems such as
 
 To add performance monitoring to your Swift application, you can leverage the comprehensive aggregation of metrics that are provided by the [Application Metrics for Swift](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/) dashboard. The dashboard visualizes the performance of your Swift application by displaying performance metrics in a web-based front end, and also provides programmatic access.
 
-There are many extension points of the `SwiftMetrics` library, including [Prometheus configuration](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support), and configuring an [emitter](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support) to run alongside your app.
+The `SwiftMetrics` library has many extension points, including [Prometheus configuration](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support), and configuring an [emitter](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support) to run alongside your app.
 
-To enable the base monitoring API, add `SwiftMetrics` as a dependency in your `Package.swift`:
+To enable the base monitoring API, add `SwiftMetrics` to the *dependencies:* in your `Package.swift`, making sure to add it to the applicable target:
 ```swift
-dependencies: [
-...
    .package(url: "https://github.com/RuntimeTools/SwiftMetrics.git", from: "2.4.0")
-...
-]
-...
-targets: [
-   .target(name: "MyApp", dependencies: ["SwiftMetrics"], path: "Sources")]
 ```
 {: codeblock}
 
@@ -58,11 +51,10 @@ let monitoring = metrics.monitor()
 ```
 {: codeblock}
 
-The following code provides the metrics to the monitoring dashboard:
+Add the following code to the original sample to provide metrics in the monitoring dashboard:
 ```swift
 import SwiftMetricsDash
-...
-// Pass SwiftMetrics to the dashboard for visualising
+
 let smd = try SwiftMetricsDash(swiftMetricsInstance : metrics)
 ```  
 {: codeblock}
@@ -105,4 +97,3 @@ func initializeMetrics(router: Router) {
 Once your application is running, you can access the dashboard by using the `/swiftmetrics-dash` endpoint.
 
 By default, `SwiftMetricsPrometheus` provides the [Prometheus endpoint](https://prometheus.io/) under `http://<hostname>:<port>/metrics`.
-

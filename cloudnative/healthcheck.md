@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-08-07"
 
 ---
 
@@ -13,38 +13,34 @@ lastupdated: "2018-08-01"
 {:pre: .pre}
 {:tip: .tip}
 
-# Using a Health check in your Swift app
+# Using a health check in your Swift app
 {: #healthcheck}
 
 Health checks provide a simple mechanism to determine whether or not a serverside application is behaving properly. You can add a health check endpoint to your existing server-side Swift application quickly to aid in monitoring the wellbeing of your app.
 
 Health checks are typically consumed over `HTTP`. Many deployment environments, such as Cloud Foundry or Kubernetes, and infrastructure cloud services like load balancers can be configured to poll the health endpoint periodically. Standard return codes are used for checking the UP or DOWN status, returning 200 for UP, and 5xx for DOWN. Following convention, the response, or payload, is returned in a `JSON` format. You can also cache the health check endpoint at a configurable interval to prevent DoS on your application.
 
-## Adding Health check to an existing Swift app
+## Adding health check to an existing Swift app
 {: #add-healthcheck-existing}
 
 The [Health](https://github.com/IBM-Swift/Health) library makes it easy add a health check to your Swift application. Health checks are extensible. For more information about [caching](https://github.com/IBM-Swift/Health#caching) to prevent DoS attacks or adding [custom checks](https://github.com/IBM-Swift/Health#implementing-a-health-check), see the [Health](https://github.com/IBM-Swift/Health) library.
 
-To add the Health library to an existing Kitura app, specify it as a dependency in your `Package.swift` file:
+To add the Health library to an existing Swift app, specify it in the *dependencies:* section of your `Package.swift` file, and making sure to add it to the proper targets:
 ```swift
-  dependencies: [
-  ...
-      .package(url: "https://github.com/IBM-Swift/Health.git", .upToNextMajor(from: "1.0.0")),
-  ...
-  ],
+  .package(url: "https://github.com/IBM-Swift/Health.git", .upToNextMajor(from: "1.0.0")),
 ```
 {: codeblock}
 
-Then, add the following instrumentation code to your application:
+Then, add the following initialization code to your application:
 ```swift
 import Health
 
-...
+let health = Health()
+```
+{: codeblock}
 
-  let health = Health()
-
-...
-// Define /health endpoint that leverages Health
+Then, add the route definition to define the health check endpoint:
+```
 router.get("/health") { request, response, next in
   // let status = health.status.toDictionary()
   let status = health.status.toSimpleDictionary()
@@ -64,9 +60,9 @@ For alternate implementations, such as using **Codable** or the standard diction
 ## Accessing health check from server-side Swift Starter Kit apps
 {: #healthcheck-starterkit}
 
-When you generate a Kitura-based Swift app by using a Starter Kit, a basic health check endpoint `/health`, is included by default. The endpoint leverages the Codable protocol available in Swift 4, as supported by the [Health](https://github.com/IBM-Swift/Health) library.
+When you generate a Kitura-based Swift app by using a Starter Kit, a basic health check endpoint (`/health') is included by default. The endpoint leverages the Codable protocol available in Swift 4, as supported by the [Health](https://github.com/IBM-Swift/Health) library.
 
-Basic initialization code, such as the initialization of the Health object occurs in `Sources/Application.swift`, while the Health check endpoint is provided by the `/Sources/Application/Routes/HealthRoutes.swift` file, which contains the following code:
+Basic initialization code, such as the initialization of the Health object occurs in `Sources/Application.swift`, while the health check endpoint is provided by the `/Sources/Application/Routes/HealthRoutes.swift` file, which contains the following code:
 ```swift
 import LoggerAPI
 import Health

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-07-19"
+lastupdated: "2018-08-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-07-19"
 # Creating Swift apps with Starter Kits
 {: #intro}
 
-The {{site.data.keyword.cloud_notm}} Developer Console for Apple enables Apple developers to create apps from a variety of starter kits, provision and connect key {{site.data.keyword.cloud_notm}}-optimized services, and then quickly download working code or set up for continuous delivery. Users are able to create, view, configure, and manage your app, as well as download your app's code. Using starter kits helps you to quickly evaluate, and test {{site.data.keyword.cloud_notm}} services with a brand new app.
+The {{site.data.keyword.cloud_notm}} Developer Console for Apple enables Apple developers to create apps from various starter kits, provision and connect key {{site.data.keyword.cloud_notm}}-optimized services, and then quickly download working code or set up for continuous delivery. Users are able to create, view, configure, and manage your app, as well as download your app's code. Using starter kits helps you to quickly evaluate, and test {{site.data.keyword.cloud_notm}} services with a brand new app.
 
 Ready to jump in? Visit the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) now to get started.
 {: tip}
@@ -23,7 +23,7 @@ Ready to jump in? Visit the [{{site.data.keyword.cloud_notm}} Developer Console 
 ## What is a Starter Kit?
 {: #starter_kits}
 
-With the {{site.data.keyword.cloud_notm}} Developer Experience, you can choose from various starter kits. Starter kits instruct {{site.data.keyword.cloud_notm}} to dynamically assemble a skeleton production app, in the language of your choice, ready for cloud deployment. Each starter kit embodies a language, a framework, and a pattern for a specific real-world use case that allows reusing code rather than re-inventing it.
+With the {{site.data.keyword.cloud_notm}} Developer Experience, you can choose from various starter kits. Starter kits instruct {{site.data.keyword.cloud_notm}} to dynamically assemble a skeleton production app, in the language of your choice, ready for cloud deployment. Each starter kit embodies a language, a framework, and a pattern for a specific real-world use case that allows reusing code rather than reinventing it.
 
 Starter kits are production-ready, and focus on demonstrating a key pattern implementation by using a runtime (for example Swift). In some cases, starter kits offer a simple user experience to highlight the integration of the service. In other cases, stater kits represent a customizable implementation of a sophisticated use case.
 
@@ -58,11 +58,11 @@ From the **Create App** view, you can name your app, as well as provide deployme
 ## App Details view
 {: #app_details_view}
 
-The App Details view displays a list of services that are configured for your app. For each item in the list, you can see the service name, links to other information, and an **actions** button with three vertically aligned dots. The **actions** button options are to remove services from an app, open dashboard for service, and delete service. Removing a service instance only removes the association to this app, and does not delete the service instance. Also the service credentials are consolidated on this view, so you don't have to visit each individual service instance views to get them.
+The App Details view displays a list of services that are configured for your app. For each item in the list, you can see the service name, links to other information, and an **actions** button with three vertically aligned dots. The **actions** button options are to remove services from an app, open dashboard for service, and delete service. Removing a service instance removes the association to this app, and does not delete the service instance. Also, the service credentials are consolidated on this view, so you don't have to visit each individual service instance views to get them.
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple App Details view](images/project_details_screen.png "App Details view") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple App Details view*
 
-The App Details view also allows you to add new or existing services to your app that were not part of the original starter kit. Click the **Add Resource** link in the service list box to do this. The available services depend on the type of app, and the services that are available in a region, so not all services are available to associate with all apps.
+By using the App Details view, you can add new or existing services to your app that were not part of the original Starter Kit. Click the **Add Resource** link in the service list box add services. The available services depend on the type of app, and the services that are available in a region, so not all services are available to associate with all apps.
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple Add Resource dialog](images/add_resource_screen.png "Add Resource dialog") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple Add Resource dialog*
 
@@ -72,7 +72,7 @@ On the App Details view, you can access your code in two ways:
 ### App List view
 {: #app_list_view}
 
-You can see a list of all the apps you have created from the App List view. You can rename or delete your apps from here. Click on an app name row to return to the App Details view.
+You can list all of your created apps from the App List view. You can rename or delete your apps from here. Click on an app name row to return to the App Details view.
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple App List view](images/project_list_screen.png "App List view") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple App List view*
 

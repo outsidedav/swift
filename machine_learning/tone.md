@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-04"
+lastupdated: "2018-08-07"
 
 ---
 {:new_window: target="_blank"}
@@ -57,7 +57,7 @@ Provision an instance of the {{site.data.keyword.toneanalyzershort}} service:
 ## Step 2. Downloading and building dependencies
 {: ###download-and-build-dependencies}
 
-Using your favorite text editor, create a new file that is called `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located). Then add a line to specify the Watson Swift SDK as a dependency:
+Using your favorite text editor, create a new file that is called `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located). Then, add a line to specify the Watson Swift SDK as a dependency:
 
   ```
   github "watson-developer-cloud/swift-sdk"
@@ -82,7 +82,7 @@ Carthage downloads the Watson Swift SDK, and build its frameworks in the `Cartha
 
 Now that the Watson Swift SDK frameworks are built by Carthage, you must link the Tone Analyzer framework with your app.
 
-1. Open your app in Xcode, and then select your project at the top of the Navigator to open its settings.
+1. Open your app in Xcode, and then select your project to open its settings.
 2. Select your app target then open the **General tab**.
 3. Scroll down to the "Linked Frameworks and Libraries" section, and click the `+` icon.
 4. In the window that appears, choose **Add Other...** and navigate to the `Carthage/Build/iOS` directory. Select **ToneAnalyzerV3.framework** to link it with your app.
@@ -108,63 +108,63 @@ Now you are ready to start working with the Watson Swift SDK in your app!
     ```
     {: codeblock}
 
-3. Create an empty function called `toneAnalyzerExample` then call it from `viewDidLoad`.
-4. Add the code below for the `toneAnalyzerExample` function. Be sure to update your service's username and password!
-    ```swift
-    import UIKit
-    import ToneAnalyzerV3
+3. Create an empty function called `toneAnalyzerExample`, then call it from `viewDidLoad`.
+4. Add the following code to the `toneAnalyzerExample` function. Be sure to update your service's username and password.
+  ```swift
+  import UIKit
+  import ToneAnalyzerV3
 
-    class ViewController: UIViewController {
+  class ViewController: UIViewController {
 
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            toneAnalyzerExample()
-        }
+      override func viewDidLoad() {
+          super.viewDidLoad()
+          toneAnalyzerExample()
+      }
 
-        func toneAnalyzerExample() {
+      func toneAnalyzerExample() {
 
-            // instantiate service
-            let toneAnalyzer = ToneAnalyzer(
-                username: "your-username-here",
-                password: "your-password-here",
-                version: "yyyy-mm-dd"
-            )
+          // instantiate service
+          let toneAnalyzer = ToneAnalyzer(
+              username: "your-username-here",
+              password: "your-password-here",
+              version: "yyyy-mm-dd"
+          )
 
-            // text to analyze
-            let review = """
-                I was asked to sign a third party contract a week out from stay. If it wasn't an 8 person group that
-                took a lot of wrangling I would have cancelled the booking straight away. Bathrooms - there are no
-                stand alone bathrooms. Please consider this - you have to clear out the main bedroom to use that
-                bathroom. Other option is you walk through a different bedroom to get to its en-suite. Signs all
-                over the apartment - there are signs everywhere - some helpful - some telling you rules. Perhaps
-                some people like this but It negatively affected our enjoyment of the accommodation. Stairs - lots
-                of them - some had slightly bending wood which caused a minor injury.
-            """
+          // text to analyze
+          let review = """
+              I was asked to sign a third party contract a week out from stay. If it wasn't an 8 person group that
+              took a lot of wrangling I would have cancelled the booking straight away. Bathrooms - there are no
+              stand alone bathrooms. Please consider this - you have to clear out the main bedroom to use that
+              bathroom. Other option is you walk through a different bedroom to get to its en-suite. Signs all
+              over the apartment - there are signs everywhere - some helpful - some telling you rules. Perhaps
+              some people like this but It negatively affected our enjoyment of the accommodation. Stairs - lots
+              of them - some had slightly bending wood which caused a minor injury.
+          """
 
-            // analyze text
-            let toneInput = ToneInput(text: review)
-            let failure = { (error: Error) in print(error) }
-            toneAnalyzer.tone(toneInput: toneInput, contentType: "application/json", failure: failure) { analysis in
-                for tone in analysis.documentTone.tones! {
-                    print("\(tone.toneName): \(tone.score)")
-                }
-            }
-        }
-    }
-    ```
-    {: codeblock}
+          // analyze text
+          let toneInput = ToneInput(text: review)
+          let failure = { (error: Error) in print(error) }
+          toneAnalyzer.tone(toneInput: toneInput, contentType: "application/json", failure: failure) { analysis in
+              for tone in analysis.documentTone.tones! {
+                  print("\(tone.toneName): \(tone.score)")
+              }
+          }
+      }
+  }
+  ```
+  {: codeblock}
 
-When you run your app, you should see the following analysis in the console:
-
+When you run your app, you see the following analysis in the console:
 ```
 Sadness: 0.575803
 Tentative: 0.867377
 ```
+{: screen}
 
 ## Using starter kits
 {: #tone_starterkits}
 
-[Starter kits](https://console.bluemix.net/developer/appledevelopment/starter-kits) are one of the fastest ways to leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can make use of the {{site.data.keyword.toneanalyzershort}} service by selecting the **Tone Analyzer for iOS with Watson** starter kit. This service utilizes deep learning capabilities to evaluate passages of text. The Tone Analyzer application identifies the speaker's tone (happy, sad, confident, and more) as it relates to a number of categories.
+[Starter kits](https://console.bluemix.net/developer/appledevelopment/starter-kits) are one of the fastest ways to leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can use the {{site.data.keyword.toneanalyzershort}} service by selecting the **Tone Analyzer for iOS with Watson** starter kit. This service utilizes deep learning capabilities to evaluate passages of text. The Tone Analyzer application identifies the speaker's tone (happy, sad, confident, and more) as it relates to a number of categories.
 
 To get started with this starter kit:
 
@@ -175,7 +175,7 @@ To get started with this starter kit:
 ## Next steps
 {: #tone_next}
 
-Great job! The {{site.data.keyword.toneanalyzershort}} is now added to your app. Keep the momentum going by trying one of the following options:
+Great job! The {{site.data.keyword.toneanalyzershort}} is now added to your app. Keep the momentum by trying one of the following options:
 
 * View the [Watson Swift SDK on GitHub](https://github.com/watson-developer-cloud/swift-sdk).
 * For more information, see [IBM Watson {{site.data.keyword.toneanalyzershort}}](https://www.ibm.com/watson/services/tone-analyzer/).

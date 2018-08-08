@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-07-19"
+lastupdated: "2018-08-07"
 
 ---
 {:new_window: target="_blank"}
@@ -16,29 +16,29 @@ lastupdated: "2018-07-19"
 # Apple Development on {{site.data.keyword.cloud_notm}}
 {: #ios_dev}
 
-{{site.data.keyword.cloud_notm}} offers solutions and services to empower Swift developers and applications with the security, AI, and value demanded by your customers. With a broad portfolio of offerings and SDKs, you can leverage these services, and bring your cutting-edge applications to market quickly.
+{{site.data.keyword.cloud}} offers solutions and services to empower Swift developers and applications with the security, AI, and value demanded by your customers. With a broad portfolio of offerings and SDKs, you can leverage these services, and bring your cutting-edge applications to market quickly.
 
 ## One Development Platform: IBM Cloud
 {: #platform}
 
  ![Developer types](images/IBM_Cloud_icon.png "IBM Cloud")
 
-The developer capabilities that are built in to {{site.data.keyword.cloud_notm}}, align to various skill sets and provide one platform to produce, deliver, run, and manage your app. For example, from the cognitive app mentioned, the following {{site.data.keyword.cloud_notm}} are of interest:
+The developer capabilities that are built in to {{site.data.keyword.cloud_notm}} align to various skill sets, and provide one platform to produce, deliver, run, and manage your app. For example, from the cognitive app that is mentioned, the following {{site.data.keyword.cloud_notm}} are of interest:
 
-* The [**{{site.data.keyword.cloud_notm}} Developer Experience**](https://console.bluemix.net/docs/overview/dev-journey.html#dev-journey) is not a service, but rather is a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and cloud native developers to start building production-ready apps. It includes automatic provisioning of services, and one-click deployment to a devops toolchain. More on this in the Starting Right section.
+* The [**{{site.data.keyword.cloud_notm}} Developer Experience**](https://console.bluemix.net/docs/overview/dev-journey.html#dev-journey) is not a service, but rather is a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and Cloud Native developers to start building production-ready apps. It includes automatic provisioning of services, and "one-click" deployment to a devops toolchain. For more information, see the [capabilities]](apple_development.html#capabilities) section.
 
-* [**IBM Watson Data Platform**](https://console.bluemix.net/developer/dataplatform/dashboard) <!--[IBM Watson Data Platform](https://dataplatform.ibm.com)--> makes it simple to assemble data collections, refine the data, then visualize, discover insights, and build models for use in your cognitive app.
+* [**IBM Watson Data Platform**](https://console.bluemix.net/developer/dataplatform/dashboard)<!--[IBM Watson Data Platform](https://dataplatform.ibm.com)--> makes it simple to assemble data collections, refine the data, then visualize, discover insights, and build models for use in your cognitive app.
 
 * [**IBM Streaming Analytics**](../services/StreamingAnalytics/index.html#gettingstarted) helps wrangle and analyze data streams. It is an advanced analytic platform that you can use to ingest, analyze, and correlate information as it arrives from different types of data sources in real time.
 
-* The [**{{site.data.keyword.cloud_notm}} Continuous Delivery service**](../services/ContinuousDelivery/index.html#cd_getting_started) lets you easily set up a devops toolchain to automate continuous delivery of your app. You can easily enhance the toolchain to include management functions like monitoring, logging, tracking, and alerting. You can even apply advanced machine learning to your toolchain by using the [DevOps Insights service](../services/DevOpsInsights/index.html#gettingstarted).
+* The [**{{site.data.keyword.cloud_notm}} Continuous Delivery service**](../services/ContinuousDelivery/index.html#cd_getting_started) sets up a devops toolchain to automate continuous delivery of your app. You can easily enhance the toolchain to include management functions like monitoring, logging, tracking, and alerting. You can even apply advanced machine learning to your toolchain by using the [DevOps Insights service](../services/DevOpsInsights/index.html#gettingstarted).
 
 The {{site.data.keyword.cloud_notm}} platform offers many more capabilities and can be used {{site.data.keyword.cloud_notm}} as your comprehensive development platform.
 
 ## Overview of {{site.data.keyword.cloud_notm}} Capabilities
 {: #capabilities}
 
-The {{site.data.keyword.cloud}} Developer Experience is not a service, but rather a set of capabilities in the {{site.data.keyword.cloud_notm}} platform that gets you started building apps the "right" way in minutes. Essential elements of the Developer Experience are:
+The {{site.data.keyword.cloud_notm}} Developer Experience is not a service, but rather a set of capabilities in the {{site.data.keyword.cloud_notm}} platform that helps you to start building apps the "right" way in minutes. Essential elements of the Developer Experience are:
 
 * A set of topic or channel-centric developer consoles found across the {{site.data.keyword.cloud_notm}} platform.
 * Specific use-case starter kits that produce production-ready starter apps in various languages and architectural patterns.
@@ -65,7 +65,7 @@ The {{site.data.keyword.cloud_notm}} Developer Experience manifests in various d
 
 <!--![Overview of elements of the {{site.data.keyword.cloud_notm}} Developer Experience](images/elements_of_devex.png "Overview of elements of the {{site.data.keyword.cloud_notm}} Developer Experience") <br> *Overview of elements of the {{site.data.keyword.cloud_notm}} Developer Experience*-->
 
-Each developer console provides starter kits relevant to that console's focus area, offering a consistent, intuitive workflow, and then enables you to create a working production-ready app in minutes.
+Each developer console provides Starter Kits relevant to that console's focus area, offering a consistent, intuitive workflow to create a working production-ready app in minutes.
 
 ## Creating Apps with Starter Kits
 {: #apps}

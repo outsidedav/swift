@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-08-07"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-05-30"
 # Adding APIs to iOS apps
 {: #api_connect}
 
-You can use API Connect to manage APIs in {{site.data.keyword.cloud}}, whether they are maintained in our out of {{site.data.keyword.cloud_notm}}. Managing your APIs allow you to control usage, increase adoption, and track statistics.
+You can use API Connect to manage APIs in {{site.data.keyword.cloud}}, whether they are maintained in our out of {{site.data.keyword.cloud_notm}}. Learn to manage your APIs so you can control usage, increase adoption, and track statistics.
 
 ## Creating an instance of API Connect
 
@@ -45,8 +45,6 @@ You can define an API proxy that manages the API gateway between your client app
 
 You need to configure the External Endpoint to point to the URL that links to your backend logic application. 
 
-There is also a managed way of defining APIs for {{site.data.keyword.openwhisk_short}} and Cloud Foundry applications. 
-
 ## Creating a Swift Backend
 
 It is possible to create your backend Swift app based on this API. 
@@ -57,11 +55,11 @@ From the Apple Development console, perform the following steps:
 2. Click **Create App**.
 3. Select **Swift** as the language.
 
-This allows you to create the backend Swift app. Select the YAML and JSON file, and then click **Create**. 
+Select the YAML and JSON file, and then click **Create**. The back end Swift app is created.
 
 You can then download the Code or Deploy to Cloud and clone your GIT repo into your local machine. You can follow the instructions in the Knowledge Guide to open the Server-side app in XCode.
 
-In the **Source** folder, you can see a Route that defines the Swift file that created the REST end points which map to the API. 
+In the **Source** folder, you can see a Route that defines the Swift file that created the REST endpoints which map to the API. 
 
 See the following example that uses the PetStore Open API:
 ```swift
@@ -122,7 +120,7 @@ Click on **Add Resource** and select an API.
 
 ![API Dialog](../images/apidialog.png)
 
-The API is added to you iOS App. If you *Download* the code for the App, you can see a folder included in the iOS Source folders that is named after the API.
+The API is added to your iOS App. If you *Download* the code for the App, you can see a folder that is included in the iOS Source folders that is named after the API.
 
 Follow the Knowledge Guide steps to `pod update` any dependant SDKs into you iOS App. 
 
@@ -134,7 +132,7 @@ The `Assets` folder contains the file that manages the URL to your API, which by
 
 ![API Route](../images/apiroute.png)  
 
-Open the `PLIST` file and replace the host value with the value that is copied from the API route which enables the SDK to call the API into the {{site.data.keyword.cloud_notm}}.
+Open the `PLIST` file and replace the host value with the value that is copied from the API route that enables the SDK to call the API into the {{site.data.keyword.cloud_notm}}.
 
 ## Documentation
 
@@ -142,13 +140,13 @@ When the SDK is included in your iOS App project, a *README.html* file is availa
 
 ## Recreating the SDK after API Change
 
-If the API changes or there are new features, and {{site.data.keyword.openwhisk}} is added, you can recreate the client SDK by using the `ibmcloud sdk` command. For more information, examples, and syntax, see [SDK Generator](/docs/cli/sdk/index.html).
+If the API changes or new features become available, and {{site.data.keyword.openwhisk}} is added, you can recreate the client SDK by using the `ibmcloud sdk` command. For more information, examples, and syntax see,[SDK Generator](/docs/cli/sdk/index.html).
 
 To enable the creation of an SDK, use the Open API Specification (Swagger) YAML or JSON file. You can retrieve this file by using the API management facilities in the {{site.data.keyword.cloud_notm}}. 
 
 1. Navigate to `Menu -> APIs -> Managed APIs`.
 2. Select the API you that want to retrieve the latest Open API Specification from. 
-3. Then select the **Explorer** menu.
+3. Then, select the **Explorer** menu.
 
 ![API Explorer](../images/downloadyaml.png)
 
@@ -160,15 +158,13 @@ To enable the creation of an SDK, use the Open API Specification (Swagger) YAML 
     ```
     {: codeblock}
 
-    The SDK is recreated into your iOS App project directory, and allows you to continue working with your API.
-
-## Summary
+    The SDK is recreated into your iOS App project directory so you can continue to work with your API.
 
 ## Reference
 
-The following example SDK is created for {{site.data.keyword.openwhisk_short}} from the Starter kit. You can see each of the Actions and the Swift snippets of code you can include in your iOS App.
+The following example SDK is created for {{site.data.keyword.openwhisk_short}} from the Starter Kit. You can see each of the Actions and the Swift snippets of code you can include in your iOS App.
 
-## DefaultAPI 
+### DefaultAPI
 
 ### Methods
  * [**getCreate**](#getCreate)
@@ -394,3 +390,4 @@ DefaultAPI.getUpdate() { (response, error) in
 }
 ```
 {: codeblock}
+

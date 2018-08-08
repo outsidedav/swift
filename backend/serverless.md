@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-16"
+lastupdated: "2018-08-07"
 
 ---
 {:new_window: target="_blank"}
@@ -19,26 +19,26 @@ What is serverless? The serverless development pattern refers to application dev
 
 By abstracting away the infrastructure and frameworks necessary for server-side development, serverless architecture allows developers to focus on building their application and writing code to run reactively to change data.
 
-IBM's FaaS offering, [{{site.data.keyword.openwhisk}}](https://console.bluemix.net/openwhisk/), strives to provide a seamless, server-side development experience without needing any specialized server-side knowledge. This technology allows you to quickly develop scalable backend solutions to meet practically any workload demand without the need to provision resources ahead of time. For applications that have unpredictable load patterns or high server down time, {{site.data.keyword.openwhisk_short}} can be an excellent cloud solution with improved performance, and its "pay for what you use" system helps to decrease costs.
+IBM's FaaS offering, [{{site.data.keyword.openwhisk}}](https://console.bluemix.net/openwhisk/), strives to provide a seamless, server-side development experience without needing any specialized server-side knowledge. By using serverless technology, you can quickly develop scalable backend solutions to meet practically any workload demand without the need to provision resources ahead of time. For applications that have unpredictable load patterns or high server down time, {{site.data.keyword.openwhisk_short}} can be an excellent cloud solution with improved performance, and its "pay for what you use" system helps to decrease costs.
 
 ## Architectural Changes
 {: #comparison}
 
-To help you understand the architectural benefits of switching to FaaS, a traditional and a FaaS architecture are compared by using a simple iOS application that is linked to a database.
+To help you understand the architectural benefits of switching to FaaS, a traditional and FaaS architectures are compared by using a simple iOS application that is linked to a database.
 
-In a more traditional architecture, the iOS application offloads network intensive tasks, or processes data remotely on a centralized server which itself is connected to by its own services or storage options. With a traditional system, the heavy lifting is placed on a singular server that handles authentication, processing intensive tasks to minimize stress on the client, and provide synchronization across its user base.
+In a more traditional architecture, the iOS application offloads network intensive tasks, or processes data remotely on a centralized , which itself is connected to by its own services or storage options. With a traditional system, the heavy lifting is placed on a singular server that handles authentication, processing intensive tasks to minimize stress on the client, and provide synchronization across its user base.
 
 A serverless architecture can alter this structure to look more like the following image.
 
 ![](./images/Architecture.png) Figure 1. Serverless architecture
 
-Rather than handling all of the processing and authentication logic inside a single server, a serverless architecture leverages highly scalable functions that encapsulate much of the server-side logic, and offloads some logic to the client and external services.
+Rather than handling all of the processing and authentication logic inside a single server, a serverless architecture leverages highly scalable functions that encapsulate much of the server-side logic, and offloads some logic to the client (and external services).
 
 Looking at the schematic, you can see the following points:
 
 1. The client authenticates against an Identity Provider such as App ID.
 2. Calls to the FaaS backend API including the access token.
-3. The backend is implemented with {{site.data.keyword.openwhisk_short}}. The serverless actions, which are exposed as web actions, expect the token to be sent in the request headers and verify its validity (signature and expiration date) in order to provide access to the actual API.
+3. The backend is implemented with {{site.data.keyword.openwhisk_short}}. The serverless actions, which are exposed as web actions, expect the token to be sent in the request header and verify its validity (signature and expiration date) in order to provide access to the actual API.
 4. When the client submits data, the feedback is stored in a {{site.data.keyword.cloudant_short_notm}}.
 5. The feedback text is processed with {{site.data.keyword.toneanalyzershort}}.
 6. Based on the analysis result, a notification is sent back to the client by {{site.data.keyword.mobilepushshort}}.
@@ -53,7 +53,7 @@ While serverless architectures are not always ideal, they can provide substantia
 
 ### Reduced Cost
 
-Outsourcing the time and monetary cost that is associated with system administration, reduces the overall cost that is associated with traditional backend servers. Additionally, {{site.data.keyword.openwhisk_short}} is different from traditional computing technologies because you pay only for the time your code takes to satisfy requests, rounded up to the nearest 100ms. Meaning that you could see considerable cost savings relative to other technologies like VMs and containers, which are not likely to be 100% utilized and take up memory on your cloud provider's system.
+Outsourcing the time and monetary cost that is associated with system administration, reduces the overall cost that is associated with traditional backend servers. Additionally, {{site.data.keyword.openwhisk_short}} is different from traditional computing technologies because you pay only for the time your code takes to satisfy requests, rounded up to the nearest 100 ms. Considerable cost savings are possible relative to other technologies like VMs and containers, which are not likely to be 100% utilized, and take up memory on your cloud provider's system.
 
 ### High availability and scalability
 
@@ -61,7 +61,7 @@ Serverless architectures inherently provide instant scalability with near consta
 
 ### Speed and simplified development
 
-By eliminating the need for system administration and providing simple interfaces for deployment, the serverless paradigm accelerates application development which enables developers to quickly build apps with action sequences that execute in response to an event-driven world.
+By eliminating the need for system administration, and providing simple interfaces for deployment, the serverless paradigm accelerates application development. Developers can quickly build apps with action sequences that execute in response to an event-driven world.
 
 ## Example use cases
 {: #use_cases}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-07-19"
+lastupdated: "2018-08-07"
 
 ---
 
@@ -136,13 +136,13 @@ The {{site.data.keyword.cloud}} provides local CLI tools that help you work with
   ```
   {: screen}
 
-## Step 4. Build, Run, and Deploy your application
+## Step 4. Building, running, and deploying your application
 
 You can now build, run, and deploy your application by using the {{site.data.keyword.dev_cli_short}}.
 
 1. **Build**
 
-  You can now `build` your application, which is a prerequisite to `run` your application. Use the following command in the root of the application directory to build your app:
+  You can now build your application, which is a prerequisite to running your application. Use the following command in the root of the application directory to build your app:
   ```
   ibmcloud dev build
   ```
@@ -150,7 +150,7 @@ You can now build, run, and deploy your application by using the {{site.data.key
 
 2. **Run**
 
-  After a successful `build`, you can `run` your application in a local container with the following command:
+  After a successful build, you can run your application in a local container with the following command:
   ```
   ibmcloud dev run
   ```
@@ -168,7 +168,7 @@ You can now build, run, and deploy your application by using the {{site.data.key
 
 ## Next steps
 
-Learn to use the {{site.data.keyword.cloud_notm}} Developer Console for Apple that enables developers to create apps from various starter kits, provision and connect key {{site.data.keyword.cloud_notm}} optimized services, and then quickly download working code or set up for continuous delivery. Users are able to create, view, configure, and manage your app, as well as download your app's code. Using the Developer Console for Apple allows you to quickly evaluate, and test {{site.data.keyword.cloud_notm}} services with a brand new app.
+Learn to use the {{site.data.keyword.cloud_notm}} Developer Console for Apple that enables developers to create apps from various Starter Kits, provision and connect key {{site.data.keyword.cloud_notm}} optimized services, and then quickly download working code (or set up for continuous delivery). Users are able to create, view, configure, and manage your app, as well as download your app's code. By using the Developer Console for Apple, you can quickly evaluate, and test {{site.data.keyword.cloud_notm}} services with a brand new app.
 
 Ready to jump in? Visit the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) now to get started.
 {: tip}

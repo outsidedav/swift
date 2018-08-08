@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-04"
+lastupdated: "2018-08-07"
 
 ---
 {:tip: .tip}
@@ -53,7 +53,7 @@ If a current model does not exist, the first model found remotely or any one tha
 
 1. After you create your project, the project dashboard is displayed.
 2. Go to the settings tab, scroll down to **Associated Services**, select **Add Service** -> **Watson**.
-3. From the Watson services page, select Visual Recognition.
+3. From the Watson services page, select **Visual Recognition**.
 4. Select the **Existing** tab on the service info page and then select your service instance from the dashboard.
 5. Now that your service is bound, you can begin creating your model by selecting **Assets** from your Project dashboard, and then clicking **Add Visual Recognition Model**.
 
@@ -65,7 +65,7 @@ If a current model does not exist, the first model found remotely or any one tha
 
 ![Adding Classes](images/add_classes.png)
 
-3. Select `Train Model`, then wait for the model to be fully trained, and you are good to go!
+3. Select **Train Model**, and then wait for the model to be fully trained.
 
 You're all set! Now, you're ready to download your Core ML model and integrate it into your app by using the [{{site.data.keyword.watson}} Developer Cloud Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window}.
 
@@ -155,7 +155,7 @@ class ViewController: UIViewController {
 ## Step 4. Using starter kits
 {: #coreml_starterkits}
 
-With starter kits, you can quickly and easily leverage the capabilities of {{site.data.keyword.cloud_notm}} and Core ML. You can add {{site.data.keyword.visualrecognitionshort}} to any client iOS app or server-side back end by using the starter kits. The Custom Vision Model for Core ML with {{site.data.keyword.watson}} starter kit illustrates how to create a custom {{site.data.keyword.visualrecognitionshort}} model and instantiate it as a Core ML model that you can run locally on your device.
+With starter kits, you can quickly and easily leverage the capabilities of {{site.data.keyword.cloud_notm}} and Core ML. You can add {{site.data.keyword.visualrecognitionshort}} to any client iOS app or server-side back end by using the starter kits. The Custom Vision Model for Core ML with {{site.data.keyword.watson}} Starter Kit illustrates how to create a custom {{site.data.keyword.visualrecognitionshort}} model, and instantiate it as a Core ML model that you can run locally on your device.
 
 To add {{site.data.keyword.visualrecognitionshort}} to a starter kit, complete the following steps:
 
