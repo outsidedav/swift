@@ -7,6 +7,7 @@ Programming with Swift on IBM Cloud
     {: .navgroup id="learn"}
     index.md
     apple_development.md
+    starter_kit/starter_kits.md
                     
     {: .topicgroup}
     Developing back-end components
@@ -17,7 +18,6 @@ Programming with Swift on IBM Cloud
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    starter_kit/starter_kits.md
     analytics/mobile_analytics.md
     push/push_notifications.md
     app_launch/mobile_applaunch.md
@@ -48,19 +48,21 @@ Programming with Swift on IBM Cloud
 
     {: .topicgroup}
     Using SDKs
-        getting_started/sdks.md
         getting_started/installing.md
+        api/api.md
         backend/cli_sdkgen.md
+        api/sdk.md
     
     {: .topicgroup}
-    Deploying with cloud services
-        getting_started/services.md
-        backend/functions.md
+    Developing server-side Swift apps
+        cloudnative/configuration.md
+        cloudnative/appmetrics.md
+        cloudnative/healthcheck.md
+        cloudnative/logging.md
         backend/kitura.md
-        api/api.md
-        api/sdk.md
-
-    create_app_cli.md
+        create_app_cli.md
+    
+    deploying_apps.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
