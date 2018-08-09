@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-09"
 
 ---
 
@@ -84,7 +84,7 @@ After you initialize the SDK in your app, you can start configuring your {{site.
     {: pre}
   <table>
     <thead>
-      <th colspan=2><img src="images/idea.png"/> Understanding the commands components </th>
+      <th colspan=2><img src="images/idea.png" alt=""/> Understanding the commands components </th>
     </thead>
     <tbody>
       <tr>

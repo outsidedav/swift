@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-09"
 
 ---
 
@@ -162,19 +162,17 @@ To enable the creation of an SDK, use the Open API Specification (Swagger) YAML 
 
 ## Reference
 
-The following example SDK is created for {{site.data.keyword.openwhisk_short}} from the Starter Kit. You can see each of the Actions and the Swift snippets of code you can include in your iOS App.
+The following example SDK is created for {{site.data.keyword.openwhisk_short}} from the Starter Kit. You can see each of the Actions and the Swift snippets of code that you can include in your iOS App.
 
-### DefaultAPI
+### Default API methods
+ * [`getCreate`](#getCreate)
+ * [`getDelete`](#getDelete)
+ * [`getDeleteall`](#getDeleteall)
+ * [`getRead`](#getRead)
+ * [`getReadall`](#getReadall)
+ * [`getUpdate`](#getUpdate)
 
-### Methods
- * [**getCreate**](#getCreate)
- * [**getDelete**](#getDelete)
- * [**getDeleteall**](#getDeleteall)
- * [**getRead**](#getRead)
- * [**getReadall**](#getReadall)
- * [**getUpdate**](#getUpdate)
-
-### **getCreate**
+### Using `getCreate`
 {: #getCreate}
 
 ```swift
@@ -182,16 +180,16 @@ public static func getCreate(completionHandler: @escaping (_ response: Response?
 ```
 {: codeblock}
 
-#### Parameters
+#### Parameters for `getCreate`
 
 - **completionHandler** (required)
     - Closure takes as arguments `Response?` and `Error?`.
 
-### Authentication
+### Authentication using `getCreate`
 
 No authentication required
 
-### Example
+### Example using `getCreate`
 ```swift
 DefaultAPI.getCreate() { (response, error) in
     guard error == nil else {
@@ -210,7 +208,7 @@ DefaultAPI.getCreate() { (response, error) in
 ```
 {: codeblock}
 
-### **getDelete**
+### Using `getDelete`
 {: #getDelete}
 
 ```swift
@@ -218,16 +216,16 @@ public static func getDelete(completionHandler: @escaping (_ response: Response?
 ```
 {: codeblock}
 
-#### Parameters
+#### Parameters for `getDelete`
 
 - **completionHandler** (required)
     - Closure takes as arguments `Response?` and `Error?`.
 
-### Authentication
+### Authentication using `getDelete`
 
 No authentication required
 
-### Example
+### Example using `getDelete`
 ```swift
 DefaultAPI.getDelete() { (response, error) in
     guard error == nil else {
@@ -246,7 +244,7 @@ DefaultAPI.getDelete() { (response, error) in
 ```
 {: codeblock}
 
-### **getDeleteall**
+### Using `getDeleteall`
 {: #getDeleteall}
 
 ```swift
@@ -254,16 +252,16 @@ public static func getDeleteall(completionHandler: @escaping (_ response: Respon
 ```
 {: codeblock}
 
-#### Parameters
+#### Parameters for `getDeleteall`
 
 - **completionHandler** (required)
     - Closure takes as arguments `Response?` and `Error?`.
 
-### Authentication
+### Authentication using `getDeleteall`
 
 No authentication required
 
-### Example
+### Example using `getDeleteall`
 
 ```swift
 DefaultAPI.getDeleteall() { (response, error) in
@@ -283,7 +281,7 @@ DefaultAPI.getDeleteall() { (response, error) in
 ```
 {: codeblock}
 
-### **getRead**
+### Using `getRead`
 {: #getRead}
 
 ```swift
@@ -291,16 +289,16 @@ public static func getRead(completionHandler: @escaping (_ response: Response?, 
 ```
 {: codeblock}
 
-#### Parameters
+#### Parameters for `getRead`
 
 - **completionHandler** (required)
     - Closure takes as arguments `Response?` and `Error?`.
 
-### Authentication
+### Authentication using `getRead`
 
 No authentication required
 
-### Example
+### Example using `getRead`
 ```swift
 DefaultAPI.getRead() { (response, error) in
     guard error == nil else {
@@ -319,7 +317,7 @@ DefaultAPI.getRead() { (response, error) in
 ```
 {: codeblock}
 
-### **getReadall**
+### Using `getReadall`
 {: #getReadall}
 
 ```swift
@@ -327,16 +325,16 @@ public static func getReadall(completionHandler: @escaping (_ response: Response
 ```
 {: codeblock}
 
-#### Parameters
+#### Parameters for `getReadall`
 
 - **completionHandler** (required)
     - Closure takes as arguments `Response?` and `Error?`.
 
-### Authentication
+### Authentication using `getReadall`
 
 No authentication required
 
-### Example
+### Example using `getReadall`
 ```swift
 DefaultAPI.getReadall() { (response, error) in
     guard error == nil else {
@@ -355,7 +353,7 @@ DefaultAPI.getReadall() { (response, error) in
 ```
 {: codeblock}
 
-### **getUpdate**
+### Using `getUpdate`
 {: #getUpdate}
 
 ```swift
@@ -363,16 +361,16 @@ public static func getUpdate(completionHandler: @escaping (_ response: Response?
 ```
 {: codeblock}
 
-#### Parameters
+#### Parameters for `getUpdate`
 
 - **completionHandler** (required)
     - Closure takes as arguments `Response?` and `Error?`.
 
-### Authentication
+### Authentication using `getUpdate`
 
 No authentication required
 
-### Example
+### Example using `getUpdate`
 ```swift
 DefaultAPI.getUpdate() { (response, error) in
     guard error == nil else {

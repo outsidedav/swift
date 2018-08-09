@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-09"
 
 ---
 {:new_window: target="_blank"}
@@ -25,9 +25,9 @@ lastupdated: "2018-08-07"
 
 The developer capabilities that are built in to {{site.data.keyword.cloud_notm}} align to various skill sets, and provide one platform to produce, deliver, run, and manage your app. For example, from the cognitive app that is mentioned, the following {{site.data.keyword.cloud_notm}} are of interest:
 
-* The [**{{site.data.keyword.cloud_notm}} Developer Experience**](https://console.bluemix.net/docs/overview/dev-journey.html#dev-journey) is not a service, but rather is a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and Cloud Native developers to start building production-ready apps. It includes automatic provisioning of services, and "one-click" deployment to a devops toolchain. For more information, see the [capabilities]](apple_development.html#capabilities) section.
+* The [**{{site.data.keyword.cloud_notm}} Developer Experience**](https://console.bluemix.net/docs/overview/dev-journey.html#dev-journey) is not a service, but rather is a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and Cloud Native developers to start building production-ready apps. It includes automatic provisioning of services, and "one-click" deployment to a devops toolchain.
 
-* [**IBM Watson Data Platform**](https://console.bluemix.net/developer/dataplatform/dashboard)<!--[IBM Watson Data Platform](https://dataplatform.ibm.com)--> makes it simple to assemble data collections, refine the data, then visualize, discover insights, and build models for use in your cognitive app.
+* [**IBM Watson Data Platform**](https://dataplatform.ibm.com) makes it simple to assemble data collections, refine the data, then visualize, discover insights, and build models for use in your cognitive app.
 
 * [**IBM Streaming Analytics**](../services/StreamingAnalytics/index.html#gettingstarted) helps wrangle and analyze data streams. It is an advanced analytic platform that you can use to ingest, analyze, and correlate information as it arrives from different types of data sources in real time.
 
@@ -51,14 +51,13 @@ To understand how the {{site.data.keyword.cloud_notm}} Developer Experience can 
 ## Developer Consoles
 {: #developer_consoles}
 
-The {{site.data.keyword.cloud_notm}} Developer Experience manifests in various developer consoles across the {{site.data.keyword.cloud_notm}} platform. Each console represents an area of interest (like Watson, Security, or Finance) or a digital channel (like Mobile or Web Apps). The [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment) was developed for Apple developers to be able to quickly experiment with applications, and services, backed by the {{site.data.keyword.cloud_notm}} platform. You can access these consoles by clicking the menu icon in the {{site.data.keyword.cloud_notm}} console. For example, see the following developer consoles:
+The {{site.data.keyword.cloud_notm}} Developer Experience manifests in various developer consoles across the {{site.data.keyword.cloud_notm}} platform. Each console represents an area of interest (like Watson, Security, or Finance) or a digital channel (like Mobile or Web Apps). The [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/dashboard) was developed for Apple developers to be able to quickly experiment with applications, and services, backed by the {{site.data.keyword.cloud_notm}} platform. You can access these consoles by clicking the menu icon in the {{site.data.keyword.cloud_notm}} console. For example, see the following developer consoles:
 
-* [Watson developer console](https://console.bluemix.net/developer/watson)
-* [Mobile developer console](https://console.bluemix.net/developer/mobile)
-* [Web App developer console](https://console.bluemix.net/developer/appservice)
-* [Security developer console](https://console.bluemix.net/developer/security)
-<!--* [Watson Data Platform developer console](https://console.bluemix.net/developer/dataplatform)-->
-* [Finance developer console](https://console.bluemix.net/developer/finance)
+* [Watson developer console](https://console.bluemix.net/developer/watson/dashboard)
+* [Mobile developer console](https://console.bluemix.net/developer/mobile/dashboard)
+* [Web App developer console](https://console.bluemix.net/developer/appservice/dashboard)
+* [Security developer console](https://console.bluemix.net/developer/security/dashboard)
+* [Finance developer console](https://console.bluemix.net/developer/finance/dashboard)
 
 <!--Cloud native development is the process of developing apps that are optimized to leverage capabilities engendered from running on the cloud.  Flexibility, portability, scaling, rapid development, continuous delivery, and a close coupling development and operations ("devops) are characteristics of cloud applications. The {{site.data.keyword.cloud}} Developer Experience quickly gets you started building cloud native applications that are ready for team development and bound for production use.-->
 
