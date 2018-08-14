@@ -25,9 +25,9 @@ Health checks are typically consumed over `HTTP`. Many deployment environments, 
 
 The [Health](https://github.com/IBM-Swift/Health) library makes it easy add a health check to your Swift application. Health checks are extensible. For more information about [caching](https://github.com/IBM-Swift/Health#caching) to prevent DoS attacks or adding [custom checks](https://github.com/IBM-Swift/Health#implementing-a-health-check), see the [Health](https://github.com/IBM-Swift/Health) library.
 
-To add the Health library to an existing Swift app, specify it in the *dependencies:* section of your `Package.swift` file, and making sure to add it to the proper targets:
+To add the Health library to an existing Swift app, specify it in the *dependencies:* section of your `Package.swift` file, making sure to add it to any targets where it is used:
 ```swift
-  .package(url: "https://github.com/IBM-Swift/Health.git", .upToNextMajor(from: "1.0.0")),
+  .package(url: "https://github.com/IBM-Swift/Health.git", .from: "1.0.0"),
 ```
 {: codeblock}
 
@@ -60,7 +60,7 @@ For alternate implementations, such as using **Codable** or the standard diction
 ## Accessing health check from server-side Swift Starter Kit apps
 {: #healthcheck-starterkit}
 
-When you generate a Kitura-based Swift app by using a Starter Kit, a basic health check endpoint (`/health') is included by default. The endpoint leverages the Codable protocol available in Swift 4, as supported by the [Health](https://github.com/IBM-Swift/Health) library.
+When you generate a Kitura-based Swift app by using a Starter Kit, a basic health check endpoint (`/health`) is included by default. The endpoint leverages the Codable protocol available in Swift 4, as supported by the [Health](https://github.com/IBM-Swift/Health) library.
 
 Basic initialization code, such as the initialization of the Health object occurs in `Sources/Application.swift`, while the health check endpoint is provided by the `/Sources/Application/Routes/HealthRoutes.swift` file, which contains the following code:
 ```swift

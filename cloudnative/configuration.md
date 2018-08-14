@@ -13,7 +13,7 @@ lastupdated: "2018-08-07"
 {:tip: .tip}
 
 # Configuring the Swift environment
-{: #healthcheck}
+{: #configuration}
 
 Ideally, a Cloud application is able to move from one environment to another (for example, from testing into production) without changing code, or exercising otherwise untested code paths.
 
@@ -37,7 +37,7 @@ Whether you need to add Cloud support to existing applications or create apps wi
 ## Adding IBM Cloud support to existing Swift applications
 {: #addcloud-env}
 
-The [CloudEnvironment](https://github.com/ibm-developer/ibm-cloud-env) library abstracts environment configuration and credentials from various Cloud compute providers. This way your Swift app can consistently access the information running locally or in Cloud Foundry, Kubernetes, and {{site.data.keyword.openwhisk}}. The credentials abstraction is directly in `CloudEnvironment` itself, while `CloudEnvironment` uses [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) for the Cloud Foundry configuration and [Configuration](https://github.com/IBM-Swift/Configuration) as a configuration manager.
+The [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) library abstracts environment configuration and credentials from various Cloud compute providers. This way your Swift app can consistently access the information running locally or in Cloud Foundry, Kubernetes, and {{site.data.keyword.openwhisk}}. The credentials abstraction is directly in `CloudEnvironment` itself, while `CloudEnvironment` uses [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) for the Cloud Foundry configuration and [Configuration](https://github.com/IBM-Swift/Configuration) as a configuration manager.
 
 The path for obtaining certain environment values can differ from one cloud environment to another. By leveraging this `CloudEnvironment`, you can make your Swift application environment-agnostic when it comes to obtaining such values. With `CloudEnvironment`, you can abstract low-level details from your application's source code by defining a lookup key that your Swift application can leverage for searching its corresponding value.
 
@@ -78,7 +78,7 @@ In this example, `cloudant-credentials` and `object-storage-credentials` are the
 
 To leverage the `CloudEnvironment` package in your Swift application, specify it in the *dependencies:* section of your `Package.swift` file:
 ```swift
-       .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", .upToNextMajor(from: "8.0.0")),
+       .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", from: "8.0.0"),
 ```
 {: codeblock}
 

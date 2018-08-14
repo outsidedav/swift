@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-14"
 
 ---
 {:new_window: target="_blank"}
@@ -21,10 +21,10 @@ Apps can be designed to emit logs in JSON format natively so that they can be pa
 
 ## Adding Logging to your Swift app
 
-[Helium Logger](https://github.com/IBM-Swift/HeliumLogger) is a popular lightweight logging framework for Swift, and provides many native benefits such as logging to standard output and different log levels.  
+[HeliumLogger](https://github.com/IBM-Swift/HeliumLogger) is a popular lightweight logging framework for Swift, and provides many native benefits such as logging to standard output and different log levels.  
 [LoggerAPI](https://github.com/IBM-Swift/LoggerAPI) is the logger protocol that provides a common logging interface for different kinds of loggers in Swift. Kitura uses the `LoggerAPI` throughout its implementation.
 
-To leverage Helium Logger, add the following to the *dependencies:* in your `Package.swift`, making sure to add it to any *targets* where it is used.
+To leverage HeliumLogger, add the following to the *dependencies:* in your `Package.swift`, making sure to add it to any *targets* where it is used.
 ```swift
    .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1")
 ```
@@ -63,7 +63,7 @@ HeliumLogger.use(LoggerMessageType.info)
 ```
 {: codeblock}
 
-As provided, the log level is set to `.info`.
+The log level is explicitly set to `.info` to log informational level messages like the application start logs above.
 {: tip}
 
 ## Next Steps
