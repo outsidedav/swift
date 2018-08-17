@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-14"
+lastupdated: "2018-08-17"
 
 ---
 {:new_window: target="_blank"}
@@ -15,32 +15,39 @@ lastupdated: "2018-08-14"
 # Logging in Swift
 {: #logging_swift}
 
-Logs are required to diagnose how and why services either failed or are behaving erroneously. Given the transient nature of processes in Cloud environments, logs must be collected and sent elsewhere, usually to a centralized location for analysis. Unlike [appmetrics](/docs/swift/cloudnative/appmetrics.html), logs are not meant to be used for measuring application performance. Ideally, applications emit logs as event streams, rely on the environment to collect them, and send them to the right places.
+Logs are required to diagnose how and why services fail. Logs are not meant to be used for monitoring application performance that is what metrics are for, but they can be used as a source for alerts, which can then include more detail than you can obtain from aggregated metrics.
 
-Apps can be designed to emit logs in JSON format natively so that they can be parsed independently of the log aggregation technology (or dashboards) that are used in a specific environment. Alternatively, a custom parser could be used with custom dashboards for enhanced monitoring.
+One of the benefits of working with cloud infrastructure is that your application gets to stop worrying about numerous things, like managing log files. Given the transient nature of processes in cloud environments, logs must be collected and sent elsewhere, usually to a centralized location for analysis. The most consistent way to log in cloud environments is to send log entries to standard output and error streams, and let the infrastructure handle the rest.
+
+As your application evolves over time, the nature of what you log can change. By using a JSON log format, you gain the following benefits:
+* Logs are indexable, which makes searching an aggregated body of logs much easier.
+* Logs are resilient to change, as parsing is not reliant on the position of elements in a string.
+
+Using JSON formatted logging can make logs a little harder for you, the human, to read when you use command line tools to fetch logs. You can use environment variables to toggle which log format is used so that you can have plain text logs for local development and debugging.
 
 ## Adding Logging to your Swift app
 
-[HeliumLogger](https://github.com/IBM-Swift/HeliumLogger) is a popular lightweight logging framework for Swift, and provides many native benefits such as logging to standard output and different log levels.  
+[HeliumLogger](https://github.com/IBM-Swift/HeliumLogger) is a popular lightweight logging framework for Swift, and provides many native benefits such as logging to standard output and different log levels.
+
 [LoggerAPI](https://github.com/IBM-Swift/LoggerAPI) is the logger protocol that provides a common logging interface for different kinds of loggers in Swift. Kitura uses the `LoggerAPI` throughout its implementation.
 
-To leverage HeliumLogger, add the following to the *dependencies:* in your `Package.swift`, making sure to add it to any *targets* where it is used.
+To leverage `HeliumLogger`, add the following to the **dependencies:** in your `Package.swift`, making sure to add it to any targets where it is used.
 ```swift
-   .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1")
+.package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1")
 ```
-  {: codeblock}
+{: codeblock}
 
-Add the following instrumentation code to initialize HeliumLogger and set it as the logger used by LoggerAPI:
-  ```swift
-  import HeliumLogger
-  import LoggerAPI
+Add the following instrumentation code to initialize `HeliumLogger` and set it as the logger used by the `LoggerAPI`:
+```swift
+import HeliumLogger
+import LoggerAPI
 
-  let logger = HeliumLogger(.verbose)
-  Log.logger = logger
+let logger = HeliumLogger(.verbose)
+Log.logger = logger
 
-  Log.info("This is an informational log message.")
-  ```
-  {: codeblock}
+Log.info("This is an informational log message.")
+```
+{: codeblock}
 
 In the provided example, the [log level](http://ibm-swift.github.io/HeliumLogger/) was explicitly set to `.verbose`, which is the default.
 
@@ -49,7 +56,7 @@ For more information about customizing the log messages, see the official [Heliu
 ## Logging with StarterKits
 {: #monitoring}
 
-Swift apps that are created by using the {{site.data.keyword.cloud_notm}} AppService come with `HeliumLogger` by default. Running the app natively or in a Cloud environment produces output like:
+Swift apps that are created by using the {{site.data.keyword.cloud_notm}} App Service come with `HeliumLogger` by default. Running the app natively or in a cloud environment produces the following output:
 ```
 [2018-07-31T15:41:05.332-05:00] [INFO] [HTTPServer.swift:195 listen(on:)] Listening on port 8080.
 ```
@@ -63,7 +70,7 @@ HeliumLogger.use(LoggerMessageType.info)
 ```
 {: codeblock}
 
-The log level is explicitly set to `.info` to log informational level messages like the application start logs above.
+The log level is explicitly set to `.info` to log informational level messages like the application start up logs.
 {: tip}
 
 ## Next Steps

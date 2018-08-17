@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-17"
 
 ---
 {:new_window: target="_blank"}
@@ -118,7 +118,7 @@ You now have a REST API for `GET` requests on `/meals` that responds with an arr
   * `GET /meals`:	[http://localhost:8080/meals]()
   ```
 
-  An empty array is returned `[]` because there are no `Meal` objects currently stored in the `mealStore`. 
+  An empty array is returned `[]` because no `Meal` objects are currently stored in the `mealStore`. 
 
 You can use the [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) tutorial, which helps you build a set of REST APIs for storing, fetching, and deleting `Meal` objects from an iOS application, including storing the data in a database.
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-17"
 
 ---
 {:new_window: target="_blank"}
@@ -15,41 +15,66 @@ lastupdated: "2018-08-07"
 # Configuring the Swift environment
 {: #configuration}
 
-Ideally, a Cloud application is able to move from one environment to another (for example, from testing into production) without changing code, or exercising otherwise untested code paths.
+Cloud Native development has two closely related practices that intersect in how you handle configuration data. The first is that you should build immutable artifacts to minimize the likelihood that errors are introduced as your application journeys from development to production. The second is that you must strive for parity between your development, and production environments, to avoid problems created by environment-specific code. 
 
-Problems can arise when significant differences exist in the way the configuration is presented, depending on the development environment. For example, CloudFoundry, which uses stringified JSON objects versus Kubernetes that uses either flat values or stringified JSON objects. Local development has different considerations as well. Credentials can be presented differently across public and private, which further make it difficult for apps to remain unchanged across environments.
+Management of service configuration and credentials (service bindings) varies between platforms. Cloud Foundry stores service binding details in a stringified JSON object that is passed to the application as an environment variable (`VCAP_SERVICES`). Kubernetes stores service bindings as stringified JSON or flat attributes in `ConfigMaps` or `Secrets`, which can be passed to the containerized application as environment variables or mounted as a temporary volume. Local development has its own configuration, as local testing is often a simplified derivative of whatever is running in the cloud. Working across these variations in a portable way without having environment-specific code paths can be challenging.
 
-Standardized guidelines are available to follow for developing Swift applications that help facilitate and maintain consistent portability. Considerations to make include credential management, saving data, storing data, and publishing content to the cloud.
+You can follow simple guidelines that can help you write portable applications, and some utilities that you can use to encapsulate finding service bindings (or other configuration) in environment-specific locations. Whether you need to add cloud support to existing applications or create apps with Starter Kits, the goal is to provide maximum portability for apps regardless of the deployment platform.
 
-### General requirements
-* Must be able to inject configuration at run time (minimally through an environment variable).
-* Application code can use or look up a value by using a consistent string key.
-* Application code can use credentials that are provided by the platform for the target environment.
-
-Whether you need to add Cloud support to existing applications or create apps with Starter kits, the goal is to provide maximum portability for Swift apps regardless of the development platform.
-
-### {{site.data.keyword.cloud_notm}} requirements
-* Consistent {{site.data.keyword.cloud_notm}} mechanism for providing credentials to applications, like service instances that use common (Open) service broker.
-* Consistent pattern for saving, storing, and publishing environment-specific configuration.
-  * Using `kubeconfig` and context elements.
-  * References to secrets (service instances) in helm, as seen in this [example](https://github.com/kubernetes/helm/issues/2780).
-
-## Adding IBM Cloud support to existing Swift applications
+## Adding {{site.data.keyword.cloud_notm}} to existing Swift applications
 {: #addcloud-env}
 
-The [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) library abstracts environment configuration and credentials from various Cloud compute providers. This way your Swift app can consistently access the information running locally or in Cloud Foundry, Kubernetes, and {{site.data.keyword.openwhisk}}. The credentials abstraction is directly in `CloudEnvironment` itself, while `CloudEnvironment` uses [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) for the Cloud Foundry configuration and [Configuration](https://github.com/IBM-Swift/Configuration) as a configuration manager.
+The path for obtaining certain environment values can differ from one cloud environment to another. The [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) library abstracts environment configuration and credentials from various cloud providers so your Swift app can consistently access the information by running locally or in Cloud Foundry, Kubernetes, or {{site.data.keyword.openwhisk}}. The credentials abstraction is provided by the `CloudEnvironment` library, which internally uses [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) for Cloud Foundry configuration and [Configuration](https://github.com/IBM-Swift/Configuration) as a configuration manager.
 
-The path for obtaining certain environment values can differ from one cloud environment to another. By leveraging this `CloudEnvironment`, you can make your Swift application environment-agnostic when it comes to obtaining such values. With `CloudEnvironment`, you can abstract low-level details from your application's source code by defining a lookup key that your Swift application can leverage for searching its corresponding value.
+With `CloudEnvironment`, you can abstract low-level details from your application's source code by defining a lookup key that your Swift application can leverage for searching its corresponding value.
 
-### Abstraction and service credentials
-By using the `CloudEnvironment` library, you can define an array of search patterns for looking up a JSON object that is mapped to environment variables, such as service credentials. Each element in the search patterns array is *executed* until the variable is found. The `CloudEnvironment` library supports searching for values by using the following three search pattern types:
+The `CloudEnvironment` library provides a consistent lookup key that can be used in your source code. The library then searches across an array of search patterns to find JSON object that contains configuration attributes or service credentials. 
 
-- `cloudfoundry` - A pattern type used to search for a value in Cloud Foundry's services environment variable (for example, `VCAP_SERVICES`).
-- `env` - A pattern type used to search for a value that is mapped to an environment variable, as in Kubernetes or Functions.
-- `file` - A pattern type used to search for a value in a JSON file.
+### Adding the CloudEnvironment package to your Swift application
+To leverage the `CloudEnvironment` package in your Swift application, specify it in the **dependencies:** section of your `Package.swift` file:
+```swift
+.package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", from: "8.0.0"),
+```
+{: codeblock}
 
-You can specify lookup keys and search patterns in a file named `mappings.json`. This file must exist in a `config` folder under the root folder of your Swift project. The following shows an example of a `mappings.json` file:
+Then, add the following instrumentation code to your application:
+```swift
+import CloudEnvironment
 
+let cloudEnv = CloudEnv()
+```
+{: codeblock}
+
+### Accessing credentials
+Now that the `CloudEnvironment` library is initialized, you can access your credentials as shown in the following examples:
+```swift
+let cloudantCredentials = cloudEnv.getCloudantCredentials(name: "cloudant-credentials")
+// cloudantCredentials.username, cloudantCredentials.password, cloudantCredentials.url, etc.
+let objStorageCredentials = cloudEnv.getObjectStorageCredentials(name: "object-storage-credentials")
+// objStorageCredentials.username, objStorageCredentials.password, objStorageCredentials.projectID, etc.
+
+let service1Credentials = cloudEnv.getDictionary("service1-credentials")
+let service1CredentialsStr = cloudEnv.getString("service1-credentials")
+
+// Get a default PORT and URL
+let port = cloudEnv.port
+let url = cloudEnv.url
+```
+{: codeblock}
+
+This example provides access to the credential sets for services, which can now be used to initialize connections to these [supported services or a generic dictionary](https://github.com/IBM-Swift/CloudEnvironment#supported-services). Check out [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api) for Cloud Foundry specific configuration, and [configuration details](https://github.com/IBM-Swift/Configuration) on loading configuration data.
+
+## Understanding service credentials
+{: #service_creds}
+
+The `CloudEnvironment` library uses a file that is named `mappings.json`, found in the `config` directory, to communicate where the credentials are stored for each service. The `mappings.json` file supports searching for values that use the following three search pattern types:
+- **`cloudfoundry`** - A pattern type used to search for a value in Cloud Foundry's services environment variable (`VCAP_SERVICES`).
+- **`env`** - A pattern type used to search for a value that is mapped to an environment variable, as in Kubernetes or Functions.
+- **`file`** - A pattern type used to search for a value in a JSON file. The path must be relative to the root folder of your Swift application.
+
+The array of values that are associated with a lookup key is searched in the order they appear.
+
+The following shows an example of a `mappings.json` file:
 ```javascript
 {
     "cloudant-credentials": {
@@ -74,52 +99,20 @@ You can specify lookup keys and search patterns in a file named `mappings.json`.
 ```
 {: codeblock}
 
-In this example, `cloudant-credentials` and `object-storage-credentials` are the lookup keys that your Swift application uses to look up the corresponding credentials. The path next to the `file` search pattern must be relative to the root folder of your Swift application. The `file:` search pattern is useful for providing credentials to your locally running application. For security purposes, credential files cannot be added to repositories.
+In this example, `cloudant-credentials` and `object-storage-credentials` are the lookup keys that your Swift application uses to look up the corresponding credentials. According to the array of search patterns, the configuration manager first looks for `my-awesome-cloudant-db` in `VCAP_SERVICES`, next it looks for `my_awesome_cloudant_db_credentials` as an environment variable, and if that isn't defined, it looks for the contents of `my-awesome-object-storage-credentials.json` in the `localdev` folder. 
 
-To leverage the `CloudEnvironment` package in your Swift application, specify it in the *dependencies:* section of your `Package.swift` file:
-```swift
-       .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", from: "8.0.0"),
-```
-{: codeblock}
+When the application runs locally, it can use credentials stored in a file, like `localdev/my-awesome-object-storage-credentials.json` as shown in the previous example. The connection information for services you want to access locally, such as username, password, and hostname, are all to be stored in this file. 
 
-Then, add the following instrumentation code to your application:
-```swift
-import CloudEnvironment
+For security reasons, credential files are not to be added to repositories. In the previous example, a `localdev` folder is used to store local credentials so you must add this folder to the `.gitignore` file to avoid an accidental commit. If you are using a Starter Kit app, this folder is created for you, and is present in the `.gitignore` file.
 
-let cloudEnv = CloudEnv()
-```
-{: codeblock}
-
-Now that the `CloudEnvironment` library is initialized, you can access your credentials as shown in the following examples:
-```swift
-let cloudantCredentials = cloudEnv.getCloudantCredentials(name: "cloudant-credentials")
-// cloudantCredentials.username, cloudantCredentials.password, cloudantCredentials.url, etc.
-let objStorageCredentials = cloudEnv.getObjectStorageCredentials(name: "object-storage-credentials")
-// objStorageCredentials.username, objStorageCredentials.password, objStorageCredentials.projectID, etc.
-
-let service1Credentials = cloudEnv.getDictionary("service1-credentials")
-let service1CredentialsStr = cloudEnv.getString("service1-credentials")
-
-// Get a default PORT and URL
-let port = cloudEnv.port
-let url = cloudEnv.url
-```
-{: codeblock}
-
-This example provides access to the credential sets for services, which can now be used to initialize connections to these [supported services or a generic dictionary](https://github.com/IBM-Swift/CloudEnvironment#supported-services). Check out [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api) for specific CloudFoundry configuration and [Configuration](https://github.com/IBM-Swift/Configuration) for details on loading configuration data.
+For more information about the `mappings.json` file, check out the [Understanding service credential](configuration.html#service_creds) section.
 
 ## Using the Swift configuration manager from Starter Kit apps
 
-Swift apps that are created with [Starter Kits](https://console.bluemix.net/developer/appledevelopment/starter-kits/) automatically come with the credentials and configuration that is needed to run locally, and also in many Cloud deployment environments (CF, K8s, VSI, and Functions). The basic creation of the configuration manager can be found in `Sources/Application/Application.swift`.
-
-### Understanding service credentials
-
-If you are binding credentials to services, your application configuration information for services is stored in the `localdev-config.json` file in the `/config` directory. The file is in the `.gitignore` directory to prevent sensitive information from being stored in git. The connection information for services that are run locally, such as username, password, and hostname, is stored in this file.
-
-The application uses the configuration manager to read the connection and configuration information from the environment, and this file. It uses a custom built `mappings.json`, found in the `config` directory, to communicate where the credentials can be found for each service. If the application is running locally, it can connect to {{site.data.keyword.cloud_notm}} services by using unbound credentials read from this file. When you push your application to {{site.data.keyword.cloud_notm}}, these values are no longer used. Instead, the application automatically connects to bound services by using environment variables.
-
+Swift apps that are created with [Starter Kits](https://console.bluemix.net/developer/appledevelopment/starter-kits/) automatically come with the credentials and configuration that is needed to run locally, and also in many Cloud deployment environments (CF, K8s, VSI, and Functions). The basic creation of the configuration manager can be found in `Sources/Application/Application.swift`. When you create a Swift-based Starter Kit app with services, a `config` folder, containing a `mappings.json` is created for you. If you download your app, the `config` folder contains a `localdev-config.json` file, which has all of the credentials for your services, and is present in the `.gitignore` file.
 
 ## Next Steps
+{: #next notoc}
 
 Check out our three libraries to help your applications abstract themselves from their environments:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-17"
 
 ---
 {:new_window: target="_blank"}
@@ -75,7 +75,7 @@ Specifies the type for the `OPENAPI_DOC_LOCATION` argument.
 
 **Optional**:
   * `--output "YOUR_RELATIVE_PATH"` - Places the generated SDK in the directory that is specified by `YOUR_RELATIVE_PATH` (Existing SDKs are overwritten if present).
-  * `--unzip` - Extracts the generated SDK (overwrites data if there are existing SDK artifacts are present).
+  * `--unzip` - Extracts the generated SDK (overwrites data if existing SDK artifacts are present).
 
 ### Usage
 {: #gen-usage}

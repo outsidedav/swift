@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -57,9 +57,9 @@ From the Apple Development console, perform the following steps:
 
 Select the YAML and JSON file, and then click **Create**. The back end Swift app is created.
 
-You can then download the Code or Deploy to Cloud and clone your GIT repo into your local machine. You can follow the instructions in the Knowledge Guide to open the Server-side app in XCode.
+You can then **download** the Code or **Deploy to Cloud**, and clone your GIT repo to your local machine. You can follow the instructions in the Knowledge Guide to open the server-side app in XCode.
 
-In the **Source** folder, you can see a Route that defines the Swift file that created the REST endpoints which map to the API. 
+In the **Source** folder, you can see a route that defines the Swift file that created the REST endpoints that map to the API. 
 
 See the following example that uses the PetStore Open API:
 ```swift
@@ -140,7 +140,7 @@ When the SDK is included in your iOS App project, a *README.html* file is availa
 
 ## Recreating the SDK after API Change
 
-If the API changes or new features become available, and {{site.data.keyword.openwhisk}} is added, you can recreate the client SDK by using the `ibmcloud sdk` command. For more information, examples, and syntax see,[SDK Generator](/docs/cli/sdk/index.html).
+If the API changes or new features become available, and {{site.data.keyword.openwhisk}} is added, you can recreate the client SDK by using the `ibmcloud sdk` command. For more information, examples, and syntax help, check out  the [SDK Generator](/docs/cli/sdk/index.html) documentation.
 
 To enable the creation of an SDK, use the Open API Specification (Swagger) YAML or JSON file. You can retrieve this file by using the API management facilities in the {{site.data.keyword.cloud_notm}}. 
 
@@ -185,11 +185,11 @@ public static func getCreate(completionHandler: @escaping (_ response: Response?
 - **completionHandler** (required)
     - Closure takes as arguments `Response?` and `Error?`.
 
-### Authentication using `getCreate`
+### Authenticating with `getCreate`
 
 No authentication required
 
-### Example using `getCreate`
+### Example that uses `getCreate`
 ```swift
 DefaultAPI.getCreate() { (response, error) in
     guard error == nil else {
@@ -221,11 +221,11 @@ public static func getDelete(completionHandler: @escaping (_ response: Response?
 - **completionHandler** (required)
     - Closure takes as arguments `Response?` and `Error?`.
 
-### Authentication using `getDelete`
+### Authenticating with `getDelete`
 
 No authentication required
 
-### Example using `getDelete`
+### Example that uses `getDelete`
 ```swift
 DefaultAPI.getDelete() { (response, error) in
     guard error == nil else {
@@ -257,11 +257,11 @@ public static func getDeleteall(completionHandler: @escaping (_ response: Respon
 - **completionHandler** (required)
     - Closure takes as arguments `Response?` and `Error?`.
 
-### Authentication using `getDeleteall`
+### Authenticating with `getDeleteall`
 
 No authentication required
 
-### Example using `getDeleteall`
+### Example that uses `getDeleteall`
 
 ```swift
 DefaultAPI.getDeleteall() { (response, error) in
@@ -294,11 +294,11 @@ public static func getRead(completionHandler: @escaping (_ response: Response?, 
 - **completionHandler** (required)
     - Closure takes as arguments `Response?` and `Error?`.
 
-### Authentication using `getRead`
+### Authenticating with `getRead`
 
 No authentication required
 
-### Example using `getRead`
+### Example that uses `getRead`
 ```swift
 DefaultAPI.getRead() { (response, error) in
     guard error == nil else {
@@ -330,11 +330,11 @@ public static func getReadall(completionHandler: @escaping (_ response: Response
 - **completionHandler** (required)
     - Closure takes as arguments `Response?` and `Error?`.
 
-### Authentication using `getReadall`
+### Authenticating with `getReadall`
 
 No authentication required
 
-### Example using `getReadall`
+### Example that uses `getReadall`
 ```swift
 DefaultAPI.getReadall() { (response, error) in
     guard error == nil else {
@@ -366,11 +366,11 @@ public static func getUpdate(completionHandler: @escaping (_ response: Response?
 - **completionHandler** (required)
     - Closure takes as arguments `Response?` and `Error?`.
 
-### Authentication using `getUpdate`
+### Authenticating with `getUpdate`
 
 No authentication required
 
-### Example using `getUpdate`
+### Example that uses `getUpdate`
 ```swift
 DefaultAPI.getUpdate() { (response, error) in
     guard error == nil else {
