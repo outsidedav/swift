@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-23"
 
 ---
 {:new_window: target="_blank"}
@@ -51,7 +51,7 @@ To set up Push Notifications service, you need to obtain the required credential
 ## Step 3. Configure a service instance
 {: #enable-push-ios-notifications}
 
-To use the {{site.data.keyword.mobilepushshort}} service to send notifications, upload the `.p12` certificates that you created. This certificate contains the private key and SSL certificates that are required to build and publish your application. You can also use the REST API to upload an APNs certificate.
+To use the {{site.data.keyword.mobilepushshort}} service to send notifications, upload the `.p12` keystore that you created, which contains the private key and SSL certificates that are required to build and publish your application. You can also use the REST API to upload an APNs certificate.
 
 After the `.cer` file is in your key chain access, export it to your computer to create a `.p12` certificate.
 
