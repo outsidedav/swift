@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-24"
 
 ---
 
@@ -79,7 +79,7 @@ The {{site.data.keyword.engage_short}} service creates and tests responses to fe
 
 To create a feature, complete the following steps: 
 1. In the navigation pane, click **Features** > **Create New Feature**.
-2. Update the Create New F veature and Metrics form with a feature name and description. You can also define the feature properties and add metrics to measure the impact of your engagement. Click **Bulk edit** to add multiple properties by editing the JSON.
+2. Update the Create New Feature and Metrics form with a feature name and description. You can also define the feature properties and add metrics to measure the impact of your engagement. Click **Bulk edit** to add multiple properties by editing the JSON.
 3. Click **Create**. The new feature now appears on the Features panel.
 4. Enable the feature after it is developed.
 5. To enable a feature to be used as an engagement, click the Feature that you created.
