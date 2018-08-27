@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-27"
 
 ---
 {:new_window: target="_blank"}
@@ -23,7 +23,7 @@ lastupdated: "2018-08-09"
 
  ![Developer types](images/IBM_Cloud_icon.png "IBM Cloud")
 
-The developer capabilities that are built in to {{site.data.keyword.cloud_notm}} align to various skill sets, and provide one platform to produce, deliver, run, and manage your app. For example, from the cognitive app that is mentioned, the following {{site.data.keyword.cloud_notm}} are of interest:
+The developer capabilities that are built in to {{site.data.keyword.cloud_notm}} align to various skill sets, and provide one platform to produce, deliver, run, and manage your app. For example, from the cognitive app that is mentioned, the following {{site.data.keyword.cloud_notm}} capabilities are of interest:
 
 * The [**{{site.data.keyword.cloud_notm}} Developer Experience**](https://console.bluemix.net/docs/overview/dev-journey.html#dev-journey) is not a service, but rather is a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and Cloud Native developers to start building production-ready apps. It includes automatic provisioning of services, and "one-click" deployment to a devops toolchain.
 
@@ -33,7 +33,7 @@ The developer capabilities that are built in to {{site.data.keyword.cloud_notm}}
 
 * The [**{{site.data.keyword.cloud_notm}} Continuous Delivery service**](../services/ContinuousDelivery/index.html#cd_getting_started) sets up a devops toolchain to automate continuous delivery of your app. You can easily enhance the toolchain to include management functions like monitoring, logging, tracking, and alerting. You can even apply advanced machine learning to your toolchain by using the [DevOps Insights service](../services/DevOpsInsights/index.html#gettingstarted).
 
-The {{site.data.keyword.cloud_notm}} platform offers many more capabilities and can be used {{site.data.keyword.cloud_notm}} as your comprehensive development platform.
+The {{site.data.keyword.cloud_notm}} platform offers many more capabilities and can be used as your comprehensive development platform.
 
 ## Overview of {{site.data.keyword.cloud_notm}} Capabilities
 {: #capabilities}
