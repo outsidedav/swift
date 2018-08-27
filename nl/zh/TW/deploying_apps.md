@@ -1,0 +1,49 @@
+---
+
+copyright:
+  years: 2018
+lastupdated: "2018-08-01"
+
+---
+{:new_window: target="_blank"}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:tip: .tip}
+
+# 部署及整合 Swift 應用程式
+{: #deploy_apps}
+
+您可以使用工具鏈或使用指令行介面來部署您的 Swift 應用程式。工具鏈是一組工具整合。指令行介面是部署應用程式和服務實例的簡單方法。
+
+
+如需相關資訊，請參閱[部署應用程式](../apps/dep-app-tool.html)。
+
+## 開發無伺服器 Swift 應用程式
+{: #serverless}
+
+若要協助無伺服器開發，您可以使用 IBM 的「函數即服務 (FaaS)」產品，{{site.data.keyword.openwhisk}}。{{site.data.keyword.openwhisk_short}} 可執行應用程式邏輯，以回應事件，或回應來自 Web 或行動應用程式透過 HTTP 的直接呼叫，而不需佈建或管理伺服器。
+
+{{site.data.keyword.openwhisk_short}} 會執行系統管理，例如，自動調整、可用性管理以及維護，讓開發人員把焦點著重於撰寫應用程式邏輯。
+
+如需相關資訊，請參閱[開發無伺服器應用程式](../apps/deploying/functions.html)。
+
+## 使用所產生的 SDK 來整合後端服務
+{: #backend_gensdk}
+
+「{{site.data.keyword.IBM_notm}} SDK 產生器」外掛程式可使用所產生的 SDK，輕易地將後端服務整合至您的應用程式。當 REST API 發生變更時，您可以重新產生 SDK 並取代舊的 SDK，以進行無縫 SDK 升級。您也可以將 CLI 整合至 DevOps 管線，並確認每次建置應用程式時，SDK 都與 API 規格一致。
+
+如需相關資訊，請參閱[使用所產生的 SDK 來整合後端服務](/docs/swift/backend/cli_sdkgen.html)。
+
+## 部署至 Kubernetes 叢集
+{: #deploy_kube}
+
+您可以學習如何使用 {{site.data.keyword.cloud_notm}} Kubernetes Service 來部署利用 Watson Tone Analyzer 的容器化 Node.js 應用程式。在提供的情境中，虛構的 PR 公司使用 {{site.data.keyword.cloud_notm}} 服務來分析其新聞稿，並收到有關其訊息語氣的意見。如需相關資訊，請參閱指導教學[將應用程式部署至叢集](../containers/cs_tutorials_apps.html)。
+
+## 部署至虛擬伺服器
+{: #virtual_deploy}
+
+虛擬服務針對所有工作負載類型，提供較高程度的透通性、可預測性及自動化。Terraform 用來有效率且安全地建置、變更及版本化您的基礎架構。
+
+如需相關資訊，請參閱[部署至虛擬伺服器](../apps/vsi-deploy.html)。
