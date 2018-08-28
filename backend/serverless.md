@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-28"
 
 ---
 {:new_window: target="_blank"}
@@ -17,7 +17,7 @@ lastupdated: "2018-08-07"
 
 What is serverless? The serverless development pattern refers to application development where server-side logic is run in stateless containers that are event-triggered, ephemeral (lasting for a single execution), and fully managed by a third party. This paradigm, also known as Functions as a Service (FaaS), is where the developer provides a stateless function that can be triggered and executed without explicitly provisioning or managing a server.
 
-By abstracting away the infrastructure and frameworks necessary for server-side development, serverless architecture allows developers to focus on building their application and writing code to run reactively to change data.
+By abstracting away the infrastructure and frameworks necessary for server-side development, serverless architecture allows developers to focus on writing code to run reactively to change data.
 
 IBM's FaaS offering, [{{site.data.keyword.openwhisk}}](https://console.bluemix.net/openwhisk/), strives to provide a seamless, server-side development experience without needing any specialized server-side knowledge. By using serverless technology, you can quickly develop scalable backend solutions to meet practically any workload demand without the need to provision resources ahead of time. For applications that have unpredictable load patterns or high server down time, {{site.data.keyword.openwhisk_short}} can be an excellent cloud solution with improved performance, and its "pay for what you use" system helps to decrease costs.
 
@@ -26,7 +26,7 @@ IBM's FaaS offering, [{{site.data.keyword.openwhisk}}](https://console.bluemix.n
 
 To help you understand the architectural benefits of switching to FaaS, a traditional and FaaS architectures are compared by using a simple iOS application that is linked to a database.
 
-In a more traditional architecture, the iOS application offloads network intensive tasks, or processes data remotely on a centralized , which itself is connected to by its own services or storage options. With a traditional system, the heavy lifting is placed on a singular server that handles authentication, processing intensive tasks to minimize stress on the client, and provide synchronization across its user base.
+In a more traditional architecture, the iOS application offloads network intensive tasks, or processes data remotely on a centralized server, by which itself is connected to by its own services or storage options. With a traditional system, the heavy lifting is placed on a singular server that processes many intensive tasks to minimize stress on the client, and provide synchronization across its user base.
 
 A serverless architecture can alter this structure to look more like the following image.
 

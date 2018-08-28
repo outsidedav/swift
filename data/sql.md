@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-28"
 
 ---
 {:new_window: target="_blank"}
@@ -147,7 +147,7 @@ All of these calls take a handler that is called once and runs it when the datab
 
 ## Using ORM with Kitura
 
-To make it easier to try out ORM, the [FoodTrackerBackend tutorial](https://github.com/IBM/FoodTrackerBackend) can save and fetch the Meal objects from the iOS app, and into a PostgreSQL database by using ORM. Even if you complete the tutorial, it is worth going through it again to see the power of Swift-Kuery-ORM, and how it can simplify your Kitura code.
+To make it easier to try out ORM, the [FoodTrackerBackend tutorial](https://github.com/IBM/FoodTrackerBackend) can save and fetch Meal objects from the iOS app directly into a PostgreSQL database. Even if you complete the tutorial, it is worth going through it again to see the power of Swift-Kuery-ORM, and how it can simplify your Kitura code.
 
 ## Using Swift-Kuery directly
 
