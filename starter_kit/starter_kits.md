@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-29"
 
 ---
 {:new_window: target="_blank"}
@@ -62,12 +62,13 @@ The App Details view displays a list of services that are configured for your ap
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple App Details view](images/project_details_screen.png "App Details view") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple App Details view*
 
-By using the App Details view, you can add new or existing services to your app that were not part of the original Starter Kit. Click the **Add Resource** link in the service list box add services. The available services depend on the type of app, and the services that are available in a region, so not all services are available to associate with all apps.
+By using the App Details view, you can add new or existing services to your app that were not part of the original Starter Kit. Click the **Add Resource** link in the service list box to add services. The available services depend on the type of app, and the services that are available in a region, so not all services are available to associate with all apps.
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple Add Resource dialog](images/add_resource_screen.png "Add Resource dialog") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple Add Resource dialog*
 
-On the App Details view, you can access your code in two ways:
-*  Select **Download Code** to generate and download the code for your app.
+### Downloading your code
+
+* On the App Details view, you can access your code by selecting **Download Code** to generate and download the code for your app.
 
 ### App List view
 {: #app_list_view}

@@ -1,0 +1,79 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="swift" audience="platform" href="/docs/swift/index.html"}
+Programmation avec Swift sur IBM Cloud
+
+    {: .navgroup id="learn"}
+    index.md
+    apple_development.md
+    starter_kit/starter_kits.md
+                    
+    {: .topicgroup}
+    Développement de composants de back-end
+        backend/intro.md
+        backend/mbaas.md
+        backend/serverless.md
+        backend/sample_cloud.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    analytics/mobile_analytics.md
+    push/push_notifications.md
+    app_launch/mobile_applaunch.md
+    
+    {: .topicgroup}
+    Sécurisation des applis Swift
+        authenticate/app_id.md
+        security/advanced_security.md
+
+    {: .topicgroup}
+    Stockage et partage des données
+        data/cloudant.md
+        data/sql.md
+        data/object.md
+
+    hypersecure_dbaas/database-cluster.md
+
+    {: .topicgroup}
+    Ajout de services d'intelligence artificielle Watson
+        machine_learning/conversation.md
+        machine_learning/recognition.md
+        machine_learning/tone.md
+
+    {: .topicgroup}
+    Utilisation de l'apprentissage automatique
+        machine_learning/coreml.md
+        machine_learning/dsx.md
+
+    {: .topicgroup}
+    Utilisation de logiciels SDK
+        getting_started/installing.md
+        api/api.md
+        backend/cli_sdkgen.md
+        api/sdk.md
+    
+    {: .topicgroup}
+    Développement d'applis Swift côté serveur
+        cloudnative/configuration.md
+        cloudnative/appmetrics.md
+        cloudnative/healthcheck.md
+        cloudnative/logging.md
+        backend/kitura.md
+        create_app_cli.md
+    
+    deploying_apps.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    sdk.md
+    [Docs API](https://console.bluemix.net/apidocs)
+    [Exemples d'applis dans IBM Code](https://developer.ibm.com/code/technologies/swift-on-the-server/)
+    [IBM Cloud Developer Center](https://developer.ibm.com/swift/)
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    [dW Answers](https://developer.ibm.com/answers/topics/swift.html)
+    [StackOverflow](https://stackoverflow.com/search?q=iOS+ibm-cloud)
+    [Swift@IBM Slack](https://swift-at-ibm-slack.mybluemix.net)
+    {: .navgroup-end}
