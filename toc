@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="swift" audience="platform" arm="4088034" href="/docs/swift/index.html"}
+{: .toc subcollection="swift" audience="platform" href="/docs/swift/index.html"}
 Programming with Swift on IBM Cloud
 
     {: .navgroup id="learn"}
