@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-30"
 
 ---
 
@@ -124,7 +124,7 @@ To configure social identity providers:
 1. Open the {{site.data.keyword.appid_short_notm}} dashboard to **Identity Providers > Manage**.
 2. Set the identity providers that you want to use to **On**. You can use any combination of identity providers, but if you'd like to bring customized sign-on screens, you need to enable Cloud Directory only.
 3. Update the [default configuration](/docs/services/appid/identity-providers.html) to your own credentials. {{site.data.keyword.appid_short_notm}} provides IBM credentials that you can use to try out the service, but prior to publishing your app, you need to update the configuration.
-4. Customize the preconfigured sign-in screen to display the image and colors of your choice.
+4. Customize the sign-in screen to display the image and colors of your choice.
 5. To call the login widget with your app, add the following command to your code.
     ```swift
     import BluemixAppID
