@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-30"
 
 ---
 {:new_window: target="_blank"}
@@ -291,7 +291,7 @@ Analytics.userIdentity = "username"
 
 Is everything set-up correctly? Time to test it out!
 
-1. Open your app. If you have a web application, use a browser. If you have an iOS client application with the Xcode emulator.
+1. Open your app. If you have a web application, use a browser. If you have an iOS client application, open with the Xcode emulator.
 2. Compile and run the application on your emulator or device.
 3. Using the GUI, walk through the process of signing into your application.
 4. Go to the {{site.data.keyword.mobileanalytics_short}} console to see usage analytics for your application. You can also monitor your application by [setting alerts](/docs/services/mobileanalytics/app-monitoring.html#alerts) and [monitoring app crashes](/docs/services/mobileanalytics/app-monitoring.html#monitor-app-crash).

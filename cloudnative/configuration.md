@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-08-30"
 
 ---
 {:new_window: target="_blank"}
@@ -19,7 +19,7 @@ Cloud Native development has two closely related practices that intersect in how
 
 Management of service configuration and credentials (service bindings) varies between platforms. Cloud Foundry stores service binding details in a stringified JSON object that is passed to the application as an environment variable (`VCAP_SERVICES`). Kubernetes stores service bindings as stringified JSON or flat attributes in `ConfigMaps` or `Secrets`, which can be passed to the containerized application as environment variables or mounted as a temporary volume. Local development has its own configuration, as local testing is often a simplified derivative of whatever is running in the cloud. Working across these variations in a portable way without having environment-specific code paths can be challenging.
 
-You can follow simple guidelines that can help you write portable applications, and some utilities that you can use to encapsulate finding service bindings (or other configuration) in environment-specific locations. Whether you need to add cloud support to existing applications or create apps with Starter Kits, the goal is to provide maximum portability for apps regardless of the deployment platform.
+You can follow simple guidelines to help you write portable applications, and utilities that you can use to encapsulate finding service bindings (or other configuration) in environment-specific locations. Whether you need to add cloud support to existing applications or create apps with Starter Kits, the goal is to provide maximum portability for apps regardless of the deployment platform.
 
 ## Adding {{site.data.keyword.cloud_notm}} to existing Swift applications
 {: #addcloud-env}
