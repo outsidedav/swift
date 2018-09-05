@@ -1,0 +1,100 @@
+---
+
+copyright:
+  years: 2018
+lastupdated: "2018-08-07"
+
+---
+{:new_window: target="_blank"}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:note:.deprecated}
+
+# Desarrollo sin servidor
+{: #serverless}
+
+¿Qué es sin servidor? El patrón de desarrollo sin servidor hace referencia al desarrollo de aplicaciones en el que la lógica del lado del servidor se ejecuta en contenedores sin estado que son desencadenados por sucesos, efímeros (duraderos para una sola ejecución), y gestionados por un tercero. Este paradigma, también conocido como FaaS (Functions as a Service), es donde el desarrollador proporciona una función sin estado que se puede desencadenar y ejecutar sin suministrar ni gestionar de forma explícita un servidor.
+
+Mediante la abstracción de la infraestructura y los marcos necesarios para el desarrollo del lado del servidor, la arquitectura sin servidor permite a los desarrolladores centrarse en crear su aplicación y escribir código para que se ejecuten de forma reactiva para cambiar los datos.
+
+La oferta de FaaS de IBM, [{{site.data.keyword.openwhisk}}](https://console.bluemix.net/openwhisk/), se esfuerza por ofrecer una experiencia de desarrollo sin problemas de servidor sin necesidad de tener conocimientos especializados del lado del servidor. Mediante la utilización de tecnología sin servidor, puede desarrollar rápidamente soluciones de fondo escalables para satisfacer prácticamente cualquier demanda de carga de trabajo sin la necesidad de suministrar recursos antes de tiempo. Para las aplicaciones que tienen patrones de carga impredecibles o un tiempo de inactividad de servidor alto, {{site.data.keyword.openwhisk_short}} puede ser una excelente solución en la nube con un rendimiento mejorado, y su sistema de "pagar por lo que utilice" ayuda a reducir los costes.
+
+## Cambios arquitectónicos
+{: #comparison}
+
+Para ayudarle a comprender los beneficios arquitectónicos de cambiar a FaaS, las arquitecturas tradicionales y FaaS se comparan utilizando una aplicación de iOS simple que se enlaza a una base de datos.
+
+En una arquitectura más tradicional, la aplicación de iOS descarga tareas intensivas de red, o procesa datos de forma remota en un sistema centralizado, al que se conecta a sí mismo por sus propios servicios u opciones de almacenamiento. Con un sistema tradicional, el trabajo pesado se coloca en un servidor singular que maneja la autenticación, procesando tareas intensivas para minimizar el estrés en el cliente, y proporcionar sincronización a través de su base de usuarios.
+
+Una arquitectura sin servidor puede modificar esta estructura para que se parezca más a la siguiente imagen.
+
+![](./images/Architecture.png) Figura 1. Arquitectura sin servidor
+
+En lugar de manejar todo el proceso y la lógica de autenticación dentro de un solo servidor, una arquitectura sin servidor aprovecha funciones altamente escalables que encapsulan gran parte de la lógica del lado del servidor, y descarga alguna lógica en el cliente (y servicios externos).
+
+Viendo el esquema, puede ver los puntos siguientes:
+
+1. El cliente se autentica en un proveedor de identidad como, por ejemplo, App ID.
+2. Llama a la API de programa de fondo de FaaS, incluida la señal de acceso.
+3. El programa de fondo se implementa con {{site.data.keyword.openwhisk_short}}. Las acciones sin servidor, que se exponen como acciones web, esperan que la señal se envíe en la cabecera de la solicitud y verifique su validez (firma y fecha de caducidad) para poder proporcionar acceso a la API real.
+4. Cuando el cliente envía datos, los comentarios se almacenan en un {{site.data.keyword.cloudant_short_notm}}.
+5. El texto de comentarios se procesa con {{site.data.keyword.toneanalyzershort}}.
+6. En función del resultado del análisis, la notificación se envía de nuevo al cliente mediante {{site.data.keyword.mobilepushshort}}.
+7. El cliente recibe la notificación.
+
+En un modelo puramente sin servidor, el cliente a menudo asume responsabilidades adicionales debido a la incapacidad de almacenar el estado del usuario. Por ejemplo, en este caso, la autorización la maneja el cliente y el servicio de proveedor de identidad de {{site.data.keyword.appid_short_notm}}.
+
+Aunque las arquitecturas sin servidor no son siempre ideales, pueden proporcionar ventajas importantes con el equipo y las condiciones de uso adecuados. Consulte algunos ejemplos específicos para obtener información sobre unos pocos de los [casos de uso](#use_cases) más comunes.
+
+## Prestaciones sin servidor
+{: #benefits}
+
+### Coste reducido
+
+Externalizar el tiempo y el coste monetario asociado con la administración de sistema reduce el coste global asociado con los servidores de fondo tradicionales. Además, {{site.data.keyword.openwhisk_short}} es diferente de las tecnologías de cálculo tradicionales porque solo paga por el tiempo que tarda el código en satisfacer las solicitudes, redondeado a los 100 ms más próximos. Es posible un ahorro de costes considerable en relación con otras tecnologías, como las VM y los contenedores, que no es probable que se utilicen al 100 % y consumen memoria en el sistema de su proveedor de nube.
+
+### Alta disponibilidad y escalabilidad
+
+Las arquitecturas sin servidor proporcionan de forma inherente escalabilidad instantánea con una disponibilidad casi constante.
+
+### Desarrollo rápido y simplificado
+
+Al eliminar la necesidad de administración del sistema y de proporcionar interfaces simples para el despliegue, el paradigma sin servidor acelera el desarrollo de aplicaciones. Los desarrolladores pueden crear rápidamente apps con secuencias de acción que se ejecutan en respuesta a un mundo controlado por sucesos.
+
+## Casos de uso de ejemplo
+{: #use_cases}
+
+### Backend móvil
+![](./images/cloud-functions-rest-api-trigger.png)
+
+Los desarrolladores de móvil pueden acceder fácilmente a la lógica en el lado del servidor y externalizar tareas de computación intensas a una plataforma en la nube escalable. Puede implementar funciones en lenguajes como Swift y consumir funciones en el lado del servidor fácilmente utilizando el SDK de iOS sin necesidad de tener experiencia en el lado del servidor.
+
+### Proceso de datos
+
+![](./images/cloud-functions-cloudant-trigger.png)
+
+Puede ejecutar código cuando se actualicen los datos de su almacén de datos a través de desencadenantes integrados. También puede automatizar procesos fácilmente como la normalización de audio, rotación de imágenes, nitidez, reducción de ruido, generación de miniaturas o transcodificación de vídeo a través de un modelo de programación funcional del lado del servidor.
+
+### Proceso de datos cognitivo
+
+Puede analizar los datos en cuanto estén disponibles. Permita que su función aproveche los potentes servicios cognitivos, como IBM Watson, para detectar objetos o personas en imágenes o vídeos.
+
+### Tareas planificadas
+
+Ejecute sus funciones periódicamente y defina planificaciones que siguen una sintaxis cronológica para especificar cuándo se deben ejecutar las acciones.
+
+## Referencia de API
+{: #openwhisk_start_api notoc}
+
+<!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
+* [API REST](https://console.{DomainName}/apidocs/98)
+
+## Enlaces relacionados
+{: #general notoc}
+
+* [Descubrir: {{site.data.keyword.openwhisk_short}}](http://www.ibm.com/cloud-computing/bluemix/openwhisk/)
+<!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
+* [Sitio web del proyecto Apache OpenWhisk](http://openwhisk.org)
+* [Más información sobre la arquitectura sin servidor](https://martinfowler.com/articles/serverless.html)
