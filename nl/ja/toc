@@ -1,0 +1,79 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="swift" audience="platform" href="/docs/swift/index.html"}
+IBM Cloud での Swift のプログラミング
+
+    {: .navgroup id="learn"}
+    index.md
+    apple_development.md
+    starter_kit/starter_kits.md
+                    
+    {: .topicgroup}
+    バックエンド・コンポーネントの開発
+        backend/intro.md
+        backend/mbaas.md
+        backend/serverless.md
+        backend/sample_cloud.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    analytics/mobile_analytics.md
+    push/push_notifications.md
+    app_launch/mobile_applaunch.md
+    
+    {: .topicgroup}
+    Swift アプリの保護
+        authenticate/app_id.md
+        security/advanced_security.md
+
+    {: .topicgroup}
+    データの保管と共有
+        data/cloudant.md
+        data/sql.md
+        data/object.md
+
+    hypersecure_dbaas/database-cluster.md
+
+    {: .topicgroup}
+    Watson AI サービスの追加
+        machine_learning/conversation.md
+        machine_learning/recognition.md
+        machine_learning/tone.md
+
+    {: .topicgroup}
+    機械学習の利用
+        machine_learning/coreml.md
+        machine_learning/dsx.md
+
+    {: .topicgroup}
+    SDK の利用
+        getting_started/installing.md
+        api/api.md
+        backend/cli_sdkgen.md
+        api/sdk.md
+    
+    {: .topicgroup}
+    サーバー・サイド Swift アプリの開発
+        cloudnative/configuration.md
+        cloudnative/appmetrics.md
+        cloudnative/healthcheck.md
+        cloudnative/logging.md
+        backend/kitura.md
+        create_app_cli.md
+    
+    deploying_apps.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    sdk.md
+    [API の資料](https://console.bluemix.net/apidocs)
+    [IBM コードのサンプル・アプリ](https://developer.ibm.com/code/technologies/swift-on-the-server/)
+    [IBM Cloud 開発者センター](https://developer.ibm.com/swift/)
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    [dW Answers](https://developer.ibm.com/answers/topics/swift.html)
+    [StackOverflow](https://stackoverflow.com/search?q=iOS+ibm-cloud)
+    [Swift@IBM Slack](https://swift-at-ibm-slack.mybluemix.net)
+    {: .navgroup-end}
