@@ -16,19 +16,19 @@ lastupdated: "2018-08-09"
 
 # 新增使用者鑑別
 
-應用程式安全可能非常複雜。對於大部分開發人員而言，這是建立應用程式最困難的其中一部分。如何才能確定您正在保護使用者資訊？透過將 {{site.data.keyword.appid_full}} 整合至您的應用程式，便可以保護資源並新增鑑別；即使您沒有太多的安全經驗也可以做到。
+應用程式安全可能非常複雜。對於大部分開發人員而言，這是建立應用程式最困難的其中一部分。如何才能確定您正在保護使用者資訊？藉由將 {{site.data.keyword.appid_full}} 整合至您的應用程式，即可保護資源並新增鑑別；即使您沒有太多的安全經驗也可以做到。
 
-要求使用者登入，即可儲存使用者資料，例如，應用程式喜好設定（或公用社交設定檔中的資訊），然後利用該資料來自訂應用程式內每一個使用者經驗。{{site.data.keyword.appid_short_notm}} 提供一個登入架構給您，但是您也可以帶入自創品牌的登入畫面，以與雲端目錄搭配使用。
+要求使用者登入，即可儲存使用者資料，例如，應用程式喜好設定（或公用社交設定檔中的資訊），然後運用該資料來自訂應用程式內的每個使用者經驗。{{site.data.keyword.appid_short_notm}} 為您提供一個登入架構，但是您也可以帶入自創品牌的登入畫面，以與雲端目錄搭配使用。
 
 如需可以使用 {{site.data.keyword.appid_short_notm}} 的所有方式以及架構資訊，請參閱[關於 {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html)。
 
 ## 開始之前
 
 首先，請確定您具備下列必要條件：
- * CocoaPods（1.1.0 版或更高版本）
- * iOS（第 9 版或更高版本）
- * MacOS（10.11.5 版或更高版本）
- * Xcode（9.0.1 版或更高版本）
+ * CocoaPods（1.1.0 版或更新版本）
+ * iOS（第 9 版或更新版本）
+ * MacOS（10.11.5 版或更新版本）
+ * Xcode（9.0.1 版或更新版本）
 
 ## 步驟 1. 建立 {{site.data.keyword.appid_short_notm}} 實例
 
@@ -40,7 +40,7 @@ lastupdated: "2018-08-09"
 
 ## 步驟 2. 安裝 iOS Swift SDK
 
-此服務提供 SDK 以協助您輕易以程式碼編寫您的應用程式。SDK 必須安裝在您的應用程式程式碼中。
+此服務提供 SDK，以協助您輕鬆地以程式碼編寫應用程式。SDK 必須安裝在應用程式程式碼中。
 
 1. 開啟現有 Xcode 專案目錄的 `Podfile`。
 
@@ -61,7 +61,7 @@ lastupdated: "2018-08-09"
 
 ## 步驟 3. 起始設定 SDK
 
-在您的應用程式中起始設定 SDK 之後，您可以開始配置您的{{site.data.keyword.appid_short_notm}} 喜好設定。
+在應用程式中起始設定 SDK 之後，您可以開始配置 {{site.data.keyword.appid_short_notm}} 喜好設定。
 
 1. 移至**專案設定 > 功能 > 金鑰鏈共用**，然後啟用 Xcode 專案的金鑰鏈共用。
 
@@ -77,7 +77,7 @@ lastupdated: "2018-08-09"
     ```
     {:pre}
 
-4. 傳遞承租戶 ID 及地區參數以起始設定 SDK。放置程式碼的一般工作區（但非一定）位於您應用程式中 AppDelegate 的 `application:didFinishLaunchingWithOptions` 方法中。
+4. 傳遞承租戶 ID 及地區參數，以起始設定 SDK。放置程式碼的一般工作區（但非一定）位於您應用程式中 AppDelegate 的 `application:didFinishLaunchingWithOptions` 方法中。
     ```swift
     AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
     ```
@@ -93,7 +93,7 @@ lastupdated: "2018-08-09"
       </tr>
       <tr>
         <td><em>AppID_region</em></td>
-        <td>{{site.data.keyword.appid_short_notm}} 地區是您在其中使用服務的 IBM Cloud 地區。此地區可在服務儀表板中找到，且可為 <em>AppID.REGION_US_SOUTH</em>、<em>AppID.REGION_SYDNEY</em>、<em>AppID.REGION_UK</em>。</td>
+        <td>{{site.data.keyword.appid_short_notm}} 地區是您在其中使用服務的 IBM Cloud 地區。可在服務儀表板中找到此地區，且可為 <em>AppID.REGION_US_SOUTH</em>、<em>AppID.REGION_SYDNEY</em>、<em>AppID.REGION_UK</em>。</td>
       </tr>
     </tbody>
   </table>
@@ -109,20 +109,20 @@ lastupdated: "2018-08-09"
 ## 步驟 4. 管理登入經驗
 {: #managing-signin-appid}
 
-身分提供者會為您的使用者提供鑑別資訊，以便您授權給他們。使用 {{site.data.keyword.appid_short_notm}}，您可以使用社交身分提供者，例如，Facebook 及 Google+，或者您可以使用雲端目錄來管理使用者登錄。
+身分提供者會為您的使用者提供鑑別資訊，如此您就可以授權給他們。使用 {{site.data.keyword.appid_short_notm}}，您可以使用社交身分提供者（例如，Facebook 及 Google+），或者您可以使用雲端目錄來管理使用者登錄。
 
-您可以隨時更新您的配置，而不需要更新應用程式程式碼。
+您隨時都可以更新配置，而不需要更新應用程式程式碼。
 {: tip}
 
 
 ### 社交身分提供者
 
-使用 {{site.data.keyword.appid_short_notm}}，您可以使用社交身分提供者，例如，Facebook 及 Google+，來保護您的應用程式。
+使用 {{site.data.keyword.appid_short_notm}}，您可以使用社交身分提供者（例如，Facebook 及 Google+）來保護您的應用程式。
 
 若要配置社交身分提供者，請執行下列動作：
 
 1. 開啟 {{site.data.keyword.appid_short_notm}} 儀表板的**身分提供者 > 管理**。
-2. 將您要使用的身分提供者設為**開啟**。您可以使用任何組合的身分提供者，但是如果您要帶入自訂的登入畫面，則需要只啟用「雲端目錄」。
+2. 將您要使用的身分提供者設為**開啟**。您可以使用任何組合的身分提供者，但是如果您要帶入自訂的登入畫面，則需要僅啟用「雲端目錄」。
 3. 將[預設配置](/docs/services/appid/identity-providers.html)更新為您自己的認證。{{site.data.keyword.appid_short_notm}} 提供 IBM 認證，您可以用來試用服務，但在發佈您的應用程式之前，需要更新配置。
 4. 自訂預先配置的登入畫面，以顯示您選擇的影像及顏色。
 5. 若要使用您的應用程式來呼叫登入小組件，請將下列指令新增至您的程式碼。
@@ -149,16 +149,16 @@ lastupdated: "2018-08-09"
 
 ### 雲端目錄
 
-使用 {{site.data.keyword.appid_short_notm}}，您可以管理您自己的使用者登錄，稱為雲端目錄。雲端目錄可讓使用者利用其電子郵件及密碼，來註冊並登入您的行動及 Web 應用程式。
+使用 {{site.data.keyword.appid_short_notm}}，您可以管理自己的使用者登錄，稱為雲端目錄。雲端目錄可讓使用者使用其電子郵件及密碼，來註冊並登入行動及 Web 應用程式。
 
-若要帶入您自創品牌的使用者介面畫面，只有雲端目錄可以作為身分提供者。
+若要帶入您自創品牌的使用者介面畫面，只有雲端目錄可以啟用作為身分提供者。
 {: tip}
 
 若要配置雲端目錄，請執行下列動作：
 
 1. 開啟 {{site.data.keyword.appid_short_notm}} 儀表板的**管理身分提供者**標籤，然後將雲端目錄設為**開啟**。
-2. 配置您的[目錄及訊息設定](/docs/services/appid/cloud-drectory.html)。
-4. 選擇您要顯示的登入畫面組合，並在您的應用程式中放置程式碼以呼叫那些畫面。
+2. 配置[目錄及訊息設定](/docs/services/appid/cloud-drectory.html)。
+4. 選擇您要顯示的登入畫面組合，並在應用程式中放置程式碼以呼叫那些畫面。
     * 登入
         ```swift
         class delegate : TokenResponseDelegate {
@@ -259,17 +259,17 @@ lastupdated: "2018-08-09"
 
 所有項目都正確設定嗎？您可以測試看看！
 
-1. 以 Xcode 模擬器開啟您的應用程式。
+1. 以 Xcode 模擬器開啟應用程式。
 2. 使用 GUI，逐步進行登入應用程式的處理程序。如果您已配置雲端目錄，請確定所有畫面的顯示都如您所願。
 3. 更新 {{site.data.keyword.appid_short_notm}} 儀表板中的身分提供者或登入小組件畫面。
-4. 重複步驟 1 和 2，查看是否立即實作變更。不需要更新您的應用程式程式碼。
+4. 重複步驟 1 和 2，查看變更是否立即實作。不需要更新應用程式程式碼。
 
-有困難嗎？請查看[疑難排解 {{site.data.keyword.appid_short_notm}}](/docs/services/appid/ts_index.html)。
+有困難嗎？請參閱[疑難排解 {{site.data.keyword.appid_short_notm}}](/docs/services/appid/ts_index.html)。
 
 ## 後續步驟
 {: #appid_next}
 
-做得好！您已新增一個安全等級至您的應用程式。嘗試下列其中一個選項，以保持動力：
+做得好！您已為應用程式新增一個安全等級。嘗試下列其中一個選項，以保持動力：
 
-* 進一步瞭解並充分利用 {{site.data.keyword.appid_short_notm}} 所提供的所有特性，[請查看文件](/docs/services/appid/index.html)！
-* 「入門範本套件」是利用 IBM Cloud 功能最快的方式之一。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
+* 進一步瞭解並充分運用 {{site.data.keyword.appid_short_notm}} 提供的所有特性，[請參閱文件](/docs/services/appid/index.html)！
+* 「入門範本套件」是運用 IBM Cloud 功能最快的方式之一。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！

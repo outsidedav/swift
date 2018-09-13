@@ -12,14 +12,14 @@ lastupdated: "2018-08-17"
 {:pre: .pre}
 {:tip: .tip}
 
-# 使用所產生的 SDK 將後端服務新增至您的應用程式
+# 使用產生的 SDK 將後端服務新增至您的應用程式
 {: #sdk-cli}
 
 「{{site.data.keyword.IBM}} SDK 產生器」外掛程式可以安裝在 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/bluemix_cli/get_started.html)。
 
-使用「{{site.data.keyword.IBM_notm}} SDK 產生器」外掛程式，您可以使用產生的 SDK，輕易地將後端服務整合至您的應用程式。當 REST API 發生變更時，您可以重新產生 SDK 並取代舊的 SDK，以進行無縫 SDK 升級。您也可以將 CLI 整合至 DevOps 管線，並確認每次建置應用程式時，SDK 都與 API 規格一致。
+使用「{{site.data.keyword.IBM_notm}} SDK 產生器」外掛程式，您可以使用產生的 SDK，輕鬆地將後端服務整合至您的應用程式。當 REST API 發生變更時，您可以重新產生 SDK 並取代舊的 SDK，以進行 SDK 無縫升級。您也可以將 CLI 整合至 DevOps 管線，並確定每次建置應用程式時，SDK 一律與 API 規格一致。
 
-REST API 定義必須有效，且在即時伺服器端點上或您系統的本端檔案上管理。
+REST API 定義必須有效，且在即時伺服器端點或您系統的本端檔案上進行管理。
 
 ## 開始之前
 {: #prereqs}
@@ -43,7 +43,7 @@ REST API 定義必須有效，且在即時伺服器端點上或您系統的本�
 ## 產生 SDK
 {: #commands}
 
-輸入下列以產生 SDK：
+輸入以下指令來產生 SDK：
 ```
 ibmcloud sdk generate [arguments...] [command options]
 ```
@@ -52,7 +52,7 @@ ibmcloud sdk generate [arguments...] [command options]
 ### 引數
 {: #gen-args}
 
-* **APP_NAME** - 您現行空間中 Cloud Foundry 應用程式的名稱。
+* **APP_NAME** - 您現行空間中的 Cloud Foundry 應用程式名稱。
 * **OPENAPI_DOC_LOCATION** - 原始 REST API 定義 JSON 或 Yaml 的 URL 或相對檔案路徑。
 * **GENERATED_SDK_NAME**（選用）- 所產生 SDK 的名稱。
 
@@ -74,8 +74,8 @@ ibmcloud sdk generate [arguments...] [command options]
   * `-l` - 本端主機 URL。
 
 **選用**：
-  * `--output "YOUR_RELATIVE_PATH"` - 將所產生的 SDK 放在 `YOUR_RELATIVE_PATH` 所指定的目錄中（如果有現有的 SDK，則會改寫現有 SDK）。
-  * `--unzip` - 解壓縮所產生的 SDK（如果有現有的 SDK 構件，則會改寫資料）。
+  * `--output "YOUR_RELATIVE_PATH"` - 將產生的 SDK 放在由 `YOUR_RELATIVE_PATH` 指定的目錄中（如果存在現有 SDK，則會被改寫）。
+  * `--unzip` - 解壓縮產生的 SDK（如果存在現有 SDK 構件，則會改寫資料）。
 
 ### 用量
 {: #gen-usage}
@@ -115,7 +115,7 @@ ibmcloud sdk validate [APP_NAME] [LOCATION]
 ```
 {: codeblock}
 
-若要從 API 規格文件的 URL，或是本端 JSON 或 Yaml 檔案的 URL，來驗證 SDK，請使用下列指令：
+若要透過 API 規格文件的 URL、或本端 JSON 或 Yaml 檔案的 URL 來驗證 SDK，請使用下列指令：
 ```
 ibmcloud sdk validate [OPENAPI_DOC_LOCATION] [LOCATION]
 ```

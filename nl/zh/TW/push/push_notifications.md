@@ -16,12 +16,12 @@ lastupdated: "2018-08-07"
 
 若要加強您的 Swift 應用程式功能，您可以在 {{site.data.keyword.cloud}} 上使用 {{site.data.keyword.mobilepushshort}} 服務，將即時通知傳送至行動裝置及 Web 應用程式。
 
- - 通知可以分送至所有應用程式使用者，或者分送至選定的一群使用者或裝置。
+ - 通知可以分送至所有應用程式使用者，或者分送至選取的一群使用者或裝置。
  - 同時支援互動式和無聲自動通知。
  - 客戶可以選擇訂閱要接收通知的特定標籤或主題。
  - 可讓應用程式擁有者分析已登錄要接收通知的裝置數量，以及傳送的通知數量。
 
-您可以選擇將 {{site.data.keyword.mobilepushshort}} 服務當作 MobileFirst Services Starter Boilerplate 的一部分使用，或者當作 {{site.data.keyword.cloud_notm}} [Dedicated Services](/docs/dedicated/index.html) 使用。您也可以使用 SDK（軟體開發套件）及 [REST API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobile.{DomainName}/imfpush/){: new_window}，以進一步開發用戶端應用程式。
+您可以選擇將 {{site.data.keyword.mobilepushshort}} 服務當作 MobileFirst Services Starter Boilerplate 的一部分使用，或者當作 {{site.data.keyword.cloud_notm}} [專用服務](/docs/dedicated/index.html) 使用。您也可以使用 SDK（軟體開發套件）及 [REST API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobile.{DomainName}/imfpush/){: new_window}，以進一步開發用戶端應用程式。
 
 ![推送概觀](images/push_notification_lifecycle.jpg) 圖 1. {{site.data.keyword.mobilepushshort}} 服務生命週期的概觀
 
@@ -40,7 +40,7 @@ lastupdated: "2018-08-07"
 1. 在 {{site.data.keyword.cloud_notm}} 型錄中，按一下**行動** > **{{site.data.keyword.mobilepushshort}}**。即會開啟服務配置畫面。
 2. 提供服務實例的名稱，或使用預設名稱。
 3. 按一下**建立**。
-4. 在導覽窗格中，按一下**連線**，選取應用程式，將其連結至您的服務。如果您在建立期間未連結服務實例與您的應用程式，則可以稍後再進行此操作。
+4. 在導覽窗格中，按一下**連線**，選取應用程式，並將其連結至您的服務。如果建立期間未連結服務實例與應用程式，您可以稍後再進行此操作。
 
 
 ## 步驟 2. 取得您的通知提供者認證
@@ -53,14 +53,14 @@ lastupdated: "2018-08-07"
 
 若要使用 {{site.data.keyword.mobilepushshort}} 服務來傳送通知，請上傳您建立的 `.p12` 憑證。此憑證包含私密金鑰以及建置和發佈應用程式所需的 SSL 憑證。您也可以使用 REST API 來上傳 APNs 憑證。
 
-當 `.cer` 檔位於您的金鑰鏈存取中之後，將其匯出至您的電腦，以建立 `.p12` 憑證。
+當 `.cer` 檔案位於您的金鑰鏈存取中之後，將其匯出至您的電腦，以建立 `.p12` 憑證。
 
 如需有關使用 APNs 的相關資訊，請參閱 [iOS Developer Library: Local and Push Notification Programming Guide ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window}。
 
 若要在 Push Notification 服務主控台上設定 APNs，請完成以下步驟：
 
-1. 在 {{site.data.keyword.mobilepushshort}} 服務主控台上選取**配置**。
-2. 選擇 **Mobile** 選項，以更新 **APNs Push 認證**表單中的資訊。
+1. 在 {{site.data.keyword.mobilepushshort}} 服務主控台上，選取**配置**。
+2. 選擇**行動**選項，以更新 **APNs Push 認證**表單中的資訊。
 3. 選擇下列一個選項：
 	- 對於**行動**選項
 		1. 選取**沙盤推演**（開發）或**正式作業**（分佈），然後上傳您建立的 `p.12` 憑證。
@@ -70,7 +70,7 @@ lastupdated: "2018-08-07"
 
 	- 對於 **Web** 選項
 		- 在 Safari Push 區段中，使用必要的資訊更新表單。
-		- **網站名稱**：「通知」中心中所提供的網站名稱。
+		- **網站名稱**：「通知」中心內所提供的網站名稱。
 		- **Website Push ID**：使用 Website Push ID 的反向網域字串來更新。例如，`web.com.acmebanks.www`。
 		- **網站 URL**：提供應該訂閱推送通知的網站 URL。例如，`https://www.acmebanks.com`。
 		- **容許的網域**：（選用參數）要求使用者許可權的網站清單。請確定 URL 是以逗點區隔的值。若未提供資訊，則會使用網站 URL 中的值。
@@ -89,7 +89,7 @@ lastupdated: "2018-08-07"
 
 ## 步驟 5. 傳送通知
 
-開發您的應用程式之後，您可以傳送基本推送通知。
+開發應用程式之後，您可以傳送基本推送通知。
 
 若要傳送基本推送通知，請完成下列步驟：
 
@@ -100,9 +100,9 @@ lastupdated: "2018-08-07"
 
 2. 在**訊息**欄位中，編寫訊息。視需要選擇配置選用設定。
 3. 按一下**傳送**。
-3. 驗證您的裝置或瀏覽器是否接收到通知。
+3. 驗證您的裝置或瀏覽器已接收到通知。
 
-下列擷取畫面顯示在裝置的前景中處理推送通知的警示方框。
+下列擷取畫面顯示裝置前景中處理推送通知的警示方框。
 	![Android 上的前景推送通知](images/Android_Screenshot.jpg)
 下列擷取畫面顯示背景中的推送通知。
 	![Android 上的背景推送通知](images/background.png)
@@ -113,7 +113,7 @@ lastupdated: "2018-08-07"
 您可以自訂 {{site.data.keyword.mobilepushshort}} 設定，以將通知傳送給 iOS 裝置。支援下列選用自訂選項。
 
 
-- **徽章**：指出應用程式徽章上所顯示的號碼。預設值為零 (0)，且不顯示徽章。
+- **徽章**：指出應用程式徽章上所顯示的號碼。預設值為零 (0)，不顯示徽章。
 - **音效**：指出要在收到通知時播放的音效短片。支援預設，或是在應用程式中組合的音效資源名稱。
 - **其他有效負載**：指定通知的自訂有效負載值。
 
@@ -126,10 +126,10 @@ lastupdated: "2018-08-07"
 
 ## 後續步驟
 
- - 若要進一步瞭解服務並充分利用所有特性，請閱讀我們的[文件](/docs/services/mobilepush/c_overview_push.html#overview-push)。
+ - 若要進一步瞭解服務並充分運用所有特性，請閱讀我們的[文件](/docs/services/mobilepush/c_overview_push.html#overview-push)。
 
  - 如需使用「行動」服務及 {{site.data.keyword.cloud_notm}} 的簡介，請參閱[開始使用 {{site.data.keyword.cloud_notm}} 上的行動應用程式](/docs/services/mobile/index.html)。
 
- - 「入門範本套件」是利用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
+ - 「入門範本套件」是運用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
 
  - 您可以使用 [Swagger 使用者介面](https://mobile.ng.bluemix.net/imfpush/)，來快速檢閱 REST API 文件。

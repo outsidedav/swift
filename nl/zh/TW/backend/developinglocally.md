@@ -13,7 +13,7 @@ lastupdated: "2018-08-07"
 
 # 本端開發
 
-在本端開發，可以輕易地建置、執行及測試 Swift 應用程式。使用 {{site.data.keyword.dev_cli_short}}，可以利用標準指令來執行這些動作。 
+藉由本端開發，您可以輕鬆地建置、執行及測試 Swift 應用程式。使用 {{site.data.keyword.dev_cli_short}}，可以利用標準指令來執行這些動作。 
 
 您可以使用 {{site.data.keyword.dev_cli_short}}，利用許多指令來管理您的伺服器端應用程式。在 [IBM Cloud Developer Tools CLI `ibmcloud dev` 指令](/docs/cli/idt/commands.html)中，可進一步瞭解各種指令。
 
@@ -29,7 +29,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 
 ## 擷取服務認證
 
-從 Git 複製您的應用程式之後，您必須擷取連結至您應用程式之服務的認證，因為這些認證並沒有儲存在您應用程式的 git repo 中。擷取認證即可使用連結服務。在應用程式目錄的根目錄中執行下列指令，便可輕易下載認證：
+從 Git 複製您的應用程式之後，您必須擷取連結至您應用程式之服務的認證，因為這些認證並未儲存在您應用程式的 Git 儲存庫中。擷取認證，即可使用連結服務。在應用程式目錄的根目錄中執行下列指令，即可輕鬆地下載認證：
 ```
 ibmcloud dev get-credentials
 ```
@@ -49,7 +49,7 @@ ibmcloud dev get-credentials
   ```
   {:codeblock}
 
-  如果指令執行成功，則會顯示本端主機及埠，以檢視您應用程式的登陸頁面。
+  如果指令執行成功，則會顯示本端主機及埠，以檢視您應用程式的登入頁面。
 
 3. **部署** - 使用 `deploy` 指令，將您的應用程式部署至 {{site.data.keyword.Bluemix_notm}}：
   ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-09-13"
 
 ---
 
@@ -145,8 +145,8 @@ The service includes the {{site.data.keyword.mobileanalytics_short}} Console whe
 ### Adding more services
 You can add more services to your iOS app directly from the web console, such as the following commonly used services:
 
-* [Adding the Push Notifications service](/push/push_notifications.html)
-* [Adding user authentication with App ID](/authenticate/app_id.html)
+* [Adding the Push Notifications service](/docs/services/mobilepush/index.html)
+* [Adding user authentication with App ID](/docs/services/appid/index.html)
 
 ### Using {{site.data.keyword.cloud_notm}} developer tools
 You can also learn how to develop Swift apps by using the [{{site.data.keyword.cloud_notm}} developer tools](../cli/index.html), which offer a command-line approach to creating, developing, and deploying end-to-end web, mobile, and microservice applications.

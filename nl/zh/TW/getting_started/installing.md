@@ -14,7 +14,7 @@ lastupdated: "2018-06-05"
 # 將 SDK 安裝至用戶端應用程式
 {: #installing}
 
-{{site.data.keyword.cloud}} iOS SDK 支援各種熱門的相依關係管理程式，可讓您輕易地在您自己的應用程式內安裝及使用 {{site.data.keyword.cloud_notm}} 服務。
+{{site.data.keyword.cloud}} iOS SDK 支援各種熱門的相依關係管理程式，可讓您輕鬆易地在自己的應用程式內安裝及使用 {{site.data.keyword.cloud_notm}} 服務。
 
 ## 使用 CocoaPods 進行安裝
 {: #installing_with_cocoapods}
@@ -29,14 +29,14 @@ end
 ```
 {: codeblock}
 
-執行 `pod install`，然後開啟產生的 `.xcworkspace` 檔。
+執行 `pod install`，然後開啟產生的 `.xcworkspace` 檔案。
 
 如需相關資訊，請參閱 [Cocoapods 手冊](https://guides.cocoapods.org/using/index.html)。
 
 ## 使用 Carthage 進行安裝
 {: #installing_with_carthage}
 
-若要使用 Carthage 來安裝 SDK，請將此行新增至您的 `Cartfile`：
+若要使用 Carthage 來安裝 SDK，請將此行新增至 `Cartfile`：
 ```
 github "<github org name>/<github project name>"
 ```
@@ -49,7 +49,7 @@ github "<github org name>/<github project name>"
 ## 使用 Swift Package Manager 進行安裝
 {: #installing_with_swift_package_manager}
 
-若要使用 Swift Package Manager 來安裝 SDK，請在 `Package.swift` 中，將下列行新增至您的相依關係中：
+若要使用 Swift Package Manager 來安裝 SDK，請在 `Package.swift` 中，將下列這一行新增至相依關係中：
 ```
 .Package(url: "<SDK git url>")
 ```
