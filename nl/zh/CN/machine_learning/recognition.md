@@ -87,7 +87,7 @@ Carthage 会下载 Watson Swift SDK，并在项目的 `Carthage/Build/iOS` 文�
 
 ### 复制 Visual Recognition 步骤：
 
-除了_链接_ Visual Recognition 框架外，还必须将其_复制_到应用程序中，以使其在运行时可访问。Xcode 具有若干种不同的方法可复制或嵌入框架，但您可以使用 Carthage 脚本来避免特定的 [App Store 提交错误](http://www.openradar.me/radar?id=6409498411401216)。
+除了_链接_ Visual Recognition 框架外，还必须将其_复制_到应用程序中，以使其在运行时可访问。Xcode 有多种不同的方法可复制或嵌入框架，但您可以使用 Carthage 脚本来避免特定的 [App Store 提交错误](http://www.openradar.me/radar?id=6409498411401216)。
 
 1. 在 Xcode 中打开应用程序目标的设置后，浏览至**构建阶段**选项卡。
 2. 单击 `+` 图标，然后选择**新建运行脚本阶段**。
@@ -126,7 +126,7 @@ Carthage 会下载 Watson Swift SDK，并在项目的 `Carthage/Build/iOS` 文�
 ## 使用入门模板工具包
 {: #recognition_starterkits}
 
-[入门模板工具包](https://console.bluemix.net/developer/appledevelopment/starter-kits)是最快利用 {{site.data.keyword.cloud_notm}} 功能的其中一种方法。您可以通过选择 **Visual Recognition for iOS with Watson** 入门模板工具包来使用 {{site.data.keyword.visualrecognitionshort}} 服务。此服务可对图像进行评估和分类。从移动设备上传新图像或现有图像，然后使用 Visual Recognition 应用程序对图像内容进行快速标记和分类。
+[入门模板工具包](https://console.bluemix.net/developer/appledevelopment/starter-kits)是利用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。您可以通过选择 **Visual Recognition for iOS with Watson** 入门模板工具包来使用 {{site.data.keyword.visualrecognitionshort}} 服务。此服务可对图像进行评估和分类。从移动设备上传新图像或现有图像，然后 Visual Recognition 应用程序会对图像内容快速标记和分类。
 
 要开始使用，请执行以下操作：
 1. 选择在[此处](https://console.bluemix.net/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson)找到的入门模板工具包。

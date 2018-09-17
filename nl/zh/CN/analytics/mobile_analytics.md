@@ -63,7 +63,7 @@ lastupdated: "2018-08-07"
 ### CocoaPods
 {: #cocoapods}
 
-1. 遵循 GitHub 上的 [{{site.data.keyword.Bluemix_notm}}Mobile Services Swift SDK 指示信息 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window}，以使用 Cocoapods 安装 `BMSAnalytics`，并将其添加到 pod 文件。
+1. 遵循 GitHub 上的 [{{site.data.keyword.Bluemix_notm}} Mobile Services Swift SDK 指示信息 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window}，以使用 Cocoapods 安装 `BMSAnalytics`，并将其添加到 pod 文件。
 
 2. 安装 iOS 客户端 SDK 后，[导入并初始化](sdk.html#initalize-ma-sdk) Analytics 客户端 SDK。   
 
@@ -135,14 +135,14 @@ lastupdated: "2018-08-07"
 
 您可以配置 {{site.data.keyword.mobileanalytics_short}} 客户端 SDK，以记录使用情况分析，并将记录的数据发送到 {{site.data.keyword.mobileanalytics_short}} 服务。
 
-使用以下 API 开始记录和发送使用情况分析信息：
+使用以下 API 开始记录和发送使用情况分析：
 ```
-// 禁用记录使用情况分析（例如：节省磁盘空间）
+// 禁用使用情况分析的记录（例如：为了节省磁盘空间）
 // 缺省情况下记录已启用
 
 Analytics.isEnabled = false
 
-// 启用记录使用情况分析
+// 启用使用情况分析的记录
 
 Analytics.isEnabled = true
 
@@ -162,7 +162,7 @@ Analytics.send(completionHandler: { (response: Response?, error: Error?) in
 
 记录事件的使用情况分析示例：
 ```
-// 记录定制属性事件
+// 记录定制分析事件
 let eventObject = ["customProperty": "propertyValue"]
 Analytics.log(metadata: eventObject)
 ```
@@ -213,7 +213,7 @@ let logger2 = Logger.logger(name: "feature2Logger")
 
 logger1.debug(message: "debug message for feature 1")
 
-// 未记录 logger1.debug 消息，因为 logLevelFilter 未设置为 info
+// 未记录 logger1.debug 消息，因为 logLevelFilter 设置为 info
 
 logger2.info(message: "info message for feature 2")
 
@@ -289,7 +289,7 @@ Analytics.userIdentity = "username"
 
 一切都设置正确吗？是时候进行测试了！
 
-1. 打开应用程序。如果您有 Web 应用程序，请使用浏览器。如果您有 iOS 客户端应用程序，请使用 Xcode 仿真器。
+1. 打开应用程序。如果是 Web 应用程序，请使用浏览器打开。如果是 iOS 客户端应用程序，请使用 Xcode 仿真器打开。
 2. 在移动仿真器或设备上编译并运行应用程序。
 3. 使用 GUI 逐步完成登录到应用程序的过程。
 4. 转至 {{site.data.keyword.mobileanalytics_short}} 控制台，以查看应用程序的使用情况分析。您还可以通过[设置警报](/docs/services/mobileanalytics/app-monitoring.html#alerts)和[监视应用程序崩溃](/docs/services/mobileanalytics/app-monitoring.html#monitor-app-crash)来监视应用程序。
@@ -301,6 +301,6 @@ Analytics.userIdentity = "username"
 
  - 有关使用移动服务和 {{site.data.keyword.Bluemix_notm}} 的简介，请参阅 [IBM Cloud 上的移动应用程序入门](/docs/services/mobile/index.html)。
 
- - 入门模板工具包是最快利用 {{site.data.keyword.cloud_notm}} 功能的其中一种方法。请在[移动开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看所有可用的入门模板工具包。下载代码。运行应用程序！
+ - 入门模板工具包是利用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。请在[移动开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看所有可用的入门模板工具包。下载代码。运行应用程序！
 
  - 可以使用 [Swagger UI](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/) 来快速查看 REST API 文档。

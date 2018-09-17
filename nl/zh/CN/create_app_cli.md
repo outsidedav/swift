@@ -21,7 +21,7 @@ lastupdated: "2018-08-07"
 
 以下指南旨在帮助您构建、本地运行和部署服务器端 Swift 应用程序。了解如何使用 {{site.data.keyword.dev_cli_long}} 通过标准命令来执行这些操作。
 
-可以使用 {{site.data.keyword.dev_cli_short}} 通过十几个命令来管理服务器端应用程序。了解有关 [ IBM Cloud Developer Tools CLI](/docs/cli/idt/commands.html)中 `ibmcloud dev` 命令的更多信息。
+可以使用 {{site.data.keyword.dev_cli_short}} 通过十几个命令来管理服务器端应用程序。了解有关 [IBM Cloud Developer Tools CLI](/docs/cli/idt/commands.html) 中 `ibmcloud dev` 命令的更多信息。
 
 ## 步骤 1. 对开发者的需求
 
@@ -29,7 +29,7 @@ lastupdated: "2018-08-07"
 
 ### 操作系统
 
-最好使用最新的 MacOS 支持的硬件来开发 Swift 应用程序，并使用最新的 iOS 发行版进行测试。注册 [Apple Developer](https://developer.apple.com/) 帐户，以支持在物理设备上进行测试。
+最好使用支持 MacOS 的最新硬件来开发 Swift 应用程序，并使用最新的 iOS 发行版进行测试。注册 [Apple Developer](https://developer.apple.com/) 帐户，以支持在物理设备上进行测试。
 
 ### iOS 和 Xcode
 {: #ios_and_xcode}
@@ -62,7 +62,7 @@ sudo gem install cocoapods
 
 ## 步骤 2. 安装用于本地开发的工具
 
-{{site.data.keyword.cloud}} 提供了本地 CLI 工具，可帮助您使用 {{site.data.keyword.cloud_notm}} 的各方面功能。有关更多信息，请参阅 [{{site.data.keyword.dev_cli_long}} 信息](../cli/index.html)。建议安装这些工具，以用于在部署云之前对本地 Docker 映像中的 Swift 后端进行测试。
+{{site.data.keyword.cloud}} 提供了本地 CLI 工具，可帮助您使用 {{site.data.keyword.cloud_notm}} 的各方面功能。有关更多信息，请参阅 [{{site.data.keyword.dev_cli_long}} 信息](../cli/index.html)。建议安装这些工具，以用于在云部署之前对本地 Docker 映像中的 Swift 后端进行测试。
 
 * 对于 MacOS 和 Linux，运行以下命令：
   ```
@@ -87,7 +87,7 @@ ibmcloud dev create
 ```
   {: codeblock}
 
-  确保使用 {{site.data.keyword.cloud_notm}} 帐户登录以创建项目。一开始用户可以[注册 ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) 免费帐户。在命令行上使用 `ibmcloud login` 命令登录。
+  确保使用 {{site.data.keyword.cloud_notm}} 帐户登录以创建项目。首次使用的用户可以[注册 ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) 免费帐户。在命令行上使用 `ibmcloud login` 命令登录。
   {: tip}
 
 2. 系统提示时，选择选项 1，然后选择 6，最后选择 2，如以下示例中所示：
@@ -108,10 +108,10 @@ ibmcloud dev create
 
   ? 选择入门模板工具包：
   1. 服务于前端的后端 - Swift Kitura - 此入门模板用于构建使用
-  Kitura 框架并用 Swift 编写的服务于前端的后端 API。
+  Kitura 框架通过 Swift 编写的服务于前端的后端 API。
   2. Web 应用程序 - 创建项目
-  3. Web 应用程序 - Swift Kitura Basic - 此入门模板用于提供服务于
-  使用 Kitura 框架并用 Swift 编写的应用程序的基本 Web。
+  3. Web 应用程序 - Swift Kitura Basic - 此入门模板用于提供
+  使用 Kitura 框架通过 Swift 编写的服务于 Web 的基本应用程序。
   输入数字> 2
   ```
   {: screen}
@@ -168,9 +168,9 @@ ibmcloud dev create
 
 ## 后续步骤
 
-了解如何使用 {{site.data.keyword.cloud_notm}} Developer Console for Apple，此控制台支持开发者通过各种入门模板工具包来创建应用程序，供应和连接 {{site.data.keyword.cloud_notm}} 优化的关键服务，然后快速下载工作代码（或设置为持续交付）。用户可以创建、查看、配置和管理应用程序，以及下载应用程序的代码。通过 Developer Console for Apple，可以使用全新的应用程序快速评估和测试 {{site.data.keyword.cloud_notm}} 服务。
+了解如何使用 {{site.data.keyword.cloud_notm}} Developer Console for Apple，此控制台支持开发者通过各种入门模板工具包来创建应用程序，供应和连接 {{site.data.keyword.cloud_notm}} 优化的关键服务，然后快速下载可正常运作的代码（或设置为持续交付）。用户可以创建、查看、配置和管理应用程序，以及下载应用程序的代码。通过 Developer Console for Apple，可以使用全新的应用程序快速评估和测试 {{site.data.keyword.cloud_notm}} 服务。
 
-准备好开始了吗？请立即访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits)。
+准备好开始了吗？请立即访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) 以开始。
 {: tip}
 
 有关更多信息，请参阅[使用入门模板工具包开发 Swift 应用程序](/docs/swift/starter_kit/starter_kits.html)。

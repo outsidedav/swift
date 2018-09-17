@@ -11,7 +11,7 @@ lastupdated: "2017-08-09"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# 向应用程序添加 Swift
+# 向应用程序添加 Swift SDK
 {: #sdk}
 
 要将 {{site.data.keyword.Bluemix}} SDK 添加到应用程序，请选择要使用的 SDK，并将依赖项管理器配置为将 SDK 拉入到应用程序中。

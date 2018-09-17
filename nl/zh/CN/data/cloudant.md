@@ -15,7 +15,7 @@ lastupdated: "2018-08-07"
 # 在 {{site.data.keyword.cloud_notm}} 中存储文档
 {: #cloudant}
 
-{{site.data.keyword.cloudantfull}} 是面向文档的数据库即服务 (DBaaS)。它将数据存储为 JSON 格式的文档。Cloudant 秉承可扩展性、高可用性和耐久性进行构建，可轻松配置用于 Swift 应用程序。Cloudant 随附多种索引选项，包括 MapReduce、{{site.data.keyword.cloudant_short_notm}} Query、全文索引和地理空间索引。通过其复制功能，可以轻松实现数据库集群、台式 PC 和移动设备之间的数据同步。
+{{site.data.keyword.cloudantfull}} 是面向文档的数据库即服务 (DBaaS)。它将数据存储为 JSON 格式的文档。它秉承可扩展性、高可用性和耐久性进行构建，可轻松配置用于 Swift 应用程序。它随附多种索引选项，包括 MapReduce、{{site.data.keyword.cloudant_short_notm}} Query、全文索引和地理空间索引。通过其复制功能，可以轻松实现数据库集群、台式 PC 和移动设备之间的数据同步。
 {:shortdesc}
 
 有关可以使用 {{site.data.keyword.cloudant_short_notm}} 的所有方法，请参阅 [{{site.data.keyword.cloudant_short_notm}} 基础知识](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics)。
@@ -145,5 +145,5 @@ client.add(operation: delete)
 太棒了！您已将安全持久性级别添加到应用程序。请一鼓作气，尝试下列其中一个选项：
 
 * 查看 [{{site.data.keyword.cloudant_short_notm}} SDK for Swift ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/cloudant/swift-cloudant) 源代码。
-* 入门模板工具包是最快利用 IBM Cloud 功能的其中一种方法。**Infinite Scrolling with Cloudant NoSQL for iOS** 入门模板工具包说明了如何扩展 ViewController 以使用分页来显示数据。此应用程序模式对于 iOS 开发者很常见，因此是适合说明 {{site.data.keyword.cloudant_short_notm}} 功能的示例。请在[移动开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看可用的入门模板工具包。下载代码。运行应用程序！
+* 入门模板工具包是利用 IBM Cloud 功能的最快方法之一。**Infinite Scrolling with Cloudant NoSQL for iOS** 入门模板工具包说明了如何扩展 ViewController 以使用分页来显示数据。此应用程序模式对于 iOS 开发者很常见，因此是适合说明 {{site.data.keyword.cloudant_short_notm}} 功能的示例。请在[移动开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看可用的入门模板工具包。下载代码。运行应用程序！
 * 要了解有关 {{site.data.keyword.cloudant_short_notm}} 必须提供的所有功能的更多信息以及如何利用这些功能，请[查看文档](/docs/services/Cloudant/index.html)！

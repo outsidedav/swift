@@ -17,7 +17,7 @@ lastupdated: "2018-08-01"
 
 为了充分利用高可用性的安全数据库，可以在应用程序中嵌入额外的逻辑。通过使用提供的代码片段，可以创建和访问 MongoDB 数据库。 
 
-目前，通过 MongoKitten SDK 4.0.0 支持使用 {{site.data.keyword.ihsdbaas_full}} 的编程语言是 Swift 4.0。
+目前，使用 {{site.data.keyword.ihsdbaas_full}} 时受支持的编程语言是带有 MongoKitten SDK 4.0.0 的 Swift 4.0。
 
 ## 步骤 1. 创建数据库集群
 {: #create_dbcluster}
@@ -56,7 +56,7 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
     <dd>阅读许可协议，并选中该框以确认您同意。</dd>
 
     <dt>定价：</dt>
-		<dd>当前解决方案仅提供一个定价类别：免费。在更高版本中，可以选择定价类别。</dd>
+		<dd>当前解决方案仅提供一个定价类别，该类别是免费的。在更高版本中，可以选择定价类别。</dd>
 	</dl>
 
 3. 单击**创建**。

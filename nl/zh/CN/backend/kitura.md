@@ -19,7 +19,7 @@ lastupdated: "2018-08-17"
 
 Kitura 能够与 {{site.data.keyword.cloud}} 提供的所有服务和功能相集成，包括 {{site.data.keyword. appid_short}}、{{site.data.keyword.mobilepushshort}} 和 {{site.data.keyword.mobileanalytics_short}} 以及数据库、机器学习和其他服务。然后，可以使用 {{site.data.keyword.cloud}} 中的 Cloud Foundry 或 Docker（基于 Kubernetes）平台来部署和自动扩展 Kitura。
 
-Kitura 提供了 `kitura` [命令行界面 (CLI)](http://www.kitura.io/en/starter/gettingstarted.html)，用于简化创建、构建、测试和部署 Kitura 应用程序。使用 Kitura CLI 构建的应用程序包括完全支持部署到任何支持 Cloud Foundry、Docker 和 Kubernetes 技术的云。但是，如果要专门针对 {{site.data.keyword.cloud}} 进行构建，建议您在浏览器中使用 IBM Apple Development Console 或使用 {{site.data.keyword.dev_cli_notm}}。此外，虽然这两种方法都共享底层技术，但 Apple Development Console 和 IBM Developer Tools 会创建托管的项目和部署管道，以及供应应用程序所需的服务。
+Kitura 提供了 `kitura` [命令行界面 (CLI)](http://www.kitura.io/en/starter/gettingstarted.html)，用于简化创建、构建、测试和部署 Kitura 应用程序。使用 Kitura CLI 构建的应用程序完全支持部署到任何支持 Cloud Foundry、Docker 和 Kubernetes 技术的云。但是，如果要专门针对 {{site.data.keyword.cloud}} 进行构建，建议您在浏览器中使用 IBM Apple Development Console 或使用 {{site.data.keyword.dev_cli_notm}}。此外，虽然这两种方法都共享底层技术，但 Apple Development Console 和 IBM Developer Tools 会创建托管的项目和部署管道，以及供应应用程序所需的服务。
 
 ## 开始之前
 
@@ -45,7 +45,7 @@ Kitura 提供了 `kitura` [命令行界面 (CLI)](http://www.kitura.io/en/starte
 1. 单击**添加资源**按钮以添加服务。这将显示服务类别的面板。例如，选择**数据**以查看可用数据库，然后选择 **Cloudant NoSQL DB**。
 2. 选择服务的定价套餐（如轻量），然后单击**创建**。
 
-这将创建服务的实例，其中会提供应用程序的服务凭证，在某些情况下，还会将必要的代码添加到项目，以包含与服务的正确连接。现在，可以使用**添加资源**按钮来添加服务，或单击**下载代码**按钮以获取项目的代码。
+这将创建服务的实例，其中会提供应用程序的服务凭证，在某些情况下，还会将必要的代码添加到项目，以包含与服务的正确连接。现在，可以使用**添加资源**按钮来添加更多服务，或单击**下载代码**按钮以获取项目的代码。
 
 下载项目后，可以开始使用应用程序。
 
@@ -70,10 +70,10 @@ Kitura 提供了 `kitura` [命令行界面 (CLI)](http://www.kitura.io/en/starte
   * Kitura 运行状况检查：[http://localhost:8080/health]()
 
 ## 步骤 5. 添加 REST API
-框架 Kitura 服务器已创建，但并未提供 iOS 应用程序可以使用的任何 REST API。在 Kitura 中添加具有最少编码的 REST API。以下步骤显示了如何添加 REST API 以对 `/meals` 发出 `GET` 请求，该请求旨在返回 Kitura 服务器存储的 `Meal` 对象。
+框架 Kitura 服务器已创建，但并未提供 iOS 应用程序可以使用的任何 REST API。在 Kitura 中通过最少的编码添加 REST API。以下步骤显示了如何添加 REST API 以对 `/meals` 发出 `GET` 请求，该请求旨在返回 Kitura 服务器存储的 `Meal` 对象。
 
-1. 将 `Meal` 结构添加到 `Sources/Application/Application.swift` 文件：  
-  在声明 App 类之前，添加以下内容以创建符合可编码协议的 Meal 结构：  
+1. 将 `Meal` struct 添加到 `Sources/Application/Application.swift` 文件：  
+  在声明 App 类之前，添加以下内容以创建符合 Codable 协议的 Meal struct：  
   ```swift
 	struct Meal: Codable {    
 	    var name: String
@@ -107,7 +107,7 @@ Kitura 提供了 `kitura` [命令行界面 (CLI)](http://www.kitura.io/en/starte
   ```
   {: codeblock"}
 
-现在，您拥有 REST API 用于对 `/meals` 发出 `GET` 请求，这些请求使用 ` Meals` 数组或错误进行响应。
+现在，您拥有 REST API 用于对 `/meals` 发出 `GET` 请求，而 /meals 使用 `Meals` 数组或错误进行响应。
 
 5. 运行项目。  
   按**运行**按钮或使用 `⌘+R` 快捷键。如果出现提示，请选择**允许入局网络连接**。
@@ -125,11 +125,11 @@ Kitura 提供了 `kitura` [命令行界面 (CLI)](http://www.kitura.io/en/starte
 ## 步骤 6. 将 KituraKit 安装到 iOS 应用程序中
 使用 Kitura 服务器构建的 REST API 是标准 Web API，可通过任何应用程序使用，与使用的客户端库或编写客户端的语言无关。这意味着您可以使用 Alamofire、RestKit 或 URLSession 建立与服务器的连接。Kitura 还提供了一个 KituraKit 形式的经过优化的定制客户端连接器，以简化从 iOS 调用其 REST API 的过程。 
 
-KituraKit 提供了 Kitura 中使用的路由器处理程序 API 的镜像映像，使其能够在客户端与服务器之间共享 Swift 类型，几乎不需其他工作。通过此功能，无需对服务器发送或接收的数据执行 JSON 编码和解码。
+KituraKit 提供了 Kitura 中使用的路由器处理程序 API 的镜像映像，使其能够在客户端与服务器之间毫不费力地共享 Swift类型。通过此功能，无需对发送到服务器或从服务器接收的数据显式执行 JSON 编码和解码。
 
 以下步骤说明如何将 KituraKit 安装到 iOS 应用程序中，并将其用于调用使用 Kitura 创建的 `GET /meals` REST API：
 
-1. 如果在 iOS 应用程序目录的根目录中没有 pod 文件，请创建 pod 文件：
+1. 如果在 iOS 应用程序目录的根目录中还没有 pod 文件，请创建 pod 文件：
   ```
   pod init
   ```
@@ -180,7 +180,7 @@ KituraKit 提供了 Kitura 中使用的路由器处理程序 API 的镜像映像
       return
   }
   
-  // 发出请求 `GET /meals`，应该会返回 [Meal] 或 RequestError
+  // 向 `GET /meals` 发出请求，期望返回 [Meal] 或 RequestError
   client.get("/meals") { (meals: [Meal]?, error: RequestError?) in
       // 检查是否有错误
       guard error == nil else {
@@ -201,4 +201,4 @@ KituraKit 提供了 Kitura 中使用的路由器处理程序 API 的镜像映像
 可以使用 [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) 教程，该教程可帮助您构建一组 REST API，用于存储、访存和删除 iOS 应用程序中的 `Meal` 对象，包括将数据存储在数据库中。
 {: tip}
 ## 后续步骤
-现在，您已拥有 Kitura 服务器（提供可由 iOS 应用程序调用的 REST API），可随时将服务器部署到 {{site.data.keyword.cloud_notm}}。部署可以通过将 Containers 与 Kubernetes、Secure Containers 或 Cloud Foundry 配合使用来完成。
+现在，您已拥有一个 Kitura 服务器，它提供可由 iOS 应用程序调用的 REST API，可随时将服务器部署到 {{site.data.keyword.cloud_notm}}。部署可以通过将 Containers 与 Kubernetes、Secure Containers 或 Cloud Foundry 配合使用来完成。

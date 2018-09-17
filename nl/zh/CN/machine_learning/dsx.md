@@ -14,7 +14,7 @@ lastupdated: "2018-06-04"
 
 # 使用定制生成的模型分析数据集
 
-Watson Studio 提供了环境和多种工具，用于通过以协作方式分析数据来解决业务问题。您可以选择分析、清理和组织数据所需的工具。了解如何获取流数据，或如何创建、培训和部署机器学习模型。Watson Studio 可与各种不同的 {{site.data.keyword.cloud}} 服务以及 Watson Knowledge Catalog 集成，提供策略管理来控制资产，并提供目录来建立索引以查找这些资产。请在 https://dataplatform.ibm.com/ 上了解更多信息。
+Watson Studio 提供了环境和多种工具，用于通过以协作方式分析数据来解决业务问题。您可以选择分析、清理和组织数据所需的工具。了解如何获取流式数据，或者创建、培训和部署机器学习模型。Watson Studio 可与各种不同的 {{site.data.keyword.cloud}} 服务以及 Watson Knowledge Catalog 集成，提供策略管理来控制资产，并提供目录来建立索引以查找这些资产。请在 https://dataplatform.ibm.com/ 上了解更多信息。
 
 Watson Studio 围绕基于项目的体系结构进行构建，可对资源进行组织以解决业务问题。资源包括与云和内部部署数据存储的连接、数据文件、合作者和分析资产（如模型）。请在 https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics 上了解更多信息。
 
@@ -39,7 +39,7 @@ Watson Studio 围绕基于项目的体系结构进行构建，可对资源进行
 2. 下载应用程序代码。
 3. 初始化
   * 对于 iOS 项目，只需将 {{site.data.keyword.pm_short}} 资源添加到 iOS 项目，就会立即将凭证注入到应用程序中。
-    要通过应用程序访问凭证，请复制并粘贴以下代码段。此外，请确保将评分端点添加到应用程序，可以在模型的部署`实现`选项卡中找到该端点。
+    要通过应用程序访问凭证，请复制并粘贴以下代码片段。此外，请确保将评分端点添加到应用程序，可以在模型的部署`实现`选项卡中找到该端点。
 
     ```Swift
     // 模型评分端点的 URL
@@ -213,7 +213,7 @@ client.retrieveToken { token in
 ## 后续步骤
 {: #dsx_next}
 
-太棒了！现在，您可以使用定制生成的机器学习模型来分析数据集。请一鼓作气，在 [Data science and machine learning](https://www.ibm.com/analytics/data-science/machine-learning) 中了解 {{site.data.keyword.pm_short}} 所提供功能的更多信息。
+太棒了！现在，您可以使用定制生成的机器学习模型来分析数据集。请一鼓作气，在 [Data science and machine learning](https://www.ibm.com/analytics/data-science/machine-learning) 中了解 {{site.data.keyword.pm_short}} 可以提供的功能的更多信息。
 
 ### 相关链接
 * [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling/index.html#using-machine-learning-with-data-science-experience)

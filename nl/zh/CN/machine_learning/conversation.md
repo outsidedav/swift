@@ -23,7 +23,7 @@ lastupdated: "2018-08-07"
   2. 应用程序使用 {{site.data.keyword.watson}} Swift SDK 将用户输入发送到 {{site.data.keyword.conversationshort}}。
   3. {{site.data.keyword.watson}} Swift SDK 连接到工作空间，此工作空间是用于对话流和培训数据的容器。
   4. 工作空间解读用户输入并定向对话流，以向应用程序发送响应。
-  5. 应用程序向用户显示响应。
+  5. 应用程序为用户显示响应。
 
 ## 开始之前
 {: #before-you-begin}
@@ -63,7 +63,7 @@ $ brew install carthage
   ```
   {: codeblock}
 
-  随后 {{site.data.keyword.watson}} Swift SDK 会下载，并在项目的 `Carthage/Build/iOS` 文件夹中构建其框架。
+  随后会下载 {{site.data.keyword.watson}} Swift SDK，并在项目的 `Carthage/Build/iOS` 文件夹中构建其框架。
 
 ## 向应用程序添加框架
 {: #add-frameworks-to-your-app}
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
             print("Conversation ID: \(response.context.conversationID!)")
             print("Response: \(response.output.text.joined())")
 
-            // 继续执行 Assistant
+            // 继续执行 assistant
             print("Request: turn the radio on")
             let input = InputData(text: "turn the radio on")
             let request = MessageRequest(input: input, context: response.context)
@@ -166,5 +166,5 @@ Response: Sure thing! Which genre would you prefer? Jazz is my personal favorite
 太棒了！您已将 AI 助手添加到应用程序。请一鼓作气，尝试下列其中一个选项：
 
 * 查看 [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window}。
-* 利用 [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html) 必须提供的所有功能。
+* 利用 [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html) 可以提供的所有功能。
 * 查看 [Simple Chat 样本应用程序](https://github.com/watson-developer-cloud/simple-chat-swift){:new_window}的源代码，并在 GitHub 上演示 {{site.data.keyword.watson}} Swift SDK。

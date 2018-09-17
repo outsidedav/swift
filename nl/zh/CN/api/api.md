@@ -16,7 +16,7 @@ lastupdated: "2018-08-17"
 # 向 iOS 应用程序添加 API
 {: #api_connect}
 
-您可以使用 API Connect 来管理 {{site.data.keyword.cloud}} 中的 API，不管这些 API 是在 {{site.data.keyword.cloud_notm}} 中还是在 IBM Cloud 外部进行维护。了解如何管理 API，以便您可以控制使用情况，增加采用率和跟踪统计信息。
+您可以使用 API Connect 来管理 {{site.data.keyword.cloud}} 中的 API，不管这些 API 是在 {{site.data.keyword.cloud_notm}} 内部还是外部进行维护。了解如何管理 API，以便您可以控制使用情况，增加采用率和跟踪统计信息。
 
 ## 创建 API Connect 的实例
 
@@ -28,7 +28,7 @@ lastupdated: "2018-08-17"
 
 如果要在启动后端和前端开发之前定义自己的 API 合同，请使用 API Connect 工具来加速此过程。您可以与数字开发团队合作，在 iOS 应用程序和后端逻辑之间构建并定义 API 合同。此逻辑可以利用 Kubernetes 或 [Cloud Foundry](/docs/cloud-foundry/index.html) 通过 [{{site.data.keyword.openwhisk}}](/docs/openwhisk/index.html) 或 [Swift 运行时](/docs/runtimes/swift/index.html)进行传递。
 
-定义 API 后，即可以在许多不同工具中定义“Open API 规范”(Swagger)：
+定义 API 后，即可以在多个不同工具中定义“Open API 规范”(Swagger)：
 
 - [Swagger Editor](http://editor.swagger.io/)
 - [API Designer](https://www.ibm.com/support/knowledgecenter/en/SSFS6T/com.ibm.apic.toolkit.doc/task_apionprem_composing_apis.html)

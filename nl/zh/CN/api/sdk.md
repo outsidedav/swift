@@ -17,7 +17,7 @@ lastupdated: "2018-08-17"
 
 可以在 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/bluemix_cli/get_started.html) 中安装 {{site.data.keyword.IBM}} SDK Generator 插件。
 
-通过使用 {{site.data.keyword.IBM_notm}} SDK Generator 插件，可以使用生成的 SDK 轻松地将后端服务集成到应用程序。发生对 REST API 的更改时，可以重新生成 SDK，并将旧的 SDK 替换为无缝 SDK 升级。您还可以将 CLI 集成到开发管道中，并确保每次构建应用程序时，SDK 都始终与 API 规范一致。
+通过使用 {{site.data.keyword.IBM_notm}} SDK Generator 插件，可以使用生成的 SDK 轻松地将后端服务集成到应用程序。发生对 REST API 的更改时，可以重新生成 SDK，并将旧的 SDK 替换为无缝 SDK 升级。您还可以将 CLI 集成到 DevOps 管道中，并确保每次构建应用程序时，SDK 都始终与 API 规范一致。
 
 REST API 定义必须有效，并且在实时服务器端点上或在系统上的本地文件中托管。
 
@@ -75,7 +75,7 @@ ibmcloud sdk generate [arguments...] [command options]
   * `-l` - 本地主机 URL。
 
 **可选**：
-  * `--output "YOUR_RELATIVE_PATH"` - 将生成的 SDK 放置在 `YOUR_RELATIONVE_PATH` 指定的目录中（如果存在现有 SDK，将覆盖该 SDK。）
+  * `--output "YOUR_RELATIVE_PATH"` - 将生成的 SDK 放置在 `YOUR_RELATIONVE_PATH` 指定的目录中（如果存在现有 SDK，将覆盖现有 SDK。）
   * `--unzip` - 解压缩生成的 SDK（如果存在现有 SDK 工件，将覆盖数据。）
 
 ### 用法

@@ -47,7 +47,7 @@ Swift 开发者可以轻松利用 {{site.data.keyword.cloud}} 提供的高级安
 ### 保护数据和隐私
 
 {{site.data.keyword.IBM_notm}} 在高可用性的安全环境中托管数据库：
- * 数据采用静态和动态加密。
+ * 数据采用静态加密和动态加密。
  * 系统硬件、系统配置和数据库设置可确保高可用性。
  * 底层技术可阻止 {{site.data.keyword.IBM_notm}} 或第三方访问您的数据。
 

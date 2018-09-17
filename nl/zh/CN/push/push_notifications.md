@@ -19,7 +19,7 @@ lastupdated: "2018-08-07"
  - 可以将通知传递给所有应用程序用户，也可以传递给一组所选用户或设备。
  - 支持交互式通知和静默通知。
  - 客户可以选择预订通知的特定标记或主题。
- - 支持应用程序所有者分析注册接收通知的设备数和发送的通知数。
+ - 支持应用程序所有者分析注册以接收通知的设备数和发送的通知数。
 
 可以选择将 {{site.data.keyword.mobilepushshort}} 服务用作 MobileFirst Services 入门样本或作为 {{site.data.keyword.cloud_notm}} [Dedicated 服务](/docs/dedicated/index.html)的一部分。您还可以使用 SDK（软件开发包）和 [REST API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://mobile.{DomainName}/imfpush/){: new_window} 来进一步开发您的客户机应用程序。
 
@@ -51,7 +51,7 @@ lastupdated: "2018-08-07"
 ## 步骤 3. 配置服务实例
 {: #enable-push-ios-notifications}
 
-要使用 {{site.data.keyword.mobilepushshort}} 服务来发送通知，请上传您创建的 `.p12` 证书。此证书包含构建和发布应用程序所需的专用密钥和 SSL 证书。此外，也可以使用 REST API 来上传 APNs 证书。
+要使用 {{site.data.keyword.mobilepushshort}} 服务来发送通知，请上传您创建的 `.p12` 证书。这些证书包含构建和发布应用程序所需的专用密钥和 SSL 证书。此外，也可以使用 REST API 来上传 APNs 证书。
 
 在 ` .cer` 文件位于密钥链访问中之后，请将其导出到计算机以创建 `.p12` 证书。
 
@@ -72,7 +72,7 @@ lastupdated: "2018-08-07"
 		- **Web 站点名称**：通知中心内提供的 Web 站点名称。
 		- **Web 站点推送标识**：使用 Web 站点推送标识的反向域字符串进行更新。例如，web.com.acmebanks.www。
 		- **Web 站点 URL**：提供应该预订到推送通知的 Web 站点 URL。例如，https://www.acmebanks.com。
-		- **允许的域**：（可选参数）向用户请求许可权的 Web 站点列表。请确保 URL 是以逗号分隔的值。如果未提供信息，将使用“Web 站点 URL”中的值。
+		- **允许的域**：（可选参数）向用户请求许可权的 Web 站点的列表。请确保 URL 是以逗号分隔的值。如果未提供信息，将使用“Web 站点 URL”中的值。
 		- **URL 格式字符串**：单击通知时解析的 URL。例如，["https://www.acmebanks.com"]。确保 URL 使用 HTTP 或 HTTPS 模式。
 		-**Safari Web 推送证书**：上传 `.p12` 证书并提供密码。
 4. 单击**保存**。
@@ -100,7 +100,7 @@ lastupdated: "2018-08-07"
 3. 单击**发送**。
 3. 验证设备或浏览器是否已收到通知。
 
-以下屏幕快照显示了在设备上前台处理推送通知的警告框。
+、以下屏幕快照显示了在设备上前台处理推送通知的提醒框。
 	![Android 上的前台推送通知](images/Android_Screenshot.jpg)
 
 以下屏幕快照显示了后台推送通知。
@@ -120,14 +120,14 @@ lastupdated: "2018-08-07"
 ## 步骤 6. 监视传递的通知
 {: #push_step_4_monitor}
 
-{{site.data.keyword.mobilepushshort}} 服务提供监视实用程序，以帮助您检查已发送消息的状态。要配置监视实用程序，请参阅[启用监视 iOS 应用程序](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring)。
+{{site.data.keyword.mobilepushshort}} 服务提供监视实用程序，以帮助您检查已发送消息的状态。要配置监视实用程序，请参阅[启用 iOS 应用程序的监视](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring)。
 
 ## 后续步骤
 
- - 要了解有关服务的更多信息，并利用所有功能，请通读[文档](/docs/services/mobilepush/c_overview_push.html#overview-push)。
+ - 要了解有关服务的更多信息并利用所有功能，请通读[文档](/docs/services/mobilepush/c_overview_push.html#overview-push)。
 
  - 有关使用移动服务和 {{site.data.keyword.cloud_notm}} 的简介，请参阅 [{{site.data.keyword.cloud_notm}} 上的移动应用程序入门](/docs/services/mobile/index.html)。
 
- - 入门模板工具包是最快利用 {{site.data.keyword.cloud_notm}} 功能的其中一种方法。请在[移动开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看可用的入门模板工具包。下载代码。运行应用程序！
+ - 入门模板工具包是利用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。请在[移动开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看可用的入门模板工具包。下载代码。运行应用程序！
 
  - 可以使用 [Swagger UI](https://mobile.ng.bluemix.net/imfpush/) 来快速查看 REST API 文档。

@@ -15,7 +15,7 @@ lastupdated: "2018-08-07"
 # 向应用程序添加机器学习
 {: #overview}
 
-通过 [Core ML](https://developer.apple.com/documentation/coreml){:new_window}，可以将各种机器学习模型类型集成到应用程序中。Core ML 除了支持丰富的 30 多种层类型的深度学习外，还支持标准模型，例如树整合、SVM 和广义线性模型。Core ML 并不是远程发送数据进行分析，而是通过低级别技术（例如，Metal 和 Accelerate）无缝地利用 CPU 和 GPU 来提供最大性能和效率。
+通过 [Core ML](https://developer.apple.com/documentation/coreml){:new_window}，可以将各种机器学习模型类型集成到应用程序中。Core ML 除了支持丰富的 30 多种层类型的深度学习外，还支持标准模型，例如树整体、SVM 和广义线性模型。Core ML 并不是远程发送数据进行分析，而是通过低级别技术（例如，Metal 和 Accelerate）无缝地利用 CPU 和 GPU 来提供最大性能和效率。
 
 ## 开始之前
 {: #before-you-begin}
@@ -61,7 +61,7 @@ $ brew install carthage
 
 1. 通过模型创建工具，根据需要修改分类器名称。缺省情况下，应用程序会使用第一个可用项，除非指定了要使用的项。如果要使用特定模型，请确保修改主视图控制器中的 `defaultClassifierID` 字段。
 
-2. 在侧边栏中，上传 .zip 文件形式的模型培训课程。然后，从下拉菜单中选择每个数据集并将其添加到模型。可以免费添加更多类，以使用自己的图像集来增强分类器！
+2. 在侧边栏中，上传 .zip 文件形式的模型培训课程。然后，从下拉菜单中选择每个数据集并将其添加到模型。请随意添加更多类，以使用自己的图像集来增强分类器！
 
 ![添加类](images/add_classes.png)
 
@@ -81,7 +81,7 @@ $ brew install carthage
   ```
   {: pre}
 
-  对于生产应用程序，您可能要指定特定的版本需求，以避免 SDK 新发行版中的意外更改。
+  对于生产应用程序，您可能还要指定特定的版本需求，以避免 SDK 新发行版中的意外更改。
   {: tip}
 
 3. 使用终端浏览至项目的根目录，然后运行 Carthage：
@@ -91,7 +91,7 @@ $ brew install carthage
   ```
   {: pre}
 
-  随后 {{site.data.keyword.watson}} Developer Cloud Swift SDK 会下载，并在项目的 `Carthage/Build/iOS` 文件夹中构建其框架。
+  随后会下载 {{site.data.keyword.watson}} Developer Cloud Swift SDK，并在项目的 `Carthage/Build/iOS` 文件夹中构建其框架。
 
 ## 步骤 3. 向应用程序添加图像分类
 {: #adding-image-classification}
@@ -162,12 +162,12 @@ class ViewController: UIViewController {
 1. 选择要使用的[入门模板工具包](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window}。
 2. 使用缺省服务创建项目。
 3. 单击**添加资源 > Watson > {{site.data.keyword.visualrecognitionshort}}**。
-4. 通过单击**下载代码**来下载项目。对于 iOS 项目，服务凭证会插入到 `BMSCredentials.plist` 文件中的相应密钥字段中。对于服务器端 Swift 项目，可以在 `config/local-dev.json` 文件中找到这些凭证。
+4. 通过单击**下载代码**来下载项目。对于 iOS 项目，凭证会插入到 `BMSCredentials.plist` 文件中的相应密钥字段中。对于服务器端 Swift 项目，可以在 `config/local-dev.json` 文件中找到这些凭证。
 
 ## 后续步骤
 {: #coreml_next}
 
 现在，可以使用定制生成的 Core ML 模型来分析图像。请一鼓作气，尝试下列其中一个选项：
 
-* 添加云逻辑。首先是[开发无服务器应用程序](/docs/swift/backend/functions.html)。
-* 利用 {{site.data.keyword.visualrecognitionshort}} 必须提供的所有功能。有关更多详细信息，请参阅[文档](/docs/services/visual-recognition/index.html)。
+* 添加云逻辑。首先[开发无服务器应用程序](/docs/swift/backend/functions.html)。
+* 利用 {{site.data.keyword.visualrecognitionshort}} 可以提供的所有功能。有关更多详细信息，请参阅[文档](/docs/services/visual-recognition/index.html)。

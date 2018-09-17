@@ -28,7 +28,7 @@ lastupdated: "2018-08-07"
 
 ### 操作系统
 
-最好使用最新的 MacOS 支持的硬件来开发 Swift 应用程序，并使用最新的 iOS 发行版进行测试。注册 [Apple Developer](https://developer.apple.com/) 帐户，以支持在物理设备上进行测试。
+最好使用支持 MacOS 的最新硬件来开发 Swift 应用程序，并使用最新的 iOS 发行版进行测试。注册 [Apple Developer](https://developer.apple.com/) 帐户，以支持在物理设备上进行测试。
 
 ### iOS 和 Xcode
 {: #ios_and_xcode}
@@ -77,7 +77,7 @@ sudo gem install cocoapods
 ## 步骤 4. 下载代码并设置客户端 SDK
 {: #run-locally}
 
-要下载代码，请单击`应用程序` > `您的应用程序`下的**下载代码**。下载的代码随附 **{{site.data.keyword.mobileanalytics_short}}** 客户端 SDK。客户端 SDK 可在 CocoaPods 和 Carthage 上使用。对于此解决方案，请使用 CocoaPods。
+要下载代码，请单击`应用程序` > `您的应用程序`下的**下载代码**。下载的代码随附 **{{site.data.keyword.mobileanalytics_short}}** 客户端 SDK。客户端 SDK 在 CocoaPods 和 Carthage 上可用。对于此解决方案，请使用 CocoaPods。
 
 1. 解压缩下载的代码。 然后，使用终端浏览至解压缩的文件夹。
   ```
@@ -93,7 +93,8 @@ pod install
 {: #configure-analytics}
 
 1. 在 Xcode 中打开 `.xcworkspace` 并浏览至 `AppDelegate.swift`。
-  **注：**确保始终打开的是新 Xcode 工作空间，而不是原始 Xcode 项目文件：`MyApp.xcworkspace`。    ![打开的 Xcode](images/Xcode.png)
+  **注：**确保始终打开的是新 Xcode 工作空间，而不是原始 Xcode 项目文件：`MyApp.xcworkspace`。
+     ![打开的 Xcode](images/Xcode.png)
 
   `BMSCore` 是核心 SDK，也是移动式客户端 SDK 的基础。`BMSClient` 是 BMSCore 类，已在 AppDelegate.swift 中初始化。{{site.data.keyword.mobileanalytics_short}} SDK 已经与 BMSCore 一起导入到项目中。
   
@@ -125,7 +126,7 @@ pod install
    {:tip}
 
 ## 步骤 6. 使用 {{site.data.keyword.mobileanalytics_short}} 监视应用程序
-{{site.data.keyword.mobileanalytics_short}} 服务为移动应用程序开发者和应用程序所有者提供关键应用程序使用情况和性能洞察。通过使用 {{site.data.keyword.mobileanalytics_short}}，应用程序所有者和开发者可以了解用户端正在发生的情况。他们可以使用此洞察来构建更完善的与用户相关的应用程序，从而在海量的移动应用程序中脱颖而出。
+{{site.data.keyword.mobileanalytics_short}} 服务为移动应用程序开发者和应用程序所有者提供关键应用程序使用情况和性能洞察。通过使用 {{site.data.keyword.mobileanalytics_short}}，应用程序所有者和开发者可以了解用户端正在发生的情况。他们可以使用此洞察来构建与用户相关的更完善的应用程序，从而在海量的移动应用程序中脱颖而出。
 
 该服务包括 {{site.data.keyword.mobileanalytics_short}} Console，开发人员和应用程序所有者可以在这里监视移动应用程序性能，查看使用情况统计信息，并搜索设备日志。
 
@@ -142,11 +143,11 @@ pod install
 {: #next-steps}
 
 ### 添加更多服务
-可以直接在 Web 控制台向 iOS 应用程序添加更多服务，例如以下常用服务：
+可以直接在 Web 控制台中向 iOS 应用程序添加更多服务，例如以下常用服务：
 
 * [添加 Push Notifications 服务](/push/push_notifications.html)
-* [添加使用应用程序标识进行用户认证](/authenticate/app_id.html)
+* [添加使用应用程序标识进行的用户认证](/authenticate/app_id.html)
 
 ### 使用 {{site.data.keyword.cloud_notm}} Developer Tools
-您还可以使用 [{{site.data.keyword.cloud_notm}} Developer Tools](../cli/index.html)（提供用于创建、开发和部署端到端Web、移动和微服务应用程序的命令行方法）来了解如何开发 Swift 应用程序。
+您还可以使用 [{{site.data.keyword.cloud_notm}} Developer Tools](../cli/index.html)（提供用于创建、开发和部署端到端 Web、移动和微服务应用程序的命令行方法）来了解如何开发 Swift 应用程序。
 

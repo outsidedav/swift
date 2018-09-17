@@ -16,9 +16,9 @@ lastupdated: "2018-08-09"
 
 # 添加用户认证
 
-应用程序安全性复杂程度之深令人难以置信。对于大多数开发者来说，这是创建应用程序中最困难的一部分。如何确保用户信息得到安全保护？通过将 {{site.data.keyword.appid_full}} 集成到应用程序，可以保护并添加认证；即便您没有太多安全方面的经验也没关系。
+应用程序安全性复杂程度之深令人难以置信。对于大多数开发者来说，这是创建应用程序的操作中最困难的一部分。如何确保用户信息得到安全保护？通过将 {{site.data.keyword.appid_full}} 集成到应用程序，可以保护资源并添加认证；即便您没有太多安全方面的经验也没关系。
 
-通过要求用户登录，您可以存储用户数据，例如应用程序首选项（或公共社交概要文件中的信息），然后利用这些数据来定制应用程序内的各种用户体验。{{site.data.keyword.appid_short_notm}} 提供了一个登录框架，但您也可以使用自己的登录屏幕与云目录配合使用。
+通过要求用户登录，您可以存储用户数据，例如应用程序首选项（或公共社交概要文件中的信息），然后利用这些数据来定制应用程序内的各种用户体验。{{site.data.keyword.appid_short_notm}} 提供了一个登录框架，但您也可以使用自己的特色登录屏幕与云目录配合使用。
 
 有关可以使用 {{site.data.keyword.appid_short_notm}} 的所有方法以及体系结构信息，请参阅[关于 {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html)。
 
@@ -65,7 +65,7 @@ lastupdated: "2018-08-09"
 
 1. 转至**项目设置 > 功能 > 密钥链共享**，并在 Xcode 项目中启用密钥链共享。
 
-2. 转至**项目设置 > 信息 > URL类型**，并将以下值添加到 **URL 方案**和**标识**文本框。
+2. 转至**项目设置 > 信息 > URL 类型**，并将以下值添加到 **URL 方案**和**标识**文本框。
     ```
   $(PRODUCT_BUNDLE_IDENTIFIER)
   ```
@@ -122,7 +122,7 @@ lastupdated: "2018-08-09"
 要配置社交身份提供者，请执行以下操作：
 
 1. 打开 {{site.data.keyword.appid_short_notm}} 仪表板至**身份提供者 > 管理**。
-2. 将要使用的身份提供者设置为**开启**。可以使用身份提供者的任意组合，但如果要提供定制的登录屏幕，那么只需启用“云目录”。
+2. 将要使用的身份提供者设置为**开启**。可以使用身份提供者的任意组合，但如果要显示定制的登录屏幕，那么只需启用“云目录”。
 3. 将[缺省配置](/docs/services/appid/identity-providers.html)更新为您自己的凭证。{{site.data.keyword.appid_short_notm}} 提供了 IBM 凭证，可以使用这些凭证来试用服务，但在发布应用程序之前，需要更新此配置。
 4. 定制预配置的登录屏幕以显示您选择的图像和颜色。
 5. 要使用应用程序调用登录窗口小部件，请将以下命令添加到代码中。
@@ -153,7 +153,7 @@ lastupdated: "2018-08-09"
 
 通过 {{site.data.keyword.appid_short_notm}}，您可以管理自己的用户注册表（称为云目录）。通过云目录，用户可以使用自己的电子邮件和密码注册并登录到移动和 Web 应用程序。
 
-要提供自己的 UI 屏幕，只能将云目录作为身份提供者启用。
+要显示自己的特色 UI 屏幕，只能将云目录作为身份提供者启用。
 {: tip}
 
 要配置云目录，请执行以下操作：
@@ -208,7 +208,7 @@ lastupdated: "2018-08-09"
         ```swift
         class delegate : AuthorizationDelegate {
            public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-              //忘记密码处理完成，在本例中，accessToken 和 identityToken 将为空。
+              //忘记密码处理完成，在本例中，accessToken 和 identityToken 将为 null。
            }
 
            public func onAuthorizationCanceled() {
@@ -278,4 +278,4 @@ lastupdated: "2018-08-09"
 太棒了！您已将安全级别添加到应用程序。请一鼓作气，尝试下列其中一个选项：
 
 * 要了解有关 {{site.data.keyword.appid_short_notm}} 必须提供的所有功能的更多信息以及如何利用这些功能，请[查看文档](/docs/services/appid/index.html)！
-* 入门模板工具包是最快利用 IBM Cloud 功能的其中一种方法。请在[移动开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看可用的入门模板工具包。下载代码。运行应用程序！
+* 入门模板工具包是利用 IBM Cloud 功能的最快方法之一。请在[移动开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看可用的入门模板工具包。下载代码。运行应用程序！

@@ -14,7 +14,7 @@ lastupdated: "2018-08-07"
 # 将 Object Storage 用于静态内容
 {: #object}
 
-Object Storage 是一个云计算的基础组件，用于为 Apple 开发者及其应用程序提供强大的功能。与在文件层次结构（例如，Block Storage 或 File Storage）中存储信息不同，Object Storage 仅包含文件及其元数据，这些内容存储在称为存储区的集合中。根据定义，这些对象是不可变的，因此是用于图像、视频和其他静态文档等数据的完美存储器。对于经常更改的数据或关系数据，可以使用 [NoSQL](/docs/swift/data/nosql.html)、[Cloudant](/docs/swift/data/cloudant.html) 和 [SQL](/docs/swift/data/sql.html) 数据库服务。
+Object Storage 是云计算的基础组件，用于为 Apple 开发者及其应用程序提供强大的功能。与在文件层次结构（例如，Block Storage 或 File Storage）中存储信息不同，Object Storage 仅包含文件及其元数据，这些内容存储在称为存储区的集合中。根据定义，这些对象是不可变的，因此是用于图像、视频和其他静态文档等数据的完美存储器。对于经常更改的数据或关系数据，可以使用 [NoSQL](/docs/swift/data/nosql.html)、[Cloudant](/docs/swift/data/cloudant.html) 和 [SQL](/docs/swift/data/sql.html) 数据库服务。
 
 {{site.data.keyword.cos_full_notm}} (COS) 是一种存储系统，可用于存储非结构化数据，使用灵活，具有成本效益，可进行扩展。数据可通过 SDK 或使用 IBM 用户界面进行访问。可以使用 {{site.data.keyword.cos_full_notm}} 通过 Restful API 和 SDK 支持的自助服务门户网站来访问非结构化数据。 
 
@@ -35,7 +35,7 @@ Object Storage 是一个云计算的基础组件，用于为 Apple 开发者及�
 ## 安全性
 {: #security}
 
-{{site.data.keyword.cos_full_notm}} 安全性非常高。首先，只有存储区和对象所有者才有权访问自己创建的 {{site.data.keyword.cos_full_notm}} 服务。此外，还支持通过用户认证来访问数据。使用访问控制机制（如存储区策略）可有选择地向用户和应用程序授予许可权。可以使用 HTTPS 协议通过 SSL 端点将数据安全地传输到 {{site.data.keyword.cos_short}}。如果需要额外的安全性，可以使用“服务器端加密”(SSE) 选项或“使用用户提供的密钥的服务器端加密”(SSE-C) 选项来加密静态存储的数据。{{site.data.keyword.cos_full_notm}} 提供了用于 SSE 和 SSE-C 的加密技术。或者，您可以使用自己的加密库来加密数据，然后将其存储在 Cloud Object Storage 中。
+{{site.data.keyword.cos_full_notm}} 安全性非常高。首先，只有存储区和对象所有者才有权访问自己创建的 {{site.data.keyword.cos_full_notm}} 服务。此外，还支持通过用户认证来访问数据。使用访问控制机制（如存储区策略）可有选择地向用户和应用程序授予许可权。可以使用 HTTPS 协议通过 SSL 端点将数据安全地传输到 {{site.data.keyword.cos_short}}。如果需要额外的安全性，可以使用“服务器端加密”(SSE) 选项或“使用客户提供的密钥的服务器端加密”(SSE-C) 选项来加密静态存储的数据。{{site.data.keyword.cos_full_notm}} 提供了用于 SSE 和 SSE-C 的加密技术。或者，您可以使用自己的加密库来加密数据，然后将其存储在 Cloud Object Storage 中。
 
 可以使用以下访问控制机制来保护 {{site.data.keyword.cos_full_notm}} 中的数据。
 
@@ -59,7 +59,7 @@ Object Storage 是一个云计算的基础组件，用于为 Apple 开发者及�
 
 创建存储区时，必须选择弹性级别（跨区域或区域性）。根据您的选择，数据可跨多个地理位置分散存储。
 
-区域性弹性适用于延迟短的情况，并且数据会分布在单个区域内的三个中心。如果要获得关键任务可用性，并且数据存储在 3 个或更多个不同区域中，请使用跨区域弹性。跨区域提供了地理位置弹性，可跨多个端点使用。请考虑您的应用程序需求来决定使用哪种弹性。
+区域性弹性适用于等待时间短的情况，并且数据会分布在单个区域内的三个中心。如果要获得关键任务可用性，并且数据存储在 3 个或更多个不同区域中，请使用跨区域弹性。跨区域提供了地理位置弹性，可跨多个端点使用。请考虑您的应用程序需求来决定使用哪种弹性。
 
 ### 地理位置
 
@@ -68,7 +68,7 @@ Object Storage 是一个云计算的基础组件，用于为 Apple 开发者及�
 请考虑以下因素来选择对象存储的地理位置，以及决定是使用区域性弹性还是跨区域弹性选项。
 
 **位置注意事项**：
-* 运营中用于冗余的远程位置。
+* 相对于运营处于远程的位置，以实现冗余性。
 * 满足法律法规需求的位置。
 * 缩短数据访问延迟。
 * 考虑定价模型。

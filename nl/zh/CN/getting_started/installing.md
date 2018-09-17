@@ -34,7 +34,7 @@ end
 ## 使用 Carthage 进行安装
 {: #installing_with_carthage}
 
-要使用 Carthage 安装 SDK，请将以下行添加到 `Cartfile`中：
+要使用 Carthage 安装 SDK，请将以下行添加到 `Cartfile` 中：
 ```
 github "<github org name>/<github project name>"
 ```
