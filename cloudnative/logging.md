@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-09-18"
 
 ---
 {:new_window: target="_blank"}
@@ -15,15 +15,10 @@ lastupdated: "2018-08-17"
 # Logging in Swift
 {: #logging_swift}
 
-Logs are required to diagnose how and why services fail. Logs are not meant to be used for monitoring application performance that is what metrics are for, but they can be used as a source for alerts, which can then include more detail than you can obtain from aggregated metrics.
+Log messages are strings with contextual information about the state and activity of the microservice at time that the log entry is made. Logs are required to diagnose how and why services fail, and plays a supporting role to [appmetrics](appmetrics.html) in monitoring application health.
 
-One of the benefits of working with cloud infrastructure is that your application gets to stop worrying about numerous things, like managing log files. Given the transient nature of processes in cloud environments, logs must be collected and sent elsewhere, usually to a centralized location for analysis. The most consistent way to log in cloud environments is to send log entries to standard output and error streams, and let the infrastructure handle the rest.
+Given the transient nature of processes in Cloud environments, logs must be collected and sent elsewhere, usually to a centralized location for analysis. The most consistent way to log in cloud environments is to send log entries to standard output and error streams, which leaves the infrastructure to handle the rest.
 
-As your application evolves over time, the nature of what you log can change. By using a JSON log format, you gain the following benefits:
-* Logs are indexable, which makes searching an aggregated body of logs much easier.
-* Logs are resilient to change, as parsing is not reliant on the position of elements in a string.
-
-Using JSON formatted logging can make logs a little harder for you, the human, to read when you use command line tools to fetch logs. You can use environment variables to toggle which log format is used so that you can have plain text logs for local development and debugging.
 
 ## Adding Logging to your Swift app
 
@@ -31,7 +26,7 @@ Using JSON formatted logging can make logs a little harder for you, the human, t
 
 [LoggerAPI](https://github.com/IBM-Swift/LoggerAPI) is the logger protocol that provides a common logging interface for different kinds of loggers in Swift. Kitura uses the `LoggerAPI` throughout its implementation.
 
-To leverage `HeliumLogger`, add the following to the **dependencies:** in your `Package.swift`, making sure to add it to any targets where it is used.
+To use `HeliumLogger`, add the following code to the **dependencies:** in your `Package.swift` for all appropriate targets:
 ```swift
 .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1")
 ```
@@ -62,7 +57,7 @@ Swift apps that are created by using the {{site.data.keyword.cloud_notm}} App Se
 ```
 {: screen}
 
-These messages are found in `stdout` from running locally, or in the logs for [CloudFoundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs) and [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/) deployments, which are accessed by `ibmcloud app logs --recent <APP_NAME>` and `kubectl logs <deployment name>`, respectively.
+These messages are found in `stdout` locally, or in the logs for [CloudFoundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs) and [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/) deployments, which are accessed by `ibmcloud app logs --recent <APP_NAME>` and `kubectl logs <deployment name>`.
 
 In the `/Sources/AppName/main.swift` file, you can see the following code:
 ```swift
@@ -70,7 +65,7 @@ HeliumLogger.use(LoggerMessageType.info)
 ```
 {: codeblock}
 
-The log level is explicitly set to `.info` to log informational level messages like the application start up logs.
+The log level is explicitly set to `.info` to log informational level messages like the application startup logs.
 {: tip}
 
 ## Next Steps

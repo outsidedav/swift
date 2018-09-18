@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-30"
+lastupdated: "2018-09-18"
 
 ---
 {:new_window: target="_blank"}
@@ -15,23 +15,23 @@ lastupdated: "2018-08-30"
 # Configuring the Swift environment
 {: #configuration}
 
-Cloud Native development has two closely related practices that intersect in how you handle configuration data. The first is that you should build immutable artifacts to minimize the likelihood that errors are introduced as your application journeys from development to production. The second is that you must strive for parity between your development, and production environments, to avoid problems created by environment-specific code. 
+Cloud Native development has two closely related practices that intersect in how you handle configuration data. The first is that you must build immutable artifacts to minimize the likelihood that errors are introduced as your application journeys from development to production. The second is that you must strive for parity between your development, and production environments, to avoid problems created by environment-specific code. 
 
-Management of service configuration and credentials (service bindings) varies between platforms. Cloud Foundry stores service binding details in a stringified JSON object that is passed to the application as an environment variable (`VCAP_SERVICES`). Kubernetes stores service bindings as stringified JSON or flat attributes in `ConfigMaps` or `Secrets`, which can be passed to the containerized application as environment variables or mounted as a temporary volume. Local development has its own configuration, as local testing is often a simplified derivative of whatever is running in the cloud. Working across these variations in a portable way without having environment-specific code paths can be challenging.
+Management of service configuration and credentials (service bindings) varies between platforms. Cloud Foundry stores service binding details in a stringified JSON object that is passed to the application as an environment variable `VCAP_SERVICES`. Kubernetes stores service bindings as stringified JSON or flat attributes in `ConfigMaps` or `Secrets`, which can be passed to the containerized application as environment variables or mounted as a temporary volume. Local development has its own configuration, as local testing is often a simplified derivative of whatever is running in the cloud. Working across these variations in a portable way without having environment-specific code paths can be challenging.
 
-You can follow simple guidelines to help you write portable applications, and utilities that you can use to encapsulate finding service bindings (or other configuration) in environment-specific locations. Whether you need to add cloud support to existing applications or create apps with Starter Kits, the goal is to provide maximum portability for apps regardless of the deployment platform.
+You can follow simple guidelines to help you write portable applications, and utilities that you can use to encapsulate finding service bindings (or other configuration) in environment-specific locations. Whether you need to add cloud support to existing applications or create apps with Starter Kits, the goal is to provide portability for Swift apps to be used on many deployment platforms.
 
 ## Adding {{site.data.keyword.cloud_notm}} to existing Swift applications
 {: #addcloud-env}
 
-The path for obtaining certain environment values can differ from one cloud environment to another. The [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) library abstracts environment configuration and credentials from various cloud providers so your Swift app can consistently access the information by running locally or in Cloud Foundry, Kubernetes, or {{site.data.keyword.openwhisk}}. The credentials abstraction is provided by the `CloudEnvironment` library, which internally uses [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) for Cloud Foundry configuration and [Configuration](https://github.com/IBM-Swift/Configuration) as a configuration manager.
+The path for abstracting environment values can differ from one cloud environment to another. The [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) library abstracts environment configuration and credentials from various cloud providers so your Swift app can consistently access the information by running locally or in Cloud Foundry, Kubernetes, or {{site.data.keyword.openwhisk}}. The credentials abstraction is provided by the `CloudEnvironment` library, which internally uses [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) for Cloud Foundry configuration and [Configuration](https://github.com/IBM-Swift/Configuration) as a configuration manager.
 
-With `CloudEnvironment`, you can abstract low-level details from your application's source code by defining a lookup key that your Swift application can leverage for searching its corresponding value.
+With `CloudEnvironment`, you can abstract low-level details from your application's source code by defining a lookup key that your Swift application can use for searching its corresponding value.
 
-The `CloudEnvironment` library provides a consistent lookup key that can be used in your source code. The library then searches across an array of search patterns to find JSON object that contains configuration attributes or service credentials. 
+The `CloudEnvironment` library provides a consistent lookup key that can be used in your source code. The library then searches across an array of search patterns to find a JSON object with the configuration attributes or service credentials. 
 
 ### Adding the CloudEnvironment package to your Swift application
-To leverage the `CloudEnvironment` package in your Swift application, specify it in the **dependencies:** section of your `Package.swift` file:
+To use the `CloudEnvironment` package in your Swift application, specify it in the **dependencies:** section of your `Package.swift` file:
 ```swift
 .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", from: "8.0.0"),
 ```
@@ -99,9 +99,9 @@ The following shows an example of a `mappings.json` file:
 ```
 {: codeblock}
 
-In this example, `cloudant-credentials` and `object-storage-credentials` are the lookup keys that your Swift application uses to look up the corresponding credentials. According to the array of search patterns, the configuration manager first looks for `my-awesome-cloudant-db` in `VCAP_SERVICES`, next it looks for `my_awesome_cloudant_db_credentials` as an environment variable, and if that isn't defined, it looks for the contents of `my-awesome-object-storage-credentials.json` in the `localdev` folder. 
+In this example, `cloudant-credentials` and `object-storage-credentials` are the lookup keys that your Swift application uses to look up the corresponding credentials. According to the array of search patterns, the configuration manager first looks for `my-awesome-cloudant-db` in `VCAP_SERVICES`, then it looks for `my_awesome_cloudant_db_credentials` as an environment variable. If that isn't defined, it searches the contents of `my-awesome-object-storage-credentials.json` in the `localdev` folder. 
 
-When the application runs locally, it can use credentials stored in a file, like `localdev/my-awesome-object-storage-credentials.json` as shown in the previous example. The connection information for services you want to access locally, such as username, password, and hostname, are all to be stored in this file. 
+When the application runs locally, it can use credentials that are stored in a file, like `localdev/my-awesome-object-storage-credentials.json` as shown in the previous example. The connection information for services you want to access locally, such as username, password, and hostname, are all to be stored in this file. 
 
 For security reasons, credential files are not to be added to repositories. In the previous example, a `localdev` folder is used to store local credentials so you must add this folder to the `.gitignore` file to avoid an accidental commit. If you are using a Starter Kit app, this folder is created for you, and is present in the `.gitignore` file.
 
