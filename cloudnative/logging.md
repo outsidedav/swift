@@ -15,7 +15,7 @@ lastupdated: "2018-09-18"
 # Logging in Swift
 {: #logging_swift}
 
-Log messages are strings with contextual information about the state and activity of the microservice at time that the log entry is made. Logs are required to diagnose how and why services fail, and plays a supporting role to [appmetrics](appmetrics.html) in monitoring application health.
+Log messages are strings with contextual information about the state and activity of the microservice at the time that the log entry is made. Logs are required to diagnose how and why services fail, and plays a supporting role to [appmetrics](appmetrics.html) in monitoring application health.
 
 Given the transient nature of processes in Cloud environments, logs must be collected and sent elsewhere, usually to a centralized location for analysis. The most consistent way to log in cloud environments is to send log entries to standard output and error streams, which leaves the infrastructure to handle the rest.
 
