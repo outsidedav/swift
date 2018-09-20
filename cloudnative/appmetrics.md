@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-19"
+lastupdated: "2018-09-20"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-09-19"
 # Using Application Metrics with Swift apps
 {: #metrics}
 
-Application metrics are important for monitoring the performance of your application. Having a live view of metrics like CPU, Memory, Latency, and HTTP metrics is essential to ensure that your application is running effectively over time. You can use a cloud service like Cloud Foundry's [autoscaling](/docs/services/Auto-Scaling/index.html) that relies on metrics to dynamically scale instances to match current workload. By using application metrics, you are informed precisely when to scale up, down, or clean up instances that are no longer needed to keep costs low.
+Application metrics are important for monitoring the performance of your application. Having a live view of metrics like CPU, Memory, Latency, and HTTP metrics is essential to ensure that your application is running effectively over time. Kubernetes and Cloud Foundry services like [autoscaling](/docs/services/Auto-Scaling/index.html) rely on metrics to determine when to dynamically add or remove instances based on load, and clean up instances that are no longer needed to keep costs low.
 
 Application metrics are captured as time series data. Aggregating and visualizing captured metrics can help to identify common performance problems such as:
 

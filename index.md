@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-13"
+lastupdated: "2018-09-20"
 
 ---
 
@@ -16,10 +16,10 @@ lastupdated: "2018-09-13"
 # Getting started tutorial
 {: #set_up}
 
-{{site.data.keyword.cloud}} offers solutions and services to empower Swift developers and applications with the security, AI, and value demanded by your customers. With a broad portfolio of offerings and SDKs, you can leverage these services, and bring cutting-edge applications to market quickly. The Swift programming guide teaches you how to add services to a new or existing Swift application, whether it is an iOS client or server-side Swift.
+{{site.data.keyword.cloud}} offers solutions and services to empower Swift developers to build applications that are integrated with the security, AI, and value that your customers demand. With a broad portfolio of offerings and SDKs, you can use these services, and bring cutting-edge applications to market quickly. This Swift programming explains how to add services to a new or existing Swift application, whether it is an iOS client or server-side Swift.
 {: shortdesc}
 
-The following tutorial is an entry point to show you how to easily create a Swift mobile app with {{site.data.keyword.mobileanalytics_full}} by using an empty Starter Kit from the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits). From the console, you add the {{site.data.keyword.mobileanalytics_short}} service, download the code, run the iOS app locally in Xcode, configure, and monitor the app.
+The following tutorial shows how to easily create a Swift mobile app with {{site.data.keyword.mobileanalytics_full}} by using an empty Starter Kit from the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits). From the console, you add the {{site.data.keyword.mobileanalytics_short}} service, download the code, run the iOS app locally in Xcode, configure, and monitor the app.
 
 ## Step 1. Requirements for Developers
 {: #dev-requirements}

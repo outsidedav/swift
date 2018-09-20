@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-18"
+lastupdated: "2018-09-20"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-09-18"
 # Configuring the Swift environment
 {: #configuration}
 
-Cloud Native development has two closely related practices that intersect in how you handle configuration data. The first is that you must build immutable artifacts to minimize the likelihood that errors are introduced as your application journeys from development to production. The second is that you must strive for parity between your development, and production environments, to avoid problems created by environment-specific code. 
+Cloud-native development has two closely related practices that intersect in how you handle configuration data. The first is that you must build immutable artifacts to minimize the likelihood that errors are introduced as your application journeys from development to production. The second is that you must strive for parity between your development, and production environments, to avoid problems created by environment-specific code. 
 
 Management of service configuration and credentials (service bindings) varies between platforms. Cloud Foundry stores service binding details in a stringified JSON object that is passed to the application as an environment variable `VCAP_SERVICES`. Kubernetes stores service bindings as stringified JSON or flat attributes in `ConfigMaps` or `Secrets`, which can be passed to the containerized application as environment variables or mounted as a temporary volume. Local development has its own configuration, as local testing is often a simplified derivative of whatever is running in the cloud. Working across these variations in a portable way without having environment-specific code paths can be challenging.
 
