@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-18"
+lastupdated: "2018-10-15"
 
 ---
 
@@ -16,64 +16,83 @@ lastupdated: "2018-09-18"
 # Using a health check in your Swift app
 {: #healthcheck}
 
-Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Many deployment environments, such as [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) and [Kubernetes](https://www.ibm.com/cloud/container-service), can be configured to poll the health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
+Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Cloud environments like [Kubernetes](https://www.ibm.com/cloud/container-service) and [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry), can be configured to poll health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
 
 ## Health check overview
 {: #overview}
 
-Health checks are typically accessed over `HTTP`, and use standard return codes for indicating `UP` or `DOWN` status. Examples include returning `200` for `UP`, and `5xx` for `DOWN`. For example, a `503` return code is used when the application can’t handle requests, and a `500` is used when the server experiences an error condition. The return value of a health check is variable, but a minimal JSON response, like `{“status”: “UP”}` provides consistency.
+Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. They're typically consumed over HTTP and use standard return codes to indicate UP or DOWN status. The return value of a health check is variable, but a minimal JSON response, like `{"status": "UP"}`, is typical.
 
-Kubernetes defines both [liveness](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) and [readiness](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) probes:
+Kubernetes has a nuanced notion of process health. It defines two probes:
 
-* The liveness probe allows an application to indicate whether the process is to be restarted. A subset of considerations applies: a `liveness` check might fail if a memory threshold is reached, for example. If your app is running on Kubernetes, consider adding a `liveness` endpoint to ensure that your process is restarted when necessary.
+- A _**readiness**_ probe is used to indicate whether the process can handle requests (is routable).
 
-* The readiness probe is used for automatic routing decisions. The success or failure indicates whether not the application can receive new work. This endpoint can include considerations for required downstream services. Consider caching the result of downstream service checks to minimize overall load on the system (for example, test database connectivity at most once per second).
+  Kubernetes doesn't route work to a container with a failing readiness probe. A readiness probe should fail if a service hasn't finished initializing, or is otherwise busy, overloaded, or unable to process requests.
 
-Cloud Foundry uses only one health endpoint. If this check fails, Cloud Foundry restarts the process. But if it succeeds, Cloud Foundry assumes that the process can handle new work. This health check makes the single endpoint a combination between liveness and readiness.
+- A _**liveness**_ probe is used to indicate whether the process is to be restarted.
 
-## Adding health check to an existing Swift app
+  Kubernetes stops and restarts a container with a failing liveness probe. Use liveness probes to clean up processes in an unrecoverable state, for example, if memory is exhausted, or if the container didn't stop properly after an internal process crashed.
+
+As a note for comparison, Cloud Foundry uses one health endpoint. If this check fails, the process is restarted, but if it succeeds, requests are routed to it. In this environment, the endpoint minimally succeeds when the process is live. An initial delay is configured to defer health checking until the service is finished initializing to avoid restart cycles.
+
+The following table provides guidance on the responses that readiness, liveness, and singular health endpoints should provide.
+
+| State    | Readiness                   | Liveness                   | Health                    |
+|----------|-----------------------------|----------------------------|---------------------------|
+|          | Non-OK causes no load       | Non-OK causes restart      | Non-OK causes restart     |
+| Starting | 503 - Unavailable           | 200 - OK                   | Use delay to avoid test   |
+| Up       | 200 - OK                    | 200 - OK                   | 200 - OK                  |
+| Stopping | 503 - Unavailable           | 200 - OK                   | 503 - Unavailable         |
+| Down     | 503 - Unavailable           | 503 - Unavailable          | 503 - Unavailable         |
+| Errored  | 500 - Server Error          | 500 - Server Error         | 500 - Server Error        |
+
+## Adding a health check to an existing Swift app
 {: #add-healthcheck-existing}
 
 The [Health](https://github.com/IBM-Swift/Health) library makes it easy add a health check to your Swift application. Health checks are extensible. For more information about [caching](https://github.com/IBM-Swift/Health#caching) to prevent DoS attacks or adding [custom checks](https://github.com/IBM-Swift/Health#implementing-a-health-check), see the [Health](https://github.com/IBM-Swift/Health) library.
 
-To add the Health library to an existing Swift app, specify it in the *dependencies:* section of your `Package.swift` file, and adding it to all appropriate targets:
-```swift
-.package(url: "https://github.com/IBM-Swift/Health.git", .from: "1.0.0"),
-```
-{: codeblock}
+To add the Health library to an existing Swift app:
 
-Then, add the following initialization code to your application:
-```swift
-import Health
+1. Specify it in the *dependencies:* section of your `Package.swift` file, and add it to all appropriate targets:
 
-let health = Health()
-```
-{: codeblock}
+    ```swift
+    .package(url: "https://github.com/IBM-Swift/Health.git", .from: "1.0.0"),
+    ```
+    {: codeblock}
 
-Then, add the route definition to define the health check endpoint:
-```
-router.get("/health") { request, response, next in
-  // let status = health.status.toDictionary()
-  let status = health.status.toSimpleDictionary()
-  if health.status.state == .UP {
-    try response.send(json: status).end()
-  } else {
-    try response.status(.serviceUnavailable).send(json: status).end()
-  }
-}
-```
-{: codeblock}
+2. Add the following initialization code to your application:
 
-Check the status of the app with a browser by accessing the `/health` endpoint. The code returns a payload `{"status": "UP"}`, as defined by the simple dictionary.
+    ```swift
+    import Health
 
-For alternative implementations, such as using **Codable** or the standard dictionary, see the [Health library examples](https://github.com/IBM-Swift/Health#usage).
+    let health = Health()
+    ```
+    {: codeblock}
 
-## Accessing health check from server-side Swift Starter Kit apps
+3. Add the route definition to define the health check endpoint:
+
+    ```swift
+    router.get("/health") { request, response, next in
+        // let status = health.status.toDictionary()
+        let status = health.status.toSimpleDictionary()
+        if health.status.state == .UP {
+            try response.send(json: status).end()
+        } else {
+            try response.status(.serviceUnavailable).send(json: status).end()
+        }
+    }
+    ```
+    {: codeblock}
+
+4. Check the status of the app with a browser by accessing the `/health` endpoint. The code returns a payload `{"status": "UP"}`, as defined by the simple dictionary.
+
+## Checking the health of a server-side Swift Starter Kit app
 {: #healthcheck-starterkit}
 
 When you generate a Kitura-based Swift app by using a Starter Kit, a basic health check endpoint, `/health`, is included by default. The endpoint uses the Codable protocol available in Swift 4, as supported by the [Health](https://github.com/IBM-Swift/Health) library.
 
-Basic initialization code, such as the initialization of the Health object occurs in `Sources/Application.swift`. While the health check endpoint itself is provided by the `/Sources/Application/Routes/HealthRoutes.swift` file, and uses the following code:
+Basic initialization code, such as the initialization of the Health object occurs in `Sources/Application.swift`. The health check endpoint itself is provided by the `/Sources/Application/Routes/HealthRoutes.swift` file, and uses the following code:
+
 ```swift
 import LoggerAPI
 import Health
@@ -94,3 +113,54 @@ func initializeHealthRoutes(app: App) {
 {: codeblock}
 
 The example uses the standard dictionary, which yields a payload such as `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}` when you access the `/health` endpoint.
+
+## Recommendations for readiness and liveness probes
+
+Readiness checks must include the viability of connections to downstream services in their result if there isn’t an acceptable fallback for when the downstream service is unavailable. This doesn't mean calling the health check that is provided by the downstream service directly, as infrastructure checks that for you. Instead, consider verifying the health of the existing references your application has to downstream services: this might be a JMS connection to WebSphere MQ, or an initialized Kafka consumer or producer. If you do check the viability of internal references to downstream services, cache the result to minimize the impact health checking has on your application.
+
+A liveness probe, by contrast, should be very deliberate about what is checked, as a failure results in immediate termination of the process. A simple HTTP endpoint that always returns `{"status": "UP"}` with status code `200` is a reasonable choice.
+
+### Add support for Kubernetes Readiness and Liveness to a Swift app
+
+For alternative implementations, such as using **Codable** or the standard dictionary, see [Health library examples](https://github.com/IBM-Swift/Health#usage). Some of these implementations simplify the creation of extensible health checks with support for caching checks that are performed against backing services. In this case, you would want to separate the simple liveness test from the more robust, detailed readiness check.
+
+## Configuring readiness and liveness probes in Kubernetes
+
+Declare liveness and readiness probes alongside your Kubernetes deployment. Both probes use the same configuration parameters:
+
+* The kubelet waits for `initialDelaySeconds` before the first probe.
+
+* The kubelet probes the service every `periodSeconds` seconds. The default is 1.
+
+* The probe times out after `timeoutSeconds` seconds. The default and minimum value is 1.
+
+* The probe is successful if it succeeds `successThreshold` times after a failure. The default and minimum value is 1. The value must be 1 for liveness probes.
+
+* When a pod starts and the probe fails, Kubernetes tries `failureThreshold` times to restart the pod before giving up. The minimum value is 1 and the default value is 3.
+    - For a liveness probe, "giving up" means restarting the pod.
+    - For a readiness probe, "giving up" means marking the pod `Unready`.
+
+To avoid restart cycles, set `livenessProbe.initialDelaySeconds` to be safely longer than it takes your service to initialize. You can then use a shorter value for `readinessProbe.initialDelaySeconds` to route requests to the service as soon as it's ready.
+
+See the following `yaml` example:
+```yaml
+spec:
+  containers:
+  - name: ...
+    image: ...
+    readinessProbe:
+      httpGet:
+        path: /health
+        port: 8080
+      initialDelaySeconds: 120
+      timeoutSeconds: 5
+    livenessProbe:
+      httpGet:
+        path: /liveness
+        port: 8080
+      initialDelaySeconds: 130
+      timeoutSeconds: 10
+      failureThreshold: 10
+```
+
+For more information, see how to [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
