@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-20"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -103,13 +103,13 @@ In this example, `cloudant-credentials` and `object-storage-credentials` are the
 
 When the application runs locally, it can use credentials that are stored in a file, like `localdev/my-awesome-object-storage-credentials.json` as shown in the previous example. The connection information for services you want to access locally, such as username, password, and hostname, are all to be stored in this file. 
 
-For security reasons, credential files are not to be added to repositories. In the previous example, a `localdev` folder is used to store local credentials so you must add this folder to the `.gitignore` file to avoid an accidental commit. If you are using a Starter Kit app, this folder is created for you, and is present in the `.gitignore` file.
+For security reasons, credential files don't belong in repositories. In the previous example, a `localdev` folder is used to store local credentials so you must add this folder to the `.gitignore` file to avoid an accidental commit. If you're using a Starter Kit app, this folder is created for you, and is present in the `.gitignore` file.
 
 For more information about the `mappings.json` file, check out the [Understanding service credential](configuration.html#service_creds) section.
 
 ## Using the Swift configuration manager from Starter Kit apps
 
-Swift apps that are created with [Starter Kits](https://console.bluemix.net/developer/appledevelopment/starter-kits/) automatically come with the credentials and configuration that is needed to run locally, and also in many Cloud deployment environments (CF, K8s, VSI, and Functions). The basic creation of the configuration manager can be found in `Sources/Application/Application.swift`. When you create a Swift-based Starter Kit app with services, a `config` folder, containing a `mappings.json` is created for you. If you download your app, the `config` folder contains a `localdev-config.json` file, which has all of the credentials for your services, and is present in the `.gitignore` file.
+Swift apps that are created with [Starter Kits](https://console.bluemix.net/developer/appledevelopment/starter-kits/) automatically come with the credentials and configuration that is needed to run locally, and also in many Cloud deployment environments (CF, K8s, VSI, and Functions). The basic creation of the configuration manager can be found in `Sources/Application/Application.swift`. When you create a Swift-based Starter Kit app with services, a `config` folder and `mappings.json` file is created for you. If you download your app, the `config` folder includes a `localdev-config.json` file that has all of the credentials for your services, and is present in the `.gitignore` file.
 
 ## Next Steps
 {: #next notoc}

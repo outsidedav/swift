@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-18"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-09-18"
 # Logging in Swift
 {: #logging_swift}
 
-Log messages are strings with contextual information about the state and activity of the microservice at the time that the log entry is made. Logs are required to diagnose how and why services fail, and plays a supporting role to [appmetrics](appmetrics.html) in monitoring application health.
+Log messages are strings with contextual information about the state and activity of the microservice at the time that the log entry is made. Logs are required to diagnose how and why services fail, and plays a supporting role to [app metrics](appmetrics.html) in monitoring application health.
 
 Given the transient nature of processes in Cloud environments, logs must be collected and sent elsewhere, usually to a centralized location for analysis. The most consistent way to log in cloud environments is to send log entries to standard output and error streams, which leaves the infrastructure to handle the rest.
 
@@ -26,7 +26,7 @@ Given the transient nature of processes in Cloud environments, logs must be coll
 
 [LoggerAPI](https://github.com/IBM-Swift/LoggerAPI) is the logger protocol that provides a common logging interface for different kinds of loggers in Swift. Kitura uses the `LoggerAPI` throughout its implementation.
 
-To use `HeliumLogger`, add the following code to the **dependencies:** in your `Package.swift` for all appropriate targets:
+To use `HeliumLogger`, add the following code to the **dependencies:** section in your `Package.swift` for all appropriate targets:
 ```swift
 .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1")
 ```
@@ -48,7 +48,7 @@ In the provided example, the [log level](http://ibm-swift.github.io/HeliumLogger
 
 For more information about customizing the log messages, see the official [HeliumLogger API reference documentation](http://ibm-swift.github.io/HeliumLogger/).
 
-## Logging with StarterKits
+## Logging with Starter Kits
 {: #monitoring}
 
 Swift apps that are created by using the {{site.data.keyword.cloud_notm}} App Service come with `HeliumLogger` by default. Running the app natively or in a cloud environment produces the following output:
@@ -76,6 +76,6 @@ Learn more about viewing the logs in each of our deployment environments:
 * [Cloud Foundry Logs](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
 * [{{site.data.keyword.openwhisk}} Logs & Monitoring](https://console.bluemix.net/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
 
-Using a Log aggregator:
+Learn how to implement and use a log aggregator:
 * [{{site.data.keyword.cloud_notm}} Log Analysis](https://console.bluemix.net/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
 * [{{site.data.keyword.cloud_notm}} Private ELK stack](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

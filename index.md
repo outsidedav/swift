@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-20"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-09-20"
 # Getting started tutorial
 {: #set_up}
 
-{{site.data.keyword.cloud}} offers solutions and services to empower Swift developers to build applications that are integrated with the security, AI, and value that your customers demand. With a broad portfolio of offerings and SDKs, you can use these services, and bring cutting-edge applications to market quickly. This Swift programming explains how to add services to a new or existing Swift application, whether it is an iOS client or server-side Swift.
+{{site.data.keyword.cloud}} offers solutions and services to enable Swift Developers to build applications that are integrated with the security, AI, and value that your customers demand. With a broad portfolio of offerings and SDKs, you can use these services, and bring cutting-edge applications to market quickly. This Swift programming explains how to add services to a new or existing Swift application, whether it's an iOS client or server-side Swift.
 {: shortdesc}
 
 The following tutorial shows how to easily create a Swift mobile app with {{site.data.keyword.mobileanalytics_full}} by using an empty Starter Kit from the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits). From the console, you add the {{site.data.keyword.mobileanalytics_short}} service, download the code, run the iOS app locally in Xcode, configure, and monitor the app.
@@ -28,14 +28,14 @@ To get started with iOS development on {{site.data.keyword.cloud_notm}}, make su
 
 ### Operating System
 
-It is best practice to develop Swift apps by using the latest MacOS supported hardware, and testing with the latest iOS releases. Sign up for an [Apple Developer](https://developer.apple.com/) account to enable testing on a physical device.
+The best practice for developing Swift apps is by using the latest MacOS supported hardware, and testing with the latest iOS releases. Sign up for an [Apple Developer](https://developer.apple.com/) account to enable testing on a physical device.
 
 ### iOS and Xcode
 {: #ios_and_xcode}
 
 - Install [Xcode 8+](https://developer.apple.com/xcode/) (or higher).
 - Deploy to [iOS 8 devices](https://support.apple.com/downloads/ios) (or higher).
-- Review the [App Store Submission Guidelines](https://developer.apple.com/app-store/guidelines/) prior to submitting apps to Apple.
+- Review the [App Store Submission Guidelines](https://developer.apple.com/app-store/guidelines/) before you submit apps to Apple.
 
 ### SDKs and Dependency management
 
@@ -77,9 +77,9 @@ The following tools ensure that you can install the native SDKs to work with the
 ## Step 4. Downloading the code and setting up client SDKs
 {: #run-locally}
 
-To download the code, click on **Download Code** under `Apps` > `Your App`. The downloaded code comes with **{{site.data.keyword.mobileanalytics_short}}** Client SDKs included. The Client SDKs are available on CocoaPods and Carthage. For this solution, use CocoaPods.
+To download the code, click **Download Code** under `Apps` > `Your App`. The downloaded code comes with **{{site.data.keyword.mobileanalytics_short}}** Client SDKs included. The Client SDKs are available on CocoaPods and Carthage. For this solution, use CocoaPods.
 
-1. Unzip the downloaded code. Then, using a terminal, navigate to the unzipped folder.
+1. Unzip the downloaded code. Then, using a terminal, navigate to the extracted folder.
   ```
   cd <Name of Project>
   ```
@@ -96,7 +96,7 @@ To download the code, click on **Download Code** under `Apps` > `Your App`. The 
   **Note:** Ensure that you always open the new Xcode workspace, instead of the original Xcode project file: `MyApp.xcworkspace`.
    ![Open Xcode](images/Xcode.png)
 
-  `BMSCore` is the Core SDK and is base for the Mobile Client SDKs. `BMSClient` is a class of BMSCore and initialized in AppDelegate.swift. Along with BMSCore, {{site.data.keyword.mobileanalytics_short}} SDK is already imported into the project.
+  `BMSCore` is the Core SDK and is base for the Mobile Client SDKs. `BMSClient` is a class of `BMSCore` and initialized in `AppDelegate.swift`. Along with `BMSCore`, {{site.data.keyword.mobileanalytics_short}} SDK is already imported into the project.
   
 2. Analytics initialization code is already included as shown in the following snippet:
   ```
@@ -122,15 +122,15 @@ To download the code, click on **Download Code** under `Apps` > `Your App`. The 
   ```
   {: codeblock}
 
-   For advanced Analytics and logging capabilities, refer to [Gathering usage Analytics](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#app-monitoring-gathering-analytics) and [logging](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#enabling-configuring-and-using-logger).
+   For advanced Analytics and logging features, refer to [Gathering usage Analytics](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#app-monitoring-gathering-analytics) and [logging](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#enabling-configuring-and-using-logger).
    {:tip}
 
 ## Step 6. Monitoring the app with {{site.data.keyword.mobileanalytics_short}}
-The {{site.data.keyword.mobileanalytics_short}} service provides key application usage and performance insights for mobile application developers and application owners. By using {{site.data.keyword.mobileanalytics_short}}, application owners and developers can understand what is happening on the user side. They can use this insight to build better applications that are relevant to users, and that stand out in the veritable sea of mobile applications.
+The {{site.data.keyword.mobileanalytics_short}} service provides key application usage and performance insights for mobile application Developers and application owners. By using {{site.data.keyword.mobileanalytics_short}}, application owners and Developers can understand what is happening on the user side. They can use this insight to build better applications that are relevant to users, and that stand out in the veritable sea of mobile applications.
 
-The service includes the {{site.data.keyword.mobileanalytics_short}} Console where developers and application owners can monitor mobile application performance, see usage statistics, and search device logs.
+The service includes the {{site.data.keyword.mobileanalytics_short}} Console where Developers and application owners can monitor mobile application performance, see usage statistics, and search device logs.
 
-1. Open the `{{site.data.keyword.mobileanalytics_short}}` service from the mobile app you created or click on the three vertical dots next to the service and select `Open Dashboard`.
+1. Open the `{{site.data.keyword.mobileanalytics_short}}` service from the mobile app you created or click the three vertical dots next to the service and select `Open Dashboard`.
 2. You can see LIVE Users, Sessions, and other App Data by disabling `Demo Mode`. You can filter the analytics information by the following criteria:
     * Date.
     * Application.
@@ -148,6 +148,6 @@ You can add more services to your iOS app directly from the web console, such as
 * [Adding the Push Notifications service](/docs/services/mobilepush/index.html)
 * [Adding user authentication with App ID](/docs/services/appid/index.html)
 
-### Using {{site.data.keyword.cloud_notm}} developer tools
-You can also learn how to develop Swift apps by using the [{{site.data.keyword.cloud_notm}} developer tools](../cli/index.html), which offer a command-line approach to creating, developing, and deploying end-to-end web, mobile, and microservice applications.
+### Using {{site.data.keyword.cloud_notm}} Developer tools
+You can also learn how to develop Swift apps by using the [{{site.data.keyword.cloud_notm}} developer tools](../cli/index.html), which offer a command line approach to creating, developing, and deploying complete web, mobile, and microservice applications.
 

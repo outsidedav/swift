@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017-2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -16,7 +16,7 @@ lastupdated: "2018-08-07"
 {: #cloudant}
 
 {{site.data.keyword.cloudantfull}} is a document-oriented DataBase as a Service (DBaaS). It stores data as documents in JSON format. It is built with scalability, high availability, and durability in mind, and is easy to configure for use in Swift applications. It comes with a wide variety of indexing options that include MapReduce, {{site.data.keyword.cloudant_short_notm}} Query, full-text indexing, and geospatial indexing. The replication capabilities make it easy to keep data in sync between database clusters, desktop PCs, and mobile devices. 
-{:shortdesc}
+{: shortdesc}
 
 For all of the ways that you can use {{site.data.keyword.cloudant_short_notm}}, see [{{site.data.keyword.cloudant_short_notm}} Basics](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics).
 
@@ -28,13 +28,12 @@ First, be sure that you have the following prerequisites ready to go:
  * MacOS (version 10.11.5 or higher)
  * Xcode (version 9.0.1 or higher)
 
-The [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudant/swift-cloudant) is built with Swift 3.2. If you are planning to use {{site.data.keyword.cloudant_short_notm}} with Kitura, check out [Kitura-CouchDB Library ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Swift/Kitura-CouchDB), which is built with Swift 4.0.
+The [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudant/swift-cloudant) is built with Swift 3.2. If you're planning to use {{site.data.keyword.cloudant_short_notm}} with Kitura, check out [Kitura-CouchDB Library ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Swift/Kitura-CouchDB), which is built with Swift 4.0.
 {: tip}
 
 ## Step 1. Creating an instance of {{site.data.keyword.cloudant_short_notm}}
 
-See [Creating a Cloudant NoSQL DB instance on IBM Cloud tutorial ![External link icon](../images/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/Cloudant/tutorials/create_service.html#creating-a-cloudant-nosql-db-instance-on-ibm-cloud){:new_window} to provision an instance of the service.
-
+See [Creating a Cloudant NoSQL DB instance on IBM Cloud tutorial ![External link icon](../images/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/Cloudant/tutorials/create_service.html#creating-a-cloudant-nosql-db-instance-on-ibm-cloud){:new_window} to create an instance of the service.
 
 ## Step 2. Installing the SDK
 
@@ -51,11 +50,12 @@ Use the Swift Cloudant SDK to help make coding your app easier. The SDK must be 
     end
     ```
     {: screen}
+
 3. Download the `SwiftCloudant` dependency.
     ```
     pod install
     ```
-    {: pre}
+    {: codeblock}
 
 ### Installing the server-side Swift SDK
 
@@ -63,17 +63,18 @@ To use with the Swift Package Manager for server-side development, add the follo
 ```swift
 .Package(url: "https://github.com/cloudant/swift-cloudant.git")
 ```
-{: pre}
+{: codeblock}
 
 ## Step 3. Initializing the SDK
 
-After you initialize the SDK in your app, you can begin leveraging {{site.data.keyword.cloudant_short_notm}} to store data.
+After you initialize the SDK in your app, you can begin by using {{site.data.keyword.cloudant_short_notm}} to store data.
 
 1.  Add the following import to your `AppDelegate.swift` or server-side swift file.
     ```
     import SwiftCloudant
     ```
-    {:pre}
+    {: codeblock}
+
 2. Initialize the connection to the database.
     ```swift
     let cloudantURL = NSURL(string: "https://username.cloudant.com")!
@@ -83,7 +84,7 @@ After you initialize the SDK in your app, you can begin leveraging {{site.data.k
     {: codeblock}
 
 ### Basic Operations
-These basic operations illustrate the fundamental actions to create, read, and destroy your documents by using the initialized client.
+These basic operations illustrate the fundamental actions to create, read, and delete your documents by using the initialized client.
 
 #### Create a document
 ```swift
@@ -124,20 +125,18 @@ let delete = DeleteDocumentOperation(id: "doc1",
 }
 client.add(operation: delete)
 ```
-    {: codeblock}
-
+{: codeblock}
 
 ## Step 4. Testing your app
 {: #cloudant_testing}
 
-Is everything set-up correctly? Test it out!
+Is everything configured correctly? Test it out!
 
-1. Run your application, making sure to invoke the initialization and respective operations, such as creating a document.
+1. Run your application, making sure to start the initialization and respective operations, such as creating a document.
 2. Return to the {{site.data.keyword.cloudant_short_notm}} service instance previously created in your web browser, and open the service dashboard.
 3. Select the database that is used, and you can see the documents in the dashboard.
 
 Having trouble? Check out the [{{site.data.keyword.cloudant_short_notm}} API Reference](/docs/services/Cloudant/api/index.html#api-reference-overview).
-
 
 ## Next steps
 {: #cloudant_next notoc}
@@ -145,5 +144,5 @@ Having trouble? Check out the [{{site.data.keyword.cloudant_short_notm}} API Ref
 Great job! You added a level of secure persistence to your app. Keep the momentum by trying one of the following options:
 
 * View the [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudant/swift-cloudant) source code.
-* Starter Kits are one of the fastest ways to leverage the capabilities of IBM Cloud. The **Infinite Scrolling with Cloudant NoSQL for iOS** starter kit illustrates how to extend a ViewController to display data by using pagination. This pattern of app is common for iOS developers, and is a great example for illustrating the capabilities of {{site.data.keyword.cloudant_short_notm}}. View the available starter kits in the [Mobile developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
-* Learn more about and take advantage of all of the features that {{site.data.keyword.cloudant_short_notm}} has to offer, [check out the docs](/docs/services/Cloudant/index.html)!
+* Starter Kits are one of the fastest ways to use the capabilities of {{site.data.keyword.cloud_notm}}. The **Infinite Scrolling with Cloudant NoSQL for iOS** starter kit illustrates how to extend a `ViewController` to display data by using pagination. This pattern of app is common for iOS Developers, and is a great example for illustrating the capabilities of {{site.data.keyword.cloudant_short_notm}}. View the available starter kits in the [Mobile Developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
+* Learn more about and take advantage of all of the features that {{site.data.keyword.cloudant_short_notm}} offers, [check out the docs](/docs/services/Cloudant/index.html)!

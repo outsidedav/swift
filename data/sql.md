@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-28"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-08-28"
 # Using an SQL database for data persistence
 {: #sql_data}
 
-Structured Query Language (SQL) is a domain-specific language that is used for managing data in relational databases. It is recommended to persist your data in case your server shuts down while you're using it. To add data persistence, you can use an SQL Database directly from Swift.
+Structured Query Language (SQL) is a domain-specific language that is used for managing data in relational databases. Data persistence is recommended for when your server shuts down while you're using it. To add data persistence, you can use an SQL Database directly from Swift.
 One of the most important features from Swift is its type-safety. Using an SQL database with Swift is a logical choice because type-safety is supported by both.
 
 ## Using ORM with an SQL Database
@@ -147,7 +147,7 @@ All of these calls take a handler that is called once and runs it when the datab
 
 ## Using ORM with Kitura
 
-To make it easier to try out ORM, the [FoodTrackerBackend tutorial](https://github.com/IBM/FoodTrackerBackend) can save and fetch Meal objects from the iOS app directly into a PostgreSQL database. Even if you complete the tutorial, it is worth going through it again to see the power of Swift-Kuery-ORM, and how it can simplify your Kitura code.
+To make it easier to try out ORM, the [FoodTrackerBackend tutorial](https://github.com/IBM/FoodTrackerBackend) can save and fetch Meal objects from the iOS app directly into a PostgreSQL database. Even if you complete the tutorial, it's worth going through it again to see the power of Swift-Kuery-ORM, and how it can simplify your Kitura code.
 
 ## Using Swift-Kuery directly
 
