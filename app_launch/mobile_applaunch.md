@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -16,13 +16,13 @@ lastupdated: "2018-08-24"
 # Managing app feature releases
 {: #mobile_applaunch}
 
-{{site.data.keyword.engage_full}} lets developers build engaging apps by controlling reach, and roll out of app features that can provide measurable metrics. The service helps developers to remove the coupling that exists today between app feature rollout, and app updates to production. You can now publish features without exposing it to production to gradually release new versions of an app in a controlled manner. With the {{site.data.keyword.engage_short}} service, app owners have full control over feature rollout for a targeted segment.
+{{site.data.keyword.engage_full}} lets Developers build engaging apps by controlling reach, and roll out of app features that can provide measurable metrics. The service helps Developers to remove the coupling that exists today between app feature rollout, and app updates to production. You can now publish features without exposing it to production to gradually release new versions of an app in a controlled manner. With the {{site.data.keyword.engage_short}} service, app owners have full control over feature rollout for a targeted segment.
 
-The {{site.data.keyword.engage_short}} service defines a feature, creates an audience based on device platforms (including custom audience attributes), and finally defines an engagement that choreographs the timing and placement of the feature. After SDKs are used, along with the feature and metrics attributes that are incorporated in the application, the service starts measuring audience experiences. You can now leverage your app based on this information to create customized customer engagements across various categories of your app users.
+The {{site.data.keyword.engage_short}} service defines a feature, creates an audience based on device platforms (including custom audience attributes), and finally defines an engagement that choreographs the timing and placement of the feature. After SDKs are used, along with the feature and metrics attributes that are incorporated in the application, the service starts measuring audience experiences. You can now use your app based on this information to create customized customer engagements across various categories of your app users.
 
-![Cognitive Engage overview](images/process_app_launch.png) Figure 1. Overview of the {{site.data.keyword.engage_short}} service life cycle
+![Cognitive Engage overview](images/process_app_launch.png) Figure 1. Overview of the {{site.data.keyword.engage_short}} service lifecycle
 
-The features of the {{site.data.keyword.engage_short}} services are:
+See the following features of the {{site.data.keyword.engage_short}} service:
 
  - **Accelerate feature deployment**
 
@@ -30,7 +30,7 @@ The features of the {{site.data.keyword.engage_short}} services are:
 
  - **Segment Audience**
 
-    User segments can be defined based on demographic, contextual, and behavioral attributes. Alternatively, features can be rolled out to certain percentage of the entire user base. Key Performance indicators can be defined for each feature and client-side code to measure the results.
+    User segments can be defined based on demographic, contextual, and behavioral attributes. You can also roll out features to certain percentage of the entire user base. Key Performance indicators can be defined for each feature and client-side code to measure the results.
 
  - **Adapt application based on context**
 
@@ -52,7 +52,7 @@ First, ensure that you have the following prerequisites ready to go:
  - iOS 10+
  - Xcode 9
  - Swift 3.2 - 4
- - Cocoapods or Carthage
+ - CocoaPods or Carthage
 
 ## Step 1. Creating an instance of {{site.data.keyword.engage_short}}
 {: ##app_launch_create}
@@ -60,14 +60,15 @@ First, ensure that you have the following prerequisites ready to go:
 1. In the {{site.data.keyword.cloud_notm}} catalog, click **Mobile** > **App Launch**. The service configuration screen opens.
 2. Give your service instance a name, or use the preset name.
 3. Click **Create**.
-4. In the navigation pane, Click **Connections** to select an app and bind it to your service. You can bind the service instance to your app later if you leave it unbound during creation.
+4. In the navigation pane, click **Connections** to select an app and bind it to your service. You can bind the service instance to your app later if you leave it unbound during creation.
 
 ## Step 2. Initializing your app
 {: #step2}
-The service provides platform-specific SDKs to simplify application development. The {{site.data.keyword.cloud_notm}} Mobile Services Swift SDKs can be installed with either Cocoapods or Carthage.
+
+The service provides platform-specific SDKs to simplify application development. The {{site.data.keyword.cloud_notm}} Mobile Services Swift SDKs can be installed with either CocoaPods or Carthage.
 
 1. Click **Settings**.
-2. Install the [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). For more information, see the readme that includes installation steps and technical concepts.
+2. Install the [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). For more information, see the `README` file that includes installation steps and technical concepts.
 3. Copy the configuration keys to initialize your app. Use the app secret, app GUID, and client secret to configure your app and create engagements.
 
 ## Step 3. Creating a feature
@@ -81,7 +82,7 @@ To create a feature, complete the following steps:
 1. In the navigation pane, click **Features** > **Create New Feature**.
 2. Update the Create New Feature and Metrics form with a feature name and description. You can also define the feature properties and add metrics to measure the impact of your engagement. Click **Bulk edit** to add multiple properties by editing the JSON.
 3. Click **Create**. The new feature now appears on the Features panel.
-4. Enable the feature after it is developed.
+4. Enable the feature after it's developed.
 5. To enable a feature to be used as an engagement, click the Feature that you created.
 6. In the Feature Details window, choose to Update Status of your feature to **Ready**.
 7. Click **Update Status**.
@@ -97,26 +98,24 @@ The Feature Details window can export the feature as a JSON file, which can be u
 
 To create an audience, complete the following steps:
 
-1. Create an **audience attribute**:
+### Creating an **audience attribute**:
 
-	a. Click **Audience** > **Create Attribute**.
-	b. Provide the following values:
-		- **Name**: Provide an appropriate name for the attribute.
-		- **Description**: A brief description on the attribute.
-		- **Type**: Choose the attribute type.
-		- **Allowed values**: Enter the attribute values that you would want to use.
+1. Click **Audience** > **Create Attribute**.
+2. Provide the following values:
+  * **Name**: Provide an appropriate name for the attribute.
+  * **Description**: A brief description on the attribute.
+  * **Type**: Choose the attribute type.
+  * **Allowed values**: Enter the attribute values that you would want to use.
 
-  You can choose to create multiple audience attributes, as listed in the following image, based on your requirement.
+  You can choose to create more than one audience attribute, as listed in the following image, based on your requirement.
 
+### Creating an **audience**:
 
-2. Create an **audience**:
-
-	a. Click **Create Audience**.
-	b. Provide an appropriate name and description on the New Audience window.
-	c. Select an attribute, and click **Add**.
-	d. Choose the required options from the listed attributes.
-	e. Click **Save**.
-
+1. Click **Create Audience**.
+2. Provide an appropriate name and description on the New Audience window.
+3. Select an attribute, and click **Add**.
+4. Choose the required options from the listed attributes.
+5. Click **Save**.
 
 You can now create an Engagement.
 
@@ -135,16 +134,15 @@ Feature roll outs can be scheduled and coordinated by defining a start or end ti
 Complete the following steps to create an engagement by using the Feature Control:
 
 1. You can create an engagement by using either of the following methods:
-	- Click **Engagements** in the navigation pane.
-	- Select **Create Engagements** on the new Feature that you created.
-	- In the navigation pane, click **Overview** > **Create New Engagement**.
+  - Click **Engagements** in the navigation pane.
+  - Select **Create Engagements** on the new Feature that you created.
+  - In the navigation pane, click **Overview** > **Create New Engagement**.
 
   The New Engagement window appears.
 
 2. Provide a name and description to your new engagement. Ensure that you give a unique engagement name, and not one that is already listed in Engagements.
-
-	a. **Select Engagement type** as **Feature Control**.
-	b. To do a controlled experiment with multiple variants of the feature, select **A/B testing** on the **Select Experimentation Type**. Click **Next**.
+  - **Select Engagement type** as **Feature Control**.
+  - To do a controlled experiment with more than one variant of the feature, select **A/B testing** on the **Select Experimentation Type**. Click **Next**.
 
 3. Select the Feature that you created. You can also choose to add and define the variants that you might want to experiment with. Click **Next**.
 
@@ -158,55 +156,55 @@ You can now measure the [performance](/docs/services/app-launch/app_measure_perf
 
 ### Enabling In-App Messaging Capability
 
-Through this engagement, an app owner can send notifications to the app users while they are actively using the application.
+Through this engagement, an app owner can send notifications to the app users while they're actively using the application.
 
 Messages can be targeted to all application users or to a specific set of users and devices. For every message that you submit to the service, the intended audience receives a notification.
 
-In-app messages can be scheduled by defining a start or end date and time. You might also schedule it based on an event. These messages are more customized as they are based on analytics insights about the user's choice, interactions, device, application logs, and so on.
+In-app messages can be scheduled by defining a start or end date and time. You might also schedule it based on an event. These messages are more customized as they're based on analytics insights about the user's choice, interactions, device, application logs, and so on.
 
-In-app messages can be used to:
+See the following In-app message examples:
 
 - Send customized messages.
 - Send messages to users that turned off push notifications.
 - Request feedback or engage users in a conversation.
-- Send relevant messages by discovering what the user is looking for.
+- Send relevant messages by based on what the user is looking for.
 - Engage active and loyal customers.
-- Inform users of app updates (launch of a new feature) and so on.
+- Inform users of app updates (launch of a new feature).
 
 ![animated gif](images/in-app-engagement_animated.gif){: gif}
 
 Complete the following steps to create an engagement that uses the Messaging option:
 
 1. You can create an engagement by using either of the following methods:
-	- Click **Engagements** in the navigation pane.
-	- Select **Create Engagement** on the new Feature that you created.
-	- In the navigation pane, click **Overview** > **Create New Engagement**.
+  - Click **Engagements** in the navigation pane.
+  - Select **Create Engagement** on the new Feature that you created.
+  - In the navigation pane, click **Overview** > **Create New Engagement**.
 
   The New Engagement window appears.
 
 2. Provide a name and description to your new engagement. Ensure that you give a unique engagement name and not one that is already listed in Engagements.
+  - **Select Engagement type** as **In-App Messaging**
+  - To do a controlled experiment with multiple variants of the messaging feature, select **A/B testing** on the **Select Experimentation Type**. Click **Next**.
 
-	a. **Select Engagement type** as **In-App Messaging**
-	b. To do a controlled experiment with multiple variants of the messaging feature, select **A/B testing** on the **Select Experimentation Type**. Click **Next**.
+3. Enter the message properties and click **Next**.
 
-3. Fill in the message properties and click **Next**.
-
-4. **Select Audience** and the percentage of audience you want to reach out to. Click **Next**.
+4. **Select Audience** and the percentage of audience you want to reach. Click **Next**.
 
 5. Define a trigger by selecting a **Start/End Date and Time**.
 
 6. Select **Event** and click **Next**.
 
-7. Map the elements to the metrics you want to measure. Select the element and fill in the metric details. Click **Save**.
+7. Map the elements to the metrics you want to measure. Select the element and enter the metric details. Click **Save**.
 
   The new engagement now appears in the Engagement Details window.
 
 You can now measure the [performance](/docs/services/app-launch/app_measure_performance.html#applaunch_type) of your engagement.
 
-### Quick Links
+## Quick Links
+{: #links notoc}
 
 Check out the following links to gain insight, and understand the features of {{site.data.keyword.engage_short}}:
 
- - Try out the [Service](https://console.bluemix.net/catalog/services/app-launch)
+ - Try out the [App Launch Service](https://console.bluemix.net/catalog/services/app-launch).
  - [Blogs and Videos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - For more information, see [documentation](/docs/services/app-launch/index.html#gettingstartedtemplate)
+ - For more information, see the [App Launch - Getting started tutorial](/docs/services/app-launch/index.html#gettingstartedtemplate).

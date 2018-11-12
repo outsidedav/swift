@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -19,7 +19,7 @@ lastupdated: "2018-06-05"
 ## Installing with CocoaPods
 {: #installing_with_cocoapods}
 
-To install an SDK by using Cocoapods, add it to your `Podfile`. If your project does not have a `Podfile` yet, use the `pod init` command.
+To install an SDK by using CocoaPods, add it to your `Podfile`. If your project doesn't have a `Podfile` yet, use the `pod init` command.
 ```ruby
 use_frameworks!
 
@@ -31,7 +31,7 @@ end
 
 Run `pod install`, and open the generated `.xcworkspace` file.
 
-For more information, see the [Cocoapods Guides](https://guides.cocoapods.org/using/index.html).
+For more information, see the [CocoaPods Guides](https://guides.cocoapods.org/using/index.html).
 
 ## Installing with Carthage
 {: #installing_with_carthage}
@@ -44,7 +44,7 @@ github "<github org name>/<github project name>"
 
 Run `carthage update` to start the build process. After the build is finished, add the generated frameworks to your project. 
 
-For more information, see the [Carthage README](https://github.com/Carthage/Carthage#getting-started).
+For more information, see the [Carthage getting started](https://github.com/Carthage/Carthage#getting-started) documentation.
 
 ## Installing with the Swift package manager
 {: #installing_with_swift_package_manager}

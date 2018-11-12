@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-08-07"
 
 The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/index.html){: new_window}.
 
-This {{site.data.keyword.IBM_notm}} SDK Generator plug-in integrates your back-end services to your app with a generated SDK. When a change to a REST API occurs, you can regenerate the SDK and replace the old one for a seamless SDK upgrade. You can also integrate the CLI into a devops pipeline and ensure that the SDK is always consistent with the API spec each time the app is built.
+This {{site.data.keyword.IBM_notm}} SDK Generator plug-in integrates your back-end services to your app with a generated SDK. When a change to a REST API occurs, you can regenerate the SDK and replace the old one to easily upgrade the SDK. You can also integrate the CLI into a DevOps pipeline and ensure that the SDK is always consistent with the API spec each time the app is built.
 
 The REST API definition must be valid and either hosted on a live server endpoint or a local file on your system.
 
@@ -49,7 +49,7 @@ Generate an SDK by entering: `ibmcloud sdk generate [arguments...] [command opti
 {: #gen-args}
 
 * `APP_NAME` - the name of the Cloud Foundry app in your current space
-* `OPENAPI_DOC_LOCATION` - a URL or a relative file path to the raw REST API definition JSON or Yaml
+* `OPENAPI_DOC_LOCATION` - a URL or a relative file path to the raw REST API definition JSON or yaml
 * `GENERATED_SDK_NAME` (optional) - the name of the generated SDK
 
 ### Options
@@ -64,8 +64,8 @@ Generate an SDK by entering: `ibmcloud sdk generate [arguments...] [command opti
    * `-f` - file
    * `-a` - app that runs on {{site.data.keyword.Bluemix_notm}}
    * `-l` - localhost URL
-* `--output "YOUR_RELATIVE_PATH"` (optional) - places the generated SDK in the directory that is specified by `YOUR_RELATIVE_PATH` (If an existing SDK is present, it is overwritten.)
-* `--unzip` (optional) - extracts the generated SDK (If existing SDK artifacts are present, they are overwritten.)
+* `--output "YOUR_RELATIVE_PATH"` (optional) - places the generated SDK in the directory that is specified by `YOUR_RELATIVE_PATH` (Existing SDKs are overwritten).
+* `--unzip` (optional) - extracts the generated SDK (Existing SDKs are overwritten).
 
 ### Usage
 {: #gen-usage}
@@ -77,7 +77,7 @@ ibmcloud sdk generate [APP_NAME] [LOCATION] [PLATFORM]
 ```
 {: codeblock}
 
-To generate an SDK from a URL to an Open API definition file or a local JSON or Yaml file, use the following command.
+To generate an SDK from a URL to an Open API definition file or a local JSON or yaml file, use the following command.
 
 ```
 ibmcloud sdk generate [OPENAPI_DOC_LOCATION] [SDK_Name] [LOCATION] [PLATFORM]
@@ -97,7 +97,7 @@ ibmcloud sdk validate [argument]
 {: #val-args}
 
 * `APP_NAME` - the name of the Cloud Foundry app in your current space
-* `OPENAPI_DOC_LOCATION` - a URL or a relative file path to the raw REST API definition JSON or Yaml
+* `OPENAPI_DOC_LOCATION` - a URL or a relative file path to the raw REST API definition JSON or yaml
 
 ### Usage
 {: #val-usage}
@@ -108,7 +108,7 @@ ibmcloud sdk validate [APP_NAME] [LOCATION]
 ```
 {: codeblock}
 
-To validate an SDK from the URL to an API spec document or a local JSON or Yaml file, use the following command:
+To validate an SDK from the URL to an API spec document or a local JSON or yaml file, use the following command:
 ```
 ibmcloud sdk validate [OPENAPI_DOC_LOCATION] [LOCATION]
 ```

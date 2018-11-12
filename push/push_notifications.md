@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-23"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -14,16 +14,16 @@ lastupdated: "2018-08-23"
 # Sending {{site.data.keyword.mobilepushshort}}
 {: #push_notifications}
 
-Enhance your Swift app capability by using {{site.data.keyword.mobilepushshort}} service on {{site.data.keyword.cloud}} to send real-time notifications to mobile devices and web applications.
+Enhance your Swift app by using {{site.data.keyword.mobilepushshort}} service on {{site.data.keyword.cloud}} to send live notifications to mobile devices and web applications.
 
  - Notifications can be delivered to either all application users, or to a selected set of users or devices.
  - Supports both interactive and silent notifications.
  - Customers can choose to subscribe to specific tags or topics for notification.
  - Enables the app owner to analyze the number of devices that are registered to receive notifications and the number of notifications sent.
 
-You can choose to use the {{site.data.keyword.mobilepushshort}} service either as a part of MobileFirst Services Starter Boilerplate or as {{site.data.keyword.cloud_notm}} [Dedicated Services](/docs/dedicated/index.html).  You can also use an SDK (software development kit) and [REST APIs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobile.{DomainName}/imfpush/){: new_window} to further develop your client applications.
+You can choose to use the {{site.data.keyword.mobilepushshort}} service either as a part of MobileFirst Services Starter Boilerplate or as {{site.data.keyword.cloud_notm}} [Dedicated Services](/docs/dedicated/index.html). You can also use an SDK (software development kit) and [REST APIs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobile.{DomainName}/imfpush/){: new_window} to further develop your client applications.
 
-![Push Overview](images/push_notification_lifecycle.jpg) Figure 1. Overview of the {{site.data.keyword.mobilepushshort}} service life cycle
+![Push Overview](images/push_notification_lifecycle.jpg) Figure 1. Overview of the {{site.data.keyword.mobilepushshort}} service lifecycle
 
 ## Before you begin
 
@@ -32,7 +32,7 @@ First, be sure that you have the following prerequisites ready to go:
  - iOS 8.0+
  - Xcode 7.3, 8.0
  - Swift 2.3 - 4.0
- - Cocoapods or Carthage
+ - CocoaPods or Carthage
 
 ## Step 1. Creating an instance of {{site.data.keyword.mobilepushshort}}
 {: #push_create}
@@ -40,18 +40,19 @@ First, be sure that you have the following prerequisites ready to go:
 1. In the {{site.data.keyword.cloud_notm}} catalog, click **Mobile** > **{{site.data.keyword.mobilepushshort}}**. The service configuration screen opens.
 2. Give your service instance a name, or use the preset name.
 3. Click **Create**.
-4. In the navigation pane, Click **Connections** to select an app and bind it to your service. You can bind the service instance to your app later if you leave it unbound during creation.
+4. In the navigation pane, click **Connections** to select an app and bind it to your service. You can bind the service instance to your app later if you leave it unbound during creation.
 
 
 ## Step 2. Obtain your notification provider credentials
+{: #get_creds}
 
-To set up Push Notifications service, you need to obtain the required credentials from the Apple Push Notification Service (APNs). Follow the steps here to [obtain and configure your APNs credentials ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}.
+To set up Push Notifications service, you need to get the required credentials from the Apple Push Notification Service (APNs). Follow the steps here to [obtain and configure your APNs credentials ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}.
 
 
 ## Step 3. Configure a service instance
 {: #enable-push-ios-notifications}
 
-To use the {{site.data.keyword.mobilepushshort}} service to send notifications, upload the `.p12` keystore that you created, which contains the private key and SSL certificates that are required to build and publish your application. You can also use the REST API to upload an APNs certificate.
+To use the {{site.data.keyword.mobilepushshort}} service to send notifications, upload the `.p12` keystore that you created, which has the private key and SSL certificates that are required to build and publish your application. You can also use the REST API to upload an APNs certificate.
 
 After the `.cer` file is in your key chain access, export it to your computer to create a `.p12` certificate.
 
@@ -71,13 +72,12 @@ To set up APNs on the Push Notification services console, complete the steps:
 		- In the Safari Push section, update the form with the required information.
 		- **Website Name**: The website name provided in the Notification center.
 		- **Website Push ID**: Update with the reverse-domain string for your Website Push ID. For example, web.com.acmebanks.www.
-		- **Website URL**: Provide the URL of the website that should be subscribed to push notifications. For example, https://www.acmebanks.com.
-		- **Allowed Domains**: (optional parameter) A list of websites that request permission from the user. Ensure that the URLs are comma separated values. The values in Website URL are used if the info is not provided.
+		- **Website URL**: Provide the URL of the website that is subscribed to push notifications. For example, https://www.acmebanks.com.
+		- **Allowed Domains**: (optional parameter) A list of websites that request permission from the user. Ensure that the URLs are comma separated values. The values in Website URL are used if the info isn't provided.
 		- **URL Format String**: The URL to resolve when the notification is clicked. For example, ["https://www.acmebanks.com"]. Ensure that the URL uses http or https schema.
 		-**Safari web push certificate**: Upload the `.p12` certificate and provide the password.
 4. Click **Save**.
-	![{{site.data.keyword.mobilepushshort}} console](images/push_configure_safari.jpg)
-
+  ![{{site.data.keyword.mobilepushshort}} console](images/push_configure_safari.jpg)
 
 ## Step 4. Set up service client SDK
 
@@ -93,7 +93,7 @@ After you develop your application, you can send basic push notifications.
 To send basic push notifications, complete the following steps:
 
 1. Select **Send Notifications**, and compose a message by choosing a **Send to** option. The supported options are **Device by Tag**, **Device Id**, **User Id**, **iOS devices**, **Web Notifications**, and **All Devices**.
-**Note**: When you select the **All Devices** option, all devices subscribed to {{site.data.keyword.mobilepushshort}} receive notifications.
+**Note**: When you select the **All Devices** option, all devices that are subscribed to {{site.data.keyword.mobilepushshort}} receive notifications.
 
 	![Notifications screen](images/tag_notification.jpg)
 
@@ -101,10 +101,10 @@ To send basic push notifications, complete the following steps:
 3. Click **Send**.
 3. Verify that your devices or browser received the notification.
 
-The following screen shot shows an alert box handling a push notification in the foreground on the device.
+The following screen capture shows an alert box that handles a push notification in the foreground on the device.
 	![Foreground push notification on Android](images/Android_Screenshot.jpg)
 
-The following screen shot shows a push notification in the background.
+The following screen capture shows a push notification in the background.
 	![Background push notification on Android](images/background.png)
 
 ### Optional settings
@@ -129,6 +129,6 @@ The {{site.data.keyword.mobilepushshort}} service provides a monitoring utility 
 
  - For an introduction to working with Mobile services and {{site.data.keyword.cloud_notm}}, see [Getting started with Mobile apps on {{site.data.keyword.cloud_notm}}](/docs/services/mobile/index.html).
 
- - Starter Kits are one of the fastest ways to leverage the capabilities of {{site.data.keyword.cloud_notm}}. View our available starter kits in the [Mobile developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
+ - Starter Kits are one of the fastest ways to use the features of {{site.data.keyword.cloud_notm}}. View our available starter kits in the [Mobile Developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
 
  - You can use the [Swagger UI](https://mobile.ng.bluemix.net/imfpush/) to quickly review REST API documentation.

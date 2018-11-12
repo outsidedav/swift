@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-30"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -16,29 +16,32 @@ lastupdated: "2018-08-30"
 
 # Adding user authentication
 
-Application security can be incredibly complicated. For most developers, it's one of the hardest parts of creating an app. How can you be sure that you are protecting your users information? By integrating {{site.data.keyword.appid_full}} into your apps, you can secure resources and add authentication; even when you don't have much security experience.
+Application security is incredibly complicated. For most Developers, it's one of the more difficult tasks of creating an app. How can you be sure that you're protecting your users information? By integrating {{site.data.keyword.appid_full}} into your apps, you can secure resources and add authentication, even when you don't have much security experience.
 
-By requiring users to sign in, you can store user data such as app preferences (or information from public social profiles), and then leverage that data to customize each users experience within the app. {{site.data.keyword.appid_short_notm}} provides a log in framework for you, but you can also bring your own branded sign-in screens to use with cloud directory.
+By requiring users to sign in, you can store user data such as app preferences (or information from public social profiles), and then use that data to customize each users experience within the app. {{site.data.keyword.appid_short_notm}} provides a log in framework for you, but you can also bring your own branded sign-in screens to use with cloud directory.
 
 For all of the ways that you can use {{site.data.keyword.appid_short_notm}} and architecture information, see [About {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
 
 ## Before you begin
+{: #before}
 
 First, be sure that you have the following prerequisites ready to go:
- * CocoaPods (version 1.1.0 or higher)
- * iOS (version 9 or higher)
- * MacOS (version 10.11.5 or higher)
- * Xcode (version 9.0.1 or higher)
+* CocoaPods (version 1.1.0 or higher)
+* iOS (version 9 or higher)
+* MacOS (version 10.11.5 or higher)
+* Xcode (version 9.0.1 or higher)
 
 ## Step 1. Creating an instance of {{site.data.keyword.appid_short_notm}}
+{: #create_instance}
 
-Provision an instance of the service:
+Create an instance of the {{site.data.keyword.appid_short_notm}} service:
 
 1. In the [{{site.data.keyword.cloud_notm}} catalog](https://console.bluemix.net/catalog/), select {{site.data.keyword.appid_short_notm}}. The service configuration screen opens.
 2. Give your service instance a name, or use the preset name.
 3. Select your pricing plan and click **Create**.
 
 ## Step 2. Installing the iOS Swift SDK
+{: #install_sdk}
 
 The service provides an SDK to help make coding your app easier. The SDK must be installed in your app code.
 
@@ -66,22 +69,23 @@ After you initialize the SDK in your app, you can start configuring your {{site.
 1. Go to **Project Settings > Capabilities > Keychain sharing** and enable keychain sharing in your Xcode project.
 
 2. Go to **Project Settings > Info >URL Types** and add the following value to both the **URL Scheme** and the **Identifier** text boxes.
-    ```
-    $(PRODUCT_BUNDLE_IDENTIFIER)
-    ```
-    {: pre}
+  ```
+  $(PRODUCT_BUNDLE_IDENTIFIER)
+  ```
+  {: codeblock}
 
 3. Add the following import to your `AppDelegate.swift` file.
-    ```swift
-    import BluemixAppID
-    ```
-    {:pre}
+  ```swift
+  import BluemixAppID
+  ```
+  {: codeblock}
 
-4. Pass the tenant ID and region parameters to initialize the SDK. A common, though not mandatory, place to put the code is in the `application:didFinishLaunchingWithOptions` method of the AppDelegate in your app.
-    ```swift
-    AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
-    ```
-    {: pre}
+4. Pass the `tenant ID` and `region` parameters to initialize the SDK. A common, though not mandatory, place to put the code is in the `application:didFinishLaunchingWithOptions` method of the `AppDelegate` in your app.
+  ```swift
+  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  ```
+  {: codeblock}
+  
   <table>
     <thead>
       <th colspan=2><img src="images/idea.png" alt=""/> Understanding the commands components </th>
@@ -93,7 +97,7 @@ After you initialize the SDK in your app, you can start configuring your {{site.
       </tr>
       <tr>
         <td><em>AppID_region</em></td>
-        <td>The {{site.data.keyword.appid_short_notm}} region is the IBM Cloud region in which you are working with the service. This region can be found in the service dashboard and can be <em>AppID.REGION_US_SOUTH</em>,<em>AppID.REGION_SYDNEY</em>,<em>AppID.REGION_UK</em>.</td>
+        <td>The {{site.data.keyword.appid_short_notm}} region is the {{site.data.keyword.cloud_notm}}} region in which you're working with the service. This region can be found in the service dashboard and can be <em>AppID.REGION_US_SOUTH</em>,<em>AppID.REGION_SYDNEY</em>,<em>AppID.REGION_UK</em>.</td>
       </tr>
     </tbody>
   </table>
@@ -104,7 +108,7 @@ After you initialize the SDK in your app, you can start configuring your {{site.
             return AppID.sharedInstance.application(application, open: url, options: options)
         }
     ```
-    {: pre}
+    {: codeblock}
 
 ## Step 4. Managing the sign-in experience
 {: #managing-signin-appid}
@@ -123,7 +127,7 @@ To configure social identity providers:
 
 1. Open the {{site.data.keyword.appid_short_notm}} dashboard to **Identity Providers > Manage**.
 2. Set the identity providers that you want to use to **On**. You can use any combination of identity providers, but if you'd like to bring customized sign-on screens, you need to enable Cloud Directory only.
-3. Update the [default configuration](/docs/services/appid/identity-providers.html) to your own credentials. {{site.data.keyword.appid_short_notm}} provides IBM credentials that you can use to try out the service, but prior to publishing your app, you need to update the configuration.
+3. Update the [default configuration](/docs/services/appid/identity-providers.html) to your own credentials. {{site.data.keyword.appid_short_notm}} provides IBM credentials that you can use to try out the service, but before you publish your app, you need to update the configuration.
 4. Customize the sign-in screen to display the image and colors of your choice.
 5. To call the login widget with your app, add the following command to your code.
     ```swift
@@ -257,7 +261,7 @@ To configure cloud directory:
 ## Step 5. Testing your app
 {: #appid_testing}
 
-Is everything set-up correctly? You can test it out!
+Is everything configured correctly? You can test it out!
 
 1. Open your app with the Xcode emulator.
 2. Using the GUI, walk through the process of signing into your application. If you configured cloud directory, be sure that all of your screens are displaying how you intend.
@@ -272,4 +276,4 @@ Having trouble? Check out [troubleshooting {{site.data.keyword.appid_short_notm}
 Great job! You added a level of security to your app. Keep the momentum by trying one of the following options:
 
 * Learn more about and take advantage of all of the features that {{site.data.keyword.appid_short_notm}} has to offer, [check out the docs](/docs/services/appid/index.html)!
-* Starter Kits are one of the fastest ways to leverage the capabilities of IBM Cloud. View the available starter kits in the [Mobile developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
+* Starter Kits are one of the fastest ways to use the features of {{site.data.keyword.cloud_notm}}. View the available starter kits in the [Mobile Developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!

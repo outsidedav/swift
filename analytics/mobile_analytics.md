@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-30"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -15,30 +15,30 @@ lastupdated: "2018-08-30"
 # Collecting mobile analytics
 {: #mobile_analytics}
 
-{{site.data.keyword.mobileanalytics_short}} on {{site.data.keyword.cloud_notm}} provides developers, IT administrators, and business stakeholders insight into how their mobile apps are performing and how it is being used. With the {{site.data.keyword.mobileanalytics_short}} service you can:
+{{site.data.keyword.mobileanalytics_short}} on {{site.data.keyword.cloud_notm}} provides Developers, administrators, and business stakeholders insight into how their mobile apps are performing and how it's being used. With the {{site.data.keyword.mobileanalytics_short}} service you can:
 
- - **Gain immediate insight** - See performance and usage metrics in real time.
+ - **Gain immediate insight** - See live performance and usage metrics.
 
- - **Implement in minutes** - Create a service instance in {{site.data.keyword.cloud_notm}}, add the SDK to your project, paste two lines of code into your application and you are ready to collect dozens of pre-defined metrics.
+ - **Implement in minutes** - Create a service instance in {{site.data.keyword.cloud_notm}}, add the SDK to your project, paste two lines of code into your application and you're ready to collect dozens of pre-defined metrics.
 
- - **Collect data that you want** - Instrument apps with custom events, discover how users are interacting with your app, track purchases, and monitor app activity.
+ - **Collect data that you want** - Instrument apps with custom events, see how users are interacting with your app, track spending, and monitor app activity.
 
  - **View metrics at-a-glance** - The {{site.data.keyword.mobileanalytics_short}} console offers ready-made charts, without the need to write queries.
 
  - **Focus on what is important to you** - Filter metrics by time, adapter, application, application version, OS, OS version, or device model.
 
- - **Rapidly discover issues** - Monitor crash status. Set alert triggers on critical metrics and route alerts to any REST endpoint.
+ - **Find issues quickly** - Monitor crash status. Set alert triggers on critical metrics and route alerts to any REST endpoint.
 
  - **Troubleshoot to root cause** - Use custom logging in your application and automatically upload the logs and search them from the console. Drill down on crash events to see stack traces.
 
 ## Before you begin
 
-First, be sur that you have the following prerequisites ready to go:
+First, be sure that you have the following prerequisites ready to go:
 
  - iOS 8.0+ / watchOS 2.0+
  - Xcode 7.3, 8.0
  - Swift 2.2 - 3.0
- - Cocoapods or Carthage
+ - CocoaPods or Carthage
 
 ## Step 1. Creating an instance of {{site.data.keyword.mobileanalytics_short}}
 {: #mobile_analytics_create}
@@ -46,13 +46,13 @@ First, be sur that you have the following prerequisites ready to go:
 1. In the {{site.data.keyword.cloud_notm}} catalog, click **Mobile** > **{{site.data.keyword.mobileanalytics_short}}**. The service configuration screen opens.
 2. Give your service instance a name, or use the preset name.
 3. Click **Create**.
-4. In the navigation pane, Click **Connections** to select an app and bind it to your service. You can bind the service instance to your app later if you leave it unbound during creation.
+4. In the navigation pane, click **Connections** to select an app and bind it to your service. You can bind the service instance to your app later if you leave it unbound during creation.
 
 ## Step 2. Installing the iOS Swift SDK
 
-The service provides platform-specific SDKs to simplify application development. The {{site.data.keyword.cloud_notm}} Mobile Services Swift SDKs can be installed with either Cocoapods or Carthage. For more information, see [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics).
+The service provides platform-specific SDKs to simplify application development. The {{site.data.keyword.cloud_notm}} Mobile Services Swift SDKs can be installed with either CocoaPods or Carthage. For more information, see [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics).
 
-You can instrument your mobile applilcation by using the {{site.data.keyword.mobileanalytics_full}} SDK. The Swift SDK is available for iOS and watchOS.
+You can instrument your mobile application by using the {{site.data.keyword.mobileanalytics_full}} SDK. The Swift SDK is available for iOS and watchOS.
 
 1. Make sure that you correctly set up Xcode. To learn how to set up your iOS development environment, see the [Apple Developer website ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.apple.com/support/xcode/){: new_window}. Read about the [Xcode requirements ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#requirements){: new_window} for Client SDK Swift Analytics.
 
@@ -63,14 +63,14 @@ The {{site.data.keyword.mobileanalytics_short}} SDK is distributed with [CocoaPo
 ### CocoaPods
 {: #cocoapods}
 
-1. Follow the [{{site.data.keyword.Bluemix_notm}} Mobile Services Swift SDK instructions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window} on GitHub to install `BMSAnalytics` by using Cocoapods and add it to your Podfile.
+1. Follow the [{{site.data.keyword.Bluemix_notm}} Mobile Services Swift SDK instructions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window} on GitHub to install `BMSAnalytics` by using CocoaPods and add it to your Podfile.
 
 2. After installing the iOS Client SDK, [import and initialize](sdk.html#initalize-ma-sdk) the Analytics Client SDK.   
 
 ### Carthage
 {: #carthage}
 
-If you are not using CocoaPods, you can add frameworks to your project by using [Carthage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos){: new_window}.
+If you aren't using CocoaPods, you can add frameworks to your project by using [Carthage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos){: new_window}.
 
 1. Follow the [Carthage installation instructions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#carthage){: new_window} on GitHub to install `BMSAnalytics`.
 
@@ -84,10 +84,10 @@ By using the {{site.data.keyword.mobileanalytics_short}} you can collect the fol
 This category includes generic usage and device information that applies to all applications. It indicates the volume, frequency, or duration of application use. Predefined data is collected automatically after you initialize the {{site.data.keyword.mobileanalytics_short}} SDK in your application.
 
 **Application log messages**: 
-This category enables the developer to add lines of code throughout the application that can log custom messages to assist with development and debugging. The developer assigns a severity/verbosity level to each log message.
+This category enables the Developer to add lines of code throughout the application that can log custom messages to assist with development and debugging. The Ddeveloper assigns a severity/verbosity level to each log message.
 
 **Custom events**: 
-This category includes data that you define yourself and that is specific to your app. This data represents events that occur within your app, such as page views, button taps, or in-app purchases. In addition to initializing the {{site.data.keyword.mobileanalytics_short}} SDK in your app, you must add a line of code for each custom event that you want to track.
+This category includes data that you define yourself and that is specific to your app. This data shows events that occur within your app, such as page views, button taps, or in-app purchases. In addition to initializing the {{site.data.keyword.mobileanalytics_short}} SDK in your app, you must add a line of code for each custom event that you want to track.
 
 ## Step 4. Identifying your service credentials API Key value
 {: #analytics-clientkey}
@@ -119,7 +119,7 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 	```
 	{: codeblock}
 
-	You must initialize the `BMSClient` with the **bluemixRegion** parameter. In the initializer, the **bluemixRegion** value specifies which {{site.data.keyword.Bluemix_notm}} deployment you are using.
+	You must initialize the `BMSClient` with the **bluemixRegion** parameter. In the initializer, the **bluemixRegion** value specifies which {{site.data.keyword.Bluemix_notm}} deployment you're using.
 
 3. Initialize Analytics by using your application object and giving it your application’s name.
 
@@ -183,12 +183,12 @@ The {{site.data.keyword.mobileanalytics_short}} Client SDK logging framework sup
   * `ERROR` - Use for unexpected exceptions or unexpected network protocol errors
   * `WARN` - Use to log usage warnings that are not considered critical errors, such as usage of deprecated APIs or slow network response
   * `INFO` - Use for reporting initialization events and other data that might be important, but not urgent
-  * `DEBUG` - Use for reporting debug statements to help developers resolve application defects
+  * `DEBUG` - Use for reporting debug statements to help Developers resolve application defects
 
 ### Log level scenario
 {: #log-level-scenario}
 
-When the logger level is configured to `FATAL`, the logger captures uncaught exceptions, but does not capture any logs that lead up to the crash event. You can set a more verbose logger level to ensure that logs that might lead to a `FATAL` logger entry, such as `WARN` and `ERROR`, are also captured.
+When the logger level is configured to `FATAL`, the logger captures uncaught exceptions, but doesn't capture any logs that lead up to the crash event. You can set a more verbose logger level to ensure that logs that might lead to a `FATAL` logger entry, such as `WARN` and `ERROR`, are also captured.
 
 When the logger level is set `DEBUG`, you also get Mobile Analytics Client SDK logs, which are included when you send logs.
 
@@ -262,7 +262,7 @@ You can configure the {{site.data.keyword.mobileanalytics_short}} Client SDK to 
 
 You can see [application crash data](app-monitoring.html#monitor-app-crash) by sending analytics and log information to {{site.data.keyword.mobileanalytics_short}}.
 
-The `Analytics.send()` method populates the **Crash Overview** and **Crashes** tables on the **Crashes** page. Charts are enabled by using the initialization and sending process for analytics; no special configuration is necessary.
+The `Analytics.send()` method populates the **Crash Overview** and **Crashes** tables on the **Crashes** page. You can enable charts by using the initialization and sending process for analytics.
 
 The `Logger.send()` method populates the **Crash Summary** and **Crash Details** tables on the **Troubleshooting** page. You must enable your application to store and send logs to populate the charts by adding a statement in your application code:
 ```
@@ -289,7 +289,7 @@ Analytics.userIdentity = "username"
 ## Step 12. Testing your app
 {: #appid_testing}
 
-Is everything set-up correctly? Time to test it out!
+Is everything configured correctly? Time to test it out!
 
 1. Open your app. If you have a web application, use a browser. If you have an iOS client application, open with the Xcode emulator.
 2. Compile and run the application on your emulator or device.
@@ -303,6 +303,6 @@ Is everything set-up correctly? Time to test it out!
 
  - For an introduction to working with mobile services and {{site.data.keyword.Bluemix_notm}}, see [Getting started with Mobile apps on IBM Cloud](/docs/services/mobile/index.html).
 
- - Starter Kits are one of the fastest ways to leverage the capabilities of {{site.data.keyword.cloud_notm}}. View all the available starter kits in the [Mobile developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
+ - Starter Kits are one of the fastest ways to leverage the features of {{site.data.keyword.cloud_notm}}. View all the available starter kits in the [Mobile Developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
 
  - You can use the [Swagger UI](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/) to quickly review REST API documentation.
