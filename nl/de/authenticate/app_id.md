@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-08-09"
 
 # Benutzerauthentifizierung hinzufügen
 
-Anwendungssicherheit kann unglaublich kompliziert sein. Für die meisten
+Anwendungssicherheit ist ein sehr kompliziertes Thema. Für die meisten
 Entwickler stellt sie eine der schwierigsten Aufgaben beim Erstellen einer App
 dar. Es muss gewährleistet sein, dass die Daten Ihrer Benutzer geschützt sind. Durch
 die Integration von {{site.data.keyword.appid_full}} in Ihre Apps
@@ -35,18 +35,20 @@ Informationen zu allen Möglichkeiten für die Nutzung von
 Architektur finden Sie unter [Informationen zu {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
 
 ## Vorbereitende Schritte
+{: #before}
 
 Stellen Sie zunächst sicher, dass die folgenden Voraussetzungen gegeben
 sind:
- * CocoaPods (Version 1.1.0 oder höher)
- * iOS (Version 9 oder höher)
- * MacOS (Version 10.11.5 oder höher)
- * Xcode (Version 9.0.1 oder höher)
+* CocoaPods (Version 1.1.0 oder höher)
+* iOS (Version 9 oder höher)
+* MacOS (Version 10.11.5 oder höher)
+* Xcode (Version 9.0.1 oder höher)
 
 ## Schritt 1. Instanz von {{site.data.keyword.appid_short_notm}}
 erstellen
+{: #create_instance}
 
-Stellen Sie eine Instanz des Service bereit:
+Stellen Sie eine Instanz des {{site.data.keyword.appid_short_notm}}-Service bereit:
 
 1. Wählen Sie im
 [{{site.data.keyword.cloud_notm}}-Katalog](https://console.bluemix.net/catalog/)
@@ -58,6 +60,7 @@ den voreingestellten Namen.
 klicken Sie auf **Erstellen**.
 
 ## Schritt 2. Swift-SDK für iOS installieren
+{: #install_sdk}
 
 Der Service bietet ein SDK, das die Codierung Ihrer App
 vereinfacht. Das SDK muss in Ihrem App-Code installiert sein.
@@ -97,29 +100,28 @@ gemeinsame Nutzung der Schlüsselkette in Ihrem XCode-Projekt.
 Info > URL-Typen**
 und fügen Sie den folgenden Wert zu beiden Textfeldern
 **URL-Schema** und **ID** hinzu.
-    ```
-    $(PRODUCT_BUNDLE_IDENTIFIER)
-    ```
-    {: pre}
+  ```
+  $(PRODUCT_BUNDLE_IDENTIFIER)
+  ```
+  {: codeblock}
 
 3. Fügen Sie den folgenden Import zu
 Ihrer Datei `AppDelegate.swift` hinzu.
-    ```swift
-    import BluemixAppID
-    ```
-    {:pre}
+  ```swift
+  import BluemixAppID
+  ```
+  {: codeblock}
 
-4. Übergeben Sie die Tenant-ID und die Regionsparameter, um das SDK zu
-initialisieren. Eine gängige, aber nicht verbindliche Position für den Code ist
-die Methode `application:didFinishLaunchingWithOptions` für
-"AppDelegate" in Ihrer App.
-    ```swift
-    AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
-    ```
-    {: pre}
+4. Übergeben Sie die Parameter `tenant ID` und `region`, um die SDK zu initialisieren. Eine gängige, aber nicht verbindliche Position für den Code ist
+die Methode `application:didFinishLaunchingWithOptions` von `AppDelegate` in Ihrer App. 
+  ```swift
+  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  ```
+  {: codeblock}
+  
   <table>
     <thead>
-      <th colspan=2><img src="images/idea.png" alt=""/> Wissenswertes zu den Befehlskomponenten</th>
+      <th colspan=2><img src="images/idea.png" alt=""/> Wissenswertes zu den Befehlskomponenten </th>
     </thead>
     <tbody>
       <tr>
@@ -132,8 +134,7 @@ auf der Registerkarte
       </tr>
       <tr>
         <td><em>AppID_region</em></td>
-        <td>Die {{site.data.keyword.appid_short_notm}}-Region ist
-die IBM Cloud-Region, in der Sie mit dem Service arbeiten. Diese Region ist im
+        <td>Die {{site.data.keyword.appid_short_notm}}-Region ist die {{site.data.keyword.cloud_notm}}-Region, in der Sie mit dem Service arbeiten. Diese Region ist im
 Service-Dashboard zu finden und kann <em>AppID.REGION_US_SOUTH</em>,
 <em>AppID.REGION_SYDNEY</em> oder <em>AppID.REGION_UK</em> lauten.</td>
       </tr>
@@ -146,7 +147,7 @@ Service-Dashboard zu finden und kann <em>AppID.REGION_US_SOUTH</em>,
             return AppID.sharedInstance.application(application, open: url, options: options)
         }
     ```
-    {: pre}
+    {: codeblock}
 
 ## Schritt 4. Anmeldefunktionalität verwalten
 {: #managing-signin-appid}
@@ -184,7 +185,7 @@ mit Ihren eigenen Berechtigungsnachweisen. {{site.data.keyword.appid_short_notm}
 stellt IBM Berechtigungsnachweise bereit, mit deren Hilfe Sie den Service
 ausprobieren können. Bevor Sie Ihre App veröffentlichen, müssen Sie jedoch die
 Konfiguration aktualisieren.
-4. Passen Sie die vorkonfigurierte Anmeldeanzeige so an, dass das Bild und die Farben Ihrer Wahl angezeigt werden.
+4. Passen Sie die Anmeldeanzeige so an, dass das Bild und die Farben Ihrer Wahl angezeigt werden.
 5. Fügen Sie den folgenden Befehl zu Ihrem Code hinzu, um das
 Anmeldewidget mit Ihrer App aufzurufen.
     ```swift
@@ -328,7 +329,7 @@ Anwendung an.
 ## Schritt 5. App testen
 {: #appid_testing}
 
-Jetzt können Sie testen, ob Sie alles richtig konfiguriert haben.
+Ist alles richtig konfiguriert? Jetzt können Sie testen, ob Sie alles richtig konfiguriert haben.
 
 1. Öffnen Sie Ihre App mit dem Xcode-Emulator.
 2. Durchlaufen Sie den Prozess für die Anmeldung bei Ihrer Anwendung
@@ -351,5 +352,4 @@ aus:
 {{site.data.keyword.appid_short_notm}} in der
 [Dokumentation](/docs/services/appid/index.html). Dort
 erfahren Sie auch, wie Sie alle gebotenen Funktionen nutzen können.
-* Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des
-Leistungsspektrums von IBM Cloud. Im [Dashboard für Entwickler für Mobilgeräte](https://console.bluemix.net/developer/mobile/dashboard) werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.
+* Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://console.bluemix.net/developer/mobile/dashboard) werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.

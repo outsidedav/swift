@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -15,8 +15,7 @@ lastupdated: "2018-08-07"
 senden
 {: #push_notifications}
 
-Sie können die Funktionalität Ihrer Swift-App erweitern, indem Sie mit
-dem
+Sie können Ihre Swift-App erweitern, indem Sie mit dem
 {{site.data.keyword.mobilepushshort}}-Service in
 {{site.data.keyword.cloud}} Echtzeitbenachrichtigungen an Mobilgeräte
 und Webanwendungen senden.
@@ -45,7 +44,7 @@ sind:
  - iOS 8.0+
  - Xcode 7.3, 8.0
  - Swift 2.3 - 4.0
- - Cocoapods oder Carthage
+ - CocoaPods oder Carthage
 
 ## Schritt 1. Instanz von {{site.data.keyword.mobilepushshort}}
 erstellen
@@ -58,14 +57,15 @@ Anzeige für die Servicekonfiguration wird geöffnet.
 2. Vergeben Sie für die Serviceinstanz einen Namen oder verwenden Sie
 den voreingestellten Namen.
 3. Klicken Sie auf **Erstellen**.
-4. Klicken Sie im Navigationsbereich auf
-**Verbindungen**, um eine App auszuwählen und an Ihren
+4. Klicken Sie im Navigationsbereich
+auf **Verbindungen**, um eine App auszuwählen und an Ihren
 Service zu binden. Falls Sie während der Erstellung keine Bindung herstellen,
 können Sie Ihre App auch später an die Serviceinstanz binden.
 
 
 ## Schritt 2. Berechtigungsnachweise für Benachrichtigungsprovider
 anfordern
+{: #get_creds}
 
 Zur Einrichtung des Push Notifications-Service müssen Sie die
 erforderlichen Berechtigungsnachweise beim Apple Push Notification-Service
@@ -79,9 +79,7 @@ konfigurieren.
 
 Damit Sie den {{site.data.keyword.mobilepushshort}}-Service zum
 Senden von Benachrichtigungen verwenden können, laden Sie das von Ihnen
-erstellte Zertifikat des Typs `.p12` hoch. Dieses Zertifikat
-enthält den privaten Schlüssel und die SSL-Zertifikate, die zum Erstellen und
-Veröffentlichen Ihrer Anwendung erforderlich sind. Zum Hochladen eines
+erstellte Zertifikat des Typs `.p12` hoch, das über den privaten Schlüssel und die SSL-Zertifikate verfügt, die zum Erstellen und Veröffentlichen Ihrer Anwendung erforderlich sind. Zum Hochladen eines
 APNs-Zertifikats können Sie auch die REST-API verwenden.
 
 Sobald die Datei `.cer` Bestandteil Ihres
@@ -92,7 +90,6 @@ Weitere Informationen zur Verwendung der APNs finden Sie auf der Seite [iOS Deve
 
 Gehen Sie folgendermaßen vor, um APNs in der Konsole des Push
 Notification-Service zu konfigurieren:
-
 
 1. Wählen Sie die Option **Konfigurieren** in der
 Konsole des
@@ -121,7 +118,7 @@ angegebene Name der Website.
 Feld mit Ihrer Push-ID für die Website, bei der es sich um eine Zeichenfolge
 mit umgekehrter Domänenreihenfolge handelt. Beispiel: web.com.acmebanks.www.
 		- **Website-URL**: Geben Sie die URL der Website
-an, die abonniert werden soll, um Push-Benachrichtigungen zu erhalten. Beispiel: https://www.acmebanks.com.
+an, die abonniert wurde, um Push-Benachrichtigungen zu erhalten. Beispiel: https://www.acmebanks.com.
 		- **Zulässige Domänen**: Dieser optionale Parameter
 definiert eine Liste von Websites, die vom Benutzer eine Berechtigung
 anfordern. Geben Sie die URLs als durch Kommas getrennte Werte an. Die Werte im
@@ -134,14 +131,12 @@ Zertifikat des Typs `.p12` hoch und geben Sie das Kennwort an.
 4. Klicken Sie auf **Speichern**.
 	![{{site.data.keyword.mobilepushshort}}-Konsole](images/push_configure_safari.jpg)
 
-
 ## Schritt 4. Client-SDK für Service konfigurieren
 
 Damit iOS-Anwendungen Push-Benachrichtigungen für Ihre Geräte erhalten
 können, müssen Sie das iOS-SDK für den {{site.data.keyword.mobilepushshort}}-Service konfigurieren.
 
-Die {{site.data.keyword.cloud_notm}}-Swift-SDKs für Mobile-Services können entweder mit Cocoapods oder Carthage installiert werden. 
-Weitere Informationen finden Sie unter der Adresse
+Die {{site.data.keyword.cloud_notm}}-Swift-SDKs für Mobile-Services können entweder mit Cocoapods oder Carthage installiert werden. Weitere Informationen finden Sie unter der Adresse
 [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application).
 
 
@@ -171,11 +166,13 @@ entsprechende Auswahl wie benötigt.
 3. Klicken Sie auf **Senden**.
 3. Überprüfen Sie, ob Ihre Geräte oder Browser die Benachrichtigung erhalten haben.
 
-Der folgende Screenshot zeigt ein Alertfeld, mit dem eine
-Push-Benachrichtigung auf dem Gerät im Vordergrund verarbeitet wird.
+Der folgende Screenshot zeigt ein Alertfeld, das eine
+Push-Benachrichtigung auf dem Gerät im Vordergrund verarbeitet.
 	![Push-Benachrichtigung unter Android im Vordergrund](images/Android_Screenshot.jpg)
+
 Der folgende Screenshot zeigt eine Push-Benachrichtigung im Hintergrund.
 	![Push-Benachrichtigung unter Android im Hintergrund](images/background.png)
+
 ### Optionale Einstellungen
 {: #push_step_4_ios}
 

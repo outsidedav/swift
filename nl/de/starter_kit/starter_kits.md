@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-29"
 
 ---
 {:new_window: target="_blank"}
@@ -127,8 +127,9 @@ verfügbar sind. Daher können nicht alle Services allen Apps zugeordnet werden.
 
 ![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Dialog 'Ressource hinzufügen'](images/add_resource_screen.png "Dialog 'Ressource hinzufügen'") <br> *Dialog "Ressource hinzufügen" in der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple*
 
-In der Ansicht "App-Details" haben Sie zwei Möglichkeiten, auf Ihren Code zuzugreifen:
-*  Wählen Sie **Code herunterladen** aus, um den Code für Ihre App zu generieren und herunterzuladen.
+### Eigenen Code herunterladen
+
+* In der Ansicht "App-Details" können Sie auf Ihren eigenen Code zugreifen, in dem Sie **Code herunterladen** auswählen, um den Code für Ihre App zu generieren und herunterzuladen. 
 
 ### Ansicht "App-Liste"
 {: #app_list_view}

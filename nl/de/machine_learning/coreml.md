@@ -37,7 +37,6 @@ folgenden Komponenten:
 
 Verwenden Sie zur Installation von Carthage die folgenden Befehle
 `brew`:
-
 ```
 $ brew update
 $ brew install carthage
@@ -67,7 +66,7 @@ auswählen.
 Projekt zugeordnet ist, wird ein Projekt erstellt. Fahren Sie andernfalls
 direkt mit dem Abschnitt **Modell erstellen** fort.
 3. Benennen Sie Ihr Projekt und klicken Sie auf **Erstellen**.
-**Tipp**: Wenn kein Speicher definiert ist, klicken Sie
+  **Tipp**: Wenn kein Speicher definiert ist, klicken Sie
 auf "Aktualisieren".
 
 ### Service an ein Projekt binden

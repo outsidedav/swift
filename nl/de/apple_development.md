@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-27"
 
 ---
 {:new_window: target="_blank"}
@@ -32,8 +32,7 @@ Die in {{site.data.keyword.cloud_notm}} integrierten Funktionen
 für Anwendungsentwickler sind auf verschiedenste Qualifikationsprofile
 abgestimmt und bieten eine universelle Plattform für die Erstellung, Bereitstellung,
 Ausführung und Verwaltung Ihrer Apps. Bei der erwähnten kognitiven App sind
-beispielsweise die folgenden
-{{site.data.keyword.cloud_notm}}-Funktionen interessant:
+beispielsweise die folgenden {{site.data.keyword.cloud_notm}}-Funktionen interessant:
 
 * [**{{site.data.keyword.cloud_notm}}
 Developer Experience](https://console.bluemix.net/docs/overview/dev-journey.html#dev-journey) ist kein Service, sondern vielmehr eine
@@ -65,8 +64,7 @@ Insights-Service](../services/DevOpsInsights/index.html#gettingstarted) können 
 Ihre Toolchain anwenden.
 
 Die {{site.data.keyword.cloud_notm}}-Plattform bietet viele
-weitere Leistungsmerkmale und kann als umfassende Entwicklungsplattform für
-{{site.data.keyword.cloud_notm}} genutzt werden.
+weitere Leistungsmerkmale und kann als umfassende Entwicklungsplattform genutzt werden.
 
 ## {{site.data.keyword.cloud_notm}}-Leistungsspektrum im Überblick
 {: #capabilities}
@@ -100,12 +98,11 @@ Das Erscheinungsbild von {{site.data.keyword.cloud_notm}}
 Developer Experience besteht aus unterschiedlichen Entwicklerkonsolen aus der
 gesamten {{site.data.keyword.cloud_notm}}-Plattform. Jede Konsole deckt
 ein Interessengebiet (z. B. Watson, Sicherheit oder Finanzwesen) bzw. einen
-digitalen Kanal (wie mobile Apps oder Web-Apps) ab. 
-Die
+digitalen Kanal (wie mobile Apps oder Web-Apps) ab. Die
 [{{site.data.keyword.cloud_notm}}-Entwicklerkonsole
 für Apple](https://console.bluemix.net/developer/appledevelopment/dashboard) wurde konzipiert, damit Apple-Entwickler
 durch die {{site.data.keyword.cloud_notm}}-Plattform unterstützt
-schnell mit Anwendungen und Servies experimentieren können. Zum Zugriff auf
+schnell mit Anwendungen und Services experimentieren können. Zum Zugriff auf
 diese Konsolen klicken Sie in der
 {{site.data.keyword.cloud_notm}}-Konsole auf das Menüsymbol. Verfügbar
 sind beispielsweise die folgenden Entwicklerkonsolen:

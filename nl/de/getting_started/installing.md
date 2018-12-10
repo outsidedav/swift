@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -22,7 +22,7 @@ Anwendungen installieren und einsetzen können.
 ## Installation mit CocoaPods
 {: #installing_with_cocoapods}
 
-Um ein SDK mithilfe von Cocoapods zu installieren, fügen Sie es zu Ihrer
+Um ein SDK mithilfe von CocoaPods zu installieren, fügen Sie es zu Ihrer
 `Poddatei` hinzu. Falls Ihr Projekt noch keine
 `Poddatei` enthält, verwenden Sie den Befehl `pod
 init`.
@@ -40,7 +40,7 @@ die generierte Datei
 `.xcworkspace`.
 
 Weitere Informationen finden Sie in den
-[Handbüchern zu Cocoapods](https://guides.cocoapods.org/using/index.html).
+[Handbüchern zu CocoaPods](https://guides.cocoapods.org/using/index.html).
 
 ## Installation mit Carthage
 {: #installing_with_carthage}
@@ -57,9 +57,7 @@ Führen Sie den Befehl `carthage update` aus, um den
 Buildprozess zu starten. Fügen Sie nach Abschluss des Builds die generierten
 Frameworks zu Ihrem Projekt hinzu. 
 
-Weitere Informationen enthält die
-[Readme-Datei
-von Carthage](https://github.com/Carthage/Carthage#getting-started).
+Weitere Informationen enthält die einführende Dokumentation [Carthage Getting Started](https://github.com/Carthage/Carthage#getting-started). 
 
 ## Installation mit dem Swift-Paketmanager
 {: #installing_with_swift_package_manager}
@@ -73,7 +71,7 @@ in der Datei `Package.swift` hinzu:
 {: codeblock}
 
 Führen Sie den Befehl `swift build` aus, um den
-Buildprozess zu starten. 
+Buildprozess zu starten.
 
 Weitere Informationen finden Sie auf der Seite mit der
 [Übersicht über den

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -92,9 +92,8 @@ Unterstützung der Carthage-Installation.](https://brew.sh/)
 {{site.data.keyword.cloud}} stellt lokale Tools für die
 Befehlszeilenschnittstelle bereit, die Ihnen bei der Arbeit mit
 unterschiedlichen Aspekten von {{site.data.keyword.cloud_notm}} helfen. Weitere
-Angaben enthält der Abschnitt [Informationen zu {{site.data.keyword.dev_cli_long}}](../cli/index.html). Es empfiehlt sich, die Tools
-zum Testen eines Swift-Back-End-Programms vor der Cloudbereitstellung in einem
-lokalen Docker-Image zu installieren.
+Angaben enthält der Abschnitt [Informationen zu {{site.data.keyword.dev_cli_long}}](../cli/index.html). Sie können die Tools zum Testen eines Swift-Back-End-Programms vor der Cloudbereitstellung in einem
+lokalen Docker-Image zu installieren. 
 
 * Führen Sie bei Mac OS und Linux den folgenden Befehl aus:
   ```
@@ -197,7 +196,7 @@ Stammverzeichnis des Anwendungsverzeichnisses, um Ihre App zu erstellen:
   ```
   ibmcloud dev build
   ```
-  {:codeblock}
+  {: codeblock}
 
 2. **Ausführung**
 
@@ -206,7 +205,7 @@ folgenden Befehl in einem lokalen Container ausführen:
   ```
   ibmcloud dev run
   ```
-  {:codeblock}
+  {: codeblock}
 
   Wenn der Befehl erfolgreich ausgeführt wird, werden ein lokaler Host
 und
@@ -219,7 +218,7 @@ mit dem Befehl `deploy` bereit:
   ```
   ibmcloud dev deploy
   ```
-  {:codeblock}
+  {: codeblock}
 
 ## Nächste Schritte
 
@@ -228,7 +227,7 @@ Informieren Sie sich über die Verwendung der
 Hilfe Entwickler ausgehend von verschiedenen Starter-Kits Apps erstellen,
 bereitstellen und mit wichtigen
 {{site.data.keyword.cloud_notm}}-optimierten Services verbinden und danach umgehend funktionsfähigen Code
-herunterladen (oder die kontinuierliche Bereitstellung konfigurieren) können. 
+herunterladen oder dessen kontinuierliche Bereitstellung konfigurieren können. 
 Benutzer können Ihre App erstellen, anzeigen, konfigurieren und verwalten sowie
 den Code Ihrer App herunterladen. Die Verwendung der Entwicklerkonsole für
 Apple ermöglicht es

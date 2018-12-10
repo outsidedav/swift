@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -27,23 +27,18 @@ nach kontrolliert freigeben. Mit dem
 {{site.data.keyword.engage_short}}-Service haben App-Eigner die
 vollständige Kontrolle über das Feature-Rollout für ein Zielsegment.
 
-
 Der {{site.data.keyword.engage_short}}-Service definiert ein
 Feature, erstellt auf der Basis von Geräteplattformen (inklusive angepassten
-Zielgruppenattributen) eine Zielguppe und definiert schließlich ein Projekt,
+Zielgruppenattributen) eine Zielgruppe und definiert schließlich ein Projekt,
 das den Zeitpunkt und die Verteilung des Features koordiniert. Nachdem SDKs
 zusammen mit den in der Anwendung integrierten Feature- und Metrikattributen
 genutzt wurden, beginnt der Service mit dem Messen der Zielgruppenerfahrungen. Anhand
-dieser Informationen können Sie nun Ihre App nutzen, um angepasste
+dieser Informationen können Sie nun Ihre App verwenden, um angepasste
 Kundenprojekte für unterschiedliche Kategorien Ihrer App-Benutzer zu erstellen.
 
-![Kognitives Projekt imÜberblick](images/process_app_launch.png) Abbildung 1. Überblick über den Lebenszyklus des
+![Cognitive Engage im Überblick](images/process_app_launch.png) Abbildung 1. Lebenszyklus des {{site.data.keyword.engage_short}}-Service
 
-{{site.data.keyword.engage_short}}-Service
-
-Die {{site.data.keyword.engage_short}}-Services bieten die
-folgenden Features:
-
+Betrachten Sie die folgenden Funktionen des {{site.data.keyword.engage_short}}-Service:
 
  - **Beschleunigte Featurebereitstellung**
 
@@ -53,9 +48,7 @@ kontrollierte Releases beschleunigt, die Risiken mindern. Wenn Sie Features für
  - **Zielgruppensegmentierung**
 
     Sie können Benutzersegmente definieren, die auf demografischen,
-kontextorientierten und verhaltensbezogenen Attributen basieren. Alternativ
-können Features auch für einen bestimmten Prozentsatz der Benutzerbasis
-implementiert werden. Für jedes Feature und jeden clientseitigen Code können
+kontextorientierten und verhaltensbezogenen Attributen basieren. Sie können Funktionen auch nur auf einem bestimmten Prozentsatz der gesamten Benutzerbasis implementieren. Für jedes Feature und jeden clientseitigen Code können
 KPIs (Key Performance Indicator, wesentlicher Leistungsindikator) definiert
 werden, um die Ergebnisse zu messen.
 
@@ -92,7 +85,7 @@ sind:
  - iOS 10+
  - Xcode 9
  - Swift 3.2 - 4
- - Cocoapods oder Carthage
+ - CocoaPods oder Carthage
 
 ## Schritt 1. Instanz von {{site.data.keyword.engage_short}}
 erstellen
@@ -104,23 +97,24 @@ für die Servicekonfiguration wird geöffnet.
 2. Vergeben Sie für die Serviceinstanz einen Namen oder verwenden Sie
 den voreingestellten Namen.
 3. Klicken Sie auf **Erstellen**.
-4. Klicken Sie im Navigationsbereich auf
-**Verbindungen**, um eine App auszuwählen und an Ihren
+4. Klicken Sie im Navigationsbereich
+auf **Verbindungen**, um eine App auszuwählen und an Ihren
 Service zu binden. Falls Sie während der Erstellung keine Bindung herstellen,
 können Sie Ihre App auch später an die Serviceinstanz binden.
 
 ## Schritt 2. App initialisieren
 {: #step2}
+
 Der Service stellt plattformspezifische SDKs bereit, um die
 Anwendungsentwicklung zu vereinfachen. Die
 {{site.data.keyword.cloud_notm}}-Swift-SDKs für Mobile-Services können
-entweder mit Cocoapods oder Carthage installiert werden. 
+entweder mit CocoaPods oder Carthage installiert werden. 
 
 1. Klicken Sie auf **Einstellungen**.
 2. Installieren Sie das
 [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Weitere
-Informationen enthält die Readme-Datei, in der auch die Installation und
-technische Konzepte erläutert werden.
+Informationen enthält die `README`-Datei, in der auch die Installation und
+technische Konzepte erläutert werden. 
 3. Kopieren Sie die Konfigurationsschlüssel, um Ihre App zu
 initialisieren. Verwenden Sie den geheimen App-Schlüssel, die App-GUID und den
 geheimen Clientschlüssel, um Ihre App zu konfigurieren und Kundenprojekte zu
@@ -159,7 +153,6 @@ Im Fenster "Featuredetails" können Sie das Feature als JSON-Datei
 exportieren, die in der Clientanwendung zum Laden der Standardwerte verwendet
 werden kann.
 
-
 ## Schritt 4. Zielgruppe erstellen
 {: #step4}
 
@@ -167,31 +160,30 @@ werden kann.
 
 Gehen Sie zum Erstellen einer Zielgruppe wie folgt vor:
 
-1. Erstellen Sie ein **Zielgruppenattribut**:
+### **Zielgruppenattribut** erstellen:
 
-	a. Klicken Sie auf **Zielgruppe** >
+1. Klicken Sie auf **Zielgruppe** >
 **Attribut erstellen**.
-	b. Geben Sie die folgenden Werte an:
-		- **Name**: Geben Sie einen geeigneten Namen für das Attribut an.
-		- **Beschreibung**: Geben Sie eine Kurzbeschreibung
+2. Geben Sie die folgenden Werte an:
+  * **Name**: Geben Sie einen geeigneten Namen für das Attribut an.
+  * **Beschreibung**: Geben Sie eine Kurzbeschreibung
 des Attributs an.
-		- **Typ**: Wählen Sie den Attributtyp aus.
-		- **Zulässige Werte**: Geben Sie die Attributwerte ein, die Sie verwenden möchten.
+  * **Typ**: Wählen Sie den Attributtyp aus.
+  * **Zulässige Werte**: Geben Sie die Attributwerte ein, die Sie verwenden möchten.
 
   Je nach Bedarf können Sie - wie in der folgenden Abbildung aufgeführt -
-mehrere Zielgruppenattribute erstellen.
+mehr als ein Zielgruppenattribut erstellen.
 
+### **Zielgruppe** erstellen:
 
-2. Erstellen Sie eine **Zielgruppe**:
-
-	a. Klicken Sie auf **Zielgruppe erstellen**.
-	b. Geben Sie im Fenster "Neue Zielgruppe" einen geeigneten Namen und
+1. Klicken Sie auf **Zielgruppe erstellen**.
+2. Geben Sie im Fenster "Neue Zielgruppe" einen geeigneten Namen und
 eine Beschreibung an.
-	c. Wählen Sie ein Attribut aus und klicken Sie auf **Hinzufügen**.
-	d. Wählen Sie unter den aufgelisteten Attributen die erforderlichen
+3. Wählen Sie ein Attribut aus und klicken Sie auf **Hinzufügen**.
+4. Wählen Sie unter den aufgelisteten Attributen die erforderlichen
 Optionen aus.
-	e. Klicken Sie auf **Speichern**.
-
+5. Klicken Sie auf
+**Speichern**.
 
 Nun können Sie ein Kundenprojekt erstellen.
 
@@ -221,9 +213,12 @@ Gehen Sie folgendermaßen vor, um ein Kundenprojekt unter Verwendung der
 Featuresteuerung zu erstellen:
 
 1. Erstellen Sie das Kundenprojekt mit einem der folgenden Verfahren:
-	- Klicken Sie im Navigationsbereich auf **Kundenprojekte**.
-	- Wählen Sie für das neu von Ihnen erstellte Feature die Option **Kundenprojekte erstellen** aus.
-	- Klicken Sie im Navigationsbereich auf **Übersicht** > **Neues Kundenprojekt erstellen**.
+  - Klicken Sie im Navigationsbereich auf
+**Kundenprojekte**.
+  - Wählen Sie für das neu von Ihnen erstellte Feature die Option **Kundenprojekte erstellen** aus.
+  - Klicken Sie im Navigationsbereich auf
+**Übersicht** > **Neues Kundenprojekt
+erstellen**.
 
   Das Fenster "Neues Kundenprojekt" wird angezeigt.
 
@@ -231,17 +226,17 @@ Featuresteuerung zu erstellen:
 Kundenprojekt an. Vergeben Sie unbedingt einen eindeutigen Namen für das
 Kundenprojekt und verwenden Sie keinen der Namen, der bereits in der Liste
 "Kundenprojekte" enthalten ist.
-
-	a. Wählen Sie als **Kundenprojekttyp** die
+  - Wählen Sie als **Kundenprojekttyp** die
 Einstellung **Featuresteuerung** aus.
-	b. Wenn Sie ein gesteuertes Experiment mit mehreren Varianten des
+  - Wenn Sie ein gesteuertes Experiment mit mehr als einer Variante des
 Features durchführen möchten, wählen Sie die Option
 **A/B-Test** bei **Experimenttyp
-auswählen** aus. Klicken Sie auf **Weiter**.
+auswählen** aus. Klicken Sie auf
+**Weiter**.
 
 3. Wählen Sie das von Ihnen erstellte Feature aus. Sie können auch die
-Varianten hinzufügen und definieren, mit denen Sie experimentieren möchten. 
-Klicken Sie auf **Weiter**.
+Varianten hinzufügen und definieren, mit denen Sie experimentieren möchten. Klicken Sie auf
+**Weiter**.
 
 4. Wählen Sie eine Zielgruppe aus. Klicken Sie auf
 **Weiter**.
@@ -274,16 +269,15 @@ Terminierung können Sie auch ein Ereignis verwenden. Diese Nachrichten sind
 stärker angepasst, da sie unter anderem auf den Analyseerkenntnissen über Auswahl,
 Interaktionen, Gerät, Anwendungsprotokollen des Benutzers basieren.
 
-Verwendungszwecke von App-internen Nachrichten:
+Sehen Sie sich die folgenden Beispiel für In-App-Nachrichten an: 
 
 - Versand von angepassten Nachrichten
 - Versand von Nachrichten an Benutzer, die Push-Benachrichtigungen
 ausgeschaltet haben
 - Anforderung einer Rückmeldung oder Aufnahme eines Dialogs mit Benutzern
-- Versand von relevanten Nachrichten durch Erkenntnisse über vom Benutzer durchgeführte Suchvorgänge
+- Versand von relevanten Nachrichten basierend auf vom Benutzer durchgeführten Suchvorgängen
 - Bindung von aktiven und treuen Kunden
-- Benachrichtigung von Benutzern über App-Updates (Einführung eines
-neuen Features) usw.
+- Benachrichtigung von Benutzern über App-Updates (Einführung eines neuen Features)
 
 ![GIF-Animation](images/in-app-engagement_animated.gif){: gif}
 
@@ -291,11 +285,11 @@ Gehen Sie folgendermaßen vor, um ein Kundenprojekt mit Verwendung der
 Messagingoption zu erstellen:
 
 1. Erstellen Sie das Kundenprojekt mit einem der folgenden Verfahren:
-	- Klicken Sie im Navigationsbereich auf
+  - Klicken Sie im Navigationsbereich auf
 **Kundenprojekte**.
-	- Wählen Sie für das neu von Ihnen erstellte Feature die Option
+  - Wählen Sie für das neu von Ihnen erstellte Feature die Option
 **Kundenprojekt erstellen** aus.
-	- Klicken Sie im Navigationsbereich auf
+  - Klicken Sie im Navigationsbereich auf
 **Übersicht** > **Neues Kundenprojekt
 erstellen**.
 
@@ -305,13 +299,13 @@ erstellen**.
 Kundenprojekt an. Vergeben Sie unbedingt einen eindeutigen Namen für das
 Kundenprojekt und verwenden Sie keinen der Namen, der bereits in der Liste
 "Kundenprojekte" enthalten ist.
-
-	a. Wählen Sie als **Kundenprojekttyp** die
+  - Wählen Sie als **Kundenprojekttyp** die
 Einstellung **App-internes Messaging** aus.
-	b. Wenn Sie ein gesteuertes Experiment mit mehreren Varianten der
+  - Wenn Sie ein gesteuertes Experiment mit mehreren Varianten der
 Messagingfunktion durchführen möchten, wählen Sie die Option
 **A/B-Test** bei **Experimenttyp
-auswählen** aus. Klicken Sie auf **Weiter**.
+auswählen** aus. Klicken Sie auf
+**Weiter**.
 
 3. Geben Sie die Nachrichteneigenschaften ein und klicken Sie auf **Weiter**.
 
@@ -336,14 +330,13 @@ Jetzt können Sie die
 [Leistung](/docs/services/app-launch/app_measure_performance.html#applaunch_type)
 Ihres Kundenprojekts messen.
 
-### Quick Links
+## Quick Links
+{: #links notoc}
 
 Die folgenden Links vermitteln Ihnen Einblicke und Kenntnisse über die
 Features von {{site.data.keyword.engage_short}}:
 
- - Probieren Sie den
-[Service](https://console.bluemix.net/catalog/services/app-launch)
-aus.
+ - Probieren Sie den [App Launch-Service](https://console.bluemix.net/catalog/services/app-launch) aus.
  - [Blogs
 und Videos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - Weitere Informationen finden Sie in der [Dokumentation](/docs/services/app-launch/index.html#gettingstartedtemplate).
+ - Weitere Informationen finden Sie unter [App Launch - Lernprogramm 'Einführung'](/docs/services/app-launch/index.html#gettingstartedtemplate).

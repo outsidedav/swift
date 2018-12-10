@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -130,11 +130,7 @@ Grundlage Ihrer Auswahl werden Ihre Daten verteilt und an mehreren Standorten
 gespeichert.
 
 Die regionale Ausfallsicherheit ist für geringe Latenzzeiten gedacht;
-Ihre Daten werden hierbei auf drei Zentren in einer einzigen Region verteilt. Die
-regionsübergreifende Ausfallsicherheit dient der geschäftskritischen
-Verfügbarkeit; Ihre Daten werden in drei oder mehr unterschiedlichen Regionen
-gespeichert. Die regionsübergreifende Option bietet geografische
-Ausfallsicherheit und ist über mehrere Endpunkte verfügbar. Richten Sie sich
+Ihre Daten werden hierbei auf drei Zentren in einer einzigen Region verteilt. Verwenden Sie die Ausfallsicherheit über Regionen hinweg für kritische Verfügbarkeit, da Ihre Daten dann in drei oder mehr unterschiedlichen Regionen gespeichert werden. Die Ausfallsicherheit über Regionen hinweg bietet geografische Mehrfachverfügbarkeit und ist über mehrere Endpunkte hinweg verfügbar. Richten Sie sich
 bei Ihrer Entscheidung für eine der beiden Optionen nach Ihren
 Anwendungsanforderungen.
 
@@ -146,11 +142,11 @@ gespeichert werden sollen. Die in IBM COS gespeicherten Daten werden
 verschlüsselt und mithilfe der von IBM Object Storage System bereitgestellten
 Technologien für dezentralen Speicher auf mehrere Standorte verteilt. 
 
-Berücksichtigen Sie neben der Entscheidung zwischen der regionalen und
+Berücksichtigen Sie bei der Entscheidung zwischen der regionalen und
 der regionsübergreifenden Option bei der Auswahl des Standortes für Ihren
 Objektspeicher die folgenden Faktoren.
 
-**Hinweise zum Standort**:
+**Hinweise zum geografischen Standort**:
 * Nutzen Sie zur Redundanz einen Standort, der sich fern von Ihrem
 Betrieb befindet.
 * Nutzen Sie einen Standort für rechtliche und gesetzliche Bestimmungen.
@@ -167,8 +163,7 @@ zugegriffen wird. Diese Unterscheidung schlägt sich in der
 Speicherklassenunterstützung
 und dem Preistarif für Ihre Anwendungen nieder. Speicherklassen werden auf
 Bucketebene definiert, so dass Sie eine Kombination aus Plänen verwenden
-können, die Ihren Anforderungen entspricht. Erstellen Sie einfach ein neues
-Bucket, das mit der gewünschten Speicherklasse konfiguriert wird.
+können, die Ihren Anforderungen entspricht. Erstellen Sie einen Bucket, der für die Speicherklasse definiert ist, die Sie verwenden möchten. 
 
 Weitere Informationen zur Preisstruktur enthält die Dokumentation für die
 [Speicherklassen
@@ -193,6 +188,5 @@ die langfristige Sicherung.
 
 **Flex** Diese Bereitstellung ist auf variable
 Datenzugriffsanforderungen abgestimmt und schützt Ihr Budget vor unerwarteten
-Kostenschwankungen. Speicherklassen werden auf Bucketebene definiert. Erstellen
-Sie einfach ein neues Bucket, das mit der gewünschten Speicherklasse
-konfiguriert wird.
+Kostenschwankungen.
+Speicherklassen werden auf Bucketebene definiert. Erstellen Sie einen Bucket, der für die Speicherklasse definiert ist, die Sie verwenden möchten. 

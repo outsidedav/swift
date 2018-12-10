@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -33,12 +33,9 @@ Installationsscript mit dem folgenden Befehl aus:
 ```
 curl -sL https://ibm.biz/idt-installer | bash
 ```
-{:codeblock}
+{: codeblock}
 
-Weitere Informationen zum Konfigurieren und Verwenden von
-{{site.data.keyword.dev_cli_notm}} finden Sie im Abschnitt
-[Befehlszeilenschnittstelle von IBM
-Cloud Developer Tools konfigurieren](/docs/cli/idt/setting_up_idt.html).
+Weitere Informationen zum Konfigurieren und zur Verwendung der {{site.data.keyword.dev_cli_notm}} finden Sie unter [IBM Cloud Developer Tools-Befehlszeilenschnittstelle einrichten](/docs/cli/idt/setting_up_idt.html).
 
 ## Serviceberechtigungsnachweise abrufen
 
@@ -52,24 +49,25 @@ Anwendungsverzeichnisses ausführen:
 ```
 ibmcloud dev get-credentials
 ```
-{:codeblock}
+{: codeblock}
 
 ## Anwendung erstellen, ausführen und bereitstellen
 
 1. **Erstellung** - Sie können jetzt Ihre Anwendung erstellen; dies ist eine Voraussetzung
-für die Ausführung der Anwendung. Verwenden Sie den folgenden Befehl im
+für die Ausführung der Anwendung.
+  Verwenden Sie den folgenden Befehl im
 Stammverzeichnis des Anwendungsverzeichnisses, um Ihre App zu erstellen:
   ```
   ibmcloud dev build
   ```
-  {:codeblock}
+  {: codeblock}
 
 2. **Ausführung** - Nach einer erfolgreichen Erstellung können Sie Ihre Anwendung mit dem
 folgenden Befehl in einem lokalen Container ausführen:
   ```
   ibmcloud dev run
   ```
-  {:codeblock}
+  {: codeblock}
 
   Wenn der Befehl erfolgreich ausgeführt wird, werden ein lokaler Host
 und ein lokaler Port zum Anzeigen der Landing-Page Ihrer Anwendung angezeigt.
@@ -79,4 +77,4 @@ mit dem Befehl `deploy` bereit:
   ```
   ibmcloud dev deploy
   ```
-  {:codeblock}
+  {: codeblock}

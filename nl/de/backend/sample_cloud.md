@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -10,16 +10,14 @@ lastupdated: "2018-06-05"
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:note:.deprecated}
+{:note: .deprecated}
 
 # Anwendungsfall für iOS und Cloudlogik
 {: #sample_cloud}
 
 Ein Beispiel für eine iOS-Anwendung, die eine BFF-Komponente nutzt, ist
-in der
-Beispielanwendung [BluePic](https://github.com/IBM/BluePic) zu
-sehen, die der gemeinsamen Nutzung von Fotos und Grafiken dient. Die
-BluePic-App nutzt die folgenden Technologien:
+in der Beispielanwendung [BluePic](https://github.com/IBM/BluePic) zu
+sehen, die der gemeinsamen Nutzung von Bildern dient. Die BluePic-App nutzt die folgenden Technologien:
 
 * Object Storage und Cloudant zum Speichern der Bilddaten
 * Watson Visual Recognition und IBM Weather Company-Service zum Einbinden zusätzlicher Informationen in die Bilder

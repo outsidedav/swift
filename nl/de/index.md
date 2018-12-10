@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -16,17 +16,17 @@ lastupdated: "2018-08-07"
 # Lernprogramm zur Einführung
 {: #set_up}
 
-{{site.data.keyword.cloud}} bietet Lösungen und Services, mit
-denen Swift-Entwickler und -Anwendungen dem Kundenbedarf an Sicherheit,
-künstlicher Intelligenz und Wertschöpfung Rechnung tragen können. Dank eines
+{{site.data.keyword.cloud}} bietet Lösungen und Services, mit denen Swift-Entwickler Anwendungen erstellen können, die dem Kundenbedarf an Sicherheit, künstlicher Intelligenz (KI) und Wertschöpfung Rechnung tragen. Dank eines
 breit aufgestellten Portfolios von Produktangeboten und SDKs können Sie durch
-die Nutzung dieser Services eine schnelle Markteinführung von Anwendungen erreichen. Im Handbuch für die Swift-Programmierung erfahren Sie, wie
+die Nutzung dieser Services eine schnelle Markteinführung von innovativen
+Anwendungen erreichen.
+In der Veröffentlichung zur Swift-Programmierung wird erläutert, wie
 Sie Services zu einer neuen oder bestehenden Anwendung hinzufügen können, ganz
 gleich, ob es sich um einen iOS-Client oder eine serverseitige Swift-Anwendung
 handelt.
 {: shortdesc}
 
-Das folgende Lernprogramm dient als Einstiegspunkt und zeigt Ihnen, wie
+Das folgende Lernprogramm zeigt Ihnen, wie
 Sie mit {{site.data.keyword.mobileanalytics_full}} durch die Verwendung
 eines leeren Starter-Kits aus
 der
@@ -128,7 +128,7 @@ Client-SDKs von
 enthalten. Die Client-SDKs sind in CocoaPods und Carthage verfügbar. Verwenden
 Sie bei der hier beschriebenen Lösung CocoaPods.
 
-1. Dekomprimieren Sie den heruntergeladenen Code. Navigieren Sie dann mit einem Terminal zum dekomprimierten Ordner.
+1. Dekomprimieren Sie den heruntergeladenen Code. Navigieren Sie dann mit einem Terminal zum extrahierten Ordner.
   ```
   cd <name_des_projekts>
   ```
@@ -142,16 +142,15 @@ Sie bei der hier beschriebenen Lösung CocoaPods.
 {: #configure-analytics}
 
 1. Öffnen Sie `.xcworkspace` in Xcode und
-navigieren Sie zu `AppDelegate.swift`. **Hinweis:**
+navigieren Sie zu `AppDelegate.swift`.
+  **Hinweis:**
 Achten Sie immer darauf, nicht die ursprüngliche XCode-Projektdatei, sondern den
 neuen Xcode-Arbeitsbereich zu öffnen: `MyApp.xcworkspace`.
 ![Xcode öffnen](images/Xcode.png)
 
   `BMSCore` ist das Basis-SDK und bildet die Basis
 der SDKs für mobile Clients. `BMSClient` ist eine Klasse
-von BMSCore und wird in AppDelegate.swift initialisiert. Das
-{{site.data.keyword.mobileanalytics_short}}-SDK wurde bereits zusammen
-mit BMSCore in das Projekt importiert.
+von `BMSCore` und wird in `AppDelegate.swift` initialisiert. Das {{site.data.keyword.mobileanalytics_short}}-SDK wurde bereits zusammen mit `BMSCore` in das Projekt importiert.
   
 2. Der Initialisierungscode für Analytics ist, wie im folgenden Snippet gezeigt, bereits enthalten:
   ```
@@ -219,13 +218,9 @@ Direkt von der Konsole aus können Sie weitere Services zu Ihrer iOS-App
 hinzufügen, beispielsweise die folgenden häufig genutzten Services:
 
 * [Push-Benachrichtigungsservice
-hinzufügen](/push/push_notifications.html)
-* [Benutzerauthentifizierung mit App-ID hinzufügen](/authenticate/app_id.html)
+hinzufügen](/docs/services/mobilepush/index.html)
+* [Benutzerauthentifizierung mit App-ID hinzufügen](/docs/services/appid/index.html)
 
-### {{site.data.keyword.cloud_notm}}-Entwicklertools verwenden
-Lernen Sie, wie Sie Swift-Apps mit den
-[{{site.data.keyword.cloud_notm}}-Entwicklertools](../cli/index.html)
-entwickeln können, die einen befehlszeilenorientierten Ansatz für die
-Entwicklung und Bereitstellung von umfassenden Web-, Mobil- und
-Mikroserviceanwendungen verfolgen.
+### {{site.data.keyword.cloud_notm}}-Entwicklertool verwenden
+Sie können auch lernen, wie Swift-Apps entwickelt werden, indem Sie die [{{site.data.keyword.cloud_notm}}-Entwicklertools](../cli/index.html) verwenden, die einen Befehlszeilenansatz zum Erstellen, Entwickeln und Bereitstellen von vollständigen Web-, Mobil- und Mikroserviceanwendungen bieten.
 

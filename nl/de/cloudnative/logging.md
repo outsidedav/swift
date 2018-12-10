@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,35 +15,16 @@ lastupdated: "2018-08-17"
 # Protokollierung in Swift
 {: #logging_swift}
 
-Protokolle werden benötigt, um zu diagnostizieren, wie und warum
-Services fehlschlagen. Sie sind zwar nicht zur Überwachung der Anwendungsleistung
-gedacht, wofür es Metriken gibt, aber sie können als Quelle für Alerts genutzt
-werden, die dann einen größeren Umfang von Details enthalten können, als Sie
-den aggregierten Metriken entnehmen können.
+Protokollnachrichten sind Zeichenfolgen mit Kontextinformationen über den Status und die Aktivität des Mikroservice zum Zeitpunkt des Protokolleintrags. Protokolle werden benötigt, um zu diagnostizieren, wie und warum
+Services fehlschlagen. Sie spielen ferner eine unterstützende Rolle für [App-Metriken](appmetrics.html) bei der Überwachung des Anwendungsstatus. 
 
-Einer der Vorteile bei der Arbeit mit der Cloudinfrastruktur besteht
-darin, dass zahlreiche Aufgaben nicht mehr von Ihrer Anwendung selbst
-übernommen werden müssen, beispielsweise die Verwaltung von Dateien. Prozesse
-in Cloudumgebungen sind naturgemäß transient, weshalb erfasste Protokolle an
+Prozesse in Cloudumgebungen sind naturgemäß transient, weshalb erfasste Protokolle an
 eine andere Position gesendet werden müssen, bei der es sich in der Regel um
 eine zentrale Analysestelle handelt. Das konsistenteste Verfahren für die
 Protokollierung in Cloudumgebungen besteht darin, Protokolleinträge an
 Standardausgabe und Fehlerdatenströme zu senden und die weitere Verarbeitung
 der Infrastruktur zu überlassen.
 
-Wenn sich eine Anwendung im Zeitverlauf weiterentwickelt, kann sich die
-Spezifik der protokollierten Elemente ändern. Bei Verwendung eines
-JSON-Protokollformats erzielen Sie die folgenden Vorteile:
-* Die Protokolle können indexiert werden, was Suchvorgänge für einen
-aggregierten Protokollbestand vereinfacht.
-* Die Protokolle sind bei Änderungen ausfallsicher, da das Parsing nicht
-auf die Position von Elementen in einer Zeichenfolge angewiesen ist.
-
-Die Verwendung der Protokollierung mit JSON-Formatierung kann es für
-Sie als Benutzer schwieriger machen, die Protokolle zu lesen, wenn Sie diese
-mithilfe von Befehlszeilentools abrufen. Durch den Einsatz von Umgebungsvariablen können
-Sie jedoch das zu verwendende Protokollformat wechseln und auf diese Weise für
-die lokale Entwicklung und das Debugging Protokolle in einfachem Text anfordern.
 
 ## Protokollierung zu einer Swift-App hinzufügen
 
@@ -58,12 +39,7 @@ Protokollierungsschnittstelle für verschiedene Arten von Protokollfunktionen in
 Swift bereitstellt. Kitura verwendet `LoggerAPI`
 während seiner Implementierung.
 
-Um `HeliumLogger` zu nutzen, fügen Sie Folgendes zum
-Abschnitt
-**dependencies:** in Ihrer Datei
-`Package.swift` hinzu; achten Sie dabei darauf, die Zeile zu
-allen Zielen hinzuzufügen, bei denen diese Protokollfunktion verwendet wird.
-
+Um `HeliumLogger` zu verwenden, fügen Sie den folgenden Code für alle entsprechenden Ziele zum Abschnitt **dependencies:** in `Package.swift` hinzu: 
 ```swift
 .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1")
 ```
@@ -105,14 +81,13 @@ erzeugt:
 ```
 {: screen}
 
-Diese Nachrichten befinden sich bei der lokalen
-Ausführung in `stdout` oder in den Protokollen
+Diese Nachrichten befinden sich lokal in `stdout` oder in den Protokollen
 für
 [CloudFoundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)-
 und
 [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/)-Bereitstellungen,
 auf die mit dem Befehl `ibmcloud app logs --recent <APP_NAME>`
-bzw. `kubectl logs <deployment name>` zugegriffen werden kann.
+bzw. `kubectl logs <deployment name>` zugegriffen wird.
 
 In der Datei `/Sources/AppName/main.swift` ist der
 folgende Code enthalten:
@@ -122,7 +97,7 @@ HeliumLogger.use(LoggerMessageType.info)
 {: codeblock}
 
 Als Protokollebene ist explizit `.info` angegeben, damit
-Informationsnachrichten wie beispielsweise über den Anwendungsstart
+Informationsnachrichten wie beispielsweise Protokolle über den Anwendungsstart
 protokolliert werden.
 {: tip}
 
@@ -137,8 +112,7 @@ Foundry-Protokolle](https://console.bluemix.net/docs/cli/reference/bluemix_cli/b
 * [Protokolle
 und Überwachung von {{site.data.keyword.openwhisk}}](https://console.bluemix.net/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
 
-Angaben über die Verwendung eines Protokollaggregators finden Sie in den
-folgenden Abschnitten:
+Hier erfahren Sie, wie Sie einen Protokollaggregator implementieren und verwenden:
 * [Protokollanalyse
 in {{site.data.keyword.cloud_notm}}](https://console.bluemix.net/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
 * [Privater

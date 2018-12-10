@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -10,12 +10,12 @@ lastupdated: "2018-08-07"
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:note:.deprecated}
+{:note: .deprecated}
 
-# MBaaS und Back-End-Komponenten im Vergleich
+# Funktionen von Mobile Backend as a Service
 {: #mbaas}
 
-Ihre Anwendung kann zur Nutzung von externer Funktionalität eines von
+Ihre Anwendung kann zur Nutzung von externer Funktionen eines von
 zwei Verfahren verwenden:
 * Direkte Nutzung aus der Anwendung heraus für ihre Services, die
 üblicherweise im Rahmen einer Plattform des Typs "Mobile Backend as a
@@ -25,7 +25,7 @@ Service"
 Frontend), die die Zusammensetzung und Steuerung der Services bereitstellen
 sowie Back-End-Logik für die Anwendung beisteuern kann.
 
-In der Regel ist das direkte Hinzufügen von externer Funktionalität aus
+In der Regel ist das direkte Hinzufügen von externer Funktionen aus
 Ihrer mobilen Anwendung heraus mit der MBaaS-Methode ein unkomplizierterer
 Ansatz, denn in das erste Servicepaket müssen weniger Komponenten und
 Infrastruktur einbezogen werden. Allerdings fehlt bei dieser Methode jene
@@ -43,6 +43,4 @@ serverunabhängiges Modell mit
 mit Frameworks wie beispielsweise Kitura. Dank dieser Funktionalität können Sie
 Back-End-Logik über ein BFF-Modell in Swift hinzufügen und auch die Nutzung der
 Swift-SDKs durch die Anwendung auf BFF migrieren. Daher können Sie nach und
-nach von der MBaaS-Methode auf eine BFF-Lösung umsteigen; aufgrund der
-durchgängigen Unterstützung von Swift ist dies mit nur
-minimalem Aufwand verbunden.
+nach ohne großen Extra-Aufwand von der MBaaS-Methode auf eine BFF-Lösung umsteigen. 

@@ -161,13 +161,13 @@ Jetzt können Sie in Ihrer App mit dem Swift-SDK für Watson arbeiten.
 
 1. Übergeben Sie den API-Schlüssel und die Version (Sie können das
 heutige Datum verwenden), um das SDK zu initialisieren:
-```swift
+    ```swift
     let visualRecognition = VisualRecognition(apiKey: "your-api-key", version: "yyyy-mm-dd")
     ```
     {: pre}
 
 1. Fügen Sie den folgenden Code hinzu, um ein Bild zu klassifizieren:
-```swift
+    ```swift
     let url = "your-image-url"
     let failure = { (error: Error) in print(error) }
     visualRecognition.classify(url: url, failure: failure) { classifiedImages in

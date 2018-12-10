@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -10,7 +10,7 @@ lastupdated: "2018-06-05"
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:note:.deprecated}
+{:note: .deprecated}
 
 # Nutzen von Back-End-Komponenten
 {: #backend}
@@ -18,14 +18,14 @@ lastupdated: "2018-06-05"
 Back-End-Komponenten legen fest, wie Services mit Informationen interagieren, die Datenbanken und
 Server nutzen, bzw. sie aktualisieren und ändern.
 
-Anwendungen können eigenständig aufgebaut sein. Sie können vollständig
+Anwendungen können eigenständig aufgebaut sein und vollständig
 auf einem Gerät ausgeführt werden, bei dem die einzige externe Interaktion vom
 Benutzer stammt. Solche Anwendungen können jedoch nur in eingeschränktem Maß
-Funktionalität und Wertschöpfung bereitstellen.
+Potenzial und Wertschöpfung bereitstellen.
 
 Die meisten Anwendungen profitieren vom Zugriff auf externe Ressourcen,
-mit dem Ihre Anwendung verbessert und erweitert wird. Wenn Sie einen
-Datenspeicher hinzufügen, können Daten auch bei Neuinstallationen Ihrer
+mit denen Ihre Anwendung verbessert und erweitert wird. Wenn Sie einen
+Datenspeicher hinzufügen, können Daten auch bei der Neuinstallationen Ihrer
 Anwendung in einem Benutzerkonto gespeichert und mit Freunden und anderen
 Benutzern geteilt werden. Danach kann eine korrespondierende Webanwendung
 erstellt werden und Sie können Push-Benachrichtigungen hinzufügen, die Benutzer

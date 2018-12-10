@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -25,17 +25,15 @@ und Statistikdaten überwachen können.
 
 ## Instanz von API Connect erstellen
 
-Rufen Sie den Katalog auf und erstellen Sie eine Instanz von API
-Connect, um Ihre APIs zu verwalten.
+Rufen Sie den [Katalog](https://console.bluemix.net/catalog/) auf und erstellen Sie eine Instanz von API
+Connect, um Ihre APIs zu verwalten. 
 
 Greifen Sie durch Auswahl der Optionen `Menü > APIs`
 auf die Managementkonsole von API Connect zu.
 
 ![API Connect](images/apiconnect.png)
 
-Falls Sie vor Beginn der Back-End- und Front-End-Entwicklung einen
-eigenen API-Vertrag definieren, können Sie diesen Prozess mit den API
-Connect-Tools beschleunigen. Zusammen mit Ihrem Team für die digitale
+Wenn Sie Ihren eigenen API-Vertrag definieren, bevor Sie mit der Back-End-und Front-End-Entwicklung beginnen, verwenden Sie die API Connect-Tools, um diesen Prozess zu beschleunigen. Zusammen mit Ihrem Team für die digitale
 Entwicklung können Sie den API-Vertrag zwischen Ihrer iOS-App und Ihrer
 Back-End-Logik aufstellen und definieren. Diese Logik kann mithilfe von
 [{{site.data.keyword.openwhisk}}](/docs/openwhisk/index.html) oder über die
@@ -57,10 +55,8 @@ Clientanwendung und Ihrer Back-End-Logik verwaltet. Führen Sie die folgenden
 Schritte aus, um einen Proxy unter Verwendung Ihrer Open API-Spezifikation
 (Swagger-Dokument) im YAML- oder JSON-Format zu erstellen. 
 
-1. Öffnen Sie die Konsole durch Auswahl von `Menü >
-APIs` und klicken Sie auf den API-Proxy.
-2. Klicken Sie auf **YAML- oder JSON-Datei mit API-Definition
-importieren**.
+1. Öffnen Sie die Konsole durch Auswahl von `Menü > APIs` und klicken Sie auf den API-Proxy.
+2. Klicken Sie auf **YAML- oder JSON-Datei mit API-Definition importieren**.
 3. Wählen Sie die zuvor erstellte YAML- oder JSON-Datei aus.
 4. Speichern Sie die Datei und machen Sie sie zugänglich.
 
@@ -85,13 +81,13 @@ Wählen Sie die YAML- bzw. JSON-Datei aus und klicken Sie dann auf
 Nun können Sie den Code **herunterladen** oder
 **in der Cloud bereitstellen** und Ihr GIT-Repository auf
 der lokalen Maschine klonen. Anhand der Anweisungen im Knowledge
-Guide können Sie die serverseitige App in XCode öffnen.
+Guide können Sie die serverseitige App in Xcode öffnen.
 
 Im **Quellenordner** sehen Sie eine Route, mit der
 die Swift-Datei definiert wird, von der die REST-Endpunkte erstellt wurden,
 die der API zugeordnet sind. 
 
-Im folgenden Beispiel wird die Open API von PetStore verwendet:
+Im folgenden Beispiel wird die Open API von `PetStore` verwendet: 
 ```swift
 import Kitura
 import KituraContracts
@@ -162,20 +158,16 @@ iOS-Quellenordnern einen Ordner, der nach der API benannt ist.
 Befolgen Sie die Schritte im Knowledge Guide, um für alle etwaigen
 abhängige SDKs in Ihrer iOS-App ein `Pod-Update` durchzuführen. 
 
-Die iOS-App enthält einen Ordner, in dem sich die Bindung des generierten
-SDK für die
-API befindet. Dieser Ordner enthält die drei Unterordner
+Die iOS-App enthält einen Ordner mit der Bindung des generierten
+SDK für die API. Dieser Ordner enthält die drei Unterordner
 `Assets`, `Source` und
 `Docs`. 
 
 ![iOS-Ordner](../images/sdkfolder.png)
 
-Im Ordner `Assets` ist die Datei enthalten, die die URL
-zu Ihrer API verwaltet; standardmäßig hat sie den Wert `localhost:3000`. 
-Sie müssen den Wert so ändern, dass er auf die API-Route verweist. Die
-API-Definition enthält einen Abschnitt "API Name and Route". Klicken Sie auf
-das **Kopiersymbol** am Ende der Route, um die URL zu
-kopieren. Vergewissern Sie sich, dass die Option *Verwaltete API
+Im Ordner `Assets` ist eine Datei enthalten, die die URL
+zu Ihrer API verwaltet; standardmäßig hat sie den Wert `localhost:3000`. Sie müssen den Wert so ändern, dass er auf die API-Route verweist. Die
+API-Definition enthält einen Abschnitt "API Name and Route". Klicken Sie am Ende der Route auf **Kopieren**, um die URL zu kopieren. Vergewissern Sie sich, dass die Option *Verwaltete API
 zugänglich machen* aktiviert ist, damit externe Clients API-Aufrufe
 vornehmen können.
 
@@ -188,8 +180,7 @@ die API in der {{site.data.keyword.cloud_notm}} aufzurufen.
 ## Dokumentation
 
 Wenn das SDK in Ihr Projekt für die iOS-App einbezogen worden ist, ist im
-Ordner **Docs** eine Datei *README.html*
-verfügbar. Öffnen Sie den Ordner "Docs" in einem externen Browser und lesen Sie
+Ordner `Docs` die Datei *README.html* verfügbar. Öffnen Sie den Ordner `Docs` in einem externen Browser und lesen Sie
 die Anweisungen zur Verwendung des Projekts.
 
 ## SDK nach API-Änderung erneut erstellen
@@ -218,7 +209,7 @@ herunterzuladen, und speichern Sie diese Datei im Projektverzeichnis für die
 iOS-App.
 
 5. Als nächster Schritt wird der CLI-Befehl `ibmcloud
-sdk` ausgeführt.
+sdk` ausgeführt. 
     ```
     ibmcloud sdk generate --ios --unzip --output ./MyAppFunctions -f ./mobile-bff-functions-1.0.0.yaml SDKMyFunctions
     ```
@@ -242,7 +233,7 @@ die Sie in Ihre iOS-App einbeziehen können.
  * [`getReadall`](#getReadall)
  * [`getUpdate`](#getUpdate)
 
-### Using `getCreate`
+### `getCreate` verwenden
 {: #getCreate}
 
 ```swift

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -16,13 +16,12 @@ lastupdated: "2018-08-07"
 {: #mobile_analytics}
 
 {{site.data.keyword.mobileanalytics_short}} on
-{{site.data.keyword.cloud_notm}} vermittelt Entwicklern, IT-Administratoren
+{{site.data.keyword.cloud_notm}} vermittelt Entwicklern, Administratoren
 und Verantwortlichen Erkenntnisse über die Leistung und die Verwendung ihrer
 mobilen Apps. Der {{site.data.keyword.mobileanalytics_short}}-Service
 ermöglicht Folgendes:
 
- - **Sofortiger Gewinn von Erkenntnissen** -
-Leistungs- und Nutzungsmetriken werden in Echtzeit angezeigt.
+ - **Sofortiger Einblick** - Leistungs- und Nutzungsmetriken werden in Echtzeit angezeigt.
 
  - **Minutenschnelle Implementierung** - Sie
 erstellen eine Serviceinstanz in {{site.data.keyword.cloud_notm}}, Sie
@@ -31,7 +30,7 @@ Anwendung ein und schon können Sie Dutzende vordefinierter Metriken erfassen.
 
  - **Erfassung der gewünschten Daten** - Sie können
 Apps mit angepassten Ereignissen instrumentieren, die Interaktion von Benutzern
-mi Ihrer App erkennen, Einkäufe verfolgen und die Aktivität der App überwachen.
+mit Ihrer App sehen, Ausgaben verfolgen und die Aktivität der App überwachen.
 
  - **Anzeige von Metriken auf einen Blick** - Die
 {{site.data.keyword.mobileanalytics_short}}-Konsole bietet
@@ -41,8 +40,7 @@ gebrauchsfertige Diagramme, für die keine Abfragen geschrieben werden müssen.
 können die Metriken nach Zeit, Adapter, Anwendung, Anwendungsversion,
 Betriebssystem, Betriebssystemversion oder Einheitenmodell filtern.
 
- - **Zeitnahe Erkennung von Problemen** - Sie können
-den Ausfallstatus überwachen, Alert-Trigger für kritische Metriken festlegen
+ - **Probleme schnell erkennen** - Ausfallstatus überwachen. Alert-Trigger für kritische Metriken festlegen
 und Alerts zu jedem beliebigen REST-Endpunkt weiterleiten.
 
  - **Fehlerbehebung der eigentlichen Ursache** - Sie
@@ -52,12 +50,13 @@ ein Drilldown bei Ausfallereignissen können Sie Stack-Traces anzeigen.
 
 ## Vorbereitende Schritte
 
-Stellen Sie zunächst sicher, dass die folgenden Voraussetzungen gegeben sind:
+Stellen Sie zunächst sicher, dass die folgenden Voraussetzungen gegeben
+sind:
 
  - iOS 8.0+ / watchOS 2.0+
  - Xcode 7.3, 8.0
  - Swift 2.2 - 3.0
- - Cocoapods oder Carthage
+ - CocoaPods oder Carthage
 
 ## Schritt 1. Instanz von
 {{site.data.keyword.mobileanalytics_short}} erstellen
@@ -77,7 +76,7 @@ können Sie Ihre App auch später an die Serviceinstanz binden.
 Der Service stellt plattformspezifische SDKs bereit, um die
 Anwendungsentwicklung zu vereinfachen. Die
 {{site.data.keyword.cloud_notm}}-Swift-SDKs für Mobile-Services können
-entweder mit Cocoapods oder Carthage installiert werden. Weitere Informationen
+entweder mit CocoaPods oder Carthage installiert werden. Weitere Informationen
 finden Sie unter der Adresse [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics).
 
 Mithilfe des SDK für {{site.data.keyword.mobileanalytics_full}}
@@ -111,9 +110,7 @@ Sie folgendermaßen vor, um CocoaPods oder Carthage auszuwählen:
 {: #cocoapods}
 
 1. Befolgen Sie die
-[Anweisungen zum Swift-SDK für {{site.data.keyword.Bluemix_notm}} Mobile-Services ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window}
-bei
-GitHub, um `BMSAnalytics` mittels Cocoapods zu installieren
+[Anweisungen zum Swift-SDK für {{site.data.keyword.Bluemix_notm}} Mobile-Services ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window} bei GitHub, um `BMSAnalytics` mittels CocoaPods zu installieren
 und zu Ihrer Poddatei hinzuzufügen.
 
 2. Nach der Installation des Client-SDK für iOS müssen Sie das
@@ -155,7 +152,7 @@ Protokollnachricht eine Priorität bzw. eine Detailstufe zu.
 
 **Angepasste Ereignisse**: Diese Kategorie enthält
 Daten, die Sie selbst definieren und die speziell für Ihre App bestimmt sind. Diese
-Daten stellen Ereignisse dar, die innerhalb Ihrer App stattfinden, wie
+Daten zeigen Ereignisse, die innerhalb Ihrer App stattfinden, wie
 beispielsweise Seitenaufrufe, Auswahl von Schaltflächen oder Einkäufe innerhalb
 der App. Zusätzlich zum Initialisieren des
 {{site.data.keyword.mobileanalytics_short}}-SDK in Ihrer App müssen
@@ -171,8 +168,7 @@ Initialisierung des Client-SDK benötigt.
 
 1. Öffnen Sie das
 Dashboard für den {{site.data.keyword.mobileanalytics_short}}-Service.
-2. Erweitern Sie **Berechtigungsnachweise anzeigen**, um den API-Schlüsselwert anzuzeigen. 
-Sie benötigen den API-Schlüsselwert, wenn Sie das Client-SDK für {{site.data.keyword.mobileanalytics_short}} initialisieren.
+2. Erweitern Sie **Berechtigungsnachweise anzeigen**, um den API-Schlüsselwert anzuzeigen. Sie benötigen den API-Schlüsselwert, wenn Sie das Client-SDK für {{site.data.keyword.mobileanalytics_short}} initialisieren.
 
 ## Schritt 5.  Anwendung zur Erfassung von Analysedaten initialisieren
 {: #initalize-ma-sdk}
@@ -283,8 +279,7 @@ Analytics.log(metadata: eventObject)
 Das Client-SDK für {{site.data.keyword.mobileanalytics_full}}
 bietet ein Protokollierungsframework, das Ähnlichkeit mit anderen
 Protokollframeworks besitzt, mit denen Sie möglicherweise bereits vertraut
-sind (z. B. `java.util.logging` oder `log4j`). 
-Das Protokollierungsframework unterstützt mehrere Protokollfunktionsinstanzen
+sind (z. B. `java.util.logging` oder `log4j`). Das Protokollierungsframework unterstützt mehrere Protokollfunktionsinstanzen
 pro Paket, verschiedene Protokollebenen, die Erfassung von Stack-Traces für
 einen Anwendungsausfall und vieles mehr.
 
@@ -435,8 +430,7 @@ Protokollinformationen an
 Die Methode `Analytics.send()` füllt die Tabellen
 **Absturzübersicht** und **Abstürze**
 auf der Seite **Abstürze**. Diagramme werden durch den
-Initialisierungs- und Sendeprozess für die Analyse ermöglicht; eine spezielle
-Konfiguration ist nicht erforderlich.
+Initialisierungs- und Sendeprozess für die Analyse ermöglicht. 
 
 Die Methode `Logger.send()` füllt die Tabellen
 **Absturzübersicht** und **Absturzdetails**
@@ -464,8 +458,7 @@ Benutzernamen des aktiven Benutzers an
 {{site.data.keyword.mobileanalytics_short}} übergeben.
 
 Aktivieren Sie die Benutzerüberwachung, indem Sie
-{{site.data.keyword.mobileanalytics_short}} mit `hasUserContext = true` initialisieren. 
-Andernfalls erfasst {{site.data.keyword.mobileanalytics_short}} nur einen Benutzer pro Einheit.
+{{site.data.keyword.mobileanalytics_short}} mit `hasUserContext = true` initialisieren. Andernfalls erfasst {{site.data.keyword.mobileanalytics_short}} nur einen Benutzer pro Einheit.
 
 Fügen Sie den folgenden Code hinzu, um zu verfolgen, wann sich der
 Benutzer anmeldet:
@@ -477,11 +470,11 @@ Analytics.userIdentity = "username"
 ## Schritt 12. App testen
 {: #appid_testing}
 
-Jetzt können Sie testen, ob Sie alles richtig konfiguriert haben.
+Ist alles richtig konfiguriert? Jetzt können Sie testen, ob Sie alles richtig konfiguriert haben.
 
 1. Öffnen Sie Ihre App. Wenn es sich um eine Webanwendung handelt,
 verwenden Sie einen Browser. Wenn es sich um eine iOS-Clientanwendung handelt,
-nutzen Sie den Xcode-Emulator.
+öffnen Sie diese mit dem Xcode-Emulator.
 2. Kompilieren Sie die Anwendung und führen Sie sie im Emulator oder auf
 dem Gerät aus.
 3. Durchlaufen Sie den Prozess für die Anmeldung bei Ihrer Anwendung
@@ -503,9 +496,8 @@ festlegen](/docs/services/mobileanalytics/app-monitoring.html#alerts) und
 [Einführung für mobile Apps in IBM
 Cloud](/docs/services/mobile/index.html).
 
- - Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung
-des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Im
-[Dashboard für Entwickler für Mobilgeräte](https://console.bluemix.net/developer/mobile/dashboard) werden alle verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.
+ - Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des
+Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://console.bluemix.net/developer/mobile/dashboard) werden alle verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.
 
  - Mithilfe der
 [Swagger-Benutzerschnittstelle](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)

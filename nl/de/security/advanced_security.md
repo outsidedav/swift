@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -20,7 +20,7 @@ Swift-Entwickler können ohne großen Aufwand die von
 {{site.data.keyword.cloud}} gebotenen Sicherheitsservices nutzen, um
 ihre Schlüssel und ihre ruhenden, gerade genutzten oder übertragenen Daten mit
 dem höchsten branchenüblichen Sicherheitsniveau zu schützen.
-{:shortdesc}
+{: shortdesc}
 
 Als einfache Strategie können Sie
 {{site.data.keyword.cloud_notm}} HyperSecure Platform Services direkt für
@@ -33,8 +33,8 @@ verwenden. Weitere Informationen finden Sie unter [Einführung in {{site.data.ke
 {{site.data.keyword.hscrypto}} ist ein experimenteller Service,
 der eine Verschlüsselung Ihrer Schlüssel und Daten auf dem höchsten
 branchenüblichen Sicherheitsniveau bietet. Dieser Service stattet die Cloud mit
-der Sicherheit und Integrität von System z aus. Cloudbenutzer können über
-{{site.data.keyword.cloud_notm}} nun dieselbe ausgereifte
+der Sicherheit und Integrität von IBM z aus. Cloudbenutzer können über
+{{site.data.keyword.cloud_notm}} nun dieselbe
 Verschlüsselungstechnologie nutzen, auf die sich Banken und
 Finanzdienstleister verlassen.
 
@@ -44,8 +44,7 @@ Verschlüsselung über Anwendungsprogrammierschnittstellen (APIs) gemäß PKCS#1
 bereitstellen. Sie haben hierdurch Zugang zum höchsten erreichbaren
 Sicherheitsniveau für Verschlüsselungshardware, also Stufe 4 von FIPS 140-2.
 {{site.data.keyword.hscrypto}} nutzt darüber hinaus die Lösung
-"IBM Advanced
-Crypto Service Provider" (ACSP), die den Fernzugriff auf die kryptografischen
+"IBM Advanced Crypto Service Provider" (ACSP), die den Fernzugriff auf die kryptografischen
 Koprozessoren von IBM ermöglicht.
 
 {{site.data.keyword.hscrypto}} ist auch der Keystore für den
@@ -56,7 +55,7 @@ Weitere Informationen zu {{site.data.keyword.hscrypto}} finden Sie unter [Einfü
 ## {{site.data.keyword.cloud_notm}} {{site.data.keyword.keymanagementserviceshort}} verwenden
 
 {{site.data.keyword.keymanagementserviceshort}} hilft Ihnen bei
-der Bereitstellung verschlüsselter Schlüssel für Apps für
+der Erstellung verschlüsselter Schlüssel für Apps für
 {{site.data.keyword.cloud_notm}}-Services. Bei der Verwaltung des
 Lebenszyklus Ihrer Schlüssel profitieren Sie von der Gewissheit, dass Ihre
 Schlüssel durch cloudbasierte Hardwaresicherheitsmodule (HSMs) vor
@@ -71,13 +70,13 @@ Weitere Informationen zu {{site.data.keyword.keymanagementserviceshort}} finden 
 
 {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS ist ein
 experimenteller {{site.data.keyword.cloud_notm}}-Service, der sichere
-Datenbanken bedarfsgesteuert bereitstellt. Es bietet eine flexible und
-skalierbare Plattform für die schnelle und einfache Bereitstellung und
+Datenbanken bedarfsgesteuert erstellt. Es bietet eine erweiterbare
+Plattform für die schnelle und einfache Bereitstellung und
 Verwaltung Ihrer MongoDB-Datenbank.
 
 Mit diesem Service können Sie Datenbankcluster in der
 {{site.data.keyword.cloud_notm}} erstellen. Jeder Datenbankcluster, den
-Sie erstellen, umfasst eine primäre Datenbankinstanz und zwei sekundäre
+Sie erstellen, verfügt über eine primäre Datenbankinstanz und zwei sekundäre
 Datenbankinstanzen, die als Replikate für die primäre Datenbank dienen. Die
 Logik von
 {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS erstellt
@@ -114,8 +113,7 @@ Isolation, um die Bereitstellung, den Betrieb, die Skalierung und die
 Überwachung von containerbasierten Apps in einem Cluster von Berechnungshosts
 zu automatisieren.
 
-Bitte beachten Sie, dass {{site.data.keyword.hscontainers}} nur
-für Sponsorbenutzer verfügbar ist. Falls Sie eine dedizierte Unterstützung von
+{{site.data.keyword.hscontainers}} sind nur für Sponsorbenutzer verfügbar. Falls Sie eine dedizierte Unterstützung von
 Sicherheitsfunktionen erwarten, registrieren Sie sich als Sponsorbenutzer bei [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml), um Ihre Anwendung im {{site.data.keyword.hscontainers}}-Cluster bereitstellen zu können.
 {: tip}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -19,7 +19,8 @@ Structured Query Language (SQL) ist eine fachspezifische Sprache, die zur
 Verwaltung von Daten in relationalen Datenbanken verwendet wird. Für den Fall,
 dass Ihr Server beendet wird, während Sie ihn gerade nutzen, empfiehlt es sich,
 Daten persistent zu speichern. Zur Gewährleistung der Datenpersistenz können
-Sie direkt aus Swift heraus eine SQL-Datenbank verwenden. Eines der wichtigsten
+Sie direkt aus Swift heraus eine SQL-Datenbank verwenden.
+Eines der wichtigsten
 Merkmale von Swift ist seine Typsicherheit. Die Verwendung einer SQL-Datenbank
 mit Swift ist eine logische Option, da die Typsicherheit von beiden unterstützt
 wird.
@@ -170,15 +171,15 @@ Grade.delete(id: 1) { error in
 ```
 {: pre}
 
-Alle diese Aufrufe verwenden einen Handler, der ein Mal aufgerufen und
+Alle diese Aufrufe verwenden einen Handler, der einmal aufgerufen und
 nach Abschluss des Datenbankaufrufs ausgeführt wird.
 
 ## ORM mit Kitura verwenden
 
 Um das Ausprobieren von ORM zu vereinfachen, kann das Lernprogramm
 [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend)
-die Objekte "Meal" aus der iOS-App abrufen und in einer PostgreSQL-Datenbank
-mit ORM speichern. Auch wenn Sie das Lernprogramm bereits abgeschlossen haben,
+die Objekte "Meal" aus der iOS-App direkt in eine PostgreSQL-Datenbank abrufen.
+Auch wenn Sie das Lernprogramm bereits abgeschlossen haben,
 ist es sinnvoll, es noch einmal durchzuarbeiten, denn es demonstriert die
 Leistungsstärke von Swift-Kuery-ORM und zeigt, wie Ihr Kitura-Code hiermit
 vereinfacht werden kann.

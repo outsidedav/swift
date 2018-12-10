@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-09-20"
 
 ---
 
@@ -17,23 +17,16 @@ lastupdated: "2018-08-17"
 {: #metrics}
 
 Anwendungsmetriken sind wichtig, um die Leistung Ihrer Anwendung zu
-überwachen. Die Überwachung der Leistung in der Umgebung (wie CPU,
-Hauptspeicher, Latenzzeit und HTTP) scheint möglicherweise mit einem
-erheblichen Aufwand verbunden zu sein, ist jedoch essenziell, damit gewährleistet
-wird, dass Ihre Swift-Anwendung jederzeit effizient ausgeführt wird. Gestützt
-auf solche Metriken können cloudnative
-Services wie beispielsweise die automatische Skalierung ein Scale-up
-für Ihre App durchführen, um die Ausführung bei einer Spitzenbelastung
-sicherzustellen, oder auch ein Scale-down, um die Kosten gering zu halten.
+überwachen. Eine Live-Ansicht von Metriken wie CPU-, Speicher-, Latenzzeit- und HTTP-Metriken ist notwendig, um sicherzustellen, dass Ihre Anwendung jederzeit effektiv ausgeführt wird. Kubernetes und Cloud Foundry-Services wie [autoscaling](/docs/services/Auto-Scaling/index.html) basieren auf Metriken, um zu ermitteln, wann Instanzen aufgrund der Arbeitslast dynamisch hinzugefügt oder entfernt werden sollen, und bereinigen Instanzen, die nicht mehr benötigt werden, um Kosten zu sparen. 
 
-Anwendungmetriken können Sie bei der Erkennung allgemeiner
-Leistungsprobleme unterstützen. Beispiele:
+Anwendungsmetriken werden als Zeitreihendaten erfasst. Das Zusammenfassen und Visualisieren von erfassten Metriken kann Sie bei der Erkennung allgemeiner
+Leistungsprobleme unterstützen. Beispiele: 
 
 * Lange HTTP-Antwortzeiten bei einigen oder allen Routen
 * Schlechter Durchsatz in der Anwendung
 * Leistungsminderung infolge von Nachfragespitzen
-* CPU-Auslastung in unerwarteter Höhe auf Durchsatz-/Lastebene
-* Hohe und/oder zunehmende Hauptspeicherbelegung (potenzieller
+* CPU-Auslastung in unerwarteter Höhe 
+* Hohe oder zunehmende Hauptspeicherbelegung (potenzieller
 Speicherverlust)
 
 ## Anwendungsmetriken zu einer vorhandenen Swift-Anwendung hinzufügen
@@ -58,11 +51,10 @@ und einen eigenständigen
 `SwiftMetrics` erzeugten Metriken und bietet ein integriertes
 Dashboard für ihre Darstellung.
 
-
 Um die Basis-API für die Überwachung zu
 aktivieren, fügen Sie `SwiftMetrics` zum Abschnitt
 **dependencies:** in der Datei
-`Package.swift` hinzu (achten Sie darauf, sie zum gewünschten
+`Package.swift` hinzu (achten Sie darauf, sie zum entsprechenden
 Ziel hinzuzufügen):
 ```swift
 .package(url: "https://github.com/RuntimeTools/SwiftMetrics.git", from: "2.4.0")

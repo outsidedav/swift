@@ -2,44 +2,45 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:note:.deprecated}
+{:note: .deprecated}
+{:tip: .tip}
 
 # Serverunabhängige Entwicklung
 {: #serverless}
 
 Was bedeutet "serverunabhängig"? Das serverunabhängige Entwicklungsmuster
 nimmt auf eine Anwendungsentwicklung Bezug, bei der die serverseitige Logik in
-statusunabhängigen Containern ausgeführt wird, die ereignisgesteuert sowie
-ephemer sind (also nur für eine einzige Ausführung bestehen) sowie vollständig
-durch einen Dritten verwaltet werden. Bei diesem Konzept, das auch "Functions
+statusunabhängigen Containern ausgeführt wird. Die Container sind ereignisgesteuert sowie
+ephemer (also nur für eine einzige Ausführung bestehend) und werden vollständig
+durch einen Dritten verwaltet. Bei diesem Konzept, das auch "Functions
 as a Service" (FaaS) genannt wird, stellt der Entwickler eine statusunabhängige
-Funktion bereit, die ohne die explizite Bereitstellung oder Verwaltung eines
+Funktion bereit, die ohne die explizite Erstellung oder Verwaltung eines
 Servers ausgelöst und ausgeführt werden kann.
 
 Durch die Ausgliederung der erforderlichen Infrastruktur und Frameworks
 für die serverseitige Entwicklung können sich Anwendungsentwickler bei der
-serverunabhängigen Architektur ganz darauf konzentrieren, ihre Anwendung zu
-erstellen und Code zu schreiben, der zur Änderung von Daten reaktiv ausgeführt
+serverunabhängigen Architektur ganz darauf konzentrieren, Code zu schreiben, der zur Änderung von Daten reaktiv ausgeführt
 wird.
 
 [{{site.data.keyword.openwhisk}}](https://console.bluemix.net/openwhisk/),
-das IBM Produktangebot für FaaS, soll eine nahtlose serverseitige
+das IBM Produktangebot für FaaS, soll eine einfache serverseitige
 Entwicklungsumgebung bereitstellen, die kein Fachwissen über die Serverseite
-erforderlich macht. Bei Verwendung der serverunabhängigen Technologie können
-Sie zeitnah skalierbare Back-End-Lösungen für praktisch jeden Workloadbedarf
-entwickeln, ohne vorzeitig Ressourcen bereitstellen zu müssen. Für Anwendungen
+erfordert. Bei Verwendung der serverunabhängigen Technologie können
+Sie zeitnah erweiterbare Back-End-Lösungen für praktisch jeden Workloadbedarf
+entwickeln, ohne vorzeitig Ressourcen erstellen zu müssen. Für Anwendungen
 mit unvorhersehbaren Auslastungsmustern oder hohen Serverausfallzeiten
 kann {{site.data.keyword.openwhisk_short}} eine ausgezeichnete
 Cloudlösung mit verbesserter Leistung sein und dank seiner nutzungsabhängigen
-Gebührenstruktur zur Kostenersparnis beitragen.
+Gebührenstruktur zur Kosteneinsparung beitragen.
 
 ## Architekturänderungen
 {: #comparison}
@@ -51,9 +52,9 @@ eine FaaS-Architektur miteinander verglichen.
 
 In einer eher konventionellen Architektur lagert die iOS-Anwendung
 netzintensive Tasks aus oder verarbeitet Daten über Fernzugriff auf einem
-zentralisierten System, das wiederum mit eigenen Services und Speicheroptionen
-verbunden ist. Bei einem konventionellen System findet ein Großteil der
-Auslastung auf einem singulären Server statt, der die Authentifizierung und
+zentralisierten Server, der wiederum mit eigenen Services und Speicheroptionen
+verbunden ist. Ein Großteil der
+Auslastung findet auf einem singulären Server statt, der viele
 verarbeitungsintensive Tasks abwickelt, um die Belastung auf dem Client zu
 minimieren und die Synchronisierung für die gesamte Benutzerbasis
 sicherzustellen.
@@ -65,8 +66,7 @@ der Zustand mehr der Darstellung in der folgenden Abbildung entspricht.
 Serverunabhängige Architektur
 
 Statt die gesamte Verarbeitungs- und Authentifizierungslogik in einem
-einzigen Server zu verarbeiten, nutzt eine serverunabhängige Architektur hoch
-skalierbare Funktionen, die einen Großteil der serverseitigen Logik
+einzigen Server zu verarbeiten, verwendet eine serverunabhängige Architektur Funktionen, die einen Großteil der serverseitigen Logik
 einkapseln und bestimmte Logik auf den Client (und in externe Services) auslagern.
 
 Aus der schematischen Darstellung sind die folgenden Aspekte ersichtlich:
@@ -76,20 +76,18 @@ Service "App ID".
 2. Unter Einbeziehung des Zugriffstokens ruft der Client die API für das
 FaaS-Back-End auf.
 3. Das Back-End ist mit {{site.data.keyword.openwhisk_short}} implementiert. Die
-als Web-Aktionen zugänglich gemachten serverunabhängigen Aktionen gehen davon aus, dass das Token im Anforderungsheader gesendet wird, und prüfen seine Gültigkeit (Signatur und Ablaufdatum), um den Zugriff auf die eigentliche API zu ermöglichen.
+als Web-Aktionen zugänglich gemachten serverunabhängigen Aktionen erwarten, dass Tokens im Anforderungsheader gesendet werden, um die Gültigkeit (Signatur und Ablaufdatum) zu prüfen und den Zugriff auf die eigentliche API zu ermöglichen.
 4. Sobald der Client Daten übergibt, wird die Rückmeldung in {{site.data.keyword.cloudant_short_notm}} gespeichert.
 5. Der Text der Rückmeldung wird mithilfe von
 {{site.data.keyword.toneanalyzershort}} verarbeitet.
 6. Abhängig vom Analyseergebnis wird eine Benachrichtigung durch {{site.data.keyword.mobilepushshort}} zurück an den Client gesendet.
 7. Der Client empfängt die Benachrichtigung.
 
-In einem rein serverunabhängigen Modell übernimmt der Client häufig zusätzliche Aufgaben, weil der Benutzerstatus nicht gespeichert werden kann. In
-einem solchen Fall wird beispielsweise die Autorisierung durch den Client und
-den Identitätsprovider-Service "{{site.data.keyword.appid_short_notm}}"
+In einem rein serverunabhängigen Modell übernimmt der Client häufig zusätzliche Aufgaben, weil der Benutzerstatus nicht gespeichert werden kann. Die Autorisierung wird vom Client und dem Identitätsprovider-Service "{{site.data.keyword.appid_short_notm}}"
 abgewickelt.
 
 Serverunabhängige Architekturen sind zwar nicht immer ideal, können
-jedoch bei den richtigen Team- und Nutzungsbedingungen erhebliche Vorteile
+jedoch bei den richtigen Team- und Nutzungsbedingungen große Vorteile
 bieten. Über einige der häufigsten [Anwendungsfälle](#use_cases)
 können Sie sich anhand einiger spezieller Beispiele informieren.
 
@@ -103,7 +101,7 @@ einhergehen, verringert die Gesamtkosten, die mit konventionellen
 Back-End-Servern verbunden sind. Darüber hinaus unterscheidet sich
 {{site.data.keyword.openwhisk_short}}  von den herkömmlichen
 Computing-Technologien, da Sie nur für die Zeit bezahlen, die Ihr Code
-benötigt, um Anforderungen zu erfüllen (aufgrundet auf die nächsten 100
+benötigt, um Anforderungen zu erfüllen (aufgerundet auf die nächsten 100
 Millisekunden). Dies ermöglicht im Vergleich zu anderen Technologien wie
 virtuellen Maschinen und Containern, die wahrscheinlich nicht zu
 100% ausgelastet sind und Speicher im System Ihres Cloud-Providers belegen,
@@ -128,7 +126,7 @@ Realität ausgeführt werden.
 ![](./images/cloud-functions-rest-api-trigger.png)
 
 Entwickler für Mobilgeräte können leicht auf serverseitige Logik
-zugreifen und rechenintensive Tasks in eine skalierbare Cloudplattform
+zugreifen und rechenintensive Tasks in eine Cloudplattform
 auslagern. Unter Verwendung des iOS-SDK und ohne serverseitige Erfahrungen
 besitzen zu müssen, können Sie Funktionen in Sprachen
 wie Swift implementieren und problemlos serverseitige Funktionen nutzen.
@@ -137,8 +135,7 @@ wie Swift implementieren und problemlos serverseitige Funktionen nutzen.
 
 ![](./images/cloud-functions-cloudant-trigger.png)
 
-Mithilfe von integrierten Auslösern können Sie Code ausführen lassen, wann
-immer Daten in Ihrem Datenspeicher aktualisiert werden. Außerdem können Sie
+Sie können Code immer dann ausführen, wenn Daten in Ihrem Datenspeicher über integrierte Auslöser aktualisiert werden. Außerdem können Sie
 durch ein funktionales Modell für die serverseitige Programmierung Prozesse
 wie Klangnormalisierung, Grafikdrehung, Geräuschreduzierung,
 Piktogrammgenerierung oder Videotranscodierung ohne Weiteres automatisieren.
@@ -147,7 +144,7 @@ Piktogrammgenerierung oder Videotranscodierung ohne Weiteres automatisieren.
 
 Sie können Daten analysieren, sobald sie verfügbar sind. Binden Sie
 leistungsfähige kognitive Services wie IBM Watson in Ihre Funktionalität ein,
-um Objekt oder Personen in Bildern bzw. Videos zu erkennen.
+um Objekte oder Personen in Bildern bzw. Videos zu erkennen.
 
 ### Geplante Tasks
 
@@ -164,8 +161,7 @@ Cron-ähnlichen Syntax angeben.
 ## Zugehörige Links
 {: #general notoc}
 
-* [{{site.data.keyword.openwhisk_short}}](http://www.ibm.com/cloud-computing/bluemix/openwhisk/)
-entdecken
+* [{{site.data.keyword.openwhisk_short}} entdecken](http://www.ibm.com/cloud-computing/bluemix/openwhisk/)
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
 * [Website des OpenWhisk-Projekts von
 Apache](http://openwhisk.org)

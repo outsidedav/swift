@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -78,10 +78,9 @@ angezeigt wird, der im Abschnitt "Services" aufgelistet ist.</p></li>
 Clusterinformationen auf **Öffnen**.
 
 	Das {{site.data.keyword.ihsdbaas_full}}-Dashboard wird
-angezeigt. 
+angezeigt.
 
-6. Rufen Sie die Hostnamen und Portnummern der drei erstellten
-Datenbankinstanzen ab, die Ihren Datenbankcluster bilden. Sie benötigen die
+6. Rufen Sie die Hostnamen und die Portnummern der drei erstellten Datenbankinstanzen ab, die zu Ihrem Datenbankcluster gehören. Sie benötigen die
 Hostnamen, die Portnummern und die Benutzerberechtigungen für die Schritte im
 Abschnitt [Verbindung zur Datenbank herstellen](#connect_db).
 
@@ -104,15 +103,16 @@ App-Services unter der Adresse
 3. Wählen Sie das BFF-Starter-Kit **Swift
 Kitura** aus (BFF = Backend for
 Frontend). Verwechseln Sie es nicht mit dem Basis-Starter-Kit von Swift Kitura
-für Web-Apps. Die Seite "Neues Projekt erstellen" wird angezeigt.
+für Web-Apps.
+  Die Seite "Neues Projekt erstellen" wird angezeigt.
 
-4. Geben Sie die Projektdetails ein und klicken Sie auf **Projekt erstellen**. Die
+4. Geben Sie die Projektdetails ein und klicken Sie auf **Projekt erstellen**.
+  Die
 Projektseite wird angezeigt.
 
 5. Klicken Sie auf der Projektseite auf **Code herunterladen**.
 
-6. Dekomprimieren Sie die heruntergeladene komprimierte Datei in Ihrem
-Projektverzeichnis.
+6. Erweitern Sie die komprimierte Datei in Ihrem Projektverzeichnis. 
 
 ## Schritt 3. Verbindung zur Datenbank herstellen
 {: #connect_db}
@@ -120,132 +120,129 @@ Projektverzeichnis.
 Um die Sicherheit der Datenübertragung zu gewährleisten, laden Sie
 die Datei der Zertifizierungsstelle unter der folgenden Adresse herunter und
 kopieren Sie sie in Ihr Projektverzeichnis:
-https://api.hypersecuredbaas.ibm.com/cert.pem
+https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project directory.
+
 1. Wechseln Sie in Ihr Projektverzeichnis, das die dekomprimierten
 Codedateien des Downloads enthält.
 
 2. Erstellen Sie eine JSON-Datei namens `cred.json`, um
 Ihre Zugriffsberechtigungsnachweise für den Datenbankcluster zu speichern.
 
-3. Geben Sie die Werte ein, die Sie im Abschnitt
-[Datenbankcluster erstellen](#create_dbcluster) abgerufen
-haben. Die Werte müssen in einer einzigen Zeile angegeben werden.
+3. Geben Sie die Werte ein, die Sie in den Schritten im Abschnitt
+[Datenbankcluster erstellen](#create_dbcluster) gesammelt haben. Die Werte müssen in einer einzigen Zeile angegeben werden.
+  ```hljs
+  {
+  "uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
+  <Hostname_2>:<PortNumber_2>,<Hostname_3>:<PortNumber_3>
+   /admin?ssl=true&ssl_ca_certs=/swift-project/<CA_file>"
+  }
+  ```
+  {: codeblock}
 
-	```hljs
-	{
-	"uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
-	<Hostname_2>:<PortNumber_2>,<Hostname_3>:<PortNumber_3>
-	/admin?ssl=true&ssl_ca_certs=/swift-project/<CA_file>"
-	}
-	```
-	{: codeblock}
-
-	Hierbei gilt Folgendes:
-
-	<table>
-	  <tr>
-	    <th> Parameter </th>
-	    <th> Beschreibung </th>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>admin_ID</em>&gt; </td>
-	    <td> Die Benutzer-ID des Datenbankadministrators, die Sie bei den Anweisungen im Abschnitt [Datenbankcluster erstellen](#create_dbcluster) angegeben haben.</td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>admin_pwd</em>&gt; </td>
-	    <td> Das Kennwort für die Benutzer-ID des Datenbankadministrators, das Sie bei den Anweisungen im Abschnitt [Datenbankcluster erstellen](#create_dbcluster) angegeben haben.</td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>Hostname_i</em>&gt; </td>
-	    <td> Ein Datenbankreplikat <em>i</em> (<em>i</em>=1,2,3), das im Abschnitt [Datenbankcluster erstellen](create_dbcluster) zurückgegeben wurde.</td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>PortNumber_i</em>&gt; </td>
-	    <td> Eine Portnummer <em>i</em> (<em>i</em>=1,2,3), die im Abschnitt [Datenbankcluster erstellen](#create_dbcluster) zurückgegeben wurde.</td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>CA_file</em>&gt; </td>
-	    <td> Der Dateiname der heruntergeladenen Datei der Zertifizierungsstelle. Während der Bereitstellung wird diese Datei in das Verzeichnis `/swift-project` kopiert.</td>
-	  </tr>
-	</table>
+  Hierbei gilt Folgendes:
+  <table>
+  <tr>
+    <th> Parameter </th>
+    <th> Beschreibung </th>
+  </tr>
+  <tr>
+    <td> &lt;<em>admin_ID</em>&gt; </td>
+    <td> Die Benutzer-ID des Datenbankadministrators, die Sie bei den Anweisungen im Abschnitt [Datenbankcluster erstellen](#create_dbcluster) angegeben haben.
+  </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>admin_pwd</em>&gt; </td>
+    <td> Das Kennwort für die Benutzer-ID des Datenbankadministrators, das Sie bei den Anweisungen im Abschnitt [Datenbankcluster erstellen](#create_dbcluster) angegeben haben. </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>Hostname_i</em>&gt; </td>
+    <td> Ein Datenbankreplikat <em>i</em> (<em>i</em>=1,2,3), das im Abschnitt [Datenbankcluster erstellen](create_dbcluster) zurückgegeben wurde. </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>PortNumber_i</em>&gt; </td>
+    <td> Eine Portnummer <em>i</em> (<em>i</em>=1,2,3), die im Abschnitt [Datenbankcluster erstellen](#create_dbcluster) zurückgegeben wurde. </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>CA_file</em>&gt; </td>
+    <td> Der Dateiname der heruntergeladenen Datei der Zertifizierungsstelle. Während der Bereitstellung wird diese Datei in das Verzeichnis `/swift-project` kopiert.</td>
+  </tr>
+  </table>
 
 4. Bearbeiten Sie die Datei `Package.swift` und fügen
 Sie Paketabhängigkeiten für die Verwendung des
 MongoKitten-SDK hinzu.
 
-	a. Fügen Sie im Abschnitt "dependencies" die folgende Zeile hinzu:
-```hljs
-			 .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
-			```
-			{: codeblock}
+  * Fügen Sie im Abschnitt "dependencies" die folgende Zeile hinzu:
+   ```hljs
+   .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
+   ```
+   {: codeblock}
 
-	b. Fügen Sie im Abschnitt "targets" die Abhängigkeit "MongoKitten" zur
+  * Fügen Sie im Abschnitt "targets" die Abhängigkeit "MongoKitten" zur
 folgenden Zeile hinzu. **Hinweis:** Die Werte müssen in
 einer einzigen Zeile angegeben werden.
-```hljs
-			 .target(name: "Application", dependencies: [ "Kitura",
-                        				"CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
-			```
-			{: codeblock}
+   ```hljs
+   .target(name: "Application", dependencies: [ "Kitura",
+   "CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
+   ```
+   {: codeblock}
 
 5. Bearbeiten Sie
 die Datei `Sources/Application/Application.swift`, damit die
 Konnektivität zu MongoDB mittels MongoKitten initialisiert wird.
 
-	a. Importieren Sie das MongoKitten-SDK:
-		```
-		import MongoKitten
-		```
-		{: codeblock}
+  * Importieren Sie das MongoKitten-SDK:
+    ```
+	import MongoKitten
+	```
+	{: codeblock}
 
-	b. Fügen Sie die Klasse `ApplicationServices` hinzu:
-
-		```hljs
-		cclass ApplicationServices {
-	    // Service references
+  * Fügen Sie die Klasse `ApplicationServices` hinzu:
+    ```hljs
+	cclass ApplicationServices {
+	// Service references
 	    public let mongoDBService: MongoKitten.Database
 	    public let myCredFile = "/swift-project/cred.json"
 
-	    public init() throws {
-	        // Read credentials from json file cred.json
+    public init() throws {
+        // Read credentials from json file cred.json
 	        struct ResponseData: Decodable {
-	            var uri: String
+            var uri: String
 	        }
 	        let data = try? Data(contentsOf: URL(fileURLWithPath: myCredFile))
 	        let decoder = JSONDecoder()
 	        let jsonData = try decoder.decode(ResponseData.self, from: data!)
 
-	        // Run service initializers
+        // Run service initializers
 	        let server = try Server(jsonData.uri)
 	        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
 	    }
-		}
-		```
-		{: codeblock}
+	}
+	```
+	{: codeblock}
 
-	c. Fügen Sie in der öffentlichen Klasse `App` die
+  * Fügen Sie in der öffentlichen Klasse `App` die
 folgenden Zeilen hinzu, um die Datenbankverbindung zu initialisieren:
+    ```hljs
+	public class App {
+	...
+	let services: ApplicationServices
 
-		```hljs
-		public class App {
-	    ...
-	    let services: ApplicationServices
-
-	    public init() throws {
-	        // Services
-	        services = try ApplicationServices()
-
-	    }
-	    ...
-    	```
-    	{: codeblock}
+	public init() throws {
+	   // Services
+	    services = try ApplicationServices()
+	 }
+	...
+    ```
+    {: codeblock}
 
 ## Schritt 4. Datenbankverbindung überprüfen
 {: #verify_database}
 
 1. Überprüfen Sie Ihre Datenbankverbindung, indem Sie die Datei
 `Sources/Application/Application.swift` bearbeiten und einen
-Befehl zum Testen der Datenbankverbindung hinzufügen. Fügen Sie beispielsweise
+Befehl zum Testen der Datenbankverbindung hinzufügen.
+Fügen Sie beispielsweise
 den folgenden Befehl in der
 Klasse `ApplicationServices` hinzu:
 
@@ -315,7 +312,7 @@ installiert ist und ausgeführt wird. Sie können Docker unter der Adresse
 
 3. Geben Sie die folgenden Befehle ein, um die Anwendung auf Ihrem
 lokalen Computer bereitzustellen:
-```
+	```
 	$ ibmcloud dev build
 	...
 	$ ibmcloud dev run
@@ -332,25 +329,24 @@ Docker-Container ausgeführt.
 
 2. Melden Sie sich bei Ihrem IBM Cloud-Konto an und legen Sie die Region
 wie nachfolgend gezeigt mit `us-south` fest:
-```hljs
-	$ ibmcloud login -a https://api.ng.bluemix.net
-	...
-	$ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
-	```
-	{: codeblock}
+  ```hljs
+  $ ibmcloud login -a https://api.ng.bluemix.net
+  $ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
+  ```
+  {: codeblock}
 
-    **Hinweis:** Bei Ausgabe des Befehls
+  **Hinweis:** Bei Ausgabe des Befehls
 `ibmcloud login -a https://api.ng.bluemix.net` wird
 automatisch **us-south** als Region festgelegt.
 
 3. Geben Sie den folgenden Befehl ein, um die Anwendung in Cloud Foundry
 bereitzustellen:
-	```
-	$ ibmcloud dev deploy
-	```
-	{: codeblock}
+  ```
+  $ ibmcloud dev deploy
+  ```
+  {: codeblock}
 
-	Sie empfangen daraufhin einen Link, auf den Sie klicken können und der
+  Sie empfangen daraufhin einen Link, auf den Sie klicken können und der
 Sie zu der Position führt, an der Ihre Anwendung gehostet wird.
 
 ### Anwendung in einem Kubernetes-Cluster bereitstellen
@@ -371,24 +367,23 @@ Datenbankcluster, Cloud Foundry-Apps und Cloud Foundry-Services.
 
 5. Melden Sie sich bei Ihrem {{site.data.keyword.cloud_notm}}-Konto an und legen Sie die Region
 wie nachfolgend gezeigt mit "us-south" fest:
-```hljs
-	$ ibmcloud login -a https://api.ng.bluemix.net
-	...
-	$ ibmcloud target -o <your-organization> -s <your-space>
-	```
-	{: codeblock}
+  ```hljs
+  $ ibmcloud login -a https://api.ng.bluemix.net
+  $ ibmcloud target -o <your-organization> -s <your-space>
+  ```
+  {: codeblock}
 
-	**Hinweis:** Bei Ausgabe des Befehls
+  **Hinweis:** Bei Ausgabe des Befehls
 `ibmcloud login -a https://api.ng.bluemix.net` wird
 automatisch **us-south** als Region festgelegt.
 
 6. Geben Sie den folgenden Befehl ein, um Ihre Anwendung in Kubernetes
 bereitzustellen:
-```
-    $ ibmcloud dev deploy -t container
-    ```
-    {: codeblock}
+  ```
+  $ ibmcloud dev deploy -t container
+  ```
+  {: codeblock}
 
-	Sie werden aufgefordert, den Namen Ihres Kubernetes-Clusters und die
+  Sie werden aufgefordert, den Namen Ihres Kubernetes-Clusters und die
 Docker-Registry anzugeben. Nachdem Sie die Informationen bereitgestellt haben,
 wird Ihre Anwendung im Kubernetes-Cluster bereitgestellt.

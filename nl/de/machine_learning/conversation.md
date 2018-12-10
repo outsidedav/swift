@@ -216,8 +216,7 @@ in der Datei `config/local-dev.json`.
 ## Nächste Schritte
 {: #assistant_next}
 
-Hervorragend! Sie haben einen KI-Assistenten zu Ihrer App hinzugefügt. 
-Nutzen Sie diesen Schwung und probieren Sie gleich eine der folgenden
+Hervorragend! Sie haben einen KI-Assistenten zu Ihrer App hinzugefügt. Nutzen Sie diesen Schwung und probieren Sie gleich eine der folgenden
 Optionen aus:
 
 * Informieren Sie sich über das

@@ -42,8 +42,7 @@ verarbeitet. Diese APIs können dann in Ihren iOS- oder Swift-Anwendungen
 eingesetzt werden.
 
 Mit IBM Watson Machine Learning können Sie nach dem Einrichten der
-Umgebung Modelle erstellen, in der Cloud bereitstellen und trainieren.
-Weitere Informationen finden Sie auf der Seite
+Umgebung Modelle erstellen, in der Cloud bereitstellen und trainieren. Weitere Informationen finden Sie auf der Seite
 [Create, deploy, and train models with {{site.data.keyword.pm_full}} and {{site.data.keyword.DSX}}](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics).
 
 ### Lernprogramme
@@ -69,7 +68,8 @@ Ihre Berechtigungsnachweise in Ihr Projektdashboard einbezogen.
   * Bei einem iOS-Projekt werden die Berechtigungsnachweise durch das
 einfache Hinzufügen der
 {{site.data.keyword.pm_short}}-Ressource zu Ihrem iOS-Projekt sofort in
-Ihre App eingefügt. Kopieren Sie das folgende Code-Snippet und fügen Sie es
+Ihre App eingefügt.
+    Kopieren Sie das folgende Code-Snippet und fügen Sie es
 ein, um von Ihrer Anwendung aus auf die Berechtigungsnachweise zuzugreifen. Denken
 Sie auch daran, den Endpunkt für die Bewertung (scoring) zu Ihrer App
 hinzuzufügen, der auf der Registerkarte `Implementierung` für

@@ -153,7 +153,7 @@ Jetzt können Sie in Ihrer App mit dem Swift-SDK für Watson arbeiten.
 {: #analyze-text-in-your-app}
 
 1. Öffnen Sie die Datei `ViewController.swift` in Xcode.
-2. Fügen Sie eine Importanweisung für Tone Analyzer hinzu:
+2. Fügen Sie eine Importanweisung für Tone Analyzer hinzu: 
     ```swift
     import ToneAnalyzerV3
     ```
@@ -219,7 +219,6 @@ Tentative: 0.867377
 
 ## Starter-Kits verwenden
 {: #tone_starterkits}
-
 
 [Starter-Kits](https://console.bluemix.net/developer/appledevelopment/starter-kits)
 bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums
