@@ -14,7 +14,7 @@ lastupdated: "2017-08-09"
 # 앱에 Swift SDK 추가
 {: #sdk}
 
-{{site.data.keyword.Bluemix}} SDK를 앱에 추가하려면 사용할 SDK를 선택하고 SDK를 앱으로 가져오도록 종속성 관리자를 구성하십시오. 
+{{site.data.keyword.Bluemix}} SDK를 앱에 추가하려면 사용할 SDK를 선택하고 SDK를 앱으로 가져오도록 종속성 관리자를 구성하십시오.
 
 ## 클라이언트 SDK 사용
 {: #client_sdk}

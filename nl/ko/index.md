@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -16,19 +16,19 @@ lastupdated: "2018-08-07"
 # 시작하기 튜토리얼
 {: #set_up}
 
-{{site.data.keyword.cloud}}는 Swift 개발자와 애플리케이션에 고객이 요구하는 보안, AI 및 가치를 부여할 수 있는 솔루션 및 서비스를 제공합니다. 광범위한 포트폴리오의 오퍼링 및 SDK를 사용하여 이 서비스를 활용하고 최첨단 애플리케이션을 시장에 신속하게 출시할 수 있습니다. Swift 프로그래밍 안내서는 서비스를 신규 또는 기존 Swift(iOS 클라이언트 또는 서버 측 Swift) 애플리케이션에 추가하는 방법에 대해 설명합니다.
+{{site.data.keyword.cloud}}는 Swift 개발자가 고객이 요구하는 보안, AI 및 가치와 통합되는 애플리케이션을 빌드할 수 있는 솔루션 및 서비스를 제공합니다. 광범위한 포트폴리오의 오퍼링 및 SDK를 사용하여 이 서비스를 이용하고 최첨단 애플리케이션을 시장에 신속하게 출시할 수 있습니다. Swift 프로그래밍 안내서는 서비스를 신규 또는 기존 Swift(iOS 클라이언트 또는 서버 측 Swift) 애플리케이션에 추가하는 방법에 대해 설명합니다.
 {: shortdesc}
 
-다음 튜토리얼은 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits)에서 비어 있는 스타터 킷을 사용하여 {{site.data.keyword.mobileanalytics_full}}로 Swift 모바일 앱을 쉽게 작성할 수 있는 방법을 표시하는 시작점입니다. 콘솔에서 {{site.data.keyword.mobileanalytics_short}} 서비스를 추가하고, 코드를 다운로드하고, Xcode에서 로컬로 iOS 앱을 실행하고, 앱을 구성 및 모니터합니다. 
+다음 튜토리얼은 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits)에서 비어 있는 스타터 킷을 사용하여 {{site.data.keyword.mobileanalytics_full}}로 Swift 모바일 앱을 쉽게 작성할 수 있는 방법을 표시합니다. 콘솔에서 {{site.data.keyword.mobileanalytics_short}} 서비스를 추가하고, 코드를 다운로드하고, Xcode에서 로컬로 iOS 앱을 실행하고, 앱을 구성 및 모니터합니다.
 
 ## 1단계. 개발자를 위한 요구사항
 {: #dev-requirements}
 
-{{site.data.keyword.cloud_notm}}에서 iOS 개발을 시작하려면 다음 요구사항을 충족하는지 확인하십시오. 
+{{site.data.keyword.cloud_notm}}에서 iOS 개발을 시작하려면 다음 요구사항을 충족하는지 확인하십시오.
 
 ### 운영 체제
 
-최신 MacOS 지원 하드웨어를 사용하고 최신 iOS 릴리스로 테스트하여 Swift 앱을 개발하는 것이 가장 좋은 방법입니다. [Apple Developer](https://developer.apple.com/) 계정에 가입하여 실제 디바이스에서 테스트할 수 있습니다. 
+최신 MacOS 지원 하드웨어를 사용하고 최신 iOS 릴리스로 테스트하여 Swift 앱을 개발하는 것이 가장 좋은 방법입니다. [Apple Developer](https://developer.apple.com/) 계정에 가입하여 실제 디바이스에서 테스트할 수 있습니다.
 
 ### iOS 및 Xcode
 {: #ios_and_xcode}
@@ -79,7 +79,7 @@ lastupdated: "2018-08-07"
 
 코드를 다운로드하려면 `Apps` > `Your App`에서 **코드 다운로드**를 클릭하십시오. 다운로드된 코드에는 **{{site.data.keyword.mobileanalytics_short}}** 클라이언트 SDK가 포함되어 있습니다. 클라이언트 SDK는 CocoaPods 및 Carthage에서 사용할 수 있습니다. 이 솔루션의 경우 CocoaPods를 사용하십시오.
 
-1. 다운로드된 코드를 압축 해제하십시오. 그런 다음 터미널을 사용하여 압축 해제된 폴더로 이동하십시오.
+1. 다운로드된 코드를 압축 해제하십시오. 그런 다음 터미널을 사용하여 압축을 푼 폴더로 이동하십시오.
   ```
   cd <Name of Project>
   ```
@@ -96,7 +96,7 @@ lastupdated: "2018-08-07"
   **참고:** 원래의 Xcode 프로젝트 파일 `MyApp.xcworkspace` 대신 새 Xcode 작업공간을 항상 여십시오.
    ![Xcode 열기](images/Xcode.png)
 
-  `BMSCore`는 코어 SDK이며 모바일 클라이언트 SDK의 기반입니다. `BMSClient`는 BMSCore의 클래스이며 AppDelegate.swift에서 초기화됩니다. BMSCore와 함께 {{site.data.keyword.mobileanalytics_short}} SDK도 이미 프로젝트에 가져왔습니다.
+  `BMSCore`는 코어 SDK이며 모바일 클라이언트 SDK의 기반입니다. `BMSClient`는 `BMSCore`의 클래스이며 `AppDelegate.swift`에서 초기화됩니다. `BMSCore`와 함께 {{site.data.keyword.mobileanalytics_short}} SDK도 이미 프로젝트에 가져왔습니다.
   
 2. 다음 스니펫에 표시된 대로 분석 초기화 코드가 이미 포함되어 있습니다.
   ```
@@ -111,9 +111,9 @@ lastupdated: "2018-08-07"
   ```
   {: codeblock}
 
-  **참고:** 서비스 신임 정보는 `BMSCredentials.plist` 파일의 일부입니다.
+  **참고:** 서비스 인증 정보는 `BMSCredentials.plist` 파일의 일부입니다.
 
-3. `logger`를 사용하여 사용 분석을 수집하십시오. `ViewController.swift` 파일을 찾아서 다음 코드를 확인하십시오. 
+3. `logger`를 사용하여 사용 분석을 수집하십시오. `ViewController.swift` 파일을 찾아서 다음 코드를 확인하십시오.
   ```
    func didBecomeActive(_ notification: Notification) {
        Analytics.send()
@@ -126,7 +126,7 @@ lastupdated: "2018-08-07"
    {:tip}
 
 ## 6단계. {{site.data.keyword.mobileanalytics_short}}로 앱 모니터링
-{{site.data.keyword.mobileanalytics_short}} 서비스는 주요 애플리케이션 사용량 정보와 모바일 애플리케이션 개발자 및 애플리케이션 소유자를 위한 성능 인사이트를 제공합니다. {{site.data.keyword.mobileanalytics_short}}를 사용하여 애플리케이션 소유자 및 개발자는 사용자 측에서 발생하는 사항을 이해할 수 있습니다. 이러한 인사이트를 통해 사용자와 관련된 더 나은 애플리케이션을 빌드하고 모바일 애플리케이션의 대열에 진입할 수 있습니다. 
+{{site.data.keyword.mobileanalytics_short}} 서비스는 주요 애플리케이션 사용량 정보와 모바일 애플리케이션 개발자 및 애플리케이션 소유자를 위한 성능 인사이트를 제공합니다. {{site.data.keyword.mobileanalytics_short}}를 사용하여 애플리케이션 소유자 및 개발자는 사용자 측에서 발생하는 사항을 이해할 수 있습니다. 이러한 인사이트를 통해 사용자와 관련된 더 나은 애플리케이션을 빌드하고 모바일 애플리케이션의 대열에 진입할 수 있습니다.
 
 이 서비스에는 개발자 및 애플리케이션 소유자가 모바일 애플리케이션 성능을 모니터하고, 사용 통계를 보고, 디바이스 로그를 검색할 수 있는 {{site.data.keyword.mobileanalytics_short}} 콘솔이 있습니다. 
 
@@ -145,9 +145,9 @@ lastupdated: "2018-08-07"
 ### 더 많은 서비스 추가
 웹 콘솔에서 직접 더 많은 서비스(예: 다음과 같이 일반적으로 사용되는 서비스)를 iOS에 추가할 수 있습니다.
 
-* [푸시 알림 서비스 추가](/push/push_notifications.html)
-* [앱 ID로 사용자 인증 추가](/authenticate/app_id.html)
+* [푸시 알림 서비스 추가](/docs/services/mobilepush/index.html)
+* [앱 ID로 사용자 인증 추가](/docs/services/appid/index.html)
 
 ### {{site.data.keyword.cloud_notm}} 개발자 도구 사용
-엔드-투-엔드 웹, 모바일 및 마이크로서비스 애플리케이션을 작성, 개발 및 배치하기 위한 명령행 접근 방식을 제공하는 [{{site.data.keyword.cloud_notm}} 개발자 도구](../cli/index.html)를 사용하여 Swift 앱을 개발하는 방법을 알아볼 수도 있습니다.
+완벽한 웹, 모바일 및 마이크로서비스 애플리케이션을 작성, 개발 및 배치하기 위한 명령행 접근 방식을 제공하는 [{{site.data.keyword.cloud_notm}} 개발자 도구](../cli/index.html)를 사용하여 Swift 앱을 개발하는 방법을 알아볼 수도 있습니다.
 

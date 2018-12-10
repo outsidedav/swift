@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -15,30 +15,30 @@ lastupdated: "2018-08-07"
 # 모바일 분석 수집
 {: #mobile_analytics}
 
-{{site.data.keyword.cloud_notm}}의 {{site.data.keyword.mobileanalytics_short}}는 개발자, IT 관리자 및 비즈니스 이해 당사자에게 모바일 앱의 수행 방법 및 사용 방법에 대한 인사이트를 제공합니다. {{site.data.keyword.mobileanalytics_short}} 서비스를 사용하여 다음을 수행할 수 있습니다.
+{{site.data.keyword.cloud_notm}}의 {{site.data.keyword.mobileanalytics_short}}는 개발자, 관리자 및 비즈니스 이해 당사자에게 모바일 앱의 수행 방법 및 사용 방법에 대한 인사이트를 제공합니다. {{site.data.keyword.mobileanalytics_short}} 서비스를 사용하여 다음을 수행할 수 있습니다.
 
- - **즉각적인 인사이트 확보** - 실시간으로 성능 및 사용 메트릭을 확인합니다.
+ - **즉각적인 인사이트 확보** - 라이브 성능 및 사용 메트릭을 확인합니다.
 
  - **몇 분 안에 구현** - {{site.data.keyword.cloud_notm}}에서 서비스 인스턴스를 작성하고, SDK를 프로젝트에 추가한 다음, 두 행의 코드를 애플리케이션에 붙여넣으면 많은 수의 사전 정의된 메트릭을 수집할 준비가 됩니다.
 
- - **원하는 데이터 수집** - 사용자 정의 이벤트로 앱을 인스트루먼트화하고, 사용자가 앱과 상호작용하는 방법을 확인하며, 구매 추적 및 앱 활동을 모니터합니다.
+ - **원하는 데이터 수집** - 사용자 정의 이벤트로 앱을 인스트루먼트화하고, 사용자가 앱과 상호작용하는 방법을 확인하며, 지출 내역을 추적하고, 앱 활동을 모니터합니다.
 
  - **한 눈에 메트릭 보기** - {{site.data.keyword.mobileanalytics_short}} 콘솔은 조회를 작성할 필요 없이 기본 차트를 제공합니다.
 
  - **중요 항목에 주력** - 시간, 어댑터, 애플리케이션, 애플리케이션 버전, OS, OS 버전 또는 디바이스 모델별로 메트릭을 필터링합니다.
 
- - **문제를 빠르게 발견** - 충돌 상태를 모니터합니다. 중요한 메트릭에 대한 경보 트리거를 설정하고 REST 엔드포인트에 경보를 라우트합니다. 
+ - **문제를 빠르게 발견** - 충돌 상태를 모니터합니다. 중요한 메트릭에 대한 경보 트리거를 설정하고 REST 엔드포인트에 경보를 라우트합니다.
 
  - **근본 원인에 대한 문제점 해결** - 애플리케이션에서 사용자 정의 로깅을 사용하고 자동으로 로그를 업로드한 후 콘솔에서 로그를 검색합니다. 충돌 이벤트를 드릴 다운하여 스택 추적을 확인합니다.
 
 ## 시작하기 전에
 
-먼저, 다음 필수 소프트웨어를 갖추었는지 확인하십시오. 
+먼저, 다음 필수 소프트웨어를 갖추었는지 확인하십시오.
 
  - iOS 8.0+ / watchOS 2.0+
  - Xcode 7.3, 8.0
  - Swift 2.2 - 3.0
- - Cocoapods 또는 Carthage
+ - CocoaPods 또는 Carthage
 
 ## 1단계. {{site.data.keyword.mobileanalytics_short}}의 인스턴스 작성
 {: #mobile_analytics_create}
@@ -50,20 +50,20 @@ lastupdated: "2018-08-07"
 
 ## 2단계. iOS Swift SDK 설치
 
-서비스는 플랫폼별 SDK를 제공하여 애플리케이션 개발을 간소화합니다. {{site.data.keyword.cloud_notm}} Mobile Services Swift SDK는 Cocoapods 또는 Carthage로 설치할 수 있습니다. 자세한 정보는 [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)를 참조하십시오.
+서비스는 플랫폼별 SDK를 제공하여 애플리케이션 개발을 간소화합니다. {{site.data.keyword.cloud_notm}} Mobile Services Swift SDK는 CocoaPods 또는 Carthage로 설치할 수 있습니다. 자세한 정보는 [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)를 참조하십시오.
 
 {{site.data.keyword.mobileanalytics_full}} SDK를 사용하여 모바일 애플리케이션을 인스트루먼트화할 수 있습니다. Swift SDK는 iOS 및 watchOS에서 사용할 수 있습니다.
 
-1. Xcode를 올바르게 설정했는지 확인하십시오. iOS 개발 환경을 설정하는 방법을 알아보려면 [Apple Developer 웹 사이트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.apple.com/support/xcode/){: new_window}를 참조하십시오. 클라이언트 SDK Swift 분석을 위한 [Xcode 요구사항 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#requirements){: new_window}을 읽어 보십시오. 
+1. Xcode를 올바르게 설정했는지 확인하십시오. iOS 개발 환경을 설정하는 방법을 알아보려면 [Apple Developer 웹 사이트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.apple.com/support/xcode/){: new_window}를 참조하십시오. 클라이언트 SDK Swift 분석을 위한 [Xcode 요구사항 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#requirements){: new_window}을 읽어 보십시오.
 
-2. 앱의 프로젝트 폴더에서 `Info.plist` 파일의 특성을 추가하여 위치 API를 사용으로 설정하십시오. 예를 들면, `Privacy - Location Usage Description`입니다. 위치 API를 추가하려면 "앱에서 위치 서비스를 사용으로 설정해야 함"과 같은 적절한 이유를 제공하십시오. 
+2. 앱의 프로젝트 폴더에서 `Info.plist` 파일의 특성을 추가하여 위치 API를 사용으로 설정하십시오. 예를 들면, `Privacy - Location Usage Description`입니다. 위치 API를 추가하려면 "앱에서 위치 서비스를 사용으로 설정해야 함"과 같은 적절한 이유를 제공하십시오.
 
 {{site.data.keyword.mobileanalytics_short}} SDK는 Cocoa 프로젝트용 종속성 관리자인 [CocoaPods ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cocoapods.org/){: new_window} 및 [Carthage ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/Carthage/Carthage#getting-started){: new_window}로 분배됩니다. CocoaPods 및 Carthage는 애플리케이션에서 아티팩트를 사용할 수 있도록 저장소에서 아티팩트를 자동으로 다운로드합니다. CocoaPods 또는 Carthage를 선택하십시오.
 
 ### CocoaPods
 {: #cocoapods}
 
-1. Cocoapods를 사용하고 이를 프로파일에 추가하여 `BMSAnalytics`를 설치하려면 GitHub의 [{{site.data.keyword.Bluemix_notm}} Mobile Services Swift SDK 지시사항 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window}을 따르십시오.
+1. CocoaPods를 사용하고 이를 프로파일에 추가하여 `BMSAnalytics`를 설치하려면 GitHub의 [{{site.data.keyword.Bluemix_notm}} Mobile Services Swift SDK 지시사항 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window}을 따르십시오.
 
 2. iOS 클라이언트 SDK를 설치한 후 Analytics 클라이언트 SDK를 [가져오고 초기화](sdk.html#initalize-ma-sdk)하십시오.   
 
@@ -78,7 +78,7 @@ CocoaPods를 사용하지 않는 경우 [Carthage ![외부 링크 아이콘](../
 
 ## 3단계. SDK 초기화
 
-{{site.data.keyword.mobileanalytics_short}}를 사용하여 다음 카테고리의 데이터를 수집할 수 있으며, 각각 다른 수준의 인스트루먼테이션이 필요합니다. 
+{{site.data.keyword.mobileanalytics_short}}를 사용하여 다음 카테고리의 데이터를 수집할 수 있으며, 각각 다른 수준의 인스트루먼테이션이 필요합니다.
 
 **사전 정의된 데이터**:
 이 카테고리에는 모든 애플리케이션에 적용되는 일반적인 사용 및 디바이스 정보가 포함됩니다. 이는 애플리케이션 사용의 볼륨, 빈도 또는 지속 기간을 표시합니다. 사전 정의된 데이터는 애플리케이션에서 {{site.data.keyword.mobileanalytics_short}} SDK를 초기화한 후 자동으로 수집됩니다.
@@ -89,13 +89,13 @@ CocoaPods를 사용하지 않는 경우 [Carthage ![외부 링크 아이콘](../
 **사용자 정의 이벤트**:
 이 카테고리에는 사용자가 자체적으로 정의하며 앱에 특정한 데이터가 포함됩니다. 이 데이터는 앱에서 발생하는 이벤트(예: 페이지 보기, 단추 탭 또는 인 앱 구매)를 표시합니다. 사용자 앱에서 {{site.data.keyword.mobileanalytics_short}} SDK를 초기화하는 것 외에도 추적할 각 사용자 정의 이벤트마다 코드 행을 추가해야 합니다.
 
-## 4단계. 서비스 신임 정보 API 키 값 식별
+## 4단계. 서비스 인증 정보 API 키 값 식별
 {: #analytics-clientkey}
 
 클라이언트 SDK를 설정하기 전에 **API 키** 값을 식별하십시오. API 키는 클라이언트 SDK를 초기화하는 데 필요합니다.
 
 1. {{site.data.keyword.mobileanalytics_short}} 서비스 대시보드를 여십시오.
-2. **신임 정보 보기**를 펼쳐 API 키 값을 표시하십시오. {{site.data.keyword.mobileanalytics_short}} 클라이언트 SDK를 초기화할 때 API 키 값이 필요합니다.
+2. **인증 정보 보기**를 펼쳐 API 키 값을 표시하십시오. {{site.data.keyword.mobileanalytics_short}} 클라이언트 SDK를 초기화할 때 API 키 값이 필요합니다.
 
 ## 5단계. 분석을 수집하기 위해 애플리케이션 초기화
 {: #initalize-ma-sdk}
@@ -121,7 +121,7 @@ CocoaPods를 사용하지 않는 경우 [Carthage ![외부 링크 아이콘](../
 
 	**bluemixRegion** 매개변수를 사용하여 `BMSClient`를 초기화해야 합니다. 초기자(initializer)에서 **bluemixRegion** 값은 사용 중인 {{site.data.keyword.Bluemix_notm}} 배치를 지정합니다.
 
-3. 애플리케이션 오브젝트를 사용하고 애플리케이션의 이름을 제공하여 분석을 초기화하십시오. 
+3. 애플리케이션 오브젝트를 사용하고 애플리케이션의 이름을 제공하여 분석을 초기화하십시오.
 
 	애플리케이션(`your_app_name_here`)에 대해 선택한 이름이 애플리케이션 이름으로 {{site.data.keyword.mobileanalytics_short}} 콘솔에 표시됩니다. 애플리케이션 이름은 대시보드에서 애플리케이션 로그를 검색하기 위한 필터로 사용됩니다. 플랫폼(예: iOS) 전체에서 동일한 애플리케이션 이름을 사용하는 경우 로그가 전송된 플랫폼에 상관없이 동일한 이름으로 해당 애플리케이션에서 모든 로그를 볼 수 있습니다.
 
@@ -138,7 +138,7 @@ CocoaPods를 사용하지 않는 경우 [Carthage ![외부 링크 아이콘](../
 
 사용 분석을 기록하고 기록된 데이터를 {{site.data.keyword.mobileanalytics_short}} 서비스로 전송하도록 {{site.data.keyword.mobileanalytics_short}} 클라이언트 SDK를 구성할 수 있습니다.
 
-사용 분석의 기록 및 전송을 시작하려면 다음 API를 사용하십시오. 
+사용 분석의 기록 및 전송을 시작하려면 다음 API를 사용하십시오.
 ```
 // Disable recording of usage analytics (eg: to save disk space)
 // Recording is enabled by default
@@ -262,7 +262,7 @@ Analytics.initialize(appName, apiKey,  hasUserContext, collectLocation, [BMSAnal
 
 분석 및 로그 정보를 {{site.data.keyword.mobileanalytics_short}}에 전송하여 [애플리케이션 충돌 데이터](app-monitoring.html#monitor-app-crash)를 볼 수 있습니다.
 
-`Analytics.send()` 메소드는 **충돌** 페이지에 있는 **충돌 개요** 및 **충돌** 표를 채웁니다. 차트는 초기화를 사용하고 분석을 위한 프로세스를 전송하여 사용으로 설정되며, 특별한 구성은 필요하지 않습니다.
+`Analytics.send()` 메소드는 **충돌** 페이지에 있는 **충돌 개요** 및 **충돌** 표를 채웁니다. 분석을 위해 프로세스 초기화 및 전송을 사용하여 차트를 사용으로 설정할 수 있습니다. 
 
 `Logger.send()` 메소드는 **문제점 해결** 페이지에 있는 **충돌 요약** 및 **충돌 세부사항** 표를 채웁니다. 애플리케이션 코드에 다음 명령문을 추가하여 애플리케이션이 로그를 저장하고 전송하여 차트를 채울 수 있도록 설정해야 합니다.
 ```
@@ -280,7 +280,7 @@ iOS [샘플 로거 사용법](sdk.html##sample-logger-usage)을 참조하십시�
 
 {{site.data.keyword.mobileanalytics_short}}를 `hasUserContext=true` 상태로 초기화하여 사용자 추적을 사용으로 설정하십시오. 그렇지 않으면 {{site.data.keyword.mobileanalytics_short}}에서는 디바이스당 한 명의 사용자만 캡처합니다.
 
-다음 코드를 추가하여 사용자가 로그인하는 시점을 추적하십시오. 
+다음 코드를 추가하여 사용자가 로그인하는 시점을 추적하십시오.
 ```
 Analytics.userIdentity = "username"
 ```
@@ -289,9 +289,9 @@ Analytics.userIdentity = "username"
 ## 12단계. 앱 테스트
 {: #appid_testing}
 
-모든 항목이 올바르게 설정되어 있습니까? 이제 테스트를 수행하십시오.
+모든 항목이 올바르게 구성되어 있습니까? 이제 테스트를 수행하십시오.
 
-1. 앱을 여십시오. 웹 애플리케이션이 있는 경우에는 브라우저를 사용하십시오. Xcode 에뮬레이터가 포함된 iOS 클라이언트 애플리케이션이 있는 경우에 앱을 여십시오.
+1. 앱을 여십시오. 웹 애플리케이션이 있는 경우에는 브라우저를 사용하십시오. iOS 클라이언트 애플리케이션이 있는 경우 Xcode 에뮬레이터로 여십시오.
 2. 에뮬레이터 또는 디바이스에서 애플리케이션을 컴파일하고 실행하십시오.
 3. GUI를 사용하여 애플리케이션에 로그인하는 프로세스를 살펴보십시오.
 4. 애플리케이션에 대한 사용 분석을 확인하려면 {{site.data.keyword.mobileanalytics_short}} 콘솔로 이동하십시오. 또한 [경보 설정](/docs/services/mobileanalytics/app-monitoring.html#alerts) 및 [앱 충돌 모니터링](/docs/services/mobileanalytics/app-monitoring.html#monitor-app-crash)을 통해 애플리케이션을 모니터할 수도 있습니다.

@@ -21,7 +21,7 @@ Watson Studio는 비즈니스 문제점을 해결하기 위해 리소스를 구�
 ## {{site.data.keyword.DSX}}용 머신 러닝
 {: #dsx}
 
-{{site.data.keyword.DSX}}를 사용하면 모델을 훈련하고 배치한 후 API 사용을 통해 결과를 이용할 수 있습니다. 그런 다음 iOS 또는 Swift 애플리케이션에서 API를 사용할 수 있습니다. 
+{{site.data.keyword.DSX}}를 사용하면 모델을 훈련하고 배치한 후 API 사용을 통해 결과를 이용할 수 있습니다. 그런 다음 iOS 또는 Swift 애플리케이션에서 API를 사용할 수 있습니다.
 
 IBM Watson Machine Learning을 사용하면 환경을 설정한 후 모델을 작성하고, 클라우드에 배치하고, 훈련할 수 있습니다. 자세한 정보는 [{{site.data.keyword.pm_full}} 및 {{site.data.keyword.DSX}}를 사용하여 모델 작성, 배치 및 훈련](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics)을 참조하십시오.
 
@@ -32,14 +32,14 @@ IBM Watson Machine Learning을 사용하면 환경을 설정한 후 모델을 �
 ## iOS 및 Swift를 사용하여 {{site.data.keyword.DSX}} 설정
 {: #dsx_ios}
 
-1. 신임 정보를 좀 더 쉽게 통합하려면 {{site.data.keyword.pm_short}} 인스턴스를 iOS 앱 또는 백엔드 앱에 추가해야 합니다. 접근성을 용이하게 하기 위해 신임 정보가 프로젝트 대시보드에 포함됩니다. 
+1. 인증 정보를 좀 더 쉽게 통합하려면 {{site.data.keyword.pm_short}} 인스턴스를 iOS 앱 또는 백엔드 앱에 추가해야 합니다. 접근성을 용이하게 하기 위해 인증 정보가 프로젝트 대시보드에 포함됩니다.
 
 ![앱의 머신 러닝](images/ios-machinelearning-app.png)
 
 2. 앱 코드를 다운로드하십시오.
 3. 초기화하십시오.
-  * iOS 프로젝트의 경우 {{site.data.keyword.pm_short}} 리소스를 iOS 프로젝트에 추가하기만 하면 신임 정보가 앱에 즉시 삽입됩니다.
-    애플리케이션에서 신임 정보에 액세스하려면 다음 코드 스니펫을 복사하여 붙여넣으십시오. 또한 모델의 배치 `implementation` 탭 내부에서 찾을 수 있는 앱에 스코어링 엔드포인트를 추가해야 합니다.
+  * iOS 프로젝트의 경우 {{site.data.keyword.pm_short}} 리소스를 iOS 프로젝트에 추가하기만 하면 인증 정보가 앱에 즉시 삽입됩니다.
+    애플리케이션에서 인증 정보에 액세스하려면 다음 코드 스니펫을 복사하여 붙여넣으십시오. 또한 모델의 배치 `implementation` 탭 내부에서 찾을 수 있는 앱에 스코어링 엔드포인트를 추가해야 합니다.
 
     ```Swift
     // The url to your model's scoring endpoint
@@ -74,7 +74,7 @@ IBM Watson Machine Learning을 사용하면 환경을 설정한 후 모델을 �
     ```
     {: codeblock}
 
-4. 액세스 토큰을 검색하고 단순 클라이언트 SDK를 사용하여 애플리케이션에서 데이터 세트에 대한 예측 분석을 수행하십시오. 
+4. 액세스 토큰을 검색하고 단순 클라이언트 SDK를 사용하여 애플리케이션에서 데이터 세트에 대한 예측 분석을 수행하십시오.
 
   ```Swift
   public class MachineLearning {
@@ -179,7 +179,7 @@ IBM Watson Machine Learning을 사용하면 환경을 설정한 후 모델을 �
 
 **시나리오 이름:** 제품 라인 예측
 
-**시나리오 설명:** 실외 장비를 판매하는 회사는 제품 라인에 대한 고객의 관심사를 예측하기 위해 모델을 빌드하고 배치합니다. 태스크는 배치 모델에 대한 스코어 요청을 작성하는 것입니다. 
+**시나리오 설명:** 실외 장비를 판매하는 회사는 제품 라인에 대한 고객의 관심사를 예측하기 위해 모델을 빌드하고 배치합니다. 태스크는 배치 모델에 대한 스코어 요청을 작성하는 것입니다.
 
 모델이 배치되면 스코어링 엔드포인트를 사용하여 예측 분석을 수행할 수 있습니다.
 

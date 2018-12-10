@@ -15,9 +15,9 @@ lastupdated: "2018-08-07"
 # 챗봇 추가
 {: #assistant}
 
-{{site.data.keyword.conversationshort}} 서비스를 사용하여 자연어 입력에 응답하고 인간과 같은 대화를 통해 사용자에게 응답하는 애플리케이션을 빌드할 수 있습니다. 
+{{site.data.keyword.conversationshort}} 서비스를 사용하여 자연어 입력에 응답하고 인간과 같은 대화를 통해 사용자에게 응답하는 애플리케이션을 빌드할 수 있습니다.
 
-다음 목록은 통합이 수행되는 방법의 플로우에 대해 간략하게 설명합니다. 
+다음 목록은 통합이 수행되는 방법의 플로우에 대해 간략하게 설명합니다.
 
   1. 사용자는 앱에서 구현되는 인터페이스와 상호작용합니다.
   2. 앱은 {{site.data.keyword.watson}} Swift SDK를 사용하여 사용자 입력을 {{site.data.keyword.conversationshort}}에게 전송합니다.
@@ -70,11 +70,11 @@ $ brew install carthage
 
 {{site.data.keyword.watson}} Swift SDK 프레임워크가 빌드되었으므로 연결하여 {{site.data.keyword.conversationshort}} 프레임워크를 앱에 복사하십시오.
 
-1. Xcode에서 앱을 열고 네비게이터에서 프로젝트를 선택하여 설정을 여십시오. 
-2. 앱 대상을 선택하고 **일반** 탭을 여십시오. 
+1. Xcode에서 앱을 열고 네비게이터에서 프로젝트를 선택하여 설정을 여십시오.
+2. 앱 대상을 선택하고 **일반** 탭을 여십시오.
 3. 연결된 프레임워크 및 라이브러리 섹션으로 스크롤하고 `+` 아이콘을 클릭하십시오.
 4. 표시되는 새 창에서 **기타 항목 추가**를 클릭하고 `Carthage/Build/iOS` 디렉토리로 이동하십시오.
-5. `AssistantV1.framework`를 선택하여 앱을 통해 연결하십시오. 
+5. `AssistantV1.framework`를 선택하여 앱을 통해 연결하십시오.
 
 {{site.data.keyword.conversationshort}} 프레임워크에 연결하는 것 외에도 이 프레임워크를 앱에 복사하여 런타임 시 액세스할 수 있게 해야 합니다. 그런 다음 Carthage 스크립트가 특정한 [앱 스토어 제출 버그](http://www.openradar.me/radar?id=6409498411401216){:new_window}를 방지하기 위해 사용됩니다.
 
@@ -153,18 +153,18 @@ Response: Sure thing! Which genre would you prefer? Jazz is my personal favorite
 ## 스타터 킷 사용
 {: #conversation_starterkits}
 
-스터터 킷을 사용하면 {{site.data.keyword.cloud_notm}}의 기능을 빠르고 쉽게 활용할 수 있습니다. 스타터 킷을 사용하여 {{site.data.keyword.conversationshort}}을 서버 측 백엔드에 추가할 수 있습니다. Chatbot for iOS with Watson 스타터 킷은 애플리케이션에 일반 사용자와의 상호작용을 자동화하는 자연어 인터페이스를 추가하여 {{site.data.keyword.conversationshort}}의 심화 학습 기능을 사용하는 방법을 보여줍니다. 
+스터터 킷을 사용하면 {{site.data.keyword.cloud_notm}}의 기능을 빠르고 쉽게 활용할 수 있습니다. 스타터 킷을 사용하여 {{site.data.keyword.conversationshort}}을 서버 측 백엔드에 추가할 수 있습니다. Chatbot for iOS with Watson 스타터 킷은 애플리케이션에 일반 사용자와의 상호작용을 자동화하는 자연어 인터페이스를 추가하여 {{site.data.keyword.conversationshort}}의 심화 학습 기능을 사용하는 방법을 보여줍니다.
 
 1. 작업할 [스타터 킷](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window}을 선택하십시오.
-2. 기본 서비스를 사용하여 프로젝트를 작성하십시오. 
+2. 기본 서비스를 사용하여 프로젝트를 작성하십시오.
 3. **리소스 추가 > Watson > {{site.data.keyword.conversationshort}}**을 클릭하십시오.
-4. **코드 다운로드**를 클릭하여 프로젝트를 다운로드하십시오. `config/local-dev.json` 파일에서 서비스 신임 정보를 찾을 수 있습니다.
+4. **코드 다운로드**를 클릭하여 프로젝트를 다운로드하십시오. `config/local-dev.json` 파일에서 서비스 인증 정보를 찾을 수 있습니다.
 
 ## 다음 단계
 {: #assistant_next}
 
-잘 하셨습니다! 앱에 AI 어시스턴트를 추가했습니다. 다음 옵션 중 하나를 사용하여 계속 진행하십시오. 
+잘 하셨습니다! 앱에 AI 어시스턴트를 추가했습니다. 다음 옵션 중 하나를 사용하여 계속 진행하십시오.
 
 * [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window}를 확인하십시오.
-* [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html)에서 제공하는 모든 기능을 활용하십시오. 
+* [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html)에서 제공하는 모든 기능을 활용하십시오.
 * GitHub에서 {{site.data.keyword.watson}} Swift SDK를 시연하는 [Simple Chat 샘플 앱](https://github.com/watson-developer-cloud/simple-chat-swift){:new_window}의 소스 코드를 보십시오.

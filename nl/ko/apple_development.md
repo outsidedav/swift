@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-27"
 
 ---
 {:new_window: target="_blank"}
@@ -23,17 +23,17 @@ lastupdated: "2018-08-09"
 
  ![개발자 유형](images/IBM_Cloud_icon.png "IBM Cloud")
 
-{{site.data.keyword.cloud_notm}}에 내장된 개발자 기능은 다양한 스킬 세트에 맞춰 조정되며, 앱을 생성, 전달, 실행 및 관리할 수 있는 하나의 플랫폼을 제공합니다. 예를 들어, 언급된 코그너티브 앱에서 {{site.data.keyword.cloud_notm}}의 관심 항목은 다음과 같습니다.
+{{site.data.keyword.cloud_notm}}에 내장된 개발자 기능은 다양한 스킬 세트에 맞춰 조정되며, 앱을 생성, 전달, 실행 및 관리할 수 있는 하나의 플랫폼을 제공합니다. 예를 들어, 언급된 코그너티브 앱에서 {{site.data.keyword.cloud_notm}} 기능의 관심 항목은 다음과 같습니다.
 
-* [**{{site.data.keyword.cloud_notm}} 개발자 경험**](https://console.bluemix.net/docs/overview/dev-journey.html#dev-journey)은 서비스가 아니라 {{site.data.keyword.cloud_notm}}의 기능 세트로 디지털 및 Cloud Native 개발자가 프로덕션애 바로 사용할 수 있는 앱 빌드를 시작하는 데 도움을 줍니다. 여기에는 서비스의 자동 프로비저닝 및 DevOps 도구 체인에 대한 "원클릭" 배치가 포함됩니다. 
+* [**{{site.data.keyword.cloud_notm}} 개발자 경험**](https://console.bluemix.net/docs/overview/dev-journey.html#dev-journey)은 서비스가 아니라 {{site.data.keyword.cloud_notm}}의 기능 세트로 디지털 및 Cloud Native 개발자가 프로덕션애 바로 사용할 수 있는 앱 빌드를 시작하는 데 도움을 줍니다. 여기에는 서비스의 자동 프로비저닝 및 DevOps 도구 체인에 대한 "원클릭" 배치가 포함됩니다.
 
-* [**IBM Watson Data Platform**](https://dataplatform.ibm.com)을 통해 보다 쉽게 데이터 콜렉션을 구성하고, 데이터를 세분화한 후 시각화하고, 인사이트를 발견하고, 코그너티브 앱에 사용할 모델을 빌드할 수 있습니다. 
+* [**IBM Watson Data Platform**](https://dataplatform.ibm.com)을 통해 보다 쉽게 데이터 콜렉션을 구성하고, 데이터를 세분화한 후 시각화하고, 인사이트를 발견하고, 코그너티브 앱에 사용할 모델을 빌드할 수 있습니다.
 
 * [**IBM Streaming Analytics**](../services/StreamingAnalytics/index.html#gettingstarted)는 데이터 스트림을 조정하고 분석합니다. 이는 실시간으로 다양한 유형의 데이터 소스로부터 도착한 정보를 수집, 분석 및 상관시킬 수 있는 고급 분석 플랫폼입니다.
 
 * [**{{site.data.keyword.cloud_notm}} Continuous Delivery 서비스**](../services/ContinuousDelivery/index.html#cd_getting_started)는 DevOps 도구 체인을 설정하여 앱의 지속적 딜리버리를 자동화합니다. 모니터링, 로깅, 추적 및 경보와 같은 관리 기능을 포함하도록 도구 체인을 쉽게 개선할 수 있습니다. 또한 [DevOps Insights 서비스](../services/DevOpsInsights/index.html#gettingstarted)를 사용하여 고급 머신 러닝을 도구 체인이 적용할 수 있습니다.
 
-{{site.data.keyword.cloud_notm}} 플랫폼은 더욱 많은 기능을 제공하며 종합 개발 플랫폼으로 {{site.data.keyword.cloud_notm}}를 사용할 수 있습니다.
+{{site.data.keyword.cloud_notm}} 플랫폼은 더욱 많은 기능을 제공하며 종합 개발 플랫폼으로 사용할 수 있습니다.
 
 ## {{site.data.keyword.cloud_notm}} 기능의 개요
 {: #capabilities}
@@ -41,7 +41,7 @@ lastupdated: "2018-08-09"
 {{site.data.keyword.cloud_notm}} Developer Experience는 서비스가 아니라 몇 분 안에 앱 빌드를 "올바르게" 시작하는 데 도움이 되는 {{site.data.keyword.cloud_notm}} 플랫폼의 기능 세트입니다. Developer Experience의 필수 요소는 다음과 같습니다.
 
 * {{site.data.keyword.cloud_notm}} 플랫폼 전체에서 발견되는 주제 세트 또는 채널 중심 개발자 콘솔.
-* 다양한 언어 및 아키텍처 패턴으로 프로덕션에 바로 사용할 수 있는 스타터 앱을 생성하는 특정 유스 케이스 스타터 킷. 
+* 다양한 언어 및 아키텍처 패턴으로 프로덕션에 바로 사용할 수 있는 스타터 앱을 생성하는 특정 유스 케이스 스타터 킷.
 * 서비스의 자동 프로비저닝.
 * 포터블 앱 구조를 사용하여 앱 컴포넌트 관리.
 * [DevOps 도구 체인](../services/ContinuousDelivery/index.html#cd_getting_started)의 원클릭 작성.
@@ -64,7 +64,7 @@ lastupdated: "2018-08-09"
 
 <!--![Overview of elements of the {{site.data.keyword.cloud_notm}} Developer Experience](images/elements_of_devex.png "Overview of elements of the {{site.data.keyword.cloud_notm}} Developer Experience") <br> *Overview of elements of the {{site.data.keyword.cloud_notm}} Developer Experience*-->
 
-각 개발자 콘솔은 해당 콘솔의 집중 영역과 관련된 스타터 킷을 제공하며 작동 가능한 프로덕션에 바로 사용할 수 있는 앱을 몇 분 안에 작성할 수 있도록 일관되고 직관적인 워크플로우를 제공합니다. 
+각 개발자 콘솔은 해당 콘솔의 집중 영역과 관련된 스타터 킷을 제공하며 작동 가능한 프로덕션에 바로 사용할 수 있는 앱을 몇 분 안에 작성할 수 있도록 일관되고 직관적인 워크플로우를 제공합니다.
 
 ## 스타터 킷을 사용하여 앱 작성
 {: #apps}

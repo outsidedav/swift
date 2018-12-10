@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-08-07"
 # CLI로 서버 측 Swift 앱 작성
 {: #swift_cli}
 
-{{site.data.keyword.cloud}}는 Swift 개발자와 애플리케이션에 고객이 요구하는 보안, AI 및 가치를 부여할 수 있는 솔루션 및 서비스를 제공합니다. 광범위한 포트폴리오의 오퍼링 및 SDK를 사용하여 이 서비스를 활용하고 최첨단 애플리케이션을 시장에 신속하게 출시할 수 있습니다.
+{{site.data.keyword.cloud}}는 Swift 개발자와 애플리케이션에 고객이 요구하는 보안, AI 및 가치가 포함되는 솔루션 및 서비스를 제공합니다. 광범위한 포트폴리오의 오퍼링 및 SDK를 사용하여 이 서비스를 이용하고 최첨단 애플리케이션을 시장에 신속하게 출시할 수 있습니다.
 {: shortdesc}
 
 다음 안내서를 참조하여 서버 측 Swift 앱을 빌드하고 로컬로 실행하고 배치할 수 있습니다. 표준 명령으로 이러한 조치를 실행하려면 {{site.data.keyword.dev_cli_long}} 사용 방법을 알아보십시오. 
@@ -25,11 +25,11 @@ lastupdated: "2018-08-07"
 
 ## 1단계. 개발자를 위한 요구사항
 
-{{site.data.keyword.cloud_notm}}를 시작하려면 다음 요구사항을 충족하는지 확인하십시오. 
+{{site.data.keyword.cloud_notm}}를 시작하려면 다음 요구사항을 충족하는지 확인하십시오.
 
 ### 운영 체제
 
-최신 MacOS 지원 하드웨어를 사용하고 최신 iOS 릴리스로 테스트하여 Swift 앱을 개발하는 것이 가장 좋은 방법입니다. [Apple Developer](https://developer.apple.com/) 계정에 가입하여 실제 디바이스에서 테스트할 수 있습니다. 
+최신 MacOS 지원 하드웨어를 사용하고 최신 iOS 릴리스로 테스트하여 Swift 앱을 개발하는 것이 가장 좋은 방법입니다. [Apple Developer](https://developer.apple.com/) 계정에 가입하여 실제 디바이스에서 테스트할 수 있습니다.
 
 ### iOS 및 Xcode
 {: #ios_and_xcode}
@@ -62,15 +62,15 @@ lastupdated: "2018-08-07"
 
 ## 2단계. 로컬 개발을 위한 도구 설치
 
-{{site.data.keyword.cloud}}는 {{site.data.keyword.cloud_notm}}의 다양한 측면에서 작업하는 데 도움이 되는 로컬 CLI 도구를 제공합니다. 자세한 정보는 [{{site.data.keyword.dev_cli_long}} 정보](../cli/index.html)를 참조하십시오. 클라우드 배치 전에 로컬 Docker 이미지에서 Swift 백엔드를 테스트하기 위해 로컬 CLI 도구를 설치하는 것이 좋습니다. 
+{{site.data.keyword.cloud}}는 {{site.data.keyword.cloud_notm}}의 다양한 측면에서 작업하는 데 도움이 되는 로컬 CLI 도구를 제공합니다. 자세한 정보는 [{{site.data.keyword.dev_cli_long}} 정보](../cli/index.html)를 참조하십시오. 클라우드 배치 전에 로컬 Docker 이미지에서 Swift 백엔드를 테스트하기 위해 도구를 사용할 수 있습니다.
 
-* MacOS 및 Linux의 경우 다음 명령을 실행하십시오. 
+* MacOS 및 Linux의 경우 다음 명령을 실행하십시오.
   ```
   curl -sL http://ibm.biz/idt-installer | bash
   ```
   {: codeblock}
 
-* Windows 10의 경우 관리자로 다음 명령을 실행하십시오. 
+* Windows 10의 경우 관리자로 다음 명령을 실행하십시오.
   ```
   Set-ExecutionPolicy Unrestricted; iex(New-Object Net.WebClient).DownloadString('http://ibm.biz/idt-win-installer')
   ```
@@ -81,7 +81,7 @@ lastupdated: "2018-08-07"
 
 ## 3단계. Swift 앱 작성
 
-1. {{site.data.keyword.dev_cli_short}} CLI에서 `ibmcloud dev create` 명령을 실행하여 사전 구성된 스타터를 생성하십시오.  
+1. {{site.data.keyword.dev_cli_short}} CLI에서 `ibmcloud dev create` 명령을 실행하여 사전 구성된 스타터를 생성하십시오. 
   ```
   ibmcloud dev create
   ```
@@ -116,19 +116,19 @@ lastupdated: "2018-08-07"
   ```
   {: screen}
 
-3. 애플리케이션의 이름을 제공하십시오. 
+3. 애플리케이션의 이름을 제공하십시오.
   ```
   ? Enter a name for your application> swift_project
   ```
   {: screen}
 
-4. OpenAPI 2.0 지원을 사용하도록 선택하십시오. 
+4. OpenAPI 2.0 지원을 사용하도록 선택하십시오.
   ```
   ? Enable your application based on an OpenAPI 2.0 Specification document? [y/n]> y
   ```
   {: screen}
 
-  OpenAPI 2.0 지원이 사용 가능한 경우 URL로 OpenAPI 2.0 문서에 대한 경로를 제공해야 합니다. 
+  OpenAPI 2.0 지원이 사용 가능한 경우 URL로 OpenAPI 2.0 문서에 대한 경로를 제공해야 합니다.
   ```
   ? Path to OpenAPI 2.0 document as a url (both yaml and json formats supported)> http://hostname.domain.com/path/to/file.json
 
@@ -142,11 +142,11 @@ lastupdated: "2018-08-07"
 
 1. **빌드**
 
-  이제 애플리케이션 실행을 위한 전제조건인 애플리케이션을 빌드할 수 있습니다. 애플리케이션 디렉토리의 루트에서 다음 명령을 사용하여 앱을 빌드하십시오. 
+  이제 애플리케이션 실행을 위한 전제조건인 애플리케이션을 빌드할 수 있습니다. 애플리케이션 디렉토리의 루트에서 다음 명령을 사용하여 앱을 빌드하십시오.
   ```
   ibmcloud dev build
   ```
-  {:codeblock}
+  {: codeblock}
 
 2. **실행**
 
@@ -154,9 +154,9 @@ lastupdated: "2018-08-07"
   ```
   ibmcloud dev run
   ```
-  {:codeblock}
+  {: codeblock}
 
-  명령이 실행되면 애플리케이션의 랜딩 페이지를 볼 수 있는 로컬 호스트 및 포트가 표시됩니다. 
+  명령이 실행되면 애플리케이션의 랜딩 페이지를 볼 수 있는 로컬 호스트 및 포트가 표시됩니다.
 
 3. **배치**
 
@@ -164,11 +164,11 @@ lastupdated: "2018-08-07"
   ```
   ibmcloud dev deploy
   ```
-  {:codeblock}
+  {: codeblock}
 
 ## 다음 단계
 
-개발자가 여러 스타터 킷에서 앱을 작성하고 핵심 {{site.data.keyword.cloud_notm}} 최적화 서비스를 프로비저닝하고 연결한 후 작업 코드를 빠르게 다운로드(또는 지속적 딜리버리를 위해 설정)할 수 있도록 {{site.data.keyword.cloud_notm}} Developer Console for Apple을 사용하는 방법에 대해 알아보십시오. 사용자는 앱을 작성, 보기, 구성 및 관리하고 앱의 코드를 다운로드할 수 있습니다. Developer Console for Apple을 사용하여 빠르게 평가하고 새 앱으로 {{site.data.keyword.cloud_notm}} 서비스를 테스트할 수 있습니다. 
+개발자가 여러 스타터 킷에서 앱을 작성하고 핵심 {{site.data.keyword.cloud_notm}} 최적화 서비스를 프로비저닝하고 연결한 후 작업 코드를 빠르게 다운로드(또는 지속적 딜리버리를 위해 설정)할 수 있도록 {{site.data.keyword.cloud_notm}} Developer Console for Apple을 사용하는 방법에 대해 알아보십시오. 사용자는 앱을 작성, 보기, 구성 및 관리하고 앱의 코드를 다운로드할 수 있습니다. Developer Console for Apple을 사용하여 빠르게 평가하고 새 앱으로 {{site.data.keyword.cloud_notm}} 서비스를 테스트할 수 있습니다.
 
 시작하시겠습니까? [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits)에 방문하여 시작하십시오.
 {: tip}

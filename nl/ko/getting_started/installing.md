@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -19,7 +19,7 @@ lastupdated: "2018-06-05"
 ## CocoaPods를 사용하여 설치
 {: #installing_with_cocoapods}
 
-Cocoapods를 사용하여 SDK를 설치하려면 Cocoapods를 `Podfile`에 추가하십시오. 프로젝트에 아직 `Podfile`이 없으면 `pod init` 명령을 사용하십시오.
+CocoaPods를 사용하여 SDK를 설치하려면 CocoaPods를 `Podfile`에 추가하십시오. 프로젝트에 아직 `Podfile`이 없으면 `pod init` 명령을 사용하십시오.
 ```ruby
 use_frameworks!
 
@@ -31,7 +31,7 @@ end
 
 `pod install`을 실행하고 생성된 `.xcworkspace` 파일을 여십시오.
 
-자세한 정보는 [Cocoapods 안내서](https://guides.cocoapods.org/using/index.html)를 참조하십시오.
+자세한 정보는 [CocoaPods 안내서](https://guides.cocoapods.org/using/index.html)를 참조하십시오.
 
 ## Carthage를 사용하여 설치
 {: #installing_with_carthage}
@@ -44,7 +44,7 @@ github "<github org name>/<github project name>"
 
 `carthage update`를 실행하여 빌드 프로세스를 시작하십시오. 빌드가 완료되면 생성된 프레임워크를 프로젝트에 추가하십시오. 
 
-자세한 정보는 [Carthage README](https://github.com/Carthage/Carthage#getting-started)를 참조하십시오.
+자세한 정보는 [Carthage 시작하기](https://github.com/Carthage/Carthage#getting-started) 문서를 참조하십시오.
 
 ## Swift 패키지 관리자를 사용하여 설치
 {: #installing_with_swift_package_manager}
@@ -55,7 +55,7 @@ Swift 패키지 관리자를 사용하여 SDK를 설치하려면 `Package.swift`
 ```
 {: codeblock}
 
-`swift build`를 실행하여 빌드 프로세스를 시작하십시오. 
+`swift build`를 실행하여 빌드 프로세스를 시작하십시오.
 
 자세한 정보는 [Swift 패키지 관리자 개요](https://swift.org/package-manager/)를 참조하십시오.
 

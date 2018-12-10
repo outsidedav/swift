@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -16,57 +16,84 @@ lastupdated: "2018-08-17"
 # Swift 앱에서 상태 검사 사용
 {: #healthcheck}
 
-상태 검사(Health check)는 서버 측 애플리케이션이 올바르게 작동하는지 여부를 판별할 수 있는 단순 메커니즘을 제공합니다. [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) 및 [Kubernetes](https://www.ibm.com/cloud/container-service)와 같은 여러 배치 환경에서 서비스의 인스턴스가 트래픽을 허용할 준비가 되었는지 여부를 판별하기 위해 상태 엔드포인트를 폴링하도록 구성될 수 있습니다. 
+상태 검사는 서버 측 애플리케이션이 올바르게 작동하는지 여부를 판별할 수 있는 단순 메커니즘을 제공합니다. [Kubernetes](https://www.ibm.com/cloud/container-service) 및 [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry)는 와 같은 클라우드 환경은 서비스의 인스턴스가 트래픽을 수신할 준비가 되어 있는지 판별하기 위해 상태 엔드포인트를 주기적으로 폴링하도록 구성될 수 있습니다.
+{: shortdesc}
 
-상태 검사는 일반적으로 HTTP를 통해 이용되며 `UP` 또는 `DOWN` 상태를 표시하기 위해 표준 리턴 코드를 사용합니다. `UP`의 경우 `200`, `DOWN`의 경우 `5xx`의 리턴을 예로 들 수 있습니다. 구체적으로 애플리케이션이 요청을 처리할 수 없거나 아직 시작되지 않은 경우(서비스 사용 불가능) `503`이 사용되고 서버에서 오류 조건이 발생할 때 `500`이 사용됩니다. 상태 검사의 리턴값은 변수이지만 최소 JSON 응답(예: `{“status”: “UP”}`)은 일관성을 제공합니다. 
+## 상태 검사 개요
+{: #overview}
 
-Cloud Foundry는 하나의 상태 엔드포인트를 사용하여 서비스 인스턴스가 요청을 처리할 수 있는지 여부를 표시합니다. Kubernetes에서 상태 검사 엔드포인트는 `readiness` 엔드포인트와 동등합니다. 애플리케이션은 자동 라우팅 결정을 판별하는 데 도움이 되도록 이 엔드포인트를 정의해야 합니다. 이 엔드포인트 성공 또는 실패에 허용할 수 있는 폴백이 없는 경우 필요한 다운스트림 서비스의 고려사항이 포함될 수 있습니다. 다운스트림 서비스를 확인하는 경우 상태 검사로 인해 시스템 전체에서 로드를 최소화하기 위해 결과를 캐싱하는 것은 때때로 유용합니다. 
+상태 검사(Health check)는 서버 측 애플리케이션이 올바르게 작동하는지 여부를 판별할 수 있는 단순 메커니즘을 제공합니다. 일반적으로 HTTP를 통해 이용되고 UP 또는 DOWN 상태를 표시하는 데 표준 리턴 코드를 사용합니다. 상태 검사의 리턴값은 변수이지만, `{"status": "UP"}`과 같은 최소한의 JSON 응답이 일반적입니다.
 
-Kubernetes는 추가 [활동](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) 엔드포인트를 정의하여 애플리케이션이 프로세스의 다시 시작 여부를 표시할 수 있습니다. 고려사항의 서브세트는 특정 메모리 사용량 임계값에 도달하면 `liveness`가 실패할 수 있는 경우에 적용됩니다. 앱이 Kubernetes에서 실행되면 필요한 경우 프로세스가 다시 시작하도록 `liveness` 엔드포인트 추가를 고려하십시오. 
+Kubernetes에는 프로세스 상태의 미묘한 개념이 있습니다. 다음과 같이 두 개의 프로브를 정의합니다.
+
+- _**준비**_ 프로브는 프로세스가 요청을 처리할 수 있는지 여부를 표시하는 데 사용합니다(라우트 가능함). 
+
+  Kubernetes는 준비 프로브가 실패한 상태로 컨테이너에 대한 작업을 라우트하지 않습니다. 준비 프로브는 서비스의 초기화가 완료되지 않는 경우 또는 서비스가 사용 중인거나, 과부화되거나, 요청을 처리할 수 없는 경우 실패할 수 있습니다.
+
+- _**라이브니스**_ 프로브는 프로세스의 다시 시작 여부를 표시하는 데 사용됩니다.
+
+  Kubernetes는 라이브니스 프로브가 실패한 상태로 컨테이너를 중지하고 다시 시작합니다. 예를 들어, 메모리가 소진되거나 컨테이너가 내부 프로세스 손상 후 올바르게 중지되지 않은 경우 라이브니스 프로브를 사용하여 복구 불가능한 상태의 프로세스를 정리하십시오. 
+
+비교를 위한 참고사항으로 Cloud Foundry는 하나의 상태 엔드포인트를 사용합니다. 이 상태 검사에 실패하는 경우 프로세스가 다시 시작되지만 성공하는 경우 요청이 프로세스로 라우트됩니다. 이 환경에서 프로세스가 라이브 상태일 때 엔드포인트가 최소한 성공합니다. 초기화 대기 시간은 서비스가 다시 시작 주기를 실행하지 않기 위해 초기화를 완료할 때까지 상태 검사를 지연시키도록 구성됩니다. 
+
+다음 표는 준비, 라이브니스 및 단일 상태 엔드포인트가 제공할 수 있는 응답에 대한 지시사항을 제공합니다. 
+
+|시/도    | 준비                         | 라이브니스                 | 상태(Health)              |
+|----------|-----------------------------|----------------------------|---------------------------|
+|          | 확인 상태가 아니면 로드되지 않음 | 확인 상태가 아니면 다시 시작되지 않음 | 확인 상태가 아니면 다시 시작되지 않음  |
+| 시작 중  | 503 - 사용 불가능           | 200 - 확인                 | 테스트하지 않으려면 지연을 사용함 |
+| 작동     | 200 - 확인                  | 200 - 확인                 | 200 - 확인                |
+| 중지 중  | 503 - 사용 불가능           | 200 - 확인                 | 503 - 사용 불가능         |
+| 작동 중단 | 503 - 사용 불가능          | 503 - 사용 불가능          | 503 - 사용 불가능         |
+| 오류 발생 | 500 - 서버 오류            | 500 - 서버 오류            | 500 - 서버 오류           |
 
 ## 기존 Swift 앱에 상태 검사 추가
 {: #add-healthcheck-existing}
 
-[상태](https://github.com/IBM-Swift/Health) 라이브러리를 통해 상태 검사를 Swift 애플리케이션에 쉽게 추가할 수 있습니다. 상태 검사는 확장 가능합니다. DoS 공격을 방지하기 위한 [캐싱](https://github.com/IBM-Swift/Health#caching) 또는 [사용자 정의 검사](https://github.com/IBM-Swift/Health#implementing-a-health-check) 추가에 대한 정보는 [상태](https://github.com/IBM-Swift/Health) 정보를 참조하십시오. 
+[상태](https://github.com/IBM-Swift/Health) 라이브러리를 통해 상태 검사를 Swift 애플리케이션에 쉽게 추가할 수 있습니다. 상태 검사는 확장 가능합니다. DoS 공격을 방지하기 위한 [캐싱](https://github.com/IBM-Swift/Health#caching) 또는 [사용자 정의 검사](https://github.com/IBM-Swift/Health#implementing-a-health-check) 추가에 대한 정보는 [상태](https://github.com/IBM-Swift/Health) 정보를 참조하십시오.
 
-상태 라이브러리를 기존 Swift 앱에 추가하려면 사용되는 대상에 이를 추가하도록 `Package.swift` 파일의 *dependencies:* 섹션에 상태 라이브러리를 지정하십시오. 
-```swift
+상태 라이브러리를 기존 Swift 앱에 추가하려면 다음 단계를 참조하십시오. 
+
+1. `Package.swift` 파일의 *dependencies:* 섹션에 상태 라이브러리를 지정하려면 이를 적합한 모든 대상에 추가하십시오. 
+
+    ```swift
   .package(url: "https://github.com/IBM-Swift/Health.git", .from: "1.0.0"),
-```
-{: codeblock}
+    ```
+    {: codeblock}
 
-그 후 다음 초기화 코드를 애플리케이션에 추가하십시오. 
-```swift
+2. 다음 초기화 코드를 애플리케이션에 추가하십시오. 
+
+    ```swift
 import Health
 
-let health = Health()
-```
-{: codeblock}
+    let health = Health()
+    ```
+    {: codeblock}
 
-그런 다음 상태 검사 엔드포인트를 정의하도록 라우트 정의를 추가하십시오.
-```
+3. 상태 검사 엔드포인트를 정의하도록 라우트 정의를 추가하십시오.
+
+    ```swift
 router.get("/health") { request, response, next in
   // let status = health.status.toDictionary()
   let status = health.status.toSimpleDictionary()
   if health.status.state == .UP {
-    try response.send(json: status).end()
+            try response.send(json: status).end()
   } else {
-    try response.status(.serviceUnavailable).send(json: status).end()
-  }
-}
-```
-{: codeblock}
+            try response.status(.serviceUnavailable).send(json: status).end()
+        }
+    }
+    ```
+    {: codeblock}
 
-`/health` 엔드포인트에 액세스하여 브라우저에서 앱의 상태를 확인하십시오. 코드는 단순 사전에서 정의된 대로 페이로드 `{"status": "UP"}`을 리턴합니다. 
+4. `/health` 엔드포인트에 액세스하여 브라우저에서 앱의 상태를 확인하십시오. 코드는 단순 사전에서 정의된 대로 페이로드 `{"status": "UP"}`을 리턴합니다.
 
-**Codable** 또는 표준 사전 사용과 같은 대체 구현의 경우 [상태 라이브러리 예](https://github.com/IBM-Swift/Health#usage)를 참조하십시오.
-
-## 서버 측 Swift 스타터 킷 앱에서 상태 검사에 액세스
+## 서버 측 Swift 스타터 킷의 상태 확인
 {: #healthcheck-starterkit}
 
-스타터 킷을 사용하여 Kitura 기반 Swift 앱을 생성하는 경우 기본적으로 기본 상태 검사 엔드포인트인 `/health`가 표시됩니다. 엔드포인트는 [상태](https://github.com/IBM-Swift/Health) 라이브러리에서 지원되는 Swift 4에서 사용 가능한 Codable 프로토콜을 활용합니다. 
+스타터 킷을 사용하여 Kitura 기반 Swift 앱을 생성하는 경우 기본적으로 기본 상태 검사 엔드포인트인 `/health`가 표시됩니다. 엔드포인트는 [상태](https://github.com/IBM-Swift/Health) 라이브러리에서 지원되는 Swift 4에서 사용 가능한 Codable 프로토콜을 사용합니다. 
 
-상태 오브젝트의 초기화와 같은 기본 초기화 코드는 `Sources/Application.swift`에서 발생하지만, 상태 확인 엔드포인트는 다음 코드가 포함된 `/Sources/Application/Routes/HealthRoutes.swift` 파일에서 제공됩니다. 
+상태 오브젝트의 초기화와 같은 기본 초기화 코드는 `Sources/Application.swift`에서 발생합니다. 상태 확인 엔드포인트는 다음 코드가 포함된 `/Sources/Application/Routes/HealthRoutes.swift` 파일에서 제공되며 다음 코드를 사용합니다.
+
 ```swift
 import LoggerAPI
 import Health
@@ -86,4 +113,55 @@ func initializeHealthRoutes(app: App) {
 ```
 {: codeblock}
 
-예에서는 `/health` 엔드포인트에 액세스할 때 `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}`과 같은 페이로드를 생성하는 표준 사전을 사용합니다. 
+예에서는 `/health` 엔드포인트에 액세스할 때 `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}`과 같은 페이로드를 생성하는 표준 사전을 사용합니다.
+
+## 준비 및 라이브니스 프로브에 대한 권장사항
+
+준비 검사는 다운스트림 서비스가 사용 불가능한 경우 허용 가능한 폴백이 없을 때 결과에서 다운스트림 서비스에 대한 연결의 실행 가능성을 포함해야 합니다. 이는 인프라가 사용자를 위해 확인함에 따라 다운스트림 서비스에서 직접 제공되는 상태 검사의 호출을 의미하지는 않습니다. 대신 애플리케이션에 있는 다운스트림 서비스에 대한 기존 참조의 상태 확인을 고려하십시오. 이는 WebSphere MQ에 대한 JMS 연결 또는 초기화된 Kafka 이용자 또는 생성자일 수 있습니다. 다운스트림 서비스에 대한 내부 참조의 실행 가능성을 확인하는 경우 애플리케이션에 있는 영향 상태 검사를 최소화하도록 결과를 캐시하십시오. 
+
+반대로 라이브니스 프로브는 실패 시 프로세스가 즉각적으로 종료되므로 확인 항목에 대해 신중할 수 있습니다. 상태 코드 `200`과 함께 `{"status": "UP"}`을 항상 리턴하는 단순 HTTP 엔드포인트를 선택하는 것은 적절합니다. 
+
+### Swift에 Kubernetes 준비 및 라이브니스에 대한 지원 추가
+
+**Codable** 또는 표준 사전 사용과 같은 대체 구현의 경우 [상태 라이브러리 예제](https://github.com/IBM-Swift/Health#usage)를 참조하십시오. 이 구현 중 일부는 서비스 지원을 위해 수행되는 캐싱 검사에 대한 지원을 통해 확장 가능한 상태 검사의 작성을 간소화합니다. 이 시나리오에서 사용자는 단순한 라이브니스 테스트를 더욱 강력하고 세부적인 준비 검사와 구분하기를 원합니다. 
+
+## Kubernetes에서 준비 및 라이브니스 프로브 구성
+
+Kubernetes 배치 옆에 라이브니스 및 준비 프로브를 선언하십시오. 두 프로브는 동일한 구성 매개변수를 사용합니다. 
+
+* kubelet은 첫 번째 프로브 전에 `initialDelaySeconds`를 기다립니다.
+
+* kubelet은 `periodSeconds`초마다 서비스를 프로브합니다. 기본값은 1입니다.
+
+* 프로브는 `timeoutSeconds`초 후에 제한시간을 초과합니다. 기본값 및 최소값은 1입니다. 
+
+* 프로브는 실패 후 `successThreshold`번 성공하면 성공 상태가 됩니다. 기본값 및 최소값은 1입니다. 라이브니스 프로브의 값은 1이어야 합니다.
+
+* 팟(Pod)이 시작되고 프로브가 실패하는 경우 Kubernetes는 다시 시작을 `failureThreshold`번 시도한 후 포기합니다. 최소값은 1이고 기본값은 3입니다.
+    - 라이브니스 프로브의 경우 "포기"는 팟(Pod)의 다시 시작을 의미합니다.
+    - 준비 프로브의 경우 "포기"는 팟(Pod) `Unready` 표시를 의미합니다.
+
+주기를 다시 시작하지 않으려면 서비스를 초기화하는 데 소요되는 시간보다 길게 `livenessProbe.initialDelaySeconds`를 설정하십시오. 그런 다음 준비되는 즉시 `readinessProbe.initialDelaySeconds`에 대한 더 짧은 값을 사용하여 요청을 서비스로 라우트할 수 있습니다. 
+
+다음 `yaml` 예제를 참조하십시오.
+```yaml
+spec:
+  containers:
+  - name: ...
+    image: ...
+    readinessProbe:
+      httpGet:
+        path: /health
+        port: 8080
+      initialDelaySeconds: 120
+      timeoutSeconds: 5
+    livenessProbe:
+      httpGet:
+        path: /liveness
+        port: 8080
+      initialDelaySeconds: 130
+      timeoutSeconds: 10
+      failureThreshold: 10
+```
+
+자세한 정보는 [라이브니스 및 준비 프로브 구성](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) 방법을 참조하십시오.

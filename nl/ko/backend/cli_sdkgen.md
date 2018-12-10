@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-08-07"
 
 {{site.data.keyword.IBM}} SDK Generator 플러그인을 [{{site.data.keyword.Bluemix_notm}} CLI ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](/docs/cli/reference/bluemix_cli/index.html){: new_window}에 설치할 수 있습니다.
 
-이 {{site.data.keyword.IBM_notm}} SDK Generator 플러그인은 생성된 서비스를 사용하여 앱에 백엔드 서비스를 통합합니다. REST API가 변경되면 SDK를 다시 생성하고 완벽한 SDK 업그레이드를 위해 이전 SDK를 대체할 수 있습니다. 또한 CLI를 DevOps 파이프라인과 통합하고, 앱이 빌드될 때마다 SDK가 항상 API 스펙과 일치하는지 확인할 수 있습니다.
+이 {{site.data.keyword.IBM_notm}} SDK Generator 플러그인은 생성된 서비스를 사용하여 앱에 백엔드 서비스를 통합합니다. REST API가 변경되면 SDK를 다시 생성하고 SDK를 쉽게 업그레이드하기 위해 이전 SDK를 대체할 수 있습니다. 또한 CLI를 DevOps 파이프라인과 통합하고, 앱이 빌드될 때마다 SDK가 항상 API 스펙과 일치하는지 확인할 수 있습니다.
 
 REST API 정의는 유효해야 하며 라이브 서버 엔드포인트에서 호스팅되거나 사용자 시스템의 로컬 파일이어야 합니다.
 
@@ -49,7 +49,7 @@ REST API 정의는 유효해야 하며 라이브 서버 엔드포인트에서 �
 {: #gen-args}
 
 * `APP_NAME` - 현재 공간에 있는 Cloud Foundry 앱의 이름
-* `OPENAPI_DOC_LOCATION` - 원시 REST API 정의 JSON 또는 Yaml에 대한 URL 또는 상대 파일 경로
+* `OPENAPI_DOC_LOCATION` - 원시 REST API 정의 JSON 또는 yaml에 대한 URL 또는 상대 파일 경로
 * `GENERATED_SDK_NAME`(선택사항) - 생성된 SDK의 이름
 
 ### 옵션
@@ -64,8 +64,8 @@ REST API 정의는 유효해야 하며 라이브 서버 엔드포인트에서 �
    * `-f` - 파일
    * `-a` - {{site.data.keyword.Bluemix_notm}}에서 실행되는 앱
    * `-l` - localhost URL
-* `--output "YOUR_RELATIVE_PATH"`(선택사항) - `YOUR_RELATIVE_PATH`로 지정되는 디렉토리에 생성된 SDK를 배치합니다(기존 SDK가 존재하는 경우 겹쳐씀).
-* `--unzip`(선택사항) - 생성된 SDK를 추출합니다(기존 SDK 아티팩트가 존재하는 경우 겹쳐씀).
+* `--output "YOUR_RELATIVE_PATH"`(선택사항) - `YOUR_RELATIVE_PATH`로 지정되는 디렉토리에 생성된 SDK를 배치합니다(기존 SDK를 겹쳐씀).
+* `--unzip`(선택사항) - 생성된 SDK를 추출합니다(기존 SDK를 겹쳐씀).
 
 ### 사용법
 {: #gen-usage}
@@ -77,7 +77,7 @@ ibmcloud sdk generate [APP_NAME] [LOCATION] [PLATFORM]
 ```
 {: codeblock}
 
-Open API 정의 파일 또는 로컬 JSON 또는 Yaml 파일에 대한 URL에서 SDK를 생성하려면 다음 명령을 사용하십시오.
+Open API 정의 파일 또는 로컬 JSON 또는 yaml 파일에 대한 URL에서 SDK를 생성하려면 다음 명령을 사용하십시오.
 
 ```
 ibmcloud sdk generate [OPENAPI_DOC_LOCATION] [SDK_Name] [LOCATION] [PLATFORM]
@@ -97,18 +97,18 @@ ibmcloud sdk validate [argument]
 {: #val-args}
 
 * `APP_NAME` - 현재 공간에 있는 Cloud Foundry 앱의 이름
-* `OPENAPI_DOC_LOCATION` - 원시 REST API 정의 JSON 또는 Yaml에 대한 URL 또는 상대 파일 경로
+* `OPENAPI_DOC_LOCATION` - 원시 REST API 정의 JSON 또는 yaml에 대한 URL 또는 상대 파일 경로
 
 ### 사용법
 {: #val-usage}
 
-{{site.data.keyword.Bluemix_notm}}에서 실행되는 Cloud Foundry 앱의 API 스펙을 유효성 검증하기 위해 CLI에 대한 매개변수로 앱의 이름을 사용할 수 있습니다. 
+{{site.data.keyword.Bluemix_notm}}에서 실행되는 Cloud Foundry 앱의 API 스펙을 유효성 검증하기 위해 CLI에 대한 매개변수로 앱의 이름을 사용할 수 있습니다.
 ```
 ibmcloud sdk validate [APP_NAME] [LOCATION]
 ```
 {: codeblock}
 
-API 스펙 문서 또는 로컬 JSON 또는 Yaml 파일에 대한 URL에서 SDK를 유효성 검증하려면 다음 명령을 사용하십시오.
+API 스펙 문서 또는 로컬 JSON 또는 yaml 파일에 대한 URL에서 SDK를 유효성 검증하려면 다음 명령을 사용하십시오.
 ```
 ibmcloud sdk validate [OPENAPI_DOC_LOCATION] [LOCATION]
 ```
