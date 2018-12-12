@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017-2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -16,7 +16,7 @@ lastupdated: "2018-08-07"
 {: #cloudant}
 
 {{site.data.keyword.cloudantfull}} 是文件導向的「資料庫即服務 (DBaaS)」。它會將資料儲存為 JSON 格式的文件。其建置在可調整性、高可用性以及延續性上，可輕鬆地配置成在 Swift 應用程式中使用。並且具有各種檢索選項，包括 MapReduce、{{site.data.keyword.cloudant_short_notm}} 查詢、全文檢索及地理空間檢索。抄寫功能讓您能輕鬆保持資料庫叢集、桌上型電腦和行動裝置之間的資料同步。
-{:shortdesc}
+{: shortdesc}
 
 如需可以使用 {{site.data.keyword.cloudant_short_notm}} 的所有方式，請參閱 [{{site.data.keyword.cloudant_short_notm}} 基本概念](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics)。
 
@@ -33,8 +33,7 @@ lastupdated: "2018-08-07"
 
 ## 步驟 1. 建立 {{site.data.keyword.cloudant_short_notm}} 實例
 
-請參閱[在 IBM Cloud 上建立 Cloudant NoSQL DB 實例指導教學 ![外部鏈結圖示](../images/launch-glyph.svg "外部鏈結圖示")](https://console.bluemix.net/docs/services/Cloudant/tutorials/create_service.html#creating-a-cloudant-nosql-db-instance-on-ibm-cloud){:new_window}，以佈建服務的實例。
-
+請參閱[在 IBM Cloud 上建立 Cloudant NoSQL DB 實例指導教學 ![外部鏈結圖示](../images/launch-glyph.svg "外部鏈結圖示")](https://console.bluemix.net/docs/services/Cloudant/tutorials/create_service.html#creating-a-cloudant-nosql-db-instance-on-ibm-cloud){:new_window}，以建立服務的實例。
 
 ## 步驟 2. 安裝 SDK
 
@@ -51,11 +50,12 @@ lastupdated: "2018-08-07"
     end
     ```
     {: screen}
+
 3. 下載 `SwiftCloudant` 相依關係。
     ```
     pod install
     ```
-    {: pre}
+    {: codeblock}
 
 ### 安裝伺服器端 Swift SDK
 
@@ -63,17 +63,18 @@ lastupdated: "2018-08-07"
 ```swift
 .Package(url: "https://github.com/cloudant/swift-cloudant.git")
 ```
-{: pre}
+{: codeblock}
 
 ## 步驟 3. 起始設定 SDK
 
-在應用程式中起始設定 SDK 之後，您可以開始運用 {{site.data.keyword.cloudant_short_notm}} 來儲存資料。
+在應用程式中起始設定 SDK 之後，您可以開始使用 {{site.data.keyword.cloudant_short_notm}} 來儲存資料。
 
 1.  將下列 import 新增至 `AppDelegate.swift` 或伺服器端 Swift 檔。
     ```
     import SwiftCloudant
     ```
-    {:pre}
+    {: codeblock}
+
 2. 起始設定與資料庫的連線。
     ```swift
     let cloudantURL = NSURL(string: "https://username.cloudant.com")!
@@ -83,7 +84,7 @@ lastupdated: "2018-08-07"
     {: codeblock}
 
 ### 基本作業
-這些基本作業說明使用已起始設定的用戶端來建立、讀取及破壞文件的基本動作。
+這些基本作業說明使用已起始設定的用戶端來建立、讀取及刪除文件的基本動作。
 
 #### 建立文件
 ```swift
@@ -124,20 +125,18 @@ let delete = DeleteDocumentOperation(id: "doc1",
 }
 client.add(operation: delete)
 ```
-    {: codeblock}
-
+{: codeblock}
 
 ## 步驟 4. 測試應用程式
 {: #cloudant_testing}
 
-所有項目都正確設定嗎？請測試看看！
+所有項目都正確配置嗎？請測試看看！
 
-1. 執行應用程式，確定呼叫起始設定及個別作業，例如，建立文件。
+1. 執行應用程式，確定啟動起始設定及個別作業，例如，建立文件。
 2. 回到先前在 Web 瀏覽器中建立的 {{site.data.keyword.cloudant_short_notm}} 服務實例，然後開啟服務儀表板。
 3. 選取使用的資料庫，您可在儀表板中查看文件。
 
 有困難嗎？請參閱 [{{site.data.keyword.cloudant_short_notm}} API 參考資料](/docs/services/Cloudant/api/index.html#api-reference-overview)。
-
 
 ## 後續步驟
 {: #cloudant_next notoc}
@@ -145,5 +144,5 @@ client.add(operation: delete)
 做得好！您已為應用程式新增一個安全持續性等級。嘗試下列其中一個選項，以保持動力：
 
 * 檢視 [{{site.data.keyword.cloudant_short_notm}} SDK for Swift ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/cloudant/swift-cloudant) 原始碼。
-* 「入門範本套件」是運用 IBM Cloud 功能最快的方式之一。**Infinite Scrolling with Cloudant NoSQL for iOS** 入門範本套件說明如何延伸 ViewController，以使用分頁來顯示資料。iOS 開發人員經常使用這個應用程式型樣，這個型樣是說明 {{site.data.keyword.cloudant_short_notm}} 的功能時的良好範例。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
+* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。**Infinite Scrolling with Cloudant NoSQL for iOS** 入門範本套件說明如何延伸 `ViewController`，以使用分頁來顯示資料。iOS 開發人員經常使用這個應用程式型樣，這個型樣是說明 {{site.data.keyword.cloudant_short_notm}} 的功能時的良好範例。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
 * 進一步瞭解並充分運用 {{site.data.keyword.cloudant_short_notm}} 提供的所有特性，[請參閱文件](/docs/services/Cloudant/index.html)！

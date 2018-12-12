@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-29"
 
 ---
 {:new_window: target="_blank"}
@@ -66,8 +66,9 @@ lastupdated: "2018-08-08"
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 新增資源對話](images/add_resource_screen.png "新增資源對話") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 新增資源對話*
 
-在「應用程式詳細資料」視圖上，您可以用兩種方式來存取程式碼：
-*  選取**下載程式碼**，以產生並下載應用程式的程式碼。
+### 下載程式碼
+
+* 在「應用程式詳細資料」視圖上，您可以選取**下載程式碼**，以產生並下載應用程式的程式碼。
 
 ### 應用程式清單視圖
 {: #app_list_view}

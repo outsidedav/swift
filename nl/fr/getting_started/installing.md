@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -11,7 +11,7 @@ lastupdated: "2018-06-05"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Installation de logiciels SDK dans les applis client
+# Installation de logiciels SDK dans les applications client
 {: #installing}
 
 Les logiciels SDK iOS d'{{site.data.keyword.cloud}} prennent en charge différents gestionnaires de dépendances connus, ce qui vous permet d'installer et d'utiliser facilement des services {{site.data.keyword.cloud_notm}} au sein de vos applications.
@@ -19,7 +19,7 @@ Les logiciels SDK iOS d'{{site.data.keyword.cloud}} prennent en charge différen
 ## Installation avec CocoaPods
 {: #installing_with_cocoapods}
 
-Pour installer un logiciel SDK à l'aide Cocoapods, ajoutez-le à votre `fichier Pod`. Si votre projet n'a pas encore de `fichier Pod`, utilisez la commande `pod init`.
+Pour installer un logiciel SDK à l'aide CocoaPods, ajoutez-le à votre `fichier Pod`. Si votre projet n'a pas encore de `fichier Pod`, utilisez la commande `pod init`.
 ```ruby
 use_frameworks!
 
@@ -31,7 +31,7 @@ end
 
 Exécutez `pod install` et ouvrez le fichier `.xcworkspace` généré.
 
-Pour plus d'informations, voir les [Guides Cocoapods](https://guides.cocoapods.org/using/index.html).
+Pour plus d'informations, voir les [Guides CocoaPods](https://guides.cocoapods.org/using/index.html).
 
 ## Installation avec Carthage
 {: #installing_with_carthage}
@@ -44,7 +44,7 @@ github "<github org name>/<github project name>"
 
 Exécutez `carthage update` pour démarrer le processus de génération. Une fois la génération terminée, ajoutez l'infrastructure générée à votre projet. 
 
-Pour plus d'informations, voir le [README Carthage](https://github.com/Carthage/Carthage#getting-started).
+Pour plus d'informations, voir la documentation [Initiation à Carthage](https://github.com/Carthage/Carthage#getting-started).
 
 ## Installation avec le gestionnaire de package Swift
 {: #installing_with_swift_package_manager}
@@ -55,11 +55,11 @@ Pour installer un logiciel SDK à l'aide du gestionnaire de package Swift, ajout
 ```
 {: codeblock}
 
-Exécutez `swift build` pour démarrer le processus de génération. 
+Exécutez `swift build` pour démarrer le processus de génération.
 
 Pour plus d'informations, voir a [Présentation du gestionnaire de package Swift](https://swift.org/package-manager/).
 
-## Installation manuelle 
+## Installation manuelle
 {: #installing_manually}
 
 Pour installer manuellement un logiciel SDK, téléchargez le logiciel SDK et ajoutez manuellement les fichiers source dans votre projet.

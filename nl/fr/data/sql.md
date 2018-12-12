@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,19 +15,20 @@ lastupdated: "2018-08-07"
 # Utilisation d'une base de données SQL pour la persistance des données
 {: #sql_data}
 
-La langage SQL (Structured Query Language) est un langage spécifique à un domaine qui est utilisé pour la gestion des données dans les base de données relationnelles. Il est recommandé de conserver vos données dans le cas où votre serveur s'arrête en cours d'utilisation. Pour ajouter la persistance des données, vous pouvez utiliser une base de données SQL directement depuis Swift. L'une des fonctionnalités les plus importantes de Swift est son type de sécurité. L'utilisation d'une base de données SQL avec Swift est un choix logique car le type de sécurité est pris en charge par les deux.
+Le langage SQL (Structured Query Language) est un langage spécifique à un domaine qui est utilisé pour la gestion des données dans les base de données relationnelles. La persistance des données est recommandé en cas d'arrêt de votre serveur en cours d'utilisation. Pour ajouter la persistance des données, vous pouvez utiliser une base de données SQL directement depuis Swift.
+L'une des fonctionnalités les plus importantes de Swift est son type de sécurité. L'utilisation d'une base de données SQL avec Swift est un choix logique car le type de sécurité est pris en charge par les deux.
 
 ## Utilisation de ORM avec une base de données SQL
 
 Avec ORM (Object-Relational Mapping), vous pouvez mapper des objets aux bases de données relationnelles sans avoir à traiter des instructions SQL. Vous pouvez ensuite stocker et extraire des objets d'une base de données relationnelle sans vous occuper de l'analyse syntaxique et de la sérialisation vous-même.
 
-## Step 1. Mise en route avec ORM
+## Etape 1. Mise en route avec ORM
 
 Utilisez [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM) avec un plug-in SQL tel que [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) ou [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL).
 
 Dans cet exemple, le plug-in [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) est utilisé. Suivez les instructions pour l'installation du plug-in [ici](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation).
 
-## Etape 2. Importation de ORM dans votre application
+## Etape 2. Importation de ORM dans votre application 
 
 1. Mettez à jour le fichier `Package.swift` en ajoutant les packages `Swift-Kuery-ORM` et `Swift-Kuery-PostgreSQL` :
   ```swift
@@ -146,8 +147,8 @@ Tous ces appels prennent un gestionnaire qui est appelé une fois et s'exécute 
 
 ## Utilisation de ORM avec Kitura
 
-Pour simplifier le test de ORM, le [tutoriel FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) peut sauvegarder et extraire les objets Meal de l'appli iOS, ainsi que dans une base de données PostgreSQL à l'aide de ORM. Même si vous suivez le tutoriel, il est utile de l'effectuez à nouveau pour vérifier la puissance de Swift-Kuery-ORM, et comment cela peut simplifier votre code de Kitura.
+Pour simplifier le test de ORM, le [tutoriel FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) peut sauvegarder et extraire directement des objets Meal de l'application iOS vers une base de données PostgreSQL. Même si vous terminez le tutoriel, cela vaut la peine de le repasser pour voir la puissance de Swift-Kuery-ORM, et comment il peut simplifier votre code Kitura.
 
-## Utilisation de Swift-Kuery directement
+## Utilisation directe de Swift-Kuery
 
 Si ORM vous limite car vous avez besoin de plus de contrôle sur votre base de données, vous pouvez utiliser la couche d'abstraction SQL, [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery), dans laquelle vous pouvez créer une requête SQL.

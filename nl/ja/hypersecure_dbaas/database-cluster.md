@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -15,14 +15,16 @@ lastupdated: "2018-08-01"
 
 # 可用性の高いセキュアなデータベースの作成
 
-可用性の高いセキュアなデータベースを最大限に活用するには、追加のロジックをアプリケーションに組み込みます。用意されているコード・スニペットを使用することで、MongoDB データベースを作成し、それにアクセスすることができます。 
+可用性の高いセキュアなデータベースを最大限に活用するには、追加のロジックをアプリケーションに組み込みます。 用意されているコード・スニペットを使用することで、MongoDB データベースを作成し、それにアクセスすることができます。 
 
 現時点で、{{site.data.keyword.ihsdbaas_full}} を使用する際にサポートされるプログラミング言語は、MongoKitten SDK 4.0.0 での Swift 4.0 です。
 
 ## ステップ 1. データベース・クラスターの作成
 {: #create_dbcluster}
 
-1. https://console.bluemix.net/catalog/services/hyper-protect-dbaas で、{{site.data.keyword.ihsdbaas_full}} サービス構成画面にアクセスします。2. 以下の情報を指定します。
+1. https://console.bluemix.net/catalog/services/hyper-protect-dbaas で、{{site.data.keyword.ihsdbaas_full}} サービス構成画面にアクセスします。
+
+2. 以下の情報を指定します。
 
 	<dl>
 		<dt>サービス名:</dt>
@@ -47,18 +49,18 @@ lastupdated: "2018-08-01"
     <dd>DBA ユーザー ID のパスワードを確認します。</dd>
 
 		<dt>データベース・タイプ:</dt>
-		<dd>データベース・タイプを選択します。現時点では、MongoDB のみサポートされています。</dd>
+		<dd>データベース・タイプを選択します。 現時点では、MongoDB のみサポートされています。</dd>
 
     <dt>ご使用条件:</dt>
     <dd>ご使用条件を読み、ボックスにチェック・マークを付けて同意します。</dd>
 
     <dt>料金:</dt>
-		<dd>現行のソリューションでは、無料の料金カテゴリーが 1 つ設定されているだけです。後のバージョンで、料金カテゴリーを選択できるようになります。</dd>
+		<dd>現行のソリューションでは、無料の料金カテゴリーが 1 つ設定されているだけです。 後のバージョンで、料金カテゴリーを選択できるようになります。</dd>
 	</dl>
 
 3. **「作成」**をクリックします。
 
-  {{site.data.keyword.cloud_notm}} ダッシュボードが表示されます。新規クラスターを表示するには、ブラウザーを最新表示しなければならない場合があります。新規クラスターは「サービス」セクションにリストされます。</p></li>
+  {{site.data.keyword.cloud_notm}} ダッシュボードが表示されます。 新規クラスターを表示するには、ブラウザーを最新表示しなければならない場合があります。新規クラスターは「サービス」セクションにリストされます。</p></li>
 
 4. サービスを選択すると、クラスター情報が表示されます。
 
@@ -66,7 +68,7 @@ lastupdated: "2018-08-01"
 
 	{{site.data.keyword.ihsdbaas_full}} ダッシュボードが表示されます。
 
-6. データベース・クラスターに属する、3 つの作成済みデータベース・インスタンスのホスト名とポート番号を取得します。[データベースへの接続](#connect_db)セクションのステップで、ホスト名、ポート番号、ユーザー資格情報が必要になります。
+6. データベース・クラスターに属する、3 つの作成済みデータベース・インスタンスのホスト名とポート番号を収集します。[データベースへの接続](#connect_db)セクションのステップで、ホスト名、ポート番号、ユーザー資格情報が必要になります。
 
 ## ステップ 2. スターター・キットを使用したプロジェクトの作成
 {: #create_with_starter}
@@ -81,126 +83,127 @@ lastupdated: "2018-08-01"
 
 2. **「スターター・キット」**タブを選択します。
 
-3. **Swift Kitura** Backend for Frontend スターター・キットを選択します。Swift Kitura Basic Web アプリ・スターター・キットと混同しないようにしてください。「新規プロジェクトの作成」ページが表示されます。
+3. **Swift Kitura** Backend for Frontend スターター・キットを選択します。 Swift Kitura Basic Web アプリ・スターター・キットと混同しないようにしてください。
+  「新規プロジェクトの作成」ページが表示されます。
 
-4. プロジェクトの詳細を入力し、**「プロジェクトの作成」**をクリックします。プロジェクト・ページが表示されます。
+4. プロジェクトの詳細を入力し、**「プロジェクトの作成」**をクリックします。
+  プロジェクト・ページが表示されます。
 
 5. プロジェクト・ページで、**「コードのダウンロード」**をクリックします。
 
-6. ダウンロードした zip ファイルをプロジェクト・ディレクトリーに解凍します。
+6. 圧縮ファイルをプロジェクト・ディレクトリーに解凍します。
 
 ## ステップ 3. データベースへの接続
 {: #connect_db}
 
-セキュアなデータ転送を行えるように、https://api.hypersecuredbaas.ibm.com/cert.pem から認証局 (CA) ファイルをダウンロードし、プロジェクト・ディレクトリーにコピーします。
-1. 解凍済みのダウンロード・コード・ファイルが入っている、プロジェクト・ディレクトリーに変更します。
+セキュアなデータ転送を行えるように、
+https://api.hypersecuredbaas.ibm.com/cert.pem から認証局 (CA) ファイルをダウンロードし、
+プロジェクト・ディレクトリーにコピーします。
+
+1. ダウンロードした解凍済みのコード・ファイルがある、プロジェクト・ディレクトリーに変更します。
 
 2. データベース・クラスターに対するアクセス資格情報を格納する、`cred.json` という名前の JSON ファイルを作成します。
 
-3. [データベース・クラスターの作成](#create_dbcluster)の手順で取得した値を入力します。それらの値は、単一行で指定する必要があります。
+3. [データベース・クラスターの作成](#create_dbcluster)の手順で収集した値を入力します。それらの値は、単一行で指定する必要があります。
+  ```hljs
+  {
+  "uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
+  <Hostname_2>:<PortNumber_2>,<Hostname_3>:<PortNumber_3>
+   /admin?ssl=true&ssl_ca_certs=/swift-project/<CA_file>"
+  }
+  ```
+  {: codeblock}
 
-	```hljs
-	{
-	"uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
-	<Hostname_2>:<PortNumber_2>,<Hostname_3>:<PortNumber_3>
-	/admin?ssl=true&ssl_ca_certs=/swift-project/<CA_file>"
-	}
-	```
-	{: codeblock}
-
-	各部の意味は次のとおりです。
-
-	<table>
-	  <tr>
-	    <th> パラメーター </th>
-	    <th> 説明 </th>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>admin_ID</em>&gt; </td>
-	    <td> [データベース・クラスターの作成](#create_dbcluster)で指定したデータベース管理者のユーザー ID です。</td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>admin_pwd</em>&gt; </td>
-	    <td> [データベース・クラスターの作成](#create_dbcluster)で指定した管理者パスワードのユーザー ID です。</td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>Hostname_i</em>&gt; </td>
-	    <td> [データベース・クラスターの作成](create_dbcluster)で返されたデータベース・レプリカ <em>i</em> (<em>i</em>=1,2,3) です。</td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>PortNumber_i</em>&gt; </td>
-	    <td> [データベース・クラスターの作成](#create_dbcluster)で返されたポート番号 <em>i</em> (<em>i</em>=1,2,3) です。</td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>CA_file</em>&gt; </td>
-	    <td> ダウンロードした CA ファイルのファイル名です。デプロイメント中に、このファイル名がディレクトリー `/swift-project` にコピーされます。</td>
-	  </tr>
-	</table>
+  各部の意味は次のとおりです。
+  <table>
+  <tr>
+    <th> パラメーター </th>
+    <th> 説明 </th>
+  </tr>
+  <tr>
+    <td> &lt;<em>admin_ID</em>&gt; </td>
+    <td> [データベース・クラスターの作成](#create_dbcluster)で指定したデータベース管理者のユーザー ID です。
+  </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>admin_pwd</em>&gt; </td>
+    <td> [データベース・クラスターの作成](#create_dbcluster)で指定した管理者パスワードのユーザー ID です。 </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>Hostname_i</em>&gt; </td>
+    <td> [データベース・クラスターの作成](create_dbcluster)で返されたデータベース・レプリカ <em>i</em> (<em>i</em>=1,2,3) です。 </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>PortNumber_i</em>&gt; </td>
+    <td> [データベース・クラスターの作成](#create_dbcluster)で返されたポート番号 <em>i</em> (<em>i</em>=1,2,3) です。 </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>CA_file</em>&gt; </td>
+    <td> ダウンロードした CA ファイルのファイル名です。 デプロイメント中に、このファイル名がディレクトリー `/swift-project` にコピーされます。</td>
+  </tr>
+  </table>
 
 4. MongoKitten SDK の使用に必要なパッケージ依存関係を追加するために、
 `Package.swift` ファイルを編集します。
 
-	a. 依存関係セクションで、次の行を追加します。
-			```hljs
-			 .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
-			```
-			{: codeblock}
+  * 依存関係セクションで、次の行を追加します。
+   ```hljs
+   .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
+   ```
+   {: codeblock}
 
-	b. ターゲット・セクションで、次の行に依存関係 "MongoKitten" を追加します。**注:** この値は、1 行で指定する必要があります。
-```hljs
-			 .target(name: "Application", dependencies: [ "Kitura",
-                        				"CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
-			```
-			{: codeblock}
+  * ターゲット・セクションで、次の行に依存関係 "MongoKitten" を追加します。 **注:** この値は、1 行で指定する必要があります。
+   ```hljs
+   .target(name: "Application", dependencies: [ "Kitura",
+   "CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
+   ```
+   {: codeblock}
 
 5. MongoKitten を使用して MongoDB への接続を初期化するために、`Sources/Application/Application.swift` ファイルを編集します。
 
-	a. MongoKitten SDK をインポートします。
-		```
-		import MongoKitten
-		```
-		{: codeblock}
+  * MongoKitten SDK をインポートします。
+    ```
+	import MongoKitten
+	```
+	{: codeblock}
 
-	b. クラス `ApplicationServices` を追加します。
-
-		```hljs
-		cclass ApplicationServices {
-	    // Service references
+  * クラス `ApplicationServices` を追加します。
+    ```hljs
+	cclass ApplicationServices {
+	// Service references
 	    public let mongoDBService: MongoKitten.Database
 	    public let myCredFile = "/swift-project/cred.json"
 
-	    public init() throws {
-	        // Read credentials from json file cred.json
+    public init() throws {
+        // Read credentials from json file cred.json
 	        struct ResponseData: Decodable {
-	            var uri: String
+            var uri: String
 	        }
 	        let data = try? Data(contentsOf: URL(fileURLWithPath: myCredFile))
 	        let decoder = JSONDecoder()
 	        let jsonData = try decoder.decode(ResponseData.self, from: data!)
 
-	        // Run service initializers
+        // Run service initializers
 	        let server = try Server(jsonData.uri)
 	        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
 	    }
-		}
-		```
-		{: codeblock}
+	}
+	```
+	{: codeblock}
 
-	c. パブリック・クラス `App` で、データベース接続を初期化するために次の行を追加します。
+  * パブリック・クラス `App` で、データベース接続を初期化するために次の行を追加します。
+    ```hljs
+	public class App {
+	...
+	let services: ApplicationServices
 
-		```hljs
-		public class App {
-	    ...
-	    let services: ApplicationServices
-
-	    public init() throws {
-	        // Services
-	        services = try ApplicationServices()
-
-	    }
-	    ...
-    	```
-    	{: codeblock}
+	public init() throws {
+	   // Services
+	    services = try ApplicationServices()
+	 }
+	...
+    ```
+    {: codeblock}
 
 ## ステップ 4. データベース接続の検証
 {: #verify_database}
@@ -238,7 +241,7 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ## ステップ 5. アプリケーション・コードの組み込み
 {: #embed_appcode}
 
-ここで、独自のアプリケーション・コードをプロジェクトに追加できます。MongoKitten API の使用について詳しくは、http://beta.openkitten.org/tutorials/ を参照してください。
+ここで、独自のアプリケーション・コードをプロジェクトに追加できます。 MongoKitten API の使用について詳しくは、http://beta.openkitten.org/tutorials/ を参照してください。
 
 ## ステップ 6. アプリケーションのデプロイ
 {: #deploy_app}
@@ -256,9 +259,9 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ### ローカルでのデプロイ
 {: #deploy_local}
 
-1. ローカル・ホスト・システムで Docker がインストールされ、実行されていることを確認します。Docker は https://www.docker.com/community-edition#/download からダウンロードできます。
+1. ローカル・ホスト・システムで Docker がインストールされ、実行されていることを確認します。 Docker は https://www.docker.com/community-edition#/download からダウンロードできます。
 
-2. プロジェクト・ファイルを含むディレクトリーに切り替えます。
+2. プロジェクト・ファイルのディレクトリーに切り替えます。
 
 3. ローカル・コンピューターにアプリケーションをデプロイするには、次のコマンドを入力します。
 	```
@@ -273,51 +276,49 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ### Cloud Foundry へのデプロイ
 {: #deploy_cf}
 
-1. プロジェクト・ファイルを含むディレクトリーに切り替えます。
+1. プロジェクト・ファイルのディレクトリーに切り替えます。
 
 2. IBM Cloud アカウントにログインし、次のように地域を `us-south` に設定します。
-	```hljs
-	$ ibmcloud login -a https://api.ng.bluemix.net
-	...
-	$ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
-	```
-	{: codeblock}
+  ```hljs
+  $ ibmcloud login -a https://api.ng.bluemix.net
+  $ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
+  ```
+  {: codeblock}
 
-    **注:** コマンド `ibmcloud login -a https://api.ng.bluemix.net` を実行すると、自動的に地域が **us-south** に設定されます。
+  **注:** コマンド `ibmcloud login -a https://api.ng.bluemix.net` を実行すると、自動的に地域が **us-south** に設定されます。
 
 3. アプリケーションを Cloud Foundry にデプロイするには、次のコマンドを入力します。
-	```
-	$ ibmcloud dev deploy
-	```
-	{: codeblock}
+  ```
+  $ ibmcloud dev deploy
+  ```
+  {: codeblock}
 
-	アプリケーションがホストされているロケーションへの、クリック可能なリンクを受け取ります。
+  アプリケーションがホストされているロケーションへの、クリック可能なリンクを受け取ります。
 
 ### Kubernetes クラスターへのデプロイ
 {: #deploy_cluster}
 
 1. Kubernetes クラスターを https://console.bluemix.net/containers-kubernetes/clusters で作成します。
 
-2. **「クラスターの作成」**をクリックします。「アクセス」タブには、作成された Kubernetes クラスターへのアクセス方法に関する情報が表示されます。
+2. **「クラスターの作成」**をクリックします。 「アクセス」タブには、作成された Kubernetes クラスターへのアクセス方法に関する情報が表示されます。
 
-3. Kubernetes クラスターに関する情報を表示するには、{{site.data.keyword.cloud_notm}} アプリ・ダッシュボードを開きます。ダッシュボードには、作成したクラスター、データベース・クラスター、Cloud Foundry アプリ、Cloud Foundry サービスなどのサービスのリストが表示されます。
+3. Kubernetes クラスターに関する情報を表示するには、{{site.data.keyword.cloud_notm}} アプリ・ダッシュボードを開きます。 ダッシュボードには、作成したクラスター、データベース・クラスター、Cloud Foundry アプリ、Cloud Foundry サービスなどのサービスのリストが表示されます。
 
-4. プロジェクト・ファイルを含むディレクトリーに切り替えます。
+4. プロジェクト・ファイルのディレクトリーに切り替えます。
 
 5. {{site.data.keyword.cloud_notm}} アカウントにログインし、次のように地域を us-south に設定します。
-	```hljs
-	$ ibmcloud login -a https://api.ng.bluemix.net
-	...
-	$ ibmcloud target -o <your-organization> -s <your-space>
-	```
-	{: codeblock}
+  ```hljs
+  $ ibmcloud login -a https://api.ng.bluemix.net
+  $ ibmcloud target -o <your-organization> -s <your-space>
+  ```
+  {: codeblock}
 
-	**注:** コマンド `ibmcloud login -a https://api.ng.bluemix.net` を実行すると、自動的に地域が **us-south** に設定されます。
+  **注:** コマンド `ibmcloud login -a https://api.ng.bluemix.net` を実行すると、自動的に地域が **us-south** に設定されます。
 
 6. Kubernetes にアプリケーションをデプロイするには、次のコマンドを入力します。
-	```
-    $ ibmcloud dev deploy -t container
-    ```
-    {: codeblock}
+  ```
+  $ ibmcloud dev deploy -t container
+  ```
+  {: codeblock}
 
-	Docker レジストリーと Kubernetes クラスターの名前の入力を求めるプロンプトが出されます。情報を入力すると、アプリケーションが Kubernetes クラスターにデプロイされます。
+  Docker レジストリーと Kubernetes クラスターの名前の入力を求めるプロンプトが出されます。 情報を入力すると、アプリケーションが Kubernetes クラスターにデプロイされます。

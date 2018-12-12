@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -23,32 +23,32 @@ Pour développer en local, vous devez installer {{site.data.keyword.dev_cli_notm
 ```
 curl -sL https://ibm.biz/idt-installer | bash
 ```
-{:codeblock}
+{: codeblock}
 
-Voir [Setting up the IBM Cloud Developer Tools CLI](/docs/cli/idt/setting_up_idt.html) pour en savoir plus sur la configuration et l'utilisation de {{site.data.keyword.dev_cli_notm}}.
+Voir [Configuration de l'interface de ligne de commande IBM Cloud Developer Tools](/docs/cli/idt/setting_up_idt.html) pour en savoir plus sur la configuration et l'utilisation d'{{site.data.keyword.dev_cli_notm}}.
 
-## Extraction des données d'identification de service 
+## Extraction des données d'identification de service
 
-Une fois que vous avez cloné votre application depuis Git, vous devez extraire les données d'identification des services qui sont liés à votre application, car ils ne sont pas stockés dans le référentiel git de votre application. L'extraction de données d'identification permet l'utilisation de services liés. Vous pouvez télécharger facilement les données d'identification en exécutant la commande suivante à la racine du répertoire de l'application :
+Après avoir cloné votre application dans Git, vous devez extraire les données d'identification des services liés à votre application, car ils ne sont pas stockés dans le référentiel Git de votre application. L'extraction de données d'identification permet l'utilisation de services liés. Vous pouvez télécharger facilement les données d'identification en exécutant la commande suivante à la racine du répertoire de l'application :
 ```
 ibmcloud dev get-credentials
 ```
-{:codeblock}
+{: codeblock}
 
-## Génération, exécution et déploiement de votre application
+## Génération, exécution et déploiement de votre application 
 
 1. **Génération** - Vous pouvez désormais générer votre application, laquelle est prérequis à l'exécution de celle-ci.
-  Utilisez la commande suivante à la racine du répertoire de l'application pour générer votre appli :
+  Utilisez la commande suivante à la racine du répertoire de l'application pour générer votre application :
   ```
   ibmcloud dev build
   ```
-  {:codeblock}
+  {: codeblock}
 
 2. **Exécution** - Après une génération réussie, vous pouvez exécuter votre application dans un conteneur local à l'aide de la commande suivante :
   ```
   ibmcloud dev run
   ```
-  {:codeblock}
+  {: codeblock}
 
   Un hôte et un port locaux pour l'affichage de la page d'arrivée de votre application s'affiche si la commande aboutit.
 
@@ -56,4 +56,4 @@ ibmcloud dev get-credentials
   ```
   ibmcloud dev deploy
   ```
-  {:codeblock}
+  {: codeblock}

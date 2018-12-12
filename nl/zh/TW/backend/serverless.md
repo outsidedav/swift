@@ -2,49 +2,51 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:note:.deprecated}
+{:note: .deprecated}
+{:tip: .tip}
 
 # 無伺服器開發
 {: #serverless}
 
-何謂無伺服器？無伺服器開發型樣是指其伺服器端邏輯在無狀態容器中執行的應用程式開發，該無狀態容器由事件觸發且很短暫（持續單一次執行），並由協力廠商完全管理。在此參照範例（也稱為「函數即服務 (FaaS)」）中，開發人員所提供的無狀態函數，可以在不明確佈建或管理伺服器的情況下，進行觸發然後執行。
+何謂無伺服器？無伺服器開發型樣是指其伺服器端邏輯在無狀態容器中執行的應用程式開發。容器由事件觸發且很短暫（持續時間為單一次執行），並由協力廠商完全管理。在此參照範例（也稱為「函數即服務 (FaaS)」）中，開發人員所提供的無狀態函數，可以在不明確建立或管理伺服器的情況下，進行觸發然後執行。
 
-藉由摘要伺服器端開發所需的基礎架構及架構，無伺服器架構容許開發人員專注於建置其應用程式，以及撰寫程式碼，並被動執行以變更資料。
+藉由摘要伺服器端開發所需的基礎架構及架構，無伺服器架構容許開發人員專注於撰寫程式碼，並反應性地執行以變更資料。
 
-IBM 的 FaaS 供應項目 [{{site.data.keyword.openwhisk}}](https://console.bluemix.net/openwhisk/)，力求提供無縫的伺服器端開發經驗，而不需要任何特殊的伺服器端知識。使用無伺服器技術，您可以快速開發可擴充的後端解決方案，以符合幾乎所有工作量需求，而不需要提前佈建資源。對於具有無法預期之負載型樣或伺服器關閉時間過長的應用程式，{{site.data.keyword.openwhisk_short}} 可以是出色的雲端解決方案，其效能已獲得改進，且其「使用者付費」系統可協助降低成本。
+IBM 的 FaaS 供應項目 [{{site.data.keyword.openwhisk}}](https://console.bluemix.net/openwhisk/)，力求提供簡單的伺服器端開發經驗，而不需要任何特殊的伺服器端知識。使用無伺服器技術，您可以快速開發可延伸的後端解決方案，以符合幾乎所有工作量需求，而不需要提前建立資源。對於具有無法預期之負載型樣或伺服器關閉時間過長的應用程式，{{site.data.keyword.openwhisk_short}} 可以是出色的雲端解決方案，其效能已獲得改進，且其「使用者付費」系統可協助降低成本。
 
 ## 架構變更
 {: #comparison}
 
 為了協助您瞭解切換成 FaaS 在架構上的好處，我們使用鏈結至資料庫的簡單 iOS 應用程式來比較傳統與 FaaS 架構。
 
-在比較傳統的架構中，iOS 應用程式會卸載網路密集的作業，或在遠端集中處理資料，而且本身是由自己的服務或儲存空間選項所連接。在傳統系統中，沉重的負擔都壓在單一伺服器上，它既要處理鑑別，也要處理密集作業以將用戶端的壓力減到最低，還要根據其使用者提供同步化。
+在比較傳統的架構中，iOS 應用程式會卸載網路密集的作業，或在中央伺服器遠端處理資料，而且本身是由自己的服務或儲存空間選項所連接。沉重的負擔都壓在單一伺服器上，它要處理許多密集作業以將用戶端的壓力減到最低，還要在使用者基礎之間提供同步化。
 
 無伺服器架構可以變更這個結構，讓它看起來更像下列影像。
 
 ![](./images/Architecture.png) 圖 1. 無伺服器架構
 
-無伺服器架構運用擴充性高且封裝大量伺服器端邏輯的函數，將部分邏輯卸載給用戶端（及外部服務），而不是在單一伺服器內處理所有處理作業及鑑別邏輯。
+無伺服器架構使用封裝大量伺服器端邏輯的函數，將部分邏輯卸載給用戶端（及外部服務），而不是在單一伺服器內處理所有處理作業及鑑別邏輯。
 
 看一下圖解，您可以瞭解到下列重點：
 
 1. 用戶端會針對「應用程式 ID」這類「身分提供者」進行鑑別。
 2. 對 FaaS 後端 API 的呼叫包括存取記號。
-3. 後端由 {{site.data.keyword.openwhisk_short}} 實作。公開為 Web 動作的無伺服器動作，預期會在要求標頭中傳送記號，並驗證其有效性（簽章及到期日），以提供實際 API 的存取權。
+3. 後端由 {{site.data.keyword.openwhisk_short}} 實作。無伺服器動作會公開為 Web 動作、預期在要求標頭中傳送記號以供驗證（簽章及到期日），以提供實際 API 的存取權。
 4. 當用戶端提交資料時，意見會儲存在 {{site.data.keyword.cloudant_short_notm}}。
 5. 意見文字由 {{site.data.keyword.toneanalyzershort}} 進行處理。
 6. 根據分析結果，由 {{site.data.keyword.mobilepushshort}} 將通知傳回給用戶端。
 7. 用戶端接收到通知。
 
-在純正的無伺服器模型中，因為無法儲存使用者的狀態，所以用戶端通常需要承擔額外的責任。例如，在此情況下，授權由用戶端及 {{site.data.keyword.appid_short_notm}} 身分提供者服務進行處理。
+在純正的無伺服器模型中，因為無法儲存使用者的狀態，所以用戶端通常需要承擔額外的責任。授權由用戶端及 {{site.data.keyword.appid_short_notm}} 身分提供者服務進行處理。
 
 雖然無伺服器架構並非十全十美，但是在正確的團隊與使用條件下，仍有許多好處。請參閱一些特定範例，以瞭解一些常用的[使用案例](#use_cases)。
 
@@ -69,7 +71,7 @@ IBM 的 FaaS 供應項目 [{{site.data.keyword.openwhisk}}](https://console.blue
 ### 行動式後端系統
 ![](./images/cloud-functions-rest-api-trigger.png)
 
-行動開發人員可以輕鬆地存取伺服器端邏輯，並將運算密集作業外包給可擴充的雲端平台。使用 iOS SDK，您可以用 Swift 等語言來實作函數，並輕鬆地取用伺服器端函數，而不需要任何伺服器端經驗。
+行動開發人員可以輕鬆地存取伺服器端邏輯，並將運算密集作業外包給雲端平台。使用 iOS SDK，您可以用 Swift 等語言來實作函數，並輕鬆地取用伺服器端函數，而不需要任何伺服器端經驗。
 
 ### 資料處理
 
@@ -79,11 +81,11 @@ IBM 的 FaaS 供應項目 [{{site.data.keyword.openwhisk}}](https://console.blue
 
 ### 認知資料處理
 
-只要資料可供使用，您就可立即進行分析。讓您的函數充分運用功能強大的認知服務（例如，IBM Watson），來偵測影像或視訊中的物件或人員。
+只要資料可供使用，您就可立即進行分析。您的函數可以充分運用功能強大的認知服務（例如，IBM Watson），來偵測影像或視訊中的物件或人員。
 
 ### 排定的作業
 
-定期執行您的函數，並定義遵循類似 cron 語法的排程，以指定動作的預期執行時間。
+定期執行您的函數，並定義遵循類似 cron 語法的排程，以指定要執行動作的時間。
 
 ## API 參考資料
 {: #openwhisk_start_api notoc}
@@ -94,7 +96,7 @@ IBM 的 FaaS 供應項目 [{{site.data.keyword.openwhisk}}](https://console.blue
 ## 相關鏈結
 {: #general notoc}
 
-* [探索：{{site.data.keyword.openwhisk_short}}](http://www.ibm.com/cloud-computing/bluemix/openwhisk/)
+* [探索 {{site.data.keyword.openwhisk_short}}](http://www.ibm.com/cloud-computing/bluemix/openwhisk/)
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
 * [Apache OpenWhisk 專案網站](http://openwhisk.org)
 * [無伺服器相關資訊](https://martinfowler.com/articles/serverless.html)

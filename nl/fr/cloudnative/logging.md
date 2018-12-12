@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,23 +15,18 @@ lastupdated: "2018-08-17"
 # Journalisation dans Swift
 {: #logging_swift}
 
-Les journaux sont nécessaires pour diagnostiquer comment et pourquoi des services échouent. Les journaux ne sont pas censés être utilisés pour surveiller les performances d'une application car c'est le rôle des métriques, mais ils peuvent faire office de source pour les alertes, et peuvent donc comporter davantage de détails que ce que vous pourriez obtenir de mesures globales.
+Les messages de journal sont des chaînes avec des informations contextuelles sur l'état et l'activité du microservice au moment où l'entrée de journal est créée. Les journaux sont nécessaires pour diagnostiquer comment et pourquoi les services échouent, et jouent un rôle de support pour les [métriques d'application](appmetrics.html) dans la surveillance de la santé des applications.
 
-L'un des avantages de travailler avec une infrastructure de cloud est que votre application n'a plus à se soucier de nombreuses choses, notamment la gestion des fichiers journaux. Compte tenu de la nature transitoire des processus dans les environnements de cloud, les journaux doivent être collectés et envoyés ailleurs, généralement dans un emplacement centralisé pour analyse. La manière la plus cohérente de journaliser des environnements de cloud est d'envoyer des entrées de journal dans des flux de sortie et d'erreur standard, puis de laisser l'infrastructure s'occuper du reste.
+Etant donné la nature transitoire des processus dans les environnements de cloud, les journaux peuvent être collectés et envoyés ailleurs, généralement dans un emplacement centralisé à des fins d'analyse. Le moyen le plus cohérent de consigner dans les environnements de cloud est d'envoyer les entrées de journal dans une sortie standard et des flux d'erreurs, ce qui permet à l'infrastructure de traiter le reste.
 
-Comme votre application évolue avec le temps, la nature de ce que vous consignez peut changer. L'utilisation d'un format JSON présente les avantages suivants :
-* Les journaux sont indexables, ce qui simplifie grandement la recherche d'un corps agrégé de journaux.
-* Les journaux sont plus résistants aux changements, car l'analyse syntaxique ne repose pas sur la position des éléments dans une chaîne.
 
-L'utilisation d'une journalisation au format JSON peut rendre la lecture des journaux légèrement plus compliqués pour vous, en tant qu'humain, lorsque vous utilisez des outils de ligne de commande pour l'extraction de journaux. Vous pouvez utiliser des variables d'environnement pour basculer entre les formats de journaux à utiliser de manière à disposer de journaux de texte en clair pour le développement local et le débogage.
-
-## Ajout de la journalisation à votre appli Swift
+## Ajout de la journalisation à votre application Swift
 
 [HeliumLogger](https://github.com/IBM-Swift/HeliumLogger) est une infrastructure de journalisation légère connue pour Swift ; elle présente de nombreux avantages natifs comme la journalisation dans une sortie standard et différents niveaux de journalisation.
 
 [LoggerAPI](https://github.com/IBM-Swift/LoggerAPI) est le protocole de journal d'événements qui fournit une interface de journalisation commune pour différents types de journaux d'événements dans Swift. Kitura utilise the `LoggerAPI` dans ses mises en oeuvre.
 
-Pour optimiser `HeliumLogger`, ajoutez ce qui suit à **dependencies:** dans votre `Package.swift`, afin de garantir son ajout aux cibles où il est utilisé.
+Pour utiliser `HeliumLogger`, ajoutez le code suivant à la section **dependencies:** de `Package.swift` pour toutes les cibles appropriées :
 ```swift
 .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1")
 ```
@@ -53,16 +48,16 @@ Dans l'exemple fourni, le [niveau de journalisation](http://ibm-swift.github.io/
 
 Pour plus d'informations sur la personnalisation des messages de journal, consultez la [documentation de référence d'API HeliumLogger API](http://ibm-swift.github.io/HeliumLogger/) officielle.
 
-## Journalisation avec des kits de démarrage
+## Journalisation avec les kits de démarrage
 {: #monitoring}
 
-Les applis Swift qui sont créées à l'aide du service d'appli {{site.data.keyword.cloud_notm}} sont fournies avec `HeliumLogger` par défaut. L'exécution de l'application en mode natif ou dans un environnement de cloud génère la sortie suivante :
+Les applications Swift qui sont créées à l'aide du service d'application {{site.data.keyword.cloud_notm}} sont fournies avec `HeliumLogger` par défaut. L'exécution de l'application en mode natif ou dans un environnement de cloud génère la sortie suivante :
 ```
 [2018-07-31T15:41:05.332-05:00] [INFO] [HTTPServer.swift:195 listen(on:)] Listening on port 8080.
 ```
 {: screen}
 
-Ces messages se trouvent dans `stdout` à partir d'une exécution en local, ou dans les journaux des déploiements [CloudFoundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs) et [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/), lesquels sont accessibles par les journaux `ibmcloud app --recent <APP_NAME>` et `kubectl<deployment name>`, respectivement.
+Ces messages se trouvent localement dans `stdout` ou dans les journaux des déploiements [CloudFoundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs) et [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/) qui sont accessibles par `ibmcloud app logs --recent <APP_NAME>` et `kubectl logs<deployment name>`.
 
 Dans le fichier `/Sources/AppName/main.swift`, vous pouvez voir le code suivant :
 ```swift
@@ -81,6 +76,6 @@ En savoir plus sur l'affichage des journaux dans chacun des environnements de d�
 * [Journaux de Cloud Foundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
 * [Journaux & surveillance d'{{site.data.keyword.openwhisk}}](https://console.bluemix.net/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
 
-Utilisation d'un regroupeur de journaux
+Découvrez comment implémenter et utiliser un regroupeur de journaux :
 * [Analyse de journal {{site.data.keyword.cloud_notm}}](https://console.bluemix.net/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
 * [Pile ELK privée {{site.data.keyword.cloud_notm}} ](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

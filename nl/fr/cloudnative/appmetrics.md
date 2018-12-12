@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-09-20"
 
 ---
 
@@ -13,18 +13,18 @@ lastupdated: "2018-08-17"
 {:pre: .pre}
 {:tip: .tip}
 
-# Utilisation de métriques d'application avec les applis Swift
+# Utilisation de métriques d'application avec les applications Swift
 {: #metrics}
 
-Les métriques d'application sont importantes pour la surveillance des performances de votre application. Il peut vous sembler que la surveillance des performances de l'environnement, et notamment l'UC, la mémoire, la latence et les métriques HTTP, vont nécessiter un effort monumental. Il est néanmoins essentiel de s'assurer que votre application Swift s'exécute de manière efficace dans le temps. Des services cloud natifs, tels que la mise à l'échelle automatique, peuvent se baser sur ces métriques pour mettre votre appli à l'échelle et lui permettre de fonctionner en cas de pic de charge et de réduire afin de maintenir un faible niveau de coût.
+Les métriques d'application sont importantes pour la surveillance des performances de votre application. Il est essentiel de disposer d'une vue en direct des métriques (UC, mémoire, latence et mesures HTTP) pour garantir un fonctionnement efficace de votre application dans le temps. Des services Kubernetes et Cloud Foundry, par exemple la [mise à l'échelle automatique](/docs/services/Auto-Scaling/index.html), reposent sur ces métriques pour déterminer quand il est nécessaire d'ajouter ou de retirer de manière dynamique des instances en fonction de la charge, et de nettoyer des instances qui ne sont plus nécessaires, et ce afin de réduire les coûts.
 
-Les métriques d'application peuvent vous aider à identifier des problèmes de performances courants :
+Les métriques d'application sont capturées sous forme de données de séries temporelles. L'agrégation et la visualisation des métriques capturées permettent d'identifier des problèmes courants liés aux performances tels que :
 
 * Faibles temps de réponse HTTP sur tout ou partie des routes
-* Débit médiocre dans l'application
+* Débit médiocre dans l'application 
 * Pics de demandes entraînant des ralentissements
-* Utilisation UC plus élevée que prévu pour le niveau de débit/charge
-* Utilisation de la mémoire élevé et/ou en augmentation (fuite de mémoire possible)
+* Utilisation de l'UC plus élevée que prévu
+* Utilisation de la mémoire élevée ou en augmentation (possible fuite de mémoire)
 
 ## Ajout de métriques d'application à votre application Swift existante
 {: #add-appmetrics-existing}
@@ -35,8 +35,7 @@ Utilisez [Application Metrics for Swift](https://developer.ibm.com/swift/monitor
 
 * La bibliothèque `SwiftMetricsDash` consomme les métriques qui sont produites par `SwiftMetrics` et fournit un tableau de bord intégré pour la visualisation.
 
-
-Pour activer l'API de surveillance de base, ajoutez `SwiftMetrics` à la section **dependencies:** dans votre `Package.swift`, et assurez-vous de l'ajouter à la cible souhaitée :
+Pour activer l'API de contrôle de base, ajoutez `SwiftMetrics` à la section **dependencies:** dans votre fichier `Package.swift` et assurez-vous de l'ajouter à la cible appropriée :
 ```swift
 .package(url: "https://github.com/RuntimeTools/SwiftMetrics.git", from: "2.4.0")
 ```
@@ -65,7 +64,7 @@ Par défaut, `SwiftMetricsDash` démarre son propre serveur Kitura, puis présen
 
 ## Utilisation de métriques d'application dans les kits de démarrage
 
-Les applications Swift côté serveur qui sont créées à partir de kits de démarrage incluent `SwiftMetrics`, `SwiftMetricsDash` et `SwiftMetricsPrometheus` ; elle sont donc prêtes pour une utilisation dans les environnements Kubernetes qui utilisent des noeuds finaux Prometheus pour la collecte de métriques.
+Les applications Swift côté serveur qui sont créées à partir des kits de démarrage incluent `SwiftMetrics`, `SwiftMetricsDash` et `SwiftMetricsPrometheus` et sont donc prêtes à être utilisées dans des environnements Kubernetes utilisant des noeuds finaux Prometheus pour la collecte de métriques.
 
 Le code `SwiftMetrics` se trouve dans `/Sources/Application/Metrics.swift` :
 ```swift

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-08-07"
 # 使用 SQL 数据库实现数据持久性
 {: #sql_data}
 
-结构化查询语言 (SQL) 是一种特定于域的语言，用于管理关系数据库中的数据。建议持久存储数据，以防服务器在您使用期间关闭。要添加数据持久性，可以直接通过 Swift 使用 SQL 数据库。Swift 中最重要的其中一个功能是其类型安全。将 SQL 数据库与 Swift 配合使用是符合逻辑的选择，因为这两者都支持类型安全。
+结构化查询语言 (SQL) 是一种特定于域的语言，用于管理关系数据库中的数据。建议您使用数据持久性，以应对服务器在您使用期间关闭的情况。要添加数据持久性，可以直接通过 Swift 使用 SQL 数据库。Swift 中最重要的其中一个功能是其类型安全。将 SQL 数据库与 Swift 配合使用是符合逻辑的选择，因为这两者都支持类型安全。
 
 ## 将 ORM 用于 SQL 数据库
 
@@ -145,7 +145,7 @@ Grade.delete(id: 1) { error in
 
 ## 将 ORM 用于 Kitura
 
-为了更轻松地试用 ORM，[FoodTrackerBackend tutorial](https://github.com/IBM/FoodTrackerBackend) 可以使用 ORM 将 iOS 应用程序中的 Meal 对象保存并访存到 PostgreSQL 数据库。即使完成了本教程，也值得再次浏览本教程以了解 Swift-Kuery-ORM 的能力，以及它是如何简化 Kitura 代码的。
+要更轻松地试用 ORM，请完成 [FoodTrackerBackend 教程](https://github.com/IBM/FoodTrackerBackend)。FoodTrackerBackend 可以将 iOS 应用程序中的 Meal 对象直接保存并访存到 PostgreSQL 数据库中。即使完成了本教程，也值得再次浏览本教程以了解 Swift-Kuery-ORM 的能力，以及它是如何简化 Kitura 代码的。
 
 ## 直接使用 Swift-Kuery
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -16,29 +16,32 @@ lastupdated: "2018-08-09"
 
 # 新增使用者鑑別
 
-應用程式安全可能非常複雜。對於大部分開發人員而言，這是建立應用程式最困難的其中一部分。如何才能確定您正在保護使用者資訊？藉由將 {{site.data.keyword.appid_full}} 整合至您的應用程式，即可保護資源並新增鑑別；即使您沒有太多的安全經驗也可以做到。
+應用程式安全非常複雜。對於大部分開發人員而言，這是建立應用程式較困難的作業之一。如何才能確定您正在保護使用者資訊？藉由將 {{site.data.keyword.appid_full}} 整合至您的應用程式，即可保護資源並新增鑑別，即使您沒有太多的安全經驗也可以做到。
 
-要求使用者登入，即可儲存使用者資料，例如，應用程式喜好設定（或公用社交設定檔中的資訊），然後運用該資料來自訂應用程式內的每個使用者經驗。{{site.data.keyword.appid_short_notm}} 為您提供一個登入架構，但是您也可以帶入自創品牌的登入畫面，以與雲端目錄搭配使用。
+要求使用者登入，即可儲存使用者資料，例如，應用程式喜好設定（或公用社交設定檔中的資訊），然後使用該資料來自訂應用程式內的每個使用者經驗。{{site.data.keyword.appid_short_notm}} 為您提供一個登入架構，但是您也可以帶入自創品牌的登入畫面，以與雲端目錄搭配使用。
 
 如需可以使用 {{site.data.keyword.appid_short_notm}} 的所有方式以及架構資訊，請參閱[關於 {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html)。
 
 ## 開始之前
+{: #before}
 
 首先，請確定您具備下列必要條件：
- * CocoaPods（1.1.0 版或更新版本）
- * iOS（第 9 版或更新版本）
- * MacOS（10.11.5 版或更新版本）
- * Xcode（9.0.1 版或更新版本）
+* CocoaPods（1.1.0 版或更新版本）
+* iOS（第 9 版或更新版本）
+* MacOS（10.11.5 版或更新版本）
+* Xcode（9.0.1 版或更新版本）
 
 ## 步驟 1. 建立 {{site.data.keyword.appid_short_notm}} 實例
+{: #create_instance}
 
-佈建服務實例：
+建立 {{site.data.keyword.appid_short_notm}} 服務的實例：
 
 1. 在 [{{site.data.keyword.cloud_notm}} 型錄](https://console.bluemix.net/catalog/)中，選取 {{site.data.keyword.appid_short_notm}}。即會開啟服務配置畫面。
 2. 提供服務實例的名稱，或使用預設名稱。
 3. 選取定價方案，然後按一下**建立**。
 
 ## 步驟 2. 安裝 iOS Swift SDK
+{: #install_sdk}
 
 此服務提供 SDK，以協助您輕鬆地以程式碼編寫應用程式。SDK 必須安裝在應用程式程式碼中。
 
@@ -66,22 +69,25 @@ lastupdated: "2018-08-09"
 1. 移至**專案設定 > 功能 > 金鑰鏈共用**，然後啟用 Xcode 專案的金鑰鏈共用。
 
 2. 移至**專案設定 > 資訊 > URL 類型**，將下列值新增至 **URL 架構**及 **ID** 文字框中。
-    ```
+    
+  ```
     $(PRODUCT_BUNDLE_IDENTIFIER)
     ```
-    {: pre}
+  {: codeblock}
 
 3. 將下列 import 新增至 `AppDelegate.swift` 檔案。
-    ```swift
-    import BluemixAppID
-    ```
-    {:pre}
+    
+  ```swift
+  import BluemixAppID
+  ```
+  {: codeblock}
 
-4. 傳遞承租戶 ID 及地區參數，以起始設定 SDK。放置程式碼的一般工作區（但非一定）位於您應用程式中 AppDelegate 的 `application:didFinishLaunchingWithOptions` 方法中。
-    ```swift
-    AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
-    ```
-    {: pre}
+4. 傳遞 `tenantId` 及 `region` 參數，以起始設定 SDK。放置程式碼的一般工作區（但非一定）位於您應用程式中 `AppDelegate` 的 `application:didFinishLaunchingWithOptions` 方法中。
+  ```swift
+  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  ```
+  {: codeblock}
+  
   <table>
     <thead>
       <th colspan=2><img src="images/idea.png" alt=""/>瞭解指令元件</th>
@@ -93,7 +99,7 @@ lastupdated: "2018-08-09"
       </tr>
       <tr>
         <td><em>AppID_region</em></td>
-        <td>{{site.data.keyword.appid_short_notm}} 地區是您在其中使用服務的 IBM Cloud 地區。可在服務儀表板中找到此地區，且可為 <em>AppID.REGION_US_SOUTH</em>、<em>AppID.REGION_SYDNEY</em>、<em>AppID.REGION_UK</em>。</td>
+        <td>{{site.data.keyword.appid_short_notm}} 地區是您在其中使用服務的 {{site.data.keyword.cloud_notm}} 地區。可在服務儀表板中找到此地區，且可為 <em>AppID.REGION_US_SOUTH</em>、<em>AppID.REGION_SYDNEY</em>、<em>AppID.REGION_UK</em>。</td>
       </tr>
     </tbody>
   </table>
@@ -104,7 +110,7 @@ lastupdated: "2018-08-09"
             return AppID.sharedInstance.application(application, open: url, options: options)
         }
     ```
-    {: pre}
+    {: codeblock}
 
 ## 步驟 4. 管理登入經驗
 {: #managing-signin-appid}
@@ -124,7 +130,7 @@ lastupdated: "2018-08-09"
 1. 開啟 {{site.data.keyword.appid_short_notm}} 儀表板的**身分提供者 > 管理**。
 2. 將您要使用的身分提供者設為**開啟**。您可以使用任何組合的身分提供者，但是如果您要帶入自訂的登入畫面，則需要僅啟用「雲端目錄」。
 3. 將[預設配置](/docs/services/appid/identity-providers.html)更新為您自己的認證。{{site.data.keyword.appid_short_notm}} 提供 IBM 認證，您可以用來試用服務，但在發佈您的應用程式之前，需要更新配置。
-4. 自訂預先配置的登入畫面，以顯示您選擇的影像及顏色。
+4. 自訂登入畫面，以顯示您選擇的影像及顏色。
 5. 若要使用您的應用程式來呼叫登入小組件，請將下列指令新增至您的程式碼。
     ```swift
     import BluemixAppID
@@ -257,7 +263,7 @@ lastupdated: "2018-08-09"
 ## 步驟 5. 測試應用程式
 {: #appid_testing}
 
-所有項目都正確設定嗎？您可以測試看看！
+所有項目都正確配置嗎？您可以測試看看！
 
 1. 以 Xcode 模擬器開啟應用程式。
 2. 使用 GUI，逐步進行登入應用程式的處理程序。如果您已配置雲端目錄，請確定所有畫面的顯示都如您所願。
@@ -272,4 +278,4 @@ lastupdated: "2018-08-09"
 做得好！您已為應用程式新增一個安全等級。嘗試下列其中一個選項，以保持動力：
 
 * 進一步瞭解並充分運用 {{site.data.keyword.appid_short_notm}} 提供的所有特性，[請參閱文件](/docs/services/appid/index.html)！
-* 「入門範本套件」是運用 IBM Cloud 功能最快的方式之一。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
+* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！

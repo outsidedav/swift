@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -13,20 +13,20 @@ lastupdated: "2018-08-17"
 {:pre: .pre}
 {:tip: .tip}
 
-# Ajout d'API aux applis iOS
+# Ajout d'API aux applications iOS
 {: #api_connect}
 
 Vous pouvez utiliser API Connect pour gérer les API dans {{site.data.keyword.cloud}}, que celles-ci soient conservées à l'intérieur ou à l'extérieur d'{{site.data.keyword.cloud_notm}}. Apprenez à gérer vos API afin de pouvoir contrôler l'utilisation, accroître l'adoption et suivre les statistiques.
 
 ## Création d'une instance d'API Connect
 
-Accédez au catalogue et créez une instance d'API Connect pour gérer vos API.
+Accédez au [catalogue](https://console.bluemix.net/catalog/) et créez une instance d'API Connect pour gérer vos API.
 
 Utilisez `Menu->API` pour accéder à la console de gestion API Connect.
 
 ![API Connect](images/apiconnect.png)
 
-Si vous définissez votre propre contrat d'API avant de démarrer le développement de back-end et de front-end, utilisez les outils API Connect pour accélérer ce processus. Vous pouvez travailler avec votre équipe de développement numérique pour générer et définir un contrat d'API entre votre application iOS et votre logique de back-end Cette logique peut être distribuée à l'aide de [{{site.data.keyword.openwhisk}}](/docs/openwhisk/index.html) ou de l'[environnement d'exécution Swift](/docs/runtimes/swift/index.html) avec Kubernetes ou [Cloud Foundry](/docs/cloud-foundry/index.html).
+Si vous définissez votre propre contrat d'API avant de commencer le développement back-end et front-end, utilisez les outils d'API Connect pour accélérer ce processus. Vous pouvez travailler avec votre équipe de développement numérique pour générer et définir un contrat d'API entre votre application iOS et votre logique de back-end Cette logique peut être distribuée à l'aide de [{{site.data.keyword.openwhisk}}](/docs/openwhisk/index.html) ou de l'[environnement d'exécution Swift](/docs/runtimes/swift/index.html) avec Kubernetes ou [Cloud Foundry](/docs/cloud-foundry/index.html).
 
 Une fois votre API définie, vous pouvez définir des spécifications d'API ouvertes (Swagger) avec un certain nombre d'outils :
 
@@ -38,8 +38,8 @@ Une fois votre API définie, vous pouvez définir des spécifications d'API ouve
 
 Vous pouvez définir un proxy d'API qui gère la passerelle d'API entre votre application client et votre logique de back-end. Procédez comme suit pour créer un proxy à l'aide de votre spécification d'API ouverte (document Swagger) YAML ou JSON. 
 
-1. Ouvrez la console `Menu -> API`, puis cliquez sur le proxy d'API.
-2. Cliquez sur **API Definition Import YAML or JSON**.
+1. Ouvrez la console `Menu -> APIs` et cliquez sur le proxy d'API.
+2. Cliquez sur **Définition d'API > Importer YAML ou JSON**.
 3. Sélectionnez le fichier YAML ou JSON que vous avez préalablement créé.
 4. Sauvegardez et exposez.
 
@@ -47,21 +47,21 @@ Vous devez configurer le noeud final externe afin qu'il pointe sur l'URL qui rel
 
 ## Création d'un back-end Swift
 
-Il est possible de créer votre appli Swift de back-end à partir de cette API. 
+Vous pouvez créer votre application Swift de back-end sur la base de cette API. 
 
-Depuis la console Apple Development, procédez comme suit :
+Dans la console de développement Apple, procédez comme suit :
 
 1. Sélectionnez **Kits de démarrage**.
-2. Cliquez sur **Créer une appli**.
+2. Cliquez sur **Créer une application**.
 3. Sélectionnez **Swift** comme langage.
 
-Sélectionnez le fichier YAML et JSON, puis cliquez sur **Créer**. L'appli Swift de back-end est créée.
+Sélectionnez le fichier YAML et JSON, puis cliquez sur **Créer**. L'application Swift de back-end est créée.
 
-Vous pouvez ensuite **télécharger** le Code ou **Déployer sur le Cloud**, puis cloner votre référentiel GIT sur votre machine locale. Pour ouvrir l'application côté serveur dans XCode, suivez les instructions dans le Guide des connaissances.
+Vous pouvez ensuite **télécharger** le Code ou **Déployer sur le Cloud**, puis cloner votre référentiel GIT sur votre machine locale. Vous pouvez suivre les instructions dans le guide des connaissances pour ouvrir l'application côté serveur dans Xcode.
 
 Dans le dossier **Source**, vous pouvez voir une route qui définit le fichier Swift qui a créé les points finaux REST qui mappent à l'API. 
 
-Voici un exemple qui utilise l'API PetStore Open :
+L'exemple suivant utilise l'API Open `PetStore` :
 ```swift
 import Kitura
 import KituraContracts
@@ -110,25 +110,25 @@ func initializePet_Routes(app: App) {
 ```
 {: codeblock}
 
-Une fois l'API définie à l'aide de {{site.data.keyword.openwhisk_short}} ou d'un environnement d'exécution Swift de pile complète, et une fois la définition API Connect créée, vous pouvez consommer l'API dans vos applis iOS.
+Une fois l'API définie à l'aide de {{site.data.keyword.openwhisk_short}} ou d'un environnement d'exécution Swift de pile complète, et une fois la définition API Connect créée, vous pouvez consommer l'API dans vos applications iOS.
 
 ## Consommation de l'API dans une application mobile iOS
 
-Pour consommer l'API de back-end dans votre appli iOS, créez un kit de démarrage mobile à l'aide de Apple Console. A partir de la vue du kit de démarrage, créez un kit de démarrage iOS de n'importe quel type.
+Pour consommer l'API de back-end dans votre application iOS, créez un kit de démarrage mobile à l'aide de Apple Console. A partir de la vue du kit de démarrage, créez un kit de démarrage iOS de n'importe quel type.
 
 Cliquez sur **Ajouter une ressource** et sélectionnez une API. 
 
 ![Boîte de dialogue d'API](../images/apidialog.png)
 
-L'API est ajoutée à votre appli iOS. Si vous *téléchargez* le code de l'appli, vous pouvez voir un dossier qui figure dans les dossiers iOS Source et qui est nommé après l'API.
+L'API est ajoutée à votre application iOS. Si vous *téléchargez* le code de l'application, vous pouvez voir un dossier qui figure dans les dossiers iOS Source et qui est nommé après l'API.
 
-Pour une `mise à jour du pod` des logiciels SDK dépendants dans votre appli iOS, suivez les instructions du Guide des connaissances. 
+Pour une `mise à jour du pod` des logiciels SDK dépendants dans votre application iOS, suivez les instructions du Guide des connaissances. 
 
-L'appli iOS comporte un dossier qui contient la liaison de logiciel SDK générée pour cette API. Ce dossier inclut les trois sous-dossiers suivants `Assets`,`Source` et `Docs`. 
+L'application iOS inclut un dossier avec la liaison SDK générée pour l'API. Ce dossier inclut les trois sous-dossiers suivants `Assets`,`Source` et `Docs`. 
 
 ![Dossier iOS](../images/sdkfolder.png)
 
-Le dossier `Assets` contient le fichier qui gère l'URL de votre API, par défaut `localhost:3000`. Vous devez modifier la valeur qui fait référence à la route d'API. La définition d'API contient une section API Name and Route. Cliquez sur l'**icône de copie** à la fin de la route pour copier l'URL. Vérifiez que l'option *Expose Managed API* est activée afin de permettre aux clients externes d'effectuer des appels d'API.
+Dans le dossier `Assets`, il existe un fichier qui gère l'URL dans votre API, qui est `localhost:3000` par défaut. Vous devez modifier la valeur qui fait référence à la route d'API. La définition d'API contient une section contenant le nom d'API et le chemin. Cliquez sur **Copier** à la fin du chemin pour copier l'URL. Vérifiez que l'option *Expose Managed API* est activée afin de permettre aux clients externes d'effectuer des appels d'API.
 
 ![Route d'API](../images/apiroute.png)  
 
@@ -136,11 +136,11 @@ Ouvrez le fichier `PLIST` et remplacez la valeur hôte par la valeur qui est cop
 
 ## Documentation
 
-Une fois le logiciel SDK inclus dans votre projet d'appli iOS, un fichier *README.html* est disponible dans le **dossier Docs**. Ouvrez le dossier Docs dans un navigateur externe et lisez les instructions relatives à l'utilisation de votre projet.
+Lorsque le logiciel SDK est inclus dans votre projet d'application iOS, un fichier *README.html* est disponible dans le dossier `Docs`. Ouvrez le dossier `Docs` dans un navigateur externe et lisez les instructions qui décrivent comment utiliser votre projet.
 
-## Recréation du logiciel SDK après une modification d'API
+## Recréation du logiciel SDK après un changement d'API
 
-Si l'API est modifiée ou si de nouvelles fonctions deviennent disponibles, et si {{site.data.keyword.openwhisk}} est ajouté, vous pouvez recréer le logiciel SDK client à l'aide de la commande `ibmcloud sdk`. Pour plus d'informations, des exemples et l'aide sur la syntaxe, consultez la documentation [SDK Generator](/docs/cli/sdk/index.html).
+Si l'API change ou si de nouvelles fonctions sont disponible et {{site.data.keyword.openwhisk}} est ajouté, vous pouvez re-créer le SDK client à l'aide de la commande `ibmcloud sdk`. Pour plus d'informations, des exemples et l'aide sur la syntaxe, consultez la documentation [SDK Generator](/docs/cli/sdk/index.html).
 
 Pour activer la création d'un logiciel SDK, utilisez le fichier YAML ou JSON de la spécification d'API ouverte (Swagger). Vous pouvez extraire ce fichier à l'aide des utilitaires de gestion d'API dans l'{{site.data.keyword.cloud_notm}}. 
 
@@ -150,19 +150,19 @@ Pour activer la création d'un logiciel SDK, utilisez le fichier YAML ou JSON de
 
 ![Explorateur d'API](../images/downloadyaml.png)
 
-4. Sélectionnez l'icône de téléchargement afin de télécharger le fichier yaml de l'API et de sauvegarder ce fichier dans votre répertoire de projet d'appli iOS.
+4. Sélectionnez l'icône de téléchargement afin de télécharger le fichier yaml de l'API et de sauvegarder ce fichier dans votre répertoire de projet d'application iOS.
 
-5. L'étape suivante consiste à exécuter la commande d'interface CLI `ibmcloud sdk`.
+5. L'étape suivante consiste à exécuter la commande d'interface CLI `ibmcloud sdk`. 
     ```
     ibmcloud sdk generate --ios --unzip --output ./MyAppFunctions -f ./mobile-bff-functions-1.0.0.yaml SDKMyFunctions
     ```
     {: codeblock}
 
-    Le logiciel SDK est recréé dans le répertoire de projet de votre appli iOS afin que vous puissiez poursuivre la gestion de votre API.
+    Le logiciel SDK est recréé dans le répertoire de votre projet d'application iOS pour que vous puissiez continuer de travailler avec votre API.
 
 ## Référence
 
-L'exemple de logiciel SDK suivant est créé pour {{site.data.keyword.openwhisk_short}} à partir du kit de démarrage. Vous pouvez voir chacune des actions et les fragments de code Swift que vous pouvez inclure dans votre appli iOS.
+L'exemple de logiciel SDK suivant est créé pour {{site.data.keyword.openwhisk_short}} à partir du kit de démarrage. Vous pouvez voir chacune des actions et les fragments de code Swift que vous pouvez inclure dans votre application iOS.
 
 ### Méthodes d'API par défaut
  * [`getCreate`](#getCreate)

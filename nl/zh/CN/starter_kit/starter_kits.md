@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-29"
 
 ---
 {:new_window: target="_blank"}
@@ -66,8 +66,9 @@ lastupdated: "2018-08-08"
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“添加资源”对话框](images/add_resource_screen.png "“添加资源”对话框")<br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“添加资源”对话框*
 
-在“应用程序详细信息”视图中，可以通过以下方式访问代码：
-*  选择**下载代码**以生成并下载应用程序的代码。
+### 下载代码
+
+* 要访问您的代码，可以在“应用程序详细信息”视图上选择**下载代码**来生成和下载应用程序的代码。
 
 ### 应用程序列表视图
 {: #app_list_view}

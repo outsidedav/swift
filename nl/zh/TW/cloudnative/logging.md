@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,15 +15,10 @@ lastupdated: "2018-08-17"
 # 在 Swift 中記載
 {: #logging_swift}
 
-一定要有日誌，才能診斷服務失敗的程度和原因。日誌並不是用來監視應用程式的效能（那是度量值的作用），而是用來作為警示的來源，而且之後可包括比從聚集度量中取得更多的詳細資料。
+日誌訊息是字串，具有在製作日誌項目時有關微服務狀態及活動的環境定義資訊。需要有日誌，才能診斷服務失敗的程度和原因，日誌對於監視應用程式性能時的[應用程式度量值](appmetrics.html)扮演了支援角色。
 
-使用雲端基礎架構的其中一個好處是您的應用程式不需要再擔心許多事，例如，管理日誌檔。因為在雲端環境中，處理程序都是暫時的，因此必須收集日誌並傳送至其他地方，通常會傳送到一個集中位置，以進行分析。在雲端環境中進行日誌記載最一致的方法是，將日誌項目傳送至標準輸出及錯誤串流，然後讓基礎架構處理剩下的事宜。
+因為在雲端環境中，處理程序都是暫時的，因此必須收集日誌並傳送至其他地方，通常會傳送到一個集中位置，以進行分析。在雲端環境中進行日誌記載最一致的方法是，將日誌項目傳送至標準輸出及錯誤串流，然後讓基礎架構處理剩下的事宜。
 
-因為您的應用程式會隨著時間有所進展，因此您所記載事物的本質也會變更。使用 JSON 日誌格式，您可以獲得下列好處：
-* 可以建立日誌的索引，以更輕易地搜尋聚集的日誌內文。
-* 日誌在變更後可以復原，因為剖析並非仰賴元素在字串中的位置。
-
-使用指令行工具來提取日誌時，採用 JSON 格式的記載會讓您（人類）難以閱讀日誌。您可以使用環境變數來切換要使用的日誌格式，讓您有純文字日誌可以進行本端開發及除錯。
 
 ## 將記載新增至 Swift 應用程式
 
@@ -31,7 +26,7 @@ lastupdated: "2018-08-17"
 
 [LoggerAPI](https://github.com/IBM-Swift/LoggerAPI) 是日誌程式通訊協定，針對 Swift 中不同種類的日誌程式，提供通用的記載介面。Kitura 在整個實作過程都使用 `LoggerAPI`。
 
-若要運用 `HeliumLogger`，請將下列這一行新增至 `Package.swift` 中的 **dependencies:**，確定要將它新增至使用它的所有目標中。
+若要使用 `HelloumLogger`，請針對所有適當目標，將下列程式碼新增至 `Package.swift` 中的 **dependencies:** 區段：
 ```swift
 .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1")
 ```
@@ -53,7 +48,7 @@ Log.info("This is an informational log message.")
 
 如需自訂日誌訊息的相關資訊，請參閱官方的 [HeliumLogger API 參考資料文件](http://ibm-swift.github.io/HeliumLogger/)。
 
-## 使用 StarterKits 記載
+## 使用入門範本套件記載
 {: #monitoring}
 
 依預設，使用 {{site.data.keyword.cloud_notm}} App Service 所建立的 Swift 應用程式，會隨附 `HeliumLogger`。在本機或在雲端環境中執行應用程式，會產生下列輸出：
@@ -62,7 +57,7 @@ Log.info("This is an informational log message.")
 ```
 {: screen}
 
-這些訊息位於本端執行的 `stdout` 中，或 [CloudFoundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs) 及 [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/) 部署的日誌中，其分別由 `ibmcloud app logs --recent <APP_NAME>` 及 `kubectl logs <deployment name>` 存取。
+這些訊息位於本端的 `stdout` 中，或 [CloudFoundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs) 及 [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/) 部署的日誌中，其由 `ibmcloud app logs --recent <APP_NAME>` 及 `kubectl logs <deployment name>` 存取。
 
 在 `/Sources/AppName/main.swift` 檔案中，您可以看到下列程式碼：
 ```swift
@@ -81,6 +76,6 @@ HeliumLogger.use(LoggerMessageType.info)
 * [Cloud Foundry 日誌](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
 * [{{site.data.keyword.openwhisk}} 日誌 & 監視](https://console.bluemix.net/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
 
-使用日誌聚集器：
+了解如何實作及使用日誌聚集器：
 * [{{site.data.keyword.cloud_notm}} Log Analysis](https://console.bluemix.net/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
 * [{{site.data.keyword.cloud_notm}} 專用 ELK 堆疊](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

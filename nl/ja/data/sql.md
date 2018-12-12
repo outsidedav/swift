@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,17 +15,18 @@ lastupdated: "2018-08-07"
 # データの永続性のために SQL データベースを使用する
 {: #sql_data}
 
-構造化照会言語 (SQL) は、リレーショナル・データベースでデータを管理するために使用されるドメイン固有言語です。データの使用中にサーバーがシャットダウンする場合に備えて、データを永続化することをお勧めします。データに永続性を付与するには、SQL データベースを Swift から直接使用します。Swift の最も重要な特長の 1 つに、型の安全性があります。Swift と共に SQL データベースを使用することは論理的な選択です。両方で、型の安全性がサポートされるためです。
+構造化照会言語 (SQL) は、リレーショナル・データベースでデータを管理するために使用されるドメイン固有言語です。 データの使用中にサーバーがシャットダウンする場合に備えて、データを永続化することをお勧めします。データに永続性を付与するには、SQL データベースを Swift から直接使用します。
+Swift の最も重要な特長の 1 つに、型の安全性があります。 Swift と共に SQL データベースを使用することは論理的な選択です。両方で、型の安全性がサポートされるためです。
 
 ## SQL データベースでの ORM の使用
 
-オブジェクト関連マッピング (ORM) を使用すると、SQL ステートメントを扱うことなく、オブジェクトをリレーショナル・データベースにマップできます。すると、構文解析と逐次化の多くを自分で行うことなく、リレーショナル・データベースでオブジェクトを保管したり取得したりできるようになります。
+オブジェクト関連マッピング (ORM) を使用すると、SQL ステートメントを扱うことなく、オブジェクトをリレーショナル・データベースにマップできます。 すると、構文解析と逐次化の多くを自分で行うことなく、リレーショナル・データベースでオブジェクトを保管したり取得したりできるようになります。
 
 ## ステップ 1. ORM の使用を開始する
 
 [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) や [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL) などの SQL プラグインで、[Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM) を使用します。
 
-この例では、[PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) プラグインを使用します。このプラグインをインストールするには、[ここ](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation)に示された手順に従ってください。
+この例では、[PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) プラグインを使用します。 このプラグインをインストールするには、[ここ](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation)に示された手順に従ってください。
 
 ## ステップ 2. ORM をアプリケーションにインポートする
 

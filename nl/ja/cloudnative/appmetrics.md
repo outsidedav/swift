@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-09-20"
 
 ---
 
@@ -16,27 +16,26 @@ lastupdated: "2018-08-17"
 # Swift アプリでのアプリケーション・メトリックの使用
 {: #metrics}
 
-アプリケーション・メトリックは、アプリケーションのパフォーマンスをモニターするのに重要です。CPU、メモリー、待ち時間、HTTP のメトリックを含む、環境のパフォーマンスをモニターすると、非常に労力がかかる場合がありますが、Swift アプリケーションが長期にわたって効率的に稼働することを保証するのに不可欠です。自動スケーリングなどのクラウド・ネイティブ・サービスは、アプリケーションがピーク・ロードを下回って実行されるようにスケーリングしたり、低コストが維持されるようにアプリケーションを縮小したりするのに、これらのメトリックに頼ります。
+アプリケーション・メトリックは、アプリケーションのパフォーマンスをモニターするのに重要です。 時間が経ってもアプリケーションが効果的に実行されていることを確認するには、CPU、メモリー、待ち時間、HTTP などのメトリックのライブ・ビューが不可欠です。 [Auto-Scaling](/docs/services/Auto-Scaling/index.html) などの Kubernetes や Cloud Foundry のサービスは、負荷に応じてインスタンスを動的に追加/削除するタイミングや、コストを抑えるために不要になったインスタンスをクリーンアップするタイミングを見極めるために、メトリックに依存しています。
 
-アプリケーション・メトリックは、以下のような一般的なパフォーマンス上の問題を識別するのに役立つことがあります。
+アプリケーション・メトリックは、時系列データとしてキャプチャーされます。 キャプチャーされたメトリックを集約して視覚化すると、次のような一般的なパフォーマンス上の問題を検出できます。
 
 * 一部またはすべての経路で HTTP 応答時間が遅くなる
 * アプリケーションのスループットが低下する
 * 需要の急上昇によりスローダウンが発生する
-* スループット/負荷のレベルで、予期される CPU 使用量を上回る
-* メモリー使用量が多いか、増加しているか、またはその両方 (メモリー・リークの可能性)
+* 予想より CPU 使用量が多い
+* メモリー使用量が多い、または増加している (メモリー・リークの可能性)
 
 ## 既存の Swift アプリケーションへのアプリケーション・メトリックの追加
 {: #add-appmetrics-existing}
 
-Swift アプリケーションにパフォーマンス・モニターを追加するには、[Application Metrics for Swift](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/) を使用します。Application Metrics for Swift は、`SwiftMetrics` と `SwiftMetricsDash` の 2 つのライブラリーで構成されます。
+Swift アプリケーションにパフォーマンス・モニターを追加するには、[Application Metrics for Swift](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/) を使用します。 Application Metrics for Swift は、`SwiftMetrics` と `SwiftMetricsDash` の 2 つのライブラリーで構成されます。
 
-* `SwiftMetrics` ライブラリーは、アプリケーションに関するメトリックを収集して集約する包括的な計測ライブラリーです。HTTP メトリック用の Kitura モジュール、[Prometheus サポート](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support)、スタンドアロンの[エミッター](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent)などのいくつかの拡張機能があります。
+* `SwiftMetrics` ライブラリーは、アプリケーションに関するメトリックを収集して集約する包括的な計測ライブラリーです。 HTTP メトリック用の Kitura モジュール、[Prometheus サポート](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support)、スタンドアロンの[エミッター](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent)などのいくつかの拡張機能があります。
 
 * `SwiftMetricsDash` ライブラリーは、`SwiftMetrics` で作成されるメトリックを利用し、視覚化用の組み込みのダッシュボードを提供します。
 
-
-基本のモニター API を有効にするには、`Package.swift` 内の **dependencies:** セクションに `SwiftMetrics` を追加し、ご希望のターゲットに追加されていることを確認してください。
+基本のモニター API を有効にするには、`Package.swift` 内の **dependencies:** セクションに `SwiftMetrics` を追加します。適切なターゲットに追加するようにしてください。
 ```swift
 .package(url: "https://github.com/RuntimeTools/SwiftMetrics.git", from: "2.4.0")
 ```
@@ -61,8 +60,7 @@ let smd = try SwiftMetricsDash(swiftMetricsInstance : metrics)
 ```  
 {: codeblock}
 
-デフォルトで、`SwiftMetricsDash` は、独自の Kitura サーバーを開始し、`http://<hostname>:<port>/swiftmetrics-dash` ページで要求を listen します。
-HTTP 要求やイベント・ループの待ち時間などの新しいアプリケーション・メトリックを参照するには、ダッシュボードにアクセスしてください。
+デフォルトで、`SwiftMetricsDash` は、独自の Kitura サーバーを開始し、`http://<hostname>:<port>/swiftmetrics-dash` ページで要求を listen します。 HTTP 要求やイベント・ループの待ち時間などの新しいアプリケーション・メトリックを参照するには、ダッシュボードにアクセスしてください。
 
 ## スターター・キットでのアプリケーション・メトリックの使用
 

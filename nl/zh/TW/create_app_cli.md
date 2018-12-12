@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-08-07"
 # 使用 CLI 建立伺服器端 Swift 應用程式
 {: #swift_cli}
 
-{{site.data.keyword.cloud}} 提供解決方案及服務，讓 Swift 開發人員及應用程式可以提供客戶所需的安全性、AI 及價值。有了廣泛的產品組合及 SDK，您可以運用這些服務，並將您最頂尖的應用程式快速推向市場。
+{{site.data.keyword.cloud}} 提供解決方案及服務，讓 Swift 開發人員及應用程式可以提供客戶所需的安全性、AI 及價值。有了廣泛的產品組合及 SDK，您可以使用這些服務，並將最頂尖的應用程式快速推向市場。
 {: shortdesc}
 
 下列手冊旨在協助您建置、本端執行及部署伺服器端 Swift 應用程式。學習如何使用 {{site.data.keyword.dev_cli_long}}，以利用標準指令來執行這些動作。
@@ -62,7 +62,7 @@ lastupdated: "2018-08-07"
 
 ## 步驟 2. 安裝工具以進行本端開發
 
-{{site.data.keyword.cloud}} 提供本端 CLI 工具，協助您使用各方面的 {{site.data.keyword.cloud_notm}}。如需相關資訊，請參閱 [{{site.data.keyword.dev_cli_long}} 資訊](../cli/index.html)。建議您在進行雲端部署之前，先進行安裝，以在本端 Docker 映像檔中測試 Swift 後端。
+{{site.data.keyword.cloud}} 提供本端 CLI 工具，協助您使用各方面的 {{site.data.keyword.cloud_notm}}。如需相關資訊，請參閱 [{{site.data.keyword.dev_cli_long}} 資訊](../cli/index.html)。在雲端部署之前，您可以使用工具來測試本端 Docker 映像檔中的 Swift 後端。
 
 * 若為 MacOS 及 Linux，請執行下列指令：
   ```
@@ -90,7 +90,7 @@ lastupdated: "2018-08-07"
   請務必以 {{site.data.keyword.cloud_notm}} 帳戶登入，以建立專案。第一次，使用者可以[登錄 ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")](https://console.bluemix.net/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter)，取得一個免費帳戶。使用 `ibmcloud login` 指令，即可在指令行上登入。
   {: tip}
 
-2. 系統提示您時，選擇選項 1，然後 6，最後選擇 2，如下列範例所示：
+2. 系統提示您時，依序選取選項 1、6、2，如下列範例所示：
   ```
   ? Select a resource type:                  
   1. Backend Service / Web App
@@ -146,7 +146,7 @@ lastupdated: "2018-08-07"
   ```
   ibmcloud dev build
   ```
-  {:codeblock}
+  {: codeblock}
 
 2. **執行**
 
@@ -154,7 +154,7 @@ lastupdated: "2018-08-07"
   ```
   ibmcloud dev run
   ```
-  {:codeblock}
+  {: codeblock}
 
   如果指令執行成功，則會顯示本端主機及埠，以檢視您應用程式的登入頁面。
 
@@ -164,11 +164,11 @@ lastupdated: "2018-08-07"
   ```
   ibmcloud dev deploy
   ```
-  {:codeblock}
+  {: codeblock}
 
 ## 後續步驟
 
-學習使用 {{site.data.keyword.cloud_notm}} Developer Console for Apple，其可讓開發人員透過各種「入門範本套件」建立應用程式、佈建及連接重要的 {{site.data.keyword.cloud_notm}} 最佳化服務，然後快速下載工作中的程式碼（或針對持續交付進行設定）。使用者可以建立、檢視、配置及管理您的應用程式，以及下載您應用程式的程式碼。使用 Developer Console for Apple，您可以快速評估，並以全新的應用程式來測試 {{site.data.keyword.cloud_notm}} 服務。
+學習使用 {{site.data.keyword.cloud_notm}} Developer Console for Apple，其可讓開發人員透過各種「入門範本套件」建立應用程式、佈建及連接重要的 {{site.data.keyword.cloud_notm}} 最佳化服務，然後快速下載工作中的程式碼，或針對持續交付進行設定。使用者可以建立、檢視、配置及管理您的應用程式，以及下載您應用程式的程式碼。使用 Developer Console for Apple，您可以快速評估，並以全新的應用程式來測試 {{site.data.keyword.cloud_notm}} 服務。
 
 準備好了嗎？請立即造訪 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits)，以開始使用。
 {: tip}

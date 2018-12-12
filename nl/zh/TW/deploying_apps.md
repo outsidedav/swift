@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -23,7 +23,7 @@ lastupdated: "2018-08-01"
 ## 開發無伺服器 Swift 應用程式
 {: #serverless}
 
-若要協助無伺服器開發，您可以使用 IBM 的「函數即服務 (FaaS)」供應項目 {{site.data.keyword.openwhisk}}。{{site.data.keyword.openwhisk_short}} 可執行應用程式邏輯，以回應事件，或回應來自 Web 或行動應用程式透過 HTTP 的直接呼叫，而不需佈建或管理伺服器。
+若要以無伺服器開發的方式進行開發，您可以使用 IBM 的「函數即服務 (FaaS)」供應項目 {{site.data.keyword.openwhisk}}。{{site.data.keyword.openwhisk_short}} 可執行應用程式邏輯，以回應事件，或回應來自 Web 或行動應用程式透過 HTTP 的直接呼叫，而不需建立或管理伺服器。
 
 {{site.data.keyword.openwhisk_short}} 會執行系統管理，例如，自動調整、可用性管理及維護，讓開發人員專注在撰寫應用程式邏輯。
 
@@ -32,7 +32,7 @@ lastupdated: "2018-08-01"
 ## 使用產生的 SDK 來整合後端服務
 {: #backend_gensdk}
 
-「{{site.data.keyword.IBM_notm}} SDK 產生器」外掛程式會使用產生的 SDK，輕鬆地將後端服務整合至您的應用程式。當 REST API 發生變更時，您可以重新產生 SDK 並取代舊的 SDK，以進行 SDK 無縫升級。您也可以將 CLI 整合至 DevOps 管線，並確定每次建置應用程式時，SDK 一律與 API 規格一致。
+「{{site.data.keyword.IBM_notm}} SDK 產生器」外掛程式會使用產生的 SDK，輕鬆地將後端服務整合至您的應用程式。當 REST API 發生變更時，您可以重新產生 SDK 並取代舊的 SDK，以升級 SDK。您也可以將 CLI 整合至 DevOps 管線，並確保每次建置應用程式時，SDK 永遠與 API 規格一致。
 
 如需相關資訊，請參閱[使用產生的 SDK 來整合後端服務](/docs/swift/backend/cli_sdkgen.html)。
 

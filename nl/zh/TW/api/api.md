@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-08-17"
 
 ## 建立 API Connect 實例
 
-移至「型錄」，然後建立 API Connect 實例，以管理您的 API。
+移至[型錄](https://console.bluemix.net/catalog/)，然後建立 API Connect 實例，以管理您的 API。
 
 使用 `Menu->APIs` 來存取「API Connect 管理」主控台。
 
@@ -47,7 +47,7 @@ lastupdated: "2018-08-17"
 
 ## 建立 Swift 後端
 
-可以根據此 API 來建立後端 Swift 應用程式。 
+您可以根據此 API 來建立後端 Swift 應用程式。 
 
 從 Apple Development Console，執行下列步驟：
 
@@ -57,11 +57,11 @@ lastupdated: "2018-08-17"
 
 選取 YAML 及 JSON 檔，然後按一下**建立**。即會建立後端 Swift 應用程式。
 
-然後，您可以**下載**「程式碼」或**部署至 Cloud**，再將 GIT 報告複製到您的本端機器。您可以遵循 Knowledge Guide 中的指示，以 XCode 開啟伺服器端應用程式。
+然後，您可以**下載**「程式碼」或**部署至 Cloud**，再將 GIT 報告複製到您的本端機器。您可以遵循 Knowledge Guide 中的指示，以 Xcode 開啟伺服器端應用程式。
 
 在**來源**資料夾中，您可以看到定義 Swift 檔的路徑，該檔案已建立對映至 API 的 REST 端點。 
 
-請參閱下列使用 PetStore Open API 的範例：
+請參閱下列使用 `PetStore` Open API 的範例：
 ```swift
 import Kitura
 import KituraContracts
@@ -128,7 +128,7 @@ iOS 應用程式包括一個資料夾，其中包含 API 的已產生 SDK 連結
 
 ![iOS 資料夾](../images/sdkfolder.png)
 
-`Assets` 資料夾包含的檔案，用來管理連接至 API 的 URL，依預設為 `localhost:3000`。您必須將此值變更成參照「API 路徑」。API 定義包含一個「API 名稱及路徑」區段。按一下路徑尾端的**複製圖示**，以複製 URL。請確認*公開受管理 API* 選項已開啟，讓外部用戶端可以進行 API 呼叫。
+在 `Assets` 資料夾中有一個檔案，用來管理連接至 API 的 URL，依預設為 `localhost:3000`。您必須將此值變更成參照「API 路徑」。API 定義包含一個「API 名稱及路徑」區段。按一下路徑尾端的**複製**，以複製 URL。請確認*公開受管理 API* 選項已開啟，讓外部用戶端可以進行 API 呼叫。
 
 ![API 路徑](../images/apiroute.png)  
 
@@ -136,7 +136,7 @@ iOS 應用程式包括一個資料夾，其中包含 API 的已產生 SDK 連結
 
 ## 文件
 
-當 SDK 內含在您的 iOS 應用程式專案中時，**Docs 資料夾**中會有一個 *README.html* 檔案。以外部瀏覽器開啟 Docs 資料夾，並閱讀如何使用專案的相關指示。
+當 SDK 內含在您的 iOS 應用程式專案中時，`Docs** 資料夾中會有一個 *README.html* 檔案。以外部瀏覽器開啟 `Docs` 資料夾，並閱讀如何使用專案的相關指示。
 
 ## API 變更之後重建 SDK
 

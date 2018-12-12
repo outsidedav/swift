@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-09-20"
 
 ---
 
@@ -16,15 +16,15 @@ lastupdated: "2018-08-17"
 # 将 Application Metrics 与 Swift 应用程序配合使用
 {: #metrics}
 
-Application Metrics 对于监视应用程序的性能非常重要。监视环境的性能（包括 CPU、内存、等待时间和 HTTP 度量值）可能看起来是非常艰巨的工作，但最基本的是确保 Swift 应用程序一直有效运行。Cloud Native 服务（例如，自动扩展）可以依赖这些度量值来扩展应用程序以在峰值负载下执行工作，以及向下扩展以使成本保持在低水平。
+Application Metrics 对于监视应用程序的性能非常重要。实时查看度量值（如 CPU、内存、等待时间和 HTTP 度量值）对于确保应用程序能够长期有效地运行至关重要。Kubernetes 和 Cloud Foundry 服务（如[自动扩展](/docs/services/Auto-Scaling/index.html)）依赖于度量值来确定何时根据负载动态添加或除去实例，以及清除不再需要的实例来降低成本。
 
-Application Metrics 可以帮助确定常见性能问题，例如：
+应用程序度量值将作为时间序列数据来进行捕获。汇总和直观查看捕获的度量值有助于识别常见的性能问题，例如：
 
 * 某些路径或所有路径上的 HTTP 响应时间缓慢
 * 应用程序中的吞吐量差
 * 导致速度缓慢的需求峰值
-* 超出针对吞吐量/负载级别的预期 CPU 使用率
-* 内存使用量高和/或不断增长（潜在内存泄漏）
+* 高于预期 CPU 使用率
+* 内存使用量高或不断增长（潜在内存泄漏）
 
 ## 向现有 Swift 应用程序添加 Application Metrics
 {: #add-appmetrics-existing}
@@ -35,8 +35,7 @@ Application Metrics 可以帮助确定常见性能问题，例如：
 
 * `SwiftMetricsDash` 库使用 `SwiftMetrics` 生成的度量值，并为可视化提供内置仪表板。
 
-
-要启用基本监视 API，请将 `SwiftMetrics` 添加到 `Package.swift` 中的 **dependencies:** 部分，并确保将其添加到所需目标：
+要启用基本监视 API，请将 `SwiftMetrics` 添加到 `Package.swift` 中的 **dependencies:** 部分，并确保将其添加到适当的目标：
 ```swift
 .package(url: "https://github.com/RuntimeTools/SwiftMetrics.git", from: "2.4.0")
 ```
@@ -65,7 +64,7 @@ let smd = try SwiftMetricsDash(swiftMetricsInstance : metrics)
 
 ## 在入门模板工具包中使用 Application Metrics
 
-通过入门模板工具包创建的服务器端 Swift 应用程序包括 `SwiftMetrics`、`SwiftMetricsDash` 和 `SwiftMetricsPrometheus`，因此这些应用程序可随时在使用 Prometheus 端点的 Kubernetes 环境中用于收集度量值。
+通过入门模板工具包创建的服务器端 Swift 应用程序包括 `SwiftMetrics`、`SwiftMetricsDash` 和 `SwiftMetricsPrometheus`，因此这些应用程序可随时用于使用 Prometheus 端点收集度量值的 Kubernetes 环境中。
 
 `SwiftMetrics` 代码可以在 `/Sources/Application/Metrics.swift` 中找到：
 ```swift

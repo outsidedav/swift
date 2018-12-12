@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -23,16 +23,16 @@ lastupdated: "2018-08-01"
 ## 开发无服务器 Swift 应用程序
 {: #serverless}
 
-为了方便无服务器开发，您可以使用 IBM 的功能即服务 (FaaS) 产品 {{site.data.keyword.openwhisk}}。{{site.data.keyword.openwhisk_short}} 支持运行应用程序逻辑，以通过 HTTP 响应来自 Web 或移动应用程序的事件或直接调用，而无需供应或管理服务器。
+要进行无服务器开发，可以使用 IBM 的功能即服务 (FaaS) 产品：{{site.data.keyword.openwhisk}}。{{site.data.keyword.openwhisk_short}} 支持运行应用程序逻辑，通过 HTTP 来响应源自 Web 或移动应用程序的事件或直接调用，而无需创建或管理服务器。
 
-{{site.data.keyword.openwhisk_short}} 会执行系统管理，如自动扩展、可用性管理和维护，允许开发者始终专注于编写应用程序逻辑。
+{{site.data.keyword.openwhisk_short}} 可以执行系统管理，如自动扩展、可用性管理和维护。这样，开发者就可以完全专注于编写应用程序逻辑。
 
 有关更多信息，请参阅[开发无服务器应用程序](../apps/deploying/functions.html)。
 
 ## 将后端服务与生成的 SDK 集成
 {: #backend_gensdk}
 
-{{site.data.keyword.IBM_notm}} SDK Generator 插件可使用生成的 SDK 轻松将后端服务集成到应用程序。发生对 REST API 的更改时，可以重新生成 SDK，并将旧的 SDK 替换为无缝 SDK 升级。您还可以将 CLI 集成到 DevOps 管道中，并确保每次构建应用程序时，SDK 都始终与 API 规范一致。
+{{site.data.keyword.IBM_notm}} SDK Generator 插件可使用生成的 SDK 轻松将后端服务集成到应用程序。对 REST API 进行更改后，您可以重新生成 SDK，并替换旧 SDK 以升级 SDK。还可以将 CLI 集成到 DevOps 管道中，并确保每次构建应用程序时 SDK 都与 API 规范一致。
 
 有关更多信息，请参阅[将后端服务与生成的 SDK 集成](/docs/swift/backend/cli_sdkgen.html)。
 

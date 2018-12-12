@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -23,9 +23,9 @@ lastupdated: "2018-08-07"
 ```
 curl -sL https://ibm.biz/idt-installer | bash
 ```
-{:codeblock}
+{: codeblock}
 
-請參閱[設定 IBM Cloud Developer Tools CLI](/docs/cli/idt/setting_up_idt.html)，以進一步瞭解 {{site.data.keyword.dev_cli_notm}} 的設定與用法。
+請參閱[設定 IBM Cloud Developer Tools CLI](/docs/cli/idt/setting_up_idt.html)，以進一步瞭解 {{site.data.keyword.dev_cli_notm}} 的配置與用法。
 
 ## 擷取服務認證
 
@@ -33,7 +33,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 ```
 ibmcloud dev get-credentials
 ```
-{:codeblock}
+{: codeblock}
 
 ## 建置、執行及部署應用程式
 
@@ -41,13 +41,13 @@ ibmcloud dev get-credentials
   ```
   ibmcloud dev build
   ```
-  {:codeblock}
+  {: codeblock}
 
 2. **執行** - 成功建置之後，您可以使用下列指令，在本端容器中執行您的應用程式：
   ```
   ibmcloud dev run
   ```
-  {:codeblock}
+  {: codeblock}
 
   如果指令執行成功，則會顯示本端主機及埠，以檢視您應用程式的登入頁面。
 
@@ -55,4 +55,4 @@ ibmcloud dev get-credentials
   ```
   ibmcloud dev deploy
   ```
-  {:codeblock}
+  {: codeblock}

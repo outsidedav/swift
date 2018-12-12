@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -10,12 +10,12 @@ lastupdated: "2018-06-05"
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:note:.deprecated}
+{:note: .deprecated}
 
 # iOS 和云逻辑用例
 {: #sample_cloud}
 
-可以通过 [BluePic 照片和图像共享样本应用程序](https://github.com/IBM/BluePic)来查看使用服务于前端的后端 (BFF) 的 iOS 应用程序的示例。BluePic 应用程序利用了以下技术：
+您可以通过 [BluePic 图像共享样本应用程序](https://github.com/IBM/BluePic)来查看使用服务于前端的后端 (BFF) 的 iOS 应用程序示例。BluePic 应用程序使用了以下技术：
 
 * Object Storage 和 Cloudant，用于存储图像数据。
 * Watson Visual Recognition 和 IBM Weather Company 服务，用于向图像添加更多信息。

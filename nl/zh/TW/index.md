@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -16,10 +16,10 @@ lastupdated: "2018-08-07"
 # 入門指導教學
 {: #set_up}
 
-{{site.data.keyword.cloud}} 提供解決方案及服務，讓 Swift 開發人員及應用程式可以提供客戶所需的安全性、AI 及價值。有了廣泛的產品組合及 SDK，您可以運用這些服務，並將最頂尖的應用程式快速推向市場。Swift 程式設計手冊會教您如何將服務新增至新的或現有 Swift 應用程式，無論該應用程式是 iOS 用戶端或伺服器端 Swift。
+{{site.data.keyword.cloud}} 提供解決方案及服務，讓 Swift 開發人員能夠建置整合了客戶所需之的安全性、AI 及價值的應用程式。有了廣泛的產品組合及 SDK，您可以使用這些服務，並將最頂尖的應用程式快速推向市場。本 Swift 程式設計說明如何將服務新增至新的或現有 Swift 應用程式，無論該應用程式是 iOS 用戶端或伺服器端 Swift。
 {: shortdesc}
 
-下列指導教學是個進入點，顯示如何從 [{{site.data.keyword.cloud_notm}}Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits)，使用空白的「入門範本套件」來輕鬆建立含有 {{site.data.keyword.mobileanalytics_full}} 的 Swift 行動應用程式。從主控台中，新增 {{site.data.keyword.mobileanalytics_short}} 服務、下載程式碼、以 Xcode 在本端執行 iOS 應用程式、配置，然後監視應用程式。
+下列指導教學顯示如何從 [{{site.data.keyword.cloud_notm}}Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits)，使用空白的「入門範本套件」來輕鬆建立含有 {{site.data.keyword.mobileanalytics_full}} 的 Swift 行動應用程式。從主控台中，新增 {{site.data.keyword.mobileanalytics_short}} 服務、下載程式碼、以 Xcode 在本端執行 iOS 應用程式、配置，然後監視應用程式。
 
 ## 步驟 1. 開發人員需求
 {: #dev-requirements}
@@ -96,7 +96,7 @@ lastupdated: "2018-08-07"
   **附註：**確保您一律開啟新的 Xcode 工作區，而非原始 Xcode 專案檔：`MyApp.xcworkspace`。
    ![開啟 Xcode](images/Xcode.png)
 
-  `BMSCore` 是 Core SDK，而且是 Mobile Client SDK 的基礎。`BMSClient` 是 BMSCore 的類別，且已在 AppDelegate.swift 中起始設定。隨著 BMSCore，{{site.data.keyword.mobileanalytics_short}} SDK 已匯入專案。
+  `BMSCore` 是 Core SDK，而且是 Mobile Client SDK 的基礎。`BMSClient` 是 `BMSCore` 的類別，且已在 `AppDelegate.swift` 中起始設定。隨著 `BMSCore`，{{site.data.keyword.mobileanalytics_short}} SDK 已匯入到專案中。
   
 2. 已包括分析起始設定碼，如下列 Snippet 所示：
   ```
@@ -122,7 +122,7 @@ lastupdated: "2018-08-07"
   ```
   {: codeblock}
 
-   如需進階「分析」及記載功能，請參閱[收集用量分析](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#app-monitoring-gathering-analytics)及[記載](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#enabling-configuring-and-using-logger)。
+   如需進階「分析」及記載特性，請參閱[收集用量分析](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#app-monitoring-gathering-analytics)及[記載](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#enabling-configuring-and-using-logger)。
    {:tip}
 
 ## 步驟 6. 使用 {{site.data.keyword.mobileanalytics_short}} 監視應用程式
@@ -145,9 +145,9 @@ lastupdated: "2018-08-07"
 ### 新增其他服務
 您可以直接從 Web 主控台新增其他服務至您的 iOS 應用程式，例如下列常用服務：
 
-* [新增 Push Notifications 服務](/push/push_notifications.html)
-* [新增含有 App ID 的使用者鑑別](/authenticate/app_id.html)
+* [新增 Push Notifications 服務](/docs/services/mobilepush/index.html)
+* [新增含有 App ID 的使用者鑑別](/docs/services/appid/index.html)
 
-### 使用 {{site.data.keyword.cloud_notm}} 開發人員工具
-您也可以學習如何使用 [{{site.data.keyword.cloud_notm}} 開發人員工具](../cli/index.html)來開發 Swift 應用程式，該工具提供一個指令行方法來建立、開發及部署端對端 Web、行動及微服務應用程式。
+### 使用 {{site.data.keyword.cloud_notm}} Developer Tools
+您也可以學習如何使用 [{{site.data.keyword.cloud_notm}} Developer Tools](../cli/index.html)來開發 Swift 應用程式，該工具提供一個指令行方法來建立、開發及部署完整的 Web、行動及微服務應用程式。
 

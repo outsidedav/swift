@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -14,7 +14,7 @@ lastupdated: "2018-08-07"
 # 傳送 {{site.data.keyword.mobilepushshort}}
 {: #push_notifications}
 
-若要加強您的 Swift 應用程式功能，您可以在 {{site.data.keyword.cloud}} 上使用 {{site.data.keyword.mobilepushshort}} 服務，將即時通知傳送至行動裝置及 Web 應用程式。
+若要加強您的 Swift 應用程式，您可以在 {{site.data.keyword.cloud}} 上使用 {{site.data.keyword.mobilepushshort}} 服務，將即時通知傳送至行動裝置及 Web 應用程式。
 
  - 通知可以分送至所有應用程式使用者，或者分送至選取的一群使用者或裝置。
  - 同時支援互動式和無聲自動通知。
@@ -32,7 +32,7 @@ lastupdated: "2018-08-07"
  - iOS 8.0+
  - Xcode 7.3、8.0
  - Swift 2.3 - 4.0
- - Cocoapods 或 Carthage
+ - CocoaPods 或 Carthage
 
 ## 步驟 1. 建立 {{site.data.keyword.mobilepushshort}} 實例
 {: #push_create}
@@ -44,6 +44,7 @@ lastupdated: "2018-08-07"
 
 
 ## 步驟 2. 取得您的通知提供者認證
+{: #get_creds}
 
 若要設定 Push Notifications 服務，您需要從 Apple Push Notification Service (APNs) 取得必要的認證。請遵循這裡的步驟，以[取得並配置您的 APNs 認證 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://console.bluemix.net/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}。
 
@@ -51,7 +52,7 @@ lastupdated: "2018-08-07"
 ## 步驟 3. 配置服務實例
 {: #enable-push-ios-notifications}
 
-若要使用 {{site.data.keyword.mobilepushshort}} 服務來傳送通知，請上傳您建立的 `.p12` 憑證。此憑證包含私密金鑰以及建置和發佈應用程式所需的 SSL 憑證。您也可以使用 REST API 來上傳 APNs 憑證。
+若要使用 {{site.data.keyword.mobilepushshort}} 服務來傳送通知，請上傳您建立的 `.p12` 金鑰儲存庫，它具有建置和發佈應用程式所需的私密金鑰及 SSL 憑證。您也可以使用 REST API 來上傳 APNs 憑證。
 
 當 `.cer` 檔案位於您的金鑰鏈存取中之後，將其匯出至您的電腦，以建立 `.p12` 憑證。
 
@@ -72,13 +73,12 @@ lastupdated: "2018-08-07"
 		- 在 Safari Push 區段中，使用必要的資訊更新表單。
 		- **網站名稱**：「通知」中心內所提供的網站名稱。
 		- **Website Push ID**：使用 Website Push ID 的反向網域字串來更新。例如，`web.com.acmebanks.www`。
-		- **網站 URL**：提供應該訂閱推送通知的網站 URL。例如，`https://www.acmebanks.com`。
+		- **網站 URL**：提供應該推送通知的網站 URL。例如，`https://www.acmebanks.com`。
 		- **容許的網域**：（選用參數）要求使用者許可權的網站清單。請確定 URL 是以逗點區隔的值。若未提供資訊，則會使用網站 URL 中的值。
 		- **URL 格式字串**：按一下通知時要解析的 URL。例如，["`https://www.acmebanks.com`"]。確定 URL 使用 http 或 https 綱目。
 		-**Safari Web 推送憑證**：上傳 `.p12` 憑證並提供密碼。
 4. 按一下**儲存**。
 	![{{site.data.keyword.mobilepushshort}} 主控台](images/push_configure_safari.jpg)
-
 
 ## 步驟 4. 設定服務 Client SDK
 
@@ -93,8 +93,7 @@ lastupdated: "2018-08-07"
 
 若要傳送基本推送通知，請完成下列步驟：
 
-1. 選取**傳送通知**，然後選擇**傳送至**選項來編寫訊息。支援的選項為**依據標籤的裝置**、**裝置 ID**、**使用者 ID**、**iOS 裝置**、**Web 通知**以及**所有裝置**。
-**附註**：當您選取**所有裝置**選項時，所有裝置都會訂閱 {{site.data.keyword.mobilepushshort}} 接收通知。
+1. 選取**傳送通知**，然後選擇**傳送至**選項來編寫訊息。支援的選項為**依據標籤的裝置**、**裝置 ID**、**使用者 ID**、**iOS 裝置**、**Web 通知**以及**所有裝置**。**附註**：當您選取**所有裝置**選項時，訂閱 {{site.data.keyword.mobilepushshort}} 的所有裝置都會收到通知。
 
 	![通知畫面](images/tag_notification.jpg)
 
@@ -102,9 +101,9 @@ lastupdated: "2018-08-07"
 3. 按一下**傳送**。
 3. 驗證您的裝置或瀏覽器已接收到通知。
 
-下列擷取畫面顯示裝置前景中處理推送通知的警示方框。
+下列畫面擷取顯示裝置前景中處理推送通知的警示方框。
 	![Android 上的前景推送通知](images/Android_Screenshot.jpg)
-下列擷取畫面顯示背景中的推送通知。
+下列畫面擷取顯示背景中的推送通知。
 	![Android 上的背景推送通知](images/background.png)
 
 ### 選用設定
@@ -130,6 +129,6 @@ lastupdated: "2018-08-07"
 
  - 如需使用「行動」服務及 {{site.data.keyword.cloud_notm}} 的簡介，請參閱[開始使用 {{site.data.keyword.cloud_notm}} 上的行動應用程式](/docs/services/mobile/index.html)。
 
- - 「入門範本套件」是運用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
+ - 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
 
  - 您可以使用 [Swagger 使用者介面](https://mobile.ng.bluemix.net/imfpush/)，來快速檢閱 REST API 文件。

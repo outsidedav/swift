@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-08-07"
 
 {{site.data.keyword.IBM}} SDK 產生器外掛程式可以安裝在 [{{site.data.keyword.Bluemix_notm}} CLI ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](/docs/cli/reference/bluemix_cli/index.html){: new_window}。
 
-這個「{{site.data.keyword.IBM_notm}} SDK 產生器」外掛程式會使用產生的 SDK，將後端服務整合至您的應用程式。當 REST API 發生變更時，您可以重新產生 SDK 並取代舊的 SDK，以進行 SDK 無縫升級。您也可以將 CLI 整合至 DevOps 管線，並確定每次建置應用程式時，SDK 一律與 API 規格一致。
+這個「{{site.data.keyword.IBM_notm}} SDK 產生器」外掛程式會使用產生的 SDK，將後端服務整合至您的應用程式。當 REST API 發生變更時，您可以重新產生 SDK 並取代舊的 SDK，以輕鬆升級 SDK。您也可以將 CLI 整合至 DevOps 管線，並確保每次建置應用程式時，SDK 永遠與 API 規格一致。
 
 REST API 定義必須有效，且在即時伺服器端點上或您系統的本端檔案上管理。
 
@@ -49,7 +49,7 @@ REST API 定義必須有效，且在即時伺服器端點上或您系統的本�
 {: #gen-args}
 
 * `APP_NAME` - 您現行空間中 Cloud Foundry 應用程式的名稱
-* `OPENAPI_DOC_LOCATION` - 原始 REST API 定義 JSON 或 Yaml 的 URL 或相對檔案路徑
+* `OPENAPI_DOC_LOCATION` - 原始 REST API 定義 JSON 或 yaml 的 URL 或相對檔案路徑
 * `GENERATED_SDK_NAME`（選用）- 所產生 SDK 的名稱
 
 ### 選項
@@ -64,10 +64,10 @@ REST API 定義必須有效，且在即時伺服器端點上或您系統的本�
    * `-f` - 檔案
    * `-a` - 在 {{site.data.keyword.Bluemix_notm}} 上執行的應用程式
    * `-l` - 本端主機 URL
-* `--output "YOUR_RELATIVE_PATH"`（選用）- 將產生的 SDK 放在由 `YOUR_RELATIVE_PATH` 指定的目錄中（如果存在現有 SDK，則會被改寫）。
-* `--unzip`（選用）- 解壓縮產生的 SDK（如果存在現有 SDK 構件，則會被改寫）。
+* `--output "YOUR_RELATIVE_PATH"`（選用）- 將產生的 SDK 放在由 `YOUR_RELATIVE_PATH` 指定的目錄中（會改寫現有的 SDK）。
+* `--unzip`（選用）- 解壓縮產生的 SDK（會改寫現有的 SDK）。
 
-### 用量
+### 用法
 {: #gen-usage}
 
 若要從 {{site.data.keyword.Bluemix_notm}} 中所執行的 Cloud Foundry 應用程式產生 SDK，您可以使用應用程式的名稱作為 CLI 的參數。下列指令使用應用程式的名稱作為 `SDK_Name`。
@@ -77,7 +77,7 @@ ibmcloud sdk generate [APP_NAME] [LOCATION] [PLATFORM]
 ```
 {: codeblock}
 
-若要從開放式 API 定義檔或是本端 JSON 或 Yaml 檔案的 URL 產生 SDK，請使用下列指令。
+若要從開放式 API 定義檔或是本端 JSON 或 yaml 檔案的 URL 產生 SDK，請使用下列指令。
 
 ```
 ibmcloud sdk generate [OPENAPI_DOC_LOCATION] [SDK_Name] [LOCATION] [PLATFORM]
@@ -97,9 +97,9 @@ ibmcloud sdk validate [argument]
 {: #val-args}
 
 * `APP_NAME` - 您現行空間中 Cloud Foundry 應用程式的名稱
-* `OPENAPI_DOC_LOCATION` - 原始 REST API 定義 JSON 或 Yaml 的 URL 或相對檔案路徑
+* `OPENAPI_DOC_LOCATION` - 原始 REST API 定義 JSON 或 yaml 的 URL 或相對檔案路徑
 
-### 用量
+### 用法
 {: #val-usage}
 
 若要驗證在 {{site.data.keyword.Bluemix_notm}} 中執行之 Cloud Foundry 應用程式的 API 規格，您可以使用應用程式的名稱作為 CLI 的參數。
@@ -108,7 +108,7 @@ ibmcloud sdk validate [APP_NAME] [LOCATION]
 ```
 {: codeblock}
 
-若要透過 API 規格文件的 URL、或本端 JSON 或 Yaml 檔案的 URL 來驗證 SDK，請使用下列指令：
+若要透過 API 規格文件的 URL、或本端 JSON 或 yaml 檔案的 URL 來驗證 SDK，請使用下列指令：
 ```
 ibmcloud sdk validate [OPENAPI_DOC_LOCATION] [LOCATION]
 ```

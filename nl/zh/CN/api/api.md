@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -20,13 +20,13 @@ lastupdated: "2018-08-17"
 
 ## 创建 API Connect 的实例
 
-转至目录并创建 API Connect 的实例来管理 API。
+转至[目录](https://console.bluemix.net/catalog/)，然后创建 API Connect 的实例来管理 API。
 
 使用`菜单 -> API` 来访问 API Connect 管理控制台。
 
 ![API Connect](images/apiconnect.png)
 
-如果要在启动后端和前端开发之前定义自己的 API 合同，请使用 API Connect 工具来加速此过程。您可以与数字开发团队合作，在 iOS 应用程序和后端逻辑之间构建并定义 API 合同。此逻辑可以利用 Kubernetes 或 [Cloud Foundry](/docs/cloud-foundry/index.html) 通过 [{{site.data.keyword.openwhisk}}](/docs/openwhisk/index.html) 或 [Swift 运行时](/docs/runtimes/swift/index.html)进行传递。
+如果要在开始后端和前端开发之前定义自己的 API 合同，请使用 API Connect 工具来快速完成此过程。您可以与数字开发团队合作，在 iOS 应用程序和后端逻辑之间构建并定义 API 合同。此逻辑可以利用 Kubernetes 或 [Cloud Foundry](/docs/cloud-foundry/index.html) 通过 [{{site.data.keyword.openwhisk}}](/docs/openwhisk/index.html) 或 [Swift 运行时](/docs/runtimes/swift/index.html)进行传递。
 
 定义 API 后，即可以在多个不同工具中定义“Open API 规范”(Swagger)：
 
@@ -38,7 +38,7 @@ lastupdated: "2018-08-17"
 
 您可以定义用于管理客户端应用程序与后端逻辑之间 API 网关的 API 代理。使用以下步骤可使用“Open API 规范”（Swagger 文档）YAML 或 JSON 来创建代理。 
 
-1. 打开`菜单 -> API` 控制台，然后单击“API 代理”。
+1. 打开`菜单 -> API` 控制台，然后单击 API 代理。
 2. 单击 **API 定义导入 YAML 或 JSON**。
 3. 选择先前创建的 YAML 或 JSON 文件。
 4. 保存并公开。
@@ -47,7 +47,7 @@ lastupdated: "2018-08-17"
 
 ## 创建 Swift 后端
 
-可以基于此 API 创建后端 Swift 应用程序。 
+您可以基于此 API 创建后端 Swift 应用程序。 
 
 在 Apple Development Console 中，执行以下步骤：
 
@@ -57,11 +57,11 @@ lastupdated: "2018-08-17"
 
 选择 YAML 和 JSON 文件，然后单击**创建**。这将创建后端 Swift 应用程序。
 
-然后，可以**下载**代码或**部署到云**，并将 GIT 存储库克隆到本地计算机。您可以遵循“理论指导”中的指示信息在 XCode 中打开服务器端应用程序。
+然后，可以**下载**代码或**部署到云**，并将 GIT 存储库克隆到本地计算机。您可以遵循“理论指导”中的指示信息在 Xcode 中打开服务器端应用程序。
 
 在 **Source** 文件夹中，可以看到一个路径，用于定义创建了映射到 API 的 REST 端点的 Swift 文件。 
 
-请参阅使用 PetStore Open API 的以下示例：
+请参阅以下示例，其中使用了 `PetStore` Open API：
 ```swift
 import Kitura
 import KituraContracts
@@ -128,7 +128,7 @@ iOS 应用程序包含一个文件夹，其中含有针对 API 生成的 SDK 绑
 
 ![iOS 文件夹](../images/sdkfolder.png)
 
-`Assets` 文件夹包含用于管理 API URL 的文件，缺省情况下为 `localhost:3000`。必须更改该值以引用 API 路径。API 定义包含“API 名称”和“路径”部分。单击路径末尾的**复制**图标以复制 URL。检查是否开启了*公开受管 API* 选项，以允许外部客户端发出 API 调用。
+`Assets` 文件夹包含用于管理 API URL 的文件，缺省情况下为 `localhost:3000`。必须更改该值以引用 API 路径。API 定义由“API 名称”和“路径”两部分组成。单击路径末尾的**复制**来复制 URL。检查是否开启了*公开受管 API* 选项，以允许外部客户端发出 API 调用。
 
 ![API 路径](../images/apiroute.png)  
 
@@ -136,11 +136,11 @@ iOS 应用程序包含一个文件夹，其中含有针对 API 生成的 SDK 绑
 
 ## 文档
 
-SDK 包含在 iOS 应用程序项目中时，**Docs 文件夹**中提供了 *README.html* 文件。在外部浏览器中打开 Docs 文件夹，并阅读有关如何使用项目的指示信息。
+如果您的 iOS 应用程序项目包含 SDK，那么可在 `Docs` 文件夹中找到 *README.html* 文件。在外部浏览器中打开 `Docs` 文件夹，然后阅读有关如何使用项目的指示信息。
 
-## API 更改后重新创建 SDK
+## 在 API 更改后重新创建 SDK
 
-如果 API 更改或新功能变为可用，并且添加了 {{site.data.keyword.openwhisk}}，那么可以使用 `ibmcloud sdk` 命令来重新创建客户端 SDK。有关更多信息、示例和语法帮助，请查看 [SDK Generator](/docs/cli/sdk/index.html) 文档。
+如果有 API 更改或新的功能可用，并且新增了 {{site.data.keyword.openwhisk}}，那么可以使用 `ibmcloud sdk` 命令来重新创建客户端 SDK。有关更多信息、示例和语法帮助，请查看 [SDK Generator](/docs/cli/sdk/index.html) 文档。
 
 要支持创建 SDK，请使用“Open API 规范”(Swagger) YAML 或 JSON 文件。可以使用 {{site.data.keyword.cloud_notm}} 中的 API Management 工具来检索此文件。 
 
@@ -158,7 +158,7 @@ SDK 包含在 iOS 应用程序项目中时，**Docs 文件夹**中提供了 *REA
     ```
     {: codeblock}
 
-    SDK 已重新创建到 iOS 应用程序项目目录中，因此可以继续使用 API。
+    SDK 已重新创建到 iOS 应用程序项目目录中，现在可以继续使用 API 了。
 
 ## 参考
 

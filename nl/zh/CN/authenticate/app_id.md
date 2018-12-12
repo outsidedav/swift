@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -16,33 +16,36 @@ lastupdated: "2018-08-09"
 
 # 添加用户认证
 
-应用程序安全性复杂程度之深令人难以置信。对于大多数开发者来说，这是创建应用程序的操作中最困难的一部分。如何确保用户信息得到安全保护？通过将 {{site.data.keyword.appid_full}} 集成到应用程序，可以保护资源并添加认证；即便您没有太多安全方面的经验也没关系。
+应用程序安全性非常复杂。对于大多数开发者来说，应用程序安全性是创建应用程序过程中最难解决的问题之一。如何确保用户信息能够得到安全保护？通过将 {{site.data.keyword.appid_full}} 集成到应用程序中，您可以保护资源并添加认证，即使您没有太多安全方面的经验，也没关系。
 
-通过要求用户登录，您可以存储用户数据，例如应用程序首选项（或公共社交概要文件中的信息），然后利用这些数据来定制应用程序内的各种用户体验。{{site.data.keyword.appid_short_notm}} 提供了一个登录框架，但您也可以使用自己的特色登录屏幕与云目录配合使用。
+通过要求用户登录，您可以存储用户数据，例如应用程序首选项（或公共社交个人档案中的信息），然后使用这些数据为每个用户定制应用程序体验。{{site.data.keyword.appid_short_notm}} 提供了一个登录框架，但您也可以使用自己的特色登录屏幕与云目录配合使用。
 
 有关可以使用 {{site.data.keyword.appid_short_notm}} 的所有方法以及体系结构信息，请参阅[关于 {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html)。
 
 ## 开始之前
+{: #before}
 
 首先，请确保您已准备好以下必备软件：
- * CocoaPods（V1.1.0 或更高版本）
- * iOS（V9 或更高版本）
- * MacOS（V10.11.5 或更高版本）
- * Xcode（V9.0.1 或更高版本）
+* CocoaPods（V1.1.0 或更高版本）
+* iOS（V9 或更高版本）
+* MacOS（V10.11.5 或更高版本）
+* Xcode（V9.0.1 或更高版本）
 
 ## 步骤 1. 创建 {{site.data.keyword.appid_short_notm}} 的实例
+{: #create_instance}
 
-供应服务的实例：
+创建 {{site.data.keyword.appid_short_notm}} 服务的实例：
 
 1. 在 [{{site.data.keyword.cloud_notm}} 目录](https://console.bluemix.net/catalog/)中，选择 {{site.data.keyword.appid_short_notm}}。这将打开服务配置屏幕。
 2. 为服务实例提供名称或使用预设名称。
 3. 选择定价套餐，然后单击**创建**。
 
 ## 步骤 2. 安装 iOS Swift SDK
+{: #install_sdk}
 
 服务提供了 SDK，用于帮助您更轻松地对应用程序进行编码。该 SDK 必须安装在应用程序代码中。
 
-1. 将现有 Xcode 项目目录打开到 `Podfile`。
+1. 打开现有 Xcode 项目目录下的 `Podfile`。
 
 2. 在项目目标下，添加 `BluemixAppID` pod 的依赖项。确保 `use_frameworks!` 命令也位于目标下，如以下示例中所示。
     ```swift
@@ -66,22 +69,25 @@ lastupdated: "2018-08-09"
 1. 转至**项目设置 > 功能 > 密钥链共享**，并在 Xcode 项目中启用密钥链共享。
 
 2. 转至**项目设置 > 信息 > URL 类型**，并将以下值添加到 **URL 方案**和**标识**文本框。
-    ```
+    
+  ```
   $(PRODUCT_BUNDLE_IDENTIFIER)
   ```
-    {: pre}
+  {: codeblock}
 
 3. 将以下 import 语句添加到 `AppDelegate.swift` 文件中。
-    ```swift
-    import BluemixAppID
-    ```
-    {:pre}
+    
+  ```swift
+  import BluemixAppID
+  ```
+  {: codeblock}
 
-4. 传递租户标识和区域参数以初始化 SDK。通常代码会放置在应用程序中 AppDelegate 的 `application:didFinishLaunchingWithOptions` 方法中，但这并不是必需的。
-    ```swift
-    AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
-    ```
-    {: pre}
+4. 传递`租户标识`和`区域`参数，以初始化 SDK。代码通常会放置在应用程序中 `AppDelegate` 的 `application:didFinishLaunchingWithOptions` 方法中，但这并不是强制性的。
+  ```swift
+  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  ```
+  {: codeblock}
+  
   <table>
     <thead>
       <th colspan=2><img src="images/idea.png" alt=""/> 了解命令的组成部分</th>
@@ -93,7 +99,7 @@ lastupdated: "2018-08-09"
       </tr>
       <tr>
         <td><em>AppID_region</em></td>
-        <td>{{site.data.keyword.appid_short_notm}} 区域是在要其中使用服务的 IBM Cloud 区域。此区域可在服务仪表板中找到，可以是 <em>AppID.REGION_US_SOUTH</em>、<em>AppID.REGION_SYDNEY</em> 或 <em>AppID.REGION_UK</em>。</td>
+        <td>{{site.data.keyword.appid_short_notm}} 区域是您要在其中使用服务的 {{site.data.keyword.cloud_notm}} 区域。此区域可在服务仪表板中找到，可以是 <em>AppID.REGION_US_SOUTH</em>、<em>AppID.REGION_SYDNEY</em> 或 <em>AppID.REGION_UK</em>。</td>
       </tr>
     </tbody>
   </table>
@@ -104,7 +110,7 @@ lastupdated: "2018-08-09"
             return AppID.sharedInstance.application(application, open: url, options: options)
         }
     ```
-    {: pre}
+    {: codeblock}
 
 ## 步骤 4. 管理登录体验
 {: #managing-signin-appid}
@@ -123,8 +129,8 @@ lastupdated: "2018-08-09"
 
 1. 打开 {{site.data.keyword.appid_short_notm}} 仪表板至**身份提供者 > 管理**。
 2. 将要使用的身份提供者设置为**开启**。可以使用身份提供者的任意组合，但如果要显示定制的登录屏幕，那么只需启用“云目录”。
-3. 将[缺省配置](/docs/services/appid/identity-providers.html)更新为您自己的凭证。{{site.data.keyword.appid_short_notm}} 提供了 IBM 凭证，可以使用这些凭证来试用服务，但在发布应用程序之前，需要更新此配置。
-4. 定制预配置的登录屏幕以显示您选择的图像和颜色。
+3. 将[缺省配置](/docs/services/appid/identity-providers.html)更新为您自己的凭证。{{site.data.keyword.appid_short_notm}} 提供了 IBM 凭证，您可以使用这些凭证来试用服务，但在发布应用程序之前，需要更新此配置。
+4. 定制登录屏幕以显示您选择的图像和颜色。
 5. 要使用应用程序调用登录窗口小部件，请将以下命令添加到代码中。
     ```swift
     import BluemixAppID
@@ -171,8 +177,7 @@ lastupdated: "2018-08-09"
 
             public func onAuthorizationFailure(error: AuthorizationError) {
             //Exception occurred
-        }
-
+           }
         }
 
         AppID.sharedInstance.obtainTokensWithROP(username: username, password: password, delegate: delegate())
@@ -196,8 +201,7 @@ lastupdated: "2018-08-09"
 
           public func onAuthorizationFailure(error: AuthorizationError) {
               //Exception occurred
-        }
-
+           }
         }
 
         AppID.sharedInstance.loginWidget?.launchSignUp(delegate: delegate())
@@ -263,7 +267,7 @@ lastupdated: "2018-08-09"
 ## 步骤 5. 测试应用程序
 {: #appid_testing}
 
-一切都设置正确吗？您可以对其进行测试！
+一切都配置正确吗？您可以对其进行测试！
 
 1. 使用 Xcode 仿真器打开应用程序。
 2. 使用 GUI 逐步完成登录到应用程序的过程。如果已配置云目录，请确保所有屏幕都按您预期的方式显示。
@@ -278,4 +282,4 @@ lastupdated: "2018-08-09"
 太棒了！您已将安全级别添加到应用程序。请一鼓作气，尝试下列其中一个选项：
 
 * 要了解有关 {{site.data.keyword.appid_short_notm}} 必须提供的所有功能的更多信息以及如何利用这些功能，请[查看文档](/docs/services/appid/index.html)！
-* 入门模板工具包是利用 IBM Cloud 功能的最快方法之一。请在[移动开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看可用的入门模板工具包。下载代码。运行应用程序！
+* 入门模板工具包是使用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。请在 [Mobile 开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看可用的入门模板工具包。下载代码。运行应用程序！

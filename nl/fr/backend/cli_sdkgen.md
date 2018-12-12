@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -11,12 +11,12 @@ lastupdated: "2018-08-07"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Intégration de services de back-end à votre appli avec un logiciel SDK généré
+# Intégration de services de back-end à votre application avec un logiciel SDK généré
 {: #sdk-cli}
 
-Le plug-in de générateur de SDK {{site.data.keyword.IBM}} peut être installé dans l'[interface de ligne de commande {{site.data.keyword.Bluemix_notm}}![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](/docs/cli/reference/bluemix_cli/index.html){: new_window}.
+Le plug-in {{site.data.keyword.IBM}} SDK Generator peut être installé dans l'[interface de ligne de commande {{site.data.keyword.Bluemix_notm}}![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](/docs/cli/reference/bluemix_cli/index.html){: new_window}.
 
-Ce plug-in {{site.data.keyword.IBM_notm}} SDK Generator s'intègre aux services de back-end de votre appli avec un logiciel SDK généré. Lorsqu'une modification d'API REST se produit, vous pouvez regénérer le logiciel SDK, puis remplacer l'ancien par une mise à niveau SDK transparente. Vous pouvez aussi intégrer l'interface de ligne de commande dans un pipeline DevOps et vous assurer que le logiciel SDK est toujours cohérent avec la spécification d'API chaque fois que l'application est générée.
+Ce plug-in {{site.data.keyword.IBM_notm}} SDK Generator s'intègre aux services de back-end de votre application avec un logiciel SDK généré. Lorsqu'un changement se produit au niveau d'une API REST, vous pouvez regénérer le kit de développement logiciel et remplacer l'ancien pour faciliter la mise à jour. Vous pouvez aussi intégrer l'interface de ligne de commande dans un pipeline DevOps et vous assurer que le SDK est toujours cohérent avec la spécification d'API chaque fois que l'application est générée.
 
 La définition d'API REST doit être valide et hébergée sur un noeud final de serveur opérationnel de votre système.
 
@@ -33,7 +33,7 @@ Vérifiez les points suivants :
 
 1. [Installez l'interface CLI {{site.data.keyword.Bluemix}}](/docs/cli/reference/bluemix_cli/get_started.html).
 
-2. [Installez le plug-in ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/index.html#install_plug-in){: new_window}.
+2. [Installez le plug-in ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](/docs/cli/reference/bluemix_cli/index.html#install_plug-in){: new_window}.
 
   ```
   ibmcloud plugin install sdk-gen
@@ -49,23 +49,23 @@ Générez un logiciel SDK en entrant : `ibmcloud sdk generate [arguments...] [co
 {: #gen-args}
 
 * `NOM_APP` - nom de l'application Cloud Foundry dans votre espace actuel
-* `EMPLACEMENT_DOC_OPENAPI` - URL ou chemin d'accès relatif au fichier de définition d'API REST brut JSON ou Yaml
+* `OPENAPI_DOC_LOCATION` - URL ou chemin d'accès relatif au fichier de définition d'API REST brut JSON ou yaml
 * `GENERATED_SDK_NAME` (facultatif) - nom du SDK généré
 
 ### Options
 {: #gen-options}
 
 * `PLATEFORME` (requis)
-   * `--ios` - génère un SDK Swift iOS
-   * `--swift` - génère un SDK de serveur Swift 
-   * `--js` - génère un SDK JavaScript
+   * `--ios` - génère un logiciel SDK Swift iOS
+   * `--swift` - génère un logiciel SDK Swift de serveur
+   * `--js` - génère un logiciel SDK JavaScript
 * `LOCATION` (requis) - spécifie le type pour `OPENAPI_DOC_LOCATION`
    * `-r` - adresse URL distante
    * `-f` - fichier
    * `-a` - application s'exécutant dans {{site.data.keyword.Bluemix_notm}}
    * `-l` - adresse URL de localhost
-* `--output "YOUR_RELATIVE_PATH"` (facultatif) - place le logiciel SDK généré dans le répertoire qui est spécifié par `YOUR_RELATIVE_PATH` (Si un logiciel SDK existant est présent, il est remplacé.)
-* `--unzip` (facultatif) - extrait le logiciel SDK généré (Si des artefacts de logiciel SDK existants sont présents, ils sont remplacés.)
+* `--output "YOUR_RELATIVE_PATH"` (facultatif) - place le logiciel SDK généré dans le répertoire spécifié par `YOUR_RELATIVE_PATH` (les logiciels SDK existants sont écrasés).
+* `--unzip` (facultatif) - extrait le logiciel SDK généré (les logiciels SDK existants sont écrasés).
 
 ### Utilisation
 {: #gen-usage}
@@ -78,7 +78,7 @@ ibmcloud sdk generate [APP_NAME] [LOCATION] [PLATFORM]
 ```
 {: codeblock}
 
-Pour générer un SDK depuis une URL dans un fichier de définition Open API ou un fichier Yaml ou JSON local, utilisez la commande suivante :
+Pour générer un SDK depuis une URL dans un fichier de définition Open API ou un fichier yaml ou JSON local, utilisez la commande suivante :
 
 ```
 ibmcloud sdk generate [OPENAPI_DOC_LOCATION] [SDK_Name] [LOCATION] [PLATFORM]
@@ -98,7 +98,7 @@ ibmcloud sdk validate [argument]
 {: #val-args}
 
 * `NOM_APP` - nom de l'application Cloud Foundry dans votre espace actuel
-* `EMPLACEMENT_DOC_OPENAPI` - URL ou chemin d'accès relatif au fichier de définition d'API REST brut JSON ou Yaml
+* `OPENAPI_DOC_LOCATION` - URL ou chemin d'accès relatif au fichier de définition d'API REST brut JSON ou yaml
 
 ### Utilisation
 {: #val-usage}
@@ -109,7 +109,7 @@ ibmcloud sdk validate [APP_NAME] [LOCATION]
 ```
 {: codeblock}
 
-Pour valider un logiciel SDK depuis l'URL dans un document de spécification d'API ou un fichier JSON ou Yaml local, utilisez la commande suivante :
+Pour valider un logiciel SDK depuis l'URL dans un document de spécification d'API ou un fichier JSON ou yaml local, utilisez la commande suivante :
 ```
 ibmcloud sdk validate [OPENAPI_DOC_LOCATION] [LOCATION]
 ```

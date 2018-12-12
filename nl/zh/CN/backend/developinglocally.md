@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -23,17 +23,17 @@ lastupdated: "2018-08-07"
 ```
 curl -sL https://ibm.biz/idt-installer | bash
 ```
-{:codeblock}
+{: codeblock}
 
-请参阅[设置 IBM Cloud Developer Tools CLI](/docs/cli/idt/setting_up_idt.html)，以了解有关设置和使用 {{site.data.keyword.dev_cli_notm}} 的更多信息。
+要了解有关配置和使用 {{site.data.keyword.dev_cli_notm}} 的更多信息，请参阅[设置 IBM Cloud Developer Tools CLI](/docs/cli/idt/setting_up_idt.html)。
 
 ## 检索服务凭证
 
-通过 Git 克隆应用程序之后，必须检索绑定到应用程序的服务的凭证，因为这些凭证并未存储在应用程序的 Git 存储库中。通过检索凭证，允许使用绑定服务。您可以在应用程序目录的根目录中运行以下命令来轻松下载凭证：
+通过 Git 克隆应用程序后，必须检索绑定到应用程序的服务的凭证，因为这些凭证并未存储在应用程序的 Git 存储库中。通过检索凭证，允许使用绑定服务。您可以在应用程序目录的根目录中运行以下命令来轻松下载凭证：
 ```
 ibmcloud dev get-credentials
 ```
-{:codeblock}
+{: codeblock}
 
 ## 构建、运行和部署应用程序
 
@@ -42,13 +42,13 @@ ibmcloud dev get-credentials
   ```
   ibmcloud dev build
   ```
-  {:codeblock}
+  {: codeblock}
 
 2. **运行** - 成功构建后，可以使用以下命令在本地容器中运行应用程序：
   ```
   ibmcloud dev run
   ```
-  {:codeblock}
+  {: codeblock}
 
   如果命令成功运行，将显示用于查看应用程序登录页面的本地主机和端口。
 
@@ -56,4 +56,4 @@ ibmcloud dev get-credentials
   ```
   ibmcloud dev deploy
   ```
-  {:codeblock}
+  {: codeblock}

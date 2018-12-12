@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -69,7 +69,7 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
 
 	即會顯示 {{site.data.keyword.ihsdbaas_full}} 儀表板。
 
-6. 針對已建立且屬於您資料庫叢集的三個資料庫實例，請取得這三個資料庫實例的主機名稱及埠號。在[連接至資料庫](#connect_db)區段的步驟中，您需要主機名稱、埠號及使用者認證。
+6. 針對已建立且屬於您資料庫叢集的三個資料庫實例，收集這三個資料庫實例的主機名稱及埠號。在[連接至資料庫](#connect_db)小節的步驟中，您需要主機名稱、埠號及使用者認證。
 
 ## 步驟 2. 使用入門範本套件來建立專案
 {: #create_with_starter}
@@ -92,128 +92,123 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
 
 5. 在專案頁面上，按一下**下載程式碼**。
 
-6. 將已下載的 zip 檔展開到您的專案目錄。
+6. 將壓縮檔展開到您的專案目錄。
 
 ## 步驟 3. 連接至資料庫
 {: #connect_db}
 
-若要確定資料傳送安全，請從下列下載「憑證管理中心 (CA)」檔案
-https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project directory.
+若要確定資料傳送安全，請從 https://api.hypersecuredbaas.ibm.com/cert.pem 下載憑證管理中心 (CA) 檔案，並將它複製到您的專案目錄。
 
 1. 切換至您的專案目錄，其中包含已展開的下載程式檔。
 
 2. 建立一個名為 `cred.json` 的 JSON 檔，以儲存您對資料庫叢集的存取認證。
 
-3. 輸入您在[建立資料庫叢集](#create_dbcluster)的成果中所取得的值。該值必須指定在單一行中。
+3. 輸入從[建立資料庫叢集](#create_dbcluster)的步驟收集到的值。該值必須指定在單一行中。
+  ```hljs
+  {
+  "uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
+  <Hostname_2>:<PortNumber_2>,<Hostname_3>:<PortNumber_3>
+   /admin?ssl=true&ssl_ca_certs=/swift-project/<CA_file>"
+  }
+  ```
+  {: codeblock}
 
-	```hljs
-	{
-	"uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
-	<Hostname_2>:<PortNumber_2>,<Hostname_3>:<PortNumber_3>
-	/admin?ssl=true&ssl_ca_certs=/swift-project/<CA_file>"
+  其中：
+  <table>
+  <tr>
+    <th> 參數 </th>
+    <th> 說明 </th>
+  </tr>
+  <tr>
+    <td> &lt;<em>admin_ID</em>&gt; </td>
+    <td> 資料庫管理者的使用者 ID，如[建立資料庫叢集](#create_dbcluster)中所指定。
+	  </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>admin_pwd</em>&gt; </td>
+    <td> 管理者密碼的使用者 ID，如[建立資料庫叢集](#create_dbcluster)中所指定。</td>
+  </tr>
+  <tr>
+    <td> &lt;<em>Hostname_i</em>&gt; </td>
+    <td> 資料庫抄本 <em>i</em> (<em>i</em>=1,2,3)，如[建立資料庫叢集](create_dbcluster)中所傳回。</td>
+  </tr>
+  <tr>
+    <td> &lt;<em>PortNumber_i</em>&gt; </td>
+    <td> 埠號 <em>i</em> (<em>i</em>=1,2,3)，如[建立資料庫叢集](#create_dbcluster)中所傳回。</td>
+  </tr>
+  <tr>
+    <td> &lt;<em>CA_file</em>&gt; </td>
+    <td> 已下載 CA 檔案的檔名。在部署期間，其會複製到 `/swift-project` 目錄。</td>
+  </tr>
+  </table>
+
+4. 編輯 `Package.swift` 檔案，為了使用 MongoKitten SDK，新增套件相依關係。
+
+  * 在相依關係區段中，新增下列這一行：
+			
+   ```hljs
+   .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
+   ```
+   {: codeblock}
+
+  * 在目標區段中，將相依關係 "MongoKitten" 新增至下列這一行。**附註：** 該值必須指定在單一行中。
+			
+   ```hljs
+   .target(name: "Application", dependencies: [ "Kitura",
+   "CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
+   ```
+   {: codeblock}
+
+5. 編輯 `Sources/Application/Application.swift` 檔案，以使用 MongoKitten 來起始設定與 MongoDB 的連線功能。
+
+  * 匯入 MongoKitten SDK：
+		```
+	import MongoKitten
+		```
+	{: codeblock}
+
+  * 新增類別 `ApplicationServices`：
+    ```hljs
+	cclass ApplicationServices {
+	// Service references
+	public let mongoDBService: MongoKitten.Database
+	public let myCredFile = "/swift-project/cred.json"
+
+    public init() throws {
+        // Read credentials from json file cred.json
+        struct ResponseData: Decodable {
+            var uri: String
+        }
+        let data = try? Data(contentsOf: URL(fileURLWithPath: myCredFile))
+        let decoder = JSONDecoder()
+        let jsonData = try decoder.decode(ResponseData.self, from: data!)
+
+        // Run service initializers
+        let server = try Server(jsonData.uri)
+        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
+    }
 	}
 	```
 	{: codeblock}
 
-	其中：
+  * 在公用類別 `App` 中，新增下列這幾行以起始設定資料庫連線：
+    ```hljs
+	public class App {
+	...
+	let services: ApplicationServices
 
-	<table>
-	  <tr>
-	    <th> 參數 </th>
-	    <th> 說明 </th>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>admin_ID</em>&gt; </td>
-	    <td> 資料庫管理者的使用者 ID，如[建立資料庫叢集](#create_dbcluster)中所指定。
-	  </td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>admin_pwd</em>&gt; </td>
-	    <td> 管理者密碼的使用者 ID，如[建立資料庫叢集](#create_dbcluster)中所指定。</td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>Hostname_i</em>&gt; </td>
-	    <td> 資料庫抄本 <em>i</em> (<em>i</em>=1,2,3)，如[建立資料庫叢集](create_dbcluster)中所傳回。</td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>PortNumber_i</em>&gt; </td>
-	    <td> 埠號 <em>i</em> (<em>i</em>=1,2,3)，如[建立資料庫叢集](#create_dbcluster)中所傳回。</td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>CA_file</em>&gt; </td>
-	    <td> 已下載 CA 檔案的檔名。在部署期間，其會複製到 `/swift-project` 目錄。</td>
-	  </tr>
-	</table>
-
-4. 編輯 `Package.swift` 檔案，為了使用 MongoKitten SDK，新增套件相依關係。
-
-	a. 在相依關係區段中，新增下列這一行：
-			```hljs
-			 .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
-			```
-			{: codeblock}
-
-	b. 在目標區段中，將相依關係 "MongoKitten" 新增至下列這一行。**附註：** 該值必須指定在單一行中。
-			```hljs
-			 .target(name: "Application", dependencies: [ "Kitura",
-                        				"CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
-			```
-			{: codeblock}
-
-5. 編輯 `Sources/Application/Application.swift` 檔案，以使用 MongoKitten 來起始設定與 MongoDB 的連線功能。
-
-	a. 匯入 MongoKitten SDK：
-		```
-		import MongoKitten
-		```
-		{: codeblock}
-
-	b. 新增類別 `ApplicationServices`：
-
-		```hljs
-		cclass ApplicationServices {
-	    // Service references
-	    public let mongoDBService: MongoKitten.Database
-	    public let myCredFile = "/swift-project/cred.json"
-
-	    public init() throws {
-	        // Read credentials from json file cred.json
-	        struct ResponseData: Decodable {
-	            var uri: String
-	        }
-	        let data = try? Data(contentsOf: URL(fileURLWithPath: myCredFile))
-	        let decoder = JSONDecoder()
-	        let jsonData = try decoder.decode(ResponseData.self, from: data!)
-
-	        // Run service initializers
-	        let server = try Server(jsonData.uri)
-	        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
-	    }
-		}
-		```
-		{: codeblock}
-
-	c. 在公用類別 `App` 中，新增下列這幾行以起始設定資料庫連線：
-
-		```hljs
-		public class App {
-	    ...
-	    let services: ApplicationServices
-
-	    public init() throws {
-	        // Services
-	        services = try ApplicationServices()
-
-	    }
-	    ...
-    	```
-    	{: codeblock}
+	public init() throws {
+	   // Services
+	    services = try ApplicationServices()
+	 }
+	...
+    ```
+    {: codeblock}
 
 ## 步驟 4. 驗證資料庫連線
 {: #verify_database}
 
-1. 驗證您的資料庫連線，方法為編輯 `Sources/Application/Application.swift` 檔案，以新增指令來測試資料庫連線。
-例如，在 `class ApplicationServices` 中，新增下列指令：
+1. 驗證您的資料庫連線，方法為編輯 `Sources/Application/Application.swift` 檔案，以新增指令來測試資料庫連線。例如，在 `class ApplicationServices` 中，新增下列指令：
 
 	```hljs
 		class ApplicationServices {
@@ -244,7 +239,7 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ## 步驟 5. 內含應用程式碼
 {: #embed_appcode}
 
-您現在可以將自己的應用程式碼新增至專案。如需使用 MongoKitten API 的相關資訊，請參閱 http://beta.openkitten.org/tutorials/。
+您現在可以將自己的應用程式碼新增至專案。如需使用 MongoKitten API 的相關資訊，請參閱 http://beta.openkitten.org/tutorials/
 
 ## 步驟 6. 部署應用程式
 {: #deploy_app}
@@ -255,7 +250,7 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 
 1. [安裝](/docs/cli/reference/bluemix_cli/get_started.html) {{site.data.keyword.cloud_notm}} CLI
 
-2. 使用 `ibmcloud plugin install dev` 指令來安裝開發人員工具外掛程式。
+2. 使用 `ibmcloud plugin install dev` 指令來安裝 Developer Tools 外掛程式。
 
 3. 將應用程式部署至[本端系統](#deploy_local)、[Cloud Foundry](#deploy_cf) 或 [Kubernetes 叢集](#deploy_cluster)。
 
@@ -282,22 +277,23 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 1. 切換至包含您專案檔的目錄。
 
 2. 登入您的 IBM Cloud 帳戶，然後將地區設為 `us-south`，如這裡所示：
-	```hljs
-	$ ibmcloud login -a https://api.ng.bluemix.net
-	...
-	$ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
-	```
-	{: codeblock}
+	
+  ```hljs
+  $ ibmcloud login -a https://api.ng.bluemix.net
+  $ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
+  ```
+  {: codeblock}
 
-    **附註：**發出 `ibmcloud login -a https://api.ng.bluemix.net` 指令，會自動將地區設為 **us-south**。
+  **附註：**發出 `ibmcloud login -a https://api.ng.bluemix.net` 指令，會自動將地區設為 **us-south**。
 
 3. 若要將應用程式部署至 Cloud Foundry，請輸入這個指令：
+	
+  ```
+$ ibmcloud dev deploy
 	```
-	$ ibmcloud dev deploy
-	```
-	{: codeblock}
+  {: codeblock}
 
-	您會接收到一個可按一下的鏈結，連接至管理應用程式所在的位置。
+  您會接收到一個可按一下的鏈結，連接至管理應用程式所在的位置。
 
 ### 部署至 Kubernetes 叢集
 {: #deploy_cluster}
@@ -311,19 +307,20 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 4. 切換至包含您專案檔的目錄。
 
 5. 登入您的 {{site.data.keyword.cloud_notm}} 帳戶，然後將地區設為 us-south，如這裡所示：
-	```hljs
-	$ ibmcloud login -a https://api.ng.bluemix.net
-	...
-	$ ibmcloud target -o <your-organization> -s <your-space>
-	```
-	{: codeblock}
+	
+  ```hljs
+  $ ibmcloud login -a https://api.ng.bluemix.net
+  $ ibmcloud target -o <your-organization> -s <your-space>
+  ```
+  {: codeblock}
 
-	**附註：**發出 `ibmcloud login -a https://api.ng.bluemix.net` 指令，會自動將地區設為 **us-south**。
+  **附註：**發出 `ibmcloud login -a https://api.ng.bluemix.net` 指令，會自動將地區設為 **us-south**。
 
 6. 若要在 Kubernetes 中部署應用程式，請輸入這個指令：
-	```
+	
+  ```
     $ ibmcloud dev deploy -t container
     ```
-    {: codeblock}
+  {: codeblock}
 
-	系統會提示您輸入 Kubernetes 叢集的名稱及 Docker 登錄。在提供資訊之後，您的應用程式即會部署至 Kubernetes 叢集。
+  系統會提示您輸入 Kubernetes 叢集的名稱及 Docker 登錄。在提供資訊之後，您的應用程式即會部署至 Kubernetes 叢集。

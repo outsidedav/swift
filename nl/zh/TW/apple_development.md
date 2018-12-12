@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-27"
 
 ---
 {:new_window: target="_blank"}
@@ -24,7 +24,7 @@ lastupdated: "2018-08-09"
 
  ![開發人員類型](images/IBM_Cloud_icon.png "IBM Cloud")
 
-{{site.data.keyword.cloud_notm}} 內建的開發人員功能具備各種技術集，並提供一個平台來產生、遞送、執行及管理您的應用程式。例如，在提及的認知應用程式中，下列 {{site.data.keyword.cloud_notm}} 值得一提：
+{{site.data.keyword.cloud_notm}} 內建的開發人員功能具備各種技術集，並提供一個平台來產生、遞送、執行及管理您的應用程式。例如，在提及的認知應用程式中，下列 {{site.data.keyword.cloud_notm}} 功能值得一提：
 
 * [**{{site.data.keyword.cloud_notm}}Developer Experience**](https://console.bluemix.net/docs/overview/dev-journey.html#dev-journey) 不是一項服務，而是 {{site.data.keyword.cloud_notm}} 上的一組功能，用於協助數位及 Cloud Native 開發人員開始建置已就緒的正式作業應用程式。其包括自動佈建服務，以及「一鍵式」部署 DevOps 工具鏈。
 
@@ -34,7 +34,7 @@ lastupdated: "2018-08-09"
 
 * [**{{site.data.keyword.cloud_notm}}Continuous Delivery 服務**](../services/ContinuousDelivery/index.html#cd_getting_started)會設定 DevOps 工具鏈，以自動持續交付您的應用程式。您可以輕鬆地加強工具鏈，併入管理功能，例如，監視、記載、追蹤及警示。您甚至可以使用 [DevOps Insights 服務](../services/DevOpsInsights/index.html#gettingstarted)，將進階機器學習套用至您的工具鏈。
 
-{{site.data.keyword.cloud_notm}} 平台提供更多功能，而且 {{site.data.keyword.cloud_notm}} 可以當作您的綜合開發平台。
+{{site.data.keyword.cloud_notm}} 平台提供更多功能，而且可以當作您的綜合開發平台。
 
 ## {{site.data.keyword.cloud_notm}} 功能概觀
 {: #capabilities}

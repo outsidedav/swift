@@ -19,11 +19,11 @@ Vous pouvez utiliser le service {{site.data.keyword.conversationshort}} pour gé
 
 La liste suivante présente le flux des travaux d'intégration :
 
-  1. Les utilisateurs interagissent avec l'interface implémentée dans votre appli.
-  2. Votre appli envoie une entrée utilisateur à {{site.data.keyword.conversationshort}} à l'aide du logiciel SDK Swift {{site.data.keyword.watson}}.
+  1. Les utilisateurs interagissent avec l'interface implémentée dans votre application.
+  2. Votre application envoie une entrée utilisateur à {{site.data.keyword.conversationshort}} à l'aide du logiciel SDK Swift {{site.data.keyword.watson}}.
   3. Le logiciel SDK Swift {{site.data.keyword.watson}} se connecte à un espace de travail, qui est un conteneur pour votre flux de dialogues et vos données d'apprentissage.
-  4. L'espace de travail interprète l'entrée utilisateur et dirige le flux des conversation, en envoyant une réponse à votre appli.
-  5. Votre appli affiche la réponse pour l'utilisateur.
+  4. L'espace de travail interprète l'entrée utilisateur et dirige le flux des conversation, en envoyant une réponse à votre application.
+  5. Votre application affiche la réponse pour l'utilisateur.
 
 ## Avant de commencer
 {: #before-you-begin}
@@ -54,7 +54,7 @@ $ brew install carthage
   ```
   {: codeblock}
 
-  Pour une appli de production, vous pouvez indiquer une [version requise](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement){:new_window} afin d'éviter des modifications inattendues des nouvelles versions du logiciel SDK Swift {{site.data.keyword.watson}}.
+  Pour une application de production, vous pouvez indiquer une [version requise](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement){:new_window} afin d'éviter des modifications inattendues des nouvelles versions du logiciel SDK Swift {{site.data.keyword.watson}}.
   {: tip}
 
 3. Utilisez un terminal pour accéder au répertoire racine de votre projet, puis lancez Carthage :
@@ -65,20 +65,20 @@ $ brew install carthage
 
   Le logiciel SDK Swift {{site.data.keyword.watson}} est ensuite téléchargé, et son infrastructure est générée dans le dossier `Carthage/Build/iOS` de votre projet.
 
-## Ajout d'infrastructures à votre appli
+## Ajout d'infrastructures à votre application
 {: #add-frameworks-to-your-app}
 
-A présent que l'infrastructure du logiciel SDK Swift {{site.data.keyword.watson}} est générée, vous devez lier et copier l'infrastructure {{site.data.keyword.conversationshort}} dans votre appli.
+A présent que l'infrastructure du logiciel SDK Swift {{site.data.keyword.watson}} est générée, vous devez lier et copier l'infrastructure {{site.data.keyword.conversationshort}} dans votre application.
 
-1. Ouvrez votre appli dans Xcode et sélectionnez votre projet dans le navigateur afin d'afficher ses paramètres.
-2. Sélectionnez la cible de votre appli et ouvrez l'onglet **Général** tab.
+1. Ouvrez votre application dans Xcode et sélectionnez votre projet dans le navigateur afin d'afficher ses paramètres.
+2. Sélectionnez la cible de votre application et ouvrez l'onglet **Général** tab.
 3. Faites défiler jusqu'à la section Linked Frameworks and Libraries et cliquez sur l'icône `+`.
 4. Dans la nouvelle fenêtre qui s'affiche, cliquez sur **Add Other** et accédez au répertoire `Carthage/Build/iOS`.
-5. Sélectionnez `AssistantV1.framework` afin de le lier à votre appli.
+5. Sélectionnez `AssistantV1.framework` afin de le lier à votre application.
 
-En plus de lier l'infrastructure {{site.data.keyword.conversationshort}}, vous devez aussi la copier dans l'appli afin de la rendre accessible ay moment de l'exécution. Un script Carthage est ensuite utilisé afin d'éviter un [bogue de soumission App Store](http://www.openradar.me/radar?id=6409498411401216){:new_window} particulier.
+En plus de lier l'infrastructure {{site.data.keyword.conversationshort}}, vous devez aussi la copier dans l'application afin de la rendre accessible au moment de l'exécution. Un script Carthage est ensuite utilisé afin d'éviter un [bogue de soumission App Store](http://www.openradar.me/radar?id=6409498411401216){:new_window} particulier.
 
-1. Une fois les paramètres de la cible de votre appl affichés dans Xcode, accédez à l'onglet **Build Phases**.
+1. Une fois les paramètres de la cible de votre application affichés dans Xcode, accédez à l'onglet **Build Phases**.
 2. Cliquez sur l'icône `+` et sélectionnez **New Run Script Phase**.
 3. Ajoutez la commande `/usr/local/bin/carthage copy-frameworks` à la phase d'exécution du script.
 4. Ajoutez l'infrastructure {{site.data.keyword.conversationshort}} à la liste **Input Files** :
@@ -87,7 +87,7 @@ En plus de lier l'infrastructure {{site.data.keyword.conversationshort}}, vous d
   ```
   {: codeblock}
 
-## Ajout d'un assistant virtuel à votre appli
+## Ajout d'un assistant virtuel à votre application
 {: #add-a-virtual-assistant-to-your-app}
 
 1. Ouvrez `ViewController.swift` dans Xcode.
@@ -141,7 +141,7 @@ class ViewController: UIViewController {
 ```
 {: codeblock}
 
-Lorsque vous exécutez l'appli, les messages suivants s'affichent sur la console :
+Lorsque vous exécutez l'application, les messages suivants s'affichent sur la console :
 ```
 Conversation ID: cbb18524-1e78-4bb5-a6ea-ceb9311da391
 Response: Hi. It looks like a nice drive today. What would you like me to do?
@@ -153,7 +153,7 @@ Response: Sure thing! Which genre would you prefer? Jazz is my personal favorite
 ## Utilisation des kits de démarrage
 {: #conversation_starterkits}
 
-Grâce aux kits de démarrage, vous pouvez rapidement et facilement tirer profit des fonctionnalités de {{site.data.keyword.cloud_notm}}. Vous pouvez ajouter {{site.data.keyword.conversationshort}} à un système de back end côté serveur avec les kits de démarrage. Le kit de démarrage Chatbot for iOS with Watson illustre l'utilisation des fonctions d'apprentissage en profondeur de {{site.data.keyword.conversationshort}} par l'ajout d'une interface en langage naturel à votre appli qui automatise les interactions avec vos utilisateurs finaux.
+Grâce aux kits de démarrage, vous pouvez rapidement et facilement tirer profit des fonctionnalités de {{site.data.keyword.cloud_notm}}. Vous pouvez ajouter {{site.data.keyword.conversationshort}} à un système de back end côté serveur avec les kits de démarrage. Le kit de démarrage Chatbot for iOS with Watson illustre l'utilisation des fonctions d'apprentissage en profondeur de {{site.data.keyword.conversationshort}} par l'ajout d'une interface en langage naturel à votre application qui automatise les interactions avec vos utilisateurs finaux.
 
 1. Sélectionnez le [kit de démarrage](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} avec lequel vous voulez démarrer.
 2. Créez le projet avec les services par défaut.
@@ -163,8 +163,8 @@ Grâce aux kits de démarrage, vous pouvez rapidement et facilement tirer profit
 ## Etapes suivantes
 {: #assistant_next}
 
-Félicitations !  Vous avez ajouté un assistant d'intelligence artificielle à votre appli. Poursuivez sur votre lancée en essayant l'une des options suivantes :
+Félicitations ! Vous avez ajouté un assistant d'intelligence artificielle à votre application. Poursuivez sur votre lancée en essayant l'une des options suivantes :
 
 * Consultez la section relative au [logiciel SDK Swift{{site.data.keyword.watson}}](https://github.com/watson-developer-cloud/swift-sdk){:new_window}.
 * Tirez parti de toutes les fonctionnalités offertes par [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html).
-* Consultez le code source relatif à l'[exemple d'appli de conversion simple](https://github.com/watson-developer-cloud/simple-chat-swift){:new_window}, qui démontre le logiciel SDK Swift {{site.data.keyword.watson}} sur GitHub.
+* Consultez le code source relatif à l'[exemple d'application de conversion simple](https://github.com/watson-developer-cloud/simple-chat-swift){:new_window}, qui démontre le logiciel SDK Swift {{site.data.keyword.watson}} sur GitHub.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -19,7 +19,7 @@ lastupdated: "2018-06-05"
 ## CocoaPods によるインストール
 {: #installing_with_cocoapods}
 
-Cocoapods を使用して SDK をインストールするには、それを `Podfile` に追加します。プロジェクトに `Podfile` がまだない場合は、`pod init` コマンドを使用してください。
+CocoaPods を使用して SDK をインストールするには、それを `Podfile` に追加します。 プロジェクトに `Podfile` がまだない場合は、`pod init` コマンドを使用してください。
 ```ruby
 use_frameworks!
 
@@ -31,7 +31,7 @@ end
 
 `pod install` を実行し、生成された `.xcworkspace` ファイルを開きます。
 
-詳しくは、[Cocoapods Guides](https://guides.cocoapods.org/using/index.html) を参照してください。
+詳しくは、[CocoaPods Guides](https://guides.cocoapods.org/using/index.html) を参照してください。
 
 ## Carthage によるインストール
 {: #installing_with_carthage}
@@ -42,9 +42,9 @@ github "<github org name>/<github project name>"
 ```
 {: codeblock}
 
-`carthage update` を実行して、ビルド・プロセスを開始します。ビルドが完了したら、生成されたフレームワークをプロジェクトに追加します。 
+`carthage update` を実行して、ビルド・プロセスを開始します。 ビルドが完了したら、生成されたフレームワークをプロジェクトに追加します。 
 
-詳しくは、[Carthage README](https://github.com/Carthage/Carthage#getting-started) を参照してください。
+詳しくは、[Carthage の『Getting started』](https://github.com/Carthage/Carthage#getting-started)資料を参照してください。
 
 ## Swift Package Manager によるインストール
 {: #installing_with_swift_package_manager}

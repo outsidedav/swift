@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -10,12 +10,12 @@ lastupdated: "2018-06-05"
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:note:.deprecated}
+{:note: .deprecated}
 
 # iOS 及 Cloud Logic 使用案例
 {: #sample_cloud}
 
-透過 [BluePic 照片及影像共用範例應用程式](https://github.com/IBM/BluePic)，可看到使用 Backend For Frontend (BFF) 的 iOS 應用程式範例。BluePic 應用程式使用下列技術：
+透過 [BluePic 影像分享範例應用程式](https://github.com/IBM/BluePic)，可看到使用 Backend For Frontend (BFF) 的 iOS 應用程式範例。BluePic 應用程式使用下列技術：
 
 * Object Storage 及 Cloudant，用來儲存影像資料。
 * Watson Visual Recognition 及 IBM Weather Company 服務，用來將其他資訊新增至影像。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -15,13 +15,13 @@ lastupdated: "2018-08-07"
 # 收集移动分析
 {: #mobile_analytics}
 
-{{site.data.keyword.mobileanalytics_short}} on {{site.data.keyword.cloud_notm}} 为开发者、IT 管理员和业务利益相关方提供对其移动应用程序性能和使用情况的相关洞察。使用 {{site.data.keyword.mobileanalytics_short}} 服务，可以：
+{{site.data.keyword.mobileanalytics_short}} on {{site.data.keyword.cloud_notm}} 可让开发者、管理员和业务利益相关方深入了解其移动应用程序的性能和使用情况。使用 {{site.data.keyword.mobileanalytics_short}} 服务，可以：
 
- - **立即获取洞察** - 实时查看性能和使用情况度量值。
+ - **立即获取洞察** - 查看实时性能和使用情况度量值。
 
  - **在若干分钟内实施** - 在 {{site.data.keyword.cloud_notm}} 中创建服务实例，将 SDK 添加到项目，将两行代码粘贴到应用程序中，并准备好收集数十个预定义的度量值。
 
- - **收集所需数据** - 使用定制事件来检测应用程序，发现用户如何与应用程序交互，跟踪购买活动以及监视应用程序活动。
+ - **收集所需数据** - 使用定制事件来检测应用程序，查看用户如何与应用程序交互，跟踪开销动向以及监视应用程序活动。
 
  - **查看度量值概览** - {{site.data.keyword.mobileanalytics_short}} 控制台提供了现成可用的图表，无需编写查询。
 
@@ -38,7 +38,7 @@ lastupdated: "2018-08-07"
  - iOS 8.0+ / watchOS 2.0+
  - Xcode 7.3 和 8.0
  - Swift 2.2 - 3.0
- - Cocoapods 或 Carthage
+ - CocoaPods 或 Carthage
 
 ## 步骤 1. 创建 {{site.data.keyword.mobileanalytics_short}} 的实例
 {: #mobile_analytics_create}
@@ -46,13 +46,13 @@ lastupdated: "2018-08-07"
 1. 在 {{site.data.keyword.cloud_notm}}“目录”中，单击**移动** > **{{site.data.keyword.mobileanalytics_short}}**。这将打开服务配置屏幕。
 2. 为服务实例提供名称或使用预设名称。
 3. 单击**创建**。
-4. 在导航窗格中，单击**连接**以选择应用程序，并将其绑定到服务。如果在创建期间未绑定服务实例，那么可以日后将其绑定到应用程序。
+4. 在导航窗格中，单击**连接**以选择应用程序并将其绑定到服务。如果在创建期间未绑定服务实例，那么可以日后将其绑定到应用程序。
 
 ## 步骤 2. 安装 iOS Swift SDK
 
-服务提供了特定于平台的 SDK 来简化应用程序开发。可以使用 Cocoapods 或 Carthage 来安装 {{site.data.keyword.cloud_notm}} Mobile Services Swift SDK。有关更多信息，请参阅 [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)。
+服务提供了特定于平台的 SDK 来简化应用程序开发。{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK 可通过 CocoaPods 或 Carthage 来进行安装。有关更多信息，请参阅 [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)。
 
-可以使用 {{site.data.keyword.mobileanalytics_full}} SDK 来检测移动应用程序。iOS 和 watchOS 可以使用 Swift SDK。
+您可以使用 {{site.data.keyword.mobileanalytics_full}} SDK 来检测移动应用程序。iOS 和 watchOS 可以使用 Swift SDK。
 
 1. 确保正确设置 Xcode。要了解如何设置 iOS 开发环境，请参阅 [Apple Developer Web 站点 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.apple.com/support/xcode/){: new_window}。请阅读有关客户端 SDK Swift Analytics 的 [Xcode 要求 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#requirements){: new_window}。
 
@@ -63,14 +63,14 @@ lastupdated: "2018-08-07"
 ### CocoaPods
 {: #cocoapods}
 
-1. 遵循 GitHub 上的 [{{site.data.keyword.Bluemix_notm}} Mobile Services Swift SDK 指示信息 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window}，以使用 Cocoapods 安装 `BMSAnalytics`，并将其添加到 pod 文件。
+1. 按照 GitHub 上的 [{{site.data.keyword.Bluemix_notm}}Mobile Services Swift SDK 指示信息 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window}，以使用 CocoaPods 安装 `BMSAnalytics`，并将其添加到 Podfile 中。
 
 2. 安装 iOS 客户端 SDK 后，[导入并初始化](sdk.html#initalize-ma-sdk) Analytics 客户端 SDK。   
 
 ### Carthage
 {: #carthage}
 
-如果未使用 CocoaPods，那么可以使用 [Carthage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos){: new_window} 向项目添加框架。
+如果使用的不是 CocoaPods，那么可以使用 [Carthage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos){: new_window} 将框架添加到项目中。
 
 1. 遵循 GitHub 上的 [Carthage 安装指示信息 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#carthage){: new_window} 以安装 `BMSAnalytics`。
 
@@ -82,9 +82,9 @@ lastupdated: "2018-08-07"
 
 **预定义数据**：此类别包含适用于所有应用程序的通用使用情况和设备信息。这类信息指示应用程序使用的卷、频率或持续时间。在应用程序中初始化 {{site.data.keyword.mobileanalytics_short}} SDK 后，会自动收集预定义数据。
 
-**应用程序日志消息**：此类别支持开发者在整个应用程序中添加代码行来记录定制消息，以帮助开发和调试。开发者会向每个日志消息分配一种严重性/详细程度级别。
+**应用程序日志消息**：此类别支持开发者在整个应用程序中添加代码行来记录定制消息，从而更好地进行开发和调试。开发者可以为每条日志消息分配严重性/详细程度级别。
 
-**定制事件**：此类别包含您自己定义的数据以及特定于应用程序的数据。此数据代表您应用程序中发生的事件，如查看页面、点击按钮或应用程序内采购。除了在您的应用程序中初始化 {{site.data.keyword.mobileanalytics_short}} SDK 之外，您还必须对要跟踪的每一个定制事件，添加一行代码。
+**定制事件**：此类别包含您自己定义的数据以及特定于应用程序的数据。这些数据显示的是您应用程序中发生的事件，如查看页面、点击按钮或应用程序内采购。除了在您的应用程序中初始化 {{site.data.keyword.mobileanalytics_short}} SDK 之外，您还必须对要跟踪的每一个定制事件，添加一行代码。
 
 ## 步骤 4. 识别服务凭证 API 密钥值
 {: #analytics-clientkey}
@@ -116,7 +116,7 @@ lastupdated: "2018-08-07"
   ```
 	{: codeblock}
 
-	必须使用 **bluemixRegion** 参数来初始化 `BMSClient`。在初始化程序中，**bluemixRegion** 值指定要使用的 {{site.data.keyword.Bluemix_notm}} 部署。
+	必须使用 **bluemixRegion** 参数来初始化 `BMSClient`。在初始化程序中，**bluemixRegion** 值指定的是您要使用的 {{site.data.keyword.Bluemix_notm}} 部署。
 
 3. 使用应用程序对象并为其提供应用程序名称，来初始化 Analytics。
 
@@ -185,7 +185,7 @@ Analytics.log(metadata: eventObject)
 ### 日志级别方案
 {: #log-level-scenario}
 
-记录器级别配置为 `FATAL` 时，记录器会捕获未捕获的异常，但并不捕获导致崩溃事件的任何日志。您可以设置更详细的记录器级别，以确保同时捕获可能导致 `FATAL` 记录器条目的日志，如 `WARN` 和 `ERROR`。
+当记录器级别配置为 `FATAL` 时，记录器会捕获未捕获的异常，但并不会捕获导致崩溃事件的任何日志。您可以设置更详细的记录器级别，以确保同时捕获可能导致 `FATAL` 记录器条目的日志，如 `WARN` 和 `ERROR`。
 
 记录器级别设置为 `DEBUG` 时，您还可以获取 Mobile Analytics 客户端 SDK 记录，在您发送日志时该记录也包含在内。
 
@@ -260,7 +260,7 @@ Analytics.initialize(appName, apiKey,  hasUserContext, collectLocation, [BMSAnal
 
 您可以通过将分析和日志信息发送到 {{site.data.keyword.mobileanalytics_short}} 来查看[应用程序崩溃数据](app-monitoring.html#monitor-app-crash)。
 
-`Analytics.send()` 方法会在**崩溃**页面填充**崩溃概述**和**崩溃**表。将初始化和发送过程用于分析来启用图表；无需进行特殊配置。
+`Analytics.send()` 方法会在**崩溃**页面填充**崩溃概述**和**崩溃**表。您可以通过初始化和发送过程来启用图表以进行分析。
 
 `Logger.send()` 方法会填充**故障诊断**页面上的**崩溃摘要**和**崩溃详细信息**表。您必须通过在应用程序代码中添加语句，使应用程序能够存储和发送日志以填充图表：
 ```
@@ -287,7 +287,7 @@ Analytics.userIdentity = "username"
 ## 步骤 12. 测试应用程序
 {: #appid_testing}
 
-一切都设置正确吗？是时候进行测试了！
+一切都配置正确吗？是时候进行测试了！
 
 1. 打开应用程序。如果是 Web 应用程序，请使用浏览器打开。如果是 iOS 客户端应用程序，请使用 Xcode 仿真器打开。
 2. 在移动仿真器或设备上编译并运行应用程序。
@@ -301,6 +301,6 @@ Analytics.userIdentity = "username"
 
  - 有关使用移动服务和 {{site.data.keyword.Bluemix_notm}} 的简介，请参阅 [IBM Cloud 上的移动应用程序入门](/docs/services/mobile/index.html)。
 
- - 入门模板工具包是利用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。请在[移动开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看所有可用的入门模板工具包。下载代码。运行应用程序！
+ - 入门模板工具包是利用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。请在 [Mobile 开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看所有可用的入门模板工具包。下载代码。运行应用程序！
 
  - 可以使用 [Swagger UI](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/) 来快速查看 REST API 文档。

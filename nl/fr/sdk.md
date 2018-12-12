@@ -11,10 +11,10 @@ lastupdated: "2017-08-09"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Ajout de logiciels SDK Swift à votre appli
+# Ajout de logiciels SDK Swift à votre application
 {: #sdk}
 
-Pour ajouter des logiciels SDK {{site.data.keyword.Bluemix}} à votre appli, choisissez les logiciels SDK que vous voulez utiliser et configurez votre gestionnaire de dépendances afin qu'il extrait les logiciels SDK dans votre appli.
+Pour ajouter des logiciels SDK {{site.data.keyword.Bluemix}} à votre application, choisissez les logiciels SDK que vous voulez utiliser et configurez votre gestionnaire de dépendances afin qu'il extrait les logiciels SDK dans votre application.
 
 ## Utilisation de logiciels SDK clients
 {: #client_sdk}
@@ -29,7 +29,7 @@ Vous pouvez utiliser les logiciels SDK suivants dans votre application mobile po
 - [BMSSecurity ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security)
 - [{{site.data.keyword.engage_short}} SDK ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch)
 - [BMSGoogleAuthentication SDK ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security-googleauthentication)
-- [Watson Swift SDK ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/watson-developer-cloud/swift-sdk)
+- [SDK Swift Watson![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/watson-developer-cloud/swift-sdk)
 
 ### Ajout de stockage client
 - [Cloudant ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/cloudant/swift-cloudant)
@@ -44,7 +44,7 @@ Si vous disposez d'une application serveur Swift, vous pouvez utiliser les logic
 - [{{site.data.keyword.openwhisk_short}} for iOS ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/openwhisk/learn/ios-sdk)
 - [KituraKit ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/IBM-Swift/KituraKit)
 - [{{site.data.keyword.mobilepushshort}} Swift Server SDK ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/ibm-bluemix-mobile-services/bms-pushnotifications-serversdk-swift)
-- [Watson Swift SDK ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/watson-developer-cloud/swift-sdk)
+- [SDK Swift Watson ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/watson-developer-cloud/swift-sdk)
 
 ### Ajout de stockage côté serveur
 - [Redis ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/IBM-Swift/Kitura-redis)

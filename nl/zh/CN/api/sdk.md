@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -17,7 +17,7 @@ lastupdated: "2018-08-17"
 
 可以在 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/bluemix_cli/get_started.html) 中安装 {{site.data.keyword.IBM}} SDK Generator 插件。
 
-通过使用 {{site.data.keyword.IBM_notm}} SDK Generator 插件，可以使用生成的 SDK 轻松地将后端服务集成到应用程序。发生对 REST API 的更改时，可以重新生成 SDK，并将旧的 SDK 替换为无缝 SDK 升级。您还可以将 CLI 集成到 DevOps 管道中，并确保每次构建应用程序时，SDK 都始终与 API 规范一致。
+通过 {{site.data.keyword.IBM_notm}} SDK Generator 插件，您可以使用生成的 SDK 将后端服务集成到应用程序中。对 REST API 进行更改后，您可以重新生成 SDK，并替换旧 SDK 以轻松升级 SDK。然后，可以将 CLI 添加到 DevOps 管道中，并确保每次构建应用程序时 SDK 都与 API 规范一致。
 
 REST API 定义必须有效，并且在实时服务器端点上或在系统上的本地文件中托管。
 
@@ -54,7 +54,7 @@ ibmcloud sdk generate [arguments...] [command options]
 {: #gen-args}
 
 * **APP_NAME** - 当前空间中 Cloud Foundry 应用程序的名称。
-* **OPENAPI_DOC_LOCATION** - 原始 REST API 定义 JSON 或 Yaml 的 URL 或相对文件路径。
+* **OPENAPI_DOC_LOCATION** - 原始 REST API 定义 JSON 或 YAML 的 URL 或相对文件路径。
 * **GENERATED_SDK_NAME**（可选）- 生成的 SDK 的名称。
 
 ### 选项
@@ -76,7 +76,7 @@ ibmcloud sdk generate [arguments...] [command options]
 
 **可选**：
   * `--output "YOUR_RELATIVE_PATH"` - 将生成的 SDK 放置在 `YOUR_RELATIONVE_PATH` 指定的目录中（如果存在现有 SDK，将覆盖现有 SDK。）
-  * `--unzip` - 解压缩生成的 SDK（如果存在现有 SDK 工件，将覆盖数据。）
+  * `--unzip` - 解压缩生成的 SDK（如果存在现有 SDK 工件，将覆盖现有数据）。
 
 ### 用法
 {: #gen-usage}
@@ -88,7 +88,7 @@ ibmcloud sdk generate [APP_NAME] [LOCATION] [PLATFORM]
 ```
 {: codeblock}
 
-要通过指向 Open API 定义文件或者本地 JSON 或 Yaml 文件的 URL 生成 SDK，请使用以下命令。
+要通过指向 Open API 定义文件或者本地 JSON 或 YAML 文件的 URL 生成 SDK，请使用以下命令。
 
 ```
 ibmcloud sdk generate [OPENAPI_DOC_LOCATION] [SDK_Name] [LOCATION] [PLATFORM]
@@ -104,8 +104,8 @@ ibmcloud sdk generate [OPENAPI_DOC_LOCATION] [SDK_Name] [LOCATION] [PLATFORM]
 ### 自变量
 {: #val-args}
 
-* `APP_NAME` - 当前空间中 Cloud Foundry 应用程序的名称
-* `OPENAPI_DOC_LOCATION` - 原始 REST API 定义 JSON 或 Yaml 的 URL 或相对文件路径
+* `APP_NAME` - 当前空间中 Cloud Foundry 应用程序的名称。
+* `OPENAPI_DOC_LOCATION` - 原始 REST API 定义 JSON 或 YAML 的 URL 或相对文件路径。
 
 ### 用法
 {: #val-usage}
@@ -116,7 +116,7 @@ ibmcloud sdk validate [APP_NAME] [LOCATION]
 ```
 {: codeblock}
 
-要通过指向 API 规范文档或者本地 JSON 或 Yaml 文件的 URL 验证 SDK，请使用以下命令：
+要通过指向 API 规范文档或者本地 JSON 或 YAML 文件的 URL 验证 SDK，请使用以下命令：
 ```
 ibmcloud sdk validate [OPENAPI_DOC_LOCATION] [LOCATION]
 ```

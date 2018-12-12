@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="swift" audience="platform" href="/docs/swift/index.html" path="swift"}
+{: .toc subcollection="swift" audience="platform" arm="4088034" href="/docs/swift/index.html" path="swift"}
 Programmation avec Swift sur IBM Cloud
 
     {: .navgroup id="learn"}
@@ -23,7 +23,7 @@ Programmation avec Swift sur IBM Cloud
     app_launch/mobile_applaunch.md
     
     {: .topicgroup}
-    Sécurisation des applis Swift
+    Sécurisation des applications Swift
         authenticate/app_id.md
         security/advanced_security.md
 
@@ -54,7 +54,7 @@ Programmation avec Swift sur IBM Cloud
         api/sdk.md
     
     {: .topicgroup}
-    Développement d'applis Swift côté serveur
+    Développement d'applications Swift côté serveur
         cloudnative/configuration.md
         cloudnative/appmetrics.md
         cloudnative/healthcheck.md
@@ -68,7 +68,7 @@ Programmation avec Swift sur IBM Cloud
     {: .navgroup id="reference"}
     sdk.md
     [Docs API](https://console.bluemix.net/apidocs)
-    [Exemples d'applis dans IBM Code](https://developer.ibm.com/code/technologies/swift-on-the-server/)
+    [Exemples d'applications dans IBM Code](https://developer.ibm.com/code/technologies/swift-on-the-server/)
     [IBM Cloud Developer Center](https://developer.ibm.com/swift/)
     {: .navgroup-end}
 

@@ -36,7 +36,7 @@ lastupdated: "2018-08-07"
   * Swift 3.2 以上または Swift 4.0 以上
   * Carthage
 
-[Carthage](https://github.com/Carthage/Carthage){:new_window} を使用して、依存関係を管理したり、アプリケーション用の  {{site.data.keyword.watson}} Swift SDK を作成したりします。Carthage を使用したことがない場合は、次のようにして [Homebrew](http://brew.sh/){:new_window} でインストールできます。
+[Carthage](https://github.com/Carthage/Carthage){:new_window} を使用して、依存関係を管理したり、アプリケーション用の  {{site.data.keyword.watson}} Swift SDK を作成したりします。 Carthage を使用したことがない場合は、次のようにして [Homebrew](http://brew.sh/){:new_window} でインストールできます。
 
 ```bash
 $ brew update
@@ -54,7 +54,8 @@ $ brew install carthage
   ```
   {: codeblock}
 
-  実動アプリの場合は、[バージョン要件](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement){:new_window}を指定することで、{{site.data.keyword.watson}} Swift SDK の新規リリースによる予期しない変更を回避することができます。{: tip}
+  実動アプリの場合は、[バージョン要件](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement){:new_window}を指定することで、{{site.data.keyword.watson}} Swift SDK の新規リリースによる予期しない変更を回避することができます。
+  {: tip}
 
 3. 端末を使用してプロジェクトのルート・ディレクトリーにナビゲートし、次のように Carthage を実行します。
   ```bash
@@ -75,7 +76,7 @@ $ brew install carthage
 4. 新規ウィンドウが表示されたら、**「Add Other」**をクリックして、`Carthage/Build/iOS` ディレクトリーにナビゲートします。
 5. アプリとリンクさせる `AssistantV1.framework` を選択します。
 
-{{site.data.keyword.conversationshort}} フレームワークをリンクするだけでなく、実行時にアクセスできるように、それをアプリにコピーする必要もあります。そうすることで、Carthage スクリプトが実行されて特定の [App Store 提出時のバグ](http://www.openradar.me/radar?id=6409498411401216){:new_window}を回避することができます。
+{{site.data.keyword.conversationshort}} フレームワークをリンクするだけでなく、実行時にアクセスできるように、それをアプリにコピーする必要もあります。 そうすることで、Carthage スクリプトが実行されて特定の [App Store 提出時のバグ](http://www.openradar.me/radar?id=6409498411401216){:new_window}を回避することができます。
 
 1. アプリのターゲットの設定が Xcode で開いている状態で、**「Build Phases」**タブにナビゲートします。
 2. `+` アイコンをクリックし、**「New Run Script Phase」**を選択します。
@@ -92,7 +93,7 @@ $ brew install carthage
 1. Xcode で `ViewController.swift` を開きます。
 2. {{site.data.keyword.conversationshort}} のインポート・ステートメントを追加します (例: `import AssistantV1`)。
 3. `assistantExample` という空の関数を作成し、それを `viewDidLoad` から呼び出します。
-4. `assistantExample` 関数に次のコードを追加します。必ずユーザー名、パスワード、およびワークスペース ID を更新してください。
+4. `assistantExample` 関数に次のコードを追加します。 必ずユーザー名、パスワード、およびワークスペース ID を更新してください。
 
 ```swift
 //
@@ -152,17 +153,17 @@ Response: Sure thing! Which genre would you prefer? Jazz is my personal favorite
 ## スターター・キットの使用
 {: #conversation_starterkits}
 
-スターター・キットを使用すると、{{site.data.keyword.cloud_notm}} の機能を素早く簡単に利用できます。スターター・キットを使用して、{{site.data.keyword.conversationshort}} を任意のサーバー・サイドのバックエンドに追加できます。Chatbot for iOS with Watson Starter Kit は、エンド・ユーザーとの対話を自動化するアプリケーションに自然言語インターフェースを追加することによって {{site.data.keyword.conversationshort}} のディープ・ラーニング機能を使用する方法について説明しています。
+スターター・キットを使用すると、{{site.data.keyword.cloud_notm}} の機能を素早く簡単に利用できます。 スターター・キットを使用して、{{site.data.keyword.conversationshort}} を任意のサーバー・サイドのバックエンドに追加できます。 Chatbot for iOS with Watson Starter Kit は、エンド・ユーザーとの対話を自動化するアプリケーションに自然言語インターフェースを追加することによって {{site.data.keyword.conversationshort}} のディープ・ラーニング機能を使用する方法について説明しています。
 
 1. 使用する[スターター・キット](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window}を選択します。
 2. デフォルト・サービスを使用してプロジェクトを作成します。
 3. **「リソースの追加」>「Watson」>「{{site.data.keyword.conversationshort}}」**をクリックします。
-4. **「コードのダウンロード (Download Code)」**をクリックして、プロジェクトをダウンロードします。サービス資格情報は、`config/local-dev.json` ファイルにあります。
+4. **「コードのダウンロード (Download Code)」**をクリックして、プロジェクトをダウンロードします。 サービス資格情報は、`config/local-dev.json` ファイルにあります。
 
 ## 次のステップ
 {: #assistant_next}
 
-お疲れさまでした。AI アシスタントがアプリに追加されました。この調子で、以下のいずれかのオプションを試してみてください。
+お疲れさまでした。 AI アシスタントがアプリに追加されました。 この調子で、以下のいずれかのオプションを試してみてください。
 
 * [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window} を使ってみる。
 * [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html) が提供するすべての機能を利用する。

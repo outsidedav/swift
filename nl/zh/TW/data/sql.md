@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-08-07"
 # 為了資料持續性使用 SQL Database
 {: #sql_data}
 
-「結構化查詢語言 (SQL)」是一種網域特定的語言，用來管理關聯式資料庫中的資料。建議您持續保存您的資料，以防止伺服器在使用時關閉。若要新增資料持續性，您可以直接從 Swift 使用 SQL Database。
+「結構化查詢語言 (SQL)」是一種網域特定的語言，用來管理關聯式資料庫中的資料。資料持續性建議用於您的伺服器在使用時關閉的情況。若要新增資料持續性，您可以直接從 Swift 使用 SQL Database。
 Swift 最重要的特性之一就是其類型安全。搭配使用 SQL Database 與 Swift 是合乎邏輯的選擇，因為這兩者都支援類型安全。
 
 ## 搭配使用 ORM 與 SQL Database
@@ -147,7 +147,7 @@ Grade.delete(id: 1) { error in
 
 ## 搭配使用 ORM 與 Kitura
 
-為了更容易試用 ORM，[FoodTrackerBackend 指導教學](https://github.com/IBM/FoodTrackerBackend)可以從 iOS 應用程式中儲存並提取 Meal 物件，然後使用 ORM 放進 PostgreSQL 資料庫中。即使您已完成指導教學，也值得您再試一次，以瞭解 Swift-Kuery-ORM 的強大功能，以及它如何簡化您的 Kitura 程式碼。
+為了更容易試用 ORM，[FoodTrackerBackend 指導教學](https://github.com/IBM/FoodTrackerBackend)可以從 iOS 應用程式中儲存並提取 Meal 物件，並直接放進 PostgreSQL 資料庫中。即使您已完成指導教學，也值得您再試一次，以瞭解 Swift-Kuery-ORM 的強大功能，以及它如何簡化您的 Kitura 程式碼。
 
 ## 直接使用 Swift-Kuery
 

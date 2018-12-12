@@ -27,19 +27,19 @@ Avec l'apprentissage automatique IBM Watson, une fois votre environnement défin
 
 ### Tutoriels
 - [Générer un modèle de régression logistique avec {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics)
-- [Générer a modèle Naive Bayes avec {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics)
+- [Générer un modèle Naive Bayes avec {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics)
 
 ## Configuration de {{site.data.keyword.DSX}} avec iOS et Swift
 {: #dsx_ios}
 
-1. Pour simplifier l'intégration des données d'identification, vous devez ajouter l'instance {{site.data.keyword.pm_short}} à votre appli iOS ou appli de back-end. Pour faciliter l'accessibilité, vos données d'identification sont incluses dans le tableau de bord de votre projet.
+1. Pour simplifier l'intégration des données d'identification, vous devez ajouter l'instance {{site.data.keyword.pm_short}} à votre application iOS ou application de back-end. Pour faciliter l'accessibilité, vos données d'identification sont incluses dans le tableau de bord de votre projet.
 
-![Apprentissage automatique dans votre appli](images/ios-machinelearning-app.png)
+![Apprentissage automatique dans votre application](images/ios-machinelearning-app.png)
 
-2. Télécharger le code de l'appli.
+2. Télécharger le code de l'application.
 3. Initialisation
-  * Pour un projet iOS, du simple ajout de la ressource {{site.data.keyword.pm_short}} à votre projet iOS, les données d'identification sont instantanément injectées dans votre appli.
-    Pour accéder aux données d'identification de votre application, copiez et collez le fragment de code suivant. Veillez également à ajouter le noeud final d'évaluation à votre appli, lequel se trouve sous l'onglet `Implémentation` de votre déploiement de modèle.
+  * Pour un projet iOS, du simple ajout de la ressource {{site.data.keyword.pm_short}} à votre projet iOS, les données d'identification sont instantanément injectées dans votre application.
+    Pour accéder aux données d'identification de votre application, copiez et collez le fragment de code suivant. Veillez également à ajouter le noeud final d'évaluation à votre application, lequel se trouve sous l'onglet `Implémentation` de votre déploiement de modèle.
 
     ```Swift
     // The url to your model's scoring endpoint
@@ -62,7 +62,7 @@ Avec l'apprentissage automatique IBM Watson, une fois votre environnement défin
     ```
     {: codeblock}
 
-  * Pour une application côté serveur, ajoutez manuellement votre nom d'utilisateur et votre mot de passe à votre application ainsi que le noeud final d'évaluation, qui se trouve sous l'onglet `Implémentation` de votre déploiement de modèle. 
+  * Pour une application côté serveur, ajoutez manuellement votre nom d'utilisateur et votre mot de passe à votre application ainsi que le noeud final d'évaluation, qui se trouve sous l'onglet `Implémentation` de votre déploiement de modèle.
 
     ```Swift
     // Your Machine Learning Credentials
@@ -129,7 +129,7 @@ Avec l'apprentissage automatique IBM Watson, une fois votre environnement défin
           }
 
           request.setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
-          request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+          request.setValue("application /json", forHTTPHeaderField: "Content-Type")
 
           execute(request, failure: failure, success: success)
       }
@@ -212,7 +212,7 @@ client.retrieveToken { token in
 ## Etapes suivantes
 {: #dsx_next}
 
-Félicitations !  Vous pouvez maintenant analyser les jeux de données à l'aide de modèles d'apprentissage automatique générés personnalisés. Poursuivez sur votre lancée en découvrant les fonctionnalités offertes par {{site.data.keyword.pm_short}} à la section relative à la [sciences des données et l'apprentissage automatique](https://www.ibm.com/analytics/data-science/machine-learning).
+Félicitations ! Vous pouvez maintenant analyser les jeux de données à l'aide de modèles d'apprentissage automatique générés personnalisés. Poursuivez sur votre lancée en découvrant les fonctionnalités offertes par {{site.data.keyword.pm_short}} à la section relative à la [sciences des données et l'apprentissage automatique](https://www.ibm.com/analytics/data-science/machine-learning).
 
 ### Liens connexes
 * [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling/index.html#using-machine-learning-with-data-science-experience)

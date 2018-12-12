@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -15,19 +15,19 @@ lastupdated: "2018-08-07"
 # 收集行動分析
 {: #mobile_analytics}
 
-{{site.data.keyword.mobileanalytics_short}} on {{site.data.keyword.cloud_notm}} 可提供開發人員、IT 管理者及商業利害關係人，對其行動應用程式的效能及其使用情形的見解。使用 {{site.data.keyword.mobileanalytics_short}} 服務，您可以：
+{{site.data.keyword.mobileanalytics_short}} on {{site.data.keyword.cloud_notm}} 可提供開發人員、管理者及商業利害關係人，對其行動應用程式的效能及其使用情形的見解。使用 {{site.data.keyword.mobileanalytics_short}} 服務，您可以：
 
- - **立即瞭解** - 即時查看效能及用量度量值。
+ - **立即瞭解** - 查看即時效能及用量度量值。
 
  - **快速實作** - 在 {{site.data.keyword.cloud_notm}} 中建立服務實例、將 SDK 新增至專案、將兩行程式碼貼入應用程式，而且您已備妥可收集許多預先定義的度量值。
 
- - **收集您想要的資料** - 使用自訂事件來檢測應用程式、探索使用者如何與應用程式互動、追蹤採購，以及監視應用程式活動。
+ - **收集您想要的資料** - 使用自訂事件來檢測應用程式、查看使用者如何與應用程式互動、追蹤花費，以及監視應用程式活動。
 
  - **檢視度量值摘要** - {{site.data.keyword.mobileanalytics_short}} 主控台提供現成圖表，而不需撰寫查詢。
 
  - **聚焦於對您重要的事物** - 依時間、配接器、應用程式、應用程式版本、OS、OS 版本或裝置模型來過濾度量值。
 
- - **快速探索問題** - 監視損毀狀態。設定重要度量值的警示觸發程式，並將警示遞送至任何 REST 端點。
+ - **快速找到問題** - 監視損毀狀態。設定重要度量值的警示觸發程式，並將警示遞送至任何 REST 端點。
 
  - **疑難排解主要原因** - 在應用程式中使用自訂記載，並自動上傳日誌，然後從主控台搜尋這些日誌。往下探查到損毀事件，以查看堆疊追蹤。
 
@@ -38,7 +38,7 @@ lastupdated: "2018-08-07"
  - iOS 8.0+ / watchOS 2.0+
  - Xcode 7.3、8.0
  - Swift 2.2 - 3.0
- - Cocoapods 或 Carthage
+ - CocoaPods 或 Carthage
 
 ## 步驟 1. 建立 {{site.data.keyword.mobileanalytics_short}} 實例
 {: #mobile_analytics_create}
@@ -50,7 +50,7 @@ lastupdated: "2018-08-07"
 
 ## 步驟 2. 安裝 iOS Swift SDK
 
-此服務提供平台專用的 SDK，用來簡化應用程式開發作業。{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK 可與 Cocoapods 或 Carthage 一同安裝。如需相關資訊，請參閱 [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)。
+此服務提供平台專用的 SDK，用來簡化應用程式開發作業。{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK 可與 CocoaPods 或 Carthage 一同安裝。如需相關資訊，請參閱 [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)。
 
 您可以使用 {{site.data.keyword.mobileanalytics_full}} SDK 來檢測您的行動應用程式。Swift SDK 適用於 iOS 及 watchOS。
 
@@ -63,7 +63,7 @@ lastupdated: "2018-08-07"
 ### CocoaPods
 {: #cocoapods}
 
-1. 遵循 GitHub 上的 [{{site.data.keyword.Bluemix_notm}} Mobile Services Swift SDK 指示 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window}，使用 Cocoapods 來安裝 `BMSAnalytics`，並將其新增至您的 Podfile。
+1. 遵循 GitHub 上的 [{{site.data.keyword.Bluemix_notm}} Mobile Services Swift SDK 指示 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window}，使用 CocoaPods 來安裝 `BMSAnalytics`，並將其新增至您的 Podfile。
 
 2. 在安裝 iOS Client SDK 之後，請[匯入並起始設定](sdk.html#initalize-ma-sdk) Analytics Client SDK。   
 
@@ -87,7 +87,7 @@ lastupdated: "2018-08-07"
 此種類可讓開發人員在整個應用程式中新增程式碼行，這些程式碼可記載自訂訊息，以協助開發和除錯。開發人員會將嚴重性/詳細層次指派給每一個日誌訊息。
 
 **自訂事件**：
-此種類包括您自行定義及應用程式特有的資料。這個資料代表您應用程式內發生的事件，例如頁面檢視、按鈕點選或應用程式內採購。除了在應用程式中起始設定 {{site.data.keyword.mobileanalytics_short}} SDK 之外，您還必須為您要追蹤的每一個自訂事件新增一行程式碼。
+此種類包括您自行定義及應用程式特有的資料。這個資料顯示您應用程式內發生的事件，例如頁面檢視、按鈕點選或應用程式內採購。除了在應用程式中起始設定 {{site.data.keyword.mobileanalytics_short}} SDK 之外，您還必須為您要追蹤的每一個自訂事件新增一行程式碼。
 
 ## 步驟 4. 識別服務認證 API 金鑰值
 {: #analytics-clientkey}
@@ -262,7 +262,7 @@ Analytics.initialize(appName, apiKey,  hasUserContext, collectLocation, [BMSAnal
 
 將分析及日誌資訊傳送至 {{site.data.keyword.mobileanalytics_short}}，即可查看[應用程式損毀資料](app-monitoring.html#monitor-app-crash)。
 
-`Analytics.send()` 方法會在**損毀**頁面上移入**損毀概觀**及**損毀**表格。藉由使用起始設定及傳送處理程序進行分析的方式來啟用圖表；不需要特殊配置。
+`Analytics.send()` 方法會在**損毀**頁面上移入**損毀概觀**及**損毀**表格。您可以使用起始設定及傳送處理程序進行分析的方式來啟用圖表。
 
 `Logger.send()` 方法會在**疑難排解**頁面上移入**損毀摘要**及**損毀詳細資料**表格。您必須藉由在應用程式碼中新增陳述式，讓您的應用程式儲存及傳送日誌，以移入圖表：
 ```
@@ -289,9 +289,9 @@ Analytics.userIdentity = "username"
 ## 步驟 12. 測試應用程式
 {: #appid_testing}
 
-所有項目都正確設定嗎？測試時間到！
+所有項目都正確配置嗎？測試時間到！
 
-1. 開啟應用程式。如果您有 Web 應用程式，請使用瀏覽器。如果您有 iOS 用戶端應用程式，則使用 Xcode 模擬器。
+1. 開啟應用程式。如果您有 Web 應用程式，請使用瀏覽器。如果您有 iOS 用戶端應用程式，請用 Xcode 模擬器開啟。
 2. 在模擬器或裝置上編譯並執行應用程式。
 3. 使用 GUI，逐步進行登入應用程式的處理程序。
 4. 移至 {{site.data.keyword.mobileanalytics_short}} 主控台，以查看應用程式的用量分析。您也可以藉由[設定警示](/docs/services/mobileanalytics/app-monitoring.html#alerts)及[監視應用程式損毀](/docs/services/mobileanalytics/app-monitoring.html#monitor-app-crash)來監視應用程式。
@@ -303,6 +303,6 @@ Analytics.userIdentity = "username"
 
  - 如需使用行動服務及 {{site.data.keyword.Bluemix_notm}} 的簡介，請參閱[開始使用 IBM Cloud 上的行動應用程式](/docs/services/mobile/index.html)。
 
- - 「入門範本套件」是運用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的所有可用入門範本套件。下載程式碼。執行應用程式！
+ - 「入門範本套件」是運用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的所有可用入門範本套件。下載程式碼。執行應用程式！
 
  - 您可以使用 [Swagger 使用者介面](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)，來快速檢閱 REST API 文件。

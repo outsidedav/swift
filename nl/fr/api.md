@@ -11,7 +11,7 @@ lastupdated: "2018-02-05"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Référence d'API 
+# Référence d'API
 {: #api}
 
 ## Services mobiles

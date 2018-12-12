@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -19,7 +19,7 @@ lastupdated: "2018-06-05"
 ## 使用 CocoaPods 進行安裝
 {: #installing_with_cocoapods}
 
-若要使用 Cocoapods 來安裝 SDK，請將其新增至您的 `Podfile`。如果您的專案還沒有 `Podfile`，請使用 `pod init` 指令。
+若要使用 CocoaPods 來安裝 SDK，請將其新增至您的 `Podfile`。如果您的專案還沒有 `Podfile`，請使用 `pod init` 指令。
 ```ruby
 use_frameworks!
 
@@ -31,7 +31,7 @@ end
 
 執行 `pod install`，然後開啟產生的 `.xcworkspace` 檔案。
 
-如需相關資訊，請參閱 [Cocoapods 手冊](https://guides.cocoapods.org/using/index.html)。
+如需相關資訊，請參閱 [CocoaPods 手冊](https://guides.cocoapods.org/using/index.html)。
 
 ## 使用 Carthage 進行安裝
 {: #installing_with_carthage}
@@ -44,7 +44,7 @@ github "<github org name>/<github project name>"
 
 執行 `carthage update`，以啟動建置程序。建置完成之後，將產生的架構新增至您的專案。 
 
-如需相關資訊，請參閱 [Carthage README](https://github.com/Carthage/Carthage#getting-started)。
+如需相關資訊，請參閱 [Carthage getting started](https://github.com/Carthage/Carthage#getting-started) 文件。
 
 ## 使用 Swift Package Manager 進行安裝
 {: #installing_with_swift_package_manager}

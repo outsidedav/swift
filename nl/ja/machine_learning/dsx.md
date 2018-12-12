@@ -14,16 +14,16 @@ lastupdated: "2018-06-04"
 
 # カスタム生成モデルによるデータ・セットの分析
 
-Watson Studio には、データ分析で協力することによりビジネス上の問題を解決するための環境やツールが用意されています。データを分析、クレンジング、および編成するために必要なツールを選択できます。ストリーミング・データの取り込み、または機械学習モデルの作成、トレーニング、およびデプロイについて説明します。Watson Studio は、さまざまな {{site.data.keyword.cloud}} サービスおよび Watson ナレッジ・カタログに統合されています。それは、資産を制御するためのポリシー管理機能を提供し、カタログすることによりそれらを検索するためのインデックスを作成します。詳しくは、https://dataplatform.ibm.com/ を参照してください。
+Watson Studio には、データ分析で協力することによりビジネス上の問題を解決するための環境やツールが用意されています。 データを分析、クレンジング、および編成するために必要なツールを選択できます。 ストリーミング・データの取り込み、または機械学習モデルの作成、トレーニング、およびデプロイについて説明します。 Watson Studio は、さまざまな {{site.data.keyword.cloud}} サービスおよび Watson ナレッジ・カタログに統合されています。それは、資産を制御するためのポリシー管理機能を提供し、カタログすることによりそれらを検索するためのインデックスを作成します。 詳しくは、https://dataplatform.ibm.com/ を参照してください。
 
-Watson Studio は、プロジェクト・ベースのアーキテクチャーを基に構造化されています。それにより、ビジネス上の問題を解決するようにリソースが編成されます。リソースには、クラウドおよびオンプレミスのデータ・ストアへの接続、データ・ファイル、コラボレーター、およびモデルのなどの分析アセットが含まれます。詳しくは、https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics を参照してください。
+Watson Studio は、プロジェクト・ベースのアーキテクチャーを基に構造化されています。それにより、ビジネス上の問題を解決するようにリソースが編成されます。 リソースには、クラウドおよびオンプレミスのデータ・ストアへの接続、データ・ファイル、コラボレーター、およびモデルのなどの分析アセットが含まれます。 詳しくは、https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics を参照してください。
 
 ## {{site.data.keyword.DSX}} の機械学習
 {: #dsx}
 
-{{site.data.keyword.DSX}} を使用することにより、モデルをトレーニングし、それらをデプロイしてから、API を使用して結果を利用することができます。それらの API は、iOS または Swift のアプリケーションで使用できます。
+{{site.data.keyword.DSX}} を使用することにより、モデルをトレーニングし、それらをデプロイしてから、API を使用して結果を利用することができます。 それらの API は、iOS または Swift のアプリケーションで使用できます。
 
-IBM Watson Machine Learning を使用すると、自分の環境をセットアップした後、モデルを作成し、それらをクラウドにデプロイし、それらをトレーニングすることができます。詳しくは、「[{{site.data.keyword.pm_full}} および {{site.data.keyword.DSX}} によるモデルの作成、デプロイ、およびトレーニング](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics)」を参照してください。
+IBM Watson Machine Learning を使用すると、自分の環境をセットアップした後、モデルを作成し、それらをクラウドにデプロイし、それらをトレーニングすることができます。 詳しくは、「[{{site.data.keyword.pm_full}} および {{site.data.keyword.DSX}} によるモデルの作成、デプロイ、およびトレーニング](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics)」を参照してください。
 
 ### チュートリアル
 - [{{site.data.keyword.pm_short}} によるロジスティック回帰モデルの作成](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics)
@@ -32,13 +32,14 @@ IBM Watson Machine Learning を使用すると、自分の環境をセットア�
 ## iOS および Swift による {{site.data.keyword.DSX}} のセットアップ
 {: #dsx_ios}
 
-1. 資格情報の統合を容易にするため、{{site.data.keyword.pm_short}} インスタンスを iOS アプリまたはバックエンド・アプリに追加する必要があります。アクセシビリティーを容易にするため、資格情報がプロジェクト・ダッシュボードに含められます。
+1. 資格情報の統合を容易にするため、{{site.data.keyword.pm_short}} インスタンスを iOS アプリまたはバックエンド・アプリに追加する必要があります。 アクセシビリティーを容易にするため、資格情報がプロジェクト・ダッシュボードに含められます。
 
 ![アプリでの機械学習機能](images/ios-machinelearning-app.png)
 
 2. アプリ・コードをダウンロードします。
 3. 初期化
-  * iOS プロジェクトでは、{{site.data.keyword.pm_short}} リソースを iOS プロジェクトに追加するだけで、資格情報がすぐにアプリに挿入されます。アプリケーションから資格情報にアクセスするには、次のコード・スニペットをコピーし、貼り付けます。また、スコアリング・エンドポイントをアプリに必ず追加するようにします。それは、モデルのデプロイメントの`「実装」`タブ内にあります。
+  * iOS プロジェクトでは、{{site.data.keyword.pm_short}} リソースを iOS プロジェクトに追加するだけで、資格情報がすぐにアプリに挿入されます。
+    アプリケーションから資格情報にアクセスするには、次のコード・スニペットをコピーし、貼り付けます。 また、スコアリング・エンドポイントをアプリに必ず追加するようにします。それは、モデルのデプロイメントの`「実装」`タブ内にあります。
 
     ```Swift
     // The url to your model's scoring endpoint
@@ -178,7 +179,7 @@ IBM Watson Machine Learning を使用すると、自分の環境をセットア�
 
 **シナリオ名:** 製品ラインの予測
 
-**シナリオの説明:** アウトドア用品を販売する会社が、製品ラインのうち顧客の関心を集めるものを予測するモデルを作成し、デプロイします。開発者のタスクは、デプロイされたモデルに対してスコアリング要求を行うことです。
+**シナリオの説明:** アウトドア用品を販売する会社が、製品ラインのうち顧客の関心を集めるものを予測するモデルを作成し、デプロイします。 開発者のタスクは、デプロイされたモデルに対してスコアリング要求を行うことです。
 
 モデルがデプロイされたら、スコアリング・エンドポイントを使用して予測分析を実行できます。
 
@@ -211,7 +212,7 @@ client.retrieveToken { token in
 ## 次のステップ
 {: #dsx_next}
 
-お疲れさまでした。これで、カスタム生成の機械学習モデルを使用してデータ・セットを分析できるようになりました。この調子で {{site.data.keyword.pm_short}} が提供する機能について、[Data science and machine learning](https://www.ibm.com/analytics/data-science/machine-learning) でさらに学習してください。
+お疲れさまでした。 これで、カスタム生成の機械学習モデルを使用してデータ・セットを分析できるようになりました。 この調子で {{site.data.keyword.pm_short}} が提供する機能について、[Data science and machine learning](https://www.ibm.com/analytics/data-science/machine-learning) でさらに学習してください。
 
 ### 関連リンク
 * [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling/index.html#using-machine-learning-with-data-science-experience)

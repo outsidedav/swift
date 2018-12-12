@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,15 +15,10 @@ lastupdated: "2018-08-17"
 # 使用 Swift 进行日志记录
 {: #logging_swift}
 
-需要日志来诊断服务发生故障的方式和原因。日志并不用于监视应用程序性能（这是度量值的用途），而是用作警报的源，这样警报包含的详细信息可多于从聚集的度量值中获得的信息。
+日志消息字符串包含微服务在日志条目创建时的状态和活动的上下文相关信息。使用日志，可以诊断服务失败的方式和原因，将[应用程序度量值](appmetrics.html)与日志配置使用后，可以更好地监视应用程序运行状况。
 
-使用云基础架构的其中一个优点是，应用程序不必再操心许多工作，例如管理日志文件。鉴于云环境中进程的瞬态性质，必须收集日志并将其发送到其他位置，通常会发送到集中位置进行分析。云环境中最一致的日志记录方式是将日志条目发送到标准输出和错误流，其余工作则交由基础架构处理。
+云环境中的进程具有瞬态性质，因此必须将日志收集并发送到其他位置，通常是一个便于分析的集中位置。在云环境中，最常用的日志记录方式是将日志条目发送到标准输出和错误流，然后由基础架构来处理其余工作。
 
-在应用程序随时间推移而变化时，所记录内容的性质可能会更改。通过使用 JSON 日志格式，您将获得以下优点：
-* 日志可建立索引，这使得搜索日志的聚集主体容易得多。
-* 日志针对变化富有弹性，因为解析不依赖于字符串中元素的位置。
-
-如果使用 JSON 格式的日志记录，在您使用命令行工具访存日志时，对于您（人类）来说，日志可能更难读一些。您可以使用环境变量来切换使用的日志格式，以便可以使用纯文本日志进行本地开发和调试。
 
 ## 向 Swift 应用程序添加日志记录
 
@@ -31,7 +26,7 @@ lastupdated: "2018-08-17"
 
 [LoggerAPI](https://github.com/IBM-Swift/LoggerAPI) 是用于为 Swift 中不同类型的记录器提供公共日志记录接口的记录器协议。Kitura 在其整个实现中会使用 `LoggerAPI`。
 
-要利用 `HeliumLogger`，请将以下内容添加到 `Package.swift` 中的 **dependencies:**，并确保将其添加到使用它的任何目标。
+要使用 `HeliumLogger`，请在 `Package.swift` 的 **dependencies:** 部分中为所有适当的目标添加以下代码：
 ```swift
 .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1")
 ```
@@ -62,7 +57,7 @@ Log.info("This is an informational log message.")
 ```
 {: screen}
 
-这些消息可在 `stdout` 中（对于本地运行）或者在日志中（对于 [ CloudFoundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs) 和 [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/) 部署）找到，可分别通过 `ibmcloud app logs --recent <APP_NAME>` 和 `kubectl logs <deployment name>` 进行访问。
+这些消息可在本地的 `stdout` 或 [CloudFoundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs) 和 [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/) 部署的日志中找到，您可以通过运行以下命令来访问这些日志：`ibmcloud app logs --recent <APP_NAME>` 和 `kubectl logs <deployment name>`。
 
 在 `/Sources/AppName/main.swift` 文件中，可以看到以下代码：
 ```swift
@@ -70,7 +65,7 @@ HeliumLogger.use(LoggerMessageType.info)
 ```
 {: codeblock}
 
-日志级别显式设置为 `.info`，以记录参考级别的消息，如应用程序启动日志。
+将日志级别显式设置为 `.info`，可记录参考级别的消息，如应用程序启动日志。
 {: tip}
 
 ## 后续步骤
@@ -81,6 +76,6 @@ HeliumLogger.use(LoggerMessageType.info)
 * [Cloud Foundry 日志](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
 * [{{site.data.keyword.openwhisk}} 日志和监视](https://console.bluemix.net/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
 
-使用日志聚集器：
+了解如何实施和使用日志聚集器：
 * [{{site.data.keyword.cloud_notm}} Log Analysis](https://console.bluemix.net/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
 * [{{site.data.keyword.cloud_notm}} Private ELK 堆栈](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)
