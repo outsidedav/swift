@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -19,7 +19,7 @@ Os SDKs do iOS do {{site.data.keyword.cloud}} suportam vários gerenciadores de 
 ## Instalando com CocoaPods
 {: #installing_with_cocoapods}
 
-Para instalar um SDK usando o Cocoapods, inclua-o no `Podfile`. Se o seu projeto ainda não tiver um `Podfile`, use o comando `pod init`.
+Para instalar um SDK usando CocoaPods, inclua-o em seu `Podfile`. Se o seu projeto ainda não tiver um `Podfile`, use o comando `pod init`.
 ```ruby
 use_estruturas!
 
@@ -31,7 +31,7 @@ end
 
 Execute `pod install` e abra o arquivo `.xcworkspace` gerado.
 
-Para obter mais informações, consulte os [Guias do Cocoapods](https://guides.cocoapods.org/using/index.html).
+Para obter mais informações, consulte os [Guias dos CocoaPods](https://guides.cocoapods.org/using/index.html).
 
 ## Instalando com Cartago
 {: #installing_with_carthage}
@@ -44,7 +44,7 @@ github "<github org name>/<github project name>"
 
 Execute `carthage update` para iniciar o processo de construção. Depois que a construção for concluída, inclua as estruturas geradas em seu projeto. 
 
-Para obter mais informações, consulte o [LEIA-ME do Carthage](https://github.com/Carthage/Carthage#getting-started).
+Para obter mais informações, consulte a documentação [Introdução ao Carthage](https://github.com/Carthage/Carthage#getting-started).
 
 ## Instalando com o gerenciador de pacote do Swift
 {: #installing_with_swift_package_manager}

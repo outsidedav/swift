@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -16,57 +16,84 @@ lastupdated: "2018-08-17"
 # Usando uma verificação de funcionamento no app Swift
 {: #healthcheck}
 
-As verificações de funcionamento fornecem um mecanismo simples para determinar se um aplicativo do lado do servidor está se comportando corretamente ou não. Muitos ambientes de implementação, como o [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) e o [Kubernetes](https://www.ibm.com/cloud/container-service), podem ser configurados para pesquisar os terminais de funcionamento periodicamente para determinar se uma instância de seu serviço está pronta ou não para aceitar tráfego.
+As verificações de funcionamento fornecem um mecanismo simples para determinar se um aplicativo do lado do servidor está se comportando adequadamente. Ambientes em nuvem como o [Kubernetes](https://www.ibm.com/cloud/container-service) e o [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) podem ser configurados para sondar terminais de funcionamento periodicamente para determinar se uma instância de seu serviço está pronta para aceitar o tráfego.
+{: shortdesc}
 
-As verificações de funcionamento geralmente são consumidas por meio de HTTP e usam códigos de retorno padrão para indicar o status `UP` ou `DOWN`. Os exemplos incluem o retorno de `200` para `UP` e `5xx` para `DOWN`. Para ser específico, `503` é usado quando o aplicativo não pode manipular solicitações ou ainda não foi iniciado (o serviço está indisponível) e `500` é usado quando o servidor encontra uma condição de erro. O valor de retorno de uma verificação de funcionamento é variável, mas uma resposta JSON mínima, como `{“status”: “UP”}` fornece consistência.
+## Visão geral da verificação de
+{: #overview}
 
-O Cloud Foundry usa um terminal de funcionamento para indicar se uma instância de serviço pode ou não manipular solicitações. No Kubernetes, um terminal de verificação de funcionamento é equivalente a um terminal `readiness`. Seu aplicativo deve definir esse terminal para ajudar a determinar as decisões de roteamento automáticas. O sucesso ou a falha desse terminal pode incluir consideração para os serviços de recebimento de dados necessários no caso de não haver fallback aceitável. Se você realmente verifica os serviços de recebimento de dados, o armazenamento em cache do resultado é, às vezes, útil, para minimizar o carregamento no sistema geral devido a verificações de funcionamento.
+As verificações de funcionamento fornecem um mecanismo simples para determinar se um aplicativo do lado do servidor está se comportando adequadamente. Elas geralmente são consumidas por meio de HTTP e usam códigos de retorno padrão para indicar o status de UP ou DOWN. O valor de retorno de uma verificação de funcionamento é variável, mas uma resposta JSON mínima, como `{"status": "UP"}`, é típica.
 
-O Kubernetes define um terminal de [atividade](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) extra, que permite que o aplicativo indique se o processo deve ou não ser reiniciado. Um subconjunto de considerações aplica-se aqui: uma verificação de `atividade` poderá falhar, se um determinado limite de utilização de memória for atingido, por exemplo. Se o seu app estiver em execução no Kubernetes, considere incluir um terminal `liviness` para assegurar que seu processo seja reiniciado quando necessário.
+O Kubernetes tem uma noção diferenciada do funcionamento do processo. Ele define duas análises:
 
-## Incluindo a verificação de funcionamento em um app Swift existente
+- Uma análise de _**prontidão**_ é usada para indicar se o processo pode manipular solicitações (é roteável).
+
+  O Kubernetes não roteia trabalho para um contêiner com uma análise de prontidão falha. Uma análise de prontidão poderá falhar se um serviço não tiver terminado de iniciar ou estiver ocupado, sobrecarregado ou for incapaz de processar solicitações.
+
+- Uma análise de _**vivacidade**_ é usada para indicar se o processo deve ser reiniciado.
+
+  O Kubernetes para e reinicia um contêiner com uma análise de vivacidade com falha. Use as análises de vivacidade para limpar os processos em um estado irrecuperável, por exemplo, se a memória estiver esgotada ou se o contêiner não parou corretamente após o travamento de um processo interno.
+
+Como uma nota para comparação, o Cloud Foundry usa um terminal de funcionamento. Se essa verificação falhar, o processo será reiniciado, mas se for bem-sucedida, as solicitações serão roteadas para ele. Nesse ambiente, o terminal é minimamente bem-sucedido quando o processo está ativo. Um tempo de espera inicial é configurado para adiar a verificação de funcionamento até que o serviço termine a inicialização para evitar ciclos de reinicialização.
+
+A seguinte tabela fornece diretrizes sobre as respostas que os terminais de prontidão, vivacidade e funcionamento singular devem fornecer.
+
+| Estado    | Prontidão                   | Vivacidade                   | Saúde                    |
+|----------|-----------------------------|----------------------------|---------------------------|
+|          | Não OK não causa carregamento       | Não OK causa reinicialização      | Não OK causa reinicialização    |
+| Iniciando | 503 - Indisponível           | 200 - OK                   | Use o atraso para evitar o teste   |
+| Ativo       | 200 - OK                    | 200 - OK                   | 200 - OK                  |
+| Parando | 503 - Indisponível           | 200 - OK                   | 503 - Indisponível         |
+| Inativo     | 503 - Indisponível           | 503 - Indisponível          | 503 - Indisponível         |
+| Com erro  | 500 - Erro do servidor          | 500 - Erro do servidor         | 500 - Erro do servidor        |
+
+## Incluindo uma verificação de funcionamento em um app Swift existente
 {: #add-healthcheck-existing}
 
 A biblioteca [Health](https://github.com/IBM-Swift/Health) facilita a inclusão de uma verificação de funcionamento no aplicativo Swift. As verificações de funcionamento são extensíveis. Para obter mais informações sobre o [armazenamento em cache](https://github.com/IBM-Swift/Health#caching) para evitar ataques DoS ou a inclusão de [verificações customizadas](https://github.com/IBM-Swift/Health#implementing-a-health-check), consulte a biblioteca [Health](https://github.com/IBM-Swift/Health).
 
-Para incluir a biblioteca Health em um app Swift existente, especifique-a na seção *dependências:* de seu arquivo `Package.swift`, certificando-se de incluí-la em todos os destinos em que seja usada:
-```swift
-  .package (url: "https: //github.com/IBM-Swift/Health.git ", .from:" 1.0.0 "),
-```
-{: codeblock}
+Para incluir a biblioteca de funcionamento em um app Swift existente, consulte as etapas a seguir:
 
-Em seguida, inclua o código de inicialização a seguir em seu aplicativo:
-```swift
-importar Saúde
+1. Especifique-o na seção *dependências:* do arquivo `Package.swift` e inclua-o em todos os destinos apropriados:
 
-= let Health = Health ()
-```
-{: codeblock}
+    ```swift
+    .package (url: "https: //github.com/IBM-Swift/Health.git ", .from:" 1.0.0 "),
+    ```
+    {: codeblock}
 
-Em seguida, inclua a definição de rota para definir o terminal de verificação de funcionamento:
-```
-router.get("/health") { request, response, next in
+2. Inclua o seguinte código de inicialização no aplicativo:
+
+    ```swift
+    importar Saúde
+
+    = let Health = Health ()
+    ```
+    {: codeblock}
+
+3. Inclua a definição de rota para definir o terminal de verificação de funcionamento:
+
+    ```swift
+    router.get("/health") { request, response, next in
   // let status = health.status.toDictionary()
   let status = health.status.toSimpleDictionary()
   if health.status.state == .UP {
-    try response.send(json: status).end()
+            try response.send(json: status).end()
   } else {
-    try response.status (.serviceUnavailable) .send (json: status) .end ()
-  }
-}
-```
-{: codeblock}
+            try response.status(.serviceUnavailable).send(json: status).end()
+        }
+    }
+    ```
+    {: codeblock}
 
-Verifique o status do app com um navegador, acessando o terminal `/health`. O código retorna uma carga útil `{"status": "UP"}`, conforme definido pelo dicionário simples.
+4. Verifique o status do app com um navegador, acessando o terminal `/health`. O código retorna uma carga útil `{"status": "UP"}`, conforme definido pelo dicionário simples.
 
-Para implementações alternativas, como o uso de **Codable** ou do dicionário padrão, consulte os [Exemplos de bibliotecas Health](https://github.com/IBM-Swift/Health#usage).
-
-## Acessando a verificação de funcionamento por meio de apps Swift Starter Kit do lado do servidor
+## Verificando o funcionamento de um app do kit do iniciador do Swift do lado do servidor
 {: #healthcheck-starterkit}
 
-Ao gerar um app Swift baseado no Kitura usando um Starter Kit, um terminal de verificação de funcionamento básico, `/health`, é incluído por padrão. O terminal alavanca o protocolo Codable disponível no Swift 4, conforme suportado pela biblioteca [Health](https://github.com/IBM-Swift/Health).
+Ao gerar um app Swift baseado no Kitura usando um Starter Kit, um terminal de verificação de funcionamento básico, `/health`, é incluído por padrão. O terminal usa o protocolo Codable disponível no Swift 4, conforme suportado pela biblioteca de [Health](https://github.com/IBM-Swift/Health).
 
-O código de inicialização básico, como a inicialização do objeto Health, ocorre em `Sources/Application.swift`, enquanto o terminal de verificação de funcionamento é fornecido pelo arquivo `/Sources/Application/Routes/HealthRoutes.swift`, que contém o código a seguir:
+O código de inicialização básico, tal como a inicialização do objeto Health, ocorre em `Sources/Application.swift`. O próprio terminal de verificação de funcionamento é fornecido pelo arquivo `/Sources/Application/Routes/HealthRoutes.swift` e usa o código a seguir:
+
 ```swift
 import LoggerAPI import Health import KituraContracts
 
@@ -85,3 +112,54 @@ func initializeHealthRoutes (app: App) {
 {: codeblock}
 
 O exemplo usa o dicionário padrão, que produz uma carga útil, como `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}` quando você acessa o terminal `/health`.
+
+## Recomendações para as análises de prontidão e de vivacidade
+
+As análises de prontidão deverão incluir a viabilidade de conexões com serviços de recebimento de dados em seu resultado se existir um fallback não aceitável para quando o serviço de recebimento de dados estiver indisponível. Isso não significa chamar a verificação de funcionamento que é fornecida pelo serviço de recebimento de dados diretamente, pois a infraestrutura verifica isso para você. Em vez disso, considere verificar o funcionamento das referências existentes que seu aplicativo tem para os serviços de recebimento de dados: essa pode ser uma conexão JMS com o WebSphere MQ ou um consumidor ou produtor Kafka inicializado. Se você verificar a viabilidade de referências internas para os serviços de recebimento de dados, armazene em cache o resultado para minimizar o impacto que a verificação de funcionamento terá em seu aplicativo.
+
+Uma análise de vivacidade, por contraste, pode ser deliberada sobre o que é verificado, pois uma falha resulta em término imediato do processo. Um terminal HTTP simples que sempre retorna `{"status": "UP"}` com o código de status `200` é uma opção razoável.
+
+### Inclua suporte para prontidão e vivacidade do Kubernetes em um app Swift
+
+Para implementações alternativas, como o uso de **Codable** ou o dicionário padrão, consulte [Exemplos de biblioteca de funcionamento](https://github.com/IBM-Swift/Health#usage). Algumas dessas implementações simplificam a criação de verificações de funcionamento extensíveis com suporte para verificações de armazenamento em cache que são executadas com relação aos serviços auxiliares. Nesse cenário, você gostaria de separar o teste de vivacidade simples da verificação de prontidão detalhada e mais robusta.
+
+## Configurando as análises de prontidão e vivacidade no Kubernetes
+
+Declare as análises de prontidão e vivacidade juntamente com a implementação do Kubernetes. As duas análises usam os mesmos parâmetros de configuração:
+
+* O kubelet aguarda por `initialDelaySeconds` antes da primeira análise.
+
+* O kubelet analise o serviço a cada `periodSeconds` segundos. O padrão é 1.
+
+* A análise atinge o tempo limite após `timeoutSeconds` segundos. O valor padrão e mínimo é 1.
+
+* A análise será bem-sucedida se obtiver êxito `successThreshold` vezes após uma falha. O valor padrão e mínimo é 1. O valor deve ser 1 para as análises de vivacidade.
+
+* Quando um pod inicia e a análise falha, o Kubernetes tenta `failureThreshold` vezes para reiniciar o pod e, em seguida, desiste. O valor mínimo é 1 e o padrão é 3.
+    - Para uma análise de vivacidade, "desistir" significa reiniciar o pod.
+    - Para uma análise de prontidão, "desistir" significa marcar o pod como `Unready`.
+
+Para evitar os ciclos de reinicialização, configure `livenessProbe.initialDelaySeconds` para ser mais longo, de forma segura, do que a inicialização do serviço. Em seguida, é possível usar um valor mais curto para `readinessProbe.initialDelaySeconds` para rotear as solicitações para o serviço assim que ele estiver pronto.
+
+Consulte o seguinte exemplo de `yaml`:
+```yaml
+spec:
+  containers:
+  - name: ...
+    image: ...
+    readinessProbe:
+      httpGet:
+        path: /health
+        port: 8080
+      initialDelaySeconds: 120
+      timeoutSeconds: 5
+    livenessProbe:
+      httpGet:
+        path: /liveness
+        port: 8080
+      initialDelaySeconds: 130
+      timeoutSeconds: 10
+      failureThreshold: 10
+```
+
+Para obter mais informações, consulte como [Configurar análises de vivacidade e prontidão](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).

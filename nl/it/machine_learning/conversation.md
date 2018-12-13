@@ -46,7 +46,7 @@ $ brew install carthage
 ## Download e creazione di dipendenze
 {: #download-and-build-dependencies}
 
-1. Utilizzando il tuo editor di testo preferito, crea un nuovo file denominato `Cartfile` nella directory root del tuo progetto (dove si trova il tuo file `.xcodeproj`). 
+1. Utilizzando il tuo editor di testo preferito, crea un nuovo file denominato `Cartfile` nella directory root del tuo progetto (dove si trova il tuo file `.xcodeproj`).
 
 2. Aggiungi una riga per specificare l'SDK Swift Watson come una dipendenza:
   ```

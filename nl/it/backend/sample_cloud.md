@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -10,12 +10,12 @@ lastupdated: "2018-06-05"
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:note:.deprecated}
+{:note: .deprecated}
 
 # Caso d'uso di iOS e logica cloud
 {: #sample_cloud}
 
-È possibile vedere un esempio di un'applicazione iOS che utilizza un BFF (Backend For Frontend) tramite l'[applicazione di esempio di condivisione di foto e immagini BluePic](https://github.com/IBM/BluePic). L'applicazione BluePic utilizza le seguenti tecnologie:
+È possibile vedere un esempio di un'applicazione iOS che utilizza un BFF (Backend For Frontend) tramite l'[applicazione di esempio di condivisione di immagini BluePic](https://github.com/IBM/BluePic). L'applicazione BluePic utilizza le seguenti tecnologie:
 
 * Object Storage e Cloudant per archiviare i dati immagine.
 * Watson Visual Recognition e il servizio IBM Weather Company per aggiungere ulteriori informazioni alle immagini.

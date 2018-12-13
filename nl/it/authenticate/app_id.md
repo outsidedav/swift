@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -16,29 +16,32 @@ lastupdated: "2018-08-09"
 
 # Aggiunta dell'autenticazione utente
 
-La sicurezza delle applicazioni può essere incredibilmente complicata. Per la maggior parte degli sviluppatori, è una delle parti più difficili della creazione di un'applicazione. Come fai a essere sicuro che stai proteggendo le informazioni dei tuoi utenti? Integrando {{site.data.keyword.appid_full}} nelle tue applicazioni, puoi proteggere le risorse e aggiungere l'autenticazione, anche quando non hai tanta esperienza nel campo della sicurezza.
+La sicurezza delle applicazioni è incredibilmente complicata. Per la maggior parte degli sviluppatori, è una delle attività più difficili della creazione di un'applicazione. Come fai a essere sicuro che stai proteggendo le informazioni dei tuoi utenti? Integrando {{site.data.keyword.appid_full}} nelle tue applicazioni, puoi proteggere le risorse e aggiungere l'autenticazione, anche quando non hai tanta esperienza nel campo della sicurezza.
 
-Richiedendo agli utenti di eseguire l'accesso, puoi memorizzare i dati utente quali le preferenze dell'applicazione (o le informazioni dai profili social pubblici) e sfruttare quindi tali dati per personalizzare l'esperienza di ciascun utente nell'applicazione. {{site.data.keyword.appid_short_notm}} fornisce un framework di accesso per te ma puoi anche portare le tue schermate di accesso personalizzate da utilizzare con cloud directory.
+Richiedendo agli utenti di eseguire l'accesso, puoi memorizzare i dati utente quali le preferenze dell'applicazione (o le informazioni dai profili social pubblici) e utilizzare quindi tali dati per personalizzare l'esperienza di ciascun utente nell'applicazione. {{site.data.keyword.appid_short_notm}} fornisce un framework di accesso per te ma puoi anche portare le tue schermate di accesso personalizzate da utilizzare con cloud directory.
 
 Per tutti i modi in cui puoi utilizzare {{site.data.keyword.appid_short_notm}} e le informazioni sull'architettura, vedi [Informazioni su {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
 
 ## Prima di cominciare
+{: #before}
 
 Assicurati innanzitutto di disporre dei seguenti prerequisiti pronti a essere utilizzati:
- * CocoaPods (versione 1.1.0 o superiore)
- * iOS (versione 9 o superiore)
- * MacOS (versione 10.11.5 o superiore)
- * Xcode (versione 9.0.1 o superiore)
+* CocoaPods (versione 1.1.0 o superiore)
+* iOS (versione 9 o superiore)
+* MacOS (versione 10.11.5 o superiore)
+* Xcode (versione 9.0.1 o superiore)
 
 ## Passo 1: Creazione di un'istanza di {{site.data.keyword.appid_short_notm}}
+{: #create_instance}
 
-Provisioning di un'istanza del servizio:
+Crea un'istanza del servizio {{site.data.keyword.appid_short_notm}}:
 
 1. Nel catalogo [{{site.data.keyword.cloud_notm}}](https://console.bluemix.net/catalog/), seleziona {{site.data.keyword.appid_short_notm}}. Viene visualizzata la schermata di configurazione del servizio.
 2. Assegna un nome alla tua istanza del servizio oppure utilizza il nome preimpostato.
 3. Seleziona il tuo piano dei prezzi e fai clic su **Crea**.
 
 ## Passo 2: Installazione dell'SDK Swift iOS
+{: #install_sdk}
 
 Il servizio fornisce un SDK per semplificare la codifica della tua applicazione. L'SDK deve essere installato nel tuo codice dell'applicazione.
 
@@ -66,22 +69,23 @@ Dopo che hai inizializzato l'SDK nella tua applicazione, puoi iniziare a configu
 1. Vai a **Project Settings > Capabilities > Keychain sharing** e abilita Keychain Sharing nel tuo progetto Xcode.
 
 2. Vai a **Project Settings > Info >URL Types** e aggiungi il seguente valore sia alla casella di testo **URL Scheme** che a quella **Identifier**.
-    ```
-    $(PRODUCT_BUNDLE_IDENTIFIER)
-    ```
-    {: pre}
+  ```
+  $(PRODUCT_BUNDLE_IDENTIFIER)
+  ```
+  {: codeblock}
 
 3. Aggiungi la seguente istruzione import al tuo file `AppDelegate.swift`.
-    ```swift
-    import BluemixAppID
-    ```
-    {:pre}
+  ```swift
+  import BluemixAppID
+  ```
+  {: codeblock}
 
-4. Passa i parametri di ID tenant e regione per inizializzare l'SDK. Un'ubicazione comune, sebbene non obbligatoria, in cui posizionare il codice è nel metodo `application:didFinishLaunchingWithOptions` di AppDelegate nella tua applicazione.
-    ```swift
-    AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
-    ```
-    {: pre}
+4. Passa i parametri `tenant ID` e `region` per inizializzare l'SDK. Un'ubicazione comune, sebbene non obbligatoria, in cui posizionare il codice è nel metodo `application:didFinishLaunchingWithOptions` di `AppDelegate` nella tua applicazione.
+  ```swift
+  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  ```
+  {: codeblock}
+  
   <table>
     <thead>
       <th colspan=2><img src="images/idea.png" alt=""/> Descrizione dei componenti dei comandi </th>
@@ -93,7 +97,7 @@ Dopo che hai inizializzato l'SDK nella tua applicazione, puoi iniziare a configu
       </tr>
       <tr>
         <td><em>AppID_region</em></td>
-        <td>La regione {{site.data.keyword.appid_short_notm}} è la regione IBM Cloud in cui stai lavorando con il servizio. Questa regione è disponibile nel dashboard e può essere <em>AppID.REGION_US_SOUTH</em>,<em>AppID.REGION_SYDNEY</em>,<em>AppID.REGION_UK</em>.</td>
+        <td>La regione {{site.data.keyword.appid_short_notm}} è la regione {{site.data.keyword.cloud_notm}} in cui stai lavorando con il servizio. Questa regione è disponibile nel dashboard e può essere <em>AppID.REGION_US_SOUTH</em>,<em>AppID.REGION_SYDNEY</em>,<em>AppID.REGION_UK</em>.</td>
       </tr>
     </tbody>
   </table>
@@ -104,7 +108,7 @@ Dopo che hai inizializzato l'SDK nella tua applicazione, puoi iniziare a configu
             return AppID.sharedInstance.application(application, open: url, options: options)
         }
     ```
-    {: pre}
+    {: codeblock}
 
 ## Passo 4. Gestione dell'esperienza di accesso
 {: #managing-signin-appid}
@@ -272,4 +276,4 @@ Problemi? Controlla [Risoluzione dei problemi di {{site.data.keyword.appid_short
 Ottimo lavoro. Hai aggiunto un livello di sicurezza alla tua applicazione. Non fermarti ora e continua provando una delle seguenti opzioni:
 
 * Scopri di più e avvaliti di tutte le funzioni che {{site.data.keyword.appid_short_notm}} ha da offrire, [controlla la documentazione](/docs/services/appid/index.html)!
-* I kit starter sono uno dei modi più rapidi per avvalerti delle funzionalità di IBM Cloud. Visualizza i kit starter disponibili nel [dashboard degli sviluppatori di applicazioni mobili](https://console.bluemix.net/developer/mobile/dashboard). Scarica il codice. Esegui l'applicazione!
+* I kit starter sono uno dei modi più rapidi per utilizzare le funzioni di {{site.data.keyword.cloud_notm}}. Visualizza i kit starter disponibili nel [dashboard degli sviluppatori di applicazioni mobili](https://console.bluemix.net/developer/mobile/dashboard). Scarica il codice. Esegui l'applicazione!

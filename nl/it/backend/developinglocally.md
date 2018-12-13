@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -23,17 +23,17 @@ Per sviluppare in locale, devi installare la {{site.data.keyword.dev_cli_notm}}.
 ```
 curl -sL https://ibm.biz/idt-installer | bash
 ```
-{:codeblock}
+{: codeblock}
 
 Vedi il documento relativo alla [Configurazione della CLI IBM Cloud Developer Tools](/docs/cli/idt/setting_up_idt.html) per ulteriori informazioni sulla configurazione e l'utilizzo della {{site.data.keyword.dev_cli_notm}}.
 
 ## Richiamo delle credenziali del servizio
 
-Dopo che hai clonato la tua applicazione da Git, devi richiamare le credenziali per i servizi associati alla tua applicazione poiché non sono memorizzate nel repository git per la tua applicazione. Il richiamo delle credenziali consente l'utilizzo dei servizi associati. Puoi facilmente scaricare le credenziali eseguendo questo comando nella root della directory dell'applicazione:
+Dopo che hai clonato la tua applicazione da Git, devi richiamare le credenziali per i servizi associati alla tua applicazione poiché non sono memorizzate nel repository Git per la tua applicazione. Il richiamo delle credenziali consente l'utilizzo dei servizi associati. Puoi facilmente scaricare le credenziali eseguendo questo comando nella root della directory dell'applicazione:
 ```
 ibmcloud dev get-credentials
 ```
-{:codeblock}
+{: codeblock}
 
 ## Creazione, esecuzione e sviluppo della tua applicazione
 
@@ -42,13 +42,13 @@ ibmcloud dev get-credentials
   ```
   ibmcloud dev build
   ```
-  {:codeblock}
+  {: codeblock}
 
 2. **Esegui** - dopo una creazione eseguita con esito positivo, puoi eseguire la tua applicazione in un contenitore locale con il seguente comando:
   ```
   ibmcloud dev run
   ```
-  {:codeblock}
+  {: codeblock}
 
   Se il comando viene eseguito correttamente, vengono visualizzati un host e una porta locali per visualizzare la pagina di destinazione della tua applicazione.
 
@@ -56,4 +56,4 @@ ibmcloud dev get-credentials
   ```
   ibmcloud dev deploy
   ```
-  {:codeblock}
+  {: codeblock}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,15 +15,10 @@ lastupdated: "2018-08-17"
 # Registrazione in Swift
 {: #logging_swift}
 
-I log sono richiesti per diagnosticare come e perché i servizi hanno esito negativo. I log non sono concepiti per essere utilizzati per il monitoraggio delle prestazioni dell'applicazione, che è quello a cui servono le metriche, ma possono essere utilizzati come una origine per gli avvisi, che possono quindi includere più dettagli di quelli che puoi ottenere dalle metriche aggregate.
+I messaggi di log sono stringhe con informazioni contestuali sullo stato e sull'attività del microservizio nel momento in cui viene creata la voce di log. I log sono necessari per diagnosticare come e perché i servizi hanno esito negativo e hanno un ruolo di supporto per le [metriche dell'applicazione](appmetrics.html) nel monitoraggio dell'integrità dell'applicazione.
 
-Uno dei vantaggi derivanti dall'utilizzare l'infrastruttura cloud è che la tua applicazione non deve più preoccuparsi di molte cose, quali ad esempio la gestione del file di log. Data la natura transitoria dei processi negli ambienti cloud, i log devono essere raccolti e inviati altrove, di norma a un'ubicazione centralizzata per l'analisi. Il modo più congruente per registrare nei log negli ambienti cloud consiste nell'inviare le voci di log a flussi di output e di errore standard e lasciare che l'infrastruttura gestisca il resto.
+Data la natura transitoria dei processi negli ambienti cloud, i log devono essere raccolti e inviati altrove, di norma a un'ubicazione centralizzata per l'analisi. Il modo più congruente per registrare negli ambienti cloud consiste nell'inviare le voci di log a flussi di output e di errore standard che lasciano all'infrastruttura di gestire il resto.
 
-Man mano che la tua applicazione si evolve nel tempo, la natura di quanto registri nei log può cambiare. Utilizzando un formato di log JSON, ottieni i seguenti vantaggi:
-* I log sono indicizzabili, il che rende molto più semplice la ricerca in un corpo aggregato di log.
-* I log sono resilienti alla modifica, in quanto l'analisi non dipende dalla posizione degli elementi in una stringa.
-
-L'utilizzo della registrazione con formattazione JSON puoi rendere i log un po' più difficili da leggere per te, quando utilizzi gli strumenti di riga di comando per recuperare i log. Puoi utilizzare le variabili di ambiente per alternare il formato di log che viene utilizzato in modo da poter avere dei log in testo semplice per lo sviluppo e il debug locali.
 
 ## Aggiunta della registrazione nei log alla tua applicazione Swift
 
@@ -31,7 +26,7 @@ L'utilizzo della registrazione con formattazione JSON puoi rendere i log un po' 
 
 [LoggerAPI](https://github.com/IBM-Swift/LoggerAPI) è il protocollo logger che fornisce un'interfaccia di registrazione comune per diversi tipi di logger in Swift. Kitura utilizza `LoggerAPI` in tutta la sua implementazione.
 
-Per avvalerti di `HeliumLogger`, aggiungi quanto segue alla sezione **dependencies:** nel tuo `Package.swift`, assicurandoti di aggiungerlo a qualsiasi destinazione dove se ne fa uso.
+Per utilizzare `HeliumLogger`, aggiungi il seguente codice alla sezione **dependencies:** nel tuo `Package.swift` per tutte le destinazioni appropriate:
 ```swift
 .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1")
 ```
@@ -53,7 +48,7 @@ Nell'esempio fornito, il [livello di log](http://ibm-swift.github.io/HeliumLogge
 
 Per ulteriori informazioni sulla personalizzazione dei messaggi di log, consulta la [documentazione di riferimento della API HeliumLogger](http://ibm-swift.github.io/HeliumLogger/).
 
-## Registrazione con StarterKits
+## Registrazione con i kit starter
 {: #monitoring}
 
 Le applicazioni Swift che vengono create utilizzando il servizio dell'applicazione {{site.data.keyword.cloud_notm}} vengono utilizzate con `HeliumLogger` per impostazione predefinita. L'esecuzione dell'applicazione in modo nativo oppure in un ambiente cloud produce il seguente output:
@@ -62,7 +57,7 @@ Le applicazioni Swift che vengono create utilizzando il servizio dell'applicazio
 ```
 {: screen}
 
-Questi messaggi si trovano in `stdout` dall'esecuzione in locale oppure nei log per le distribuzioni [CloudFoundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs) e [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/), a cui si accede, rispettivamente, mediante `ibmcloud app logs --recent <APP_NAME>` e `kubectl logs <deployment name>`.
+Questi messaggi si trovano in `stdout` in locale oppure nei log per le distribuzioni [CloudFoundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs) e [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/), a cui si accede, rispettivamente, mediante `ibmcloud app logs --recent <APP_NAME>` e `kubectl logs <deployment name>`.
 
 Nel file `/Sources/AppName/main.swift`, puoi vedere il seguente codice:
 ```swift
@@ -73,7 +68,7 @@ HeliumLogger.use(LoggerMessageType.info)
 Il livello di log è esplicitamente impostato su `.info` per registrare i messaggi di livello informativo come i log di avvio applicazione.
 {: tip}
 
-## Passi successivi 
+## Passi successivi
 {: #next_steps}
 
 Ulteriori informazioni sulla visualizzazione dei log in ciascuno dei nostri ambienti di distribuzione.
@@ -81,6 +76,6 @@ Ulteriori informazioni sulla visualizzazione dei log in ciascuno dei nostri ambi
 * [Log Cloud Foundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
 * [{{site.data.keyword.openwhisk}} Log e monitoraggio](https://console.bluemix.net/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
 
-Utilizzando un aggregatore di log:
+Scopri come implementare ed utilizzare un aggregatore di log:
 * [Analisi dei log {{site.data.keyword.cloud_notm}}](https://console.bluemix.net/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
 * [Stack ELK privato {{site.data.keyword.cloud_notm}}](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

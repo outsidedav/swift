@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -23,17 +23,17 @@ Para desenvolver localmente, deve-se instalar o {{site.data.keyword.dev_cli_notm
 ```
 curl -sL https://ibm.biz/idt-installer | bash
 ```
-{:codeblock}
+{: codeblock}
 
 Consulte [Configurando a CLI do IBM Cloud Developer Tools](/docs/cli/idt/setting_up_idt.html) para saber mais sobre a configuração e o uso do {{site.data.keyword.dev_cli_notm}}.
 
 ## Recuperando as Credenciais de Serviço
 
-Depois de clonar seu aplicativo do Git, deve-se recuperar as credenciais para serviços ligados a seu aplicativo, já que não são armazenados no repositório do git de seu aplicativo. Recuperar as credenciais permite o uso de serviços ligados. É possível fazer download facilmente das credenciais executando o comando a seguir na raiz do diretório de aplicativo:
+Após clonar o aplicativo por meio do Git, deve-se recuperar as credenciais para os serviços que estão ligados ao aplicativo, pois elas não são armazenadas no repositório Git para o seu aplicativo. Recuperar as credenciais permite o uso de serviços ligados. É possível fazer download facilmente das credenciais executando o comando a seguir na raiz do diretório de aplicativo:
 ```
 ibmcloud dev get-credentials
 ```
-{:codeblock}
+{: codeblock}
 
 ## Construindo, Executando e Implementando seu Aplicativo
 
@@ -42,13 +42,13 @@ ibmcloud dev get-credentials
   ```
   ibmcloud dev build
   ```
-  {:codeblock}
+  {: codeblock}
 
 2. **Executar** - Após uma construção bem-sucedida, é possível executar o aplicativo em um contêiner local com o comando a seguir:
   ```
   ibmcloud dev run
   ```
-  {:codeblock}
+  {: codeblock}
 
   Um host e uma porta locais para visualizar a página de entrada do seu aplicativo serão exibidos se o comando for executado com êxito.
 
@@ -56,4 +56,4 @@ ibmcloud dev get-credentials
   ```
   ibmcloud dev deploy
   ```
-  {:codeblock}
+  {: codeblock}

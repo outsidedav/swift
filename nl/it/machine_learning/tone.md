@@ -102,7 +102,7 @@ Ora sei pronto a iniziare a lavorare con l'SDK Swift Watson nella tua applicazio
 {: #analyze-text-in-your-app}
 
 1. Apri il file `ViewController.swift` in Xcode.
-2. Aggiungi un'istruzione import per Tone Analyzer:
+2. Aggiungi un'istruzione import per Tone Analyzer: 
     ```swift
     import ToneAnalyzerV3
     ```

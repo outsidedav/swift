@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-27"
 
 ---
 {:new_window: target="_blank"}
@@ -16,7 +16,7 @@ lastupdated: "2018-08-09"
 # Sviluppo Apple su {{site.data.keyword.cloud_notm}}
 {: #ios_dev}
 
-{{site.data.keyword.cloud}} offre soluzioni e servizi per mettere a disposizione degli sviluppatori e delle applicazioni Swift la protezione, l'intelligenza artificiale e il valore richiesti dai loro clienti. Con un ampio portfolio di offerte ed SDK, puoi avvalerti di questi servizi e immettere rapidamente sul mercato le tue applicazioni all'avanguardia.
+{{site.data.keyword.cloud}} offre soluzioni e servizi per permettere agli sviluppatori e alle applicazioni Swift di utilizzare la protezione, l'intelligenza artificiale e il valore richiesti dai loro clienti. Con un ampio portfolio di offerte ed SDK, puoi avvalerti di questi servizi e immettere rapidamente sul mercato le tue applicazioni all'avanguardia.
 
 ## Una singola piattaforma di sviluppo: IBM Cloud
 {: #platform}
@@ -33,7 +33,7 @@ Le funzionalità per gli sviluppatori integrate in {{site.data.keyword.cloud_not
 
 * Il [servizio Continuous Delivery di **{{site.data.keyword.cloud_notm}}**](../services/ContinuousDelivery/index.html#cd_getting_started) configura una toolchain devops per automatizzare la fornitura continua della tua applicazione. Puoi migliorare facilmente la toolchain per includere funzioni di gestione come il monitoraggio, la registrazione, la traccia e la segnalazione. Puoi anche applicare il machine learning avanzato alla tua toolchain utilizzando il [servizio DevOps Insights](../services/DevOpsInsights/index.html#gettingstarted).
 
-La piattaforma {{site.data.keyword.cloud_notm}} offre molte più funzionalità e può essere utilizzata in {{site.data.keyword.cloud_notm}} come tua piattaforma di sviluppo completa.
+La piattaforma {{site.data.keyword.cloud_notm}} offre molte più funzionalità e può essere utilizzata come tua piattaforma di sviluppo completa.
 
 ## Panoramica delle funzionalità di {{site.data.keyword.cloud_notm}}
 {: #capabilities}

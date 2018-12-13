@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -16,13 +16,13 @@ lastupdated: "2018-08-07"
 # Gerenciando Liberações de Recursos do
 {: #mobile_applaunch}
 
-O {{site.data.keyword.engage_full}} permite que os desenvolvedores construam apps envolventes controlando o alcance e a apresentação de recursos de app que podem fornecer métricas mensuráveis. O serviço ajuda os desenvolvedores a remover o acoplamento que existe hoje entre o lançamento do recurso do app e as atualizações do app para a produção. Agora é possível publicar recursos sem expô-los à produção para liberar gradualmente novas versões de um app de maneira controlada. Com o serviço {{site.data.keyword.engage_short}}, os proprietários de app têm controle total sobre o lançamento do recurso para um segmento de destino.
+O {{site.data.keyword.engage_full}} permite que os desenvolvedores construam aplicativos de engajamento controlando o alcance e lancem os recursos de app que podem fornecer métricas mensuráveis. O serviço ajuda os desenvolvedores a remover o acoplamento que existe hoje entre o lançamento do recurso do app e as atualizações do app para produção. Agora é possível publicar recursos sem expô-los à produção para liberar gradualmente novas versões de um app de maneira controlada. Com o serviço {{site.data.keyword.engage_short}}, os proprietários de app têm controle total sobre o lançamento do recurso para um segmento de destino.
 
-O serviço {{site.data.keyword.engage_short}} define um recurso, cria um público baseado em plataformas de dispositivo (incluindo atributos de público customizados) e, finalmente, define um engajamento que coreografa a sincronização e o posicionamento do recurso. Depois que os SDKs são usados, junto aos atributos de recurso e de métricas incorporados no aplicativo, o serviço começa a medir as experiências do público. Agora é possível alavancar seu app com base nessas informações para criar engajamentos do cliente customizados em várias categorias de usuários do app.
+O serviço {{site.data.keyword.engage_short}} define um recurso, cria um público baseado em plataformas de dispositivo (incluindo atributos de público customizados) e, finalmente, define um engajamento que coreografa a sincronização e o posicionamento do recurso. Depois que os SDKs são usados, junto aos atributos de recurso e de métricas incorporados no aplicativo, o serviço começa a medir as experiências do público. Agora é possível usar o app com base nessas informações para criar engajamentos do cliente customizados em várias categorias de usuários do app.
 
-![Visão geral Engajamento cognitivo](images/process_app_launch.png) Figura 1. Visão geral do ciclo de vida do serviço {{site.data.keyword.engage_short}}
+![Visão geral do Cognitive Engage](images/process_app_launch.png) Figura 1. Visão geral do ciclo de vida do serviço {{site.data.keyword.engage_short}}
 
-Os recursos dos serviços do  {{site.data.keyword.engage_short}}  são:
+Consulte os seguintes recursos do serviço {{site.data.keyword.engage_short}}:
 
  - **Acelerar o recurso de implementação **
 
@@ -30,7 +30,7 @@ Os recursos dos serviços do  {{site.data.keyword.engage_short}}  são:
 
  - **Segmento de Público **
 
-    Os segmentos de usuário podem ser definidos com base em atributos demográficos, contextuais e comportamentais. Como alternativa, os recursos podem ser apresentados para determinada porcentagem de toda a base de usuários. Os principais indicadores de desempenho podem ser definidos para cada recurso e código do lado do cliente para medir os resultados.
+    Os segmentos de usuário podem ser definidos com base em atributos demográficos, contextuais e comportamentais. Também é possível lançar recursos para determinada porcentagem da base do usuário inteira. Os principais indicadores de desempenho podem ser definidos para cada recurso e código do lado do cliente para medir os resultados.
 
  - **Adaptar com base no contexto do aplicativo **
 
@@ -52,7 +52,7 @@ Primeiro, assegure-se de que tenha os seguintes pré-requisitos prontos para exe
  - iOS 10 +
  - Xcode 9
  - Swift 3.2-4
- - Cocoapods ou Cartago
+ - CocoaPods ou Carthage
 
 ## Etapa 1. Criando uma instância do  {{site.data.keyword.engage_short}}
 {: ##app_launch_create}
@@ -60,14 +60,15 @@ Primeiro, assegure-se de que tenha os seguintes pré-requisitos prontos para exe
 1. No catálogo do {{site.data.keyword.cloud_notm}}, clique em **Mobile** > **Ativação do app**. A tela de configuração de serviço é aberta.
 2. Dê um nome à sua instância de serviço ou use o nome de pré-configuração.
 3. Clique em **Criar**.
-4. Na área de janela de navegação, clique em **Conexões** para selecionar um app e ligá-lo ao seu serviço. É possível ligar a instância de serviço ao seu app posteriormente se ele não estiver vinculado durante a criação.
+4. Na área de janela de navegação, clique em **Conexões** para selecionar um app e ligá-lo a seu serviço. É possível ligar a instância de serviço ao seu app posteriormente se ele não estiver vinculado durante a criação.
 
 ## Etapa 2. Inicializando seu app
 {: #step2}
-O serviço fornece SDKs específicos de plataforma para simplificar o desenvolvimento de aplicativo. Os SDKs do {{site.data.keyword.cloud_notm}} Mobile Services Swift podem ser instalados com Cocoapods ou Carthage.
+
+O serviço fornece SDKs específicos de plataforma para simplificar o desenvolvimento de aplicativo. Os SDKs do {{site.data.keyword.cloud_notm}} Mobile Services Swift podem ser instalados com o CocoaPods ou o Carthage.
 
 1. Clique em **Configurações**.
-2. Instale o  [ SDK ](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Para obter mais informações, consulte o leia-me que inclui as etapas de instalação e os conceitos técnicos.
+2. Instale o  [ SDK ](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Para obter mais informações, consulte o arquivo `README` que inclui as etapas de instalação e os conceitos técnicos.
 3. Copie as chaves de configuração para inicializar o app. Use o segredo do app, o GUID do app e o segredo do cliente para configurar o app e criar engajamentos.
 
 ## Etapa 3. Criando um Recurso
@@ -79,9 +80,9 @@ O serviço {{site.data.keyword.engage_short}} cria e testa respostas para recurs
 
 Para criar um recurso, conclua as etapas a seguir: 
 1. Na área de janela de navegação, clique em **Recursos** > **Criar novo recurso**.
-2. Atualize o formulário Criar novo recurso e métricas com um nome e uma descrição do recurso. Também é possível definir as propriedades do recurso e incluir métricas para medir o impacto de seu engajamento. Clique em **Edição em massa** para incluir múltiplas propriedades editando o JSON.
+2. Atualize o formulário Criar novo recurso e métricas com um nome de recurso e uma descrição. Também é possível definir as propriedades do recurso e incluir métricas para medir o impacto de seu engajamento. Clique em **Edição em massa** para incluir múltiplas propriedades editando o JSON.
 3. Clique em **Criar**. O novo recurso agora aparece no painel Recursos.
-4. Ative o recurso depois que ele for desenvolvido.
+4. Ative o recurso depois de ele ser desenvolvido.
 5. Para permitir que um recurso seja usado como engajamento, clique no Recurso criado.
 6. Na janela Detalhes do recurso, escolha Atualizar status de seu recurso para **Pronto**.
 7. Clique em  ** Atualizar Status **.
@@ -97,26 +98,24 @@ A janela Detalhes do recurso pode exportar o recurso como um arquivo JSON, que p
 
 Para criar um público, conclua as etapas a seguir:
 
-1. Crie um  ** atributo de público **:
+### Criando um **atributo de público**:
 
-	a. Clique em **Público** > **Criar Atributo**.
-	b. Forneça os seguintes valores:
-		- **Nome**: forneça um nome apropriado para o atributo.
-		- **Descrição**: uma breve descrição sobre o atributo.
-		- ** Tipo **: Escolha o tipo de atributo.
-		- **Valores permitidos**: insira os valores de atributo que você gostaria de usar.
+1. Clique em **Público** > **Criar Atributo**.
+2. Forneça os seguintes valores:
+  * **Nome**: forneça um nome apropriado para o atributo.
+  * **Descrição**: uma breve descrição sobre o atributo.
+  * ** Tipo **: Escolha o tipo de atributo.
+  * **Valores permitidos**: insira os valores de atributo que você gostaria de usar.
 
-  É possível optar por criar vários atributos de público, conforme listado na imagem a seguir, com base em sua necessidade.
+  É possível optar por criar mais de um atributo de público, conforme listado na imagem a seguir, com base em seu requisito.
 
+### Criando um **público**:
 
-2. Crie um  ** público **:
-
-	a. Clique em  ** Criar Audiência **.
-	b. Forneça um nome apropriado e uma descrição na janela Novo público.
-	c. Selecione um atributo e clique em  ** Incluir **.
-	d. Escolha as opções necessárias dos atributos listados.
-	e. Clique em  ** Salvar **.
-
+1. Clique em  ** Criar Audiência **.
+2. Forneça um nome apropriado e uma descrição na janela Novo público.
+3. Selecione um atributo e clique em  ** Incluir **.
+4. Escolha as opções necessárias dos atributos listados.
+5. Clique em  ** Salvar **.
 
 Agora é possível criar um Engagement.
 
@@ -135,16 +134,15 @@ As apresentações do recurso podem ser planejadas e coordenadas definindo-se um
 Conclua as etapas a seguir para criar um engajamento usando o Controle de recurso:
 
 1. É possível criar um engajamento usando um dos métodos a seguir:
-	- Clique em **Engajamentos** na área de janela de navegação.
-	- Selecione **Criar engajamentos** no novo Recurso criado.
-	- Na área de janela de navegação, clique em **Visão geral** > **Criar novo engajamento**.
+  - Clique em **Engajamentos** na área de janela de navegação.
+  - Selecione **Criar engajamentos** no novo Recurso criado.
+  - Na área de janela de navegação, clique em **Visão geral** > **Criar novo engajamento**.
 
   A janela Novo Engagement aparece.
 
 2. Forneça um nome e uma descrição para o seu novo engajamento. Assegure-se de que você dê um nome exclusivo ao engajamento e não um que já esteja listado em Engajamentos.
-
-	a. ** Selecione o Tipo de Compromisso **  como  ** Controle de Recurso **.
-	b. Para executar um experimento controlado com múltiplas variantes do recurso, selecione **Teste A/B** em **Selecionar tipo de experimento**. Clique em  ** Avançar **.
+  - ** Selecione o Tipo de Compromisso **  como  ** Controle de Recurso **.
+  - Para executar um experimento controlado com mais de uma variante do recurso, selecione **Teste A/B** em **Selecionar tipo de experimentação**. Clique em  ** Avançar **.
 
 3. Selecione o Recurso que você criou. Também é possível optar por incluir e definir as variantes que você possa querer experimentar. Clique em  ** Avançar **.
 
@@ -162,34 +160,33 @@ Por meio desse engajamento, um proprietário de app pode enviar notificações p
 
 As mensagens podem ser destinadas a todos os usuários do aplicativo ou para um conjunto específico de usuários e dispositivos. Para cada mensagem enviada para o serviço, o público desejado recebe uma notificação.
 
-As mensagens no app podem ser planejadas definindo-se uma data e hora de início ou encerramento. Também é possível planejá-las com base em um evento. Essas mensagens são mais customizadas à medida que se baseiam em insights analíticos sobre a opção, as interações, o dispositivo, os logs de aplicativo do usuário, e assim por diante.
+As mensagens no app podem ser planejadas definindo-se uma data e hora de início ou encerramento. Também é possível planejá-las com base em um evento. Essas mensagens são mais customizadas, pois se baseiam em insights da análise de dados sobre as opções, as interações, os dispositivos e os logs de aplicativo do usuário e muito mais.
 
-Em mensagens app pode ser usado para:
+Consulte os seguintes exemplos de mensagem no app:
 
 - Enviar mensagens customizadas.
 - Enviar mensagens para usuários que desativaram as notificações push.
 - Solicitar feedback ou envolver usuários em uma conversa.
-- Envie mensagens relevantes, descobrindo o que o usuário está procurando.
+- Enviar mensagens relevantes com base no que o usuário está procurando.
 - Acione clientes ativos e leais.
-- Informar os usuários sobre atualizações de app (ativação de um novo recurso), e assim por diante.
+- Informar os usuários sobre as atualizações do app (ativação de um novo recurso).
 
 ![GIF animado](images/in-app-engagement_animated.gif){: gif}
 
 Conclua as etapas a seguir para criar um engajamento que use a opção Sistema de mensagens:
 
 1. É possível criar um engajamento usando um dos métodos a seguir:
-	- Clique em **Engajamentos** na área de janela de navegação.
-	- Selecione **Criar engajamento** no novo Recurso criado.
-	- Na área de janela de navegação, clique em **Visão geral** > **Criar novo engajamento**.
+  - Clique em **Engajamentos** na área de janela de navegação.
+  - Selecione **Criar engajamento** no novo Recurso criado.
+  - Na área de janela de navegação, clique em **Visão geral** > **Criar novo engajamento**.
 
   A janela Novo Engagement aparece.
 
 2. Forneça um nome e uma descrição para o seu novo engajamento. Assegure-se de fornecer um nome exclusivo ao engajamento, e não um que já esteja listado em Engajamentos.
+  - **Selecionar Tipo de Compromisso** como **Em-Mensagens App**
+  - Para executar um experimento controlado com múltiplas variantes do recurso de sistema de mensagens, selecione **Teste A/B** em **Selecionar tipo de experimento**. Clique em  ** Avançar **.
 
-	a. **Selecionar Tipo de Compromisso** como **Em-Mensagens App**
-	b. Para executar um experimento controlado com múltiplas variantes do recurso de sistema de mensagens, selecione **Teste A/B** em **Selecionar tipo de experimento**. Clique em  ** Avançar **.
-
-3. Preencha as propriedades de mensagem e clique em **Avançar**.
+3. Insira as propriedades de mensagem e clique em **Avançar**.
 
 4. **Selecione o público** e a porcentagem de público que deseja alcançar. Clique em  ** Avançar **.
 
@@ -197,16 +194,17 @@ Conclua as etapas a seguir para criar um engajamento que use a opção Sistema d
 
 6. Selecione **Evento** e clique em **Avançar**.
 
-7. Mapeie os elementos para as métricas que você deseja medir. Selecione o elemento e preencha os detalhes da métrica. Clique em  ** Salvar **.
+7. Mapeie os elementos para as métricas que você deseja medir. Selecione o elemento e insira os detalhes da métrica. Clique em  ** Salvar **.
 
   O novo engajamento agora aparece na janela Detalhes de engajamento.
 
 Agora é possível medir o [desempenho](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de seu engajamento.
 
-### Links Rápidos
+## Links Rápidos
+{: #links notoc}
 
 Verifique os links a seguir para obter insight e entender os recursos do {{site.data.keyword.engage_short}}:
 
- - Experimente o  [ Serviço ](https://console.bluemix.net/catalog/services/app-launch)
+ - Experimente o [Serviço de ativação de app](https://console.bluemix.net/catalog/services/app-launch).
  - [Blogs e vídeos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - Para obter mais informações, consulte  [ documentação ](/docs/services/app-launch/index.html#gettingstartedtemplate)
+ - Para obter mais informações, consulte [Ativação de app: tutorial de introdução](/docs/services/app-launch/index.html#gettingstartedtemplate).

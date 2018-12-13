@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -22,16 +22,17 @@ Para obter mais informações, consulte  [ Implementando apps ](../apps/dep-app-
 ## Desenvolvendo aplicativos de Swift sem servidor
 {: #serverless}
 
-Para facilitar o desenvolvimento sem servidor, é possível usar a oferta Functions as a Service (FaaS) da IBM, {{site.data.keyword.openwhisk}}. O {{site.data.keyword.openwhisk_short}} permite que a lógica do aplicativo seja executada em resposta a eventos ou chamadas diretas de apps da web ou móveis sobre HTTP sem fornecimento ou gerenciamento de servidores.
+Para desenvolver em um desenvolvimento sem servidor, é possível usar a oferta Functions as a Service (FaaS) da IBM, {{site.data.keyword.openwhisk}}. O {{site.data.keyword.openwhisk_short}} permite que a lógica do aplicativo seja executada em resposta a eventos ou chamadas diretas por meio de apps móveis ou da web sobre HTTP sem criar ou gerenciar servidores.
 
-O {{site.data.keyword.openwhisk_short}} executa administração do sistema, como auto-scaling, gerenciamento de disponibilidade e manutenção, permitindo que os desenvolvedores permaneçam focados na gravação de lógica do aplicativo.
+O {{site.data.keyword.openwhisk_short}} executa administração do sistema como Auto-scaling, gerenciamento de disponibilidade e manutenção, permitindo que os desenvolvedores permaneçam focados na gravação da lógica do aplicativo.
 
 Para obter mais informações, consulte [Desenvolvendo apps sem servidor](../apps/deploying/functions.html).
 
 ## Integrando serviços de backend com um SDK gerado
 {: #backend_gensdk}
 
-O plug-in {{site.data.keyword.IBM_notm}} SDK Generator integra facilmente os serviços de backend a seu app com um SDK gerado. Quando ocorrer uma mudança em uma API de REST, será possível gerar novamente o SDK e substituir o antigo por um upgrade de SDK sem interrupção. Também é possível integrar a CLI em um pipeline devops e assegurar que o SDK seja sempre consistente com a especificação de API toda vez que o app for construído.
+O plug-in {{site.data.keyword.IBM_notm}} SDK Generator integra facilmente os serviços de backend a seu app com um SDK gerado. Quando uma mudança em uma API de REST ocorre, é possível gerar novamente o SDK e substituir o antigo para fazer upgrade do SDK. Também é possível integrar a CLI a um pipeline do DevOps e assegurar-se de que o SDK esteja
+sempre consistente com a especificação de API toda vez que o app é construído.
 
 Para obter mais informações, consulte [Integrando serviços de backend com um SDK gerado](/docs/swift/backend/cli_sdkgen.html).
 

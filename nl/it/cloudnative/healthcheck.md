@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -16,57 +16,84 @@ lastupdated: "2018-08-17"
 # Utilizzo di un controllo di integrità nella tua applicazione Swift
 {: #healthcheck}
 
-I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente o meno. Molti ambienti di sviluppo, come [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) e [Kubernetes](https://www.ibm.com/cloud/container-service), possono essere configurati per eseguire periodicamente il polling degli endpoint di integrità per determinare se un'istanza del tuo servizio è pronta ad accettare traffico o meno.
+I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente. Gli ambienti cloud come [Kubernetes](https://www.ibm.com/cloud/container-service) e [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) possono essere configurati per eseguire periodicamente il polling degli endpoint di integrità per determinare se un'istanza del tuo servizio è pronta ad accettare il traffico.
+{: shortdesc}
 
-I controlli di integrità sono di norma consumati su HTTP e utilizzano dei codici di ritorno standard per indicare gli stati `UP` o `DOWN`. Degli esempi includono la restituzione di `200` per `UP` e di `5xx` per `DOWN`. Per essere specifici, viene utilizzato `503` quando l'applicazione non può gestire le richieste o non è stata ancora avviata (il servizio non è disponibile) e viene utilizzato `500` quando il server riscontra una condizione di errore. Il valore di ritorno di un controllo di integrità è variabile ma una risposta JSON minima, come `{“status”: “UP”}` fornisce congruenza.
+## Panoramica sul controllo di integrità 
+{: #overview}
 
-Cloud Foundry utilizza un singolo endpoint di integrità per indicare se un'istanza del servizio può gestire le richieste o meno. In Kubernetes, un endpoint di controllo di integrità equivale a un endpoint `readiness`. La tua applicazione deve definire questo endpoint per facilitare la determinazione delle decisioni di instradamento automatiche. L'esito positivo o negativo di questo endpoint può includere la considerazione per i servizi downstream richiesti nel caso in cui non sia presente un fallback accettabile. Se si esegue il controllo dei servizi downstream, la memorizzazione nella cache del risultato è a volte utile, per ridurre al minimo il carico sul sistema nel suo complesso a causa dei controlli di integrità.
+I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente. Normalmente sono utilizzati tramite HTTP e utilizzano i codici di ritorno standard per indicare lo stato UP o DOWN. Il valore di ritorno di un controllo di integrità è variabile, ma una risposta JSON minima, come `{"status": "UP"}`, è normale. 
 
-Kubernetes definisce un endpoint [liveness](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) supplementare, che consente all'applicazione di indicare se il processo deve essere riavviato o meno. Qui si applica un sottoinsieme di considerazioni: un controllo `liveness` potrebbe non riuscire dopo che viene raggiunta una specifica soglia di utilizzo della memoria, ad esempio: Se la tua applicazione è in esecuzione su Kubernetes, prendi in considerazione l'aggiunta di un endpoint `liveness` per assicurarti che il processo venga riavviato quando necessario.
+Kubernetes ha una nozione con più sfumature dell'integrità del processo. Definisce due probe: 
+
+- Viene utilizzato un probe di _**disponibilità**_ per indicare se il processo può gestire le richieste (è instradabile). 
+
+  Kubernetes non instrada il lavoro a un contenitore con un probe di disponibilità in errore. Un probe di disponibilità può avere esito negativo se un servizio non ha terminato l'inizializzazione o se è altrimenti occupato, sovraccaricato o se non può elaborare le richieste. 
+
+- Viene utilizzato un probe di _**attività**_ per indicare se il processo deve essere riavviato. 
+
+  Kubernetes arresta e riavvia un contenitore con un probe di attività in errore. Utilizza i probe di attività per ripulire i processi in uno stato irreversibile, ad esempio, se la memoria è esaurita o se il contenitore non è stato arrestato correttamente dopo che un processo interno si è arrestato in modo anomalo. 
+
+Come titolo di confronto, Cloud Foundry utilizza un endpoint di integrità. Se questo controllo non riesce, il processo viene riavviato, ma se ha esito positivo, gli vengono instradate le richieste. In questo ambiente, l'endpoint come minimo ha esito positivo quando il processo è live. Viene configurato un tempo di attesa iniziale per posporre il controllo di integrità finché il servizio non termina l'inizializzazione per evitare cicli di riavvio.
+
+La seguente tabella fornisce le indicazioni sulle risposte che possono essere fornite dagli endpoint di integrità singolare, di attività e di disponibilità.
+
+| Stato    | Disponibilità                   | Attività                   | Integrità                    |
+|----------|-----------------------------|----------------------------|---------------------------|
+|          | Non OK provoca nessun caricamento       | Non OK provoca il riavvio       | Non OK provoca il riavvio       |
+| In avvio | 503 - Non disponibile           | 200 - OK                   | Utilizza il ritardo per evitare il test   |
+| Attivo       | 200 - OK                    | 200 - OK                   | 200 - OK                  |
+| In arresto | 503 - Non disponibile           | 200 - OK                   | 503 - Non disponibile           |
+| Non attivo     | 503 - Non disponibile           | 503 - Non disponibile           | 503 - Non disponibile           |
+| In errore  | 500 - Errore server          | 500 - Errore server          | 500 - Errore server          |
 
 ## Aggiunta di un controllo di integrità a un'applicazione Swift esistente
 {: #add-healthcheck-existing}
 
 La libreria [Health](https://github.com/IBM-Swift/Health) facilita l'aggiunta di un controllo di integrità alla tua applicazione Swift. I controlli di integrità sono estensibili. Per ulteriori informazioni sulla [memorizzazione in cache](https://github.com/IBM-Swift/Health#caching) per prevenire attacchi di tipo DoS o sull'aggiunta di [controlli personalizzati](https://github.com/IBM-Swift/Health#implementing-a-health-check), vedi la libreria [Health](https://github.com/IBM-Swift/Health).
 
-Per aggiungere la libreria Health a un'applicazione Swift esistente, specificala nella sezione *dependencies:* del tuo file `Package.swift`, assicurandoti di aggiungerla a qualsiasi destinazione dove se ne fa uso.
-```swift
-  .package(url: "https://github.com/IBM-Swift/Health.git", .from: "1.0.0"),
-```
-{: codeblock}
+Per aggiungere la libreria Health a un'applicazione Swift esistente, vedi la seguente procedura:
 
-Aggiungi quindi il seguente codice di inizializzazione alla tua applicazione:
-```swift
-import Health
+1. Specificala nella sezione *dependencies:* del tuo file `Package.swift` e aggiungila a tutte le destinazioni appropriate:
 
-let health = Health()
-```
-{: codeblock}
+    ```swift
+    .package(url: "https://github.com/IBM-Swift/Health.git", .from: "1.0.0"),
+    ```
+    {: codeblock}
 
-Aggiungi quindi la definizione di instradamento per definire l'endpoint di controllo di integrità:
-```
-router.get("/health") { request, response, next in
+2. Aggiungi il seguente codice di inizializzazione alla tua applicazione:
+
+    ```swift
+    import Health
+
+    let health = Health()
+    ```
+    {: codeblock}
+
+3. Aggiungi la definizione di instradamento per definire l'endpoint di controllo di integrità:
+
+    ```swift
+    router.get("/health") { request, response, next in
   // let status = health.status.toDictionary()
   let status = health.status.toSimpleDictionary()
   if health.status.state == .UP {
-    try response.send(json: status).end()
+            try response.send(json: status).end()
   } else {
-    try response.status(.serviceUnavailable).send(json: status).end()
-  }
-}
-```
-{: codeblock}
+            try response.status(.serviceUnavailable).send(json: status).end()
+        }
+    }
+    ```
+    {: codeblock}
 
-Controlla lo stato dell'applicazione con un browser accedendo all'endpoint `/health`. Il codice restituisce un payload `{"status": "UP"}`, come definito dal semplice dizionario.
+4. Controlla lo stato dell'applicazione con un browser accedendo all'endpoint `/health`. Il codice restituisce un payload `{"status": "UP"}`, come definito dal semplice dizionario.
 
-Per delle implementazioni alternative, quali l'utilizzo di **Codable** o del dizionario standard, vedi gli [esempi della libreria Health](https://github.com/IBM-Swift/Health#usage).
-
-## Accesso al controllo di integrità dalle applicazioni kit starter Swift lato server
+## Controllo dell'integrità di un'applicazione kit starter Swift lato server 
 {: #healthcheck-starterkit}
 
-Quando generi un'applicazione Swift basata su Kitura utilizzando un kit starter, un endpoint di controllo di integrità di base `/health`, viene incluso per impostazione predefinita. L'endpoint si avvale del protocollo Codable disponibile in Swift 4, come supportato dalla libreria [Health](https://github.com/IBM-Swift/Health).
+Quando generi un'applicazione Swift basata su Kitura utilizzando un kit starter, un endpoint di controllo di integrità di base `/health`, viene incluso per impostazione predefinita. L'endpoint utilizza il protocollo Codable disponibile in Swift 4, come supportato dalla libreria [Health](https://github.com/IBM-Swift/Health).
 
-Il codice di inizializzazione di base, quale l'inizializzazione dell'oggetto Health, si verifica in `Sources/Application.swift`, mentre l'endpoint di controllo di integrità viene fornito dal file `/Sources/Application/Routes/HealthRoutes.swift`, che contiene il seguente codice:
+Il codice di inizializzazione di base, quale l'inizializzazione dell'oggetto Health, si verifica in `Sources/Application.swift`. L'endpoint del controllo di integrità stesso viene fornito dal file `/Sources/Application/Routes/HealthRoutes.swift` e utilizza il seguente codice:
+
 ```swift
 import LoggerAPI
 import Health
@@ -87,3 +114,54 @@ func initializeHealthRoutes(app: App) {
 {: codeblock}
 
 L'esempio utilizza il dizionario standard, che produce un payload quale `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}` quando accedi all'endpoint `/health`.
+
+## Suggerimenti per i probe di disponibilità e di attività 
+
+I controlli di disponibilità devono includere l'applicabilità delle connessioni ai servizi in downstream nei propri risultati se non esiste alcun fallback accettabile per quando non è disponibile il servizio in downstream. Questo non significa di chiamare il controllo di integrità fornito direttamente dal servizio in downstream, perché l'infrastruttura esegue il controllo per te. Invece, prendi in considerazione di verificare l'integrità dei riferimenti esistenti che la tua applicazione ha con i servizi in downstream: che potrebbero essere una connessione JMS a WebSphere MQ o un consumatore o produttore Kafka inizializzato. Se non controlli l'applicabilità dei riferimenti interni ai servizi in downstream, memorizza nella cache il risultato per ridurre al minimo l'impatto del controllo di integrità sulla tua applicazione. 
+
+Un probe di attività, al contrario, può essere cauto su cosa viene controllato, perché un errore comporta una terminazione immediata del processo. Un endpoint HTTP semplice che restituisce sempre `{"status": "UP"}` con il codice di stato `200` è una scelta ragionevole. 
+
+### Aggiungi il supporto per la disponibilità e l'attività di Kubernetes a un'applicazione Swift
+
+Per delle implementazioni alternative, quali l'utilizzo di **Codable** o del dizionario standard, vedi gli [esempi della libreria Health](https://github.com/IBM-Swift/Health#usage). Alcune di queste implementazioni semplificano la creazione di controlli di integrità estensibili con il supporto per la memorizzazione nella cache dei controlli eseguiti sui servizi di backup. In questo scenario, vuoi separare il test di attività semplice dal controllo di disponibilità più dettagliato e solido. 
+
+## Configurazione dei probe di disponibilità e di attività in Kubernetes 
+
+Dichiara i probe di disponibilità e di attività insieme alla tua distribuzione Kubernetes. Entrambi i probe utilizzano gli stessi parametri di configurazione. 
+
+* Il kubelet attende i secondi del ritardo iniziale (`initialDelaySeconds`) prima del primo probe. 
+
+* Il kubelet analizza il servizio ogni `periodSeconds` secondi. Il valore predefinito è 1. 
+
+* Il probe va in timeout dopo `timeoutSeconds` secondi. Il valore predefinito e minimo è 1. 
+
+* Il probe ha esito positivo se riesce `successThreshold` volte dopo un errore. Il valore predefinito e minimo è 1. Il valore deve essere 1 per i probe di attività. 
+
+* Quando si avvia un pod e il probe ha esito negativo, Kubernetes tenta `failureThreshold` volte di riavviare il pod dopodiché smette. Il valore minimo è 1 e il valore predefinito è 3. 
+    - Per un probe di attività, "smettere" significa riavviare il pod. 
+    - Per un probe di disponibilità, "smettere" significa contrassegnare il pod come `Unready`. 
+
+Per evitare i cicli di riavvio, imposta `livenessProbe.initialDelaySeconds` in modo da essere tranquillamente più lungo del tempo necessario al tuo servizio per l'inizializzazione. Puoi poi utilizzare un valore più corto per `readinessProbe.initialDelaySeconds` per instradare le richieste al servizio come è pronto. 
+
+Consulta il seguente esempio `yaml`:
+```yaml
+spec:
+  containers:
+  - name: ...
+    image: ...
+    readinessProbe:
+      httpGet:
+        path: /health
+        port: 8080
+      initialDelaySeconds: 120
+      timeoutSeconds: 5
+    livenessProbe:
+      httpGet:
+        path: /liveness
+        port: 8080
+      initialDelaySeconds: 130
+      timeoutSeconds: 10
+      failureThreshold: 10
+```
+
+Per ulteriori informazioni, consulta [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/). 

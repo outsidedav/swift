@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -20,13 +20,13 @@ lastupdated: "2018-08-17"
 
 ## Criando uma Instância do API Connect
 
-Acesse o Catálogo e crie uma instância do API Connect para gerenciar suas APIs.
+Acesse o [Catálogo](https://console.bluemix.net/catalog/) e crie uma instância do API Connect para gerenciar suas APIs.
 
 Use `Menu->APIs` para acessar o console do API Connect Management.
 
 ![API Connect](images/apiconnect.png)
 
-Se estiver definindo seu próprio contrato de API antes de iniciar o desenvolvimento de backend e de front-end, use as ferramentas do API Connect para acelerar esse processo. É possível trabalhar com a sua equipe de desenvolvimento digital para construir e definir o contrato de API entre o iOS App e a lógica de backend. Essa lógica pode ser entregue usando o [{{site.data.keyword.openwhisk}}](/docs/openwhisk/index.html) ou por meio do [tempo de execução do Swift](/docs/runtimes/swift/index.html) com Kubernetes ou [Cloud Foundry](/docs/cloud-foundry/index.html).
+Se você estiver definindo seu próprio contrato de API antes de iniciar o desenvolvimento de back-end e front-end, use as ferramentas do API Connect para acelerar esse processo. É possível trabalhar com a sua equipe de desenvolvimento digital para construir e definir o contrato de API entre o iOS App e a lógica de backend. Essa lógica pode ser entregue usando o [{{site.data.keyword.openwhisk}}](/docs/openwhisk/index.html) ou por meio do [tempo de execução do Swift](/docs/runtimes/swift/index.html) com Kubernetes ou [Cloud Foundry](/docs/cloud-foundry/index.html).
 
 Depois que sua API é definida, é possível definir as Open API Specifications (Swagger) em várias ferramentas diferentes:
 
@@ -38,7 +38,7 @@ Depois que sua API é definida, é possível definir as Open API Specifications 
 
 É possível definir um proxy de API que gerencia o gateway da API entre o aplicativo cliente e a lógica de backend. Use as etapas a seguir para criar um proxy usando YAML ou JSON da Open API Specification (documento Swagger). 
 
-1. Abra o console `Menu -> APIs` e clique no Proxy da API.
+1. Abra o console `Menu -> APIs` e clique no Proxy de API.
 2. Clique em **Importação de definição de API YAML ou JSON**.
 3. Selecione o arquivo YAML ou JSON que você criou anteriormente.
 4. Salvar e Expor.
@@ -47,7 +47,7 @@ Depois que sua API é definida, é possível definir as Open API Specifications 
 
 ## Criando um Backend de Swift
 
-É possível criar seu app Swift de backend com base nessa API. 
+É possível criar seu app Swift de back-end com base nessa API. 
 
 No Apple Development Console, execute as seguintes etapas:
 
@@ -57,11 +57,11 @@ No Apple Development Console, execute as seguintes etapas:
 
 Selecione o arquivo YAML e JSON e, em seguida, clique em **Criar**. O app Swift de backend é criado.
 
-Em seguida, é possível **fazer download** do Código ou **Implementar na nuvem** e clonar seu repositório GIT na sua máquina local. É possível seguir as instruções no Guia de Conhecimento para abrir o app do lado do servidor no XCode.
+Em seguida, é possível **fazer download** do Código ou **Implementar na nuvem** e clonar seu repositório GIT na sua máquina local. É possível seguir as instruções no Guia de conhecimento para abrir o app do lado do servidor no Xcode.
 
 Na pasta **Origem**, é possível ver uma rota que define o arquivo Swift que criou os terminais REST que são mapeados para a API. 
 
-Consulte o exemplo a seguir que usa o PetStore Open API:
+Consulte o exemplo a seguir que usa a API do Open `PetStore`:
 ```swift
 importar Kitura de Importação KituraContracts
 
@@ -116,11 +116,11 @@ A API é incluída no iOS App. Se você *fizer download* do código para o app, 
 
 Siga as etapas do Guia de Conhecimento para executar `pod update` de todos os SDKs dependentes no iOS App. 
 
-O iOS App inclui uma pasta que contém a ligação de SDK gerada para a API. Essa pasta inclui as três subpastas a seguir: `Assets`,`Source` e `Docs`. 
+O app iOS inclui uma pasta com a ligação de SDK gerada para a API. Essa pasta inclui as três subpastas a seguir: `Assets`,`Source` e `Docs`. 
 
 ![iOS Folder](../images/sdkfolder.png)
 
-A pasta `Assets` contém o arquivo que gerencia a URL para sua API, que, por padrão, é `localhost:3000`. Deve-se mudar o valor para referenciar a Rota da API. A definição de API contém uma seção Nome e Rota da API. Clique no **ícone Copiar** no término da rota, para copiar a URL. Verifique se a opção *Expor API gerenciada* está ativada para permitir que clientes externos façam chamadas API.
+Na pasta `Assets`, é um arquivo que gerencia a URL para a sua API que, por padrão, é `localhost:3000`. Deve-se mudar o valor para referenciar a Rota da API. A definição de API é composta de uma seção Nome da API e rota. Clique em **Copiar** no final da rota para copiar a URL. Verifique se a opção *Expor API gerenciada* está ativada para permitir que clientes externos façam chamadas API.
 
 ![Rota da API](../images/apiroute.png)  
 
@@ -128,11 +128,11 @@ Abra o arquivo `PLIST` e substitua o valor do host pelo valor copiado da rota de
 
 ## Documentação
 
-Quando o SDK é incluído no projeto iOS App, um arquivo *README.html* fica disponível na **pasta Docs**. Abra a pasta Docs em um navegador Externo e leia as instruções sobre como usar seu projeto.
+Quando o SDK for incluído em seu projeto do app iOS, um arquivo *README.html* estará disponível na pasta `Docs`. Abra a pasta `Docs` em um navegador externo e leia as instruções sobre como usar seu projeto.
 
-## Recreando o SDK após a Alteração de API
+## Recriando o SDK após a mudança de API
 
-Se as mudanças de API ou novos recursos ficarem disponíveis, e o {{site.data.keyword.openwhisk}} for incluído, será possível recriar o SDK do cliente usando o comando `ibmcloud sdk`. Para obter mais informações, exemplos e ajuda de sintaxe, verifique a documentação do [Gerador de SDK](/docs/cli/sdk/index.html).
+Se as mudanças de API ou os novos recursos forem disponibilizados e o {{site.data.keyword.openwhisk}} for incluído, será possível recriar o SDK do cliente usando o comando `ibmcloud sdk`. Para obter mais informações, exemplos e ajuda de sintaxe, verifique a documentação do [Gerador de SDK](/docs/cli/sdk/index.html).
 
 Para ativar a criação de um SDK, use o arquivo YAML ou JSON da Open API Specification (Swagger). É possível recuperar esse arquivo usando os recursos de gerenciamento de API no {{site.data.keyword.cloud_notm}}. 
 
@@ -144,13 +144,13 @@ Para ativar a criação de um SDK, use o arquivo YAML ou JSON da Open API Specif
 
 4. Selecione o ícone de download para fazer download do yaml para a API e salve esse arquivo no diretório de projeto do iOS App.
 
-5. A próxima etapa é executar o comando da CLI `ibmcloud sdk`.
+5. A próxima etapa é executar o comando da CLI `ibmcloud sdk`. 
     ```
     ibmcloud sdk generate --ios --unzip --output ./MyAppFunctions -f ./mobile-bff-functions-1.0.0.yaml SDKMyFunctions
     ```
     {: codeblock}
 
-    O SDK é recriado no diretório de projeto do iOS App para que você possa continuar a trabalhar com sua API.
+    O SDK é recriado em seu diretório de projeto do app iOS para que você possa continuar a trabalhar com a sua API.
 
 ## Referência
 

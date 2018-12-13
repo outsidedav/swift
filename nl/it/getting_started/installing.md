@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -19,7 +19,7 @@ Gli SDK iOS {{site.data.keyword.cloud}} supportano diversi gestori dipendenze mo
 ## Installazione con CocoaPods
 {: #installing_with_cocoapods}
 
-Per installare un SDK utilizzando Cocoapods, aggiungilo al tuo `Podfile`. Se il tuo progetto non dispone ancora di un `Podfile`, utilizza il comando `pod init`.
+Per installare un SDK utilizzando CocoaPods, aggiungilo al tuo `Podfile`. Se il tuo progetto non dispone ancora di un `Podfile`, utilizza il comando `pod init`.
 ```ruby
 use_frameworks!
 
@@ -31,7 +31,7 @@ end
 
 Esegui `pod install` e apri il file `.xcworkspace` generato.
 
-Per ulteriori informazioni, consulta le [guide di Cocoapods](https://guides.cocoapods.org/using/index.html).
+Per ulteriori informazioni, consulta le [guide di CocoaPods](https://guides.cocoapods.org/using/index.html).
 
 ## Installazione con Carthage
 {: #installing_with_carthage}
@@ -44,12 +44,12 @@ github "<github org name>/<github project name>"
 
 Esegui `carthage update` per avviare il processo di creazione. Una volta terminata la creazione, aggiungi i framework generati al tuo progetto. 
 
-Per ulteriori informazioni, vedi il [README di Carthage](https://github.com/Carthage/Carthage#getting-started).
+Per ulteriori informazioni, vedi la documentazione di [introduzione a Carthage](https://github.com/Carthage/Carthage#getting-started).
 
 ## Installazione con il gestore pacchetti Swift
 {: #installing_with_swift_package_manager}
 
-Per installare un SDK utilizzando il gestore pacchetti Swift, aggiungi la seguente riga alle tue dipendenze nel tuo ` Package.swift `:
+Per installare un SDK utilizzando il gestore pacchetti Swift, aggiungi la seguente riga alle tue dipendenze nel tuo `Package.swift`:
 ```
 .Package(url: "<SDK git url>")
 ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -14,9 +14,9 @@ lastupdated: "2018-08-07"
 # Utilizzo di Object Storage per il contenuto statico
 {: #object}
 
-Object Storage è un componente fondamentale dell'elaborazione cloud e fornisce delle potenti funzionalità agli sviluppatori Apple e alle loro applicazioni. A differenza dell'archiviazione di informazioni in una gerarchia di file (come l'archiviazione blocchi o file), un'archiviazione oggetti consiste solo di file e dei relativi metadati, archiviati in raccolte note come bucket. Per definizione, questi oggetti sono immutabili, il che li rende perfetti per dati quali immagini, video e altri documenti statici. Per i dati che cambiano spesso o che sono relazionali, puoi utilizzare i servizi di database [NoSQL](/docs/swift/data/nosql.html), [Cloudant](/docs/swift/data/cloudant.html) e [SQL](/docs/swift/data/sql.html).
+Object Storage è un componente fondamentale dell'elaborazione cloud e fornisce delle potenti funzioni agli sviluppatori Apple e alle loro applicazioni. A differenza dell'archiviazione di informazioni in una gerarchia di file (come l'archiviazione blocchi o file), un'archiviazione oggetti consiste solo di file e dei relativi metadati, archiviati in raccolte note come bucket. Per definizione, questi oggetti sono immutabili, il che li rende perfetti per dati quali immagini, video e altri documenti statici. Per i dati che cambiano spesso o che sono relazionali, puoi utilizzare i servizi di database [NoSQL](/docs/swift/data/nosql.html), [Cloudant](/docs/swift/data/cloudant.html) e [SQL](/docs/swift/data/sql.html).
 
-COS ({{site.data.keyword.cos_full_notm}}) è un sistema di archiviazione che può essere utilizzato per archiviare dati non strutturati flessibile, economicamente vantaggioso e scalabile. I dati sono accessibili tramite gli SDK oppure utilizzando l'interfaccia utente IBM. Puoi utilizzare {{site.data.keyword.cos_full_notm}} per accedere ai tuoi dati non strutturati tramite un portale self-service supportato da SDK e API Restful. 
+COS ({{site.data.keyword.cos_full_notm}}) è un sistema di archiviazione che può essere utilizzato per archiviare dati non strutturati flessibile, economicamente vantaggioso e scalabile. I dati sono accessibili tramite gli SDK oppure utilizzando l'interfaccia utente IBM. Puoi utilizzare {{site.data.keyword.cos_full_notm}} per accedere ai tuoi dati non strutturati tramite un portale self-service supportato da SDK e API RESTful. 
 
 A seconda delle tue esigenze, puoi utilizzare {{site.data.keyword.cos_short}} per i seguenti servizi:
 
@@ -26,11 +26,11 @@ A seconda delle tue esigenze, puoi utilizzare {{site.data.keyword.cos_short}} pe
 * Servizi file
 * Trasferimento dati
 
-Quando crei un bucket, devi selezionare un livello di resilienza (interregionale o regionale). In base alla tua selezione, i tuoi dati vengono distribuiti e archiviati in molteplici ubicazioni geografiche.
+Quando crei un bucket, devi selezionare un livello di resilienza (interregionale o regionale). In base alla tua selezione, i tuoi dati vengono distribuiti e archiviati in più di un'ubicazione geografica.
 
 ## API
 
-L'API {{site.data.keyword.cos_full}} è un'API basata su REST per la lettura e la scrittura di oggetti. Supporta un sottoinsieme dell'API S3 per una facile migrazione delle applicazioni a {{site.data.keyword.cloud_notm}}. Può essere utilizzato qualsiasi SDK S3 per avvalersi di {{site.data.keyword.cos_full}}. Per ulteriori informazioni, vedi la [Guida di riferimento API {{site.data.keyword.cos_short}}](docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api)completa
+L'API {{site.data.keyword.cos_full}} è un'API basata su REST per la lettura e la scrittura di oggetti. Supporta un sottoinsieme dell'API S3 per una facile migrazione delle applicazioni a {{site.data.keyword.cloud_notm}}. Può essere utilizzato qualsiasi SDK S3 per utilizzare {{site.data.keyword.cos_full}}. Per ulteriori informazioni, vedi la [Guida di riferimento API {{site.data.keyword.cos_short}}](docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api)completa
 
 ## Sicurezza
 {: #security}
@@ -57,17 +57,17 @@ Puoi fornire una tua chiave per la crittografia poiché SSE-C è supportata in {
 
 ## Resilienza
 
-Quando crei un bucket, devi selezionare un livello di resilienza (interregionale o regionale). In base alla tua selezione, i tuoi dati vengono distribuiti e archiviati in molteplici ubicazioni geografiche.
+Quando crei un bucket, devi selezionare un livello di resilienza (interregionale o regionale). In base alla tua selezione, i tuoi dati vengono distribuiti e archiviati in più di un'ubicazione geografica.
 
-La resilienza regionale è per la bassa latenza e i tuoi dati vengono distribuiti in tre centri all'interno di una singola regione. La resilienza interregionale è per la disponibilità di importanza critica e i tuoi dati vengono archiviati in 3 o più regioni differenti. L'interregionalità offre una resilienza geografica ed è disponibile in più endpoint. Valuta le tue esigenze applicative per decidere tra le due.
+La resilienza regionale è per la bassa latenza e i tuoi dati vengono distribuiti in tre centri all'interno di una singola regione. Utilizza la resilienza interregionale per la disponibilità di importanza critica perché i tuoi dati vengono archiviati in 3 o più regioni differenti. L'interregionalità offre una resilienza geografica ed è disponibile in più di un endpoint. Valuta le tue esigenze applicative per decidere tra le due.
 
 ### Aree geografiche
 
-Puoi utilizzare {{site.data.keyword.cos_full_notm}} da qualsiasi parte del mondo. Puoi scegliere dove vuoi archiviare i tuoi dati al momento della creazione del bucket. Le informazioni archiviate in IBM COS vengono crittografate e distribuite tra più ubicazioni geografiche utilizzando le tecnologie di archiviazione distribuita fornite dal sistema IBM Object Storage. 
+Puoi utilizzare {{site.data.keyword.cos_full_notm}} da qualsiasi parte del mondo. Puoi scegliere dove vuoi archiviare i tuoi dati al momento della creazione del bucket. Le informazioni archiviate in IBM COS vengono crittografate e distribuite in più di un'ubicazione geografica utilizzando le tecnologie di archiviazione distribuita fornite dal sistema IBM Object Storage. 
 
-Considera i seguenti fattori per selezionare l'ubicazione geografica del tuo archivio oggetti, oltre a decidere tra l'opzione regionale e quella interregionale.
+Considera i seguenti fattori per selezionare l'ubicazione geografica del tuo archivio oggetti quando stai decidendo tra l'opzione regionale e quella interregionale.
 
-**Considerazioni sull'ubicazione**:
+**Considerazioni sull'ubicazione geografica**:
 * Un'ubicazione che sia remota rispetto alle tue operazioni per una ridondanza.
 * Un'ubicazione per rispondere a requisiti legali e normativi.
 * Riduci le latenze di accesso ai dati
@@ -75,7 +75,7 @@ Considera i seguenti fattori per selezionare l'ubicazione geografica del tuo arc
 
 ## Casi d'uso e classi di archiviazione
 
-A seconda del tuo caso d'uso, puoi ridurre i costi selezionando un piano di servizi che soddisfi le tue esigenze. Le operazioni di archiviazione che comportano un accesso minimo all'archivio oggetti non hanno bisogno della velocità e della durabilità di un oggetto a cui si accede frequentemente e questa distinzione si riflette nel supporto della classe di archiviazione e nel piano dei prezzi per le tue applicazioni. Le classi di archiviazione sono definite a livello di bucket e pertanto puoi utilizzare una combinazione di piani che soddisfi le tue esigenze. Ti basta creare un nuovo bucket che è impostato alla classe di archiviazione desiderata.
+A seconda del tuo caso d'uso, puoi ridurre i costi selezionando un piano di servizi che soddisfi le tue esigenze. Le operazioni di archiviazione che comportano un accesso minimo all'archivio oggetti non hanno bisogno della velocità e della durabilità di un oggetto a cui si accede frequentemente e questa distinzione si riflette nel supporto della classe di archiviazione e nel piano dei prezzi per le tue applicazioni. Le classi di archiviazione sono definite a livello di bucket e pertanto puoi utilizzare una combinazione di piani che soddisfi le tue esigenze. Crea un bucket che è impostato sulla classe di archiviazione che vuoi utilizzare.
 
 Ulteriori informazioni sui prezzi sono disponibili dalla [documentazione relativa alla classe di archiviazione {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/help/billing.html#ibm-cos-pricing).
 
@@ -91,4 +91,4 @@ Questo servizio è per i carichi di lavoro con dati a cui si accede poco di freq
 Questa opzione di distribuzione è ideale per i requisiti di accesso minimi, la conformità dei record cronologici e il backup a lungo termine.
 
 **Flex** distribuisci per requisiti di accesso ai dati variabili e proteggi il tuo budget da fluttuazioni dei costi imprevisti.
-Le classi di archiviazione sono definite a livello di bucket. Ti basta creare un nuovo bucket che è impostato alla classe di archiviazione desiderata.
+Le classi di archiviazione sono definite a livello di bucket. Crea un bucket che è impostato sulla classe di archiviazione che vuoi utilizzare.

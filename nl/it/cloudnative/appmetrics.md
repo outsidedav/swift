@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-09-20"
 
 ---
 
@@ -16,15 +16,15 @@ lastupdated: "2018-08-17"
 # Utilizzo delle metriche dell'applicazione con le applicazioni Swift
 {: #metrics}
 
-Le metriche dell'applicazione sono importanti per monitorare le prestazioni della tua applicazione. Monitorare le prestazioni dell'ambiente, comprese le metriche di HTTP, latenza, memoria e CPU, può sembrare uno sforzo enorme ma è essenziale per garantire che l'esecuzione della tua applicazione Swift sia efficace nel tempo. I servizi nativi cloud, quali il ridimensionamento automatico, possono basarsi su tali metriche per ingrandire la tua applicazione perché funzioni in condizioni di carico di picco e per ridurla per mantenere bassi i costi.
+Le metriche dell'applicazione sono importanti per monitorare le prestazioni della tua applicazione. Avere una vista in diretta delle metriche come CPU, memoria, latenza e HTTP è essenziale per garantire che l'esecuzione della tua applicazione sia efficace nel tempo. I servizi Kubernetes e Cloud Foundry come il [ridimensionamento automatico](/docs/services/Auto-Scaling/index.html) si basano sulle metriche per determinare quando aggiungere o rimuovere in modo dinamico le istanze in base al carico ed eliminare le istanze che non sono più necessarie per mantenere bassi i costi.
 
-Le metriche dell'applicazione consentono di identificare problemi di prestazioni comuni, come ad esempio:
+Le metriche dell'applicazione sono acquisite come dati delle serie temporali. L'aggregazione e la visualizzazione delle metriche acquisite possono aiutare a identificare problemi di prestazioni comuni come:
 
 * Dei tempi di risposta HTTP lenti su qualcuno degli instradamenti o su tutti
 * Una scarsa velocità effettiva nell'applicazione
 * Dei picchi di richiesta che causano un rallentamento
-* Un utilizzo della CPU più elevato del previsto per il livello di velocità effettiva/carico
-* Un utilizzo della memoria elevato e/o crescente (potenziale perdita di memoria)
+* Un utilizzo della CPU più elevato del previsto 
+* Un utilizzo della memoria elevato o crescente (potenziale perdita di memoria)
 
 ## Aggiunta di metriche dell'applicazione all'applicazione Swift esistente
 {: #add-appmetrics-existing}
@@ -35,8 +35,7 @@ Utilizza [Application Metrics for Swift](https://developer.ibm.com/swift/monitor
 
 * La libreria `SwiftMetricsDash` utilizza le metriche prodotte da `SwiftMetrics` e fornisce un dashboard integrato per la visualizzazione.
 
-
-Per abilitare l'API di monitoraggio di base, aggiungi `SwiftMetrics` alla sezione **dependencies:** nel tuo `Package.swift` e assicurati di aggiungerla alla destinazione desiderata:
+Per abilitare l'API di monitoraggio di base, aggiungi `SwiftMetrics` alla sezione **dependencies:** nel tuo `Package.swift` e assicurati di aggiungerla alla destinazione appropriata:
 ```swift
 .package(url: "https://github.com/RuntimeTools/SwiftMetrics.git", from: "2.4.0")
 ```

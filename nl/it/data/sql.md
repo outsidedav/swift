@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-08-07"
 # Utilizzo di un database SQL per la persistenza dei dati
 {: #sql_data}
 
-SQL (Structured Query Language) è un linguaggio specifico per il dominio che viene utilizzato per gestire i dati nei database relazionali. TI consigliamo di conservare in modo persistente i tuoi dati nel caso in cui il tuo server si arrestasse mentre lo stai utilizzando. Per aggiungere la persistenza dei dati, puoi utilizzare un database SQL direttamente da Swift.
+SQL (Structured Query Language) è un linguaggio specifico per il dominio che viene utilizzato per gestire i dati nei database relazionali. La persistenza dei dati è consigliata quando il tuo server si arresta mentre lo stai utilizzando. Per aggiungere la persistenza dei dati, puoi utilizzare un database SQL direttamente da Swift.
 Una delle funzioni più importanti da Swift è la sua indipendenza dai tipi. L'utilizzo di un database SQL con Swift è una scelta logica in quanto l'indipendenza dai tipi è supportata da entrambi.
 
 ## Utilizzo di ORM con un database SQL
@@ -147,7 +147,7 @@ Tutte queste chiamate impiegano un gestore che viene richiamato una sola volta e
 
 ## Utilizzo di ORM con Kitura
 
-Per facilitare la prova di ORM, l'[esercitazione FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) può salvare e recuperare gli oggetti Meal dall'applicazione iOS e in un database PostgreSQL utilizzando ORM. Anche se completi l'esercitazione, vale la pena ripercorrerla nuovamente per vedere la potenza di Swift-Kuery-ORM e come possa semplificare il tuo codice Kitura.
+Per facilitare la prova di ORM, l'[esercitazione FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) può salvare e recuperare gli oggetti Meal dall'applicazione iOS direttamente in un database PostgreSQL. Anche se completi l'esercitazione, vale la pena ripercorrerla nuovamente per vedere la potenza di Swift-Kuery-ORM e come possa semplificare il tuo codice Kitura.
 
 ## Utilizzo di Swift-Kuery direttamente
 

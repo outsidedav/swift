@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-27"
 
 ---
 {:new_window: target="_blank"}
@@ -23,7 +23,7 @@ O {{site.data.keyword.cloud}} oferece soluções e serviços para fornecer a des
 
  ![Developer types](images/IBM_Cloud_icon.png "IBM Cloud")
 
-Os recursos do desenvolvedor construídos no {{site.data.keyword.cloud_notm}} alinham-se a vários conjuntos de qualificação e fornecem uma plataforma para produzir, entregar, executar e gerenciar seu app. Por exemplo, por meio do app cognitivo mencionado, os seguintes {{site.data.keyword.cloud_notm}} são de interesse:
+Os recursos do desenvolvedor construídos no {{site.data.keyword.cloud_notm}} alinham-se a vários conjuntos de qualificação e fornecem uma plataforma para produzir, entregar, executar e gerenciar seu app. Por exemplo, por meio do aplicativo cognitivo que é mencionado, os seguintes recursos do {{site.data.keyword.cloud_notm}} são de interesse:
 
 * O [**{{site.data.keyword.cloud_notm}} Developer Experience**](https://console.bluemix.net/docs/overview/dev-journey.html#dev-journey) não é um serviço, mas é um conjunto de recursos no {{site.data.keyword.cloud_notm}} que ajuda os desenvolvedores digitais e do Cloud Native a iniciarem a construção de apps prontos para produção. Ele inclui o fornecimento automático de serviços e a implementação de "um clique" em uma cadeia de ferramentas devops.
 
@@ -33,7 +33,7 @@ Os recursos do desenvolvedor construídos no {{site.data.keyword.cloud_notm}} al
 
 * O [**{{site.data.keyword.cloud_notm}} serviço Continuous Delivery**](../services/ContinuousDelivery/index.html#cd_getting_started) configura uma cadeia de ferramentas do devops para automatizar a entrega contínua de seu app. É possível aprimorar facilmente a cadeia de ferramentas para incluir funções de gerenciamento como monitoramento, criação de log, rastreamento e alerta. É possível até mesmo aplicar aprendizado de máquina avançado à sua cadeia de ferramentas usando o [serviço DevOps Insights](../services/DevOpsInsights/index.html#gettingstarted).
 
-A plataforma {{site.data.keyword.cloud_notm}} oferece muito mais recursos e pode ser usada pelo {{site.data.keyword.cloud_notm}} como sua plataforma de desenvolvimento abrangente.
+A plataforma {{site.data.keyword.cloud_notm}} oferece muito mais recursos e pode ser usada como sua plataforma de desenvolvimento abrangente.
 
 ## Visão geral de  {{site.data.keyword.cloud_notm}}  Capacidades
 {: #capabilities}

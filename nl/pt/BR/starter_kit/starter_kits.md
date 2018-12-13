@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-29"
 
 ---
 {:new_window: target="_blank"}
@@ -66,8 +66,9 @@ Ao usar a visualização Detalhes do app, é possível incluir serviços novos o
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple - Diálogo Incluir recurso](images/add_resource_screen.png "Diálogo Incluir recurso") <br> *Diálogo Incluir recurso do {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
-Na visualização Detalhes do app, é possível acessar seu código de duas maneiras:
-*  Selecione **Fazer download do código** para gerar e fazer download do código para seu app.
+### Fazendo download do seu código
+
+* Na visualização Detalhes do app, é possível acessar seu código selecionando **Fazer download do código** para gerar e fazer download do código para o seu app.
 
 ### Visualização Lista de Aplicativos
 {: #app_list_view}

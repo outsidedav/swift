@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-29"
 
 ---
 {:new_window: target="_blank"}
@@ -66,8 +66,9 @@ Utilizzando la vista App Details, puoi aggiungere servizi nuovi o esistenti alla
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple - finestra di dialogo Add Resource](images/add_resource_screen.png "Finestra di dialogo Add Resource") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple - finestra di dialogo Add Resource*
 
-Nella vista App Details, puoi accedere al tuo codice:
-*  Selezionando **Download Code** per generare e scaricare il codice per la tua applicazione.
+### Scaricamento del tuo codice
+
+* Nella vista App Details, puoi accedere al tuo codice selezionando **Download Code** per generare e scaricare il codice per la tua applicazione.
 
 ### Vista App List
 {: #app_list_view}

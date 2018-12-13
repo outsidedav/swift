@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2018-08-07"
 # Usando um banco de dados SQL para persistência de dados
 {: #sql_data}
 
-A Linguagem de Consulta Estruturada (SQL) é uma linguagem específica do domínio usada para gerenciar dados em bancos de dados relacionais. Recomenda-se persistir seus dados no caso de o servidor ser encerrado enquanto está sendo usado. Para incluir a persistência de dados, é possível usar um Banco de dados SQL diretamente do Swift.
+A Linguagem de Consulta Estruturada (SQL) é uma linguagem específica do domínio usada para gerenciar dados em bancos de dados relacionais. A persistência de dados é recomendada para quando o servidor é encerrado enquanto você está utilizando-o. Para incluir a persistência de dados, é possível usar um Banco de dados SQL diretamente do Swift.
 Um dos recursos mais importantes do Swift é a sua segurança de tipo. Usar um banco de dados SQL com o Swift é uma escolha lógica, porque a segurança de tipo é suportada por ambos.
 
 ## Usando o ORM com um Banco de Dados SQL
@@ -145,7 +145,7 @@ Todas essas chamadas usam um manipulador que é chamado uma vez e o executa quan
 
 ## Usando o ORM com Kitura
 
-Para facilitar a tentativa de ORM, o [tutorial do FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) pode salvar e buscar os objetos Meal do app iOS e em um banco de dados PostgreSQL usando o ORM. Mesmo se você concluir o tutorial, vale a pena passar por ele novamente para ver o poder do Swift-Kuery-ORM e como ele pode simplificar o código Kitura.
+Para facilitar a experiência com o ORM, o [tutorial do FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) pode salvar e buscar objetos de Meal por meio do app iOS diretamente em um banco de dados PostgreSQL. Mesmo se você concluir o tutorial, vale a pena consultá-lo novamente para ver o poder do Swift-Kuery-ORM e como ele pode simplificar o seu código do Kitura.
 
 ## Usando Swift-Kuery diretamente
 

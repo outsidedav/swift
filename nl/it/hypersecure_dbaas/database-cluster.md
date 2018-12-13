@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -29,7 +29,7 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
 2. Fornisci le seguenti informazioni:
 
 	<dl>
-		<dt>Nome servizio: </dt>
+		<dt>Nome servizio:</dt>
 		<dd>Un nome per il servizio database.</dd>
 
     <dt>Scegli una regione/ubicazione in cui eseguire la distribuzione:</dt>
@@ -68,9 +68,9 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
 
 5. Nella scheda Gestisci delle informazioni sul cluster, fai clic su **APRI**.
 
-	Viene visualizzato il dashboard {{site.data.keyword.ihsdbaas_full}}. 
+	Viene visualizzato il dashboard {{site.data.keyword.ihsdbaas_full}}.
 
-6. Ottieni i nomi host e i numeri di porta delle tre istanze di database create che appartengono al tuo cluster di database. Ti servono i nomi host, i numeri di porta e le credenziali utente per i passi nella sezione [Connessione al database](#connect_db).
+6. Raccogli i nomi host e i numeri di porta delle tre istanze di database create che appartengono al tuo cluster di database. Ti servono i nomi host, i numeri di porta e le credenziali utente per i passi nella sezione [Connessione al database](#connect_db).
 
 ## Passo 2. Creazione di un progetto utilizzando un kit starter
 {: #create_with_starter}
@@ -93,124 +93,118 @@ Utilizza un progetto esistente che era stato creato da questo kit starter oppure
 
 5. Nella pagina del progetto, fai clic su **Download Code**.
 
-6. Espandi il file zip scaricato nella directory del tuo progetto.
+6. Espandi il file compresso nella directory del tuo progetto.
 
 ## Passo 3. Connessione al database
 {: #connect_db}
 
-Per garantire un trasferimento dati protetto, scarica il file dell'autorità di certificazione (o CA, Certificate Authority) da
+Per garantire un trasferimento dati protetto, scarica il file dell'autorità di certificazione (o CA, certificate authority) da
 https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project directory.
 
-1. Passa alla directory del tuo progetto, che contiene i file di codice di download espansi.
+1. Passa alla directory del tuo progetto dove si trovano i file di codice scaricati espansi.
 
 2. Crea un file JSON denominato `cred.json` per memorizzare le credenziali di accesso al cluster di database.
 
-3. Immetti i valori che hai ottenuto come un risultato di [Creazione di un cluster di database](#create_dbcluster). I valori devono essere specificati in una singola riga.
+3. Immetti i valori raccolti dai passi in [Creazione di un cluster di database](#create_dbcluster). I valori devono essere specificati in una singola riga.
+  ```hljs
+  {
+  "uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
+  <Hostname_2>:<PortNumber_2>,<Hostname_3>:<PortNumber_3>
+   /admin?ssl=true&ssl_ca_certs=/swift-project/<CA_file>"
+  }
+  ```
+  {: codeblock}
 
-	```hljs
-	{
-	"uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
-	<Hostname_2>:<PortNumber_2>,<Hostname_3>:<PortNumber_3>
-	/admin?ssl=true&ssl_ca_certs=/swift-project/<CA_file>"
-	}
-	```
-	{: codeblock}
-
-	Dove:
-
-	<table>
-	  <tr>
-	    <th> Parametro </th>
-	    <th> Descrizione </th>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>admin_ID</em>&gt; </td>
-	    <td> È l'ID utente dell'amministratore del database come specificato in [Creazione di un cluster di database](#create_dbcluster).
-	  </td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>admin_pwd</em>&gt; </td>
-	    <td> È l'ID utente della password dell'amministratore come specificato in [Creazione di un cluster di database](#create_dbcluster).
-	  </td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>Hostname_i</em>&gt; </td>
-	    <td> È una replica del database <em>i</em> (<em>i</em>=1,2,3) come restituita in [Creazione di un cluster di database](create_dbcluster). </td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>PortNumber_i</em>&gt; </td>
-	    <td> È il numero di porta <em>i</em> (<em>i</em>=1,2,3) come restituito in [Creazione di un cluster di database](#create_dbcluster). </td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>CA_file</em>&gt; </td>
-	    <td> È il nome del file CA scaricato. Durante la distribuzione, viene copiato nella directory `/swift-project`.</td>
-	  </tr>
-	</table>
+  Dove:
+  <table>
+  <tr>
+    <th> Parametro </th>
+    <th> Descrizione </th>
+  </tr>
+  <tr>
+    <td> &lt;<em>admin_ID</em>&gt; </td>
+    <td> È l'ID utente dell'amministratore del database come specificato in [Creazione di un cluster di database](#create_dbcluster).
+  </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>admin_pwd</em>&gt; </td>
+    <td> È l'ID utente della password dell'amministratore come specificato in [Creazione di un cluster di database](#create_dbcluster). </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>Hostname_i</em>&gt; </td>
+    <td> È una replica del database <em>i</em> (<em>i</em>=1,2,3) come restituita in [Creazione di un cluster di database](create_dbcluster). </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>PortNumber_i</em>&gt; </td>
+    <td> È il numero di porta <em>i</em> (<em>i</em>=1,2,3) come restituito in [Creazione di un cluster di database](#create_dbcluster). </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>CA_file</em>&gt; </td>
+    <td> È il nome del file CA scaricato. Durante la distribuzione, viene copiato nella directory `/swift-project`.</td>
+  </tr>
+  </table>
 
 4. Modifica il file `Package.swift` per aggiungere le dipendenze di pacchetto per l'utilizzo dell'SDK
 MongoKitten.
 
-	a. Nella sezione dependencies, aggiungi la seguente riga:
-			```hljs
-			 .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
-			```
-			{: codeblock}
+  * Nella sezione dependencies, aggiungi la seguente riga:
+   ```hljs
+   .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
+   ```
+   {: codeblock}
 
-	b. Nella sezione targets, aggiungi la dipendenza "MongoKitten" alla seguente riga. **Nota:** i valori devono essere specificati in una singola riga.
-			```hljs
-			 .target(name: "Application", dependencies: [ "Kitura",
-                        				"CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
-			```
-			{: codeblock}
+  * Nella sezione targets, aggiungi la dipendenza "MongoKitten" alla seguente riga. **Nota:** i valori devono essere specificati in una singola riga.
+   ```hljs
+   .target(name: "Application", dependencies: [ "Kitura",
+   "CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
+   ```
+   {: codeblock}
 
 5. Modifica il file `Sources/Application/Application.swift` per inizializzare la connettività a MongoDB utilizzando MongoKitten.
 
-	a. Importa l'SDK MongoKitten:
-		```
-		import MongoKitten
-		```
-		{: codeblock}
+  * Importa l'SDK MongoKitten:
+    ```
+	import MongoKitten
+	```
+	{: codeblock}
 
-	b. Aggiungi la classe `ApplicationServices`:
-
-		```hljs
-		cclass ApplicationServices {
-	    // Service references
+  * Aggiungi la classe `ApplicationServices`:
+    ```hljs
+	cclass ApplicationServices {
+	// Service references
 	    public let mongoDBService: MongoKitten.Database
 	    public let myCredFile = "/swift-project/cred.json"
 
-	    public init() throws {
-	        // Read credentials from json file cred.json
+    public init() throws {
+        // Read credentials from json file cred.json
 	        struct ResponseData: Decodable {
-	            var uri: String
+            var uri: String
 	        }
 	        let data = try? Data(contentsOf: URL(fileURLWithPath: myCredFile))
 	        let decoder = JSONDecoder()
 	        let jsonData = try decoder.decode(ResponseData.self, from: data!)
 
-	        // Run service initializers
+        // Run service initializers
 	        let server = try Server(jsonData.uri)
 	        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
 	    }
-		}
-		```
-		{: codeblock}
+	}
+	```
+	{: codeblock}
 
-	c. Nella classe pubblica `App`, aggiungi le seguenti righe per inizializzare la connessione al database:
+  * Nella classe pubblica `App`, aggiungi le seguenti righe per inizializzare la connessione al database:
+    ```hljs
+	public class App {
+	...
+	let services: ApplicationServices
 
-		```hljs
-		public class App {
-	    ...
-	    let services: ApplicationServices
-
-	    public init() throws {
-	        // Services
-	        services = try ApplicationServices()
-
-	    }
-	    ...
-    	```
-    	{: codeblock}
+	public init() throws {
+	   // Services
+	    services = try ApplicationServices()
+	 }
+	...
+    ```
+    {: codeblock}
 
 ## Passo 4. Verifica della connessione al database
 {: #verify_database}
@@ -267,7 +261,7 @@ Puoi eseguire la tua applicazione in locale sul tuo sistema host, in Cloud Found
 
 1. Assicurati che Docker sia installato e in esecuzione sul tuo sistema host locale. Puoi scaricare Docker da https://www.docker.com/community-edition#/download.
 
-2. Passa alla directory che contiene i tuoi file del progetto.
+2. Passa alla directory con i tuoi file del progetto.
 
 3. Per distribuire l'applicazione sul tuo computer locale, immetti i comandi:
 	```
@@ -282,25 +276,24 @@ Puoi eseguire la tua applicazione in locale sul tuo sistema host, in Cloud Found
 ### Distribuzione a Cloud Foundry
 {: #deploy_cf}
 
-1. Passa alla directory che contiene i tuoi file del progetto.
+1. Passa alla directory con i tuoi file del progetto.
 
 2. Accedi al tuo account IBM Cloud e imposta la regione su `us-south`, come mostrato qui:
-	```hljs
-	$ ibmcloud login -a https://api.ng.bluemix.net
-	...
-	$ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
-	```
-	{: codeblock}
+  ```hljs
+  $ ibmcloud login -a https://api.ng.bluemix.net
+  $ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
+  ```
+  {: codeblock}
 
-    **Nota:** l'immissione del comando `ibmcloud login -a https://api.ng.bluemix.net` imposta automaticamente la regione su **us-south**.
+  **Nota:** l'immissione del comando `ibmcloud login -a https://api.ng.bluemix.net` imposta automaticamente la regione su **us-south**.
 
 3. Per distribuire l'applicazione a Cloud Foundry, immetti questo comando:
-	```
-	$ ibmcloud dev deploy
-	```
-	{: codeblock}
+  ```
+  $ ibmcloud dev deploy
+  ```
+  {: codeblock}
 
-	Ricevi un link selezionabile mediante clic all'ubicazione dove è ospitata la tua applicazione.
+  Ricevi un link selezionabile mediante clic all'ubicazione dove è ospitata la tua applicazione.
 
 ### Distribuzione a un cluster Kubernetes
 {: #deploy_cluster}
@@ -311,22 +304,21 @@ Puoi eseguire la tua applicazione in locale sul tuo sistema host, in Cloud Found
 
 3. Per visualizzare le informazioni sul cluster Kubernetes, apri il dashboard dell'applicazione {{site.data.keyword.cloud_notm}}. Il dashboard visualizza un elenco dei tuoi servizi, quali i cluster creati, i cluster di database, le applicazioni cloud foundry e i servizi cloud foundry.
 
-4. Passa alla directory che contiene i tuoi file del progetto.
+4. Passa alla directory con i tuoi file del progetto.
 
 5. Esegui l'accesso al tuo account {{site.data.keyword.cloud_notm}} e imposta la regione su us-south, come mostrato qui:
-	```hljs
-	$ ibmcloud login -a https://api.ng.bluemix.net
-	...
-	$ ibmcloud target -o <your-organization> -s <your-space>
-	```
-	{: codeblock}
+  ```hljs
+  $ ibmcloud login -a https://api.ng.bluemix.net
+  $ ibmcloud target -o <your-organization> -s <your-space>
+  ```
+  {: codeblock}
 
-	**Nota:** l'immissione del comando `ibmcloud login -a https://api.ng.bluemix.net` imposta automaticamente la regione su **us-south**.
+  **Nota:** l'immissione del comando `ibmcloud login -a https://api.ng.bluemix.net` imposta automaticamente la regione su **us-south**.
 
 6. Per distribuire la tua applicazione in Kubernetes, immetti questo comando:
-	```
-    $ ibmcloud dev deploy -t container
-    ```
-    {: codeblock}
+  ```
+  $ ibmcloud dev deploy -t container
+  ```
+  {: codeblock}
 
-	Ti viene richiesto il nome del tuo cluster Kubernetes e del registro Docker. Una volta fornite queste informazioni, la tua applicazione viene distribuita al cluster Kubernetes.
+  Ti viene richiesto il nome del tuo cluster Kubernetes e del registro Docker. Una volta fornite queste informazioni, la tua applicazione viene distribuita al cluster Kubernetes.

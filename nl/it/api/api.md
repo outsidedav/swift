@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -20,7 +20,7 @@ Puoi utilizzare API Connect per gestire le API in {{site.data.keyword.cloud}},in
 
 ## Creazione di un'istanza di API Connect
 
-Vai al catalogo e crea un'istanza di API Connect per gestire le tue API.
+Vai al [Catalogo](https://console.bluemix.net/catalog/) e crea un'istanza di API Connect per gestire le tue API.
 
 Utilizza `Menu->APIs` per accedere alla console API Connect Management.
 
@@ -47,7 +47,7 @@ Devi configurare l'endpoint esterno che punta all'URL che si collega alla tua ap
 
 ## Creazione di un backend Swift
 
-È possibile creare la tua applicazione Swift di backend in base a questa API. 
+Puoi creare la tua applicazione Swift di backend in base a questa API. 
 
 Dalla console Apple Development, esegui questa procedura:
 
@@ -57,11 +57,11 @@ Dalla console Apple Development, esegui questa procedura:
 
 Seleziona il file YAML e JSON e fai quindi clic su **Crea**. Viene creata l'applicazione Swift di backend.
 
-Puoi quindi scaricare (**Download**) il codice o eseguire la distribuzione al cloud (**Deploy to Cloud**) e clonare il tuo repository GIT sulla tua macchina locale. Puoi attenerti alle istruzioni nella Knowledge Guide per aprire l'applicazione lato server in XCode.
+Puoi quindi scaricare (**Download**) il codice o eseguire la distribuzione al cloud (**Deploy to Cloud**) e clonare il tuo repository GIT sulla tua macchina locale. Puoi attenerti alle istruzioni nella Knowledge Guide per aprire l'applicazione lato server in Xcode.
 
 Nella cartella **Source**, puoi vedere un instradamento che definisce il file Swift che ha creato gli endpoint REST che eseguono l'associazione all'API. 
 
-Vedi il seguente esempio che utilizza la Open API PetStore:
+Vedi il seguente esempio che utilizza la `PetStore` Open API:
 ```swift
 import Kitura
 import KituraContracts
@@ -124,11 +124,11 @@ L'API viene aggiunta alla tua applicazione iOS. Se scarichi (*Download*) il codi
 
 Attieniti alla procedura della Knowledge Guide per l'aggiornamento del pod (`pod update`) di qualsiasi SDK dipendente nella tua applicazione iOS. 
 
-L'applicazione iOS include una cartella che contiene il bind SDK generato per l'API. La cartella include le seguenti tre sottocartelle: `Assets`,`Source` e `Docs`. 
+L'applicazione iOS include una cartella con il bind SDK generato per l'API. La cartella include le seguenti tre sottocartelle: `Assets`,`Source` e `Docs`. 
 
 ![Cartella iOS](../images/sdkfolder.png)
 
-La cartella `Assets` contiene il file che gestisce l'URL alla tua API, che per impostazione predefinita è `localhost:3000`. Devi modificare il valore per fare riferimento all'instradamento API.La definizione dell'API contiene le sezioni API Name e Route. Fai clic sull'**icona Copy** alla fine dell'instradamento per copiare l'URL. Controlla che l'opzione *Expose Managed API* sia attivata per abilitare i client esterni ad effettuare chiamate API.
+Nella cartella `Assets`, è presente un file che gestisce l'URL alla tua API, che per impostazione predefinita è `localhost:3000`. Devi modificare il valore per fare riferimento all'instradamento API. La definizione dell'API è costituita da una sezione API Name and Route. Fai clic su **Copy** alla fine dell'instradamento per copiare l'URL. Controlla che l'opzione *Expose Managed API* sia attivata per abilitare i client esterni ad effettuare chiamate API.
 
 ![Instradamento API](../images/apiroute.png)  
 
@@ -136,11 +136,11 @@ Apri il file `PLIST` e sostituisci il valore host con il valore copiato dall'ins
 
 ## Documentazione
 
-Quando l'SDK è incluso nel tuo progetto di applicazione iOS, un file *README.html* è disponibile nella **cartella Docs**. Apri la cartella Docs in un browser esterno e leggi le istruzioni su come utilizzare il tuo progetto.
+Quando l'SDK è incluso nel tuo progetto di applicazione iOS, un file *README.html* è disponibile nella cartella `Docs`. Apri la cartella `Docs` in un browser esterno e leggi le istruzioni su come utilizzare il tuo progetto.
 
 ## Ricreazione dell'SDK dopo la modifica API
 
-Se l'API subisce delle modifiche o se diventano disponibili delle nuove funzioni, e viene aggiunto {{site.data.keyword.openwhisk}}, puoi ricreare l'SDK client utilizzando il comando `ibmcloud sdk`. Per ulteriori informazioni, esempi e guida alla sintassi, controlla la documentazione di [SDK Generator](/docs/cli/sdk/index.html).
+Se l'API subisce delle modifiche o se diventano disponibili delle nuove funzioni e viene aggiunto {{site.data.keyword.openwhisk}}, puoi ricreare l'SDK client utilizzando il comando `ibmcloud sdk`. Per ulteriori informazioni, esempi e guida alla sintassi, controlla la documentazione di [SDK Generator](/docs/cli/sdk/index.html).
 
 Per abilitare la creazione di un SDK, utilizzare il file YAML o JSON di specifica Open API (Swagger). Puoi richiamare questo file utilizzando le funzioni di gestione API in {{site.data.keyword.cloud_notm}}. 
 
@@ -152,7 +152,7 @@ Per abilitare la creazione di un SDK, utilizzare il file YAML o JSON di specific
 
 4. Seleziona l'icona di download per scaricare lo yaml per l'API e salva questo file nella directory di progetto della tua applicazione iOS.
 
-5. Il passo successivo consiste nell'esecuzione del comando della CLI `ibmcloud sdk`.
+5. Il passo successivo consiste nell'esecuzione del comando della CLI `ibmcloud sdk`. 
     ```
     ibmcloud sdk generate --ios --unzip --output ./MyAppFunctions -f ./mobile-bff-functions-1.0.0.yaml SDKMyFunctions
     ```
