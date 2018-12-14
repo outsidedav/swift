@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -16,29 +16,32 @@ lastupdated: "2018-08-09"
 
 # Adición de autenticación de usuario
 
-La seguridad de aplicación se puede complicar de forma increíble. Para la mayoría de los desarrolladores, es una de las partes más difíciles de la creación de una app. ¿Cómo puede estar seguro de que está protegiendo la información de los usuarios? Al integrar {{site.data.keyword.appid_full}} en sus apps, puede proteger recursos y añadir autenticación; incluso aunque no tenga mucha experiencia en seguridad.
+La seguridad de las aplicaciones es increíblemente complicada. Para la mayoría de los desarrolladores, es una de las tareas más difíciles de la creación de una app. ¿Cómo puede estar seguro de que está protegiendo la información de los usuarios? Al integrar {{site.data.keyword.appid_full}} en sus apps, puede proteger recursos y añadir autenticación, incluso aunque no tenga mucha experiencia en seguridad.
 
-Al exigir a los usuarios que inicien sesión, puede almacenar datos de usuario como, por ejemplo, preferencias de la app (o información de los perfiles sociales públicos), y luego aprovechar tales datos para personalizar la experiencia de cada usuario dentro de la app. {{site.data.keyword.appid_short_notm}} proporciona un registro en la infraestructura, pero también puede traer las pantallas de inicio de sesión de su propia marca para su uso con el directorio en la nube.
+Al exigir a los usuarios que inicien sesión, puede almacenar datos de usuario como, por ejemplo, preferencias de la app (o información de los perfiles sociales públicos), y luego utilizar estos datos para personalizar la experiencia de cada usuario dentro de la app. {{site.data.keyword.appid_short_notm}} proporciona un registro en la infraestructura, pero también puede traer las pantallas de inicio de sesión de su propia marca para su uso con el directorio en la nube.
 
 Para ver todas las formas en que puede utilizar {{site.data.keyword.appid_short_notm}} y la información de arquitectura, consulte [Acerca de {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
 
 ## Antes de empezar
+{: #before}
 
 Primero, asegúrese de cumplir los siguientes requisitos previos:
- * CocoaPods (versión 1.1.0 o posterior)
- * iOS (versión 9 o posterior)
- * MacOS (versión 10.11.5 o posterior)
- * Xcode (versión 9.0.1 o posterior)
+* CocoaPods (versión 1.1.0 o posterior)
+* iOS (versión 9 o posterior)
+* MacOS (versión 10.11.5 o posterior)
+* Xcode (versión 9.0.1 o posterior)
 
 ## Paso 1. Creación de una instancia de {{site.data.keyword.appid_short_notm}}
+{: #create_instance}
 
-Suministre una instancia del servicio:
+Cree una instancia del servicio {{site.data.keyword.appid_short_notm}}: 
 
 1. En el [catálogo de {{site.data.keyword.cloud_notm}}](https://console.bluemix.net/catalog/), seleccione {{site.data.keyword.appid_short_notm}}. Se abre la pantalla de configuración del servicio.
 2. Dé un nombre a la instancia de servicio, o utilice el nombre preestablecido.
 3. Seleccione el plan de precios y pulse **Crear**.
 
 ## Paso 2. Instalación del SDK de Swift de iOS
+{: #install_sdk}
 
 El servicio proporciona un SDK para ayudarle a facilitar la codificación de la app. El SDK debe estar instalado en el código de la app.
 
@@ -66,22 +69,24 @@ Después de inicializar el SDK en la app, puede empezar a configurar las prefere
 1. Vaya a **Configuración del proyecto > Prestaciones > Keychain Sharing** y habilite el uso compartido de la cadena de claves en el proyecto Xcode.
 
 2. Vaya a **Configuración del proyecto > Información > Tipos de URL** y añada el valor siguiente a los recuadros de texto **Esquema de URL** e **Identificador**.
-    ```
-    $(PRODUCT_BUNDLE_IDENTIFIER)
-    ```
-    {: pre}
+  ```
+  $(PRODUCT_BUNDLE_IDENTIFIER)
+  ```
+  {: codeblock}
 
 3. Añada la siguiente importación al archivo `AppDelegate.swift`.
-    ```swift
+  ```swift
   import BluemixAppID
-    ```
-    {:pre}
+  ```
+  {: codeblock}
 
-4. Pase los parámetros de ID de arrendatario y región para inicializar el SDK. Un lugar común, aunque no obligatorio, donde poner el código es en el método `application:didFinishLaunchingWithOptions` del AppDelegate de la app.
-    ```swift
-    AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
-    ```
-    {: pre}
+4. Pase los parámetros `tenantID ` y `region` para inicializar el SDK. Un lugar común, aunque no obligatorio, donde poner el código es en el método `application:didFinishLaunchingWithOptions` del `AppDelegate` de la app.
+    
+  ```swift
+  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  ```
+  {: codeblock}
+  
   <table>
     <thead>
       <th colspan=2><img src="images/idea.png" alt=""/> Comprensión de los componentes de mandatos </th>
@@ -93,7 +98,7 @@ Después de inicializar el SDK en la app, puede empezar a configurar las prefere
       </tr>
       <tr>
         <td><em>AppID_region</em></td>
-        <td>La región de {{site.data.keyword.appid_short_notm}} es la región de IBM Cloud en la que está trabajando con el servicio. Esta región se puede encontrar en el panel de control de servicio y puede ser <em>AppID.REGION_US_SOUTH</em>,<em>AppID.REGION_SYDNEY</em>,<em>AppID.REGION_UK</em>.</td>
+        <td>La región de {{site.data.keyword.appid_short_notm}} es la región de {{site.data.keyword.cloud_notm}}} en la que está trabajando con el servicio. Esta región se puede encontrar en el panel de control de servicio y puede ser <em>AppID.REGION_US_SOUTH</em>,<em>AppID.REGION_SYDNEY</em>,<em>AppID.REGION_UK</em>.</td>
       </tr>
     </tbody>
   </table>
@@ -104,7 +109,7 @@ Después de inicializar el SDK en la app, puede empezar a configurar las prefere
             return AppID.sharedInstance.application(application, open: url, options: options)
       }
     ```
-    {: pre}
+    {: codeblock}
 
 ## Paso 4. Gestión de la experiencia de inicio de sesión
 {: #managing-signin-appid}
@@ -123,8 +128,8 @@ Para configurar los proveedores de identidad social:
 
 1. Abra el panel de control de {{site.data.keyword.appid_short_notm}} en **Proveedores de identidad > Gestionar**.
 2. Establezca los proveedores de identidad que desee utilizar en **Activado**. Puede utilizar cualquier combinación de proveedores de identidad, pero si desea traer pantallas de inicio de sesión personalizadas, solo tiene que habilitar el Directorio de nube.
-3. Actualice la [configuración predeterminada](/docs/services/appid/identity-providers.html) a sus propias credenciales. {{site.data.keyword.appid_short_notm}} proporciona las credenciales de IBM que puede utilizar para probar el servicio, pero antes de publicar la app, tiene que actualizar la configuración.
-4. Personalice la pantalla de inicio de sesión preconfigurada para mostrar la imagen y los colores de su elección.
+3. Actualice la [configuración predeterminada](/docs/services/appid/identity-providers.html) a sus propias credenciales. {{site.data.keyword.appid_short_notm}} proporciona las credenciales de IBM que puede utilizar para probar el servicio, pero, antes de publicar la app, tiene que actualizar la configuración.
+4. Personalice la pantalla de inicio de sesión para mostrar la imagen y los colores de su elección.
 5. Para llamar al widget de inicio de sesión con la app, añada el siguiente mandato al código.
     ```swift
     import BluemixAppID
@@ -272,4 +277,4 @@ Para configurar el directorio en la nube:
 ¡Buen trabajo! Ha añadido un nivel de seguridad a la app. Mantenga el ritmo probando una de las opciones siguientes:
 
 * Obtenga más información y aproveche todas las características que {{site.data.keyword.appid_short_notm}} tiene que ofrecer, [consulte los documentos](/docs/services/appid/index.html).
-* Los kits de iniciación son una de las formas más rápidas de aprovechar las prestaciones de IBM Cloud. Vea los kits de iniciación disponibles en el [panel de control de desarrollador de Mobile](https://console.bluemix.net/developer/mobile/dashboard). Descargue el código. Ejecute la app.
+* Los kits de inicio son una de las formas más rápidas de utilizar las características de {{site.data.keyword.cloud_notm}}. Vea los kits de iniciación disponibles en el [panel de control de desarrollador de Mobile](https://console.bluemix.net/developer/mobile/dashboard). Descargue el código. Ejecute la app.

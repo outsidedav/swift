@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-11-08"
 
 ---
 {:new_window: target="_blank"}
@@ -22,7 +22,7 @@ Para obtener más información, consulte el apartado [Despliegue de apps](../app
 ## Desarrollo de apps Swift sin servidor
 {: #serverless}
 
-Para facilitar el desarrollo sin servidor, puede utilizar la oferta de FaaS (Functions as a Service) de IBM, {{site.data.keyword.openwhisk}}. {{site.data.keyword.openwhisk_short}} permite que la lógica de la aplicación se ejecute en respuesta a sucesos o a invocaciones directas desde aplicaciones apps web o móviles a través de HTTP sin suministrar ni gestionar servidores.
+Para desarrollar en un entorno de desarrollo sin servidor, puede utilizar la oferta de FaaS (Functions as a Service) de IBM, {{site.data.keyword.openwhisk}}. {{site.data.keyword.openwhisk_short}} permite que la lógica de la aplicación se ejecute en respuesta a sucesos o a invocaciones directas desde aplicaciones apps web o móviles a través de HTTP sin crear ni gestionar servidores.
 
 {{site.data.keyword.openwhisk_short}} realiza la administración de sistema como el escalado automático, la gestión de disponibilidad y el mantenimiento, lo que permite a los desarrolladores seguir centrados en escribir la lógica de la aplicación.
 
@@ -31,7 +31,7 @@ Para obtener más información, consulte [Desarrollo de apps sin servidor](../ap
 ## Integración de los servicios de fondo con un SDK generado
 {: #backend_gensdk}
 
-El plug-in de generador de SDK de {{site.data.keyword.IBM_notm}} integra fácilmente servicios de fondo en la app con un SDK generado. Cuando se produzca un cambio en una API REST, puede volver a generar el SDK y sustituir el antiguo por una actualización de SDK. También puede integrar la CLI en un conducto de devops y garantizar que el SDK sea siempre coherente con la especificación de la API cada vez que se cree la app.
+El plug-in de generador de SDK de {{site.data.keyword.IBM_notm}} integra fácilmente servicios de fondo en la app con un SDK generado. Cuando se produzca un cambio en una API REST, puede volver a generar el SDK y sustituir el antiguo para actualizar el SDK. También puede integrar la CLI en un conducto de DevOps y garantizar que el SDK sea siempre coherente con la especificación de la API cada vez que se cree la app.
 
 Para obtener más información, consulte [Integración de los servicios de fondo con un SDK generado](/docs/swift/backend/cli_sdkgen.html).
 

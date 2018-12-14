@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-29"
 
 ---
 {:new_window: target="_blank"}
@@ -62,12 +62,13 @@ La vista Detalles de la app muestra una lista de servicios que están configurad
 
 ![Vista Detalles de app de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/project_details_screen.png "Vista Detalles de app") <br> *Vista Detalles de app de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
-Al utilizar la vista Detalles de app, puede añadir servicios nuevos o existentes a la app que no formaban parte del Kit de iniciación original. Pulse el enlace **Añadir recurso** en el recuadro de lista de servicios Añadir servicios. Los servicios disponibles dependen del tipo de app y de los servicios que están disponibles en una región, por lo que no todos los servicios están disponibles para asociarse con todas las apps.
+Al utilizar la vista Detalles de app, puede añadir servicios nuevos o existentes a la app que no formaban parte del Kit de iniciación original. Pulse el enlace **Añadir recurso** en el recuadro de lista de servicios para añadir servicios. Los servicios disponibles dependen del tipo de app y de los servicios que están disponibles en una región, por lo que no todos los servicios están disponibles para asociarse con todas las apps.
 
 ![ Diálogo Añadir recurso de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/add_resource_screen.png "Diálogo Añadir recurso") <br> *Diálogo Añadir recurso de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
-En la vista Detalles de la app, puede acceder al código de dos formas:
-*  Seleccione **Descargar código** para generar y descargar el código de la app.
+### Descarga del código
+
+* En la vista Detalles de la app, puede acceder a su código seleccionando **Descargar código** para generar y descargar el código de la app.
 
 ### Vista Lista de apps
 {: #app_list_view}

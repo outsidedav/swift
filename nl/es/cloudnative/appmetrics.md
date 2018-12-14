@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-09-20"
 
 ---
 
@@ -16,15 +16,15 @@ lastupdated: "2018-08-17"
 # Utilización de métricas de aplicación con apps Swift
 {: #metrics}
 
-Las métricas de aplicación son importantes para supervisar el rendimiento de la aplicación. La supervisión del rendimiento del entorno, incluida la CPU, la Memoria, la Latencia y las métricas de HTTP; puede parecer un esfuerzo monumental, pero es esencial para asegurarse de que la aplicación Swift se está ejecutando de forma efectiva a lo largo del tiempo. Los servicios nativos de la nube, como el escalado automático, pueden basarse en estas métricas para escalar la app para que funcione bajo carga máxima y reducir para mantener bajos los costes.
+Las métricas de aplicación son importantes para supervisar el rendimiento de la aplicación. Tener una vista en directo de métricas como CPU, memoria, latencia y métricas HTTP es esencial para asegurarse de que la aplicación se ejecuta de forma efectiva a lo largo del tiempo. Los servicios de Kubernetes y Cloud Foundry como [Autoscaling](/docs/services/Auto-Scaling/index.html) se basan en las métricas para determinar cuándo se deben añadir o eliminar instancias de forma dinámica en función de la carga y limpiar las instancias que ya no son necesarias para mantener los costes bajos.
 
-Las métricas de aplicación pueden ayudarle a identificar problemas de rendimiento comunes, como por ejemplo:
+Las métricas de aplicación se capturan como datos de serie temporal. La agregación y visualización de métricas capturadas puede ayudar a identificar problemas de rendimiento comunes como, por ejemplo:
 
 * Tiempos de respuesta HTTP lentos en algunas o en todas las rutas
 * Rendimiento bajo en la aplicación
 * Aumentos considerables en la demanda que provocan la desaceleración
-* Uso de CPU mayor del esperado para el nivel de rendimiento/carga
-* Uso de memoria alto y/o creciente (fuga de memoria potencial)
+* Uso de CPU mayor del esperado
+* Uso de memoria alto o creciente (fuga de memoria potencial)
 
 ## Adición de métricas de aplicación a la aplicación Swift existente
 {: #add-appmetrics-existing}
@@ -35,8 +35,7 @@ Utilice [Métricas de aplicación para Swift](https://developer.ibm.com/swift/mo
 
 * La biblioteca `SwiftMetricsDash` consume las métricas producidas por `SwiftMetrics` y proporciona un panel de control incorporado para la visualización.
 
-
-Para habilitar la API de supervisión base, añada `SwiftMetrics` a la sección **dependencies:** del `Package.swift`, y asegúrese de añadirlo al destino deseado:
+Para habilitar la API de supervisión base, añada `SwiftMetrics` a la sección **dependencies:** del `Package.swift`, y asegúrese de añadirlo al destino adecuado: 
 ```swift
 .package(url: "https://github.com/RuntimeTools/SwiftMetrics.git", from: "2.4.0")
 ```

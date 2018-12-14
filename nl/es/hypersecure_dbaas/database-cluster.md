@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -93,123 +93,118 @@ Utilice un proyecto existente creado a partir de este kit de iniciación, o cree
 
 5. En la página de proyectos, pulse **Descargar código**.
 
-6. Expanda el archivo zip descargado en el directorio de proyecto.
+6. Expanda el archivo comprimido en el directorio de proyecto.
 
 ## Paso 3. Conectarse a la base de datos
 {: #connect_db}
 
-Para garantizar la transferencia segura de datos, descargue el archivo Certificate Authority (CA) desde
+Para garantizar la transferencia segura de datos, descargue el archivo de la entidad emisora de certificados (CA) desde
 https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project directory.
 
-1. Vaya al directorio del proyecto, que contiene los archivos de código de descarga ampliados.
+1. Vaya al directorio del proyecto en el que ha los archivos de código de descarga ampliados.
 
 2. Cree un archivo JSON que se denomine `cred.json` para almacenar las credenciales de acceso en el clúster de base de datos.
 
-3. Especifique los valores que ha obtenido como resultado de [Creación de un clúster de base de datos](#create_dbcluster). Los valores deben especificarse en una sola línea.
+3. Especifique los valores que ha obtenido en los pasos del apartado [Creación de un clúster de base de datos](#create_dbcluster). Los valores deben especificarse en una sola línea.
+  ```hljs
+  {
+  "uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
+  <Hostname_2>:<PortNumber_2>,<Hostname_3>:<PortNumber_3>
+   /admin?ssl=true&ssl_ca_certs=/swift-project/<CA_file>"
+  }
+  ```
+  {: codeblock}
 
-	```hljs
-	{
-	"uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
-	<Hostname_2>:<PortNumber_2>,<Hostname_3>:<PortNumber_3>
-	/admin?ssl=true&ssl_ca_certs=/swift-project/<CA_file>"
-	}
-	```
-	{: codeblock}
-
-	Donde:
-
-	<table>
-	  <tr>
-	    <th> Parámetro </th>
-	    <th> Descripción </th>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>admin_ID</em>&gt; </td>
-	    <td> Es el ID de usuario del administrador de base de datos tal como se especifica en [Creación de un clúster de base de datos](#create_dbcluster).
-	  </td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>admin_pwd</em>&gt; </td>
-	    <td> Es el ID de usuario de la contraseña del administrador tal como se especifica en [Creación de un clúster de base de datos](#create_dbcluster). </td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>Hostname_i</em>&gt; </td>
-	    <td> Es una réplica de base de datos <em>i</em> (<em>i</em>=1,2,3) tal como se devuelve en [Creación de un clúster de base de datos](create_dbcluster). </td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>PortNumber_i</em>&gt; </td>
-	    <td> Es un número de puerto <em>i</em> (<em>i</em>=1,2,3) tal como se devuelve en [Creación de un clúster de base de datos](#create_dbcluster). </td>
-	  </tr>
-	  <tr>
-	    <td> &lt;<em>CA_file</em>&gt; </td>
-	    <td> Es el nombre de archivo del archivo CA descargado. Durante el despliegue, se copia en el directorio `/swift-project`.</td>
-	  </tr>
-	</table>
+  Donde:
+  <table>
+  <tr>
+    <th> Parámetro </th>
+    <th> Descripción </th>
+  </tr>
+  <tr>
+    <td> &lt;<em>admin_ID</em>&gt; </td>
+    <td> Es el ID de usuario del administrador de base de datos tal como se especifica en [Creación de un clúster de base de datos](#create_dbcluster).
+  </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>admin_pwd</em>&gt; </td>
+    <td> Es el ID de usuario de la contraseña del administrador tal como se especifica en [Creación de un clúster de base de datos](#create_dbcluster). </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>Hostname_i</em>&gt; </td>
+    <td> Es una réplica de base de datos <em>i</em> (<em>i</em>=1,2,3) tal como se devuelve en [Creación de un clúster de base de datos](create_dbcluster). </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>PortNumber_i</em>&gt; </td>
+    <td> Es un número de puerto <em>i</em> (<em>i</em>=1,2,3) tal como se devuelve en [Creación de un clúster de base de datos](#create_dbcluster). </td>
+  </tr>
+  <tr>
+    <td> &lt;<em>CA_file</em>&gt; </td>
+    <td> Es el nombre de archivo del archivo CA descargado. Durante el despliegue, se copia en el directorio `/swift-project`.</td>
+  </tr>
+  </table>
 
 4. Edite el archivo `Package.swift` para añadir dependencias de paquetes para el uso del SDK de
 MongoKitten.
 
-	a. En la sección dependencies, añada la línea siguiente:
-			```hljs
-			 .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
-			```
-			{: codeblock}
+  * En la sección dependencies, añada la línea siguiente:
+   ```hljs
+   .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
+   ```
+   {: codeblock}
 
-	b. En la sección targets, añada la dependencia "MongoKitten" a la línea siguiente. **Nota:** Los valores deben especificarse en una sola línea.
-			```hljs
-			 .target(name: "Application", dependencies: [ "Kitura",
-                        				"CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
-			```
-			{: codeblock}
+  * En la sección targets, añada la dependencia "MongoKitten" a la línea siguiente. **Nota:** Los valores deben especificarse en una sola línea.
+   ```hljs
+   .target(name: "Application", dependencies: [ "Kitura",
+   "CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
+   ```
+   {: codeblock}
 
 5. Edite el archivo `Sources/Application/Application.swift` para inicializar la conectividad con MongoDB utilizando MongoKitten.
 
-	a. Importe el SDK de MongoKitten:
-		```
-		import MongoKitten
-		```
-		{: codeblock}
+  * Importe el SDK de MongoKitten:
+    ```
+	import MongoKitten
+	```
+	{: codeblock}
 
-	b. Añada la clase `ApplicationServices`:
+  * Añada la clase `ApplicationServices`:
+    ```hljs
+	cclass ApplicationServices {
+	// Referencias de servicio
+	public let mongoDBService: MongoKitten.Database
+	public let myCredFile = "/swift-project/cred.json"
 
-		```hljs
-		cclass ApplicationServices {
-	    // Referencias de servicio
-	    public let mongoDBService: MongoKitten.Database
-	    public let myCredFile = "/swift-project/cred.json"
-
-	    public init() throws {
-	        // Leer credenciales del archivo json cred.json
+    public init() throws {
+        // Leer credenciales del archivo json cred.json
 	        struct ResponseData: Decodable {
-	            var uri: String
+            var uri: String
 	        }
 	        let data = try? Data(contentsOf: URL(fileURLWithPath: myCredFile))
 	        let decoder = JSONDecoder()
 	        let jsonData = try decoder.decode(ResponseData.self, from: data!)
 
-	        // Ejecutar inicializadores de servicio
+        // Ejecutar inicializadores de servicio
 	        let server = try Server(jsonData.uri)
 	        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
 	    }
-		}
-		```
-		{: codeblock}
+	}
+	```
+	{: codeblock}
 
-	c. En la clase pública `App`, añada las líneas siguientes para inicializar la conexión de base de datos:
+  * En la clase pública `App`, añada las líneas siguientes para inicializar la conexión de base de datos:
+    ```hljs
+	public class App {
+	...
+	let services: ApplicationServices
 
-		```hljs
-		public class App {
-	    ...
-	    let services: ApplicationServices
-
-	    public init() throws {
-	        // Servicios
-	        services = try ApplicationServices()
-
-	    }
-	    ...
-    	```
-    	{: codeblock}
+	public init() throws {
+	   // Services
+	    services = try ApplicationServices()
+	 }
+	...
+    ```
+    {: codeblock}
 
 ## Paso 4. Verificación de la conexión de base de datos
 {: #verify_database}
@@ -285,22 +280,21 @@ Puede ejecutar la aplicación localmente en el sistema host, en Cloud Foundry, o
 1. Vaya al directorio que contiene los archivos del proyecto.
 
 2. Inicie sesión en la cuenta de IBM Cloud y establezca la región en `us-south`, como se muestra aquí:
-	```hljs
-	$ ibmcloud login -a https://api.ng.bluemix.net
-	...
-	$ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
-	```
-	{: codeblock}
+  ```hljs
+  $ ibmcloud login -a https://api.ng.bluemix.net
+  $ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
+  ```
+  {: codeblock}
 
-    **Nota:** Emitir el mandato `ibmcloud login -a https://api.ng.bluemix.net` establece automáticamente la región en **us-south**.
+  **Nota:** Emitir el mandato `ibmcloud login -a https://api.ng.bluemix.net` establece automáticamente la región en **us-south**.
 
 3. Para desplegar la aplicación en Cloud Foundry, especifique este mandato:
-	```
-	$ ibmcloud dev deploy
-	```
-	{: codeblock}
+  ```
+  $ ibmcloud dev deploy
+  ```
+  {: codeblock}
 
-	Recibirá un enlace pulsable a la ubicación donde está alojada la aplicación.
+  Recibirá un enlace pulsable a la ubicación donde está alojada la aplicación.
 
 ### Despliegue en un clúster de Kubernetes
 {: #deploy_cluster}
@@ -314,19 +308,18 @@ Puede ejecutar la aplicación localmente en el sistema host, en Cloud Foundry, o
 4. Vaya al directorio que contiene los archivos del proyecto.
 
 5. Inicie sesión en la cuenta de {{site.data.keyword.cloud_notm}} y establezca la región en us-south, como se muestra aquí:
-	```hljs
-	$ ibmcloud login -a https://api.ng.bluemix.net
-	...
-	$ ibmcloud target -o <your-organization> -s <your-space>
-	```
-	{: codeblock}
+  ```hljs
+  $ ibmcloud login -a https://api.ng.bluemix.net
+  $ ibmcloud target -o <your-organization> -s <your-space>
+  ```
+  {: codeblock}
 
-	**Nota:** Emitir el mandato `ibmcloud login -a https://api.ng.bluemix.net` establece automáticamente la región en **us-south**.
+  **Nota:** Emitir el mandato `ibmcloud login -a https://api.ng.bluemix.net` establece automáticamente la región en **us-south**.
 
 6. Para desplegar la aplicación en Kubernetes, escriba este mandato:
-	```
-    $ ibmcloud dev deploy -t container
-    ```
-    {: codeblock}
+  ```
+  $ ibmcloud dev deploy -t container
+  ```
+  {: codeblock}
 
-	Se le solicitará el nombre de su clúster de Kubernetes y el registro de Docker. Una vez que se proporciona la información, la aplicación se despliega en el clúster de Kubernetes.
+  Se le solicitará el nombre de su clúster de Kubernetes y el registro de Docker. Una vez que se proporciona la información, la aplicación se despliega en el clúster de Kubernetes.

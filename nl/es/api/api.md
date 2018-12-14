@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -20,7 +20,7 @@ Puede utilizar API Connect para gestionar las API en {{site.data.keyword.cloud}}
 
 ## Creación de una instancia de API Connect
 
-Vaya al Catálogo y cree una instancia de API Connect para gestionar las API.
+Vaya al [Catálogo](https://console.bluemix.net/catalog/) y cree una instancia de API Connect para gestionar las API.
 
 Utilice el `Menú->API` para acceder a la consola de API Connect Management.
 
@@ -38,8 +38,8 @@ Una vez definida la API, puede definir Open API Specifications (Swagger) en vari
 
 Puede definir un proxy de API que gestiona la pasarela de API entre la aplicación cliente y la lógica del programa de fondo. Utilice los pasos siguientes para crear un proxy utilizando YAML o JSON de la Open API Specification (documento de Swagger). 
 
-1. Abra la consola `Menú -> API` y pulse en el proxy de API.
-2. Pulse en **Definición de API Importar YAML o JSON**.
+1. Abra la consola `Menú -> API` y pulse el proxy de API.
+2. Pulse **Definición de API Importar YAML o JSON**.
 3. Seleccione el archivo YAML o JSON que ha creado anteriormente.
 4. Guarde y exponga.
 
@@ -47,21 +47,21 @@ Debe configurar el punto final externo para que apunte al URL que enlaza a la ap
 
 ## Creación de un programa de fondo de Swift
 
-Es posible crear la app Swift de programa de fondo en función de esta API. 
+Puede crear la app Swift de programa de fondo en función de esta API. 
 
 Desde la Apple Development Console, realice los pasos siguientes:
 
 1. Seleccione **Kits de iniciación**.
 2. Pulse **Crear app**.
-3. Seleccione **Swift** como idioma.
+3. Seleccione **Swift** como lenguaje.
 
 Seleccione el archivo YAML y el archivo JSON y, a continuación, pulse **Crear**. Se ha creado la app Swift de fondo.
 
-A continuación, puede **descargar** el código o **Desplegar en la nube**, y clonar el repositorio de GIT en la máquina local. Puede seguir las instrucciones de la Guía de conocimientos para abrir la app del lado del servidor en XCode.
+A continuación, puede **descargar** el código o **Desplegar en la nube**, y clonar el repositorio de GIT en la máquina local. Puede seguir las instrucciones de la Guía de conocimientos para abrir la app del lado del servidor en Xcode.
 
 En la carpeta **Origen**, puede ver una ruta que define el archivo Swift que ha creado los puntos finales REST que se correlacionan con la API. 
 
-Consulte el ejemplo siguiente que utiliza la API de PetStore Open:
+Consulte el ejemplo siguiente que utiliza la API `PetStore` Open:
 ```swift
 import Kitura
 import KituraContracts
@@ -116,7 +116,7 @@ Una vez que se ha definido la API mediante {{site.data.keyword.openwhisk_short}}
 
 Para consumir la API de programa de fondo en la app de iOS, cree un kit de iniciación de Mobile utilizando la consola de Apple. Si utiliza la vista Kit de iniciación, cree un kit de iniciación de iOS Swift de cualquier tipo.
 
-Pulse en **Añadir recurso** y seleccione una API. 
+Pulse **Añadir recurso** y seleccione una API. 
 
 ![Diálogo de API](../images/apidialog.png)
 
@@ -124,11 +124,11 @@ La API se añade a la app de iOS. Si *Descarga* el código para la app, podrá v
 
 Siga los pasos de la Guía de conocimientos para `pod update` cualquier SDK dependiente en la app de iOS. 
 
-La app de iOS incluye una carpeta que contiene el enlace SDK generado para la API. Esta carpeta incluye las tres siguientes subcarpetas `Activos`, `Origen` y `Docs`. 
+La app de iOS incluye una carpeta con el enlace de SDK generado para la API. Esta carpeta incluye las tres siguientes subcarpetas `Activos`, `Origen` y `Docs`. 
 
 ![Carpeta de iOS](../images/sdkfolder.png)
 
-La carpeta `Activos` contiene el archivo que gestiona el URL en la API, lo que de forma predeterminada es `localhost:3000`. Debe cambiar el valor para hacer referencia a la ruta de la API. La definición de la API contiene una sección Nombre de API y Ruta. Pulse en el **icono Copiar** al final de la ruta para copiar el URL. Compruebe que la opción *Exponer API gestionada* esté activada para que los clientes externos realicen llamadas de API.
+En la carpeta `Activos` hay un archivo que gestiona el URL en la API, que de forma predeterminada es `localhost:3000`. Debe cambiar el valor para hacer referencia a la ruta de la API. La definición de la API consta de una sección Nombre de API y de una sección Ruta. Pulse **Copiar** al final de la ruta para copiar el URL. Compruebe que la opción *Exponer API gestionada* esté activada para que los clientes externos realicen llamadas de API.
 
 ![Ruta de API](../images/apiroute.png)  
 
@@ -136,7 +136,7 @@ Abra el archivo `PLIST` y sustituya el valor de host por el valor que se copia d
 
 ## Documentación
 
-Cuando el SDK se incluye en el proyecto de app de iOS, hay disponible un archivo *README.html* en la **carpeta Docs**. Abra la carpeta Docs en un navegador externo y lea las instrucciones sobre cómo utilizar el proyecto.
+Cuando el SDK se incluye en el proyecto de app de iOS, hay disponible un archivo *README.html* en la carpeta `Docs`. Abra la carpeta `Docs` en un navegador externo y lea las instrucciones sobre cómo utilizar el proyecto.
 
 ## Recreación del SDK después de un cambio de API
 

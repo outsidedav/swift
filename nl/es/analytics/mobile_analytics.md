@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -15,13 +15,13 @@ lastupdated: "2018-08-07"
 # Recopilación de analíticas móviles
 {: #mobile_analytics}
 
-{{site.data.keyword.mobileanalytics_short}} on {{site.data.keyword.cloud_notm}} proporciona a los desarrolladores, administradores de TI y a las partes interesadas del negocio información sobre el rendimiento de sus apps para móviles y cómo se utilizan. Con el servicio de {{site.data.keyword.mobileanalytics_short}} puede hacer lo siguiente:
+{{site.data.keyword.mobileanalytics_short}} on {{site.data.keyword.cloud_notm}} proporciona a los desarrolladores, a los administradores y a las partes interesadas del negocio información sobre el rendimiento de sus apps para móviles y cómo se están utilizando. Con el servicio de {{site.data.keyword.mobileanalytics_short}} puede hacer lo siguiente:
 
  - **Obtener una perspectiva inmediata**: Consulte las métricas de rendimiento y uso en tiempo real.
 
  - **Efectuar implementaciones en cuestión de minutos**: Cree una instancia de servicio en {{site.data.keyword.cloud_notm}}, añada el SDK al proyecto, pegue dos líneas de código a la aplicación y ya podrá recopilar numerosas métricas predefinidas.
 
- - **Recopila los datos que desea**: Instrumente apps con sucesos personalizados, descubra cómo interactúan los usuarios con la app, realice el seguimiento de las compras y supervise la actividad de la app.
+ - **Recopila los datos que desea**: Instrumente apps con sucesos personalizados, vea cómo interactúan los usuarios con la app, realice el seguimiento de las compras y supervise la actividad de la app.
 
  - **Consultar de un vistazo las métricas**: La consola de {{site.data.keyword.mobileanalytics_short}} ofrece gráficos ya preparados, sin necesidad de escribir consultas.
 
@@ -33,12 +33,12 @@ lastupdated: "2018-08-07"
 
 ## Antes de empezar
 
-En primer lugar, asegúrese de cumplir los siguientes requisitos previos:
+Primero, asegúrese de cumplir los siguientes requisitos previos:
 
  - iOS 8.0+ / watchOS 2.0+
  - Xcode 7.3, 8.0
  - Swift 2.2 - 3.0
- - Cocoapods o Carthage
+ - CocoaPods o Carthage
 
 ## Paso 1. Creación de una instancia de {{site.data.keyword.mobileanalytics_short}}
 {: #mobile_analytics_create}
@@ -50,7 +50,7 @@ En primer lugar, asegúrese de cumplir los siguientes requisitos previos:
 
 ## Paso 2. Instalación del SDK de Swift de iOS
 
-El servicio proporciona SDK específicos de la plataforma para simplificar el desarrollo de aplicaciones. Los SDK de Swift de {{site.data.keyword.cloud_notm}} Mobile Services se pueden instalar con Cocoapods o Carthage. Para obtener más información, consulte [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics).
+El servicio proporciona SDK específicos de la plataforma para simplificar el desarrollo de aplicaciones. Los SDK de Swift de {{site.data.keyword.cloud_notm}} Mobile Services se pueden instalar con CocoaPods o Carthage.Para obtener más información, consulte [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics).
 
 Puede instrumentar la aplicación móvil utilizando el SDK de {{site.data.keyword.mobileanalytics_full}}. El SDK de Swift está disponible para iOS y watchOS.
 
@@ -63,7 +63,7 @@ El SDK de {{site.data.keyword.mobileanalytics_short}} se distribuye con [CocoaPo
 ### CocoaPods
 {: #cocoapods}
 
-1. Siga las [instrucciones del SDK de Swift de {{site.data.keyword.Bluemix_notm}} Mobile Services ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window} en GitHub para instalar `BMSAnalytics` utilizando Cocoapods y añádalo al Podfile.
+1. Siga las [instrucciones del SDK de Swift de {{site.data.keyword.Bluemix_notm}} Mobile Services ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window} en GitHub para instalar `BMSAnalytics` utilizando CocoaPods y añádalo al Podfile.
 
 2. Tras instalar el SDK del cliente de iOS, [importe e inicialice](sdk.html#initalize-ma-sdk) el SDK del cliente de Analytics.   
 
@@ -84,7 +84,7 @@ Utilizando {{site.data.keyword.mobileanalytics_short}} puede recopilar las sigui
 
 **Mensajes de registro de aplicaciones**: Esta categoría permite que los desarrolladores añadan líneas de código a la aplicación que pueden registrar mensajes personalizados para ayudar con el desarrollo y a la depuración. El desarrollador asigna un nivel de gravedad/detalle a cada mensaje de registro.
 
-**Sucesos personalizados**: Esta categoría incluye datos que define usted mismo y que son específicos de la app. Estos datos representan sucesos que se producen en la app, como las vistas de páginas, las pulsaciones de botones o las compras dentro de la app. Además de inicializar el SDK de {{site.data.keyword.mobileanalytics_short}} en la app, debe añadir una línea de código para cada suceso personalizado que desee seguir.
+**Sucesos personalizados**: Esta categoría incluye datos que define usted mismo y que son específicos de la app. Estos datos muestran los sucesos que se producen en la app, como las vistas de páginas, las pulsaciones de botones o las compras dentro de la app. Además de inicializar el SDK de {{site.data.keyword.mobileanalytics_short}} en la app, debe añadir una línea de código para cada suceso personalizado que desee seguir.
 
 ## Paso 4. Identificación del valor de la clave de API de credenciales de servicio
 {: #analytics-clientkey}
@@ -259,7 +259,7 @@ Puede configurar el SDK de cliente de {{site.data.keyword.mobileanalytics_short}
 
 Puede ver [datos de bloqueo de aplicación](app-monitoring.html#monitor-app-crash) enviando información de analíticas y de registro a {{site.data.keyword.mobileanalytics_short}}.
 
-El método `Analytics.send()` rellena las tablas **Visión general de bloqueos** y **Bloqueos** en la página **Bloqueos**. Los gráficos se habilitan utilizando el proceso de inicialización y de envío para su análisis; no es necesaria ninguna configuración especial.
+El método `Analytics.send()` rellena las tablas **Visión general de bloqueos** y **Bloqueos** en la página **Bloqueos**. Puede habilitar los gráficos utilizando el proceso de inicialización y de envío para su análisis. 
 
 El método `Logger.send()` rellena las tablas **Resumen de bloqueos** y **Detalles de bloqueo** en la página **Resolución de problemas**. Debe habilitar la aplicación para almacenar y enviar registros para rellenar los gráficos, añadiendo una sentencia en el código de la aplicación:
 ```
@@ -288,7 +288,7 @@ Analytics.userIdentity = "username"
 
 ¿Todo se ha configurado correctamente? Es el momento de probarlo.
 
-1. Abra la app. Si tiene una aplicación web, utilice un navegador. Si tiene una aplicación cliente de iOS con el emulador Xcode.
+1. Abra la app. Si tiene una aplicación web, utilice un navegador. Si tiene una aplicación cliente de iOS, ábrala con el emulador Xcode.
 2. Compile y ejecute la aplicación en el emulador o dispositivo.
 3. Mediante la GUI, vaya a través del proceso de inicio de sesión en la aplicación.
 4. Vaya a la consola de {{site.data.keyword.mobileanalytics_short}} para ver las analíticas de uso para su aplicación. También puede supervisar la aplicación [definiendo alertas](/docs/services/mobileanalytics/app-monitoring.html#alerts) y [supervisando bloqueos de la app](/docs/services/mobileanalytics/app-monitoring.html#monitor-app-crash).

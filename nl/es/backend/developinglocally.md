@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -23,17 +23,17 @@ Para desarrollar localmente, debe instalar el {{site.data.keyword.dev_cli_notm}}
 ```
 curl -sL https://ibm.biz/idt-installer | bash
 ```
-{:codeblock}
+{: codeblock}
 
 Consulte [Configuración de la CLI de IBM Cloud Developer Tools](/docs/cli/idt/setting_up_idt.html) para obtener más información sobre la configuración y el uso de la {{site.data.keyword.dev_cli_notm}}.
 
 ## Recuperación de las credenciales de servicio
 
-Después de clonar la aplicación desde Git, debe recuperar las credenciales para los servicios que están enlazados a la aplicación, ya que no están almacenados en el repositorio git para la aplicación. La recuperación de las credenciales permite el uso de servicios enlazados. Puede descargar fácilmente las credenciales ejecutando el mandato siguiente en la raíz del directorio de la aplicación:
+Después de clonar la aplicación desde Git, debe recuperar las credenciales para los servicios que están enlazados a la aplicación, ya que no están almacenados en el repositorio Git para la aplicación. La recuperación de las credenciales permite el uso de servicios enlazados. Puede descargar fácilmente las credenciales ejecutando el mandato siguiente en la raíz del directorio de la aplicación:
 ```
 ibmcloud dev get-credentials
 ```
-{:codeblock}
+{: codeblock}
 
 ## Creación, ejecución y despliegue de la aplicación
 
@@ -42,13 +42,13 @@ ibmcloud dev get-credentials
   ```
   ibmcloud dev build
   ```
-  {:codeblock}
+  {: codeblock}
 
 2. **Ejecutar**: Después de una creación correcta, puede ejecutar la aplicación en un contenedor local con el mandato siguiente:
   ```
   ibmcloud dev run
   ```
-  {:codeblock}
+  {: codeblock}
 
   Se visualiza un host y un puerto locales para ver la página de destino de la aplicación si el mandato se ejecuta correctamente.
 
@@ -56,4 +56,4 @@ ibmcloud dev get-credentials
   ```
   ibmcloud dev deploy
   ```
-  {:codeblock}
+  {: codeblock}

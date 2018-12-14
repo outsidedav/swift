@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-11-12"
 
 ---
 {:new_window: target="_blank"}
@@ -10,14 +10,14 @@ lastupdated: "2018-06-05"
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:note:.deprecated}
+{:note: .deprecated}
 
 # ¿Por qué añadir componentes de fondo?
 {: #backend}
 
 Los componentes de fondo determinan la forma en que los servicios interactúan, se actualizan y cambian la información que utiliza bases de datos y servidores.
 
-Las aplicaciones se pueden crear para que estén autocontenidas. Se pueden ejecutar por completo en un dispositivo en el que la única interacción externa procede del usuario. Sin embargo, las prestaciones y el valor que pueden proporcionar las aplicaciones están restringidas.
+Las aplicaciones se pueden crear de modo que sean autocontenidas y se ejecuten por completo en un dispositivo en el que la única interacción externa procede del usuario. Sin embargo, el potencial y el valor que pueden proporcionar las aplicaciones están restringidos.
 
 La mayoría de las aplicaciones se benefician del acceso a los recursos externos para mejorar y ampliar la aplicación. Al añadir un almacén de datos, puede tener una cuenta de usuario que habilite los datos que se almacenarán en las reinstalaciones de la aplicación y permitirles compartir datos con sus amigos y otros usuarios. A continuación, se puede crear una aplicación web correspondiente y se pueden añadir notificaciones push para alertar a los usuarios de que la información está siendo compartida por sus amigos.
 

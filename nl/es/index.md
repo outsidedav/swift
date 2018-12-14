@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -16,10 +16,10 @@ lastupdated: "2018-08-07"
 # Guía de aprendizaje de iniciación
 {: #set_up}
 
-{{site.data.keyword.cloud}} ofrece soluciones y servicios para potenciar a los desarrolladores y aplicaciones de Swift con la seguridad, la IA y el valor que sus clientes exigían. Con una amplia cartera de ofertas y SDK, puede aprovechar estos servicios y llevar las aplicaciones de última línea al mercado rápidamente. La guía de programación de Swift le enseña cómo añadir servicios a una aplicación Swift nueva o existente, ya sea un cliente de iOS o un Swift del lado del servidor.
+{{site.data.keyword.cloud}} ofrece soluciones y servicios para ayudar a los desarrolladores de Swift a crear aplicaciones que integren la seguridad, la IA y el valor que sus clientes exigen. Con una amplia cartera de ofertas y SDK, puede utilizar estos servicios y llevar aplicaciones innovadoras al mercado rápidamente. En esta guía de programación de Swift se muestra cómo añadir servicios a una aplicación Swift nueva o existente, ya sea un cliente de iOS o un Swift del lado del servidor.
 {: shortdesc}
 
-La siguiente guía de aprendizaje es un punto de entrada que le muestra cómo crear fácilmente una app móvil Swift con {{site.data.keyword.mobileanalytics_full}} utilizando un kit de iniciación vacío desde la [Consola del desarrollador para Apple de {{site.data.keyword.cloud_notm}}](https://console.bluemix.net/developer/appledevelopment/starter-kits). Desde la consola, añada el servicio {{site.data.keyword.mobileanalytics_short}}, descargue el código, ejecute la app de iOS localmente en Xcode, configure y supervise la app.
+En la siguiente guía de aprendizaje se muestra cómo crear fácilmente una app móvil Swift con {{site.data.keyword.mobileanalytics_full}} utilizando un kit de iniciación vacío desde la [Consola del desarrollador para Apple de {{site.data.keyword.cloud_notm}}](https://console.bluemix.net/developer/appledevelopment/starter-kits). Desde la consola, añada el servicio {{site.data.keyword.mobileanalytics_short}}, descargue el código, ejecute la app de iOS localmente en Xcode, configure y supervise la app.
 
 ## Paso 1. Requisitos para los desarrolladores
 {: #dev-requirements}
@@ -28,7 +28,7 @@ Para empezar a utilizar el desarrollo de iOS en {{site.data.keyword.cloud_notm}}
 
 ### Sistema operativo
 
-Es recomendable desarrollar apps de Swift utilizando el hardware soportado más reciente de MacOS, y probarlas con los releases más recientes de iOS. Regístrese para una cuenta de [Desarrollador de Apple](https://developer.apple.com/) para habilitar las pruebas en un dispositivo físico.
+La práctica recomendada para desarrollar apps de Swift consiste en utilizar el hardware soportado más reciente de MacOS, y probarlas con los releases más recientes de iOS. Regístrese para una cuenta de [Desarrollador de Apple](https://developer.apple.com/) para habilitar las pruebas en un dispositivo físico.
 
 ### iOS y Xcode
 {: #ios_and_xcode}
@@ -80,7 +80,7 @@ y pulse **Siguiente**.
 
 Para descargar el código, pulse **Descargar código** en `Apps` > `Su app`. El código descargado se suministra con los SDK de cliente de **{{site.data.keyword.mobileanalytics_short}}** incluidos. Los SDK de cliente están disponibles en CocoaPods y Carthage. Para esta solución, utilice CocoaPods.
 
-1. Descomprima el código descargado. A continuación, utilizando un terminal, vaya a la carpeta descomprimida.
+1. Descomprima el código descargado. A continuación, utilizando un terminal, vaya a la carpeta extraída. 
   ```
   cd <Name of Project>
   ```
@@ -97,7 +97,7 @@ Para descargar el código, pulse **Descargar código** en `Apps` > `Su app`. El 
   **Nota**: Asegúrese de abrir siempre el nuevo espacio de trabajo de Xcode, en lugar del archivo de proyecto Xcode original: `MyApp.xcworkspace`.
    ![Open Xcode](images/Xcode.png)
 
-  `BMSCore` es el SDK central y es la base para los SDK de Mobile Client. `BMSClient` es una clase de BMSCore y se inicializa en AppDelegate.swift. Junto con BMSCore, el SDK de {{site.data.keyword.mobileanalytics_short}} ya se ha importado en el proyecto.
+  `BMSCore` es el SDK central y es la base para los SDK de Mobile Client. `BMSClient` es una clase de `BMSCore` y se inicializa en `AppDelegate.swift`. Junto con `BMSCore`, el SDK de {{site.data.keyword.mobileanalytics_short}} ya se ha importado en el proyecto.
   
 2. El código de inicialización de Analytics ya está incluido, tal como se muestra en el siguiente fragmento de código:
   ```
@@ -123,7 +123,7 @@ Para descargar el código, pulse **Descargar código** en `Apps` > `Su app`. El 
   ```
   {: codeblock}
 
-   Para las funciones avanzadas de análisis y de registro, consulte [Recopilación de uso de Analítica](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#app-monitoring-gathering-analytics) y [registro](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#enabling-configuring-and-using-logger).
+   Para las características avanzadas de análisis y de registro, consulte [Recopilación de uso de Analítica](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#app-monitoring-gathering-analytics) y [registro](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#enabling-configuring-and-using-logger).
    {:tip}
 
 ## Paso 6. Supervisión de la app con {{site.data.keyword.mobileanalytics_short}}
@@ -131,7 +131,7 @@ El servicio {{site.data.keyword.mobileanalytics_short}} proporciona información
 
 El servicio incluye la consola de {{site.data.keyword.mobileanalytics_short}}, en la que los desarrolladores y los propietarios de aplicaciones pueden supervisar el rendimiento de las aplicaciones para móviles, consultar las estadísticas de uso y buscar registros de dispositivo.
 
-1. Abra el servicio `{{site.data.keyword.mobileanalytics_short}}` desde la app móvil que ha creado o pulse en los tres puntos verticales junto al servicio y seleccione `Abrir panel de control`.
+1. Abra el servicio `{{site.data.keyword.mobileanalytics_short}}` desde la app móvil que ha creado o pulse los tres puntos verticales junto al servicio y seleccione `Abrir panel de control`.
 2. Puede ver Usuarios LIVE, Sesiones y otros datos de app inhabilitando la `modalidad de demostración`. Puede filtrar la información de analíticas por los siguientes criterios:
     * Fecha.
     * Aplicación.
@@ -146,9 +146,9 @@ El servicio incluye la consola de {{site.data.keyword.mobileanalytics_short}}, e
 ### Adición de más servicios
 Puede añadir más servicios a la app de iOS directamente desde la consola web, como por ejemplo los siguientes servicios utilizados habitualmente:
 
-* [Adición del servicio de notificaciones push](/push/push_notifications.html)
-* [Adición de autenticación de usuario con App ID](/authenticate/app_id.html)
+* [Adición del servicio de notificaciones push](/docs/services/mobilepush/index.html)
+* [Adición de autenticación de usuario con App ID](/docs/services/appid/index.html)
 
 ### Utilización de herramientas de desarrollador de {{site.data.keyword.cloud_notm}}
-También puede aprender a desarrollar apps de Swift utilizando las [herramientas de desarrollador de {{site.data.keyword.cloud_notm}}](../cli/index.html), que ofrecen un enfoque de línea de mandatos para crear, desarrollar y desplegar aplicaciones web, móviles y de microservicios de extremo a extremo.
+También puede aprender a desarrollar apps de Swift utilizando las [herramientas de desarrollador de {{site.data.keyword.cloud_notm}}](../cli/index.html), que ofrecen un enfoque de línea de mandatos para crear, desarrollar y desplegar aplicaciones web, móviles y de microservicios completas.
 

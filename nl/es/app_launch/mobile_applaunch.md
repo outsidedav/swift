@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -22,7 +22,7 @@ El servicio {{site.data.keyword.engage_short}} define una característica, crea 
 
 ![Visión general de Cognitive Engage](images/process_app_launch.png) Figura 1. Visión general del ciclo de vida del servicio {{site.data.keyword.engage_short}}
 
-Las características de los servicios de {{site.data.keyword.engage_short}} son:
+Consulte las siguientes características del servicio {{site.data.keyword.engage_short}}:
 
  - **Acelerar el despliegue de características **
 
@@ -30,7 +30,7 @@ Las características de los servicios de {{site.data.keyword.engage_short}} son:
 
  - **Segmentar el público **
 
-    Los segmentos de usuario se pueden definir en función de los atributos conductuales, demográficos y contextuales. Por otro lado, se pueden presentar características a un determinado porcentaje de toda la base de usuarios. Los indicadores clave de rendimiento se pueden definir para cada característica y código en el lado del cliente para medir los resultados.
+    Los segmentos de usuario se pueden definir en función de los atributos conductuales, demográficos y contextuales. También puede presentar características a un determinado porcentaje de toda la base de usuarios. Los indicadores clave de rendimiento se pueden definir para cada característica y código en el lado del cliente para medir los resultados.
 
  - **Adaptar la aplicación en función del contexto **
 
@@ -52,7 +52,7 @@ Primero, asegúrese de cumplir los siguientes requisitos previos:
  - iOS 10+
  - Xcode 9
  - Swift 3.2 - 4
- - Cocoapods o Carthage
+ - CocoaPods o Carthage
 
 ## Paso 1. Creación de una instancia de {{site.data.keyword.engage_short}}
 {: ##app_launch_create}
@@ -64,10 +64,11 @@ Primero, asegúrese de cumplir los siguientes requisitos previos:
 
 ## Paso 2. Inicialización de la app
 {: #step2}
-El servicio proporciona SDK específicos de la plataforma para simplificar el desarrollo de aplicaciones. Los SDK de Swift de {{site.data.keyword.cloud_notm}} Mobile Services se pueden instalar con Cocoapods o Carthage.
+
+El servicio proporciona SDK específicos de la plataforma para simplificar el desarrollo de aplicaciones. Los SDK de Swift de {{site.data.keyword.cloud_notm}} Mobile Services se pueden instalar con CocoaPods o Carthage.
 
 1. Pulse **Valores**.
-2. Instale el [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Para obtener más información, consulte el readme que incluye los pasos de instalación y los conceptos técnicos.
+2. Instale el [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Para obtener más información, consulte el archivo `README` que incluye los pasos de instalación y los conceptos técnicos.
 3. Copie las claves de configuración para inicializar la app. Utilice el secreto de app, el GUID de app y el secreto de cliente para configurar su app y crear fidelizaciones.
 
 ## Paso 3. Creación de una característica
@@ -97,26 +98,24 @@ La ventana Detalles de característica puede exportar la característica como un
 
 Para crear un público, realice los pasos siguientes:
 
-1. Cree un **atributo de público**:
+### Creación de un **atributo de público**:
 
-	a. Pulse en **Público** > **Crear atributo**.
-	b. Indique los siguientes valores:
-		- **Nombre**: indique un nombre apropiado para el atributo.
-		- **Descripción**: una breve descripción del atributo.
-		- **Tipo**: seleccione el tipo de atributo.
-		- **Valores permitidos**: indique los valores de atributo que desea utilizar.
+1. Pulse en **Público** > **Crear atributo**.
+2. Indique los siguientes valores:
+  * **Nombre**: indique un nombre apropiado para el atributo.
+  * **Descripción**: una breve descripción del atributo.
+  * **Tipo**: seleccione el tipo de atributo.
+  * **Valores permitidos**: indique los valores de atributo que desea utilizar.
 
-  En función de lo que necesite, puede crear diversos atributos de público, como muestra la lista de la imagen siguiente.
+  En función de lo que necesite, puede crear más de un atributo de público, como muestra la lista de la imagen siguiente.
 
+### Creación de un **público**:
 
-2. Cree un **público**:
-
-	a. Pulse **Crear público**.
-	b. Indique un nombre y una descripción apropiados en la ventana Nuevo público.
-	c. Seleccione un atributo y pulse **Añadir**.
-	d. Seleccione las opciones necesarias de la lista de atributos.
-	e. Pulse **Guardar**.
-
+1. Pulse **Crear público**.
+2. Indique un nombre y una descripción apropiados en la ventana Nuevo público.
+3. Seleccione un atributo y pulse **Añadir**.
+4. Seleccione las opciones necesarias de la lista de atributos.
+5. Pulse **Guardar**.
 
 Ahora podrá crear una fidelización.
 
@@ -135,16 +134,15 @@ Se pueden programar y coordinar las implantaciones de características definiend
 Efectúe los pasos siguientes para crear una fidelización mediante Control de características:
 
 1. Puede crear una fidelización mediante uno de los métodos siguientes:
-	- Pulse **Fidelizaciones** en el panel de navegación.
-	- Seleccione **Crear fidelizaciones** en la nueva Característica que ha creado.
-	- En el panel de navegación, pulse **Visión general** > **Crear nueva fidelización**.
+  - Pulse **Fidelizaciones** en el panel de navegación.
+  - Seleccione **Crear fidelizaciones** en la nueva Característica que ha creado.
+  - En el panel de navegación, pulse **Visión general** > **Crear nueva fidelización**.
 
   Aparecerá la ventana Nueva fidelización.
 
 2. Indique un nombre y una descripción para la nueva fidelización. Indique un nombre de fidelización exclusivo, que no aparezca ya en la lista de Fidelizaciones.
-
-	a. **Seleccione tipo de fidelización** como **Control de características**.
-	b. Para realizar un experimento controlado con varias variantes de la característica, seleccione **Pruebas A/B** en **Seleccionar tipo de experimentación**. Pulse **Siguiente**.
+  - **Seleccione tipo de fidelización** como **Control de características**.
+  - Para realizar un experimento controlado con más de una variante de la característica, seleccione **Pruebas A/B** en **Seleccionar tipo de experimentación**. Pulse **Siguiente**.
 
 3. Seleccione la característica que ha creado. También puede seleccionar añadir y definir las variantes con las que es posible experimentar. Pulse **Siguiente**.
 
@@ -164,32 +162,31 @@ Los mensajes pueden dirigirse a todos los usuarios de las aplicaciones o a un co
 
 Los mensajes in-app pueden planificarse definiendo una fecha y hora de inicio o fin. También puede realizar una planificación en función de un suceso. Estos mensajes estarán más personalizados, ya que se basan en información analítica acerca de la elección del usuario, las interacciones, los dispositivos, los registros de aplicación, etc.
 
-Se pueden utilizar los mensajes in-app para:
+Consulte los siguientes ejemplos de mensajes in-app:
 
 - Enviar mensajes personalizados.
 - Enviar mensajes a los usuarios que han desactivado las notificaciones push.
 - Solicitar comentarios o interactuar con los usuarios en una conversación.
-- Enviar mensajes relevantes tras conocer qué está buscando el usuario.
+- Enviar mensajes relevantes basados en lo que está buscando el usuario.
 - Interactuar con clientes fieles y activos.
-- Informar a los usuarios de las actualizaciones de la app (o del lanzamiento de una nueva característica), etc.
+- Informar a los usuarios de las actualizaciones de la app (o del lanzamiento de una nueva característica).
 
 ![gif animado](images/in-app-engagement_animated.gif){: gif}
 
 Efectúe los pasos siguientes para crear una fidelización que utiliza la opción Mensajería:
 
 1. Puede crear una fidelización mediante uno de los métodos siguientes:
-	- Pulse **Fidelizaciones** en el panel de navegación.
-	- Seleccione **Crear fidelización** en la nueva característica que ha creado.
-	- En el panel de navegación, pulse **Visión general** > **Crear nueva fidelización**.
+  - Pulse **Fidelizaciones** en el panel de navegación.
+  - Seleccione **Crear fidelización** en la nueva característica que ha creado.
+  - En el panel de navegación, pulse **Visión general** > **Crear nueva fidelización**.
 
   Aparecerá la ventana Nueva fidelización.
 
 2. Indique un nombre y una descripción para la nueva fidelización. Indique un nombre de fidelización exclusivo, que no aparezca ya en la lista de Fidelizaciones.
+  - **Seleccione Tipo de fidelización ** como **Mensajería in-app**
+  - Para realizar un experimento controlado con múltiples variantes de la característica de mensajería, seleccione **Pruebas A/B** en **Seleccionar tipo de experimentación**. Pulse **Siguiente**.
 
-	a. **Seleccione Tipo de fidelización ** como **Mensajería in-app**
-	b. Para realizar un experimento controlado con múltiples variantes de la característica de mensajería, seleccione **Pruebas A/B** en **Seleccionar tipo de experimentación**. Pulse **Siguiente**.
-
-3. Rellene las propiedades de mensaje y pulse **Siguiente**.
+3. Especifique las propiedades del mensaje y pulse **Siguiente**.
 
 4. **Seleccionar público** y el porcentaje de público que quiere alcanzar. Pulse **Siguiente**.
 
@@ -197,16 +194,17 @@ Efectúe los pasos siguientes para crear una fidelización que utiliza la opció
 
 6. Seleccione **Suceso** y pulse **Siguiente**.
 
-7. Correlacione los elementos con la métrica que desea medir. Seleccione el elemento y rellene los detalles de la métrica. Pulse **Guardar**.
+7. Correlacione los elementos con la métrica que desea medir. Seleccione el elemento y especifique los detalles de la métrica. Pulse **Guardar**.
 
   La nueva fidelización aparecerá en la ventana Detalles de fidelización.
 
 Ahora puede medir el [rendimiento](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de su fidelización.
 
-### Enlaces rápidos
+## Enlaces rápidos
+{: #links notoc}
 
 Consulte los enlaces siguientes para obtener una visión general y conocer las características de {{site.data.keyword.engage_short}}:
 
- - Pruebe el [servicio](https://console.bluemix.net/catalog/services/app-launch)
+ - Pruebe el [servicio App Launch](https://console.bluemix.net/catalog/services/app-launch).
  - [Blogs y vídeos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - Para obtener más información, consulte la [documentación](/docs/services/app-launch/index.html#gettingstartedtemplate)
+ - Para obtener más información, consulte la [Guía de aprendizaje de iniciación de App Launch](/docs/services/app-launch/index.html#gettingstartedtemplate).

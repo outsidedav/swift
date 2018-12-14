@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-27"
 
 ---
 {:new_window: target="_blank"}
@@ -16,14 +16,14 @@ lastupdated: "2018-08-09"
 # Desarrollo Apple en {{site.data.keyword.cloud_notm}}
 {: #ios_dev}
 
-{{site.data.keyword.cloud}} ofrece soluciones y servicios para potenciar a los desarrolladores y aplicaciones de Swift con la seguridad, la IA y el valor que sus clientes exigían. Con una amplia cartera de ofertas y SDK, puede aprovechar estos servicios y llevar sus aplicaciones de última línea al mercado rápidamente.
+{{site.data.keyword.cloud}} ofrece soluciones y servicios para potenciar a los desarrolladores y aplicaciones de Swift con la seguridad, la IA y el valor que sus clientes exigen. Con una amplia cartera de ofertas y SDK, puede aprovechar estos servicios y llevar aplicaciones innovadoras al mercado rápidamente.
 
 ## Una plataforma de desarrollo: IBM Cloud
 {: #platform}
 
  ![Tipos de desarrolladores](images/IBM_Cloud_icon.png "IBM Cloud")
 
-Las funciones de desarrollador que se crean en {{site.data.keyword.cloud_notm}} se alinean con distintos conjuntos de habilidades y proporcionan una plataforma para producir, entregar, ejecutar y gestionar la app. Por ejemplo, desde la app cognitiva que se menciona, los siguientes {{site.data.keyword.cloud_notm}} son de interés:
+Las funciones de desarrollador que se crean en {{site.data.keyword.cloud_notm}} se alinean con distintos conjuntos de habilidades y proporcionan una plataforma para producir, entregar, ejecutar y gestionar la app. Por ejemplo, desde la app cognitiva que se menciona, las siguientes características de {{site.data.keyword.cloud_notm}} son de interés:
 
 * [**{{site.data.keyword.cloud_notm}} Developer Experience**](https://console.bluemix.net/docs/overview/dev-journey.html#dev-journey) no es un servicio, sino un conjunto de funciones en {{site.data.keyword.cloud_notm}} que ayuda a los desarrolladores digitales y nativos de nube a empezar a crear apps listas para producción. Incluye el suministro automático de servicios y el despliegue de "una sola pulsación" en una cadena de herramientas devops.
 
@@ -33,7 +33,7 @@ Las funciones de desarrollador que se crean en {{site.data.keyword.cloud_notm}} 
 
 * El [**servicio de {{site.data.keyword.cloud_notm}} Continuous Delivery**](../services/ContinuousDelivery/index.html#cd_getting_started) configura una cadena de herramientas devops para automatizar la entrega continua de su app. Puede mejorar fácilmente la cadena de herramientas para incluir funciones de gestión como la supervisión, el registro, el seguimiento y la alerta. Incluso puede aplicar aprendizaje automático avanzado a la cadena de herramientas utilizando el [servicio de DevOps Insights](../services/DevOpsInsights/index.html#gettingstarted).
 
-La plataforma de {{site.data.keyword.cloud_notm}} ofrece muchas más funciones y se puede utilizar {{site.data.keyword.cloud_notm}} como plataforma de desarrollo completa.
+La plataforma de {{site.data.keyword.cloud_notm}} ofrece muchas más funciones y se puede utilizar como plataforma de desarrollo completa.
 
 ## Visión general de las funciones de {{site.data.keyword.cloud_notm}}
 {: #capabilities}
@@ -41,7 +41,7 @@ La plataforma de {{site.data.keyword.cloud_notm}} ofrece muchas más funciones y
 {{site.data.keyword.cloud_notm}} Developer Experience no es un servicio, sino un conjunto de funciones en la plataforma {{site.data.keyword.cloud_notm}} que le ayuda a empezar a crear apps de la forma "correcta" en unos minutos. Los elementos esenciales de la Developer Experience son:
 
 * Un conjunto de temas o de consolas de desarrollador centradas en canales que se encuentran en la plataforma de {{site.data.keyword.cloud_notm}}.
-* Kits de iniciación de caso de uso específicos que producen apps de inicio listas para producción en varios idiomas y patrones arquitectónicos.
+* Kits de iniciación de caso de uso específicos que producen apps de inicio listas para producción en varios lenguajes y patrones arquitectónicos.
 * Suministro automático de servicios.
 * Gestionar componentes de la app utilizando una estructura de app portátil.
 * Creación con una sola pulsación de una [cadena de herramientas devops](../services/ContinuousDelivery/index.html#cd_getting_started).

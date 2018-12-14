@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -16,57 +16,83 @@ lastupdated: "2018-08-17"
 # Utilización de una comprobación de estado en la app Swift
 {: #healthcheck}
 
-Las comprobaciones de estado proporcionan un mecanismo simple para determinar si una aplicación del lado del servidor se está comportando correctamente. Muchos entornos de despliegue, como [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) y [Kubernetes](https://www.ibm.com/cloud/container-service), se pueden configurar para sondear los puntos finales de estado de forma periódica para determinar si una instancia del servicio está lista para aceptar tráfico.
+Las comprobaciones de estado proporcionan un mecanismo simple para determinar si una aplicación del lado del servidor se está comportando correctamente. Los entornos de nube, como [Kubernetes](https://www.ibm.com/cloud/container-service) y [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry), se pueden configurar para sondear los puntos finales de estado de forma periódica para determinar si una instancia del servicio está lista para aceptar tráfico.{: shortdesc}
 
-Las comprobaciones de estado normalmente se consumen a través de HTTP, y utilizan códigos de retorno estándares para indicar el estado `UP` o `DOWN`. Entre los ejemplos se incluye volver a `200` para `UP`, y `5xx` para `DOWN`. Para ser específico, se utiliza un `503` cuando la aplicación no puede manejar solicitudes o no se ha iniciado todavía (el servicio no está disponible), y se utiliza un `500` cuando el servidor encuentra una condición de error. El valor de retorno de una comprobación de estado es variable, pero una respuesta JSON mínima, como `{“status”: “UP”}`, proporciona coherencia.
+## Visión general de la comprobación de estado
+{: #overview}
 
-Cloud Foundry utiliza un punto final de estado para indicar si una instancia de servicio puede manejar o no las solicitudes. En Kubernetes, un punto final de comprobación de estado es equivalente a un punto final de `readiness`. La aplicación debe definir este punto final para ayudar a determinar las decisiones de direccionamiento automáticas. El éxito o el fracaso de este punto final puede incluir la consideración de los servicios en sentido descendente necesarios en el caso de que no haya retroceso aceptable. Si comprueba los servicios en sentido descendente, el almacenamiento en memoria caché del resultado a veces es útil, para minimizar la carga en el sistema en general debido a comprobaciones de estado.
+Las comprobaciones de estado proporcionan un mecanismo simple para determinar si una aplicación del lado del servidor se está comportando correctamente. Normalmente se consumen a través de HTTP y utilizan códigos de retorno estándares para indicar el estado UP (activo) o DOWN(inactivo). El valor de retorno de una comprobación de estado es variable, pero típicamente es una respuesta JSON mínima, como `{"status": "UP"}`.
 
-Kubernetes define un punto final de [liveness](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) adicional, que permite a la aplicación indicar si el proceso se debe reiniciar o no. Aquí se aplica un subconjunto de consideraciones: una comprobación de `liveness` puede fallar una vez que se alcance un determinado umbral de utilización de memoria, por ejemplo. Si la app se está ejecutando en Kubernetes, considere la posibilidad de añadir un punto final `liveness` para asegurarse de que el proceso se reinicia cuando sea necesario.
+Kubernetes tiene una noción matizada del estado del proceso. Define dos análisis:
 
-## Adición de comprobación de estado a una app Swift existente
+- Se utiliza una prueba de _**preparación**_ para indicar si el proceso puede manejar solicitudes (es direccionable).
+
+  Kubernetes no direcciona el trabajo a un contenedor con una prueba de actividad anómala. Una prueba de actividad puede fallar si un servicio no ha terminado de inicializarse, o si está ocupado, sobrecargado o no puede procesar las solicitudes.
+
+- Una prueba de _**actividad**_ se utiliza para indicar si el proceso debe reiniciarse.
+
+  Kubernetes detiene y reinicia un contenedor con una prueba de actividad anómala. Utilice una prueba de actividad para limpiar procesos en un estado no recuperable, por ejemplo, si se ha agotado la memoria o si el contenedor no se ha detenido correctamente después de que un proceso interno haya fallado.
+
+A modo de comparación, Cloud Foundry utiliza un punto final de estado. Si la comprobación falla, el proceso se reinicia, pero si se realiza correctamente, las solicitudes se direccionan a la misma. En este entorno, el punto final se realiza correctamente cuando el proceso está activo. Se ha configurado un tiempo de espera inicial para posponer la comprobación de estado hasta que el servicio haya finalizado la inicialización para evitar ciclos de reinicio.
+
+La tabla siguiente proporciona una orientación sobre las respuestas que los puntos finales de estado singulares, de actividad y de preparación pueden proporcionar.
+
+| Estado    | Preparación                   | Actividad                   | Estado                    |
+|----------|-----------------------------|----------------------------|---------------------------|
+|          | No es correcta y no se carga       | No es correcta y provoca un reinicio      | No es correcto y provoca un reinicio     |
+| Iniciando | 503 - No disponible           | 200 - Bien                   | Utilizar retraso para evitar la prueba   |
+| Activo       | 200 - Bien                    | 200 - Bien                   | 200 - Bien                  |
+| Deteniendo | 503 - No disponible           | 200 - Bien                   | 503 - No disponible         |
+| Inactivo     | 503 - No disponible           | 503 - No disponible          | 503 - No disponible         |
+| Con errores  | 500 - Error del servidor          | 500 - Error del servidor         | 500 - Error del servidor        |
+
+## Adición de una comprobación de estado a una app de Swift existente
 {: #add-healthcheck-existing}
 
 La biblioteca [Health](https://github.com/IBM-Swift/Health) facilita la adición de una comprobación de estado a la aplicación Swift. Las comprobaciones de estado son ampliables. Para obtener más información sobre el [almacenamiento en memoria caché](https://github.com/IBM-Swift/Health#caching) para evitar ataques de DoS o añadir [comprobaciones personalizadas](https://github.com/IBM-Swift/Health#implementing-a-health-check), consulte la biblioteca [Health](https://github.com/IBM-Swift/Health).
 
-Para añadir la biblioteca Health a una app Swift existente, especifíquela en la sección *dependencies:* del archivo `Package.swift`, asegurándose de añadirla a cualquier destino en el que se utilice:
-```swift
-  .package(url: "https://github.com/IBM-Swift/Health.git", .from: "1.0.0"),
-```
-{: codeblock}
+Para añadir la biblioteca de estado a una aplicación Swift existente, consulte los pasos siguientes:
 
-A continuación, añada el código de inicialización siguiente a la aplicación:
-```swift
-import Health
+1. Especifíquela en la sección *dependencies:* del archivo `Package.swift` y añádela a todos los destinos adecuados:
 
-let health = Health()
-```
-{: codeblock}
+    ```swift
+    .package(url: "https://github.com/IBM-Swift/Health.git", .from: "1.0.0"),
+    ```
+    {: codeblock}
 
-A continuación, añada la definición de ruta para definir el punto final de comprobación de estado:
-```
-router.get("/health") { request, response, next in
+2. Añada el código de inicialización siguiente a la aplicación:
+
+    ```swift
+    import Health
+
+    let health = Health()
+    ```
+    {: codeblock}
+
+3. Añada la definición de ruta para definir el punto final de comprobación de estado:
+
+    ```swift
+    router.get("/health") { request, response, next in
   // let status = health.status.toDictionary()
   let status = health.status.toSimpleDictionary()
   if health.status.state == .UP {
-    try response.send(json: status).end()
+            try response.send(json: status).end()
   } else {
-    try response.status(.serviceUnavailable).send(json: status).end()
-  }
-}
-```
-{: codeblock}
+            try response.status(.serviceUnavailable).send(json: status).end()
+        }
+    }
+    ```
+    {: codeblock}
 
-Compruebe el estado de la app con un navegador accediendo al punto final `/health`. El código devuelve una carga útil `{"status": "UP"}`, tal como define el diccionario simple.
+4. Compruebe el estado de la app con un navegador accediendo al punto final `/health`. El código devuelve una carga útil `{"status": "UP"}`, tal como define el diccionario simple.
 
-Para implementaciones alternativas, como por ejemplo utilizar **Codable** o el diccionario estándar, consulte los [ejemplos de la biblioteca Health](https://github.com/IBM-Swift/Health#usage).
-
-## Acceso a la comprobación de estado desde las apps del kit de iniciación de Swift del lado del servidor
+## Comprobación del estado de una app de Swift Starter Kit del lado del servidor
 {: #healthcheck-starterkit}
 
-Al generar una app Swift basada en Kitura utilizando un kit de iniciación, se incluirá de forma predeterminada un punto final de comprobación de estado básico, `/health`. El punto final aprovecha el protocolo Codable disponible en Swift 4, tal como se admite en la biblioteca [Health](https://github.com/IBM-Swift/Health).
+Al generar una app Swift basada en Kitura utilizando un kit de iniciación, se incluirá de forma predeterminada un punto final de comprobación de estado básico, `/health`. El punto final utiliza el protocolo Codable disponible en Swift 4, tal como se admite en la biblioteca [Health](https://github.com/IBM-Swift/Health).
 
-El código de inicialización básico, como la inicialización del objeto Health, se produce en `Sources/Application.swift`, mientras que el punto final de comprobación de estado se proporciona mediante el archivo `/Sources/Application/Routes/HealthRoutes.swift`, que contiene el código siguiente:
+El código de inicialización básico, como la inicialización del objeto Health, se produce en `Sources/Application.swift`. El propio punto final de comprobación de estado se proporciona mediante el archivo `/Sources/Application/Routes/HealthRoutes.swift`, que utiliza el código siguiente:
+
 ```swift
 import LoggerAPI
 import Health
@@ -87,3 +113,54 @@ func initializeHealthRoutes(app: App) {
 {: codeblock}
 
 El ejemplo utiliza el diccionario estándar, que genera una carga útil como por ejemplo `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}` al acceder al punto final `/health`.
+
+## Recomendaciones para pruebas de actividad y preparación
+
+Las comprobaciones deben incluir la viabilidad de conexiones a servicios en sentido descendente en el resultado cuando no existe ninguna reserva aceptable cuando el servicio en sentido descendente no está disponible. Esto no implica llamar a la comprobación de estado que proporciona directamente el servicio en sentido descendente, puesto que la infraestructura realiza la comprobación. En su lugar, considere la posibilidad de verificar el estado de las referencias existentes que tiene la aplicación en los servicios en sentido descendente: puede ser una conexión JMS a WebSphere MQ o un consumidor o productor Kafka inicializado. Si comprueba la viabilidad de referencias internas en servicios en sentido descendente, almacene en memoria caché el resultado para minimizar el impacto que tiene la comprobación de estado en la aplicación.
+
+Una prueba de actividad, por el contrario, puede tener en cuenta lo que se comprueba, ya que un error puede provocar una terminación inmediata del proceso. Un punto final HTTP simple que siempre devuelva `{"status": "UP"}` con el código de estado `200` es una elección razonable.
+
+### Adición de soporte de preparación y actividad de Kubernetes a una app Swift
+
+Para implementaciones alternativas, como por ejemplo utilizar **Codable** o el diccionario estándar, consulte los [ejemplos de la biblioteca Health](https://github.com/IBM-Swift/Health#usage). Algunas de estas implementaciones simplifican la creación de comprobaciones de estado ampliables con soporte para la colocación en memoria caché de comprobaciones que se realizan en los servicios de reserva. En este caso, probablemente desee separar la prueba de actividad simple en el ejemplo de la comprobación de preparación, que es más detallada y potente. 
+
+## Configuración de pruebas de actividad y preparación en Kubernetes
+
+Declare las pruebas de actividad y preparación junto con el despliegue de Kubernetes. Ambas pruebas utilizan los mismos parámetros de configuración:
+
+* El kubelet espera a `initialDelaySeconds` antes de la primera prueba.
+
+* El kubelet prueba el servicio cada `periodSeconds` segundos. El valor predeterminado es 1.
+
+* La prueba expira pasados `timeoutSeconds` segundos. El valor mínimo y valor predeterminado es 1.
+
+* La prueba se realiza correctamente si es satisfactoria `successThreshold` veces tras un error. El valor predeterminado y mínimo es 1. El valor debe ser 1 en las pruebas de actividad.
+
+* Cuando se inicia un pod y la prueba falla, Kubernetes intenta reiniciar el pod `failureThreshold` veces y luego abandona. El valor mínimo es 1 y el valor predeterminado es 3.
+    - En una prueba de actividad, "abandonar" significa reiniciar el pod.
+    - En una prueba de preparación, "abandonar" significa marcar el pod como `Unready` (no preparado).
+
+Para evitar los ciclos de reinicio, establezca `livenessProbe.initialDelaySeconds` para que sea seguro más tiempo del que necesita el servicio para inicializarse. Puede utilizar un valor más corto para `readinessProbe.initialDelaySeconds`, para direccionar solicitudes al servicio en cuanto esté listo.
+
+Consulte el siguiente ejemplo de archivo `yaml`: 
+```yaml
+spec:
+  containers:
+  - name: ...
+    image: ...
+    readinessProbe:
+      httpGet:
+        path: /health
+        port: 8080
+      initialDelaySeconds: 120
+      timeoutSeconds: 5
+    livenessProbe:
+      httpGet:
+        path: /liveness
+        port: 8080
+      initialDelaySeconds: 130
+      timeoutSeconds: 10
+      failureThreshold: 10
+```
+
+Para obtener más información, consulte cómo [Configurar pruebas de actividad y comprobación](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
