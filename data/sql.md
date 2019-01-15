@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-08"
+  years: 2017, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -34,14 +35,14 @@ For this example, the [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-Postg
   ```swift
      dependencies: [
       ...
-      // Add these two lines
+      /* Add these two lines */
       .package(url: "https://github.com/IBM-Swift/Swift-Kuery-ORM.git", from: "0.0.1"),
       .package(url: "https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL.git", from: "1.0.0"),
     ],
     targets: [
       .target(
         name: ...
-        // Add these two modules to your target(s) dependencies
+        /* Add these two modules to your target(s) dependencies */
         dependencies: [..., "SwiftKueryORM", "SwiftKueryPostgreSQL"]),
     ]
   ```
@@ -57,7 +58,7 @@ For this example, the [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-Postg
 ## Step 3. Creating your database
 
 1. After PostgreSQL is set up on your machine, use a terminal to create the database:
-  ```bash
+  ```
   brew services start postgresql
   createdb school
   ```
@@ -88,7 +89,7 @@ For this example, the [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-Postg
   do {
     try Grade.createTableSync()
   } catch {
-    // Error
+    /* Error */
   }
   ```
   {: pre}

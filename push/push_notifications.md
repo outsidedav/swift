@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-12"
+  years: 2017, 2019
+lastupdated: "2019-01-15"
 
 ---
 {:new_window: target="_blank"}
@@ -46,7 +46,7 @@ First, be sure that you have the following prerequisites ready to go:
 ## Step 2. Obtain your notification provider credentials
 {: #get_creds}
 
-To set up Push Notifications service, you need to get the required credentials from the Apple Push Notification Service (APNs). Follow the steps here to [obtain and configure your APNs credentials ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}.
+To set up Push Notifications service, you need to get the required credentials from the Apple Push Notification Service (APNs). Follow the steps here to [obtain and configure your APNs credentials ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}.
 
 
 ## Step 3. Configure a service instance
@@ -84,7 +84,6 @@ To set up APNs on the Push Notification services console, complete the steps:
 To enable iOS applications to receive push notifications to your devices, you need to configure the iOS SDK for the {{site.data.keyword.mobilepushshort}} service.
 
 The {{site.data.keyword.cloud_notm}} Mobile Services Swift SDKs can be installed with either Cocoapods or Carthage. For more information, see [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application).
-
 
 ## Step 5. Sending a notification
 
@@ -129,6 +128,6 @@ The {{site.data.keyword.mobilepushshort}} service provides a monitoring utility 
 
  - For an introduction to working with Mobile services and {{site.data.keyword.cloud_notm}}, see [Getting started with Mobile apps on {{site.data.keyword.cloud_notm}}](/docs/services/mobile/index.html).
 
- - Starter Kits are one of the fastest ways to use the features of {{site.data.keyword.cloud_notm}}. View our available starter kits in the [Mobile Developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
+ - Starter Kits are one of the fastest ways to use the features of {{site.data.keyword.cloud_notm}}. View our available starter kits in the [Mobile Developer dashboard](https://cloud.ibm.com/developer/mobile/dashboard). Download the code. Run the App!
 
  - You can use the [Swagger UI](https://mobile.ng.bluemix.net/imfpush/) to quickly review REST API documentation.

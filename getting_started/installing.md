@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -50,7 +51,7 @@ For more information, see the [Carthage getting started](https://github.com/Cart
 {: #installing_with_swift_package_manager}
 
 To install an SDK by using the Swift Package Manager, add the following line to your dependencies in your `Package.swift`:
-```
+```swift
 .Package(url: "<SDK git url>")
 ```
 {: codeblock}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -20,7 +20,7 @@ You can use API Connect to manage APIs in {{site.data.keyword.cloud}}, whether t
 
 ## Creating an instance of API Connect
 
-Go to the [Catalog](https://console.bluemix.net/catalog/) and create an instance of API Connect to manage your APIs.
+Go to the [Catalog](https://cloud.ibm.com/catalog/) and create an instance of API Connect to manage your APIs.
 
 Use the `Menu->APIs` to access the API Connect Management console.
 

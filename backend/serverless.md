@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -21,7 +21,7 @@ What is serverless? The serverless development pattern refers to application dev
 
 By abstracting away the infrastructure and frameworks necessary for server-side development, serverless architecture allows Developers to focus on writing code to run reactively to change data.
 
-IBM's FaaS offering, [{{site.data.keyword.openwhisk}}](https://console.bluemix.net/openwhisk/), strives to provide a simple, server-side development experience without needing any specialized server-side knowledge. By using serverless technology, you can quickly develop extensible backend solutions to meet practically any workload demand without the need to create resources ahead of time. For applications that have unpredictable load patterns or high server downtime, {{site.data.keyword.openwhisk_short}} can be an excellent cloud solution with improved performance, and its "pay for what you use" system helps to reduce costs.
+IBM's FaaS offering, [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/), strives to provide a simple, server-side development experience without needing any specialized server-side knowledge. By using serverless technology, you can quickly develop extensible backend solutions to meet practically any workload demand without the need to create resources ahead of time. For applications that have unpredictable load patterns or high server downtime, {{site.data.keyword.openwhisk_short}} can be an excellent cloud solution with improved performance, and its "pay for what you use" system helps to reduce costs.
 
 ## Architectural Changes
 {: #comparison}
@@ -91,7 +91,7 @@ Execute your functions periodically, and define schedules that follow a cron-lik
 {: #openwhisk_start_api notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [REST API](https://console.{DomainName}/apidocs/98)
+* [REST API](https://cloud.ibm.com/apidocs)
 
 ## Related Links
 {: #general notoc}

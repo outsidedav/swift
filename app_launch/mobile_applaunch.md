@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -205,6 +205,6 @@ You can now measure the [performance](/docs/services/app-launch/app_measure_perf
 
 Check out the following links to gain insight, and understand the features of {{site.data.keyword.engage_short}}:
 
- - Try out the [App Launch Service](https://console.bluemix.net/catalog/services/app-launch).
+ - Try out the [App Launch Service](https://cloud.ibm.com/catalog/services/app-launch).
  - [Blogs and Videos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
  - For more information, see the [App Launch - Getting started tutorial](/docs/services/app-launch/index.html#gettingstartedtemplate).

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2017-08-09"
+  years: 2017, 2019
+lastupdated: "2019-01-14"
 
 ---
 {:new_window: target="_blank"}
@@ -41,7 +41,7 @@ If you have a Swift server application, you can use the following SDKs to commun
 
 ### Using server-side services
 - [{{site.data.keyword.appid_short}} Swift Server SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-cloud-security/appid-serversdk-swift)
-- [{{site.data.keyword.openwhisk_short}} for iOS ![External link icon](../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/openwhisk/learn/ios-sdk)
+- [{{site.data.keyword.openwhisk_short}} for iOS ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/openwhisk/learn/ios-sdk)
 - [KituraKit ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Swift/KituraKit)
 - [{{site.data.keyword.mobilepushshort}} Swift Server SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-pushnotifications-serversdk-swift)
 - [Watson Swift SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/swift-sdk)

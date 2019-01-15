@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2017-2018
-lastupdated: "2018-11-08"
+  years: 2017, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -33,7 +34,7 @@ The [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![External link icon
 
 ## Step 1. Creating an instance of {{site.data.keyword.cloudant_short_notm}}
 
-See [Creating a Cloudant NoSQL DB instance on IBM Cloud tutorial ![External link icon](../images/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/Cloudant/tutorials/create_service.html#creating-a-cloudant-nosql-db-instance-on-ibm-cloud){:new_window} to create an instance of the service.
+See [Creating a Cloudant NoSQL DB instance on IBM Cloud tutorial ![External link icon](../images/launch-glyph.svg "External link icon")](/docs/services/Cloudant/tutorials/create_service.html#creating-a-cloudant-nosql-db-instance-on-ibm-cloud){:new_window} to create an instance of the service.
 
 ## Step 2. Installing the SDK
 
@@ -70,7 +71,7 @@ To use with the Swift Package Manager for server-side development, add the follo
 After you initialize the SDK in your app, you can begin by using {{site.data.keyword.cloudant_short_notm}} to store data.
 
 1.  Add the following import to your `AppDelegate.swift` or server-side swift file.
-    ```
+    ```swift
     import SwiftCloudant
     ```
     {: codeblock}
@@ -144,5 +145,5 @@ Having trouble? Check out the [{{site.data.keyword.cloudant_short_notm}} API Ref
 Great job! You added a level of secure persistence to your app. Keep the momentum by trying one of the following options:
 
 * View the [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudant/swift-cloudant) source code.
-* Starter Kits are one of the fastest ways to use the capabilities of {{site.data.keyword.cloud_notm}}. The **Infinite Scrolling with Cloudant NoSQL for iOS** starter kit illustrates how to extend a `ViewController` to display data by using pagination. This pattern of app is common for iOS Developers, and is a great example for illustrating the capabilities of {{site.data.keyword.cloudant_short_notm}}. View the available starter kits in the [Mobile Developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
+* Starter Kits are one of the fastest ways to use the capabilities of {{site.data.keyword.cloud_notm}}. The **Infinite Scrolling with Cloudant NoSQL for iOS** starter kit illustrates how to extend a `ViewController` to display data by using pagination. This pattern of app is common for iOS Developers, and is a great example for illustrating the capabilities of {{site.data.keyword.cloudant_short_notm}}. View the available starter kits in the [Mobile Developer dashboard](https://cloud.ibm.com/developer/mobile/dashboard). Download the code. Run the App!
 * Learn more about and take advantage of all of the features that {{site.data.keyword.cloudant_short_notm}} offers, [check out the docs](/docs/services/Cloudant/index.html)!

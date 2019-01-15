@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -74,7 +74,7 @@ To add the Health library to an existing Swift app, see the following steps:
 
     ```swift
     router.get("/health") { request, response, next in
-        // let status = health.status.toDictionary()
+        /* let status = health.status.toDictionary() */
         let status = health.status.toSimpleDictionary()
         if health.status.state == .UP {
             try response.send(json: status).end()

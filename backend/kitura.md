@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -100,7 +101,6 @@ A skeleton Kitura server is created, but it doesn't provide any REST APIs that c
   {: codeblock}
 
 3. Add a handler for `GET` requests on `/meals` to the `Sources/Application/Application.swift` file by adding the following code into the `postInit()` function:  
-
   ```swift
   router.get("/meals", handler: loadHandler)
   ```
@@ -123,7 +123,7 @@ You now have a REST API for `GET` requests on `/meals` that responds with an arr
 6. Test the REST API by using a `GET` request, which matches how web browsers request data from a server. 
 
   You can test the REST API by using the following URL:  
-  ```
+  ```swift
   * `GET /meals`:	[http://localhost:8080/meals]()
   ```
   {: codeblock}
@@ -149,19 +149,19 @@ The following steps show how to install KituraKit into your iOS application, and
   {: codeblock}
 
 2. Edit the Podfile to set a global platform of iOS 11 for your project by replacing the following line:
-  ```
+  ```pod
   # platform :ios, '9.0'
   ```
   {: codeblock}
 
   With the following code:
-	```
+	```pod
   platform :ios, '11.0'
   ```
   {: codeblock}
 
 3. Add KituraKit to the Podfile by adding the following under `# Pods for <application name>`:
-  ```
+  ```pod
   pod 'KituraKit', :git => 'https://github.com/IBM-Swift/KituraKit.git', :branch => 'pod'
   ```
   {: codeblock}
@@ -187,20 +187,20 @@ The following steps show how to install KituraKit into your iOS application, and
   ```swift
   import KituraKit
   
-  // Connect to the Kitura server on http://localhost:8080
+  /* Connect to the Kitura server on http://localhost:8080 */
   guard let client = KituraKit(baseURL: "http://localhost:8080") else {
       print("Error creating KituraKit client")
       return
   }
   
-  // Make a request to `GET /meals`, expecting a [Meal] or a RequestError
+  /* Make a request to `GET /meals`, expecting a [Meal] or a RequestError */
   client.get("/meals") { (meals: [Meal]?, error: RequestError?) in
-      // Check for an error
+      /* Check for an error */
       guard error == nil else {
           print("Error saving meal to Kitura: \(error!)")
           return
       }
-      // Check for meals
+      /* Check for meals */
       guard let meals = meals else {
           print("Received Meals!")
           return

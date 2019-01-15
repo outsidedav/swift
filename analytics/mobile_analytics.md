@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -105,7 +106,7 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 1. Import the Client SDK.
 
     The Swift SDK is available for iOS and watchOS. Import the `BMSCore` and `BMSAnalytics` frameworks by adding the following `import` statements to the beginning of your `AppDelegate.swift` project file:
-	```
+	```swift
 	import BMSCore
 	import BMSAnalytics
 	```
@@ -114,7 +115,7 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 2. Initialize the {{site.data.keyword.mobileanalytics_short}} Client SDK in your application.
 
 	First, initialize the `BMSClient` class by placing the initialization code in the `application(_:didFinishLaunchingWithOptions:)` method of your application delegate, or in a location that works best for your project.
-	```
+	```swift
 	BMSClient.sharedInstance.initialize(bluemixRegion: BMSClient.Region.usSouth) // Make sure that you point to your region
 	```
 	{: codeblock}
@@ -126,7 +127,7 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 	The name that you select for your application (`your_app_name_here`) displays in the {{site.data.keyword.mobileanalytics_short}} console as the application name. The application name is used as a filter to search for application logs in the dashboard. When you use the same application name across platforms (for example, iOS), you can see all logs from that application under the same name, regardless of which platform the logs were sent from.
 
 	You also need the [API Key](#analytics-clientkey) value.
-	```
+	```swift
 	Analytics.initialize(appName: "your_app_name_here", apiKey: "your_api_key_here", hasUserContext: false, collectLocation: true, deviceEvents: .lifecycle, .network)
 	```
     {: codeblock}
@@ -139,7 +140,7 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 You can configure the {{site.data.keyword.mobileanalytics_short}} client SDK to record usage analytics and send the recorded data to the {{site.data.keyword.mobileanalytics_short}} service.
 
 Use the following APIs to start recording and sending usage analytics:
-```
+```swift
 // Disable recording of usage analytics (eg: to save disk space)
 // Recording is enabled by default
 
@@ -153,18 +154,17 @@ Analytics.isEnabled = true
 
 Analytics.send(completionHandler: { (response: Response?, error: Error?) in
     if let response = response {
-
 	  // Handle Analytics send success here.
     }
     if let error = error {
-        // Handle Analytics send failure here.
+      // Handle Analytics send failure here.
     }
 })
 ```
 {: codeblock}
 
 Sample usage analytics for logging an event:
-```
+```swift
 // Log a custom analytics event
 let eventObject = ["customProperty": "propertyValue"]
 Analytics.log(metadata: eventObject)
@@ -198,7 +198,7 @@ When the logger level is set `DEBUG`, you also get Mobile Analytics Client SDK l
 **Note:** Make sure that your application is configured to use the {{site.data.keyword.mobileanalytics_short}} Client SDK before you use the logging framework.
 
 The following code snippets show sample Logger usage:
-```
+```swift
 // Configure Logger. Disabled by default;
 
 Logger.isLogStorageEnabled = true
@@ -241,14 +241,14 @@ For privacy concerns, you can disable Logger output for applications that are bu
 {: #location-logging}
 
 Location of the mobile device might be logged from the app through this provided API:
-```
+```swift
 Analytics.logLocation();
 ```
 
 The API enables the app to send its location (as latitude and longitude), to the server in between app sessions. Other than explicit calls to the `location-logging` API, the SDK sends device location for every App-Session. The location is sent for the initial app session context, and user switch app session (that is, a switch of a user between an app session) context. The location API must be enabled in the initialization of the SDK.
 
 To call the `location-logging` API, set the `collectLocation` parameter to `true` in the SDK initialization:
-```
+```swift
 Analytics.initialize(appName, apiKey,  hasUserContext, collectLocation, [BMSAnalytics.ALL])
 ```
 
@@ -265,7 +265,7 @@ You can see [application crash data](app-monitoring.html#monitor-app-crash) by s
 The `Analytics.send()` method populates the **Crash Overview** and **Crashes** tables on the **Crashes** page. You can enable charts by using the initialization and sending process for analytics.
 
 The `Logger.send()` method populates the **Crash Summary** and **Crash Details** tables on the **Troubleshooting** page. You must enable your application to store and send logs to populate the charts by adding a statement in your application code:
-```
+```swift
 Logger.isLogStorageEnabled = true
 Logger.logLevelFilter = LogLevel.Fatal // or greater
 ```
@@ -281,7 +281,7 @@ If your application can recognize unique users on a device, you can track how ma
 Enable user tracking by initializing {{site.data.keyword.mobileanalytics_short}} with `hasUserContext=true`. Otherwise, {{site.data.keyword.mobileanalytics_short}} captures only one user per device.
 
 Add the following code to track when the user logs in:
-```
+```swift
 Analytics.userIdentity = "username"
 ```
 {: codeblock}
@@ -303,6 +303,6 @@ Is everything configured correctly? Time to test it out!
 
  - For an introduction to working with mobile services and {{site.data.keyword.Bluemix_notm}}, see [Getting started with Mobile apps on IBM Cloud](/docs/services/mobile/index.html).
 
- - Starter Kits are one of the fastest ways to leverage the features of {{site.data.keyword.cloud_notm}}. View all the available starter kits in the [Mobile Developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
+ - Starter Kits are one of the fastest ways to leverage the features of {{site.data.keyword.cloud_notm}}. View all the available starter kits in the [Mobile Developer dashboard](https://cloud.ibm.com/developer/mobile/dashboard). Download the code. Run the App!
 
  - You can use the [Swagger UI](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/) to quickly review REST API documentation.

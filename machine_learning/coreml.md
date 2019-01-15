@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-07"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:tip: .tip}
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -96,7 +97,7 @@ You're all set! Now, you're ready to download your Core ML model and integrate i
 ## Step 3. Adding image classification to your app
 {: #adding-image-classification}
 
-```Swift
+```swift
 //
 //  ViewController.swift
 //  CoreMLImageClassificationExample
@@ -159,7 +160,7 @@ With starter kits, you can quickly and easily leverage the capabilities of {{sit
 
 To add {{site.data.keyword.visualrecognitionshort}} to a starter kit, complete the following steps:
 
-1. Select the [starter kit](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} with which you want to work.
+1. Select the [starter kit](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} with which you want to work.
 2. Create the project with the default services.
 3. Click **Add Resources > Watson > {{site.data.keyword.visualrecognitionshort}}**.
 4. Download the project by clicking **Download Code**. For iOS projects, the credentials are inserted in the `BMSCredentials.plist` file in the corresponding key fields. For server-side Swift projects, you can find these credentials in the `config/local-dev.json` file.

@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -109,7 +110,7 @@ For more information about the `mappings.json` file, check out the [Understandin
 
 ## Using the Swift configuration manager from Starter Kit apps
 
-Swift apps that are created with [Starter Kits](https://console.bluemix.net/developer/appledevelopment/starter-kits/) automatically come with the credentials and configuration that is needed to run locally, and also in many Cloud deployment environments (CF, K8s, VSI, and Functions). The basic creation of the configuration manager can be found in `Sources/Application/Application.swift`. When you create a Swift-based Starter Kit app with services, a `config` folder and `mappings.json` file is created for you. If you download your app, the `config` folder includes a `localdev-config.json` file that has all of the credentials for your services, and is present in the `.gitignore` file.
+Swift apps that are created with [Starter Kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits/) automatically come with the credentials and configuration that is needed to run locally, and also in many Cloud deployment environments (CF, K8s, VSI, and Functions). The basic creation of the configuration manager can be found in `Sources/Application/Application.swift`. When you create a Swift-based Starter Kit app with services, a `config` folder and `mappings.json` file is created for you. If you download your app, the `config` folder includes a `localdev-config.json` file that has all of the credentials for your services, and is present in the `.gitignore` file.
 
 ## Next Steps
 {: #next notoc}

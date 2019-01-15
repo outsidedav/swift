@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-07"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -123,14 +124,14 @@ Now you are ready to start working with the Watson Swift SDK in your app!
 
       func toneAnalyzerExample() {
 
-          // instantiate service
+          /* instantiate service */
           let toneAnalyzer = ToneAnalyzer(
               username: "your-username-here",
               password: "your-password-here",
               version: "yyyy-mm-dd"
           )
 
-          // text to analyze
+          /* text to analyze */
           let review = """
               I was asked to sign a third party contract a week out from stay. If it wasn't an 8 person group that
               took a lot of wrangling I would have cancelled the booking straight away. Bathrooms - there are no
@@ -141,7 +142,7 @@ Now you are ready to start working with the Watson Swift SDK in your app!
               of them - some had slightly bending wood which caused a minor injury.
           """
 
-          // analyze text
+          /* analyze text */
           let toneInput = ToneInput(text: review)
           let failure = { (error: Error) in print(error) }
           toneAnalyzer.tone(toneInput: toneInput, contentType: "application/json", failure: failure) { analysis in
@@ -164,11 +165,11 @@ Tentative: 0.867377
 ## Using starter kits
 {: #tone_starterkits}
 
-[Starter kits](https://console.bluemix.net/developer/appledevelopment/starter-kits) are one of the fastest ways to leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can use the {{site.data.keyword.toneanalyzershort}} service by selecting the **Tone Analyzer for iOS with Watson** starter kit. This service utilizes deep learning capabilities to evaluate passages of text. The Tone Analyzer application identifies the speaker's tone (happy, sad, confident, and more) as it relates to a number of categories.
+[Starter kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits) are one of the fastest ways to leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can use the {{site.data.keyword.toneanalyzershort}} service by selecting the **Tone Analyzer for iOS with Watson** starter kit. This service utilizes deep learning capabilities to evaluate passages of text. The Tone Analyzer application identifies the speaker's tone (happy, sad, confident, and more) as it relates to a number of categories.
 
 To get started with this starter kit:
 
-1. Select the starter kit found [here](https://console.bluemix.net/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson).
+1. Select the starter kit found [here](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson).
 2. Create the project with the default services.
 3. Download the project by clicking **Download Code**. Service credentials are injected into the `BMSCredentials.plist` file in the corresponding key fields.
 

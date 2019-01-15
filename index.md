@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2018-11-08"
 {{site.data.keyword.cloud}} offers solutions and services to enable Swift Developers to build applications that are integrated with the security, AI, and value that your customers demand. With a broad portfolio of offerings and SDKs, you can use these services, and bring cutting-edge applications to market quickly. This Swift programming explains how to add services to a new or existing Swift application, whether it's an iOS client or server-side Swift.
 {: shortdesc}
 
-The following tutorial shows how to easily create a Swift mobile app with {{site.data.keyword.mobileanalytics_full}} by using an empty Starter Kit from the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits). From the console, you add the {{site.data.keyword.mobileanalytics_short}} service, download the code, run the iOS app locally in Xcode, configure, and monitor the app.
+The following tutorial shows how to easily create a Swift mobile app with {{site.data.keyword.mobileanalytics_full}} by using an empty Starter Kit from the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits). From the console, you add the {{site.data.keyword.mobileanalytics_short}} service, download the code, run the iOS app locally in Xcode, configure, and monitor the app.
 
 ## Step 1. Requirements for Developers
 {: #dev-requirements}
@@ -62,9 +62,9 @@ The following tools ensure that you can install the native SDKs to work with the
 ## Step 2. Creating a custom iOS Swift App
 {: #create-ios-app}
 
-1. Log in to the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits).
+1. Log in to the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits).
 2. Click **Create App**.
-3. On the [Empty Starter](https://console.bluemix.net/developer/appledevelopment/create-app) page, you can use the default configuration, or update the fields as needed. Ensure that **iOS Swift** is the selected language. Click **Create**.
+3. On the [Empty Starter](https://cloud.ibm.com/developer/appledevelopment/create-app) page, you can use the default configuration, or update the fields as needed. Ensure that **iOS Swift** is the selected language. Click **Create**.
 
 ## Step 3. Adding the {{site.data.keyword.mobileanalytics_short}} service
 {: #adding-services}
@@ -99,22 +99,22 @@ To download the code, click **Download Code** under `Apps` > `Your App`. The dow
   `BMSCore` is the Core SDK and is base for the Mobile Client SDKs. `BMSClient` is a class of `BMSCore` and initialized in `AppDelegate.swift`. Along with `BMSCore`, {{site.data.keyword.mobileanalytics_short}} SDK is already imported into the project.
   
 2. Analytics initialization code is already included as shown in the following snippet:
-  ```
-  // Analytics client SDK is configured to record lifecycle events.
-         	Analytics.initialize(appName:dictionary["appName"] as? String,
-        			     apiKey: dictionary["analyticsApiKey"] as? String,
-        	        	     deviceEvents: .lifecycle)
+  ```swift
+  /* Analytics client SDK is configured to record lifecycle events. */
+  Analytics.initialize(appName:dictionary["appName"] as? String,
+  		     apiKey: dictionary["analyticsApiKey"] as? String,
+     	     deviceEvents: .lifecycle)
 
-        	// Enable Logger (disabled by default) and set level to ERROR (DEBUG by default).
-        	Logger.isLogStorageEnabled = true
-        	Logger.logLevelFilter = .error
+  /* Enable Logger (disabled by default) and set level to ERROR (DEBUG by default). */
+           Logger.isLogStorageEnabled = true
+        	 Logger.logLevelFilter = .error
   ```
   {: codeblock}
 
   **Note:** The service credentials are part of the `BMSCredentials.plist` file.
 
 3. Gathering usage analytics by using `logger`. Navigate to the `ViewController.swift` file to see the following code.
-  ```
+  ```swift
    func didBecomeActive(_ notification: Notification) {
        Analytics.send()
        Logger.send()
@@ -122,7 +122,7 @@ To download the code, click **Download Code** under `Apps` > `Your App`. The dow
   ```
   {: codeblock}
 
-   For advanced Analytics and logging features, refer to [Gathering usage Analytics](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#app-monitoring-gathering-analytics) and [logging](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#enabling-configuring-and-using-logger).
+   For advanced Analytics and logging features, refer to [Gathering usage Analytics](/docs/services/mobileanalytics/sdk.html#app-monitoring-gathering-analytics) and [logging](/docs/services/mobileanalytics/sdk.html#enabling-configuring-and-using-logger).
    {:tip}
 
 ## Step 6. Monitoring the app with {{site.data.keyword.mobileanalytics_short}}
@@ -137,7 +137,7 @@ The service includes the {{site.data.keyword.mobileanalytics_short}} Console whe
     * Operating System.
     * Version of the app.
          ![{{site.data.keyword.mobileanalytics_short}}](images/mobile_analytics.png)
-3. [Click here](https://console.bluemix.net/docs/services/mobileanalytics/app-monitoring.html#monitoringapps) to set alerts, Monitor App crashes, and Monitor network requests.
+3. [Click here](/docs/services/mobileanalytics/app-monitoring.html#monitoringapps) to set alerts, Monitor App crashes, and Monitor network requests.
 
 ## Next steps
 {: #next-steps}

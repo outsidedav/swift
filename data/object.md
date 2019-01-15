@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -30,7 +31,7 @@ When you create a bucket, you must select a resiliency level (cross-region or re
 
 ## API
 
-The {{site.data.keyword.cos_full}} API is a REST-based API for reading and writing objects. It supports a subset of the S3 API for easy migration of applications to {{site.data.keyword.cloud_notm}}. Any S3 SDK can be used to use {{site.data.keyword.cos_full}}. For more information, see the full [{{site.data.keyword.cos_short}} API Reference](docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api)
+The {{site.data.keyword.cos_full}} API is a REST-based API for reading and writing objects. It supports a subset of the S3 API for easy migration of applications to {{site.data.keyword.cloud_notm}}. Any S3 SDK can be used to use {{site.data.keyword.cos_full}}. For more information, see the full [{{site.data.keyword.cos_short}} API Reference](/docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api)
 
 ## Security
 {: #security}

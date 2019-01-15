@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-06-04"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -41,15 +42,15 @@ With IBM Watson Machine Learning, after you set up your environment, you can cre
   * For an iOS project, simply by adding the {{site.data.keyword.pm_short}} resource to your iOS project, the credentials are instantly injected into your app.
     To access the credentials from your application, copy and paste the following code snippet. Also, be sure to add the scoring end point to your app, which can be found inside your model's deployment `implementation` tab.
 
-    ```Swift
-    // The url to your model's scoring endpoint
+    ```swift
+    /* The url to your model's scoring endpoint */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
 
-    // Your credentials
+    /* Your credentials */
     var machineLearningUsername: String!
     var machineLearningPassword: String!
 
-    // Machine Learning initialization
+    /* Machine Learning initialization */
     if let contents = Bundle.main.path(forResource:"BMSCredentials", ofType: "plist"),
        let dictionary = NSDictionary(contentsOfFile: contents),
        let username = dictionary["machinelearningUsername"] as? String,
@@ -64,19 +65,19 @@ With IBM Watson Machine Learning, after you set up your environment, you can cre
 
   * For server-side application, manually add your username and password to your application as well as the scoring end point, which can be found inside your model's deployment `implementation` tab.
 
-    ```Swift
-    // Your Machine Learning Credentials
+    ```swift
+    /* Your Machine Learning Credentials */
     let machineLearningUsername: String = "<your-ml-service-username>"
     let machineLearningPassword: String = "<your-ml-service-password>"
 
-    // The url to your model's scoring endpoint
+    /* The url to your model's scoring endpoint */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
     ```
     {: codeblock}
 
 4. Retrieve access tokens and perform predictive analysis on data sets from your application with a simple client SDK.
 
-  ```Swift
+  ```swift
   public class MachineLearning {
 
       private let username: String
@@ -183,7 +184,7 @@ With IBM Watson Machine Learning, after you set up your environment, you can cre
 
 Once the model is deployed, you can perform predictive analysis by using the scoring end point.
 
-```Swift
+```swift
 // The data you want to have analyzed
 let examplePayload: [String: Any] = [
     "fields": ["GENDER", "AGE", "MARITAL_STATUS", "PROFESSION"],

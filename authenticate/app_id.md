@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -36,7 +36,7 @@ First, be sure that you have the following prerequisites ready to go:
 
 Create an instance of the {{site.data.keyword.appid_short_notm}} service:
 
-1. In the [{{site.data.keyword.cloud_notm}} catalog](https://console.bluemix.net/catalog/), select {{site.data.keyword.appid_short_notm}}. The service configuration screen opens.
+1. In the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/), select {{site.data.keyword.appid_short_notm}}. The service configuration screen opens.
 2. Give your service instance a name, or use the preset name.
 3. Select your pricing plan and click **Create**.
 
@@ -118,7 +118,6 @@ An identity provider provides the authentication information for your users so t
 You can update your configurations at any time without updating your app code.
 {: tip}
 
-
 ### Social identity providers
 
 With {{site.data.keyword.appid_short_notm}}, you can use social identity providers such as Facebook and Google+ to secure your apps.
@@ -138,7 +137,7 @@ To configure social identity providers:
         }
 
         public func onAuthorizationCanceled() {
-            //Authentication canceled by the user
+            //Authentication cancelled by the user
         }
 
         public func onAuthorizationFailure(error: AuthorizationError) {
@@ -167,34 +166,35 @@ To configure cloud directory:
         ```swift
         class delegate : TokenResponseDelegate {
             public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-            //User authenticated
+            /* User authenticated */
             }
 
             public func onAuthorizationFailure(error: AuthorizationError) {
-            //Exception occurred
+            /* Exception occurred */
             }
         }
 
         AppID.sharedInstance.obtainTokensWithROP(username: username, password: password, delegate: delegate())
         ```
         {: codeblock}
+
     * Sign up
         ```swift
         class delegate : AuthorizationDelegate {
           public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
              if accessToken == nil && identityToken == nil {
-              //email verification is required
+              /* email verification is required */
               return
              }
-           //User authenticated
+           /* User authenticated */
           }
 
           public func onAuthorizationCanceled() {
-              //Sign up canceled by the user
+              /* Sign up cancelled by the user */
           }
 
           public func onAuthorizationFailure(error: AuthorizationError) {
-              //Exception occurred
+              /* Exception occurred */
           }
         }
 
@@ -206,15 +206,15 @@ To configure cloud directory:
         ```swift
         class delegate : AuthorizationDelegate {
            public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-              //forgot password finished, in this case accessToken and identityToken will be null.
+              /* forgot password finished, in this case accessToken and identityToken will be null. */
            }
 
            public func onAuthorizationCanceled() {
-               //forgot password canceled by the user
+               /* forgot password canceled by the user */
            }
 
            public func onAuthorizationFailure(error: AuthorizationError) {
-               //Exception occurred
+               /* Exception occurred */
            }
         }
 
@@ -276,4 +276,4 @@ Having trouble? Check out [troubleshooting {{site.data.keyword.appid_short_notm}
 Great job! You added a level of security to your app. Keep the momentum by trying one of the following options:
 
 * Learn more about and take advantage of all of the features that {{site.data.keyword.appid_short_notm}} has to offer, [check out the docs](/docs/services/appid/index.html)!
-* Starter Kits are one of the fastest ways to use the features of {{site.data.keyword.cloud_notm}}. View the available starter kits in the [Mobile Developer dashboard](https://console.bluemix.net/developer/mobile/dashboard). Download the code. Run the App!
+* Starter Kits are one of the fastest ways to use the features of {{site.data.keyword.cloud_notm}}. View the available starter kits in the [Mobile Developer dashboard](https://cloud.ibm.com/developer/mobile/dashboard). Download the code. Run the App!

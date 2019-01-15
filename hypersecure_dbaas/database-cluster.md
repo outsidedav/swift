@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -24,7 +24,7 @@ is Swift 4.0 with MongoKitten SDK 4.0.0.
 {: #create_dbcluster}
 
 1. Access the {{site.data.keyword.ihsdbaas_full}} service configuration screen at
-https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
+https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
 
 2. Provide the following information:
 
@@ -81,7 +81,7 @@ You need a starter kit that is based on the server-side Swift web framework Kitu
 
 Use an existing project that was created from this starter kit, or create a new project.
 
-1. Open the {{site.data.keyword.cloud_notm}} App Service dashboard at https://console.bluemix.net/developer/appservice/dashboard.
+1. Open the {{site.data.keyword.cloud_notm}} App Service dashboard at https://cloud.ibm.com/developer/appservice/dashboard.
 
 2. Select the **Starter Kits** tab.
 
@@ -148,13 +148,13 @@ https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project direc
 MongoKitten SDK.
 
   * In the dependencies section, add the following line:
-   ```hljs
+   ```swift
    .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
    ```
    {: codeblock}
 
   * In the targets section, add the dependency "MongoKitten" to the following line. **Note:** The values must be specified in a single line.
-   ```hljs
+   ```swift
    .target(name: "Application", dependencies: [ "Kitura",
    "CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
    ```
@@ -163,20 +163,20 @@ MongoKitten SDK.
 5. Edit the `Sources/Application/Application.swift` file to initialize connectivity to MongoDB by using MongoKitten.
 
   * Import the MongoKitten SDK:
-    ```
-	import MongoKitten
-	```
-	{: codeblock}
+    ```swift
+	  import MongoKitten
+	  ```
+	  {: codeblock}
 
   * Add the class `ApplicationServices`:
-    ```hljs
-	cclass ApplicationServices {
-	// Service references
-	public let mongoDBService: MongoKitten.Database
-	public let myCredFile = "/swift-project/cred.json"
+    ```swift
+	  cclass ApplicationServices {
+	  /* Service references */
+	  public let mongoDBService: MongoKitten.Database
+	  public let myCredFile = "/swift-project/cred.json"
 
     public init() throws {
-        // Read credentials from json file cred.json
+        /* Read credentials from json file cred.json */
         struct ResponseData: Decodable {
             var uri: String
         }
@@ -184,7 +184,7 @@ MongoKitten SDK.
         let decoder = JSONDecoder()
         let jsonData = try decoder.decode(ResponseData.self, from: data!)
 
-        // Run service initializers
+        /* Run service initializers */
         let server = try Server(jsonData.uri)
         mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
     }
@@ -193,16 +193,16 @@ MongoKitten SDK.
 	{: codeblock}
 
   * In the public class `App`, add the following lines to initialize the database connection:
-    ```hljs
-	public class App {
-	...
-	let services: ApplicationServices
+    ```swift
+	  public class App {
+	  ...
+	  let services: ApplicationServices
 
-	public init() throws {
-	   // Services
-	    services = try ApplicationServices()
-	 }
-	...
+	  public init() throws {
+	  /* Services */
+	  services = try ApplicationServices()
+	  }
+	  ...
     ```
     {: codeblock}
 
@@ -212,7 +212,7 @@ MongoKitten SDK.
 1. Verify your database connection by editing the file `Sources/Application/Application.swift` to add a command to test the database connection.
 For example, add the following command in the `class ApplicationServices`:
 
-	```hljs
+	```swift
 		class ApplicationServices {
 		    ...
 		    public init() throws {
@@ -230,7 +230,7 @@ For example, add the following command in the `class ApplicationServices`:
 
 After you deploy your application in [Step 6](#use-step6), the following message is displayed, if your connection to the database succeeds:
 
-```hljs
+```
 ...
 Connected to mongodb:
 MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>PortNumber_1</em>&gt;,&lt;<em>Hostname_2</em>&gt;&colon;&lt;<em>PortNumber_2</em>&gt;,&lt;<em>Hostname_3</em>&gt;&colon;&lt;<em>PortNumber_3</em>&gt;/admin&gt;
@@ -265,9 +265,12 @@ You can run your application locally on your host system, in Cloud Foundry, or i
 
 3. To deploy the application on your local computer, enter the commands:
 	```
-	$ ibmcloud dev build
-	...
-	$ ibmcloud dev run
+	ibmcloud dev build
+	```
+  {: codeblock}
+
+  ```
+	ibmcloud dev run
 	```
 	{: codeblock}
 
@@ -278,10 +281,10 @@ You can run your application locally on your host system, in Cloud Foundry, or i
 
 1. Switch to the directory with your project files.
 
-2. Log in to your IBM Cloud account, and set the region to `us-south`, as shown here:
-  ```hljs
-  $ ibmcloud login -a https://api.ng.bluemix.net
-  $ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
+2. Log in to your {{site.data.keyword.cloud_notm}} account, and set the region to `us-south`, as shown here:
+  ```
+  ibmcloud login -a https://api.ng.bluemix.net
+  ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
   ```
   {: codeblock}
 
@@ -289,7 +292,7 @@ You can run your application locally on your host system, in Cloud Foundry, or i
 
 3. To deploy the application to the Cloud Foundry, enter this command:
   ```
-  $ ibmcloud dev deploy
+  ibmcloud dev deploy
   ```
   {: codeblock}
 
@@ -298,7 +301,7 @@ You can run your application locally on your host system, in Cloud Foundry, or i
 ### Deploying to a Kubernetes Cluster
 {: #deploy_cluster}
 
-1. Create a Kubernetes cluster at https://console.bluemix.net/containers-kubernetes/clusters.
+1. Create a Kubernetes cluster at https://cloud.ibm.com/containers-kubernetes/clusters.
 
 2. Click **Create Cluster**. The Access tab displays information on how to access the created Kubernetes cluster.
 
@@ -307,7 +310,7 @@ You can run your application locally on your host system, in Cloud Foundry, or i
 4. Switch to the directory with your project files.
 
 5. Log in to your {{site.data.keyword.cloud_notm}} account, and set the region to us-south, as shown here:
-  ```hljs
+  ```
   $ ibmcloud login -a https://api.ng.bluemix.net
   $ ibmcloud target -o <your-organization> -s <your-space>
   ```
