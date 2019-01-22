@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-01-22"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2019-01-15"
 
 Kitura is able to integrate with all of the services and features that are provided by {{site.data.keyword.cloud}}, including {{site.data.keyword.appid_short}}, {{site.data.keyword.mobilepushshort}}, and {{site.data.keyword.mobileanalytics_short}}, as well as databases, machine learning, and other services. Kitura can then be deployed and automatically scaled by using either of the Cloud Foundry or Docker (Kubernetes-based) platforms in {{site.data.keyword.cloud}}.
 
-Kitura provides a `kitura` [command line interface (CLI)](http://www.kitura.io/en/starter/gettingstarted.html) that simplifies creating, building, testing, and deploying Kitura applications. Applications that are built by using the Kitura CLI include full support for deploying to any cloud that supports Cloud Foundry, Docker, and Kubernetes technologies. However, if you are building specifically for {{site.data.keyword.cloud_notm}}, it is recommended to use the IBM Apple Development Console in the browser or use the {{site.data.keyword.dev_cli_notm}}. Additionally, while both methods share underlying technology, the Apple Development Console and the IBM Developer Tools create a hosted project and deployment pipeline for you, as well as provision the services that your application needs.
+Kitura provides a `kitura` [command line interface (CLI)](https://www.kitura.io/guides/kituracli/gettingstarted.html) that simplifies creating, building, testing, and deploying Kitura applications. Applications that are built by using the Kitura CLI include full support for deploying to any cloud that supports Cloud Foundry, Docker, and Kubernetes technologies. However, if you are building specifically for {{site.data.keyword.cloud_notm}}, it is recommended to use the IBM Apple Development Console in the browser or use the {{site.data.keyword.dev_cli_notm}}. Additionally, while both methods share underlying technology, the Apple Development Console and the IBM Developer Tools create a hosted project and deployment pipeline for you, as well as provision the services that your application needs.
 
 ## Before you begin
 
