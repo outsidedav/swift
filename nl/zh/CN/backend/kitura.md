@@ -19,7 +19,7 @@ lastupdated: "2018-11-12"
 
 Kitura 能够与 {{site.data.keyword.cloud}} 提供的所有服务和功能进行集成，包括 {{site.data.keyword. appid_short}}、{{site.data.keyword.mobilepushshort}} 和 {{site.data.keyword.mobileanalytics_short}} 以及数据库、机器学习和其他服务。然后，可以使用 {{site.data.keyword.cloud}} 中的 Cloud Foundry 或 Docker（基于 Kubernetes）平台来部署和自动扩展 Kitura。
 
-Kitura 提供了 `kitura` [命令行界面 (CLI)](http://www.kitura.io/en/starter/gettingstarted.html)，用于简化创建、构建、测试和部署 Kitura 应用程序。使用 Kitura CLI 构建的应用程序完全支持部署到任何支持 Cloud Foundry、Docker 和 Kubernetes 技术的云。但是，如果要专门针对 {{site.data.keyword.cloud_notm}} 进行构建，建议您在浏览器中使用 IBM Apple Development Console 或使用 {{site.data.keyword.dev_cli_notm}}。此外，虽然这两种方法都共享底层技术，但 Apple Development Console 和 IBM Developer Tools 会创建托管的项目和部署管道，以及供应应用程序所需的服务。
+Kitura 提供了 `kitura` [命令行界面 (CLI)](https://www.kitura.io/guides/kituracli/gettingstarted.html)，用于简化创建、构建、测试和部署 Kitura 应用程序。使用 Kitura CLI 构建的应用程序完全支持部署到任何支持 Cloud Foundry、Docker 和 Kubernetes 技术的云。但是，如果要专门针对 {{site.data.keyword.cloud_notm}} 进行构建，建议您在浏览器中使用 IBM Apple Development Console 或使用 {{site.data.keyword.dev_cli_notm}}。此外，虽然这两种方法都共享底层技术，但 Apple Development Console 和 IBM Developer Tools 会创建托管的项目和部署管道，以及供应应用程序所需的服务。
 
 ## 开始之前
 
