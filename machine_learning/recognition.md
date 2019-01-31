@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -11,6 +11,7 @@ lastupdated: "2019-01-15"
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:tip: .tip}
 
 # {{site.data.keyword.visualrecognitionshort}}
 {: #recognition}
@@ -18,7 +19,7 @@ lastupdated: "2019-01-15"
 The {{site.data.keyword.visualrecognitionfull}} service enables your app to quickly and accurately tag, classify, and train visual content by using machine learning. The service can help to classify virtually any visual content, train your own custom model in minutes, and detect faces.
 
 ## How it works
-{: ##how-it-works}
+{: #how-it-works}
 
 1. Your app chooses a selection of images to analyze.
 2. Your app sends the image to the {{site.data.keyword.visualrecognitionshort}} service by using the Watson Swift SDK.
@@ -28,23 +29,22 @@ The {{site.data.keyword.visualrecognitionfull}} service enables your app to quic
 ## Before you begin
 {: ###before-you-begin}
 
-First, be sure that you have the following prerequisites ready to go:
-<ul>
-  <li>iOS 8.0+</li>
-  <li>Xcode 9.0+</li>
-  <li>Swift 3.2+ or Swift 4.0+</li>
-  <li>Carthage</li>
-</ul>
+Ensure that you have the following prerequisites:
 
-It is recommended to use [Carthage](https://github.com/Carthage/Carthage) to manage dependencies, and build the Watson Swift SDK for your application. If you are new to Carthage, you can install it with [Homebrew](http://brew.sh/):
+* iOS 10.0+
+* Xcode 9.3+
+* Swift 4.1+
+* CocoaPods, Carthage, or Swift Package Manager
 
-```bash
-$ brew update
-$ brew install carthage
+You can install the [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk) by using [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods), [Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage), or the [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager). By using CocoaPods(https://cocoapods.org/) to manage dependencies, you get only the frameworks that you need, as opposed to the entire Watson Swift SDK. If you are new to CocoaPods, you can install it easily:
+
+```console
+sudo gem install cocoapods
 ```
+{: codeblock}
 
 ## Step 1. Creating an instance of Visual Recognition
-{: ###create-and-configure-an-instance-of-visual-recognition}
+{: #create-and-configure-an-instance-of-visual-recognition}
 
 Provision an instance of the {{site.data.keyword.visualrecognitionshort}} service:
 
@@ -55,79 +55,75 @@ Provision an instance of the {{site.data.keyword.visualrecognitionshort}} servic
 5. Select the **Credentials** tab to view your service credentials. These values are used to connect to the service from your app.
 
 ## Step 2. Downloading and building dependencies
-{: ###download-and-build-dependencies}
+{: #download-and-build-dependencies}
 
-Using your favorite text editor, create a file that is called `Cartfile` in the root directory of your project (where your `.xcodeproj` file is located). Then, add a line to specify the Watson Swift SDK as a dependency:
+Using your favorite text editor, create a new `Podfile` in the root directory of your project (where your `.xcodeproj` file is located) by running `pod init`. Then, add a line to specify the {{site.data.keyword.visualrecognitionshort}} framework of the Watson Swift SDK as a dependency:
+
+```pod
+use_frameworks!
+
+target 'MyApp' do
+    pod 'IBMWatsonVisualRecognitionV3'
 ```
-github "watson-developer-cloud/swift-sdk"
+{: codeblock}
+
+For a production app, you might also want to specify a particular [version requirement](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions) to avoid unexpected changes from new releases of the Watson Swift SDK.
+
+With your `Podfile` in place, now you can download the dependencies. Use a terminal to navigate to the root directory of your project, then run CocoaPods:
+
+```console
+pod install
 ```
-{: pre}
+{: codeblock}
 
-For a production app, you can specify a particular [version requirement](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement) to avoid unexpected changes from new releases of the Watson Swift SDK.
+Cocoapods downloads the {{site.data.keyword.visualrecognitionshort}} framework, and builds it in the `Pods/` folder of your project.
 
-With the `Cartfile` in place, now you can download and build the dependencies. Use a terminal to navigate to the root directory of your project, then run Carthage:
+To prevent Pod build failures, open the file that ends in `.xcworkspace` instead of the `.xcodeproj` when you open the project in Xcode.
+{: tip}
 
-```bash
-carthage update --platform iOS
-```
-{: pre}
-
-Carthage downloads the Watson Swift SDK, and build its frameworks in the `Carthage/Build/iOS` folder of your project.
-
-## Step 3. Adding frameworks to your app
-{: ###add-frameworks-to-your-app}
-
-### Link Visual Recognition steps:
-
-Now that the Watson Swift SDK frameworks are built by Carthage, you must link the Visual Recognition framework with your app.
-
-1. Open your app in Xcode, and select your project to open its settings.
-2. Select your app target then open the **General** tab.
-3. Scroll down to the "Linked Frameworks and Libraries" section, and click the `+` icon.
-4. In the window that appears, choose **Add Other...**, and navigate to the `Carthage/Build/iOS` directory. Select **VisualRecognitionV3.framework** to link it with your app.
-
-### Copy Visual Recognition steps:
-
-In addition to _linking_ the Visual Recognition framework, you must also _copy_ it into the app to make it accessible at run time. Xcode has several different ways to copy or embed a framework, but you can use a Carthage script to avoid a particular [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216).
-
-1. With your app target's settings open in Xcode, navigate to the **Build Phases** tab.
-2. Click the `+` icon then select **New Run Script Phase**.
-3. Add the following command to the run script phase: `/usr/local/bin/carthage copy-frameworks`.
-4. Add the Visual Recognition framework to the **Input Files** list: `$(SRCROOT)/Carthage/Build/iOS/VisualRecognitionV3.framework`.
-
-Now you are ready to start working with the Watson Swift SDK in your app!
-
-## Step 4. Analyzing images in your app
+## Step 3. Analyzing images in your app
 {: #analyze-images-in-your-app}
 
-1. Open the `ViewController.swift` file in Xcode.
+The following samples help you add {{site.data.keyword.visualrecognitionshort}} capabilities to your application, typically in the `ViewController.swift`. Using the following examples, you can extend the Visual Recognition calls for your use case.
 
 1. Add an import statement for Visual Recognition:
-    ```swift
-    import VisualRecognitionV3
-    ```
-    {: pre}
+  ```swift
+  import VisualRecognition
+  ```
+  {: codeblock}
 
-1. Pass the API key and version (you can use today's date) to initialize the SDK:
-    ```swift
-    let visualRecognition = VisualRecognition(apiKey: "your-api-key", version: "yyyy-mm-dd")
-    ```
-    {: pre}
+2. Pass the API key and version (you can use today's date) to initialize the SDK:
+  ```swift
+  let visualRecognition = VisualRecognition(version: "yyyy-mm-dd", apiKey: "your-api-key")
+  ```
+  {: codeblock}
 
-1. Add the following code to classify an image:
-    ```swift
-    let url = "your-image-url"
-    let failure = { (error: Error) in print(error) }
-    visualRecognition.classify(url: url, failure: failure) { classifiedImages in
-        print(classifiedImages)
-    }
-    ```
-    {: pre}
+  You can check out [version parameter documentation](https://cloud.ibm.com/apidocs/visual-recognition#versioning) or use the date that the {site.data.keyword.conversationshort}} service was created.
+  {: tip}
+
+3. Add the following code to classify an image:
+  ```swift
+  let url = "your-image-url"
+  visualRecognition.classify(url: url) { response, error in
+      if let error = error {
+          print(error)
+      }
+      guard let classifiedImages = response?.result else {
+          print("Failed to classify the image")
+          return
+      }
+      print(classifiedImages)
+  }
+  ```
+  {: codeblock}
+
+There are multiple classification methods that are supported by the Visual Recognition framework. Explore the Watson SDK [Visual Recognition documentation](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html) to find which one best suits your application.
+{: tip}
 
 ## Using starter kits
 {: #recognition_starterkits}
 
-[Starter kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits) are one of the fastest ways to leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can use the {{site.data.keyword.visualrecognitionshort}} service by selecting the **Visual Recognition for iOS with Watson** starter kit. This service evaluates and classifies your images. Upload new or existing images from your mobile device, and the Visual Recognition app quickly tags and classifies the image content.
+[Starter kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits) are one of the fastest ways to use the capabilities of {{site.data.keyword.cloud_notm}}. You can use the {{site.data.keyword.visualrecognitionshort}} service by selecting the **Visual Recognition for iOS with Watson** starter kit. This service evaluates and classifies your images. Upload new or existing images from your mobile device, and the Visual Recognition app quickly tags and classifies the image content.
 
 To get started:
 1. Select the starter kit found [here](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson).
@@ -138,6 +134,5 @@ To get started:
 {: #recognition_next}
 
 Great job! Visual Recognition is now available to your app. Keep the momentum by trying one of the following options:
-* View the [Watson Swift SDK on GitHub](https://github.com/watson-developer-cloud/swift-sdk).
+* Check out the [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window} and explore the other supported Watson services.
 * For more information, see [IBM Watson {{site.data.keyword.visualrecognitionshort}}](https://www.ibm.com/watson/services/visual-recognition/).
-
