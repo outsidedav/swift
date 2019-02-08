@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-01"
 
 ---
 
@@ -246,82 +246,9 @@ You can now add your own application code to the project. For more information a
 ## Step 6. Deploying your application
 {: #deploy_app}
 
-You can run the application locally with the necessary build tools, or in the {{site.data.keyword.cloud_notm}} (Cloud Foundry or Kubernetes Cluster) through the {{site.data.keyword.dev_cli_notm}}.
+You can run the application [locally](/docs/swift/create_app_cli.html#swift-install-tools) with the necessary build tools, or deploy to {{site.data.keyword.cloud_notm}}.
 
-You can run your application locally on your host system, in Cloud Foundry, or in a Kubernetes Cluster.
-
-1. [Install](/docs/cli/reference/bluemix_cli/get_started.html) the {{site.data.keyword.cloud_notm}} CLI
-
-2. Install the Developer Tools plug-in by using the command `ibmcloud plugin install dev`.
-
-3. Deploy the application to a [local system](#deploy_local), [Cloud Foundry](#deploy_cf), or [Kubernetes cluster](#deploy_cluster).
-
-### Deploying locally
-{: #deploy_local}
-
-1. Ensure that Docker is installed and running on your local host system. You can download Docker from https://www.docker.com/community-edition#/download.
-
-2. Switch to the directory with your project files.
-
-3. To deploy the application on your local computer, enter the commands:
-	```
-	ibmcloud dev build
-	```
-  {: codeblock}
-
-  ```
-	ibmcloud dev run
-	```
-	{: codeblock}
-
-	This step builds your application, and runs it locally inside a Docker container.
-
-### Deploying to Cloud Foundry
-{: #deploy_cf}
-
-1. Switch to the directory with your project files.
-
-2. Log in to your {{site.data.keyword.cloud_notm}} account, and set the region to `us-south`, as shown here:
-  ```
-  ibmcloud login -a https://api.ng.bluemix.net
-  ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
-  ```
-  {: codeblock}
-
-  **Note:** Issuing the command `ibmcloud login -a https://api.ng.bluemix.net` automatically sets the region to **us-south**.
-
-3. To deploy the application to the Cloud Foundry, enter this command:
-  ```
-  ibmcloud dev deploy
-  ```
-  {: codeblock}
-
-  You receive a clickable link to the location where your application is hosted.
-
-### Deploying to a Kubernetes Cluster
-{: #deploy_cluster}
-
-1. Create a Kubernetes cluster at https://cloud.ibm.com/containers-kubernetes/clusters.
-
-2. Click **Create Cluster**. The Access tab displays information on how to access the created Kubernetes cluster.
-
-3. To display information about the Kubernetes cluster, open the {{site.data.keyword.cloud_notm}} app dashboard. The dashboard displays a list of your services, such as created clusters, database clusters, cloud foundry apps, and cloud foundry services.
-
-4. Switch to the directory with your project files.
-
-5. Log in to your {{site.data.keyword.cloud_notm}} account, and set the region to us-south, as shown here:
-  ```
-  $ ibmcloud login -a https://api.ng.bluemix.net
-  $ ibmcloud target -o <your-organization> -s <your-space>
-  ```
-  {: codeblock}
-
-  **Note:** Issuing the command `ibmcloud login -a https://api.ng.bluemix.net` automatically sets the region to **us-south**.
-
-6. To deploy your application in Kubernetes, by entering this command:
-  ```
-  $ ibmcloud dev deploy -t container
-  ```
-  {: codeblock}
-
-  You're prompted for the name of your Kubernetes cluster and the Docker registry. Once the information is provided, your application is deployed to the Kubernetes cluster.
+To create a deployment toolchain in the dashboard, click **Deploy to Cloud**. Set up your deployment method according to the instructions for the method you choose:
+  * **Deploy to [Kubernetes](/docs/apps/deploying/containers.html#containers)**. This option creates a cluster of hosts, called worker nodes, to deploy and manage highly available application containers. You can create a cluster or deploy to an existing cluster.
+  * **Deploy to Cloud Foundry**. This option deploys your cloud-native app without you needing to manage the underlying infrastructure. If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either **[Public Cloud](/docs/cloud-foundry-public/about-cf.html#about-cf)** or **[Enterprise Environment](/docs/cloud-foundry-public/cfee.html#cfee)**, which you can use to create and manage isolated environments for hosting Cloud Foundry applications exclusively for your enterprise.
+  * **Deploy to a [Virtual Server](/docs/apps/vsi-deploy.html#vsi-deploy)**. This option provisions a virtual server instance, loads an image that includes your app, creates a DevOps toolchain, and initiates the first deployment cycle for you.
