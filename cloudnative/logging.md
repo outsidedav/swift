@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -74,6 +74,7 @@ The log level is explicitly set to `.info` to log informational level messages l
 Learn more about viewing the logs in each of our deployment environments:
 * [Kubernetes Logs](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/)
 * [Cloud Foundry Logs](/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
+* [Cloud Foundry Enterprise Environment - Auditing and logging](docs/cloud-foundry/auditing-logging.html#auditing-logging)
 * [{{site.data.keyword.openwhisk}} Logs & Monitoring](/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
 
 Learn how to implement and use a log aggregator:

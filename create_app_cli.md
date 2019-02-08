@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-02-01"
 
 ---
 
@@ -24,6 +24,7 @@ The following guide is intended to help you build, run locally, and deploy a ser
 You can use the {{site.data.keyword.dev_cli_short}} to manage your server-side applications with more than a dozen commands. Learn more about the `ibmcloud dev` commands at [IBM Cloud Developer Tools CLI](/docs/cli/idt/commands.html).
 
 ## Step 1. Requirements for Developers
+{: #swift-step1-requirements}
 
 To get started with {{site.data.keyword.cloud_notm}}, make sure that you meet the following requirements.
 
@@ -61,6 +62,7 @@ The following tools ensure that you can install the native SDKs to work with the
   {: codeblock}
 
 ## Step 2. Installing tools for local development
+{: #swift-install-tools}
 
 The {{site.data.keyword.cloud}} provides local CLI tools that help you work with various aspects of the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.dev_cli_long}} Information](../cli/index.html). You can use the tools for testing a Swift backend in a local Docker image before cloud deployment.
 

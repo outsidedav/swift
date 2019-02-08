@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-22"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -106,8 +106,7 @@ A skeleton Kitura server is created, but it doesn't provide any REST APIs that c
   ```
   {: codeblock}
 
-4. Implement the loadHandler function to the `Sources/Application/Application.swift` file by adding the following code as another function in the `App` class:  
-  ```swift
+4. Implement the loadHandler function to the `Sources/Application/Application.swift` file by adding the following code as another function in the `App` class:   ```swift
   func loadHandler(completion: ([Meal]?, RequestError?) -> Void ) {
       let meals: [Meal] = self.mealStore.map({ $0.value })
     completion(meals, nil)
@@ -217,4 +216,4 @@ You can use the [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) 
 ## Next Steps
 {: #next notoc}
 
-Now that you have a Kitura server that provides a REST API that can be called by your iOS application, you're ready to deploy your server to {{site.data.keyword.cloud_notm}}. Deployments can be done by using Containers with Kubernetes, Secure Containers, or Cloud Foundry.
+Now that you have a Kitura server that provides a REST API that can be called by your iOS application, you're ready to deploy your server to {{site.data.keyword.cloud_notm}}. [Deployments](/docs/swift/deploying_apps.html) can be done by using containers with Kubernetes, secure containers, Cloud Foundry, Cloud Foundry Enterprise Environment, or virtual instances.
