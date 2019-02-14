@@ -24,22 +24,24 @@ The following guide is intended to help you build, run locally, and deploy a ser
 You can use the {{site.data.keyword.dev_cli_short}} to manage your server-side applications with more than a dozen commands. Learn more about the `ibmcloud dev` commands at [IBM Cloud Developer Tools CLI](/docs/cli/idt/commands.html).
 
 ## Step 1. Requirements for Developers
-{: #swift-step1-requirements}
+{: #prereqs-swift-cli}
 
 To get started with {{site.data.keyword.cloud_notm}}, make sure that you meet the following requirements.
 
 ### Operating System
+{: #swift-cli-os-reqs}
 
 Develop Swift apps with best practice by using the latest MacOS supported hardware, and testing with the latest iOS releases. Sign up for an [Apple Developer](https://developer.apple.com/) account to enable testing on a physical device.
 
 ### iOS and Xcode
-{: #ios_and_xcode}
+{: #swift-cli-ios_xcode}
 
 - [Install Xcode 8+ (or higher)](https://developer.apple.com/xcode/)
 - [Deploy to iOS devices 8 (or higher)](https://support.apple.com/downloads/ios)
 - Before app submission to Apple, review the [App Store Submission Guidelines](https://developer.apple.com/app-store/guidelines/)
 
 ### SDKs and Dependency management
+{: #swift-cli-sdk-dependency}
 
 The following tools ensure that you can install the native SDKs to work with the various {{site.data.keyword.cloud_notm}} Services.
 
@@ -62,7 +64,7 @@ The following tools ensure that you can install the native SDKs to work with the
   {: codeblock}
 
 ## Step 2. Installing tools for local development
-{: #swift-install-tools}
+{: #swift-cli-install-tools}
 
 The {{site.data.keyword.cloud}} provides local CLI tools that help you work with various aspects of the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.dev_cli_long}} Information](../cli/index.html). You can use the tools for testing a Swift backend in a local Docker image before cloud deployment.
 
@@ -82,6 +84,7 @@ The {{site.data.keyword.cloud}} provides local CLI tools that help you work with
   {: tip}
 
 ## Step 3. Creating a Swift app
+{: #create-swift-app-cli}
 
 1. Run the `ibmcloud dev create` command from {{site.data.keyword.dev_cli_short}} CLI to generate a pre-configured starter. 
   ```
@@ -139,6 +142,7 @@ The {{site.data.keyword.cloud}} provides local CLI tools that help you work with
   {: screen}
 
 ## Step 4. Building, running, and deploying your application
+{: #swift-cli-deploy}
 
 You can now build, run, and deploy your application by using the {{site.data.keyword.dev_cli_short}}.
 
@@ -169,6 +173,7 @@ You can now build, run, and deploy your application by using the {{site.data.key
   {: codeblock}
 
 ## Next steps
+{: #swift-cli-next}
 
 Learn to use the {{site.data.keyword.cloud_notm}} Developer Console for Apple that enables Developers to create apps from various Starter Kits, create and connect key {{site.data.keyword.cloud_notm}} optimized services, and then quickly download working code or set up for continuous delivery. Users can create, view, configure, and manage your app, as well as download your app's code. By using the Developer Console for Apple, you can quickly evaluate, and test {{site.data.keyword.cloud_notm}} services with a brand new app.
 

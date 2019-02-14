@@ -13,7 +13,7 @@ lastupdated: "2019-01-15"
 {:pre: .pre}
 
 # Integrating back-end services to your app with a generated SDK
-{: #sdk-cli}
+{: #sdkgen-cli}
 
 The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.cloud_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/index.html){: new_window}.
 
@@ -22,7 +22,7 @@ This {{site.data.keyword.IBM_notm}} SDK Generator plug-in integrates your back-e
 The REST API definition must be valid and either hosted on a live server endpoint or a local file on your system.
 
 ## Before you begin
-{: #prereqs}
+{: #prereqs-sdkgen}
 
 Ensure that you have:
 
@@ -30,7 +30,7 @@ Ensure that you have:
 * A valid API definition that conforms to the [Open API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.openapis.org/){: new_window} specification
 
 ## Installing the SDK plug-in
-{: #installation}
+{: #install-sdkgen}
 
 1. [Install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/get_started.html).
 
@@ -42,7 +42,7 @@ Ensure that you have:
   {: codeblock}
 
 ## Generating the SDK
-{: #commands}
+{: #commands-sdkgen}
 
 Generate an SDK by entering: `ibmcloud sdk generate [arguments...] [command options]`
 
@@ -54,7 +54,7 @@ Generate an SDK by entering: `ibmcloud sdk generate [arguments...] [command opti
 * `GENERATED_SDK_NAME` (optional) - the name of the generated SDK
 
 ### Options
-{: #gen-options}
+{: #gen-options-sdkgen}
 
 * `PLATFORM` (required)
    * `--ios` - generate an iOS Swift SDK
@@ -69,7 +69,7 @@ Generate an SDK by entering: `ibmcloud sdk generate [arguments...] [command opti
 * `--unzip` (optional) - extracts the generated SDK (Existing SDKs are overwritten).
 
 ### Usage
-{: #gen-usage}
+{: #gen-usage-sdkgen}
 
 To generate an SDK from a Cloud Foundry app that is running in {{site.data.keyword.Bluemix_notm}}, you can use the app's name as a parameter to the CLI. The following command uses the app's name as the `SDK_Name`.
 
@@ -86,7 +86,7 @@ ibmcloud sdk generate [OPENAPI_DOC_LOCATION] [SDK_Name] [LOCATION] [PLATFORM]
 {: codeblock}
 
 ## Validating the Open API definitions
-{: #validating}
+{: #validating-sdkgen-sdkgen}
 
 Run the following command:
 ```
@@ -95,13 +95,13 @@ ibmcloud sdk validate [argument]
 {: codeblock}
 
 ### Arguments
-{: #val-args}
+{: #val-args-sdkgen}
 
 * `APP_NAME` - the name of the Cloud Foundry app in your current space
 * `OPENAPI_DOC_LOCATION` - a URL or a relative file path to the raw REST API definition JSON or yaml
 
 ### Usage
-{: #val-usage}
+{: #val-usage-sdkgen}
 
 To validate a Cloud Foundry app's API spec that is running in {{site.data.keyword.Bluemix_notm}}, you can use the app's name as a parameter to the CLI.
 ```

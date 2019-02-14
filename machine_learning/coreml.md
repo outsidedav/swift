@@ -22,7 +22,7 @@ You can add Core ML and Watson Visual Recognition to a Swift application by usin
 {: shortdesc}
 
 ## Before you begin
-{: #before-you-begin}
+{: #prereqs-coreml}
 
 To use Core ML and Watson Visual Recognition with Swift, you need the following components:
 
@@ -39,13 +39,14 @@ sudo gem install cocoapods
 {: codeblock}
 
 ## Step 1. Training a model with {{site.data.keyword.watson}} {{site.data.keyword.visualrecognitionshort}}
-{: #training-your-model}
+{: #train-module-coreml}
 
 If a current model does not exist, the first model that is discovered remotely, or any one that exists locally is used. The following gif and accompanying instructions show you how to link your service to Watson Studio and train your model.
 
 ![Core ML Model Walkthrough](images/CoreMLWalkthrough.gif)
 
 ### Setting up the service from your Core ML App dashboard
+{: #service-coreml}
 
 1. Start the Visual Recognition Tool from your Starter Kit's dashboard by selecting **Launch Tool**.
 2. Begin creating your model by selecting **Create Model**.
@@ -56,6 +57,7 @@ If a current model does not exist, the first model that is discovered remotely, 
   {: tip}
 
 ### Binding a Service to a Project
+{: #bind-service-coreml}
 
 1. After you create your project, the project dashboard is displayed.
 2. Go to the settings tab, scroll down to **Associated Services**, select **Add Service** -> **Watson**.
@@ -64,6 +66,7 @@ If a current model does not exist, the first model that is discovered remotely, 
 5. Now that your service is bound, you can begin creating your model by selecting **Assets** from your Project dashboard, and then clicking **Add Visual Recognition Model**.
 
 ### Creating a Model
+{: #create-model-coreml}
 
 1. From the model creation tool, you can update the classifier name. If you would like to use a specific model, make sure to modify the `defaultClassifierID` field in main View Controller.
 
@@ -76,7 +79,7 @@ If a current model does not exist, the first model that is discovered remotely, 
 You're all set! Now, you're ready to download your Core ML model and integrate it into your app by using the [Watson Developer Cloud Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window}.
 
 ## Step 2. Downloading and building dependencies
-{: #installing-dependencies}
+{: #install-depend-coreml}
 
 Using your favorite text editor, create a new `Podfile` in the root directory of your project (where your `.xcodeproj` file is located) by running `pod init`. Then, add a line to specify the {{site.data.keyword.visualrecognitionshort}} framework of the Watson Swift SDK as a dependency:
 
@@ -103,7 +106,7 @@ To prevent Pod build failures, open the file that ends in `.xcworkspace` instead
 {: tip}
 
 ## Step 3. Adding image classification to your app
-{: #adding-image-classification}
+{: #add-image-coreml}
 
 The following samples help you add {{site.data.keyword.visualrecognitionshort}} Core ML capabilities to your application, typically in the `ViewController.swift`. Using the following examples, you can extend the local model calls for your use case.
 

@@ -19,7 +19,7 @@ lastupdated: "2019-01-31"
 The {{site.data.keyword.visualrecognitionfull}} service enables your app to quickly and accurately tag, classify, and train visual content by using machine learning. The service can help to classify virtually any visual content, train your own custom model in minutes, and detect faces.
 
 ## How it works
-{: #how-it-works}
+{: #how-it-works-recognition}
 
 1. Your app chooses a selection of images to analyze.
 2. Your app sends the image to the {{site.data.keyword.visualrecognitionshort}} service by using the Watson Swift SDK.
@@ -27,7 +27,7 @@ The {{site.data.keyword.visualrecognitionfull}} service enables your app to quic
 4. The service's analysis is returned to your app by the Watson Swift SDK.
 
 ## Before you begin
-{: ###before-you-begin}
+{: #prereqs-recognition}
 
 Ensure that you have the following prerequisites:
 
@@ -44,7 +44,7 @@ sudo gem install cocoapods
 {: codeblock}
 
 ## Step 1. Creating an instance of Visual Recognition
-{: #create-and-configure-an-instance-of-visual-recognition}
+{: #create-instance-recognition}
 
 Provision an instance of the {{site.data.keyword.visualrecognitionshort}} service:
 
@@ -55,7 +55,7 @@ Provision an instance of the {{site.data.keyword.visualrecognitionshort}} servic
 5. Select the **Credentials** tab to view your service credentials. These values are used to connect to the service from your app.
 
 ## Step 2. Downloading and building dependencies
-{: #download-and-build-dependencies}
+{: #download-depend-recognition}
 
 Using your favorite text editor, create a new `Podfile` in the root directory of your project (where your `.xcodeproj` file is located) by running `pod init`. Then, add a line to specify the {{site.data.keyword.visualrecognitionshort}} framework of the Watson Swift SDK as a dependency:
 
@@ -82,7 +82,7 @@ To prevent Pod build failures, open the file that ends in `.xcworkspace` instead
 {: tip}
 
 ## Step 3. Analyzing images in your app
-{: #analyze-images-in-your-app}
+{: #analyze-images-recognition}
 
 The following samples help you add {{site.data.keyword.visualrecognitionshort}} capabilities to your application, typically in the `ViewController.swift`. Using the following examples, you can extend the Visual Recognition calls for your use case.
 

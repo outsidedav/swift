@@ -23,6 +23,7 @@ Swift Developers can easily use advanced security services that {{site.data.keyw
 As an easy approach, you can directly use the {{site.data.keyword.cloud_notm}} HyperSecure Platform Services for all advanced security services in {{site.data.keyword.cloud}}. For more information, see [Getting Started with {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform/index.html){:new_window}.
 
 ## Using {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}
+{: #security-swift}
 
 {{site.data.keyword.hscrypto}} is an experimental service that offers cryptography on your keys and data with the industry's highest security level. It brings the security and integrity of IBM Z to the cloud. The same cryptographic technology that banks and financial services rely on is now offered to cloud users through {{site.data.keyword.cloud_notm}}.
 
@@ -33,6 +34,7 @@ As an easy approach, you can directly use the {{site.data.keyword.cloud_notm}} H
 For more information about {{site.data.keyword.hscrypto}}, see [Getting started with {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/services/hs-crypto/index.html){:new_window}.
 
 ## Using {{site.data.keyword.cloud_notm}} {{site.data.keyword.keymanagementserviceshort}}
+{: #swift-key-management}
 
 {{site.data.keyword.keymanagementserviceshort}} helps you create encrypted keys for apps across {{site.data.keyword.cloud_notm}} services. As you manage the lifecycle of your keys, you can benefit from knowing that your keys are secured by cloud-based hardware security modules (HSMs) that protect against the theft of information. Together with {{site.data.keyword.hscrypto}}, your keys are secured at the highest security level of FIPS 140-2 Level 4 certificate.
 
@@ -46,6 +48,7 @@ For more information about {{site.data.keyword.keymanagementserviceshort}}, see 
 With this service, you can create database clusters in the {{site.data.keyword.cloud_notm}}. Each database cluster that you create has one primary database instance and two secondary database instances that serve as replicas to the primary. The {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS logic creates and accesses MongoDB databases in your database clusters.
 
 ### Securing data and privacy
+{: #swift-securing-data}
 
 {{site.data.keyword.IBM_notm}} hosts your databases in a highly available and secure environment:
  * Data is encrypted at rest and in flight.
@@ -53,15 +56,18 @@ With this service, you can create database clusters in the {{site.data.keyword.c
  * The underlying technologies prevent {{site.data.keyword.IBM_notm}} or a third party from being able to access your data.
 
 ### Adding {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS logic to your application
+{: #swift-hyperprotect}
 
 To use a MongoDB database in your application, see
 [Getting started with using a database](../hypersecure_dbaas/database-cluster.html).  
 
 ### Learning more about {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS
+{: #swift-learnmore}
 
 To learn more about {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS, see [Getting Started with IBM Cloud Hyper Protect DBaaS](/docs/services/hyper-protect-dbaas/index.html).
 
 ## Using {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscontainers}}
+{: #swift-hscontainers}
 
 {{site.data.keyword.hscontainers}} delivers powerful tools by combining Docker and Kubernetes technologies, an intuitive user experience, and built-in security and isolation to automate the deployment, operation, scaling, and monitoring of containerized apps in a cluster of compute hosts.
 

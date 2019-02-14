@@ -23,6 +23,7 @@ Kitura is able to integrate with all of the services and features that are provi
 Kitura provides a `kitura` [command line interface (CLI)](https://www.kitura.io/guides/kituracli/gettingstarted.html) that simplifies creating, building, testing, and deploying Kitura applications. Applications that are built by using the Kitura CLI include full support for deploying to any cloud that supports Cloud Foundry, Docker, and Kubernetes technologies. However, if you are building specifically for {{site.data.keyword.cloud_notm}}, it is recommended to use the IBM Apple Development Console in the browser or use the {{site.data.keyword.dev_cli_notm}}. Additionally, while both methods share underlying technology, the Apple Development Console and the IBM Developer Tools create a hosted project and deployment pipeline for you, as well as provision the services that your application needs.
 
 ## Before you begin
+{: #prereqs-kitura}
 
 First, be sure that you have the following prerequisites ready to go:  
 
@@ -47,7 +48,7 @@ First, be sure that you have the following prerequisites ready to go:
 A project is created, but one that doesn't yet use any additional services. You can add services by clicking **Add Resource** button, or by clicking **Download Code** button to get the code for the project. You can also easily add services to an existing project.
 
 ## Step 2. Adding services
-{: #add_services}
+{: #add_services-kitura}
 
 1. Click the **Add Resource** button to add services. Service categories are displayed. For example, select **Data** to look at the available databases, and select **Cloudant NoSQL DB**.
 2. Select a pricing plan for the service, for example Lite, and click **Create**.
@@ -57,7 +58,7 @@ An instance of the service is created that provides credentials for the applicat
 After downloading your project, you can begin working with your app.
 
 ## Step 3. Developing your application with Xcode
-{: #develop_xcode}
+{: #develop_xcode-kitura}
 
 After you download your project, you can modify and develop it by using Xcode, and then upload your modified application for deployment to the cloud.
 
@@ -79,7 +80,7 @@ After you download your project, you can modify and develop it by using Xcode, a
   * Kitura Health check: [http://localhost:8080/health]()
 
 ## Step 5. Adding REST APIs
-{: #add_restapi}
+{: #add_restapi-kitura}
 
 A skeleton Kitura server is created, but it doesn't provide any REST APIs that can be used by an iOS application. Add REST APIs in Kitura with minimal coding. Use the following steps to add a REST API for `GET` requests on `/meals`, which is designed to return the `Meal` objects that are stored by the Kitura server.
 
@@ -133,7 +134,7 @@ You can use the [FoodTracker Backend](https://github.com/IBM/FoodTrackerBackend)
 {: tip}
 
 ## Step 6. Installing KituraKit into your iOS application
-{: #kiturakit}
+{: #install-kiturakit}
 
 The REST APIs built by using the Kitura server are standard web APIs, usable from any application regardless of client library that is used or which language the client is written in. Meaning that you can use Alamofire, RestKit, or URLSession to make connections to the server. Kitura also provides a bespoke, optimized client connector in order to simplify calling its REST APIs from iOS, in the form of KituraKit. 
 
@@ -214,6 +215,6 @@ You can use the [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) 
 {: tip}
 
 ## Next Steps
-{: #next notoc}
+{: #next-kitura notoc}
 
 Now that you have a Kitura server that provides a REST API that can be called by your iOS application, you're ready to deploy your server to {{site.data.keyword.cloud_notm}}. [Deployments](/docs/swift/deploying_apps.html) can be done by using containers with Kubernetes, secure containers, Cloud Foundry, Cloud Foundry Enterprise Environment, or virtual instances.

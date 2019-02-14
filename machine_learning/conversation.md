@@ -27,7 +27,7 @@ The following list outlines the flow of how the integration works:
 5. Your app displays the response for the user.
 
 ## Before you begin
-{: #before-you-begin}
+{: #prereqs-chatbot}
 
 Ensure that you have the following prerequisites:
 
@@ -45,7 +45,7 @@ sudo gem install cocoapods
 {: codeblock}
 
 ## Step 1. Creating an instance of Watson Assistant
-{: #create-and-configure-an-instance-of-watson-assistant}
+{: #instance-watson-chatbot}
 
 Provision an instance of the {{site.data.keyword.conversationshort}} service:
 
@@ -58,7 +58,7 @@ Provision an instance of the {{site.data.keyword.conversationshort}} service:
 7. Click the menu on your new skill, and select **View API Details**. You can now see the `Workspace ID` that you need in addition to the service credentials.
 
 ## Step 2. Downloading and building dependencies
-{: #download-and-build-dependencies}
+{: #download-depend-chatbot}
 
 The following example uses AssistantV1. For more information about the AssistantV2 framework, see the [Watson SDK AssistantV2 documentation](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV2/index.html).
 
@@ -87,7 +87,7 @@ To prevent Pod build failures, open the file that ends in `.xcworkspace` instead
 {: tip}
 
 ## Step 3. Adding a virtual assistant to your app
-{: #add-a-virtual-assistant-to-your-app}
+{: #virtual-assist-chatbot}
 
 The following samples help you add {{site.data.keyword.conversationshort}} capabilities to your application, typically in the `ViewController.swift`. Using the following examples, you can extend the Assistant calls for your use case.
 
@@ -166,7 +166,7 @@ Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11a
 5. Explore the Watson SDK [Assistant documentation](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV1/index.html) to build out your application's functionality.
 
 ## Using starter kits
-{: #conversation_starterkits}
+{: #starterkits-chatbot}
 
 With starter kits, you can quickly and easily use the capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.conversationshort}} to any server-side back end by using the starter kits. The Chatbot for iOS with Watson Starter Kit illustrates how to use the deep learning capabilities of {{site.data.keyword.conversationshort}} by adding a natural language interface to your application that automates interactions with your users.
 
@@ -176,7 +176,7 @@ With starter kits, you can quickly and easily use the capabilities of {{site.dat
 4. Download the project by clicking **Download Code**. You can find the service credentials in the `config/local-dev.json` file.
 
 ## Next steps
-{: #assistant_next}
+{: #next-chatbot}
 
 Great job! You added an AI assistant to your app. Keep the momentum by trying one of the following options:
 

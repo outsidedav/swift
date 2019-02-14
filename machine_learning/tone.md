@@ -18,7 +18,7 @@ lastupdated: "2019-01-31"
 The IBM Watson Tone Analyzer service enables your app to understand emotions and tones in text. You can use the service to better understand your user's conversations or help users understand how their written communication is perceived.
 
 ## How it works
-{: #how-it-works}
+{: #how-it-works-tone}
 
 1. Your app chooses a selection of text to analyze (for example, a text message or Twitter feed).
 2. Your app sends the text to the {{site.data.keyword.toneanalyzershort}} service by using the Watson Swift SDK.
@@ -26,7 +26,7 @@ The IBM Watson Tone Analyzer service enables your app to understand emotions and
 4. The service's analysis is returned to your app through the [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk).
 
 ## Before you begin
-{: #before-you-begin}
+{: #prereqs-tone}
 
 Ensure that you have the following prerequisites:
 
@@ -43,7 +43,7 @@ $ sudo gem install cocoapods
 {: codeblock}
 
 ## Step 1. Creating an instance of Tone Analyzer
-{: #create-and-configure-an-instance-of-tone-analyzer}
+{: #create-instance-tone}
 
 Provision an instance of the {{site.data.keyword.toneanalyzershort}} service:
 
@@ -54,7 +54,7 @@ Provision an instance of the {{site.data.keyword.toneanalyzershort}} service:
 5. Select the **Credentials** tab to view your service credentials. These values are used to connect to the service from your app.
 
 ## Step 2. Downloading and building dependencies
-{: #download-and-build-dependencies}
+{: #download-depend-tone}
 
 Using your favorite text editor, create a new `Podfile` in the root directory of your project (where your `.xcodeproj` file is located) by running `pod init`. Then, add a line to specify the {{site.data.keyword.conversationshort}} framework of the Watson Swift SDK as a dependency:
 
@@ -81,7 +81,7 @@ To prevent Pod build failures, open the file that ends in `.xcworkspace` instead
 {: tip}
 
 ## Step 3. Analyzing text in your app
-{: #analyze-text-in-your-app}
+{: #analyze-text-tone}
 
 The following samples help you add {{site.data.keyword.toneanalyzershort}} capabilities to your application, typically in the `ViewController.swift`. Using the following examples, you can extend the Tone Analyzer calls for your use case.
 

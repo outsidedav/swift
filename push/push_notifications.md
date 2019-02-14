@@ -26,6 +26,7 @@ You can choose to use the {{site.data.keyword.mobilepushshort}} service either a
 ![Push Overview](images/push_notification_lifecycle.jpg) Figure 1. Overview of the {{site.data.keyword.mobilepushshort}} service lifecycle
 
 ## Before you begin
+{: #prereqs-push}
 
 First, be sure that you have the following prerequisites ready to go:
 
@@ -44,13 +45,13 @@ First, be sure that you have the following prerequisites ready to go:
 
 
 ## Step 2. Obtain your notification provider credentials
-{: #get_creds}
+{: #get_creds-push}
 
 To set up Push Notifications service, you need to get the required credentials from the Apple Push Notification Service (APNs). Follow the steps here to [obtain and configure your APNs credentials ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}.
 
 
 ## Step 3. Configure a service instance
-{: #enable-push-ios-notifications}
+{: #config-resource-push}
 
 To use the {{site.data.keyword.mobilepushshort}} service to send notifications, upload the `.p12` keystore that you created, which has the private key and SSL certificates that are required to build and publish your application. You can also use the REST API to upload an APNs certificate.
 
@@ -80,12 +81,14 @@ To set up APNs on the Push Notification services console, complete the steps:
   ![{{site.data.keyword.mobilepushshort}} console](images/push_configure_safari.jpg)
 
 ## Step 4. Set up service client SDK
+{: #service-client-push}
 
 To enable iOS applications to receive push notifications to your devices, you need to configure the iOS SDK for the {{site.data.keyword.mobilepushshort}} service.
 
 The {{site.data.keyword.cloud_notm}} Mobile Services Swift SDKs can be installed with either Cocoapods or Carthage. For more information, see [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application).
 
 ## Step 5. Sending a notification
+{: #send-notify-push}
 
 After you develop your application, you can send basic push notifications.
 
@@ -107,7 +110,7 @@ The following screen capture shows a push notification in the background.
 	![Background push notification on Android](images/background.png)
 
 ### Optional settings
-{: #push_step_4_ios}
+{: #optional-push}
 
 You can customize the {{site.data.keyword.mobilepushshort}} settings for sending notifications to iOS devices. The following optional customization options are supported.
 
@@ -118,11 +121,12 @@ You can customize the {{site.data.keyword.mobilepushshort}} settings for sending
 You can also choose to enable [interactive notifications](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#interactive-notifications) and [rich media notifications](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enabling-rich-media-notifications).
 
 ## Step 6. Monitoring for delivered notifications
-{: #push_step_4_monitor}
+{: #monitor-push}
 
 The {{site.data.keyword.mobilepushshort}} service provides a monitoring utility to help you check the status of messages that are sent. To configure your monitoring utility, see [Enable monitoring for iOS applications](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring).
 
 ## Next steps
+{: #next-push}
 
  - To learn more about the service and take advantage of all of the features, read through our [documentation](/docs/services/mobilepush/c_overview_push.html#overview-push).
 

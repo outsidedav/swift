@@ -22,6 +22,7 @@ lastupdated: "2019-01-15"
 For all of the ways that you can use {{site.data.keyword.cloudant_short_notm}}, see [{{site.data.keyword.cloudant_short_notm}} Basics](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics).
 
 ## Before you begin
+{: #prereqs-cloudant}
 
 First, be sure that you have the following prerequisites ready to go:
  * CocoaPods (version 1.1.0 or higher
@@ -33,12 +34,15 @@ The [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![External link icon
 {: tip}
 
 ## Step 1. Creating an instance of {{site.data.keyword.cloudant_short_notm}}
+{: #create-instance-cloudant}
 
 See [Creating a Cloudant NoSQL DB instance on IBM Cloud tutorial ![External link icon](../images/launch-glyph.svg "External link icon")](/docs/services/Cloudant/tutorials/create_service.html#creating-a-cloudant-nosql-db-instance-on-ibm-cloud){:new_window} to create an instance of the service.
 
 ## Step 2. Installing the SDK
+{: #install-sdk-cloudant}
 
 ### Installing the iOS Swift SDK
+{: #install-swift-sdk-cloudant}
 
 Use the Swift Cloudant SDK to help make coding your app easier. The SDK must be installed in your app code.
 
@@ -59,6 +63,7 @@ Use the Swift Cloudant SDK to help make coding your app easier. The SDK must be 
     {: codeblock}
 
 ### Installing the server-side Swift SDK
+{: #install-serverside-cloudant}
 
 To use with the Swift Package Manager for server-side development, add the following line to your dependencies in your `Package.swift`:
 ```swift
@@ -67,6 +72,7 @@ To use with the Swift Package Manager for server-side development, add the follo
 {: codeblock}
 
 ## Step 3. Initializing the SDK
+{: #initialize-cloudant}
 
 After you initialize the SDK in your app, you can begin by using {{site.data.keyword.cloudant_short_notm}} to store data.
 
@@ -85,6 +91,7 @@ After you initialize the SDK in your app, you can begin by using {{site.data.key
     {: codeblock}
 
 ### Basic Operations
+{: #basic-operations-cloudant}
 These basic operations illustrate the fundamental actions to create, read, and delete your documents by using the initialized client.
 
 #### Create a document
