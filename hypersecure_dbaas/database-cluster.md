@@ -14,6 +14,7 @@ lastupdated: "2019-02-01"
 {:tip: .tip}
 
 # Creating a highly available and secure database
+{: #create-database-cluster}
 
 To take full advantage of a highly available and secure database, you embed extra logic into your application. By using the provided code snippets, you can create, and access a MongoDB database. 
 
@@ -73,7 +74,7 @@ https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
 6. Gather the host names and the port numbers of the three created database instances that belong to your database cluster. You need the host names, port numbers, and user credentials for steps in the [Connecting to the database](#connect_db) section.
 
 ## Step 2. Creating a project by using a starter kit
-{: #create_with_starter}
+{: #create_starter}
 
 You need a starter kit that is based on the server-side Swift web framework Kitura.
 
@@ -244,7 +245,7 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 You can now add your own application code to the project. For more information about working with the MongoKitten API, see http://beta.openkitten.org/tutorials/.
 
 ## Step 6. Deploying your application
-{: #deploy_app}
+{: #deploy-dbcluster}
 
 You can run the application [locally](/docs/swift/create_app_cli.html#swift-install-tools) with the necessary build tools, or deploy to {{site.data.keyword.cloud_notm}}.
 

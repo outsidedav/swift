@@ -46,6 +46,7 @@ See the following features of the {{site.data.keyword.engage_short}} service:
 
 
 ## Before you begin
+{: #prereqs-applaunch}
 
 First, ensure that you have the following prerequisites ready to go:
 
@@ -63,7 +64,7 @@ First, ensure that you have the following prerequisites ready to go:
 4. In the navigation pane, click **Connections** to select an app and bind it to your service. You can bind the service instance to your app later if you leave it unbound during creation.
 
 ## Step 2. Initializing your app
-{: #step2}
+{: #initialize-applaunch}
 
 The service provides platform-specific SDKs to simplify application development. The {{site.data.keyword.cloud_notm}} Mobile Services Swift SDKs can be installed with either CocoaPods or Carthage.
 
@@ -72,7 +73,7 @@ The service provides platform-specific SDKs to simplify application development.
 3. Copy the configuration keys to initialize your app. Use the app secret, app GUID, and client secret to configure your app and create engagements.
 
 ## Step 3. Creating a feature
-{: #step3}
+{: #create-feature-applaunch}
 
 The {{site.data.keyword.engage_short}} service creates and tests responses to features.
 
@@ -92,13 +93,14 @@ To create a feature, complete the following steps:
 The Feature Details window can export the feature as a JSON file, which can be used in the client application to load the default values.
 
 ## Step 4. Creating an audience
-{: #step4}
+{: #audience-applaunch}
 
 ![Create Audience](images/create_audience_animated.gif){: gif}
 
 To create an audience, complete the following steps:
 
 ### Creating an **audience attribute**:
+{: #audience-attrib-applaunch}
 
 1. Click **Audience** > **Create Attribute**.
 2. Provide the following values:
@@ -110,6 +112,7 @@ To create an audience, complete the following steps:
   You can choose to create more than one audience attribute, as listed in the following image, based on your requirement.
 
 ### Creating an **audience**:
+{: #audience-create-applaunch}
 
 1. Click **Create Audience**.
 2. Provide an appropriate name and description on the New Audience window.
@@ -120,10 +123,12 @@ To create an audience, complete the following steps:
 You can now create an Engagement.
 
 ## Step 5. Creating an Engagement
+{: #engagement-applaunch}
 
 An Engagement is an instantiation of a Feature with properties initialized and attaching one of the pre-defined audiences. You can either create an engagement by using **Feature Control** or **In-App Messaging**.
 
 ### Enabling Feature Control Capability
+{: #feature-control-applaunch}
 
 Through this engagement, an app owner can control the visibility of a feature by enabling or disabling it at run time. A feature can be enabled or disabled to all the application users or to a specific set of users and devices.
 
@@ -155,6 +160,7 @@ Complete the following steps to create an engagement by using the Feature Contro
 You can now measure the [performance](/docs/services/app-launch/app_measure_performance.html#applaunch_type) of your engagement.
 
 ### Enabling In-App Messaging Capability
+{: #app-message-applaunch}
 
 Through this engagement, an app owner can send notifications to the app users while they're actively using the application.
 
@@ -201,10 +207,10 @@ Complete the following steps to create an engagement that uses the Messaging opt
 You can now measure the [performance](/docs/services/app-launch/app_measure_performance.html#applaunch_type) of your engagement.
 
 ## Quick Links
-{: #links notoc}
+{: #links-applaunch notoc}
 
 Check out the following links to gain insight, and understand the features of {{site.data.keyword.engage_short}}:
 
  - Try out the [App Launch Service](https://cloud.ibm.com/catalog/services/app-launch).
  - [Blogs and Videos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - For more information, see the [App Launch - Getting started tutorial](/docs/services/app-launch/index.html#gettingstartedtemplate).
+ - For more information, see the [App Launch - Getting started tutorial](/docs/services/app-launch/index.html).

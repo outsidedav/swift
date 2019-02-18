@@ -20,16 +20,19 @@ Structured Query Language (SQL) is a domain-specific language that is used for m
 One of the most important features from Swift is its type-safety. Using an SQL database with Swift is a logical choice because type-safety is supported by both.
 
 ## Using ORM with an SQL Database
+{: sql-orm}
 
 With Object-Relational Mapping (ORM), you can map objects to relational databases without having to deal with SQL statements. You can then store and retrieve objects from a relational database without doing much of the parsing and serialization yourself.
 
 ## Step 1. Getting started with ORM
+{: #start-orm}
 
 Use the [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM) with an SQL plug-in such as [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) or [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL).
 
 For this example, the [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) plug-in is used. Follow the instructions to install the plug-in [here](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation).
 
 ## Step 2. Importing ORM into your application
+{: #import-orm}
 
 1. Update the `Package.swift` file by adding the `Swift-Kuery-ORM` and `Swift-Kuery-PostgreSQL` packages:
   ```swift
@@ -56,6 +59,7 @@ For this example, the [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-Postg
   {: codeblock}
 
 ## Step 3. Creating your database
+{: #create-db-sql}
 
 1. After PostgreSQL is set up on your machine, use a terminal to create the database:
   ```
@@ -73,9 +77,10 @@ For this example, the [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-Postg
 
   **Note**: A connection pool is used for concurrent requests.
 
-## Step 4. Defining your Model
+## Step 4. Defining your model
+{: #define-model-sql}
 
-1. Create the Model, `Grade`:
+1. Create the model, `Grade`:
   ```swift
   struct Grade: Model {
     var course: String
@@ -95,8 +100,10 @@ For this example, the [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-Postg
   {: pre}
 
 ## Step 5. Managing your data
+{: #manage-data-sql}
 
 ### Saving data
+{: #save-data-sql}
 
 To save an instance of `Grade`, create an instance, and call `save()`:
 ```swift
@@ -110,6 +117,7 @@ grade.save { student, error in
 {: pre}
 
 ### Finding data
+{: #find-data-sql}
 
 To retrieve all the Grades from the database, you can use the static call, `findAll()` :
 ```swift
@@ -121,6 +129,7 @@ Grade.findAll { students, error in
 {: pre}
 
 ### Updating data
+{: update-data-sql}
 
 A similar approach is used to update a Grade from the database:
 ```swift
@@ -134,6 +143,7 @@ Grade.update(id: 1) { student, error in
 {: pre}
 
 ### Deleting data
+{: #delete-data-sql}
 
 A similar approach is used to delete a Grade from the database.
 ```swift
@@ -147,9 +157,11 @@ Grade.delete(id: 1) { error in
 All of these calls take a handler that is called once and runs it when the database call is complete.
 
 ## Using ORM with Kitura
+{: #kitura-orm}
 
 To make it easier to try out ORM, the [FoodTrackerBackend tutorial](https://github.com/IBM/FoodTrackerBackend) can save and fetch Meal objects from the iOS app directly into a PostgreSQL database. Even if you complete the tutorial, it's worth going through it again to see the power of Swift-Kuery-ORM, and how it can simplify your Kitura code.
 
 ## Using Swift-Kuery directly
+{: #swift-kuery}
 
 If ORM limits you because you need more control over your database, you can use the SQL abstraction layer, [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery), where you can make an SQL query.

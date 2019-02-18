@@ -48,7 +48,7 @@ The following table provides guidance on the responses that readiness, liveness,
 | Errored  | 500 - Server Error          | 500 - Server Error         | 500 - Server Error        |
 
 ## Adding a health check to an existing Swift app
-{: #add-healthcheck-existing}
+{: #existing-app}
 
 The [Health](https://github.com/IBM-Swift/Health) library makes it easy add a health check to your Swift application. Health checks are extensible. For more information about [caching](https://github.com/IBM-Swift/Health#caching) to prevent DoS attacks or adding [custom checks](https://github.com/IBM-Swift/Health#implementing-a-health-check), see the [Health](https://github.com/IBM-Swift/Health) library.
 
@@ -116,16 +116,19 @@ func initializeHealthRoutes(app: App) {
 The example uses the standard dictionary, which yields a payload such as `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}` when you access the `/health` endpoint.
 
 ## Recommendations for readiness and liveness probes
+{: #recommend-probes}
 
 Readiness checks must include the viability of connections to downstream services in their result if an no acceptable fallback exists for when the downstream service is unavailable. This doesn't mean calling the health check that is provided by the downstream service directly, as infrastructure checks that for you. Instead, consider verifying the health of the existing references your application has to downstream services: this might be a JMS connection to WebSphere MQ, or an initialized Kafka consumer or producer. If you do check the viability of internal references to downstream services, cache the result to minimize the impact health checking has on your application.
 
 A liveness probe, by contrast, can be deliberate about what is checked, as a failure results in immediate termination of the process. A simple HTTP endpoint that always returns `{"status": "UP"}` with status code `200` is a reasonable choice.
 
 ### Add support for Kubernetes Readiness and Liveness to a Swift app
+{: #kube-readiness-swift}
 
 For alternative implementations, such as using **Codable** or the standard dictionary, see [Health library examples](https://github.com/IBM-Swift/Health#usage). Some of these implementations simplify the creation of extensible health checks with support for caching checks that are performed against backing services. In this scenario, you would want to separate the simple liveness test from the more robust, detailed readiness check.
 
 ## Configuring readiness and liveness probes in Kubernetes
+{: #config-kube-readiness}
 
 Declare liveness and readiness probes alongside your Kubernetes deployment. Both probes use the same configuration parameters:
 

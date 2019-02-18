@@ -24,7 +24,7 @@ By abstracting away the infrastructure and frameworks necessary for server-side 
 IBM's FaaS offering, [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/), strives to provide a simple, server-side development experience without needing any specialized server-side knowledge. By using serverless technology, you can quickly develop extensible backend solutions to meet practically any workload demand without the need to create resources ahead of time. For applications that have unpredictable load patterns or high server downtime, {{site.data.keyword.openwhisk_short}} can be an excellent cloud solution with improved performance, and its "pay for what you use" system helps to reduce costs.
 
 ## Architectural Changes
-{: #comparison-swift}
+{: #comparison-serverless}
 
 To help you understand the architectural benefits of switching to FaaS, a traditional and FaaS architectures are compared by using a simple iOS application that is linked to a database.
 
@@ -51,59 +51,59 @@ In a purely serverless model, the client often takes on extra responsibilities b
 While serverless architectures aren't always ideal, they can provide profound benefits under the right team and usage conditions. Check out some specific examples to learn about a few of the most common [use cases](#use_cases).
 
 ## Serverless benefits
-{: #benefits-swift}
+{: #benefits-serverless}
 
 ### Reduced Cost
-{: #reduced-cost-swift}
+{: #reduced-cost-serverless}
 
 Outsourcing the time and monetary cost that is associated with system administration, reduces the overall cost that is associated with traditional backend servers. Additionally, {{site.data.keyword.openwhisk_short}} is different from traditional computing technologies because you pay only for the time your code takes to satisfy requests, rounded up to the nearest 100 ms. Considerable cost savings are possible when you compare to other technologies like VMs and containers, which aren't likely to be 100% used, and take up memory on your cloud provider's system.
 
 ### High availability and scalability
-{: #ha-swift}
+{: #ha-serverless}
 
 Serverless architectures inherently provide instant scalability with near constant availability.
 
 ### Speed and simplified development
-{: #speed-swift}
+{: #speed-serverless}
 
 By eliminating the need for system administration, and providing simple interfaces for deployment, the serverless paradigm accelerates application development. Developers can quickly build apps with action sequences that execute in response to an event-driven world.
 
 ## Example use cases
-{: #use_cases-swift}
+{: #use-cases-serverless}
 
 ### Mobile Backend
-{: #mobile-backend-swift}
+{: #mobile-backend-serverless}
 ![](./images/cloud-functions-rest-api-trigger.png)
 
 Mobile Developers can easily access server-side logic and outsource computationally intensive tasks to a cloud platform. You can implement functions in languages like Swift and easily consume server-side functions by using the iOS SDK without any server-side experience needed.
 
 ### Data Processing
-{: #data-processing-swift}
+{: #data-processing-serverless}
 
 ![](./images/cloud-functions-cloudant-trigger.png)
 
 You can execute code whenever data is updated in your data store through built-in triggers. You can also easily automate processes like audio normalization, image rotation, sharpening, noise reduction, thumbnail generation, or video transcoding through a functional server-side programming model.
 
 ### Cognitive Data Processing
-{: #cognitive-processing-swift}
+{: #cognitive-serverless}
 
 You can analyze data as soon as it becomes available. Your function can take advantage of powerful cognitive services, like IBM Watson, to detect objects or people in images or videos.
 
 ### Scheduled Tasks
-{: #scheduled-tasks-swift}
+{: #tasks-serverless}
 
 Execute your functions periodically, and define schedules that follow a cron-like syntax to specify when actions are to be run.
 
 ## API Reference
-{: #openwhisk_start_api-swift notoc}
+{: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
 * [REST API](https://cloud.ibm.com/apidocs)
 
 ## Related Links
-{: #general-swift notoc}
+{: #related-serverless notoc}
 
-* [Discover {{site.data.keyword.openwhisk_short}}](http://www.ibm.com/cloud-computing/bluemix/openwhisk/)
+* [Discover {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions)
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
 * [Apache OpenWhisk project website](http://openwhisk.org)
 * [More on Serverless](https://martinfowler.com/articles/serverless.html)

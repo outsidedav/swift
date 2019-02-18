@@ -22,6 +22,8 @@ To add {{site.data.keyword.Bluemix}} SDKs to your app, choose the SDKs that you 
 You can use the following SDKs in your mobile application to leverage their respective capabilities.
 
 ### Adding Client SDK services
+{: #add-client-sdk}
+
 - [Core SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-core)
 - [{{site.data.keyword.appid_short}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-cloud-security/appid-clientsdk-swift)
 - [{{site.data.keyword.mobileanalytics_short}} SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)
@@ -32,6 +34,8 @@ You can use the following SDKs in your mobile application to leverage their resp
 - [Watson Swift SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/swift-sdk)
 
 ### Adding client storage
+{: #add-storage}
+
 - [Cloudant ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudant/swift-cloudant)
 
 ## Adding server-side SDKs
@@ -40,6 +44,8 @@ You can use the following SDKs in your mobile application to leverage their resp
 If you have a Swift server application, you can use the following SDKs to communicate with the respective services and storage options.
 
 ### Using server-side services
+{: #use-serverside}
+
 - [{{site.data.keyword.appid_short}} Swift Server SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-cloud-security/appid-serversdk-swift)
 - [{{site.data.keyword.openwhisk_short}} for iOS ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/openwhisk/learn/ios-sdk)
 - [KituraKit ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Swift/KituraKit)
@@ -47,6 +53,8 @@ If you have a Swift server application, you can use the following SDKs to commun
 - [Watson Swift SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/swift-sdk)
 
 ### Adding server-side storage
+{: #add-serverside}
+
 - [Redis ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Swift/Kitura-redis)
 - [CouchDB ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Swift/Kitura-CouchDB)
 - [MongoDB ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/OpenKitten/MongoKitten)

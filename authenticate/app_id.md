@@ -15,6 +15,7 @@ lastupdated: "2019-01-15"
 {:note: .note}
 
 # Adding user authentication
+{: #appid}
 
 Application security is incredibly complicated. For most Developers, it's one of the more difficult tasks of creating an app. How can you be sure that you're protecting your users information? By integrating {{site.data.keyword.appid_full}} into your apps, you can secure resources and add authentication, even when you don't have much security experience.
 
@@ -23,7 +24,7 @@ By requiring users to sign in, you can store user data such as app preferences (
 For all of the ways that you can use {{site.data.keyword.appid_short_notm}} and architecture information, see [About {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
 
 ## Before you begin
-{: #before}
+{: #prereqs-appid}
 
 First, be sure that you have the following prerequisites ready to go:
 * CocoaPods (version 1.1.0 or higher)
@@ -32,7 +33,7 @@ First, be sure that you have the following prerequisites ready to go:
 * Xcode (version 9.0.1 or higher)
 
 ## Step 1. Creating an instance of {{site.data.keyword.appid_short_notm}}
-{: #create_instance}
+{: #create-instance-appid}
 
 Create an instance of the {{site.data.keyword.appid_short_notm}} service:
 
@@ -41,7 +42,7 @@ Create an instance of the {{site.data.keyword.appid_short_notm}} service:
 3. Select your pricing plan and click **Create**.
 
 ## Step 2. Installing the iOS Swift SDK
-{: #install_sdk}
+{: #install-sdk-appid}
 
 The service provides an SDK to help make coding your app easier. The SDK must be installed in your app code.
 
@@ -63,6 +64,7 @@ The service provides an SDK to help make coding your app easier. The SDK must be
     {: pre}
 
 ## Step 3. Initializing the SDK
+{: #initialize-sdk-appid}
 
 After you initialize the SDK in your app, you can start configuring your {{site.data.keyword.appid_short_notm}} preferences.
 
@@ -119,6 +121,7 @@ You can update your configurations at any time without updating your app code.
 {: tip}
 
 ### Social identity providers
+{: #social-appid}
 
 With {{site.data.keyword.appid_short_notm}}, you can use social identity providers such as Facebook and Google+ to secure your apps.
 
@@ -151,6 +154,7 @@ To configure social identity providers:
 
 
 ### Cloud directory
+{: #cloud-dir-appid}
 
 With {{site.data.keyword.appid_short_notm}}, you can manage your own user registry called cloud directory. Cloud directory enables users to sign up and sign in to your mobile and web apps by using their email and a password.
 
@@ -259,7 +263,7 @@ To configure cloud directory:
 
 
 ## Step 5. Testing your app
-{: #appid_testing}
+{: #testing-appid}
 
 Is everything configured correctly? You can test it out!
 
@@ -271,7 +275,7 @@ Is everything configured correctly? You can test it out!
 Having trouble? Check out [troubleshooting {{site.data.keyword.appid_short_notm}}](/docs/services/appid/ts_index.html).
 
 ## Next steps
-{: #appid_next}
+{: #next-appid}
 
 Great job! You added a level of security to your app. Keep the momentum by trying one of the following options:
 

@@ -19,6 +19,7 @@ lastupdated: "2019-01-15"
 You can use API Connect to manage APIs in {{site.data.keyword.cloud}}, whether they are maintained in our out of {{site.data.keyword.cloud_notm}}. Learn to manage your APIs so you can control usage, increase adoption, and track statistics.
 
 ## Creating an instance of API Connect
+{: #create-apiconnect}
 
 Go to the [Catalog](https://cloud.ibm.com/catalog/) and create an instance of API Connect to manage your APIs.
 
@@ -35,6 +36,7 @@ Once your API is defined, you can define Open API Specifications (Swagger) in a 
 - [Loopback](https://loopback.io/)
 
 ## Defining your Managed API
+{: #define-apiconnect}
 
 You can define an API proxy that manages the API gateway between your client application, and your backend logic. Use the following steps to create a proxy by using your Open API Specification (Swagger document) YAML or JSON. 
 
@@ -46,6 +48,7 @@ You can define an API proxy that manages the API gateway between your client app
 You need to configure the External Endpoint to point to the URL that links to your backend logic application. 
 
 ## Creating a Swift Backend
+{: #create-backend-apiconnect}
 
 You can create your backend Swift app based on this API. 
 
@@ -113,6 +116,7 @@ func initializePet_Routes(app: App) {
 Once the API is defined by using {{site.data.keyword.openwhisk_short}} or a full stack Swift runtime, and the API Connect definition is created, you can consume the API in your iOS Apps.
 
 ## Consuming the API in an iOS App Mobile App
+{: #consume-apiconnect}
 
 To consume the backend API in your iOS App, create a Mobile starter kit by using the Apple Console. Using the Starter Kit view, create an iOS Swift starter kit of any type.
 
@@ -135,10 +139,12 @@ In the `Assets` folder, is a file that manages the URL to your API, which by def
 Open the `PLIST` file and replace the host value with the value that is copied from the API route that enables the SDK to call the API into the {{site.data.keyword.cloud_notm}}.
 
 ## Documentation
+{: #docs-apiconnect}
 
 When the SDK is included in your iOS App project, a *README.html* file is available in the `Docs` folder. Open the `Docs` folder in an External browser and read the instructions on how to use your project.
 
 ## Re-creating the SDK after API Change
+{: #change-apiconnect}
 
 If the API changes or new features become available, and {{site.data.keyword.openwhisk}} is added, you can re-create the client SDK by using the `ibmcloud sdk` command. For more information, examples, and syntax help, check out the [SDK Generator](/docs/cli/sdk/index.html) documentation.
 
@@ -161,10 +167,13 @@ To enable the creation of an SDK, use the Open API Specification (Swagger) YAML 
     The SDK is re-created into your iOS App project directory so you can continue to work with your API.
 
 ## Reference
+{: #reference-apiconnect}
 
 The following example SDK is created for {{site.data.keyword.openwhisk_short}} from the Starter Kit. You can see each of the Actions and the Swift snippets of code that you can include in your iOS App.
 
 ### Default API methods
+{: #default-methods-apiconnect}
+
  * [`getCreate`](#getCreate)
  * [`getDelete`](#getDelete)
  * [`getDeleteall`](#getDeleteall)
@@ -173,6 +182,8 @@ The following example SDK is created for {{site.data.keyword.openwhisk_short}} f
  * [`getUpdate`](#getUpdate)
 
 ### Using `getCreate`
+{: #getcreate-apiconnect}
+
 {: #getCreate}
 
 ```swift
@@ -186,10 +197,13 @@ public static func getCreate(completionHandler: @escaping (_ response: Response?
     - Closure takes as arguments `Response?` and `Error?`.
 
 ### Authenticating with `getCreate`
+{: #auth-getcreate}
 
 No authentication required
 
 ### Example that uses `getCreate`
+{: #example-getcreate}
+
 ```swift
 DefaultAPI.getCreate() { (response, error) in
     guard error == nil else {
@@ -209,7 +223,7 @@ DefaultAPI.getCreate() { (response, error) in
 {: codeblock}
 
 ### Using `getDelete`
-{: #getDelete}
+{: #getdelete}
 
 ```swift
 public static func getDelete(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -222,10 +236,13 @@ public static func getDelete(completionHandler: @escaping (_ response: Response?
     - Closure takes as arguments `Response?` and `Error?`.
 
 ### Authenticating with `getDelete`
+{: #auth-getdelete}
 
 No authentication required
 
 ### Example that uses `getDelete`
+{: #example-getdelete}
+
 ```swift
 DefaultAPI.getDelete() { (response, error) in
     guard error == nil else {
@@ -245,7 +262,7 @@ DefaultAPI.getDelete() { (response, error) in
 {: codeblock}
 
 ### Using `getDeleteall`
-{: #getDeleteall}
+{: #getdeleteall}
 
 ```swift
 public static func getDeleteall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -258,10 +275,12 @@ public static func getDeleteall(completionHandler: @escaping (_ response: Respon
     - Closure takes as arguments `Response?` and `Error?`.
 
 ### Authenticating with `getDeleteall`
+{: #auth-getdeleteall}
 
 No authentication required
 
 ### Example that uses `getDeleteall`
+{: #example-getdeleteall}
 
 ```swift
 DefaultAPI.getDeleteall() { (response, error) in
@@ -282,7 +301,7 @@ DefaultAPI.getDeleteall() { (response, error) in
 {: codeblock}
 
 ### Using `getRead`
-{: #getRead}
+{: #getread}
 
 ```swift
 public static func getRead(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -295,10 +314,13 @@ public static func getRead(completionHandler: @escaping (_ response: Response?, 
     - Closure takes as arguments `Response?` and `Error?`.
 
 ### Authenticating with `getRead`
+{: #auth-getread}
 
 No authentication required
 
 ### Example that uses `getRead`
+{: #example-getread}
+
 ```swift
 DefaultAPI.getRead() { (response, error) in
     guard error == nil else {
@@ -318,7 +340,7 @@ DefaultAPI.getRead() { (response, error) in
 {: codeblock}
 
 ### Using `getReadall`
-{: #getReadall}
+{: #getreadall}
 
 ```swift
 public static func getReadall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -331,10 +353,13 @@ public static func getReadall(completionHandler: @escaping (_ response: Response
     - Closure takes as arguments `Response?` and `Error?`.
 
 ### Authenticating with `getReadall`
+{: #auth-getreadall}
 
 No authentication required
 
 ### Example that uses `getReadall`
+{: #example-getreadall}
+
 ```swift
 DefaultAPI.getReadall() { (response, error) in
     guard error == nil else {
@@ -354,7 +379,7 @@ DefaultAPI.getReadall() { (response, error) in
 {: codeblock}
 
 ### Using `getUpdate`
-{: #getUpdate}
+{: #getupdate}
 
 ```swift
 public static func getUpdate(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -367,10 +392,13 @@ public static func getUpdate(completionHandler: @escaping (_ response: Response?
     - Closure takes as arguments `Response?` and `Error?`.
 
 ### Authenticating with `getUpdate`
+{: #auth-getupdate}
 
 No authentication required
 
 ### Example that uses `getUpdate`
+{: #example-getupdate}
+
 ```swift
 DefaultAPI.getUpdate() { (response, error) in
     guard error == nil else {

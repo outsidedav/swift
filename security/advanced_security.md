@@ -59,7 +59,7 @@ With this service, you can create database clusters in the {{site.data.keyword.c
 {: #swift-hyperprotect}
 
 To use a MongoDB database in your application, see
-[Getting started with using a database](../hypersecure_dbaas/database-cluster.html).  
+[Getting started with using a database](/docs/hypersecure_dbaas/database-cluster.html).  
 
 ### Learning more about {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS
 {: #swift-learnmore}
@@ -74,4 +74,4 @@ To learn more about {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS, see [G
 {{site.data.keyword.hscontainers}} are only available to sponsored users. If you expect dedicated security support, register as a sponsored user with the [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml) to deploy your application to the {{site.data.keyword.hscontainers}} cluster.
 {: tip}
 
-Before you become a sponsored user, you can use {{site.data.keyword.containershort_notm}} to secure your application. For more information, see [Getting started with {{site.data.keyword.containershort_notm}}](/docs/containers/container_index.html#container_index).
+Before you become a sponsored user, you can use {{site.data.keyword.containershort_notm}} to secure your application. For more information, see [Getting started with {{site.data.keyword.containershort_notm}}](/docs/containers/container_index.html).

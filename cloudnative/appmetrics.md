@@ -63,6 +63,7 @@ let smd = try SwiftMetricsDash(swiftMetricsInstance : metrics)
 By default, `SwiftMetricsDash` starts its own Kitura server, and serves up the page under  `http://<hostname>:<port>/swiftmetrics-dash`. Access the dashboard to see your new application metrics, including HTTP requests, and event loop latency.
 
 ## Using Application Metrics in Starter Kits
+{: #appmetrics-starterkits}
 
 The server-side Swift applications that are created from Starter Kits include `SwiftMetrics`, `SwiftMetricsDash`, and `SwiftMetricsPrometheus`, so they're ready for use in Kubernetes environments that use Prometheus endpoints for gathering metrics.
 

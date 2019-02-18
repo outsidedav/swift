@@ -32,6 +32,8 @@ With `CloudEnvironment`, you can abstract low-level details from your applicatio
 The `CloudEnvironment` library provides a consistent lookup key that can be used in your source code. The library then searches across an array of search patterns to find a JSON object with the configuration attributes or service credentials. 
 
 ### Adding the CloudEnvironment package to your Swift application
+{: #add-cloudenv}
+
 To use the `CloudEnvironment` package in your Swift application, specify it in the **dependencies:** section of your `Package.swift` file:
 ```swift
 .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", from: "8.0.0"),
@@ -47,6 +49,8 @@ let cloudEnv = CloudEnv()
 {: codeblock}
 
 ### Accessing credentials
+{: #access-credentials}
+
 Now that the `CloudEnvironment` library is initialized, you can access your credentials as shown in the following examples:
 ```swift
 let cloudantCredentials = cloudEnv.getCloudantCredentials(name: "cloudant-credentials")
@@ -109,11 +113,12 @@ For security reasons, credential files don't belong in repositories. In the prev
 For more information about the `mappings.json` file, check out the [Understanding service credential](configuration.html#service_creds) section.
 
 ## Using the Swift configuration manager from Starter Kit apps
+{: #configmanager-swift}
 
 Swift apps that are created with [Starter Kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits/) automatically come with the credentials and configuration that is needed to run locally, and also in many Cloud deployment environments (CF, K8s, VSI, and Functions). The basic creation of the configuration manager can be found in `Sources/Application/Application.swift`. When you create a Swift-based Starter Kit app with services, a `config` folder and `mappings.json` file is created for you. If you download your app, the `config` folder includes a `localdev-config.json` file that has all of the credentials for your services, and is present in the `.gitignore` file.
 
 ## Next Steps
-{: #next notoc}
+{: #next-configß notoc}
 
 Check out our three libraries to help your applications abstract themselves from their environments:
 

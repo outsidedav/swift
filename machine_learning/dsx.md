@@ -14,19 +14,22 @@ lastupdated: "2019-01-15"
 {:tip: .tip}
 
 # Analyzing data sets with custom generated models
+{: #dsx-overview}
 
 Watson Studio provides you with the environment and tools to solve your business problems by collaboratively analyzing data. You can choose the tools that you need to analyze, cleanse, and organize data. Learn to ingest streaming data, or to create, train, and deploy machine learning models. Watson Studio integrates with a wide range of {{site.data.keyword.cloud}} services and Watson Knowledge Catalog, which provides policy management to control assets, and catalogs to index for locating them. Learn more at https://dataplatform.ibm.com/.
 
 Watson Studio is structured around a project-based architecture, which organizes your resources for solving a business problem. Resources include connections to cloud and on-premises data stores, data files, collaborators, and analytic assets like models. Learn more at https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics.
 
 ## Machine learning for {{site.data.keyword.DSX}}
-{: #dsx}
+{: #dsx-learning}
 
 By using the {{site.data.keyword.DSX}}, it is possible to train models and deploy them and then consume the results by using APIs. These APIs can then be used in your iOS or Swift applications.
 
 With IBM Watson Machine Learning, after you set up your environment, you can create models, deploy them to the cloud, and train them. For more information, see [Create, deploy, and train models with {{site.data.keyword.pm_full}} and {{site.data.keyword.DSX}}](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics).
 
 ### Tutorials
+{: #dsx-tutorials}
+
 - [Build a logistic regression model with {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics)
 - [Build a naive-Bayes model with {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics)
 
@@ -176,7 +179,7 @@ With IBM Watson Machine Learning, after you set up your environment, you can cre
   {: codeblock}
 
 ### Example
-{: #example}
+{: #dsx-example}
 
 **Scenario name:** Product line prediction
 
@@ -216,6 +219,8 @@ client.retrieveToken { token in
 Great job! Now you can analyze data sets by using custom generated machine learning models. Keep the momentum by learning more about the features that {{site.data.keyword.pm_short}} has to offer at [Data science and machine learning](https://www.ibm.com/analytics/data-science/machine-learning).
 
 ### Related Links
+{: #dsx-related}
+
 * [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling/index.html#using-machine-learning-with-data-science-experience)
 * [{{site.data.keyword.DSX}}](https://datascience.ibm.com/)
 * [{{site.data.keyword.DSX}} documentation](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics)

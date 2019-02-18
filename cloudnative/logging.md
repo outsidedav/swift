@@ -16,11 +16,12 @@ lastupdated: "2019-02-04"
 # Logging in Swift
 {: #logging_swift}
 
-Log messages are strings with contextual information about the state and activity of the microservice at the time that the log entry is made. Logs are required to diagnose how and why services fail, and plays a supporting role to [app metrics](appmetrics.html) in monitoring application health.
+Log messages are strings with contextual information about the state and activity of the microservice at the time that the log entry is made. Logs are required to diagnose how and why services fail, and plays a supporting role to [app metrics](/docs/swift/cloudnative/appmetrics.html) in monitoring application health.
 
 Given the transient nature of processes in Cloud environments, logs must be collected and sent elsewhere, usually to a centralized location for analysis. The most consistent way to log in cloud environments is to send log entries to standard output and error streams, which leaves the infrastructure to handle the rest.
 
 ## Adding Logging to your Swift app
+{: #logging-add}
 
 [HeliumLogger](https://github.com/IBM-Swift/HeliumLogger) is a popular lightweight logging framework for Swift, and provides many native benefits such as logging to standard output and different log levels.
 
@@ -49,7 +50,7 @@ In the provided example, the [log level](http://ibm-swift.github.io/HeliumLogger
 For more information about customizing the log messages, see the official [HeliumLogger API reference documentation](http://ibm-swift.github.io/HeliumLogger/).
 
 ## Logging with Starter Kits
-{: #monitoring}
+{: #logging-starterkits}
 
 Swift apps that are created by using the {{site.data.keyword.cloud_notm}} App Service come with `HeliumLogger` by default. Running the app natively or in a cloud environment produces the following output:
 ```
@@ -69,14 +70,14 @@ The log level is explicitly set to `.info` to log informational level messages l
 {: tip}
 
 ## Next Steps
-{: #next_steps}
+{: #next-logging}
 
 Learn more about viewing the logs in each of our deployment environments:
 * [Kubernetes Logs](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/)
-* [Cloud Foundry Logs](/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
-* [Cloud Foundry Enterprise Environment - Auditing and logging](docs/cloud-foundry/auditing-logging.html#auditing-logging)
-* [{{site.data.keyword.openwhisk}} Logs & Monitoring](/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
+* [Cloud Foundry Logs](/docs/cli/reference/ibmcloud/bx_cli.html)
+* [Cloud Foundry Enterprise Environment - Auditing and logging](docs/cloud-foundry/auditing-logging.html)
+* [{{site.data.keyword.openwhisk}} Logs & Monitoring](/docs/openwhisk/openwhisk_logs.html)
 
 Learn how to implement and use a log aggregator:
-* [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
+* [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis/log_analysis_ov.html)
 * [{{site.data.keyword.cloud_notm}} Private ELK stack](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

@@ -15,7 +15,7 @@ lastupdated: "2019-01-15"
 # Integrating back-end services to your app with a generated SDK
 {: #sdkgen-cli}
 
-The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.cloud_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/index.html){: new_window}.
+The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.cloud_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/index.html){: new_window}.
 
 This {{site.data.keyword.IBM_notm}} SDK Generator plug-in integrates your back-end services to your app with a generated SDK. When a change to a REST API occurs, you can regenerate the SDK and replace the old one to easily upgrade the SDK. You can also integrate the CLI into a DevOps pipeline and ensure that the SDK is always consistent with the API spec each time the app is built.
 
@@ -34,7 +34,7 @@ Ensure that you have:
 
 1. [Install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/get_started.html).
 
-2. [Install the plug-in ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/index.html#install_plug-in){: new_window}.
+2. [Install the plug-in ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/index.html#install_plug-in){: new_window}.
 
   ```
   ibmcloud plugin install sdk-gen
@@ -47,7 +47,7 @@ Ensure that you have:
 Generate an SDK by entering: `ibmcloud sdk generate [arguments...] [command options]`
 
 ### Arguments
-{: #gen-args}
+{: #gen-args-sdkgen}
 
 * `APP_NAME` - the name of the Cloud Foundry app in your current space
 * `OPENAPI_DOC_LOCATION` - a URL or a relative file path to the raw REST API definition JSON or yaml

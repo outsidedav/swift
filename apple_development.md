@@ -26,13 +26,13 @@ lastupdated: "2019-01-14"
 
 The developer capabilities that are built in to {{site.data.keyword.cloud_notm}} align to various skill sets, and provide one platform to produce, deliver, run, and manage your app. For example, from the cognitive app that is mentioned, the following {{site.data.keyword.cloud_notm}} capabilities are of interest:
 
-* The [**{{site.data.keyword.cloud_notm}} Developer Experience**](/docs/overview/dev-journey.html#dev-journey) is not a service, but rather is a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and Cloud Native developers to start building production-ready apps. It includes automatic provisioning of services, and "one-click" deployment to a devops toolchain.
+* The [**{{site.data.keyword.cloud_notm}} Developer Experience**](/docs/overview/dev-journey.html) is not a service, but rather is a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and Cloud Native developers to start building production-ready apps. It includes automatic provisioning of services, and "one-click" deployment to a devops toolchain.
 
 * [**IBM Watson Data Platform**](https://dataplatform.ibm.com) makes it simple to assemble data collections, refine the data, then visualize, discover insights, and build models for use in your cognitive app.
 
-* [**IBM Streaming Analytics**](../services/StreamingAnalytics/index.html#gettingstarted) helps wrangle and analyze data streams. It is an advanced analytic platform that you can use to ingest, analyze, and correlate information as it arrives from different types of data sources in real time.
+* [**IBM Streaming Analytics**](/docs/services/StreamingAnalytics/index.html) helps wrangle and analyze data streams. It is an advanced analytic platform that you can use to ingest, analyze, and correlate information as it arrives from different types of data sources in real time.
 
-* The [**{{site.data.keyword.cloud_notm}} Continuous Delivery service**](../services/ContinuousDelivery/index.html#cd_getting_started) sets up a devops toolchain to automate continuous delivery of your app. You can easily enhance the toolchain to include management functions like monitoring, logging, tracking, and alerting. You can even apply advanced machine learning to your toolchain by using the [DevOps Insights service](../services/DevOpsInsights/index.html#gettingstarted).
+* The [**{{site.data.keyword.cloud_notm}} Continuous Delivery service**](/docs/services/ContinuousDelivery/index.html) sets up a devops toolchain to automate continuous delivery of your app. You can easily enhance the toolchain to include management functions like monitoring, logging, tracking, and alerting. You can even apply advanced machine learning to your toolchain by using the [DevOps Insights service](/docs/services/DevOpsInsights/index.html).
 
 The {{site.data.keyword.cloud_notm}} platform offers many more capabilities and can be used as your comprehensive development platform.
 
@@ -45,7 +45,7 @@ The {{site.data.keyword.cloud_notm}} Developer Experience is not a service, but 
 * Specific use-case starter kits that produce production-ready starter apps in various languages and architectural patterns.
 * Automatic provisioning of services.
 * Manage app components by using a portable app structure.
-* One-click creation of a [devops toolchain](../services/ContinuousDelivery/index.html#cd_getting_started).
+* One-click creation of a [devops toolchain](/docs/services/ContinuousDelivery/index.html).
 
 To understand how the {{site.data.keyword.cloud_notm}} Developer Experience can help you rapidly build high-quality production-ready apps, see the following elements in more detail.
 
@@ -68,6 +68,6 @@ The {{site.data.keyword.cloud_notm}} Developer Experience manifests in various d
 Each developer console provides Starter Kits relevant to that console's focus area, offering a consistent, intuitive workflow to create a working production-ready app in minutes.
 
 ## Creating Apps with Starter Kits
-{: #apps}
+{: #starterkit-apps}
 
 You can leverage [Starter Kits](/docs/swift/starter_kit/starter_kits.html) to create Swift apps, which contain the association of code, data, services, and toolchains that comprise your app.

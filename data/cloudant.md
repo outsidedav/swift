@@ -36,7 +36,7 @@ The [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![External link icon
 ## Step 1. Creating an instance of {{site.data.keyword.cloudant_short_notm}}
 {: #create-instance-cloudant}
 
-See [Creating a Cloudant NoSQL DB instance on IBM Cloud tutorial ![External link icon](../images/launch-glyph.svg "External link icon")](/docs/services/Cloudant/tutorials/create_service.html#creating-a-cloudant-nosql-db-instance-on-ibm-cloud){:new_window} to create an instance of the service.
+See [Creating an IBM Cloudant instance on IBM Cloud tutorial ![External link icon](../images/launch-glyph.svg "External link icon")](/docs/services/Cloudant/tutorials/create_service.html){:new_window} to create an instance of the service.
 
 ## Step 2. Installing the SDK
 {: #install-sdk-cloudant}
@@ -92,6 +92,7 @@ After you initialize the SDK in your app, you can begin by using {{site.data.key
 
 ### Basic Operations
 {: #basic-operations-cloudant}
+
 These basic operations illustrate the fundamental actions to create, read, and delete your documents by using the initialized client.
 
 #### Create a document

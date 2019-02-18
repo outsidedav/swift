@@ -33,6 +33,7 @@ lastupdated: "2019-01-15"
  - **Troubleshoot to root cause** - Use custom logging in your application and automatically upload the logs and search them from the console. Drill down on crash events to see stack traces.
 
 ## Before you begin
+{: #prereqs-analytics}
 
 First, be sure that you have the following prerequisites ready to go:
 
@@ -42,7 +43,7 @@ First, be sure that you have the following prerequisites ready to go:
  - CocoaPods or Carthage
 
 ## Step 1. Creating an instance of {{site.data.keyword.mobileanalytics_short}}
-{: #mobile_analytics_create}
+{: #create-analytics}
 
 1. In the {{site.data.keyword.cloud_notm}} catalog, click **Mobile** > **{{site.data.keyword.mobileanalytics_short}}**. The service configuration screen opens.
 2. Give your service instance a name, or use the preset name.
@@ -50,6 +51,7 @@ First, be sure that you have the following prerequisites ready to go:
 4. In the navigation pane, click **Connections** to select an app and bind it to your service. You can bind the service instance to your app later if you leave it unbound during creation.
 
 ## Step 2. Installing the iOS Swift SDK
+{: #install-analytics-swift}
 
 The service provides platform-specific SDKs to simplify application development. The {{site.data.keyword.cloud_notm}} Mobile Services Swift SDKs can be installed with either CocoaPods or Carthage. For more information, see [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics).
 
@@ -62,14 +64,14 @@ You can instrument your mobile application by using the {{site.data.keyword.mobi
 The {{site.data.keyword.mobileanalytics_short}} SDK is distributed with [CocoaPods ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cocoapods.org/){: new_window} and [Carthage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Carthage/Carthage#getting-started){: new_window}, which are dependency managers for Cocoa projects. CocoaPods and Carthage automatically download artifacts from repositories to make them available to your application. Select CocoaPods or Carthage:
 
 ### CocoaPods
-{: #cocoapods}
+{: #cocoapods-analytics}
 
 1. Follow the [{{site.data.keyword.Bluemix_notm}} Mobile Services Swift SDK instructions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window} on GitHub to install `BMSAnalytics` by using CocoaPods and add it to your Podfile.
 
 2. After installing the iOS Client SDK, [import and initialize](sdk.html#initalize-ma-sdk) the Analytics Client SDK.   
 
 ### Carthage
-{: #carthage}
+{: #carthage-analytics}
 
 If you aren't using CocoaPods, you can add frameworks to your project by using [Carthage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos){: new_window}.
 
@@ -78,6 +80,7 @@ If you aren't using CocoaPods, you can add frameworks to your project by using [
 2. After you install the iOS Client SDK, import, and then initialize the Analytics Client SDK.
 
 ## Step 3. Initializing the SDK
+{: #initialize-analytics}
 
 By using the {{site.data.keyword.mobileanalytics_short}} you can collect the following categories of data, each of which require a different degree of instrumentation:
 
@@ -135,7 +138,7 @@ Initialize your application to enable sending logs to the {{site.data.keyword.mo
 4. The application is now initialized and ready to collect analytics. Next, you can send analytics data to the {{site.data.keyword.mobileanalytics_short}} service.		
 
 ## Step 6. Gathering usage analytics
-{: #app-monitoring-gathering-analytics}
+{: #usage-analytics}
 
 You can configure the {{site.data.keyword.mobileanalytics_short}} client SDK to record usage analytics and send the recorded data to the {{site.data.keyword.mobileanalytics_short}} service.
 
@@ -172,6 +175,7 @@ Analytics.log(metadata: eventObject)
 {: codeblock}
 
 ## Step 7. Using Logger
+{: #analytics-logger}
 
 The {{site.data.keyword.mobileanalytics_full}} Client SDK provides a logging framework that is similar to other log frameworks that you might be familiar with, such as `java.util.logging` or `log4j`. The logging framework supports multiple per-package logger instances, different log levels, capturing of stack traces for an application crash, and more.
 
@@ -297,7 +301,7 @@ Is everything configured correctly? Time to test it out!
 4. Go to the {{site.data.keyword.mobileanalytics_short}} console to see usage analytics for your application. You can also monitor your application by [setting alerts](/docs/services/mobileanalytics/app-monitoring.html#alerts) and [monitoring app crashes](/docs/services/mobileanalytics/app-monitoring.html#monitor-app-crash).
 
 ## What to do next
-{: #what-to-do-next notoc}
+{: #next-analytics notoc}
 
  - To learn more about the service, read through the [documentation](/docs/services/mobileanalytics/index.html#getting-started-tutorial).
 

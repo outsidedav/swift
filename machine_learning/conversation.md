@@ -106,7 +106,7 @@ The following samples help you add {{site.data.keyword.conversationshort}} capab
   ```
   {: codeblock}
 
-  **Tip**: This example saves the context to state. For a better understanding of this object and how to adapt it for your use case, see the [context variable documentation](https://cloud.ibm.com/docs/services/assistant/dialog-runtime.html#context-variables). Check out the [version parameter documentation](https://cloud.ibm.com/apidocs/assistant#versioning) or use the date that the {site.data.keyword.conversationshort}} service was created.
+  **Tip**: This example saves the context to state. For a better understanding of this object and how to adapt it for your use case, see the [context variable documentation](/docs/services/assistant/dialog-runtime.html#context-variables). Check out the [version parameter documentation](https://cloud.ibm.com/apidocs/assistant#versioning) or use the date that the {site.data.keyword.conversationshort}} service was created.
 
 3. Initialize the conversation. Depending on how your assistant is configured, it can provide an initial response to the user:
   ```swift

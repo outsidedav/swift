@@ -140,4 +140,4 @@ You can add more services to your iOS app directly from the web console, such as
 ### Using {{site.data.keyword.cloud_notm}} Developer tools
 {: #devtools-swift}
 
-You can also learn how to develop Swift apps by using the [{{site.data.keyword.cloud_notm}} Developer tools](../cli/index.html), which offer a command line approach to creating, developing, and deploying complete web, mobile, and microservice applications.
+You can also learn how to develop Swift apps by using the [{{site.data.keyword.cloud_notm}} Developer tools](/docs/cli/index.html), which offer a command line approach to creating, developing, and deploying complete web, mobile, and microservice applications.

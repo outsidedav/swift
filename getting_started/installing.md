@@ -13,12 +13,12 @@ lastupdated: "2019-01-15"
 {:pre: .pre}
 
 # Installing SDKs into client apps
-{: #installing}
+{: #install-sdks}
 
 {{site.data.keyword.cloud}} iOS SDKs support various of popular dependency managers, enabling you to easily install, and use {{site.data.keyword.cloud_notm}} services within your own applications.
 
 ## Installing with CocoaPods
-{: #installing_with_cocoapods}
+{: #install_cocoapods}
 
 To install an SDK by using CocoaPods, add it to your `Podfile`. If your project doesn't have a `Podfile` yet, use the `pod init` command.
 ```ruby
@@ -35,7 +35,7 @@ Run `pod install`, and open the generated `.xcworkspace` file.
 For more information, see the [CocoaPods Guides](https://guides.cocoapods.org/using/index.html).
 
 ## Installing with Carthage
-{: #installing_with_carthage}
+{: #install_carthage}
 
 To install an SDK with Carthage, add this line to your `Cartfile`:
 ```
@@ -48,7 +48,7 @@ Run `carthage update` to start the build process. After the build is finished, a
 For more information, see the [Carthage getting started](https://github.com/Carthage/Carthage#getting-started) documentation.
 
 ## Installing with the Swift package manager
-{: #installing_with_swift_package_manager}
+{: #install_swift_package}
 
 To install an SDK by using the Swift Package Manager, add the following line to your dependencies in your `Package.swift`:
 ```swift
@@ -61,6 +61,6 @@ Run `swift build` to start the build process.
 For more information, see the [Swift Package Manager Overview](https://swift.org/package-manager/).
 
 ## Installing manually
-{: #installing_manually}
+{: #install_manually}
 
 To install an SDK manually, download the SDK and manually add the source files into your project.
