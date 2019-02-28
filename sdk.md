@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-02-28"
 
 ---
 {:new_window: target="_blank"}
@@ -14,7 +14,7 @@ lastupdated: "2019-01-14"
 # Adding Swift SDKs to your app
 {: #sdk}
 
-To add {{site.data.keyword.Bluemix}} SDKs to your app, choose the SDKs that you want to use and configure your dependency manager to pull the SDKs into your app.
+To add {{site.data.keyword.cloud}} SDKs to your app, choose the SDKs that you want to use and configure your dependency manager to pull the SDKs into your app.
 
 ## Using client SDKs
 {: #client_sdk}

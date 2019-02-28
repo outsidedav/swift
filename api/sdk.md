@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -71,7 +71,7 @@ Specifies the type for the `OPENAPI_DOC_LOCATION` argument.
 
   * `-r` - A remote URL.
   * `-f` - A file name.
-  * `-a` - App that runs on {{site.data.keyword.coud_notm}}
+  * `-a` - App that runs on {{site.data.keyword.cloud_notm}}
   * `-l` - The localhost URL.
 
 **Optional**:
