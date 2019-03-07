@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-07"
 
 ---
 
@@ -107,7 +107,8 @@ A skeleton Kitura server is created, but it doesn't provide any REST APIs that c
   ```
   {: codeblock}
 
-4. Implement the loadHandler function to the `Sources/Application/Application.swift` file by adding the following code as another function in the `App` class:   ```swift
+4. Implement the loadHandler function to the `Sources/Application/Application.swift` file by adding the following code as another function in the `App` class:
+  ```swift
   func loadHandler(completion: ([Meal]?, RequestError?) -> Void ) {
       let meals: [Meal] = self.mealStore.map({ $0.value })
     completion(meals, nil)
