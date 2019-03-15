@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swift api connect, swagger swift, open api swift, api designer, loopback swift api, create swift backend, swift api parameters, swift api reference
+
+subcollection: swift
 
 ---
 
@@ -21,21 +25,21 @@ You can use API Connect to manage APIs in {{site.data.keyword.cloud}}, whether t
 ## Creating an instance of API Connect
 {: #create-apiconnect}
 
-Go to the [Catalog](https://cloud.ibm.com/catalog/) and create an instance of API Connect to manage your APIs.
+Go to the [Catalog](https://cloud.ibm.com/catalog/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") and create an instance of API Connect to manage your APIs.
 
 Use the `Menu->APIs` to access the API Connect Management console.
 
 ![API Connect](images/apiconnect.png)
 
-If you're defining your own API contract before you start backend, and front end development, use the API Connect tools to accelerate this process. You can work with your digital development team to build and define contract of API between your iOS App and your backend logic. This logic can be delivered by using [{{site.data.keyword.openwhisk}}](/docs/openwhisk/index.html) or through the [Swift runtime](/docs/runtimes/swift/index.html) with Kubernetes or [Cloud Foundry](/docs/cloud-foundry/index.html).
+If you're defining your own API contract before you start backend, and front end development, use the API Connect tools to accelerate this process. You can work with your digital development team to build and define contract of API between your iOS App and your backend logic. This logic can be delivered by using [{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-index#index) or through the [Swift runtime](/docs/runtimes/swift?topic=Swift-swift_runtime#swift_runtime) with Kubernetes or [Cloud Foundry](/docs/cloud-foundry?topic=cloud-foundry-about#about).
 
 Once your API is defined, you can define Open API Specifications (Swagger) in a number of different tools:
 
-- [Swagger Editor](http://editor.swagger.io/)
-- [API Designer](https://www.ibm.com/support/knowledgecenter/en/SSFS6T/com.ibm.apic.toolkit.doc/task_apionprem_composing_apis.html)
-- [Loopback](https://loopback.io/)
+- [Swagger Editor](http://editor.swagger.io/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")
+- [API Designer](https://www.ibm.com/support/knowledgecenter/en/SSFS6T/com.ibm.apic.toolkit.doc/task_apionprem_composing_apis.html){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")
+- [Loopback](https://loopback.io/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")
 
-## Defining your Managed API
+## Defining your managed API
 {: #define-apiconnect}
 
 You can define an API proxy that manages the API gateway between your client application, and your backend logic. Use the following steps to create a proxy by using your Open API Specification (Swagger document) YAML or JSON. 
@@ -47,12 +51,12 @@ You can define an API proxy that manages the API gateway between your client app
 
 You need to configure the External Endpoint to point to the URL that links to your backend logic application. 
 
-## Creating a Swift Backend
+## Creating a Swift backend
 {: #create-backend-apiconnect}
 
 You can create your backend Swift app based on this API. 
 
-From the Apple Development console, perform the following steps:
+From the [Apple Development console](https://cloud.ibm.com/developer/appledevelopment/dashboard){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), perform the following steps:
 
 1. Select **Starter Kits**.
 2. Click **Create App**.
@@ -60,7 +64,7 @@ From the Apple Development console, perform the following steps:
 
 Select the YAML and JSON file, and then click **Create**. The back end Swift app is created.
 
-You can then **download** the Code or **Deploy to Cloud**, and clone your GIT repo to your local machine. You can follow the instructions in the Knowledge Guide to open the server-side app in Xcode.
+You can then **download** the Code or **Deploy**, and clone your GIT repo to your local machine. You can follow the instructions in the Knowledge Guide to open the server-side app in Xcode.
 
 In the **Source** folder, you can see a route that defines the Swift file that created the REST endpoints that map to the API. 
 
@@ -120,7 +124,7 @@ Once the API is defined by using {{site.data.keyword.openwhisk_short}} or a full
 
 To consume the backend API in your iOS App, create a Mobile starter kit by using the Apple Console. Using the Starter Kit view, create an iOS Swift starter kit of any type.
 
-Click **Add Resource** and select an API. 
+Click **Add service** and select an API. 
 
 ![API Dialog](../images/apidialog.png)
 
@@ -146,7 +150,7 @@ When the SDK is included in your iOS App project, a *README.html* file is availa
 ## Re-creating the SDK after API Change
 {: #change-apiconnect}
 
-If the API changes or new features become available, and {{site.data.keyword.openwhisk}} is added, you can re-create the client SDK by using the `ibmcloud sdk` command. For more information, examples, and syntax help, check out the [SDK Generator](/docs/cli/sdk/index.html) documentation.
+If the API changes or new features become available, and {{site.data.keyword.openwhisk}} is added, you can re-create the client SDK by using the `ibmcloud sdk` command. For more information, examples, and syntax help, check out the [SDK Generator](/docs/cli/sdk?topic=cloud-cli-sdk-cli#sdk-cli) documentation.
 
 To enable the creation of an SDK, use the Open API Specification (Swagger) YAML or JSON file. You can retrieve this file by using the API management facilities in the {{site.data.keyword.cloud_notm}}. 
 

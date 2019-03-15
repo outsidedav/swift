@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: sql swift, database swift, persistence swift, data swift, orm swift, kuery swift, kitura swift
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,8 @@ lastupdated: "2019-01-15"
 # Using an SQL database for data persistence
 {: #sql_data}
 
-Structured Query Language (SQL) is a domain-specific language that is used for managing data in relational databases. Data persistence is recommended for when your server shuts down while you're using it. To add data persistence, you can use an SQL Database directly from Swift.
+Structured Query Language (SQL) is a domain-specific language that is used for managing data in relational databases. Data persistence is recommended for when your server shuts down while you're using it. To add data persistence, you can use an SQL Database directly from Swift. 
+
 One of the most important features from Swift is its type-safety. Using an SQL database with Swift is a logical choice because type-safety is supported by both.
 
 ## Using ORM with an SQL Database
@@ -27,9 +32,9 @@ With Object-Relational Mapping (ORM), you can map objects to relational database
 ## Step 1. Getting started with ORM
 {: #start-orm}
 
-Use the [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM) with an SQL plug-in such as [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) or [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL).
+Use the [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") with an SQL plug-in such as [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") or [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 
-For this example, the [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) plug-in is used. Follow the instructions to install the plug-in [here](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation).
+For this example, the [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") plug-in is used. Follow the instructions to [install the plug-in](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 
 ## Step 2. Importing ORM into your application
 {: #import-orm}
@@ -159,9 +164,9 @@ All of these calls take a handler that is called once and runs it when the datab
 ## Using ORM with Kitura
 {: #kitura-orm}
 
-To make it easier to try out ORM, the [FoodTrackerBackend tutorial](https://github.com/IBM/FoodTrackerBackend) can save and fetch Meal objects from the iOS app directly into a PostgreSQL database. Even if you complete the tutorial, it's worth going through it again to see the power of Swift-Kuery-ORM, and how it can simplify your Kitura code.
+To make it easier to try out ORM, the [FoodTrackerBackend tutorial](https://github.com/IBM/FoodTrackerBackend){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") can save and fetch Meal objects from the iOS app directly into a PostgreSQL database. Even if you complete the tutorial, it's worth going through it again to see the power of Swift-Kuery-ORM, and how it can simplify your Kitura code.
 
 ## Using Swift-Kuery directly
 {: #swift-kuery}
 
-If ORM limits you because you need more control over your database, you can use the SQL abstraction layer, [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery), where you can make an SQL query.
+If ORM limits you because you need more control over your database, you can use the SQL abstraction layer, [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), where you can make an SQL query.

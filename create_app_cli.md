@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-03-14"
+
+keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ lastupdated: "2019-02-01"
 
 The following guide is intended to help you build, run locally, and deploy a server-side Swift app. Learn how to use the {{site.data.keyword.dev_cli_long}} to run these actions with standard commands.
 
-You can use the {{site.data.keyword.dev_cli_short}} to manage your server-side applications with more than a dozen commands. Learn more about the `ibmcloud dev` commands at [IBM Cloud Developer Tools CLI](/docs/cli/idt/commands.html).
+You can use the {{site.data.keyword.dev_cli_short}} to manage your server-side applications with more than a dozen commands. Learn more about the `ibmcloud dev` commands at [{{site.data.keyword.dev_cli_notm}} CLI](/docs/cli/idt?topic=cloud-cli-idt-cli#idt-cli).
 
 ## Step 1. Requirements for Developers
 {: #prereqs-swift-cli}
@@ -31,33 +35,33 @@ To get started with {{site.data.keyword.cloud_notm}}, make sure that you meet th
 ### Operating System
 {: #swift-cli-os-reqs}
 
-Develop Swift apps with best practice by using the latest MacOS supported hardware, and testing with the latest iOS releases. Sign up for an [Apple Developer](https://developer.apple.com/) account to enable testing on a physical device.
+Develop Swift apps with best practice by using the latest MacOS supported hardware, and testing with the latest iOS releases. Sign up for an [Apple Developer](https://developer.apple.com/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") account to enable testing on a physical device.
 
 ### iOS and Xcode
 {: #swift-cli-ios_xcode}
 
-- [Install Xcode 8+ (or higher)](https://developer.apple.com/xcode/)
-- [Deploy to iOS devices 8 (or higher)](https://support.apple.com/downloads/ios)
-- Before app submission to Apple, review the [App Store Submission Guidelines](https://developer.apple.com/app-store/guidelines/)
+- [Install Xcode 8+ (or higher)](https://developer.apple.com/xcode/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+- [Deploy to iOS devices 8 (or higher)](https://support.apple.com/downloads/ios){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+- Before app submission to Apple, review the [App Store Submission Guidelines](https://developer.apple.com/app-store/guidelines/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
 
 ### SDKs and Dependency management
 {: #swift-cli-sdk-dependency}
 
 The following tools ensure that you can install the native SDKs to work with the various {{site.data.keyword.cloud_notm}} Services.
 
-- [Install CocoaPods for IBM Cloud SDKs](https://cocoapods.org/)
+- [Install CocoaPods for IBM Cloud SDKs](https://cocoapods.org/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
   ```
   sudo gem install cocoapods
   ```
   {: codeblock}
   
-- [Install Homebrew to help install Carthage](https://brew.sh/)
+- [Install Homebrew to help install Carthage](https://brew.sh/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
   ```
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   ```
   {: codeblock}
 
-- [Install Carthage for Watson SDKs](https://github.com/Carthage/Carthage)
+- [Install Carthage for Watson SDKs](https://github.com/Carthage/Carthage){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
   ```
   brew install carthage
   ```
@@ -66,7 +70,7 @@ The following tools ensure that you can install the native SDKs to work with the
 ## Step 2. Installing tools for local development
 {: #swift-cli-install-tools}
 
-The {{site.data.keyword.cloud}} provides local CLI tools that help you work with various aspects of the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.dev_cli_long}} Information](/docs/cli/index.html). You can use the tools for testing a Swift backend in a local Docker image before cloud deployment.
+The {{site.data.keyword.cloud}} provides local CLI tools that help you work with various aspects of the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.dev_cli_long}} Information](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). You can use the tools for testing a Swift backend in a local Docker image before cloud deployment.
 
 * For MacOS and Linux, run the following command:
   ```
@@ -92,12 +96,12 @@ The {{site.data.keyword.cloud}} provides local CLI tools that help you work with
   ```
   {: codeblock}
 
-  Be sure to log in with an {{site.data.keyword.cloud_notm}} account to create a project. First-time users can [register ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) for a free account. Use the `ibmcloud login` command to log in on the command line.
+  Be sure to log in with an {{site.data.keyword.cloud_notm}} account to create a project. First-time users can [register](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") for a free account. Use the `ibmcloud login` command to log in on the command line.
   {: tip}
 
 2. When prompted, select options 1, then 6, and lastly 2, as displayed in the following example:
   ```
-  ? Select a resource type:                  
+  ? Select a service type:                  
   1. Backend Service / Web App
   2. Mobile Client
   Enter a number> 1
@@ -173,11 +177,11 @@ You can now build, run, and deploy your application by using the {{site.data.key
   {: codeblock}
 
 ## Next steps
-{: #swift-cli-next}
+{: #swift-cli-next notoc}
 
 Learn to use the {{site.data.keyword.cloud_notm}} Developer Console for Apple that enables Developers to create apps from various Starter Kits, create and connect key {{site.data.keyword.cloud_notm}} optimized services, and then quickly download working code or set up for continuous delivery. Users can create, view, configure, and manage your app, as well as download your app's code. By using the Developer Console for Apple, you can quickly evaluate, and test {{site.data.keyword.cloud_notm}} services with a brand new app.
 
-Ready to jump in? Visit the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) now to get started.
+Ready to jump in? Visit the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") now to get started.
 {: tip}
 
-For more information, see [Developing Swift apps with Starter Kits](/docs/swift/starter_kit/starter_kits.html).
+For more information, see [Developing Swift apps with Starter Kits](/docs/swift/starter_kit?topic=swift-starterkits-intro#starterkits-intro).

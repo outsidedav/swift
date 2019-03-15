@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
+
+subcollection: swift
 
 ---
 
@@ -19,11 +23,11 @@ lastupdated: "2019-01-15"
 
 What is serverless? The serverless development pattern refers to application development where server-side logic is run in stateless containers. The containers are event-triggered, ephemeral (lasting for a single execution), and fully managed by a third party. This paradigm, also known as Functions as a Service (FaaS), is where the Developer provides a stateless function that can be triggered and run without explicitly creating or managing a server.
 
-By abstracting away the infrastructure and frameworks necessary for server-side development, serverless architecture allows Developers to focus on writing code to run reactively to change data.
+By abstracting away the infrastructure and frameworks necessary for server-side development, serverless architecture allows developers to focus on writing code to run reactively to change data.
 
-IBM's FaaS offering, [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/), strives to provide a simple, server-side development experience without needing any specialized server-side knowledge. By using serverless technology, you can quickly develop extensible backend solutions to meet practically any workload demand without the need to create resources ahead of time. For applications that have unpredictable load patterns or high server downtime, {{site.data.keyword.openwhisk_short}} can be an excellent cloud solution with improved performance, and its "pay for what you use" system helps to reduce costs.
+IBM's FaaS offering, [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), strives to provide a simple, server-side development experience without needing any specialized server-side knowledge. By using serverless technology, you can quickly develop extensible backend solutions to meet practically any workload demand without the need to create resources ahead of time. For applications that have unpredictable load patterns or high server downtime, {{site.data.keyword.openwhisk_short}} can be an excellent cloud solution with improved performance, and its "pay for what you use" system helps to reduce costs.
 
-## Architectural Changes
+## Architectural changes
 {: #comparison-serverless}
 
 To help you understand the architectural benefits of switching to FaaS, a traditional and FaaS architectures are compared by using a simple iOS application that is linked to a database.
@@ -53,7 +57,7 @@ While serverless architectures aren't always ideal, they can provide profound be
 ## Serverless benefits
 {: #benefits-serverless}
 
-### Reduced Cost
+### Reduced cost
 {: #reduced-cost-serverless}
 
 Outsourcing the time and monetary cost that is associated with system administration, reduces the overall cost that is associated with traditional backend servers. Additionally, {{site.data.keyword.openwhisk_short}} is different from traditional computing technologies because you pay only for the time your code takes to satisfy requests, rounded up to the nearest 100 ms. Considerable cost savings are possible when you compare to other technologies like VMs and containers, which aren't likely to be 100% used, and take up memory on your cloud provider's system.
@@ -71,11 +75,11 @@ By eliminating the need for system administration, and providing simple interfac
 ## Example use cases
 {: #use-cases-serverless}
 
-### Mobile Backend
+### Mobile backend
 {: #mobile-backend-serverless}
 ![](./images/cloud-functions-rest-api-trigger.png)
 
-Mobile Developers can easily access server-side logic and outsource computationally intensive tasks to a cloud platform. You can implement functions in languages like Swift and easily consume server-side functions by using the iOS SDK without any server-side experience needed.
+Mobile developers can easily access server-side logic and outsource computationally intensive tasks to a cloud platform. You can implement functions in languages like Swift and easily consume server-side functions by using the iOS SDK without any server-side experience needed.
 
 ### Data Processing
 {: #data-processing-serverless}
@@ -98,12 +102,12 @@ Execute your functions periodically, and define schedules that follow a cron-lik
 {: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [REST API](https://cloud.ibm.com/apidocs)
+* [REST API](https://cloud.ibm.com/apidocs){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")
 
 ## Related Links
 {: #related-serverless notoc}
 
-* [Discover {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions)
+* [Discover {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
-* [Apache OpenWhisk project website](http://openwhisk.org)
-* [More on Serverless](https://martinfowler.com/articles/serverless.html)
+* [Apache OpenWhisk project website](http://openwhisk.org){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")
+* [More on Serverless](https://martinfowler.com/articles/serverless.html){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-14"
+
+keywords: swift sdk plug-in, sdk generator swift, generated sdk swift, devops pipeline swift, open api swift, sdkgen swift, ibmcloud sdk swift
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-02-28"
 # Adding back-end services to your app with a generated SDK
 {: #sdk-cli}
 
-The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/index.html).
+The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
 With the {{site.data.keyword.IBM_notm}} SDK Generator plug-in, you can integrate your back-end services to your app by using a generated SDK. When a change to a REST API occurs, you can regenerate the SDK, and replace the old one to easily upgrade the SDK. You can then add the CLI into a DevOps pipeline, and ensure that the SDK is always consistent with the API spec each time the app is built.
 
@@ -27,19 +31,22 @@ The REST API definition must be valid and either hosted on a live server endpoin
 
 Ensure that you have the following prerequisites:
 
-* An [{{site.data.keyword.cloud_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloud.ibm.com){: new_window} account.
-* A valid API definition that conforms to the [Open API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.openapis.org/){: new_window} specification.
+* An [{{site.data.keyword.cloud_notm}}](http://cloud.ibm.com){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") account.
+* A valid API definition that conforms to the [Open API](https://www.openapis.org/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") specification.
 
 ## Installing the SDK plug-in
 {: #install-sdk-cli}
 
-1. [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli/index.html).
+1. [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
-2. [Install the SDK plug-in](/docs/cli/sdk/index.html).
+2. Install the SDK plug-in:
   ```
   ibmcloud plugin install sdk-gen
   ```
   {: codeblock}
+
+You can install the [{{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#install_plug-in) which include the base {{site.data.keyword.cloud_notm}} CLI, and also includes the `sdk-gen` plug-in along with other useful local tools.
+{: tip}
 
 ## Generating the SDK
 {: #commands-sdk-cli}

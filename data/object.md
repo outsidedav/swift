@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption
+
+subcollection: swift
 
 ---
 
@@ -15,7 +19,7 @@ lastupdated: "2019-01-15"
 # Using Object Storage for static content
 {: #object-storage}
 
-Object Storage is a fundamental component of cloud computing, and provides powerful features to Apple Developers and their applications. Unlike storing information in a file hierarchy (such as Block or File storage), an object store consists only of the files and their metadata, stored in collections known as buckets. By definition, these objects are immutable, which makes them perfect for data such as images, videos, and other static documents. For data that changes often or is relational, you can use [NoSQL](/docs/swift/data/nosql.html), [Cloudant](/docs/swift/data/cloudant.html), and [SQL](/docs/swift/data/sql.html) database services.
+Object Storage is a fundamental component of cloud computing, and provides powerful features to Apple Developers and their applications. Unlike storing information in a file hierarchy (such as Block or File storage), an object store consists only of the files and their metadata, stored in collections known as buckets. By definition, these objects are immutable, which makes them perfect for data such as images, videos, and other static documents. For data that changes often or is relational, you can use [Cloudant](/docs/swift/data?topic=swift-cloudant#cloudant), and [SQL](/docs/swift/data?topic=swift-sql_data#sql_data) database services.
 
 {{site.data.keyword.cos_full_notm}} (COS) is a storage system that can be used to store unstructured data that is flexible, cost-effective, and scalable. The data is accessible through SDKs or by using the IBM user interface. You can use {{site.data.keyword.cos_full_notm}} to access your unstructured data through a self-service portal that is backed by RESTful APIs and SDKs. 
 
@@ -32,7 +36,7 @@ When you create a bucket, you must select a resiliency level (cross-region or re
 ## API
 {: #api-cos}
 
-The {{site.data.keyword.cos_full}} API is a REST-based API for reading and writing objects. It supports a subset of the S3 API for easy migration of applications to {{site.data.keyword.cloud_notm}}. Any S3 SDK can be used to use {{site.data.keyword.cos_full}}. For more information, see the full [{{site.data.keyword.cos_short}} API Reference](/docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api)
+The {{site.data.keyword.cos_full}} API is a REST-based API for reading and writing objects. It supports a subset of the S3 API for easy migration of applications to {{site.data.keyword.cloud_notm}}. Any S3 SDK can be used to use {{site.data.keyword.cos_full}}. For more information, see the full [{{site.data.keyword.cos_short}} API Reference](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)
 
 ## Security
 {: #security-cos}
@@ -87,7 +91,7 @@ Consider the following factors to select the geographic location of your object 
 
 Depending on your use case, you can reduce costs by selecting a service plan that meets your needs. Archival operations that involve minimal access to the object store, do not need the speed and durability of a frequently accessed object, and this distinction is reflected in the Storage Class support and pricing plan for your applications. Storage classes are defined at the bucket level, so you can use a combination of plans to suit your needs. Create a bucket that is set to the storage class that you want to use.
 
-More information about the pricing is available from the [{{site.data.keyword.cos_short}} Storage Class](/docs/services/cloud-object-storage/help/billing.html#ibm-cos-pricing) documentation.
+More information about the pricing is available from the [{{site.data.keyword.cos_short}} Storage Class](/docs/services/cloud-object-storage/help?topic=cloud-object-storage-billing#ibm-cos-pricing) documentation.
 
 ### Sample Storage Classes
 {: #samples-cos}

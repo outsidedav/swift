@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # Using a health check in your Swift app
 {: #healthcheck}
 
-Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Cloud environments like [Kubernetes](https://www.ibm.com/cloud/container-service) and [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) can be configured to poll health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
+Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Cloud environments like [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") and [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") can be configured to poll health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
 {: shortdesc}
 
 ## Health check overview
@@ -50,7 +54,7 @@ The following table provides guidance on the responses that readiness, liveness,
 ## Adding a health check to an existing Swift app
 {: #existing-app}
 
-The [Health](https://github.com/IBM-Swift/Health) library makes it easy add a health check to your Swift application. Health checks are extensible. For more information about [caching](https://github.com/IBM-Swift/Health#caching) to prevent DoS attacks or adding [custom checks](https://github.com/IBM-Swift/Health#implementing-a-health-check), see the [Health](https://github.com/IBM-Swift/Health) library.
+The [Health](https://github.com/IBM-Swift/Health){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") library makes it easy add a health check to your Swift application. Health checks are extensible. For more information about [caching](https://github.com/IBM-Swift/Health#caching){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") to prevent DoS attacks or adding [custom checks](https://github.com/IBM-Swift/Health#implementing-a-health-check){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), see the [Health](https://github.com/IBM-Swift/Health){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") library.
 
 To add the Health library to an existing Swift app, see the following steps:
 
@@ -87,10 +91,10 @@ To add the Health library to an existing Swift app, see the following steps:
 
 4. Check the status of the app with a browser by accessing the `/health` endpoint. The code returns a payload `{"status": "UP"}`, as defined by the simple dictionary.
 
-## Checking the health of a server-side Swift Starter Kit app
+## Checking the health of a server-side Swift starter kit app
 {: #healthcheck-starterkit}
 
-When you generate a Kitura-based Swift app by using a Starter Kit, a basic health check endpoint, `/health`, is included by default. The endpoint uses the Codable protocol available in Swift 4, as supported by the [Health](https://github.com/IBM-Swift/Health) library.
+When you generate a Kitura-based Swift app by using a starter kit, a basic health check endpoint, `/health`, is included by default. The endpoint uses the Codable protocol available in Swift 4, as supported by the [Health](https://github.com/IBM-Swift/Health){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") library.
 
 Basic initialization code, such as the initialization of the Health object occurs in `Sources/Application.swift`. The health check endpoint itself is provided by the `/Sources/Application/Routes/HealthRoutes.swift` file, and uses the following code:
 
@@ -113,7 +117,12 @@ func initializeHealthRoutes(app: App) {
 ```
 {: codeblock}
 
-The example uses the standard dictionary, which yields a payload such as `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}` when you access the `/health` endpoint.
+The example uses the standard dictionary, which yields a payload such as:
+```
+{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}
+```
+
+when you access the `/health` endpoint.
 
 ## Recommendations for readiness and liveness probes
 {: #recommend-probes}
@@ -125,7 +134,7 @@ A liveness probe, by contrast, can be deliberate about what is checked, as a fai
 ### Add support for Kubernetes Readiness and Liveness to a Swift app
 {: #kube-readiness-swift}
 
-For alternative implementations, such as using **Codable** or the standard dictionary, see [Health library examples](https://github.com/IBM-Swift/Health#usage). Some of these implementations simplify the creation of extensible health checks with support for caching checks that are performed against backing services. In this scenario, you would want to separate the simple liveness test from the more robust, detailed readiness check.
+For alternative implementations, such as using **Codable** or the standard dictionary, see [Health library examples](https://github.com/IBM-Swift/Health#usage){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"). Some of these implementations simplify the creation of extensible health checks with support for caching checks that are performed against backing services. In this scenario, you would want to separate the simple liveness test from the more robust, detailed readiness check.
 
 ## Configuring readiness and liveness probes in Kubernetes
 {: #config-kube-readiness}
@@ -167,4 +176,4 @@ spec:
       failureThreshold: 10
 ```
 
-For more information, see how to [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
+For more information, see how to [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").

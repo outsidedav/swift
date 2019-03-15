@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-03-14"
+
+keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
+
+subcollection: swift
 
 ---
 
@@ -24,8 +28,7 @@ is Swift 4.0 with MongoKitten SDK 4.0.0.
 ## Step 1. Creating a database cluster
 {: #create_dbcluster}
 
-1. Access the {{site.data.keyword.ihsdbaas_full}} service configuration screen at
-https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
+1. Access the [{{site.data.keyword.ihsdbaas_full}} service configuration](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") screen.
 
 2. Provide the following information:
 
@@ -82,7 +85,7 @@ You need a starter kit that is based on the server-side Swift web framework Kitu
 
 Use an existing project that was created from this starter kit, or create a new project.
 
-1. Open the {{site.data.keyword.cloud_notm}} App Service dashboard at https://cloud.ibm.com/developer/appservice/dashboard.
+1. Open the [{{site.data.keyword.cloud_notm}} App Service dashboard](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 
 2. Select the **Starter Kits** tab.
 
@@ -242,14 +245,14 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ## Step 5. Embedding your application code
 {: #embed_appcode}
 
-You can now add your own application code to the project. For more information about working with the MongoKitten API, see http://beta.openkitten.org/tutorials/.
+You can now add your own application code to the project. For more information, see the [MongoKitten API](http://beta.openkitten.org/tutorials/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") documentation.
 
 ## Step 6. Deploying your application
 {: #deploy-dbcluster}
 
-You can run the application [locally](/docs/swift/create_app_cli.html#swift-install-tools) with the necessary build tools, or deploy to {{site.data.keyword.cloud_notm}}.
+You can run the application [locally](/docs/swift?topic=swift-swift_cli#swift-install-tools) with the necessary build tools, or deploy to {{site.data.keyword.cloud_notm}}.
 
-To create a deployment toolchain in the dashboard, click **Deploy to Cloud**. Set up your deployment method according to the instructions for the method you choose:
-  * **Deploy to [Kubernetes](/docs/apps/deploying/containers.html#containers)**. This option creates a cluster of hosts, called worker nodes, to deploy and manage highly available application containers. You can create a cluster or deploy to an existing cluster.
-  * **Deploy to Cloud Foundry**. This option deploys your cloud-native app without you needing to manage the underlying infrastructure. If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either **[Public Cloud](/docs/cloud-foundry-public/about-cf.html#about-cf)** or **[Enterprise Environment](/docs/cloud-foundry-public/cfee.html#cfee)**, which you can use to create and manage isolated environments for hosting Cloud Foundry applications exclusively for your enterprise.
-  * **Deploy to a [Virtual Server](/docs/apps/vsi-deploy.html#vsi-deploy)**. This option provisions a virtual server instance, loads an image that includes your app, creates a DevOps toolchain, and initiates the first deployment cycle for you.
+To create a deployment toolchain in the dashboard, click **Deploy**. Set up your deployment target according to the instructions for the method you choose:
+  * **Deploy to [{{site.data.keyword.containterlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**. This option creates a cluster of hosts, called worker nodes, to deploy and manage highly available application containers. You can create a cluster or deploy to an existing cluster.
+  * **Deploy to Cloud Foundry**. This option deploys your cloud-native app without you needing to manage the underlying infrastructure. If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** or **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**, which you can use to create and manage isolated environments for hosting Cloud Foundry applications exclusively for your enterprise.
+  * **Deploy to a [Virtual Server](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**. This option provisions a virtual server instance, loads an image that includes your app, creates a DevOps toolchain, and initiates the first deployment cycle for you.

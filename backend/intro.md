@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: backend components swift, ios backend, location awareness, artificial intelligence, machine learning, iot swift, why swift
+
+subcollection: swift
 
 ---
 

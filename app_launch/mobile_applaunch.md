@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # Managing app feature releases
 {: #mobile_applaunch}
 
-{{site.data.keyword.engage_full}} lets Developers build engaging apps by controlling reach, and roll out of app features that can provide measurable metrics. The service helps Developers to remove the coupling that exists today between app feature rollout, and app updates to production. You can now publish features without exposing it to production to gradually release new versions of an app in a controlled manner. With the {{site.data.keyword.engage_short}} service, app owners have full control over feature rollout for a targeted segment.
+{{site.data.keyword.engage_full}} lets developers build engaging apps by controlling reach, and roll out of app features that can provide measurable metrics. The service helps developers to remove the coupling that exists today between app feature rollout, and app updates to production. You can now publish features without exposing it to production to gradually release new versions of an app in a controlled manner. With the {{site.data.keyword.engage_short}} service, app owners have full control over feature rollout for a targeted segment.
 
 The {{site.data.keyword.engage_short}} service defines a feature, creates an audience based on device platforms (including custom audience attributes), and finally defines an engagement that choreographs the timing and placement of the feature. After SDKs are used, along with the feature and metrics attributes that are incorporated in the application, the service starts measuring audience experiences. You can now use your app based on this information to create customized customer engagements across various categories of your app users.
 
@@ -157,7 +161,7 @@ Complete the following steps to create an engagement by using the Feature Contro
 
   The new engagement now appears in the Engagement Details window.
 
-You can now measure the [performance](/docs/services/app-launch/app_measure_performance.html#applaunch_type) of your engagement.
+You can now measure the [performance](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) of your engagement.
 
 ### Enabling In-App Messaging Capability
 {: #app-message-applaunch}
@@ -204,13 +208,13 @@ Complete the following steps to create an engagement that uses the Messaging opt
 
   The new engagement now appears in the Engagement Details window.
 
-You can now measure the [performance](/docs/services/app-launch/app_measure_performance.html#applaunch_type) of your engagement.
+You can now measure the [performance](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) of your engagement.
 
 ## Quick Links
 {: #links-applaunch notoc}
 
 Check out the following links to gain insight, and understand the features of {{site.data.keyword.engage_short}}:
 
- - Try out the [App Launch Service](https://cloud.ibm.com/catalog/services/app-launch).
- - [Blogs and Videos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - For more information, see the [App Launch - Getting started tutorial](/docs/services/app-launch/index.html).
+ - Try out the [App Launch Service](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
+ - [Blogs and Videos](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
+ - For more information, see the [App Launch - Getting started tutorial](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate).

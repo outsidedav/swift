@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-03-24"
+
+keywords: watson swift, tone anaylzer swift, cocoapods swift, swift sdk install, starter kit watson
+
+subcollection: swift
 
 ---
 
@@ -15,7 +19,7 @@ lastupdated: "2019-01-31"
 # {{site.data.keyword.toneanalyzershort}}
 {: #tone}
 
-The IBM Watson Tone Analyzer service enables your app to understand emotions and tones in text. You can use the service to better understand your user's conversations or help users understand how their written communication is perceived.
+The {{site.data.keyword.ibmwatson}} {{site.data.keyword.toneanalyzershort}} service enables your app to understand emotions and tones in text. You can use the service to better understand your user's conversations or help users understand how their written communication is perceived.
 
 ## How it works
 {: #how-it-works-tone}
@@ -35,7 +39,7 @@ Ensure that you have the following prerequisites:
 * Swift 4.1+
 * CocoaPods, Carthage, or Swift Package Manager
 
-You can install the [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk) by using [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods), [Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage), or the [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager). By using CocoaPods(https://cocoapods.org/) to manage dependencies, you get only the frameworks that you need, as opposed to the entire Watson Swift SDK. If you are new to CocoaPods, you can install it easily:
+You can install the [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") by using [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), [Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), or the [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"). By using CocoaPods to manage dependencies, you get only the frameworks that you need, as opposed to the entire Watson Swift SDK. If you are new to CocoaPods, you can install it easily:
 
 ```bash
 $ sudo gem install cocoapods
@@ -66,7 +70,7 @@ target 'MyApp' do
 ```
 {: codeblock}
 
-For a production app, you might also want to specify a particular [version requirement](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions) to avoid unexpected changes from new releases of the Watson Swift SDK.
+For a production app, you might also want to specify a particular [version requirement](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") to avoid unexpected changes from new releases of the Watson Swift SDK.
 
 With your `Podfile` in place, now you can download the dependencies. Use a terminal to navigate to the root directory of your project, then run CocoaPods:
 
@@ -97,7 +101,7 @@ The following samples help you add {{site.data.keyword.toneanalyzershort}} capab
   ```
   {: codeblock}
 
-  Check out the [version parameter documentation](https://cloud.ibm.com/apidocs/tone-analyzer#versioning) or use the date that the {site.data.keyword.conversationshort}} service was created.
+  Check out the [version parameter documentation](https://cloud.ibm.com/apidocs/tone-analyzer#versioning){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") or use the date that the {site.data.keyword.conversationshort}} service was created.
   {: tip}
 
 3. Provide text for analysis and process the results:
@@ -140,23 +144,23 @@ The following samples help you add {{site.data.keyword.toneanalyzershort}} capab
   ```
   {: screen}
 
-4. Explore the Watson SDK [Tone Analyzer documentation](https://watson-developer-cloud.github.io/swift-sdk/services/ToneAnalyzerV3/index.html) to build out your application's functionality.
+4. Explore the Watson SDK [Tone Analyzer documentation](https://watson-developer-cloud.github.io/swift-sdk/services/ToneAnalyzerV3/index.html){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") to build out your application's functionality.
 
 ## Using starter kits
 {: #tone_starterkits}
 
-[Starter kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits) are one of the fastest ways to use the capabilities of {{site.data.keyword.cloud_notm}}. You can use the {{site.data.keyword.toneanalyzershort}} service by selecting the **Tone Analyzer for iOS with Watson** starter kit. This service utilizes deep learning capabilities to evaluate passages of text. The Tone Analyzer application identifies the speaker's tone (happy, sad, confident, and more) as it relates to a number of categories.
+[Starter kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") are one of the fastest ways to use the capabilities of {{site.data.keyword.cloud_notm}}. You can use the {{site.data.keyword.toneanalyzershort}} service by selecting the **Tone Analyzer for iOS with Watson** starter kit. This service utilizes deep learning capabilities to evaluate passages of text. The Tone Analyzer application identifies the speaker's tone (happy, sad, confident, and more) as it relates to a number of categories.
 
 To get started with this starter kit:
 
-1. Select the starter kit found [here](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson).
+1. Select the starter kit found [here](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 2. Create the project with the default services.
 3. Download the project by clicking **Download Code**. Service credentials are injected into the `BMSCredentials.plist` file in the corresponding key fields.
 
 ## Next steps
-{: #tone_next}
+{: #tone_next notoc}
 
 Great job! {{site.data.keyword.toneanalyzershort}} is now added to your app. Keep the momentum by trying one of the following options:
 
-* View the [Watson Swift SDK on GitHub](https://github.com/watson-developer-cloud/swift-sdk) and explore the other supported Watson services.
-* For more information, see [IBM Watson {{site.data.keyword.toneanalyzershort}}](https://www.ibm.com/watson/services/tone-analyzer/).
+* View the [Watson Swift SDK on GitHub](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") and explore the other supported Watson services.
+* For more information, see [IBM Watson {{site.data.keyword.toneanalyzershort}}](https://www.ibm.com/watson/services/tone-analyzer/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
