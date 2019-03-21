@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-03-21"
 
 keywords: foodtrackerbackend, kitura swift, urlsession sdk, alamofire, restkit, kiturakit, kitura, xcode kitura, meals swift, rest api kitura, rest api swift
 
@@ -83,7 +83,7 @@ After you download your app code, you can modify and develop it by using Xcode, 
   * Kitura Monitoring: [http://localhost:8080/swiftmetrics-dash/]()
   * Kitura Health check: [http://localhost:8080/health]()
 
-## Step 5. Adding REST APIs
+## Step 4. Adding REST APIs
 {: #add_restapi-kitura}
 
 A skeleton Kitura server is created, but it doesn't provide any REST APIs that can be used by an iOS application. Add REST APIs in Kitura with minimal coding. Use the following steps to add a REST API for `GET` requests on `/meals`, which is designed to return the `Meal` objects that are stored by the Kitura server.
@@ -138,7 +138,7 @@ You now have a REST API for `GET` requests on `/meals` that responds with an arr
 You can use the [FoodTracker Backend](https://github.com/IBM/FoodTrackerBackend){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") tutorial, which helps you build a set of REST APIs for storing, fetching, and deleting `Meal` objects from an iOS application, including storing the data in a database.
 {: tip}
 
-## Step 6. Installing KituraKit into your iOS application
+## Step 5. Installing KituraKit into your iOS application
 {: #install-kiturakit}
 
 The REST APIs built by using the Kitura server are standard web APIs, usable from any application regardless of client library that is used or which language the client is written in. Meaning that you can use Alamofire, RestKit, or URLSession to make connections to the server. Kitura also provides a bespoke, optimized client connector in order to simplify calling its REST APIs from iOS, in the form of KituraKit. 
