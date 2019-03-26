@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -19,8 +19,9 @@ lastupdated: "2018-11-12"
 API Connect を使用すると、{{site.data.keyword.cloud_notm}} で維持されているかどうかに関係なく、{{site.data.keyword.cloud}} で API を管理できます。 使用の制御、採用の増加、統計のトラッキングを行えるよう API を管理する方法について説明します。
 
 ## API Connect インスタンスの作成
+{: #create-apiconnect}
 
-「[カタログ](https://console.bluemix.net/catalog/)」に移動し、API を管理する API Connect インスタンスを作成します。
+「[カタログ](https://cloud.ibm.com/catalog/)」に移動し、API を管理する API Connect インスタンスを作成します。
 
 `「メニュー」->「API」`を使用して、API Connect 管理コンソールにアクセスします。
 
@@ -35,6 +36,7 @@ API を定義すると、次のような様々なツールで Open API 仕様 (S
 - [Loopback](https://loopback.io/)
 
 ## 管理 API の定義
+{: #define-apiconnect}
 
 クライアント・アプリケーションとバックエンド・ロジック間の API ゲートウェイを管理する API プロキシーを定義できます。 以下のステップを使用して、Open API 仕様 (Swagger ドキュメント) の YAML または JSON を用いてプロキシーを作成します。 
 
@@ -46,6 +48,7 @@ API を定義すると、次のような様々なツールで Open API 仕様 (S
 バックエンド・ロジック・アプリケーションにリンクする URL を指すように外部エンドポイントを構成する必要があります。 
 
 ## Swift バックエンドの作成
+{: #create-backend-apiconnect}
 
 この API に基づいてバックエンド Swift アプリを作成することができます。 
 
@@ -113,6 +116,7 @@ func initializePet_Routes(app: App) {
 {{site.data.keyword.openwhisk_short}} またはフル・スタック Swift ランタイムを使用して API を定義し、API Connect 定義を作成すると、iOS アプリで API を使用できます。
 
 ## iOS モバイル・アプリにおける API の使用
+{: #consume-apiconnect}
 
 iOS アプリでバックエンド API を使用するには、Apple コンソールを使用してモバイル・スターター・キットを作成します。 「スターター・キット (Starter Kit)」ビューを使用して、任意のタイプの iOS Swift スターター・キットを作成します。
 
@@ -124,22 +128,24 @@ API が iOS アプリに追加されます。 アプリのコードを*ダウン
 
 Knowledge Guide に記載されているステップに従って、従属 SDK に対して iOS アプリへの `pod update` を実行します。 
 
-iOS アプリには、API 用に生成された SDK バインディングが含まれるフォルダーがあります。このフォルダーには、`Assets`、`Source`、`Docs` という 3 つのサブフォルダーが含まれます。 
+iOS アプリには、API 用に生成された SDK バインディングが含まれるフォルダーがあります。 このフォルダーには、`Assets`、`Source`、`Docs` という 3 つのサブフォルダーが含まれます。 
 
 ![iOS フォルダー](../images/sdkfolder.png)
 
-`Assets` フォルダーには、API への URL (デフォルトでは `localhost:3000`) を管理するファイルが含まれます。API 経路を参照するようにこの値を変更する必要があります。 API 定義は、「API 名」と「経路」のセクションで構成されています。URL をコピーする経路の末尾にある**「コピー」**をクリックします。 *「管理対象 API の公開」*オプションがオンで、外部クライアントが API 呼び出しを行えることを確認します。
+`Assets` フォルダーには、API への URL (デフォルトでは `localhost:3000`) を管理するファイルが含まれます。 API 経路を参照するようにこの値を変更する必要があります。 API 定義は、「API 名」と「経路」のセクションで構成されています。 URL をコピーする経路の末尾にある**「コピー」**をクリックします。 *「管理対象 API の公開」*オプションがオンで、外部クライアントが API 呼び出しを行えることを確認します。
 
 ![API 経路](../images/apiroute.png)  
 
 `PLIST` ファイルを開き、ホスト値を、API 経路からコピーした値に置き換えます。
 この値によって、SDK は {{site.data.keyword.cloud_notm}} へ API を呼び出せるようになります。
 
-## ドキュメンテーション
+## 文書
+{: #docs-apiconnect}
 
 SDK が iOS アプリ・プロジェクトに含まれると、*README.html* ファイルを `Docs` フォルダーで利用できるようになります。 外部ブラウザーで `Docs` フォルダーを開き、プロジェクトの使用法に関する指示を参照します。
 
 ## API 変更後の SDK の再作成
+{: #change-apiconnect}
 
 API 変更または新しいフィーチャーが利用できるようになる場合、{{site.data.keyword.openwhisk}} が追加されると、`ibmcloud sdk` コマンドを使用してクライアント SDK を再作成できます。 詳細情報、例、構文に関するヘルプについては、[SDK Generator](/docs/cli/sdk/index.html) の資料を確認してください。
 
@@ -162,10 +168,13 @@ SDK を作成できるようにするには、Open API 仕様 (Swagger) の YAML
     SDK が iOS アプリ・プロジェクト・ディレクトリーに再作成され、API を引き続き扱えます。
 
 ## リファレンス
+{: #reference-apiconnect}
 
 次の SDK 例は、スターター・キットを使用して {{site.data.keyword.openwhisk_short}} 用に作成されています。 iOS アプリに含めることができるそれぞれのアクションとコードの Swift スニペットを確認できます。
 
 ### デフォルトの API メソッド
+{: #default-methods-apiconnect}
+
  * [`getCreate`](#getCreate)
  * [`getDelete`](#getDelete)
  * [`getDeleteall`](#getDeleteall)
@@ -174,6 +183,8 @@ SDK を作成できるようにするには、Open API 仕様 (Swagger) の YAML
  * [`getUpdate`](#getUpdate)
 
 ### `getCreate` の使用
+{: #getcreate-apiconnect}
+
 {: #getCreate}
 
 ```swift
@@ -187,10 +198,13 @@ public static func getCreate(completionHandler: @escaping (_ response: Response?
     - クロージャーは引数 `Response?` と `Error?` を取ります。
 
 ### `getCreate` での認証
+{: #auth-getcreate}
 
 認証は必要ありません
 
 ### `getCreate` の使用例
+{: #example-getcreate}
+
 ```swift
 DefaultAPI.getCreate() { (response, error) in
     guard error == nil else {
@@ -210,7 +224,7 @@ DefaultAPI.getCreate() { (response, error) in
 {: codeblock}
 
 ### `getDelete` の使用
-{: #getDelete}
+{: #getdelete}
 
 ```swift
 public static func getDelete(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -223,10 +237,13 @@ public static func getDelete(completionHandler: @escaping (_ response: Response?
     - クロージャーは引数 `Response?` と `Error?` を取ります。
 
 ### `getDelete` での認証
+{: #auth-getdelete}
 
 認証は必要ありません
 
 ### `getDelete` の使用例
+{: #example-getdelete}
+
 ```swift
 DefaultAPI.getDelete() { (response, error) in
     guard error == nil else {
@@ -246,7 +263,7 @@ DefaultAPI.getDelete() { (response, error) in
 {: codeblock}
 
 ### `getDeleteall` の使用
-{: #getDeleteall}
+{: #getdeleteall}
 
 ```swift
 public static func getDeleteall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -259,10 +276,12 @@ public static func getDeleteall(completionHandler: @escaping (_ response: Respon
     - クロージャーは引数 `Response?` と `Error?` を取ります。
 
 ### `getDeleteall` での認証
+{: #auth-getdeleteall}
 
 認証は必要ありません
 
 ### `getDeleteall` の使用例
+{: #example-getdeleteall}
 
 ```swift
 DefaultAPI.getDeleteall() { (response, error) in
@@ -283,7 +302,7 @@ DefaultAPI.getDeleteall() { (response, error) in
 {: codeblock}
 
 ### `getRead` の使用
-{: #getRead}
+{: #getread}
 
 ```swift
 public static func getRead(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -296,10 +315,13 @@ public static func getRead(completionHandler: @escaping (_ response: Response?, 
     - クロージャーは引数 `Response?` と `Error?` を取ります。
 
 ### `getRead` での認証
+{: #auth-getread}
 
 認証は必要ありません
 
 ### `getRead` の使用例
+{: #example-getread}
+
 ```swift
 DefaultAPI.getRead() { (response, error) in
     guard error == nil else {
@@ -319,7 +341,7 @@ DefaultAPI.getRead() { (response, error) in
 {: codeblock}
 
 ### `getReadall` の使用
-{: #getReadall}
+{: #getreadall}
 
 ```swift
 public static func getReadall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -332,10 +354,13 @@ public static func getReadall(completionHandler: @escaping (_ response: Response
     - クロージャーは引数 `Response?` と `Error?` を取ります。
 
 ### `getReadall` での認証
+{: #auth-getreadall}
 
 認証は必要ありません
 
 ### `getReadall` の使用例
+{: #example-getreadall}
+
 ```swift
 DefaultAPI.getReadall() { (response, error) in
     guard error == nil else {
@@ -355,7 +380,7 @@ DefaultAPI.getReadall() { (response, error) in
 {: codeblock}
 
 ### `getUpdate` の使用
-{: #getUpdate}
+{: #getupdate}
 
 ```swift
 public static func getUpdate(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -368,10 +393,13 @@ public static func getUpdate(completionHandler: @escaping (_ response: Response?
     - クロージャーは引数 `Response?` と `Error?` を取ります。
 
 ### `getUpdate` での認証
+{: #auth-getupdate}
 
 認証は必要ありません
 
 ### `getUpdate` の使用例
+{: #example-getupdate}
+
 ```swift
 DefaultAPI.getUpdate() { (response, error) in
     guard error == nil else {

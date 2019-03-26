@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-02-01"
 
 ---
 
@@ -14,6 +14,7 @@ lastupdated: "2018-11-12"
 {:tip: .tip}
 
 # 可用性の高いセキュアなデータベースの作成
+{: #create-database-cluster}
 
 可用性の高いセキュアなデータベースを最大限に活用するには、追加のロジックをアプリケーションに組み込みます。 用意されているコード・スニペットを使用することで、MongoDB データベースを作成し、それにアクセスすることができます。 
 
@@ -22,7 +23,8 @@ lastupdated: "2018-11-12"
 ## ステップ 1. データベース・クラスターの作成
 {: #create_dbcluster}
 
-1. https://console.bluemix.net/catalog/services/hyper-protect-dbaas で、{{site.data.keyword.ihsdbaas_full}} サービス構成画面にアクセスします。
+1. 次の URL で {{site.data.keyword.ihsdbaas_full}} サービス画面にアクセスします。
+https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
 
 2. 以下の情報を指定します。
 
@@ -68,10 +70,10 @@ lastupdated: "2018-11-12"
 
 	{{site.data.keyword.ihsdbaas_full}} ダッシュボードが表示されます。
 
-6. データベース・クラスターに属する、3 つの作成済みデータベース・インスタンスのホスト名とポート番号を収集します。[データベースへの接続](#connect_db)セクションのステップで、ホスト名、ポート番号、ユーザー資格情報が必要になります。
+6. データベース・クラスターに属する、3 つの作成済みデータベース・インスタンスのホスト名とポート番号を収集します。 [データベースへの接続](#connect_db)セクションのステップで、ホスト名、ポート番号、ユーザー資格情報が必要になります。
 
 ## ステップ 2. スターター・キットを使用したプロジェクトの作成
-{: #create_with_starter}
+{: #create_starter}
 
 サーバー・サイド Swift Web フレームワークの Kitura をベースにしたスターター・キットが必要です。
 
@@ -79,7 +81,7 @@ lastupdated: "2018-11-12"
 
 このスターター・キットから作成された既存のプロジェクトを使用するか、または新規プロジェクトを作成します。
 
-1. {{site.data.keyword.cloud_notm}} App Service ダッシュボード (https://console.bluemix.net/developer/appservice/dashboard) を開きます。
+1. {{site.data.keyword.cloud_notm}} App Service ダッシュボード (https://cloud.ibm.com/developer/appservice/dashboard) を開きます。
 
 2. **「スターター・キット」**タブを選択します。
 
@@ -104,7 +106,7 @@ https://api.hypersecuredbaas.ibm.com/cert.pem から認証局 (CA) ファイル�
 
 2. データベース・クラスターに対するアクセス資格情報を格納する、`cred.json` という名前の JSON ファイルを作成します。
 
-3. [データベース・クラスターの作成](#create_dbcluster)の手順で収集した値を入力します。それらの値は、単一行で指定する必要があります。
+3. [データベース・クラスターの作成](#create_dbcluster)の手順で収集した値を入力します。 それらの値は、単一行で指定する必要があります。
   ```hljs
   {
   "uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
@@ -147,13 +149,13 @@ https://api.hypersecuredbaas.ibm.com/cert.pem から認証局 (CA) ファイル�
 `Package.swift` ファイルを編集します。
 
   * 依存関係セクションで、次の行を追加します。
-   ```hljs
+   ```swift
    .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
    ```
    {: codeblock}
 
   * ターゲット・セクションで、次の行に依存関係 "MongoKitten" を追加します。 **注:** この値は、1 行で指定する必要があります。
-   ```hljs
+   ```swift
    .target(name: "Application", dependencies: [ "Kitura",
    "CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
    ```
@@ -162,46 +164,46 @@ https://api.hypersecuredbaas.ibm.com/cert.pem から認証局 (CA) ファイル�
 5. MongoKitten を使用して MongoDB への接続を初期化するために、`Sources/Application/Application.swift` ファイルを編集します。
 
   * MongoKitten SDK をインポートします。
-    ```
-	import MongoKitten
-	```
-	{: codeblock}
+    ```swift
+	  import MongoKitten
+	  ```
+	  {: codeblock}
 
   * クラス `ApplicationServices` を追加します。
-    ```hljs
-	cclass ApplicationServices {
-	// Service references
-	    public let mongoDBService: MongoKitten.Database
-	    public let myCredFile = "/swift-project/cred.json"
+    ```swift
+	  cclass ApplicationServices {
+	  /* Service references */
+	  public let mongoDBService: MongoKitten.Database
+	  public let myCredFile = "/swift-project/cred.json"
 
     public init() throws {
-        // Read credentials from json file cred.json
-	        struct ResponseData: Decodable {
+        /* Read credentials from json file cred.json */
+        struct ResponseData: Decodable {
             var uri: String
 	        }
 	        let data = try? Data(contentsOf: URL(fileURLWithPath: myCredFile))
 	        let decoder = JSONDecoder()
 	        let jsonData = try decoder.decode(ResponseData.self, from: data!)
 
-        // Run service initializers
-	        let server = try Server(jsonData.uri)
-	        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
-	    }
+        /* Run service initializers */
+        let server = try Server(jsonData.uri)
+        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
+    }
 	}
 	```
 	{: codeblock}
 
   * パブリック・クラス `App` で、データベース接続を初期化するために次の行を追加します。
-    ```hljs
-	public class App {
-	...
-	let services: ApplicationServices
+    ```swift
+	  public class App {
+	  ...
+	  let services: ApplicationServices
 
-	public init() throws {
-	   // Services
-	    services = try ApplicationServices()
-	 }
-	...
+	  public init() throws {
+	  /* Services */
+	  services = try ApplicationServices()
+	  }
+	  ...
     ```
     {: codeblock}
 
@@ -211,7 +213,7 @@ https://api.hypersecuredbaas.ibm.com/cert.pem から認証局 (CA) ファイル�
 1. データベース接続をテストするコマンドを追加するためにファイル `Sources/Application/Application.swift` を編集して、データベース接続を検証します。
 例えば、`class ApplicationServices` で次のコマンドを追加します。
 
-	```hljs
+	```swift
 		class ApplicationServices {
 		    ...
 		    public init() throws {
@@ -230,7 +232,7 @@ https://api.hypersecuredbaas.ibm.com/cert.pem から認証局 (CA) ファイル�
 [ステップ 6](#use-step6) でアプリケーションをデプロイした後、データベースへの接続に成功すると、
 次のメッセージが表示されます。
 
-```hljs
+```
 ...
 Connected to mongodb:
 MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>PortNumber_1</em>&gt;,&lt;<em>Hostname_2</em>&gt;&colon;&lt;<em>PortNumber_2</em>&gt;,&lt;<em>Hostname_3</em>&gt;&colon;&lt;<em>PortNumber_3</em>&gt;/admin&gt;
@@ -244,81 +246,11 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ここで、独自のアプリケーション・コードをプロジェクトに追加できます。 MongoKitten API の使用について詳しくは、http://beta.openkitten.org/tutorials/ を参照してください。
 
 ## ステップ 6. アプリケーションのデプロイ
-{: #deploy_app}
+{: #deploy-dbcluster}
 
-アプリケーションは、必要なビルド・ツールを使用してローカルで実行するか、または {{site.data.keyword.dev_cli_notm}} を使用して {{site.data.keyword.cloud_notm}} (Cloud Foundry または Kubernetes クラスター) で実行することができます。
+アプリケーションは、必要なビルド・ツールを使用して[ローカルで](/docs/swift/create_app_cli.html#swift-install-tools)実行するか、または {{site.data.keyword.cloud_notm}} にデプロイすることができます。
 
-ローカルのホスト・システムで、Cloud Foundry で、または Kubernetes クラスターでアプリケーションを実行できます。
-
-1. {{site.data.keyword.cloud_notm}} CLI を[インストール](/docs/cli/reference/bluemix_cli/get_started.html)します。
-
-2. コマンド `ibmcloud plugin install dev` を使用して、開発者ツール・プラグインをインストールします。
-
-3. アプリケーションを[ローカル・システム](#deploy_local)、[Cloud Foundry](#deploy_cf)、または [Kubernetes クラスター](#deploy_cluster)にデプロイします。
-
-### ローカルでのデプロイ
-{: #deploy_local}
-
-1. ローカル・ホスト・システムで Docker がインストールされ、実行されていることを確認します。 Docker は https://www.docker.com/community-edition#/download からダウンロードできます。
-
-2. プロジェクト・ファイルのディレクトリーに切り替えます。
-
-3. ローカル・コンピューターにアプリケーションをデプロイするには、次のコマンドを入力します。
-	```
-	$ ibmcloud dev build
-	...
-	$ ibmcloud dev run
-	```
-	{: codeblock}
-
-	このステップにより、アプリケーションがビルドされ、ローカルの Docker コンテナー内で実行されます。
-
-### Cloud Foundry へのデプロイ
-{: #deploy_cf}
-
-1. プロジェクト・ファイルのディレクトリーに切り替えます。
-
-2. IBM Cloud アカウントにログインし、次のように地域を `us-south` に設定します。
-  ```hljs
-  $ ibmcloud login -a https://api.ng.bluemix.net
-  $ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
-  ```
-  {: codeblock}
-
-  **注:** コマンド `ibmcloud login -a https://api.ng.bluemix.net` を実行すると、自動的に地域が **us-south** に設定されます。
-
-3. アプリケーションを Cloud Foundry にデプロイするには、次のコマンドを入力します。
-  ```
-  $ ibmcloud dev deploy
-  ```
-  {: codeblock}
-
-  アプリケーションがホストされているロケーションへの、クリック可能なリンクを受け取ります。
-
-### Kubernetes クラスターへのデプロイ
-{: #deploy_cluster}
-
-1. Kubernetes クラスターを https://console.bluemix.net/containers-kubernetes/clusters で作成します。
-
-2. **「クラスターの作成」**をクリックします。 「アクセス」タブには、作成された Kubernetes クラスターへのアクセス方法に関する情報が表示されます。
-
-3. Kubernetes クラスターに関する情報を表示するには、{{site.data.keyword.cloud_notm}} アプリ・ダッシュボードを開きます。 ダッシュボードには、作成したクラスター、データベース・クラスター、Cloud Foundry アプリ、Cloud Foundry サービスなどのサービスのリストが表示されます。
-
-4. プロジェクト・ファイルのディレクトリーに切り替えます。
-
-5. {{site.data.keyword.cloud_notm}} アカウントにログインし、次のように地域を us-south に設定します。
-  ```hljs
-  $ ibmcloud login -a https://api.ng.bluemix.net
-  $ ibmcloud target -o <your-organization> -s <your-space>
-  ```
-  {: codeblock}
-
-  **注:** コマンド `ibmcloud login -a https://api.ng.bluemix.net` を実行すると、自動的に地域が **us-south** に設定されます。
-
-6. Kubernetes にアプリケーションをデプロイするには、次のコマンドを入力します。
-  ```
-  $ ibmcloud dev deploy -t container
-  ```
-  {: codeblock}
-
-  Docker レジストリーと Kubernetes クラスターの名前の入力を求めるプロンプトが出されます。 情報を入力すると、アプリケーションが Kubernetes クラスターにデプロイされます。
+ダッシュボードでデプロイメント・ツールチェーンを作成するには、**「Cloud にデプロイ (Deploy to Cloud)」**をクリックします。選択した方式の説明に従って、デプロイメント方式をセットアップします。
+  * **[Kubernetes](/docs/apps/deploying/containers.html#containers) にデプロイ**します。 このオプションは、高可用性のアプリケーション・コンテナーをデプロイして管理するためのワーカー・ノードというホスト・クラスターを作成します。 クラスターを作成したり、既存のクラスターにデプロイしたりすることができます。
+  * **Cloud Foundry にデプロイ**します。 このオプションはクラウド・ネイティブなアプリをデプロイします。ユーザーが基礎にあるインフラストラクチャーを管理する必要はありません。 ご使用のアカウントに {{site.data.keyword.cfee_full_notm}} へのアクセス権限がある場合、デプロイヤー・タイプとして、**[パブリック・クラウド](/docs/cloud-foundry-public/about-cf.html#about-cf)**または**[エンタープライズ環境](/docs/cloud-foundry-public/cfee.html#cfee)**のいずれかを選択できます。エンタープライズ環境を使用すると、自社専用に Cloud Foundry アプリケーションをホスティングする隔離された環境を作成して管理できます。
+  * **[仮想サーバー](/docs/apps/vsi-deploy.html#vsi-deploy)にデプロイします**。 このオプションによって、仮想サーバー・インスタンスがプロビジョンされ、アプリを含むイメージがロードされ、DevOps ツールチェーンが作成され、最初のデプロイメント・サイクルが開始されます。

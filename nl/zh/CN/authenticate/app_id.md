@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -15,6 +15,7 @@ lastupdated: "2018-11-12"
 {:note: .note}
 
 # 添加用户认证
+{: #appid}
 
 应用程序安全性非常复杂。对于大多数开发者来说，应用程序安全性是创建应用程序过程中最难解决的问题之一。如何确保用户信息能够得到安全保护？通过将 {{site.data.keyword.appid_full}} 集成到应用程序中，您可以保护资源并添加认证，即使您没有太多安全方面的经验，也没关系。
 
@@ -23,7 +24,7 @@ lastupdated: "2018-11-12"
 有关可以使用 {{site.data.keyword.appid_short_notm}} 的所有方法以及体系结构信息，请参阅[关于 {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html)。
 
 ## 开始之前
-{: #before}
+{: #prereqs-appid}
 
 首先，请确保您已准备好以下必备软件：
 * CocoaPods（V1.1.0 或更高版本）
@@ -32,16 +33,16 @@ lastupdated: "2018-11-12"
 * Xcode（V9.0.1 或更高版本）
 
 ## 步骤 1. 创建 {{site.data.keyword.appid_short_notm}} 的实例
-{: #create_instance}
+{: #create-instance-appid}
 
 创建 {{site.data.keyword.appid_short_notm}} 服务的实例：
 
-1. 在 [{{site.data.keyword.cloud_notm}} 目录](https://console.bluemix.net/catalog/)中，选择 {{site.data.keyword.appid_short_notm}}。这将打开服务配置屏幕。
+1. 在 [{{site.data.keyword.cloud_notm}} 目录](https://cloud.ibm.com/catalog/)中，选择 {{site.data.keyword.appid_short_notm}}。这将打开服务配置屏幕。
 2. 为服务实例提供名称或使用预设名称。
-3. 选择定价套餐，然后单击**创建**。
+3. 选择价格套餐，然后单击**创建**。
 
 ## 步骤 2. 安装 iOS Swift SDK
-{: #install_sdk}
+{: #install-sdk-appid}
 
 服务提供了 SDK，用于帮助您更轻松地对应用程序进行编码。该 SDK 必须安装在应用程序代码中。
 
@@ -63,6 +64,7 @@ lastupdated: "2018-11-12"
     {: pre}
 
 ## 步骤 3. 初始化 SDK
+{: #initialize-sdk-appid}
 
 在应用程序中初始化 SDK 后，可以开始配置 {{site.data.keyword.appid_short_notm}} 首选项。
 
@@ -120,8 +122,8 @@ lastupdated: "2018-11-12"
 您可以随时更新配置，而不必更新应用程序代码。
 {: tip}
 
-
 ### 社交身份提供者
+{: #social-appid}
 
 通过 {{site.data.keyword.appid_short_notm}}，可以使用社交身份提供者（例如，Facebook 和 Google+）来保护应用程序。
 
@@ -141,7 +143,7 @@ lastupdated: "2018-11-12"
       
 
         public func onAuthorizationCanceled() {
-         //认证被用户取消
+         //Authentication cancelled by the user
         }
 
         public func onAuthorizationFailure(error: AuthorizationError) {
@@ -156,6 +158,7 @@ lastupdated: "2018-11-12"
 
 
 ### Cloud Directory
+{: #cloud-dir-appid}
 
 通过 {{site.data.keyword.appid_short_notm}}，您可以管理自己的用户注册表（称为云目录）。通过云目录，用户可以使用自己的电子邮件和密码注册并登录到移动和 Web 应用程序。
 
@@ -171,37 +174,36 @@ lastupdated: "2018-11-12"
         ```swift
         class delegate : TokenResponseDelegate {
             public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-            //User authenticated
-        }
-      
+            /* User authenticated */
+            }
 
             public func onAuthorizationFailure(error: AuthorizationError) {
-            //Exception occurred
-           }
+            /* Exception occurred */
+            }
         }
 
         AppID.sharedInstance.obtainTokensWithROP(username: username, password: password, delegate: delegate())
         ```
         {: codeblock}
+
     * 注册
         ```swift
         class delegate : AuthorizationDelegate {
           public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
              if accessToken == nil && identityToken == nil {
-              //需要电子邮件验证
+              /* email verification is required */
               return
              }
-           //User authenticated
-        }
-      
+           /* User authenticated */
+          }
 
           public func onAuthorizationCanceled() {
-         //注册被用户取消
+         /* Sign up cancelled by the user */
           }
 
           public func onAuthorizationFailure(error: AuthorizationError) {
-              //Exception occurred
-           }
+              /* Exception occurred */
+          }
         }
 
         AppID.sharedInstance.loginWidget?.launchSignUp(delegate: delegate())
@@ -212,15 +214,15 @@ lastupdated: "2018-11-12"
         ```swift
         class delegate : AuthorizationDelegate {
            public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-              //忘记密码处理完成，在本例中，accessToken 和 identityToken 将为 null。
+              /* forgot password finished, in this case accessToken and identityToken will be null. */
            }
 
            public func onAuthorizationCanceled() {
-         //忘记密码处理被用户取消
+         /* forgot password canceled by the user */
            }
 
            public func onAuthorizationFailure(error: AuthorizationError) {
-               //Exception occurred
+               /* Exception occurred */
            }
         }
 
@@ -265,7 +267,7 @@ lastupdated: "2018-11-12"
 
 
 ## 步骤 5. 测试应用程序
-{: #appid_testing}
+{: #testing-appid}
 
 一切都配置正确吗？您可以对其进行测试！
 
@@ -277,9 +279,9 @@ lastupdated: "2018-11-12"
 遇到困难？请查看[关于 {{site.data.keyword.appid_short_notm}} 的故障诊断](/docs/services/appid/ts_index.html)。
 
 ## 后续步骤
-{: #appid_next}
+{: #next-appid}
 
 太棒了！您已将安全级别添加到应用程序。请一鼓作气，尝试下列其中一个选项：
 
 * 要了解有关 {{site.data.keyword.appid_short_notm}} 必须提供的所有功能的更多信息以及如何利用这些功能，请[查看文档](/docs/services/appid/index.html)！
-* 入门模板工具包是使用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。请在 [Mobile 开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看可用的入门模板工具包。下载代码。运行应用程序！
+* 入门模板工具包是使用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。请在 [Mobile 开发者仪表板](https://cloud.ibm.com/developer/mobile/dashboard)中查看可用的入门模板工具包。下载代码。运行应用程序！

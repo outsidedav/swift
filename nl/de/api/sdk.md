@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-02-28"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -17,7 +18,7 @@ lastupdated: "2018-11-12"
 
 Das Plug-in für {{site.data.keyword.IBM}} SDK Generator
 kann in der
-[{{site.data.keyword.cloud_notm}}-CLI](/docs/cli/reference/bluemix_cli/get_started.html)
+[{{site.data.keyword.cloud_notm}}-CLI](/docs/cli/index.html)
 installiert werden.
 
 Mit dem Plug-in für {{site.data.keyword.IBM_notm}} SDK Generator
@@ -29,13 +30,11 @@ Die REST-API-Definition muss gültig sein und entweder auf einem aktiven
 Serverendpunkt oder in einer lokalen Datei auf Ihrem System gehostet werden.
 
 ## Vorbereitende Schritte
-{: #prereqs}
+{: #prereqs-sdk-cli}
 
 Stellen Sie sicher, dass die folgenden Voraussetzungen verfügbar sind:
 
-* [{{site.data.keyword.cloud_notm}}-Konto
-![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen
-Link")](http://bluemix.net){: new_window}
+* [{{site.data.keyword.cloud_notm}}-Konto ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://cloud.ibm.com){: new_window}
 * Gültige und mit der Spezifikation gemäß
 [Open API
 ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen
@@ -43,10 +42,10 @@ Link")](https://www.openapis.org/){: new_window}
 konforme API-Definition
 
 ## SDK-Plug-in installieren
-{: #installation}
+{: #install-sdk-cli}
 
 1. [Installieren
-Sie die {{site.data.keyword.cloud_notm}}-CLI](/docs/cli/reference/bluemix_cli/get_started.html).
+Sie die {{site.data.keyword.cloud_notm}}-CLI](/docs/cli/index.html).
 
 2. [Installieren Sie das SDK-Plug-in](/docs/cli/sdk/index.html).
   ```
@@ -55,7 +54,7 @@ Sie die {{site.data.keyword.cloud_notm}}-CLI](/docs/cli/reference/bluemix_cli/ge
   {: codeblock}
 
 ## SDK generieren
-{: #commands}
+{: #commands-sdk-cli}
 
 Generieren Sie ein SDK, indem Sie den folgenden Befehl eingeben:
 ```
@@ -64,7 +63,7 @@ ibmcloud sdk generate [argumente...] [befehlsoptionen]
 {: codeblock}
 
 ### Argumente
-{: #gen-args}
+{: #gen-args-sdk-cli}
 
 * **APP_NAME** - Der Name der Cloud Foundry-App in Ihrem aktuellen Bereich.
 * **OPENAPI_DOC_LOCATION** - Eine URL oder ein relativer Dateipfad zur unformatierten REST-API-Definition (JSON oder yaml).
@@ -72,7 +71,7 @@ ibmcloud sdk generate [argumente...] [befehlsoptionen]
 generierten SDK.
 
 ### Optionen
-{: #gen-options}
+{: #gen-options-sdk-cli}
 
 **Platform** (erforderlich):
   * `--ios` - Generiert ein Swift-SDK für iOS.
@@ -85,7 +84,7 @@ Gibt den Typ für das Argument `OPENAPI_DOC_LOCATION` an.
 
   * `-r` - Ferne URL.
   * `-f` - Dateiname.
-  * `-a` - Unter {{site.data.keyword.coud_notm}} ausgeführte App.
+  * `-a` - Unter {{site.data.keyword.cloud_notm}} ausgeführte App.
   * `-l` - URL des lokalen Hosts.
 
 **Optional**:
@@ -96,7 +95,7 @@ SDKs werden überschrieben.)
   * `--unzip` - Extrahiert das generierte SDK (überschreibt vorhandene Daten falls SDK-Artefakte vorhanden sind).
 
 ### Verwendung
-{: #gen-usage}
+{: #gen-usage-sdk-cli}
 
 Um ein SDK aus einer Cloud Foundry-App zu generieren, die unter
 {{site.data.keyword.cloud_notm}} ausgeführt wird, können Sie den Namen
@@ -117,19 +116,19 @@ ibmcloud sdk generate [OPENAPI_DOC_LOCATION] [SDK_Name] [LOCATION] [PLATFORM]
 
 
 ## Open API-Definitionen validieren
-{: #validating}
+{: #validating-sdk-cli}
 
 Führen Sie den folgenden Befehl aus: `ibmcloud sdk validate
 [argument]`
 
 ### Argumente
-{: #val-args}
+{: #val-args-sdk-cli}
 
 * `APP_NAME` - Der Name der Cloud Foundry-App in Ihrem aktuellen Bereich.
 * `OPENAPI_DOC_LOCATION` - Eine URL oder ein relativer Dateipfad zur unformatierten REST-API-Definition (JSON oder yaml).
 
 ### Verwendung
-{: #val-usage}
+{: #val-usage-sdk-cli}
 
 Um die API-Spezifikation einer Cloud Foundry-App zu validieren, die unter
 {{site.data.keyword.cloud_notm}} ausgeführt wird, können Sie den Namen

@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -43,4 +44,4 @@ serverunabhängiges Modell mit
 mit Frameworks wie beispielsweise Kitura. Dank dieser Funktionalität können Sie
 Back-End-Logik über ein BFF-Modell in Swift hinzufügen und auch die Nutzung der
 Swift-SDKs durch die Anwendung auf BFF migrieren. Daher können Sie nach und
-nach ohne großen Extra-Aufwand von der MBaaS-Methode auf eine BFF-Lösung umsteigen. 
+nach ohne großen Extra-Aufwand von der MBaaS-Methode auf eine BFF-Lösung umsteigen.

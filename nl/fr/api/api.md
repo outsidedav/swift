@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -19,8 +19,9 @@ lastupdated: "2018-11-12"
 Vous pouvez utiliser API Connect pour gérer les API dans {{site.data.keyword.cloud}}, que celles-ci soient conservées à l'intérieur ou à l'extérieur d'{{site.data.keyword.cloud_notm}}. Apprenez à gérer vos API afin de pouvoir contrôler l'utilisation, accroître l'adoption et suivre les statistiques.
 
 ## Création d'une instance d'API Connect
+{: #create-apiconnect}
 
-Accédez au [catalogue](https://console.bluemix.net/catalog/) et créez une instance d'API Connect pour gérer vos API.
+Accédez au [catalogue](https://cloud.ibm.com/catalog/) et créez une instance d'API Connect pour gérer vos API.
 
 Utilisez `Menu->API` pour accéder à la console de gestion API Connect.
 
@@ -35,6 +36,7 @@ Une fois votre API définie, vous pouvez définir des spécifications d'API ouve
 - [LoopBack](https://loopback.io/)
 
 ## Définition de votre API gérée
+{: #define-apiconnect}
 
 Vous pouvez définir un proxy d'API qui gère la passerelle d'API entre votre application client et votre logique de back-end. Procédez comme suit pour créer un proxy à l'aide de votre spécification d'API ouverte (document Swagger) YAML ou JSON. 
 
@@ -46,6 +48,7 @@ Vous pouvez définir un proxy d'API qui gère la passerelle d'API entre votre ap
 Vous devez configurer le noeud final externe afin qu'il pointe sur l'URL qui relie à votre application de logique de back-end. 
 
 ## Création d'un back-end Swift
+{: #create-backend-apiconnect}
 
 Vous pouvez créer votre application Swift de back-end sur la base de cette API. 
 
@@ -61,7 +64,7 @@ Vous pouvez ensuite **télécharger** le Code ou **Déployer sur le Cloud**, pui
 
 Dans le dossier **Source**, vous pouvez voir une route qui définit le fichier Swift qui a créé les points finaux REST qui mappent à l'API. 
 
-L'exemple suivant utilise l'API Open `PetStore` :
+L'exemple qui suit utilise l'API Open `PetStore` :
 ```swift
 import Kitura
 import KituraContracts
@@ -113,6 +116,7 @@ func initializePet_Routes(app: App) {
 Une fois l'API définie à l'aide de {{site.data.keyword.openwhisk_short}} ou d'un environnement d'exécution Swift de pile complète, et une fois la définition API Connect créée, vous pouvez consommer l'API dans vos applications iOS.
 
 ## Consommation de l'API dans une application mobile iOS
+{: #consume-apiconnect}
 
 Pour consommer l'API de back-end dans votre application iOS, créez un kit de démarrage mobile à l'aide de Apple Console. A partir de la vue du kit de démarrage, créez un kit de démarrage iOS de n'importe quel type.
 
@@ -135,10 +139,12 @@ Dans le dossier `Assets`, il existe un fichier qui gère l'URL dans votre API, q
 Ouvrez le fichier `PLIST` et remplacez la valeur hôte par la valeur qui est copiée de la route d'API route qui permet au logiciel SDK d'appeler l'API dans {{site.data.keyword.cloud_notm}}.
 
 ## Documentation
+{: #docs-apiconnect}
 
 Lorsque le logiciel SDK est inclus dans votre projet d'application iOS, un fichier *README.html* est disponible dans le dossier `Docs`. Ouvrez le dossier `Docs` dans un navigateur externe et lisez les instructions qui décrivent comment utiliser votre projet.
 
 ## Recréation du logiciel SDK après un changement d'API
+{: #change-apiconnect}
 
 Si l'API change ou si de nouvelles fonctions sont disponible et {{site.data.keyword.openwhisk}} est ajouté, vous pouvez re-créer le SDK client à l'aide de la commande `ibmcloud sdk`. Pour plus d'informations, des exemples et l'aide sur la syntaxe, consultez la documentation [SDK Generator](/docs/cli/sdk/index.html).
 
@@ -161,10 +167,13 @@ Pour activer la création d'un logiciel SDK, utilisez le fichier YAML ou JSON de
     Le logiciel SDK est recréé dans le répertoire de votre projet d'application iOS pour que vous puissiez continuer de travailler avec votre API.
 
 ## Référence
+{: #reference-apiconnect}
 
 L'exemple de logiciel SDK suivant est créé pour {{site.data.keyword.openwhisk_short}} à partir du kit de démarrage. Vous pouvez voir chacune des actions et les fragments de code Swift que vous pouvez inclure dans votre application iOS.
 
 ### Méthodes d'API par défaut
+{: #default-methods-apiconnect}
+
  * [`getCreate`](#getCreate)
  * [`getDelete`](#getDelete)
  * [`getDeleteall`](#getDeleteall)
@@ -173,6 +182,8 @@ L'exemple de logiciel SDK suivant est créé pour {{site.data.keyword.openwhisk_
  * [`getUpdate`](#getUpdate)
 
 ### Utilisation de `getCreate`
+{: #getcreate-apiconnect}
+
 {: #getCreate}
 
 ```swift
@@ -186,10 +197,13 @@ public static func getCreate(completionHandler: @escaping (_ response: Response?
     - Closure prend comme arguments `Response?` et `Error?`.
 
 ### Authentification avec `getCreate`
+{: #auth-getcreate}
 
 Aucune authentification requise
 
 ### Exemple avec `getCreate`
+{: #example-getcreate}
+
 ```swift
 DefaultAPI.getCreate() { (response, error) in
     guard error == nil else {
@@ -209,7 +223,7 @@ DefaultAPI.getCreate() { (response, error) in
 {: codeblock}
 
 ### Utilisation de `getDelete`
-{: #getDelete}
+{: #getdelete}
 
 ```swift
 public static func getDelete(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -222,10 +236,13 @@ public static func getDelete(completionHandler: @escaping (_ response: Response?
     - Closure prend comme arguments `Response?` et `Error?`.
 
 ### Authentification avec `getDelete`
+{: #auth-getdelete}
 
 Aucune authentification requise
 
 ### Exemple avec `getDelete`
+{: #example-getdelete}
+
 ```swift
 DefaultAPI.getDelete() { (response, error) in
     guard error == nil else {
@@ -245,7 +262,7 @@ DefaultAPI.getDelete() { (response, error) in
 {: codeblock}
 
 ### Utilisation de `getDeleteall`
-{: #getDeleteall}
+{: #getdeleteall}
 
 ```swift
 public static func getDeleteall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -258,10 +275,12 @@ public static func getDeleteall(completionHandler: @escaping (_ response: Respon
     - Closure prend comme arguments `Response?` et `Error?`.
 
 ### Authentification avec `getDeleteall`
+{: #auth-getdeleteall}
 
 Aucune authentification requise
 
 ### Exemple avec `getDeleteall`
+{: #example-getdeleteall}
 
 ```swift
 DefaultAPI.getDeleteall() { (response, error) in
@@ -282,7 +301,7 @@ DefaultAPI.getDeleteall() { (response, error) in
 {: codeblock}
 
 ### Utilisation de `getRead`
-{: #getRead}
+{: #getread}
 
 ```swift
 public static func getRead(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -295,10 +314,13 @@ public static func getRead(completionHandler: @escaping (_ response: Response?, 
     - Closure prend comme arguments `Response?` et `Error?`.
 
 ### Authentification avec `getRead`
+{: #auth-getread}
 
 Aucune authentification requise
 
 ### Exemple avec `getRead`
+{: #example-getread}
+
 ```swift
 DefaultAPI.getRead() { (response, error) in
     guard error == nil else {
@@ -318,7 +340,7 @@ DefaultAPI.getRead() { (response, error) in
 {: codeblock}
 
 ### Utilisation de `getReadall`
-{: #getReadall}
+{: #getreadall}
 
 ```swift
 public static func getReadall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -331,10 +353,13 @@ public static func getReadall(completionHandler: @escaping (_ response: Response
     - Closure prend comme arguments `Response?` et `Error?`.
 
 ### Authentification avec `getReadall`
+{: #auth-getreadall}
 
 Aucune authentification requise
 
 ### Exemple avec `getReadall`
+{: #example-getreadall}
+
 ```swift
 DefaultAPI.getReadall() { (response, error) in
     guard error == nil else {
@@ -354,7 +379,7 @@ DefaultAPI.getReadall() { (response, error) in
 {: codeblock}
 
 ### Utilisation de `getUpdate`
-{: #getUpdate}
+{: #getupdate}
 
 ```swift
 public static func getUpdate(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -367,10 +392,13 @@ public static func getUpdate(completionHandler: @escaping (_ response: Response?
     - Closure prend comme arguments `Response?` et `Error?`.
 
 ### Authentification avec `getUpdate`
+{: #auth-getupdate}
 
 Aucune authentification requise
 
 ### Exemple avec `getUpdate`
+{: #example-getupdate}
+
 ```swift
 DefaultAPI.getUpdate() { (response, error) in
     guard error == nil else {

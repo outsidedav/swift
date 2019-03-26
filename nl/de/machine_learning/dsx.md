@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-06-04"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -13,6 +14,7 @@ lastupdated: "2018-06-04"
 {:tip: .tip}
 
 # Datenbestände mit benutzerdefiniert generierten Modellen analysieren
+{: #dsx-overview}
 
 Watson Studio stellt Ihnen die Umgebung und die Tools zur Verfügung, mit
 deren Hilfe Sie geschäftsbezogene Problemstellungen durch die Analyse von Daten
@@ -34,7 +36,7 @@ Informationen finden Sie unter der Adresse
 "https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics".
 
 ## Maschinelles Lernen für {{site.data.keyword.DSX}}
-{: #dsx}
+{: #dsx-learning}
 
 Mit {{site.data.keyword.DSX}} können Modelle trainiert und
 bereitgestellt werden; anschließend werden die Ergebnisse mithilfe von APIs
@@ -46,6 +48,8 @@ Umgebung Modelle erstellen, in der Cloud bereitstellen und trainieren. Weitere I
 [Create, deploy, and train models with {{site.data.keyword.pm_full}} and {{site.data.keyword.DSX}}](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics).
 
 ### Lernprogramme
+{: #dsx-tutorials}
+
 - [Logistisches
 Regressionsmodell mit {{site.data.keyword.pm_short}} erstellen](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics)
 - [Naive-Bayes-Modell
@@ -75,15 +79,15 @@ Sie auch daran, den Endpunkt für die Bewertung (scoring) zu Ihrer App
 hinzuzufügen, der auf der Registerkarte `Implementierung` für
 die Bereitstellung Ihres Modells zu finden ist.
 
-    ```Swift
-    // The url to your model's scoring endpoint
+    ```swift
+    /* The url to your model's scoring endpoint */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
 
-    // Your credentials
+    /* Your credentials */
     var machineLearningUsername: String!
     var machineLearningPassword: String!
 
-    // Machine Learning initialization
+    /* Machine Learning initialization */
     if let contents = Bundle.main.path(forResource:"BMSCredentials", ofType: "plist"),
        let dictionary = NSDictionary(contentsOfFile: contents),
        let username = dictionary["machinelearningUsername"] as? String,
@@ -102,12 +106,12 @@ Bewertung (scoring) hinzu, der auf der Registerkarte
 `Implementierung` für die Bereitstellung Ihres Modells zu
 finden ist.
 
-    ```Swift
-    // Your Machine Learning Credentials
+    ```swift
+    /* Your Machine Learning Credentials */
     let machineLearningUsername: String = "<your-ml-service-username>"
     let machineLearningPassword: String = "<your-ml-service-password>"
 
-    // The url to your model's scoring endpoint
+    /* The url to your model's scoring endpoint */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
     ```
     {: codeblock}
@@ -115,7 +119,7 @@ finden ist.
 4. Rufen Sie Zugriffstokens ab und führen Sie die Vorhersageanalyse für
 Datenbestände aus Ihrer Anwendung heraus mit einem einfachen Client-SDK aus.
 
-  ```Swift
+  ```swift
   public class MachineLearning {
 
       private let username: String
@@ -214,7 +218,7 @@ Datenbestände aus Ihrer Anwendung heraus mit einem einfachen Client-SDK aus.
   {: codeblock}
 
 ### Beispiel
-{: #example}
+{: #dsx-example}
 
 **Szenarioname:** Produktlinienprognose
 
@@ -226,7 +230,7 @@ Bewertungsanforderungen für das implementierte Modell auszuführen.
 Nachdem das Modell bereitgestellt wurde, können Sie die Vorhersageanalyse
 mithilfe des Bewertungsendpunkts vornehmen.
 
-```Swift
+```swift
 // The data you want to have analyzed
 let examplePayload: [String: Any] = [
     "fields": ["GENDER", "AGE", "MARITAL_STATUS", "PROFESSION"],
@@ -262,6 +266,8 @@ Science und maschinelles Lernen](https://www.ibm.com/analytics/data-science/mach
 {{site.data.keyword.pm_short}} zu bieten hat.
 
 ### Zugehörige Links
+{: #dsx-related}
+
 * [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling/index.html#using-machine-learning-with-data-science-experience)
 * [{{site.data.keyword.DSX}}](https://datascience.ibm.com/)
 * [Dokumentation

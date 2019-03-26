@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-07"
+  years: 2018, 2019
+lastupdated: "2019-01-31"
 
 ---
+
 {:tip: .tip}
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -19,152 +20,166 @@ Puede utilizar el servicio {{site.data.keyword.conversationshort}} para crear ap
 
 En la lista siguiente se describe el flujo de la forma en que funciona la integración:
 
-  1. Los usuarios interactúan con la interfaz que se implementa en la app.
-  2. La app envía la entrada de usuario a {{site.data.keyword.conversationshort}} utilizando el SDK de Swift de {{site.data.keyword.watson}}.
-  3. El SDK de Swift de {{site.data.keyword.watson}} se conecta a un espacio de trabajo, que es un contenedor para el flujo de diálogo y los datos de entrenamiento.
-  4. El espacio de trabajo interpreta la entrada de usuario y dirige el flujo de la conversación, enviando una respuesta a la app.
-  5. La app muestra la respuesta para el usuario.
+1. Los usuarios interactúan con la interfaz que se implementa en la app.
+2. La app envía la entrada de usuario a {{site.data.keyword.conversationshort}} utilizando el SDK de Swift de {{site.data.keyword.watson}}.
+3. El SDK de Swift de {{site.data.keyword.watson}} se conecta a un espacio de trabajo, que es un contenedor para el flujo de diálogo y los datos de entrenamiento.
+4. El espacio de trabajo interpreta la entrada de usuario y dirige el flujo de la conversación, enviando una respuesta a la app.
+5. La app muestra la respuesta para el usuario.
 
 ## Antes de empezar
-{: #before-you-begin}
+{: #prereqs-chatbot}
 
 Asegúrese de cumplir los siguientes requisitos previos:
 
-  * Una instancia del [servicio de {{site.data.keyword.conversationshort}}](/docs/services/conversation/getting-started.html)
-  * iOS 8.0+
-  * Xcode 9.0+
-  * Swift 3.2+ o Swift 4.0+
-  * Carthage
+* Una instancia del [servicio de {{site.data.keyword.conversationshort}}](/docs/services/conversation/getting-started.html)
+* iOS 10.0+
+* Xcode 9.3+
+* Swift 4.1+
+* CocoaPods, Carthage o gestor de paquetes de Swift
 
-Utilice [Carthage](https://github.com/Carthage/Carthage){:new_window} para gestionar dependencias y crear el SDK de Swift de {{site.data.keyword.watson}} para la aplicación. Si es nuevo en Carthage, puede instalarlo con [Homebrew](http://brew.sh/){:new_window}:
+Puede instalar el [SDK de Swift de Watson](https://github.com/watson-developer-cloud/swift-sdk) mediante [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods), [Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage) o el [Gestor de paquetes de Swift](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager). Al usar CocoaPods(https://cocoapods.org/) para gestionar dependencias, solo obtiene las infraestructuras que necesita, al contrario de lo que sucede con el SDK de Swift de Watson completo. Si no conoce CocoaPods, puede instalarlo fácilmente:
 
-```bash
-$ brew update
-$ brew install carthage
-```
-
-## Descarga y creación de dependencias
-{: #download-and-build-dependencies}
-
-1. Mediante su editor de texto favorito, cree un archivo nuevo denominado `Cartfile` en el directorio raíz del proyecto (donde se encuentra el archivo `.xcodeproj`).
-
-2. Añada una línea para especificar el SDK de Swift de Watson como una dependencia:
-  ```
-  github "watson-developer-cloud/swift-sdk"
-  ```
-  {: codeblock}
-
-  Para una app de producción, puede especificar un [requisito de versión](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement){:new_window} para evitar cambios inesperados de los nuevos releases del SDK de Swift de {{site.data.keyword.watson}}.
-  {: tip}
-
-3. Utilice un terminal para navegar hasta el directorio raíz del proyecto, y a continuación ejecute Carthage:
-  ```bash
-  carthage update --platform iOS
-  ```
-  {: codeblock}
-
-  El SDK de Swift de {{site.data.keyword.watson}} se descargará y su infraestructura se crea en la carpeta `Carthage/Build/iOS` del proyecto.
-
-## Adición de infraestructuras a la app
-{: #add-frameworks-to-your-app}
-
-Ahora que se ha creado la infraestructura del SDK de Swift de {{site.data.keyword.watson}}, debe enlazar y copiar la infraestructura de {{site.data.keyword.conversationshort}} en la app.
-
-1. Abra la app en Xcode y seleccione el proyecto en el Navegador para abrir sus valores.
-2. Seleccione el destino de la app y abra el separador **General**.
-3. Desplácese a la sección Infraestructura y bibliotecas enlazados y pulse el icono `+`.
-4. En la ventana nueva que se visualiza, pulse **Añadir otros** y vaya al directorio `Carthage/Build/iOS`.
-5. Seleccione `AssistantV1.framework` para enlazarlo con la app.
-
-Además de enlazar la infraestructura de {{site.data.keyword.conversationshort}}, también debe copiarla en la app para que sea accesible en el tiempo de ejecución. A continuación, se utiliza un script de Carthage para evitar un [defecto de envío de App Store](http://www.openradar.me/radar?id=6409498411401216){:new_window} determinado.
-
-1. Con los valores del destino de app abiertos en Xcode, vaya al separador **Fases de compilación**.
-2. Pulse el icono `+` y seleccione **Nueva fase de ejecución del script**.
-3. Añada el mandato `/usr/local/bin/carthage copy-frameworks` a la fase de ejecución del script.
-4. Añada la infraestructura {{site.data.keyword.conversationshort}} a la lista **Archivos de entrada**:
-  ```
-  $(SRCROOT)/Carthage/Build/iOS/AssistantV1.framework
-  ```
-  {: codeblock}
-
-## Adición de un asistente virtual a la app
-{: #add-a-virtual-assistant-to-your-app}
-
-1. Abra `ViewController.swift` en Xcode.
-2. Añada una sentencia de importación para {{site.data.keyword.conversationshort}}, por ejemplo `import AssistantV1`.
-3. Cree una función vacía denominada `assistantExample` y, a continuación, llámela desde `viewDidLoad`.
-4. Añada el código siguiente para la función `assistantExample`. Asegúrese de actualizar el nombre de usuario, la contraseña y el ID de espacio de trabajo.
-
-```swift
-//
-//  ViewController.swift
-//  WatsonAssistantExample
-//
-//  Created by Glenn R. Fisher on 3/1/18.
-//  Copyright © 2018 Glenn R. Fisher. Todos los derechos reservados.
-//
-
-import UIKit
-import AssistantV1
-
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        assistantExample()
-    }
-
-    func assistantExample() {
-        // Credenciales del asistente
-        let username = "your-username-here"
-        let password = "your-password-here"
-        let workspace = "your-workspace-id-here"
-
-        // Crear instancia de servicio
-        let assistant = Assistant(username: username, password: password, version: "2018-03-01")
-
-        // Iniciar una conversación
-        assistant.message(workspaceID: workspace) { response in
-            print("Conversation ID: \(response.context.conversationID!)")
-            print("Response: \(response.output.text.joined())")
-
-            // Continuar asistente
-            print("Request: turn the radio on")
-            let input = InputData(text: "turn the radio on")
-            let request = MessageRequest(input: input, context: response.context)
-            assistant.message(workspaceID: workspace, request: request) { response in
-                print("Response: \(response.output.text.joined())")
-            }
-        }
-    }
-}
+```console
+sudo gem install cocoapods
 ```
 {: codeblock}
 
-Cuando ejecuta la app, se muestran los mensajes siguientes en la consola:
+## Paso 1. Creación de una instancia de Watson Assistant
+{: #instance-watson-chatbot}
+
+Suministre una instancia del servicio {{site.data.keyword.conversationshort}}:
+
+1. En el catálogo de {{site.data.keyword.cloud_notm}}, seleccione **{{site.data.keyword.conversationshort}}**. Se abre la pantalla de configuración del servicio.
+2. Dé un nombre a la instancia de servicio, o utilice el nombre preestablecido.
+3. Seleccione una app en el menú **Conectar** si desea enlazar la instancia a una app.
+4. Seleccione un plan de precios y pulse **Crear**.
+5. Seleccione el separador **Credenciales** para ver las credenciales de servicio. Estos valores se utilizan para conectar con el servicio desde la app.
+6. Pulse **Herramienta de lanzamiento** para construir su asistente chatbot. Siga las instrucciones de la página de destino para construir su propio chatbot, o acceda al separador **Capacidades** (Skill) y seleccione **Crear nueva**. En la página **Agregar capacidad de diálogo**, seleccione el separador **Usar habilidad de muestra** y seleccione la **Customer Care Sample Skill** para empezar rápidamente. Puede seguir ajustando esta capacidad o crear otras que podrá usar posteriormente en su app.
+7. Pulse en el menú de su nueva capacidad y seleccione **Ver detalles de API**. Ahora puede ver el `ID del espacio de trabajo` que necesita, además de las credenciales de servicio.
+
+## Paso 2. Descarga y creación de dependencias
+{: #download-depend-chatbot}
+
+El ejemplo siguiente utiliza AssistantV1. Para obtener más información sobre la infraestructura AssistantV2, consulte la [Documentación de Watson SDK AssistantV2](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV2/index.html).
+
+Mediante su editor de texto preferido, cree un `Podfile` nuevo en el directorio raíz de su proyecto (donde se encuentra su archivo `.xcodeproj`), ejecutando `pod init`. A continuación, añada una línea para especificar la infraestructura {{site.data.keyword.conversationshort}} del SDK de Swift de Watson como dependencia:
+
+```pod
+use_frameworks!
+
+target 'MyApp' do
+    pod 'IBMWatsonAssistantV1'
+```
+{: codeblock}
+
+Para una app de producción, puede que también desee especificar un [requisito de versión](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions) concreto para evitar cambios inesperados de los nuevos releases del SDK de Swift de Watson.
+
+Con el archivo `Podfile` en su lugar, ahora puede descargar las dependencias. Utilice un terminal para acceder al directorio raíz de su proyecto y ejecute CocoaPods:
+
+```console
+pod install
+```
+{: codeblock}
+
+Cocoapods descarga la infraestructura {{site.data.keyword.conversationshort}} y la compila en la carpeta `Pods/` de su proyecto.
+
+Para evitar errores de construcción de Pod, cuando abra el proyecto en Xcode, abra el archivo que termina en `.xcworkspace` en lugar de `.xcodeproj`.
+{: tip}
+
+## Paso 3. Añadir un asistente virtual a su app
+{: #virtual-assist-chatbot}
+
+Los ejemplos siguientes le ayudan a añadir prestaciones de {{site.data.keyword.conversationshort}} a su aplicación, por lo general en `ViewController.swift`. Con los ejemplos siguientes, puede ampliar las llamadas del Asistente para su caso de uso.
+
+1. Añada una sentencia de importación para {{site.data.keyword.conversationshort}}, por ejemplo `import Assistant`.
+  ```swift
+  import Assistant
+  ```
+  {: codeblock}
+
+2. Crear una instancia del servicio {{site.data.keyword.conversationshort}}:
+  ```swift
+  let assistant = Assistant(version: "yyyy-mm-dd", apikey: "your-api-key-here")
+
+  // guardar contexto en estado para continuar la conversación más adelante
+  var context: Context?
+  ```
+  {: codeblock}
+
+  **Sugerencia**: este ejemplo guarda el contexto en el estado. Para entender mejor este objeto y saber cómo adaptarlo a su caso de uso, consulte la [documentación de variable de contexto](/docs/services/assistant/dialog-runtime.html#context-variables). Compruebe la [documentación del parámetro de versión](https://cloud.ibm.com/apidocs/assistant#versioning) o utilice la fecha creada por el servicio {site.data.keyword.conversationshort}}.
+
+3. Inicializar la conversación. En función de cómo esté configurado el asistente, puede proporcionar una respuesta inicial al usuario:
+  ```swift
+  // Iniciar una conversación
+  assistant.message(workspaceID: "your-workspace-ID-here) { response, error in
+      if let error = error {
+         print(error)
+    }
+
+      guard let message = response?.result else {
+          print("Failed to get the message.")
+          return
+      }
+
+      print("Conversation ID: \(message.context.conversationID!)")
+      print("Response: \(message.output.text.joined())")
+
+      // Establecer el contexto en el estado
+      self.context = message.context
+  }
+  ```
+  {: codeblock}
+
+4. Enviar un mensaje y el contexto al asistente:
+  ```swift
+  print("Request: When are you open?")
+  let input = InputData(text: "When are you open?")
+
+  assistant.message(workspaceID: workspace, input: input, context: self.context) { response, error in
+      if let error = error {
+         print(error)
+    }
+
+      guard let message = response?.result else {
+          print("Failed to get the message.")
+          return
+      }
+
+      print("Conversation ID: \(message.context.conversationID!)")
+      print("Response: \(message.output.text.joined())")
+
+      // Actualizar el contexto
+      self.context = message.context
+  }
+  ```
+  {: codeblock}
+
+Cuando ejecuta la app con estos ejemplos con el asistente predeterminado, en la consola se muestran los mensajes siguientes:
 ```
 Conversation ID: cbb18524-1e78-4bb5-a6ea-ceb9311da391
-Response: Hi. It looks like a nice drive today. What would you like me to do?
-Request: turn the radio on
-Response: Sure thing! Which genre would you prefer? Jazz is my personal favorite..
+Response: Hello, I’m a demo customer care virtual assistant to show you the basics.  I can help with directions to my store, hours of operation and booking an in-store appointment.
+Request: When are you open?
+Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11am to 6pm.
 ```
 {: screen}
 
-## Utilización de los kits de iniciación
-{: #conversation_starterkits}
+5. Explore la [documentación de Assistant](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV1/index.html) del SDK de Watson para crear la funcionalidad de su aplicación.
 
-Con los kits de iniciación, puede aprovechar de forma rápida y sencilla las funciones de {{site.data.keyword.cloud_notm}}. Puede añadir {{site.data.keyword.conversationshort}} a cualquier programa de fondo de lado del servidor utilizando los kits de iniciación. El Chatbot for iOS con Watson Starter Kit ilustra cómo utilizar las funciones de aprendizaje profundo de {{site.data.keyword.conversationshort}} añadiendo una interfaz de lenguaje natural a la aplicación que automatiza las interacciones con los usuarios finales.
+## Utilización de los kits de inicio
+{: #starterkits-chatbot}
 
-1. Seleccione el [kit de iniciación](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} con el que desee trabajar.
+Con los kits de inicio, puede utilizar de forma rápida y sencilla las funciones de {{site.data.keyword.cloud_notm}}. Puede añadir {{site.data.keyword.conversationshort}} a cualquier programa de fondo de lado del servidor utilizando los kits de inicio. El Chatbot for iOS con Watson Starter Kit ilustra cómo utilizar las funciones de aprendizaje profundo de {{site.data.keyword.conversationshort}} añadiendo una interfaz de lenguaje natural a la aplicación que automatiza las interacciones con los usuarios.
+
+1. Seleccione el [kit de inicio](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} con el que desee trabajar.
 2. Cree el proyecto con los servicios predeterminados.
 3. Pulse **Añadir recursos > Watson > {{site.data.keyword.conversationshort}}**.
 4. Descargue el proyecto pulsando **Descargar código**. Puede encontrar las credenciales de servicio en el archivo `config/local-dev.json`.
 
 ## Pasos siguientes
-{: #assistant_next}
+{: #next-chatbot}
 
 ¡Buen trabajo! Ha añadido un asistente de IA a la app. Mantenga el ritmo probando una de las opciones siguientes:
 
-* Consulte el [SDK de Swift de {{site.data.keyword.watson}}](https://github.com/watson-developer-cloud/swift-sdk){:new_window}.
-* Aproveche todas las características que [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html) tiene que ofrecer.
+* Revise el [SDK de Swift de {{site.data.keyword.watson}}](https://github.com/watson-developer-cloud/swift-sdk){:new_window} y consulte el resto de los servicios de Watson admitidos.
+* Aproveche todas las características que [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html) ofrece.
 * Visualice el código fuente de la [app de ejemplo Simple Chat](https://github.com/watson-developer-cloud/simple-chat-swift){:new_window}, que muestra el SDK de Swift de {{site.data.keyword.watson}} en GitHub.

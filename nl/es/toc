@@ -18,7 +18,6 @@ Programación con Swift en IBM Cloud
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    analytics/mobile_analytics.md
     push/push_notifications.md
     app_launch/mobile_applaunch.md
     
@@ -67,7 +66,7 @@ Programación con Swift en IBM Cloud
 
     {: .navgroup id="reference"}
     sdk.md
-    [Documentos de API](https://console.bluemix.net/apidocs)
+    [Documentos de API](https://cloud.ibm.com/apidocs)
     [Apps de ejemplo en IBM Code](https://developer.ibm.com/code/technologies/swift-on-the-server/)
     [IBM Cloud Developer Center](https://developer.ibm.com/swift/)
     {: .navgroup-end}

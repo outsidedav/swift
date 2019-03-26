@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2017-2018
-lastupdated: "2018-11-08"
+  years: 2017, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -30,6 +31,7 @@ Informationen zu allen Möglichkeiten für die Nutzung von
 {{site.data.keyword.cloudant_short_notm}} finden Sie unter [Basisinformationen zu {{site.data.keyword.cloudant_short_notm}}](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics).
 
 ## Vorbereitende Schritte
+{: #prereqs-cloudant}
 
 Stellen Sie zunächst sicher, dass die folgenden Voraussetzungen gegeben
 sind:
@@ -45,14 +47,15 @@ die [Bibliothek Kitura-CouchDB ![Symbol für externen Link](../../icons/launch-g
 
 ## Schritt 1. Instanz von
 {{site.data.keyword.cloudant_short_notm}} erstellen
+{: #create-instance-cloudant}
 
-Informationen zum Erstellen einer Instanz des Service finden Sie
-im Lernprogramm
-[Cloudant NoSQL DB-Instanz in IBM Cloud erstellen![Symbol für externen Link](../images/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/docs/services/Cloudant/tutorials/create_service.html#creating-a-cloudant-nosql-db-instance-on-ibm-cloud){:new_window}.
+Informationen zum Erstellen einer Instanz des Service finden Sie im Lernprogramm [IBM Cloudant-Instanz in IBM Cloud erstellen ![Symbol für externen Link](../images/launch-glyph.svg "Symbol für externen Link")](/docs/services/Cloudant/tutorials/create_service.html){:new_window}.
 
 ## Schritt 2. SDK installieren
+{: #install-sdk-cloudant}
 
 ### Swift-SDK für iOS installieren
+{: #install-swift-sdk-cloudant}
 
 Das Cloudant-SDK für Swift vereinfacht die Codierung Ihrer App. Das SDK
 muss in Ihrem App-Code installiert sein.
@@ -78,6 +81,7 @@ folgenden Beispiel gezeigt unter Ihrem Ziel angegeben ist.
     {: codeblock}
 
 ### Serverseitiges Swift-SDK installieren
+{: #install-serverside-cloudant}
 
 Zur Verwendung mit Swift Package Manager für die serverseitige
 Entwicklung fügen Sie die folgende Zeile zu den Abhängigkeiten in Ihrer Datei
@@ -88,6 +92,7 @@ Entwicklung fügen Sie die folgende Zeile zu den Abhängigkeiten in Ihrer Datei
 {: codeblock}
 
 ## Schritt 3. SDK initialisieren
+{: #initialize-cloudant}
 
 Sobald Sie das SDK in Ihrer App initialisiert habe, können Sie
 {{site.data.keyword.cloudant_short_notm}} zum Speichern von Daten
@@ -95,7 +100,7 @@ nutzen.
 
 1.  Fügen Sie den folgenden Import zu Ihrer Datei
 `AppDelegate.swift` oder zur serverseitigen Swift-Datei hinzu.
-    ```
+    ```swift
     import SwiftCloudant
     ```
     {: codeblock}
@@ -109,6 +114,8 @@ nutzen.
     {: codeblock}
 
 ### Basisoperationen
+{: #basic-operations-cloudant}
+
 Die folgenden Basisoperationen veranschaulichen die grundlegenden
 Aktionen zum Erstellen, Lesen und Löschen Ihrer Dokumente mithilfe des
 initialisierten Clients.
@@ -180,5 +187,5 @@ Sie gleich eine der folgenden Optionen aus:
 * Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des
 Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Das Starter Kit **Infinite Scrolling with Cloudant NoSQL for iOS** veranschaulicht, wie Sie einen `ViewController` so erweitern, dass Daten mit Seitenaufteilung angezeigt
 werden. Dieses Muster einer App ist für iOS-Entwickler geläufig und ein sehr
-gutes Beispiel für die Darstellung des Leistungsspektrums von {{site.data.keyword.cloudant_short_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://console.bluemix.net/developer/mobile/dashboard) werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.
+gutes Beispiel für die Darstellung des Leistungsspektrums von {{site.data.keyword.cloudant_short_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://cloud.ibm.com/developer/mobile/dashboard) werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.
 * Lesen Sie weitere Informationen zu {{site.data.keyword.cloudant_short_notm}} in der [Dokumentation](/docs/services/Cloudant/index.html). Dort erfahren Sie auch, wie Sie alle gebotenen Funktionen nutzen können.

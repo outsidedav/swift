@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -12,7 +13,7 @@ lastupdated: "2018-11-12"
 {:pre: .pre}
 
 # SDKs in Client-Apps installieren
-{: #installing}
+{: #install-sdks}
 
 Die iOS-SDKs von {{site.data.keyword.cloud}} unterstützen
 verschiedene gängige Abhängigkeitsmanager, weshalb Sie
@@ -20,7 +21,7 @@ verschiedene gängige Abhängigkeitsmanager, weshalb Sie
 Anwendungen installieren und einsetzen können.
 
 ## Installation mit CocoaPods
-{: #installing_with_cocoapods}
+{: #install_cocoapods}
 
 Um ein SDK mithilfe von CocoaPods zu installieren, fügen Sie es zu Ihrer
 `Poddatei` hinzu. Falls Ihr Projekt noch keine
@@ -43,7 +44,7 @@ Weitere Informationen finden Sie in den
 [Handbüchern zu CocoaPods](https://guides.cocoapods.org/using/index.html).
 
 ## Installation mit Carthage
-{: #installing_with_carthage}
+{: #install_carthage}
 
 Um ein SDK mithilfe von Carthage zu installieren, fügen Sie die folgende
 Zeile zur Datei
@@ -57,15 +58,15 @@ Führen Sie den Befehl `carthage update` aus, um den
 Buildprozess zu starten. Fügen Sie nach Abschluss des Builds die generierten
 Frameworks zu Ihrem Projekt hinzu. 
 
-Weitere Informationen enthält die einführende Dokumentation [Carthage Getting Started](https://github.com/Carthage/Carthage#getting-started). 
+Weitere Informationen enthält die einführende Dokumentation [Carthage Getting Started](https://github.com/Carthage/Carthage#getting-started).
 
 ## Installation mit dem Swift-Paketmanager
-{: #installing_with_swift_package_manager}
+{: #install_swift_package}
 
 Um ein SDK mithilfe des Swift-Paketmanagers zu installieren, fügen Sie
 die folgende Zeile zu den Abhängigkeiten
 in der Datei `Package.swift` hinzu:
-```
+```swift
 .Package(url: "<SDK git url>")
 ```
 {: codeblock}
@@ -78,7 +79,7 @@ Weitere Informationen finden Sie auf der Seite mit der
 Swift-Paketmanager](https://swift.org/package-manager/).
 
 ## Manuelle Installation
-{: #installing_manually}
+{: #install_manually}
 
 Um ein SDK manuell zu installieren, laden Sie das SDK herunter und fügen
 Sie die Quellendateien manuell zu Ihrem Projekt hinzu.

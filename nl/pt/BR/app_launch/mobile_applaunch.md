@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -46,6 +46,7 @@ Consulte os seguintes recursos do serviço {{site.data.keyword.engage_short}}:
 
 
 ## Antes de começar
+{: #prereqs-applaunch}
 
 Primeiro, assegure-se de que tenha os seguintes pré-requisitos prontos para execução:
 
@@ -63,7 +64,7 @@ Primeiro, assegure-se de que tenha os seguintes pré-requisitos prontos para exe
 4. Na área de janela de navegação, clique em **Conexões** para selecionar um app e ligá-lo a seu serviço. É possível ligar a instância de serviço ao seu app posteriormente se ele não estiver vinculado durante a criação.
 
 ## Etapa 2. Inicializando seu app
-{: #step2}
+{: #initialize-applaunch}
 
 O serviço fornece SDKs específicos de plataforma para simplificar o desenvolvimento de aplicativo. Os SDKs do {{site.data.keyword.cloud_notm}} Mobile Services Swift podem ser instalados com o CocoaPods ou o Carthage.
 
@@ -72,7 +73,7 @@ O serviço fornece SDKs específicos de plataforma para simplificar o desenvolvi
 3. Copie as chaves de configuração para inicializar o app. Use o segredo do app, o GUID do app e o segredo do cliente para configurar o app e criar engajamentos.
 
 ## Etapa 3. Criando um Recurso
-{: #step3}
+{: #create-feature-applaunch}
 
 O serviço {{site.data.keyword.engage_short}} cria e testa respostas para recursos.
 
@@ -92,13 +93,14 @@ Para criar um recurso, conclua as etapas a seguir:
 A janela Detalhes do recurso pode exportar o recurso como um arquivo JSON, que pode ser usado no aplicativo cliente para carregar os valores padrão.
 
 ## Etapa 4. Criando um público
-{: #step4}
+{: #audience-applaunch}
 
 ![Create Audience](images/create_audience_animated.gif){: gif}
 
 Para criar um público, conclua as etapas a seguir:
 
 ### Criando um **atributo de público**:
+{: #audience-attrib-applaunch}
 
 1. Clique em **Público** > **Criar Atributo**.
 2. Forneça os seguintes valores:
@@ -110,6 +112,7 @@ Para criar um público, conclua as etapas a seguir:
   É possível optar por criar mais de um atributo de público, conforme listado na imagem a seguir, com base em seu requisito.
 
 ### Criando um **público**:
+{: #audience-create-applaunch}
 
 1. Clique em  ** Criar Audiência **.
 2. Forneça um nome apropriado e uma descrição na janela Novo público.
@@ -120,10 +123,12 @@ Para criar um público, conclua as etapas a seguir:
 Agora é possível criar um Engagement.
 
 ## Etapa 5. Criando um Engagement
+{: #engagement-applaunch}
 
 Um Engajamento é uma instanciação de um Recurso com propriedades inicializadas e a anexação de um dos públicos predefinidos. É possível criar um engajamento usando **Controle de recurso** ou **Sistema de mensagens no app**.
 
 ### Ativando Recurso de Controle de Recurso
+{: #feature-control-applaunch}
 
 Por meio desse engajamento, um proprietário de app pode controlar a visibilidade de um recurso ativando ou desativando-o no tempo de execução. Um recurso pode ser ativado ou desativado para todos os usuários do aplicativo ou para um conjunto específico de usuários e dispositivos.
 
@@ -155,6 +160,7 @@ Conclua as etapas a seguir para criar um engajamento usando o Controle de recurs
 Agora é possível medir o [desempenho](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de seu engajamento.
 
 ### Ativando o recurso de sistema de mensagens no app
+{: #app-message-applaunch}
 
 Por meio desse engajamento, um proprietário de app pode enviar notificações para os usuários do app enquanto eles estão usando ativamente o aplicativo.
 
@@ -201,10 +207,10 @@ Conclua as etapas a seguir para criar um engajamento que use a opção Sistema d
 Agora é possível medir o [desempenho](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de seu engajamento.
 
 ## Links Rápidos
-{: #links notoc}
+{: #links-applaunch notoc}
 
 Verifique os links a seguir para obter insight e entender os recursos do {{site.data.keyword.engage_short}}:
 
- - Experimente o [Serviço de ativação de app](https://console.bluemix.net/catalog/services/app-launch).
+ - Experimente o [Serviço de ativação de app](https://cloud.ibm.com/catalog/services/app-launch).
  - [Blogs e vídeos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - Para obter mais informações, consulte [Ativação de app: tutorial de introdução](/docs/services/app-launch/index.html#gettingstartedtemplate).
+ - Para obter mais informações, consulte [Ativação de app: tutorial de introdução](/docs/services/app-launch/index.html).

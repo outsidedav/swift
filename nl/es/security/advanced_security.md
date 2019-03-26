@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -19,9 +20,10 @@ lastupdated: "2018-11-08"
 Los desarrolladores de Swift pueden utilizar fácilmente los servicios de seguridad avanzada que {{site.data.keyword.cloud}} ofrece para proteger sus claves y datos en reposo, en uso o en tránsito en el nivel de seguridad más alto del sector.
 {: shortdesc}
 
-Como un enfoque sencillo, puede utilizar directamente los {{site.data.keyword.cloud_notm}} HyperSecure Platform Services para todos los servicios de seguridad avanzada en {{site.data.keyword.cloud}}. Para obtener más información, consulte [Iniciación a los {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform/index.html){:new_window}.
+Como un enfoque sencillo, puede utilizar directamente {{site.data.keyword.cloud_notm}} HyperSecure Platform Services para todos los servicios de seguridad avanzada en {{site.data.keyword.cloud}}. Para obtener más información, consulte [Iniciación a {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform/index.html){:new_window}.
 
 ## Utilización de {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}
+{: #security-swift}
 
 {{site.data.keyword.hscrypto}} es un servicio experimental que ofrece criptografía en sus claves y datos con el nivel de seguridad más alto del sector. Lleva la seguridad y la integridad de IBM Z a la nube. La misma tecnología criptográfica de la que dependen los bancos y los servicios financieros ahora se ofrece a los usuarios de la nube a través de {{site.data.keyword.cloud_notm}}.
 
@@ -32,6 +34,7 @@ Como un enfoque sencillo, puede utilizar directamente los {{site.data.keyword.cl
 Para obtener más información sobre {{site.data.keyword.hscrypto}}, consulte [Iniciación a {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/services/hs-crypto/index.html){:new_window}.
 
 ## Utilización de {{site.data.keyword.cloud_notm}} {{site.data.keyword.keymanagementserviceshort}}
+{: #swift-key-management}
 
 {{site.data.keyword.keymanagementserviceshort}} le ayuda a crear claves cifradas para apps en servicios de {{site.data.keyword.cloud_notm}}. A medida que gestiona el ciclo de vida de las claves, podrá
 beneficiarse de saber que las claves están protegidas por módulos de seguridad de hardware basados en nube (HSM)
@@ -47,6 +50,7 @@ Para obtener más información sobre {{site.data.keyword.keymanagementservicesho
 Con este servicio, puede crear clústeres de base de datos en el {{site.data.keyword.cloud_notm}}. Cada clúster de base de datos que cree contiene una instancia de base de datos primaria y dos instancias de base de datos secundarias que sirven como réplicas en el primario. La lógica de {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS crea y accede a las bases de datos de MongoDB en los clústeres de base de datos.
 
 ### Protección de datos y privacidad
+{: #swift-securing-data}
 
 {{site.data.keyword.IBM_notm}} aloja las bases de datos en un entorno de alta disponibilidad y seguridad:
  * Los datos se cifran en reposo y en curso.
@@ -54,15 +58,18 @@ Con este servicio, puede crear clústeres de base de datos en el {{site.data.key
  * Las tecnologías subyacentes impiden a {{site.data.keyword.IBM_notm}} o a un tercero poder acceder a sus datos.
 
 ### Adición de la lógica de {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS a la aplicación
+{: #swift-hyperprotect}
 
 Para utilizar una base de datos MongoDB en la aplicación, consulte
-[Iniciación a la utilización de una base de datos](../hypersecure_dbaas/database-cluster.html).  
+[Iniciación a la utilización de una base de datos](/docs/hypersecure_dbaas/database-cluster.html).  
 
 ### Más información sobre {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS
+{: #swift-learnmore}
 
 Para obtener más información acerca de {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS, consulte [Iniciación a IBM Cloud Hyper Protect DBaaS](/docs/services/hyper-protect-dbaas/index.html).
 
 ## Utilización de {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscontainers}}
+{: #swift-hscontainers}
 
 {{site.data.keyword.hscontainers}} combina Docker y
 Kubernetes para ofrecer herramientas potentes, una interfaz intuitiva para el usuario y funciones integradas de seguridad e identificación para automatizar el despliegue, operación, escalado y supervisión de apps contenerizadas sobre un clúster de hosts de cálculo.
@@ -70,4 +77,4 @@ Kubernetes para ofrecer herramientas potentes, una interfaz intuitiva para el us
 {{site.data.keyword.hscontainers}} solo están disponibles para los usuarios patrocinados. Si espera un soporte de seguridad dedicado, regístrese como un usuario patrocinado con el [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml) para desplegar la aplicación en el clúster de {{site.data.keyword.hscontainers}}.
 {: tip}
 
-Antes de que se convierta en un usuario patrocinado, puede utilizar {{site.data.keyword.containershort_notm}} para proteger la aplicación. Para obtener más información, consulte [Iniciación a {{site.data.keyword.containershort_notm}}](/docs/containers/container_index.html#container_index).
+Antes de que se convierta en un usuario patrocinado, puede utilizar {{site.data.keyword.containershort_notm}} para proteger la aplicación. Para obtener más información, consulte [Iniciación a {{site.data.keyword.containershort_notm}}](/docs/containers/container_index.html).

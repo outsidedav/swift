@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-01"
 
 ---
 
@@ -24,27 +24,30 @@ O guia a seguir é destinado a ajudá-lo a construir, executar localmente e impl
 É possível usar o {{site.data.keyword.dev_cli_short}} para gerenciar os seus aplicativos do lado do servidor com mais de uma dúzia de comandos. Saiba mais sobre os comandos `ibmcloud dev` em [CLI do IBM Cloud Developer Tools](/docs/cli/idt/commands.html).
 
 ## Etapa 1. Requisitos para Desenvolvedores
+{: #prereqs-swift-cli}
 
 Para iniciar com o {{site.data.keyword.cloud_notm}}, certifique-se de atender aos requisitos a seguir.
 
 ### Sistema Operacional
+{: #swift-cli-os-reqs}
 
 Desenvolva apps Swift com a melhor prática usando o hardware suportado mais recente do MacOS e testando com as liberações mais recentes do iOS. Inscreva-se para uma conta do [Apple Developer](https://developer.apple.com/) para ativar o teste em um dispositivo físico.
 
 ### iOS e Xcode
-{: #ios_and_xcode}
+{: #swift-cli-ios_xcode}
 
 - [ Instalar o Xcode 8 + (ou superior) ](https://developer.apple.com/xcode/)
 - [Implementar em dispositivos iOS 8 (ou superior)](https://support.apple.com/downloads/ios)
 - Antes do envio do app para a Apple, revise as [Diretrizes de envio da App Store](https://developer.apple.com/app-store/guidelines/)
 
 ### SDKs e Gerenciamento de Dependência
+{: #swift-cli-sdk-dependency}
 
 As ferramentas a seguir asseguram que você possa instalar os SDKs nativos para trabalhar com os vários {{site.data.keyword.cloud_notm}} Services.
 
 - [ Instalar CocoaPods para IBM Cloud SDKs ](https://cocoapods.org/)
   ```
-  sudo jóias instalem cocoapods
+  sudo gem install cocoapods
   ```
   {: codeblock}
   
@@ -56,13 +59,14 @@ As ferramentas a seguir asseguram que você possa instalar os SDKs nativos para 
 
 - [ Instalar Cartago para o Watson SDKs ](https://github.com/Carthage/Carthage)
   ```
-  cartilagem de instalação em cerveja
+  brew install carthage
   ```
   {: codeblock}
 
 ## Etapa 2. Instalando ferramentas para desenvolvimento local
+{: #swift-cli-install-tools}
 
-O {{site.data.keyword.cloud}} fornece ferramentas locais da CLI que ajudam a trabalhar com vários aspectos do {{site.data.keyword.cloud_notm}}. Para obter mais informações, consulte  [ {{site.data.keyword.dev_cli_long}}  Informações ](../cli/index.html). É possível usar as ferramentas para testar um back-end Swift em uma imagem do Docker local antes da implementação de nuvem.
+O {{site.data.keyword.cloud}} fornece ferramentas locais da CLI que ajudam a trabalhar com vários aspectos do {{site.data.keyword.cloud_notm}}. Para obter mais informações, consulte  [ {{site.data.keyword.dev_cli_long}}  Informações ](/docs/cli/index.html). É possível usar as ferramentas para testar um back-end Swift em uma imagem do Docker local antes da implementação de nuvem.
 
 * Para MacOS e Linux, execute o comando a seguir:
   ```
@@ -81,6 +85,7 @@ administrador**.
   {: tip}
 
 ## Etapa 3. Criando um aplicativo Swift
+{: #create-swift-app-cli}
 
 1. Execute o comando `ibmcloud dev create` por meio da CLI do {{site.data.keyword.dev_cli_short}} para gerar um iniciador pré-configurado. 
   ```
@@ -88,7 +93,7 @@ administrador**.
   ```
   {: codeblock}
 
-  Certifique-se de efetuar login com uma conta do {{site.data.keyword.cloud_notm}} para criar um projeto. Os usuários iniciantes podem [registrar-se ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://console.bluemix.net/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) para uma conta gratuita. Use o comando `ibmcloud login` para efetuar login na linha de comandos.
+  Certifique-se de efetuar login com uma conta do {{site.data.keyword.cloud_notm}} para criar um projeto. Os usuários iniciantes podem [registrar-se ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) para uma conta gratuita. Use o comando `ibmcloud login` para efetuar login na linha de comandos.
   {: tip}
 
 2. Quando solicitado, selecione as opções 1, depois 6 e, por último, 2, conforme exibido no exemplo a seguir:
@@ -138,6 +143,7 @@ administrador**.
   {: screen}
 
 ## Etapa 4. Construindo, executando e implementando seu aplicativo
+{: #swift-cli-deploy}
 
 Agora é possível construir, executar e implementar seu aplicativo usando o {{site.data.keyword.dev_cli_short}}.
 
@@ -169,10 +175,11 @@ Agora é possível construir, executar e implementar seu aplicativo usando o {{s
   {: codeblock}
 
 ## Próximas etapas
+{: #swift-cli-next}
 
 Saiba como usar o {{site.data.keyword.cloud_notm}} Developer Console for Apple que permite que os desenvolvedores criem apps por meio de vários kits do iniciador, criem e conectem serviços chave otimizados do {{site.data.keyword.cloud_notm}} e, em seguida, façam rapidamente download do código de trabalho ou configurem para entrega contínua. Os usuários podem criar, visualizar, configurar e gerenciar seu app, bem como fazer download do código do seu aplicativo. Usando o Developer Console for Apple, é possível avaliar e testar rapidamente os serviços do {{site.data.keyword.cloud_notm}} com um app totalmente novo.
 
-Pronto para saltar? Visite o [{{site.data.keyword.cloud_notm}} Console do desenvolvedor para Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) agora, para iniciar.
+Pronto para saltar? Visite o [{{site.data.keyword.cloud_notm}} Console do desenvolvedor para Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) agora, para iniciar.
 {: tip}
 
 Para obter mais informações, consulte [Desenvolvendo apps Swift com Starter Kits](/docs/swift/starter_kit/starter_kits.html).

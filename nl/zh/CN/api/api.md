@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -19,8 +19,9 @@ lastupdated: "2018-11-12"
 您可以使用 API Connect 来管理 {{site.data.keyword.cloud}} 中的 API，不管这些 API 是在 {{site.data.keyword.cloud_notm}} 内部还是外部进行维护。了解如何管理 API，以便您可以控制使用情况，增加采用率和跟踪统计信息。
 
 ## 创建 API Connect 的实例
+{: #create-apiconnect}
 
-转至[目录](https://console.bluemix.net/catalog/)，然后创建 API Connect 的实例来管理 API。
+转至[目录](https://cloud.ibm.com/catalog/)，然后创建 API Connect 的实例来管理 API。
 
 使用`菜单 -> API` 来访问 API Connect 管理控制台。
 
@@ -35,6 +36,7 @@ lastupdated: "2018-11-12"
 - [Loopback](https://loopback.io/)
 
 ## 定义受管 API
+{: #define-apiconnect}
 
 您可以定义用于管理客户端应用程序与后端逻辑之间 API 网关的 API 代理。使用以下步骤可使用“Open API 规范”（Swagger 文档）YAML 或 JSON 来创建代理。 
 
@@ -46,6 +48,7 @@ lastupdated: "2018-11-12"
 您需要配置“外部端点”以指向链接到后端逻辑应用程序的 URL。 
 
 ## 创建 Swift 后端
+{: #create-backend-apiconnect}
 
 您可以基于此 API 创建后端 Swift 应用程序。 
 
@@ -113,6 +116,7 @@ func initializePet_Routes(app: App) {
 使用 {{site.data.keyword.openwhisk_short}} 或完整堆栈 Swift 运行时定义了 API，并创建了 API Connect 定义后，可以在 iOS 应用程序中使用该 API。
 
 ## 在 iOS 应用程序的移动应用程序中使用 API
+{: #consume-apiconnect}
 
 要在 iOS 应用程序中使用后端 API，请使用 Apple 控制台来创建移动入门模板工具包。使用“入门模板工具包”视图，创建任何类型的 iOS Swift 入门模板工具包。
 
@@ -135,10 +139,12 @@ iOS 应用程序包含一个文件夹，其中含有针对 API 生成的 SDK 绑
 打开 `PLIST` 文件，并将主机值替换为从 API 路径复制的值，该值使 SDK 能够将 API 调用到 {{site.data.keyword.cloud_notm}} 中。
 
 ## 文档
+{: #docs-apiconnect}
 
 如果您的 iOS 应用程序项目包含 SDK，那么可在 `Docs` 文件夹中找到 *README.html* 文件。在外部浏览器中打开 `Docs` 文件夹，然后阅读有关如何使用项目的指示信息。
 
 ## 在 API 更改后重新创建 SDK
+{: #change-apiconnect}
 
 如果有 API 更改或新的功能可用，并且新增了 {{site.data.keyword.openwhisk}}，那么可以使用 `ibmcloud sdk` 命令来重新创建客户端 SDK。有关更多信息、示例和语法帮助，请查看 [SDK Generator](/docs/cli/sdk/index.html) 文档。
 
@@ -161,10 +167,13 @@ iOS 应用程序包含一个文件夹，其中含有针对 API 生成的 SDK 绑
     SDK 已重新创建到 iOS 应用程序项目目录中，现在可以继续使用 API 了。
 
 ## 参考
+{: #reference-apiconnect}
 
 以下示例 SDK 是通过入门模板工具包针对 {{site.data.keyword.openwhisk_short}} 创建的。您可以查看可在 iOS 应用程序中包含的每个操作和 Swift 代码片段。
 
 ### 缺省 API 方法
+{: #default-methods-apiconnect}
+
  * [`getCreate`](#getCreate)
  * [`getDelete`](#getDelete)
  * [`getDeleteall`](#getDeleteall)
@@ -173,6 +182,8 @@ iOS 应用程序包含一个文件夹，其中含有针对 API 生成的 SDK 绑
  * [`getUpdate`](#getUpdate)
 
 ### 使用 `getCreate`
+{: #getcreate-apiconnect}
+
 {: #getCreate}
 
 ```swift
@@ -186,10 +197,13 @@ public static func getCreate(completionHandler: @escaping (_ response: Response?
     - 闭包采用自变量 `Response?` 和 `Error?`。
 
 ### 使用 `getCreate` 时进行认证
+{: #auth-getcreate}
 
 无需认证
 
 ### 使用 `getCreate` 的示例
+{: #example-getcreate}
+
 ```swift
 DefaultAPI.getCreate() { (response, error) in
     guard error == nil else {
@@ -209,7 +223,7 @@ DefaultAPI.getCreate() { (response, error) in
 {: codeblock}
 
 ### 使用 `getDelete`
-{: #getDelete}
+{: #getdelete}
 
 ```swift
 public static func getDelete(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -222,10 +236,13 @@ public static func getDelete(completionHandler: @escaping (_ response: Response?
     - 闭包采用自变量 `Response?` 和 `Error?`。
 
 ### 使用 `getDelete` 时进行认证
+{: #auth-getdelete}
 
 无需认证
 
 ### 使用 `getDelete` 的示例
+{: #example-getdelete}
+
 ```swift
 DefaultAPI.getDelete() { (response, error) in
     guard error == nil else {
@@ -245,7 +262,7 @@ DefaultAPI.getDelete() { (response, error) in
 {: codeblock}
 
 ### 使用 `getDeleteall`
-{: #getDeleteall}
+{: #getdeleteall}
 
 ```swift
 public static func getDeleteall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -258,10 +275,12 @@ public static func getDeleteall(completionHandler: @escaping (_ response: Respon
     - 闭包采用自变量 `Response?` 和 `Error?`。
 
 ### 使用 `getDeleteall` 时进行认证
+{: #auth-getdeleteall}
 
 无需认证
 
 ### 使用 `getDeleteall` 的示例
+{: #example-getdeleteall}
 
 ```swift
 DefaultAPI.getDeleteall() { (response, error) in
@@ -282,7 +301,7 @@ DefaultAPI.getDeleteall() { (response, error) in
 {: codeblock}
 
 ### 使用 `getRead`
-{: #getRead}
+{: #getread}
 
 ```swift
 public static func getRead(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -295,10 +314,13 @@ public static func getRead(completionHandler: @escaping (_ response: Response?, 
     - 闭包采用自变量 `Response?` 和 `Error?`。
 
 ### 使用 `getRead` 时进行认证
+{: #auth-getread}
 
 无需认证
 
 ### 使用 `getRead` 的示例
+{: #example-getread}
+
 ```swift
 DefaultAPI.getRead() { (response, error) in
     guard error == nil else {
@@ -318,7 +340,7 @@ DefaultAPI.getRead() { (response, error) in
 {: codeblock}
 
 ### 使用 `getReadall`
-{: #getReadall}
+{: #getreadall}
 
 ```swift
 public static func getReadall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -331,10 +353,13 @@ public static func getReadall(completionHandler: @escaping (_ response: Response
     - 闭包采用自变量 `Response?` 和 `Error?`。
 
 ### 使用 `getReadall` 时进行认证
+{: #auth-getreadall}
 
 无需认证
 
 ### 使用 `getReadall` 的示例
+{: #example-getreadall}
+
 ```swift
 DefaultAPI.getReadall() { (response, error) in
     guard error == nil else {
@@ -354,7 +379,7 @@ DefaultAPI.getReadall() { (response, error) in
 {: codeblock}
 
 ### 使用 `getUpdate`
-{: #getUpdate}
+{: #getupdate}
 
 ```swift
 public static func getUpdate(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -367,10 +392,13 @@ public static func getUpdate(completionHandler: @escaping (_ response: Response?
     - 闭包采用自变量 `Response?` 和 `Error?`。
 
 ### 使用 `getUpdate` 时进行认证
+{: #auth-getupdate}
 
 无需认证
 
 ### 使用 `getUpdate` 的示例
+{: #example-getupdate}
+
 ```swift
 DefaultAPI.getUpdate() { (response, error) in
     guard error == nil else {

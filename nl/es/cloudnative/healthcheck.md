@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -16,7 +16,8 @@ lastupdated: "2018-11-08"
 # Utilización de una comprobación de estado en la app Swift
 {: #healthcheck}
 
-Las comprobaciones de estado proporcionan un mecanismo simple para determinar si una aplicación del lado del servidor se está comportando correctamente. Los entornos de nube, como [Kubernetes](https://www.ibm.com/cloud/container-service) y [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry), se pueden configurar para sondear los puntos finales de estado de forma periódica para determinar si una instancia del servicio está lista para aceptar tráfico.{: shortdesc}
+Las comprobaciones de estado proporcionan un mecanismo simple para determinar si una aplicación del lado del servidor se está comportando correctamente. Los entornos de nube, como [Kubernetes](https://www.ibm.com/cloud/container-service) y [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry), se pueden configurar para sondear los puntos finales de estado de forma periódica para determinar si una instancia del servicio está lista para aceptar tráfico.
+{: shortdesc}
 
 ## Visión general de la comprobación de estado
 {: #overview}
@@ -47,11 +48,11 @@ La tabla siguiente proporciona una orientación sobre las respuestas que los pun
 | Con errores  | 500 - Error del servidor          | 500 - Error del servidor         | 500 - Error del servidor        |
 
 ## Adición de una comprobación de estado a una app de Swift existente
-{: #add-healthcheck-existing}
+{: #existing-app}
 
 La biblioteca [Health](https://github.com/IBM-Swift/Health) facilita la adición de una comprobación de estado a la aplicación Swift. Las comprobaciones de estado son ampliables. Para obtener más información sobre el [almacenamiento en memoria caché](https://github.com/IBM-Swift/Health#caching) para evitar ataques de DoS o añadir [comprobaciones personalizadas](https://github.com/IBM-Swift/Health#implementing-a-health-check), consulte la biblioteca [Health](https://github.com/IBM-Swift/Health).
 
-Para añadir la biblioteca de estado a una aplicación Swift existente, consulte los pasos siguientes:
+Para añadir la biblioteca de estado a una app Swift existente, consulte los pasos siguientes:
 
 1. Especifíquela en la sección *dependencies:* del archivo `Package.swift` y añádela a todos los destinos adecuados:
 
@@ -73,9 +74,9 @@ Para añadir la biblioteca de estado a una aplicación Swift existente, consulte
 
     ```swift
     router.get("/health") { request, response, next in
-  // let status = health.status.toDictionary()
-  let status = health.status.toSimpleDictionary()
-  if health.status.state == .UP {
+        /* let status = health.status.toDictionary() */
+        let status = health.status.toSimpleDictionary()
+        if health.status.state == .UP {
             try response.send(json: status).end()
   } else {
             try response.status(.serviceUnavailable).send(json: status).end()
@@ -89,7 +90,7 @@ Para añadir la biblioteca de estado a una aplicación Swift existente, consulte
 ## Comprobación del estado de una app de Swift Starter Kit del lado del servidor
 {: #healthcheck-starterkit}
 
-Al generar una app Swift basada en Kitura utilizando un kit de iniciación, se incluirá de forma predeterminada un punto final de comprobación de estado básico, `/health`. El punto final utiliza el protocolo Codable disponible en Swift 4, tal como se admite en la biblioteca [Health](https://github.com/IBM-Swift/Health).
+Al generar una app Swift basada en Kitura utilizando un kit de inicio, se incluirá de forma predeterminada un punto final de comprobación de estado básico, `/health`. El punto final utiliza el protocolo Codable disponible en Swift 4, tal como se admite en la biblioteca [Health](https://github.com/IBM-Swift/Health).
 
 El código de inicialización básico, como la inicialización del objeto Health, se produce en `Sources/Application.swift`. El propio punto final de comprobación de estado se proporciona mediante el archivo `/Sources/Application/Routes/HealthRoutes.swift`, que utiliza el código siguiente:
 
@@ -115,16 +116,19 @@ func initializeHealthRoutes(app: App) {
 El ejemplo utiliza el diccionario estándar, que genera una carga útil como por ejemplo `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}` al acceder al punto final `/health`.
 
 ## Recomendaciones para pruebas de actividad y preparación
+{: #recommend-probes}
 
 Las comprobaciones deben incluir la viabilidad de conexiones a servicios en sentido descendente en el resultado cuando no existe ninguna reserva aceptable cuando el servicio en sentido descendente no está disponible. Esto no implica llamar a la comprobación de estado que proporciona directamente el servicio en sentido descendente, puesto que la infraestructura realiza la comprobación. En su lugar, considere la posibilidad de verificar el estado de las referencias existentes que tiene la aplicación en los servicios en sentido descendente: puede ser una conexión JMS a WebSphere MQ o un consumidor o productor Kafka inicializado. Si comprueba la viabilidad de referencias internas en servicios en sentido descendente, almacene en memoria caché el resultado para minimizar el impacto que tiene la comprobación de estado en la aplicación.
 
 Una prueba de actividad, por el contrario, puede tener en cuenta lo que se comprueba, ya que un error puede provocar una terminación inmediata del proceso. Un punto final HTTP simple que siempre devuelva `{"status": "UP"}` con el código de estado `200` es una elección razonable.
 
 ### Adición de soporte de preparación y actividad de Kubernetes a una app Swift
+{: #kube-readiness-swift}
 
-Para implementaciones alternativas, como por ejemplo utilizar **Codable** o el diccionario estándar, consulte los [ejemplos de la biblioteca Health](https://github.com/IBM-Swift/Health#usage). Algunas de estas implementaciones simplifican la creación de comprobaciones de estado ampliables con soporte para la colocación en memoria caché de comprobaciones que se realizan en los servicios de reserva. En este caso, probablemente desee separar la prueba de actividad simple en el ejemplo de la comprobación de preparación, que es más detallada y potente. 
+Para implementaciones alternativas, como por ejemplo utilizar **Codable** o el diccionario estándar, consulte los [ejemplos de la biblioteca Health](https://github.com/IBM-Swift/Health#usage). Algunas de estas implementaciones simplifican la creación de comprobaciones de estado ampliables con soporte para la colocación en memoria caché de comprobaciones que se realizan en los servicios de reserva. En este caso, probablemente desee separar la prueba de actividad simple en el ejemplo de la comprobación de preparación, que es más detallada y potente.
 
 ## Configuración de pruebas de actividad y preparación en Kubernetes
+{: #config-kube-readiness}
 
 Declare las pruebas de actividad y preparación junto con el despliegue de Kubernetes. Ambas pruebas utilizan los mismos parámetros de configuración:
 
@@ -142,7 +146,7 @@ Declare las pruebas de actividad y preparación junto con el despliegue de Kuber
 
 Para evitar los ciclos de reinicio, establezca `livenessProbe.initialDelaySeconds` para que sea seguro más tiempo del que necesita el servicio para inicializarse. Puede utilizar un valor más corto para `readinessProbe.initialDelaySeconds`, para direccionar solicitudes al servicio en cuanto esté listo.
 
-Consulte el siguiente ejemplo de archivo `yaml`: 
+Consulte el siguiente ejemplo de archivo `yaml`:
 ```yaml
 spec:
   containers:

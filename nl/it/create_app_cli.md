@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-01"
 
 ---
 
@@ -24,21 +24,24 @@ La seguente guida è concepita per aiutarti a creare, eseguire in locale e distr
 Puoi utilizzare {{site.data.keyword.dev_cli_short}} per gestire le tue applicazioni lato server con più di una dozzina di comandi. Trova ulteriori informazioni sui comandi `ibmcloud dev` nel documento relativo alla [CLI IBM Cloud Developer Tools](/docs/cli/idt/commands.html).
 
 ## Passo 1. Requisiti per gli sviluppatori
+{: #prereqs-swift-cli}
 
 Per iniziare a utilizzare {{site.data.keyword.cloud_notm}}, assicurati di soddisfare i seguenti requisiti.
 
 ### Sistema operativo
+{: #swift-cli-os-reqs}
 
 Sviluppa le applicazioni Swift con le migliori prassi utilizzando l'hardware supportato MacOS più recente ed eseguendo le attività di test con le release iOS più recenti. Registrati per un account [Apple Developer](https://developer.apple.com/) per abilitare l'esecuzione di test su un dispositivo fisico.
 
 ### iOS e Xcode
-{: #ios_and_xcode}
+{: #swift-cli-ios_xcode}
 
 - [Installa Xcode 8+ (o superiore)](https://developer.apple.com/xcode/)
 - [Esegui la distribuzione a dispositivi iOS 8 (o superiore)](https://support.apple.com/downloads/ios)
 - Prima dell'inoltro dell'applicazione ad Apple, leggi attentamente le [linee guida sugli inoltri all'App Store](https://developer.apple.com/app-store/guidelines/)
 
 ### Gestione di dipendenze ed SDK
+{: #swift-cli-sdk-dependency}
 
 I seguenti strumenti assicurano che tu possa installare gli SDK nativi per lavorare con i vari servizi {{site.data.keyword.cloud_notm}}.
 
@@ -61,8 +64,9 @@ I seguenti strumenti assicurano che tu possa installare gli SDK nativi per lavor
   {: codeblock}
 
 ## Passo 2. Installazione di strumenti per lo sviluppo locale
+{: #swift-cli-install-tools}
 
-{{site.data.keyword.cloud}} fornisce strumenti CLI locali che ti aiutano a lavorare con diversi aspetti di {{site.data.keyword.cloud_notm}}. Per ulteriori informazioni, vedi [Informazioni sulla {{site.data.keyword.dev_cli_long}}](../cli/index.html). Puoi utilizzare gli strumenti per testare un backend Swift in un'immagine Docker locale prima della distribuzione cloud. 
+{{site.data.keyword.cloud}} fornisce strumenti CLI locali che ti aiutano a lavorare con diversi aspetti di {{site.data.keyword.cloud_notm}}. Per ulteriori informazioni, vedi [Informazioni sulla {{site.data.keyword.dev_cli_long}}](/docs/cli/index.html). Puoi utilizzare gli strumenti per testare un backend Swift in un'immagine Docker locale prima della distribuzione cloud.
 
 * Per MacOS e Linux, esegui questo comando:
   ```
@@ -80,6 +84,7 @@ I seguenti strumenti assicurano che tu possa installare gli SDK nativi per lavor
   {: tip}
 
 ## Passo 3. Creazione di un'applicazione Swift
+{: #create-swift-app-cli}
 
 1. Esegui il comando `ibmcloud dev create` dalla CLI {{site.data.keyword.dev_cli_short}} per generare uno starter preconfigurato. 
   ```
@@ -87,7 +92,7 @@ I seguenti strumenti assicurano che tu possa installare gli SDK nativi per lavor
   ```
   {: codeblock}
 
-  Assicurati di eseguire l'accesso con un account {{site.data.keyword.cloud_notm}} per creare un progetto. I nuovi utenti possono eseguire la [registrazione ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")](https://console.bluemix.net/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) per un account gratuito. Utilizza il comando `ibmcloud login` per eseguire l'accesso sulla riga di comando.
+  Assicurati di eseguire l'accesso con un account {{site.data.keyword.cloud_notm}} per creare un progetto. I nuovi utenti possono eseguire la [registrazione ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) per un account gratuito. Utilizza il comando `ibmcloud login` per eseguire l'accesso sulla riga di comando.
   {: tip}
 
 2. Quando richiesto, seleziona le opzioni 1, quindi 6 e infine, 2, come visualizzato nel seguente esempio:
@@ -137,6 +142,7 @@ I seguenti strumenti assicurano che tu possa installare gli SDK nativi per lavor
   {: screen}
 
 ## Passo 4. Creazione, esecuzione e distribuzione della tua applicazione
+{: #swift-cli-deploy}
 
 Puoi ora creare, eseguire e distribuire la tua applicazione utilizzando {{site.data.keyword.dev_cli_short}}.
 
@@ -167,10 +173,11 @@ Puoi ora creare, eseguire e distribuire la tua applicazione utilizzando {{site.d
   {: codeblock}
 
 ## Passi successivi
+{: #swift-cli-next}
 
 Impara a utilizzare la {{site.data.keyword.cloud_notm}} Developer Console for Apple, che consente agli sviluppatori di creare applicazioni da diversi kit starter, creare e collegare i servizi ottimizzati {{site.data.keyword.cloud_notm}} chiave e di scaricare quindi rapidamente il codice funzionante o di eseguire la configurazione per una fornitura continua. Gli utenti possono creare, visualizzare, configurare e gestire la tua applicazione, nonché scaricare il codice della tua applicazione. Utilizzando la Developer Console for Apple, puoi valutare rapidamente e testare i servizi {{site.data.keyword.cloud_notm}} con un'applicazione nuova.
 
-Pronto a cominciare? Per un'introduzione, visita [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits).
+Pronto a cominciare? Per un'introduzione, visita [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits).
 {: tip}
 
 Per ulteriori informazioni, vedi il documento relativo allo [sviluppo di applicazioni Swift con i kit starter](/docs/swift/starter_kit/starter_kits.html).

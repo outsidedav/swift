@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -24,13 +25,15 @@ lastupdated: "2018-11-08"
 ## 既存の Swift アプリケーションへの {{site.data.keyword.cloud_notm}} の追加
 {: #addcloud-env}
 
-クラウド環境が異なると、環境値を抽象化するためのパスも異なる可能性があります。[CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) ライブラリーは各種クラウド・プロバイダーからの環境構成や資格情報を抽象化するので、Swift アプリをローカルで実行しても、Cloud Foundry、Kubernetes、または {{site.data.keyword.openwhisk}} 内で実行しても、情報へのアクセスに一貫性があります。 資格情報を抽象化するには `CloudEnvironment` ライブラリーを使用します。このライブラリーは、Cloud Foundry 構成には [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) を内部使用し、構成マネージャーとしては [Configuration](https://github.com/IBM-Swift/Configuration) を内部使用します。
+クラウド環境が異なると、環境値を抽象化するためのパスも異なる可能性があります。 [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) ライブラリーは各種クラウド・プロバイダーからの環境構成や資格情報を抽象化するので、Swift アプリをローカルで実行しても、Cloud Foundry、Cloud Foundry エンタープライズ環境、Kubernetes、{{site.data.keyword.openwhisk}}、または仮想環境で実行しても、アプリから情報に一貫してアクセスできます。資格情報を抽象化するには `CloudEnvironment` ライブラリーを使用します。このライブラリーは、Cloud Foundry 構成には [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) を内部使用し、構成マネージャーとしては [Configuration](https://github.com/IBM-Swift/Configuration) を内部使用します。
 
 `CloudEnvironment` を使用すると、Swift アプリケーションが対応する値の検索に使用できるルックアップ・キーを定義して、アプリケーションのソース・コードから低水準の詳細情報を抽象化できます。
 
 `CloudEnvironment` ライブラリーは、ソース・コード内で使用できる、一貫性のあるルックアップ・キーを提供します。 さらにこのライブラリーは、検索パターンの配列全体を検索して、構成属性やサービス資格情報を含む JSON オブジェクトを検出します。 
 
 ### Swift アプリケーションへの CloudEnvironment パッケージの追加
+{: #add-cloudenv}
+
 Swift アプリケーション内で `CloudEnvironment` パッケージを使用するには、`Package.swift` ファイルの **dependencies:** セクション内で以下のように指定します。
 ```swift
 .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", from: "8.0.0"),
@@ -46,6 +49,8 @@ let cloudEnv = CloudEnv()
 {: codeblock}
 
 ### 資格情報へのアクセス
+{: #access-credentials}
+
 この時点で、`CloudEnvironment` ライブラリーが初期化されているので、以下の例のように資格情報にアクセスできます。
 ```swift
 let cloudantCredentials = cloudEnv.getCloudantCredentials(name: "cloudant-credentials")
@@ -68,7 +73,7 @@ let url = cloudEnv.url
 {: #service_creds}
 
 `CloudEnvironment` ライブラリーは、`config` ディレクトリー内にある `mappings.json` という名前のファイルを使用して、各サービスの資格情報が保管される場所を伝えます。 `mappings.json` ファイルは、以下の 3 つの検索パターン・タイプを使用する、値の検索をサポートしています。
-- **`cloudfoundry`** - Cloud Foundry のサービス環境変数 (`VCAP_SERVICES`) 内での値の検索に使用されるパターン・タイプ。
+- **`cloudfoundry`** - Cloud Foundry のサービス環境変数 (`VCAP_SERVICES`) 内での値の検索に使用されるパターン・タイプ。Cloud Foundry Enrprise Edition の場合、詳細については、[入門チュートリアル](docs/cloud-foundry/getting-started.html#getting-started)を参照してください。
 - **`env`** - Kubernetes や Functions のように、環境変数にマップされている値の検索に使用されるパターン・タイプ。
 - **`file`** - JSON ファイル内の値の検索に使用されるパターン・タイプ。 パスは、Swift アプリケーションのルート・フォルダーに対する相対パスでなければなりません。
 
@@ -99,20 +104,21 @@ let url = cloudEnv.url
 ```
 {: codeblock}
 
-この例で、`cloudant-credentials` と `object-storage-credentials`  は、Swift アプリケーションが対応する資格情報の検索に使用するルックアップ・キーです。 検索パターンの配列に従って、構成マネージャーは最初に `VCAP_SERVICES` 内で `my-awesome-cloudant-db` を検索し、次に環境変数として `my_awesome_cloudant_db_credentials` を検索します。それが定義されていない場合、`localdev` フォルダー内で `my-awesome-object-storage-credentials.json` の内容を検索します。 
+この例で、`cloudant-credentials` と `object-storage-credentials`  は、Swift アプリケーションが対応する資格情報の検索に使用するルックアップ・キーです。 検索パターンの配列に従って、構成マネージャーは最初に `VCAP_SERVICES` 内で `my-awesome-cloudant-db` を検索し、次に環境変数として `my_awesome_cloudant_db_credentials` を検索します。 それが定義されていない場合、`localdev` フォルダー内で `my-awesome-object-storage-credentials.json` の内容を検索します。 
 
 アプリケーションをローカルで実行する場合は、前の例の `localdev/my-awesome-object-storage-credentials.json` のようなファイル内に保管された資格情報を使用できます。 ユーザー名、パスワード、ホスト名などの、ローカルにアクセスしようとしているサービスに関する接続情報は、すべてこのファイル内に保管されます。 
 
-セキュリティー上の理由により、資格情報ファイルをリポジトリーに配置するのは適切ではありません。前の例では、`localdev` フォルダーを使用してローカルの資格情報が保管されるので、誤ってコミットされないようにするには、このフォルダーを `.gitignore` ファイルに追加しなければなりません。 スターター・キット・アプリを使用している場合は、このフォルダーは自動的に作成され、`.gitignore` ファイルに追加されます。
+セキュリティー上の理由により、資格情報ファイルをリポジトリーに配置するのは適切ではありません。 前の例では、`localdev` フォルダーを使用してローカルの資格情報が保管されるので、誤ってコミットされないようにするには、このフォルダーを `.gitignore` ファイルに追加しなければなりません。 スターター・キット・アプリを使用している場合は、このフォルダーは自動的に作成され、`.gitignore` ファイルに追加されます。
 
 `mappings.json` ファイルの詳細については、[サービス資格情報の概要](configuration.html#service_creds)のセクションを確認してください。
 
 ## スターター・キット・アプリからの Swift 構成マネージャーの使用
+{: #configmanager-swift}
 
-[スターター・キット](https://console.bluemix.net/developer/appledevelopment/starter-kits/)で作成された Swift アプリケーションには、資格情報と構成が自動的に付属していますが、この構成は、ローカルに実行するか、多くの Cloud デプロイメント環境 (CF、K8s、VSI、Functions) 内で実行する必要があります。 構成マネージャーの基本的な作成内容は、`Sources/Application/Application.swift` にあります。 サービスを使用して Swift ベースのスターター・キット・アプリを作成すると、`config` フォルダーと `mappings.json` ファイルが作成されます。アプリをダウンロードすると、サービスに関するすべての資格情報がある `localdev-config.json` ファイルが `config` フォルダーに含まれ、このフォルダーは `.gitignore` ファイル内に存在します。
+[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits/)で作成された Swift アプリケーションには、資格情報と構成が自動的に付属していますが、この構成は、ローカルに実行するか、多くの Cloud デプロイメント環境 (CF、K8s、VSI、Functions) 内で実行する必要があります。 構成マネージャーの基本的な作成内容は、`Sources/Application/Application.swift` にあります。 サービスを使用して Swift ベースのスターター・キット・アプリを作成すると、`config` フォルダーと `mappings.json` ファイルが作成されます。 アプリをダウンロードすると、サービスに関するすべての資格情報がある `localdev-config.json` ファイルが `config` フォルダーに含まれ、このフォルダーは `.gitignore` ファイル内に存在します。
 
 ## 次のステップ
-{: #next notoc}
+{: #next-configß notoc}
 
 アプリケーションがそれぞれの環境から自己抽象化するのに役立つ以下の 3 つのライブラリーを確認します。
 

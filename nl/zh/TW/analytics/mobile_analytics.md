@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -32,6 +33,7 @@ lastupdated: "2018-11-12"
  - **疑難排解主要原因** - 在應用程式中使用自訂記載，並自動上傳日誌，然後從主控台搜尋這些日誌。往下探查到損毀事件，以查看堆疊追蹤。
 
 ## 開始之前
+{: #prereqs-analytics}
 
 首先，請確定您具備下列必要條件：
 
@@ -41,7 +43,7 @@ lastupdated: "2018-11-12"
  - CocoaPods 或 Carthage
 
 ## 步驟 1. 建立 {{site.data.keyword.mobileanalytics_short}} 實例
-{: #mobile_analytics_create}
+{: #create-analytics}
 
 1. 在 {{site.data.keyword.cloud_notm}} 型錄中，按一下**行動** > **{{site.data.keyword.mobileanalytics_short}}**。即會開啟服務配置畫面。
 2. 提供服務實例的名稱，或使用預設名稱。
@@ -49,6 +51,7 @@ lastupdated: "2018-11-12"
 4. 在導覽窗格中，按一下**連線**，選取應用程式，並將其連結至您的服務。如果建立期間未連結服務實例與應用程式，您可以稍後再進行此操作。
 
 ## 步驟 2. 安裝 iOS Swift SDK
+{: #install-analytics-swift}
 
 此服務提供平台專用的 SDK，用來簡化應用程式開發作業。{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK 可與 CocoaPods 或 Carthage 一同安裝。如需相關資訊，請參閱 [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)。
 
@@ -61,14 +64,14 @@ lastupdated: "2018-11-12"
 {{site.data.keyword.mobileanalytics_short}} SDK 隨 [CocoaPods ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cocoapods.org/){: new_window} 及 [Carthage ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/Carthage/Carthage#getting-started){: new_window}（Cocoa 專案的相依關係管理程式）一起配送。CocoaPods 及 Carthage 會自動從儲存庫中下載構件，並讓它們可供應用程式使用。選取 CocoaPods 或 Carthage：
 
 ### CocoaPods
-{: #cocoapods}
+{: #cocoapods-analytics}
 
 1. 遵循 GitHub 上的 [{{site.data.keyword.Bluemix_notm}} Mobile Services Swift SDK 指示 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window}，使用 CocoaPods 來安裝 `BMSAnalytics`，並將其新增至您的 Podfile。
 
 2. 在安裝 iOS Client SDK 之後，請[匯入並起始設定](sdk.html#initalize-ma-sdk) Analytics Client SDK。   
 
 ### Carthage
-{: #carthage}
+{: #carthage-analytics}
 
 如果您不是使用 CocoaPods，則可以使用 [Carthage ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos){: new_window}，將架構新增至專案中。
 
@@ -77,6 +80,7 @@ lastupdated: "2018-11-12"
 2. 在安裝 iOS Client SDK 之後，請匯入然後起始設定 Analytics Client SDK。
 
 ## 步驟 3. 起始設定 SDK
+{: #initialize-analytics}
 
 使用 {{site.data.keyword.mobileanalytics_short}}，您可以收集下列種類的資料，每一種都需要不同程度的檢測：
 
@@ -105,7 +109,7 @@ lastupdated: "2018-11-12"
 1. 匯入 Client SDK。
 
     Swift SDK 適用於 iOS 及 watchOS。將下列 `import` 陳述式新增至 `AppDelegate.swift` 專案檔開頭處，以匯入 `BMSCore` 和 `BMSAnalytics` 架構：
-	```
+	```swift
 	import BMSCore
 	import BMSAnalytics
 	```
@@ -114,7 +118,7 @@ lastupdated: "2018-11-12"
 2. 在應用程式中起始設定 {{site.data.keyword.mobileanalytics_short}} Client SDK。
 
 	首先，起始設定 `BMSClient` 類別，方法為將起始設定碼放在應用程式委派的 `application(_:didFinishLaunchingWithOptions:)` 方法中或最適合您專案的位置中。
-	```
+	```swift
 	BMSClient.sharedInstance.initialize(bluemixRegion: BMSClient.Region.usSouth) // Make sure that you point to your region
 	```
 	{: codeblock}
@@ -126,7 +130,7 @@ lastupdated: "2018-11-12"
 	您為應用程式所選取的名稱 (`your_app_name_here`) 會在 {{site.data.keyword.mobileanalytics_short}} 主控台中顯示為應用程式名稱。應用程式名稱是用來作為過濾器，以在儀表板中搜尋應用程式日誌。當您跨平台（例如，iOS）使用相同的應用程式名稱時，不論是從哪個平台傳送日誌，您都可以看到來自該同名應用程式的所有日誌。
 
 	您還需要 [API 金鑰](#analytics-clientkey)值。
-	```
+	```swift
 	Analytics.initialize(appName: "your_app_name_here", apiKey: "your_api_key_here", hasUserContext: false, collectLocation: true, deviceEvents: .lifecycle, .network)
 	```
     {: codeblock}
@@ -134,12 +138,12 @@ lastupdated: "2018-11-12"
 4. 現在，應用程式已起始設定，且已備妥可收集分析。接下來，您可以將分析資料傳送至 {{site.data.keyword.mobileanalytics_short}} 服務。		
 
 ## 步驟 6. 收集用量分析
-{: #app-monitoring-gathering-analytics}
+{: #usage-analytics}
 
 您可以配置 {{site.data.keyword.mobileanalytics_short}} Client SDK 來記錄用量分析，並且將記錄的資料傳送至 {{site.data.keyword.mobileanalytics_short}} 服務。
 
 使用下列 API 開始記錄及傳送用量分析：
-```
+```swift
 // Disable recording of usage analytics (eg: to save disk space)
 // Recording is enabled by default
 
@@ -164,7 +168,7 @@ Analytics.send(completionHandler: { (response: Response?, error: Error?) in
 {: codeblock}
 
 用於記載事件的用法分析範例：
-```
+```swift
 // Log a custom analytics event
 let eventObject = ["customProperty": "propertyValue"]
 Analytics.log(metadata: eventObject)
@@ -172,6 +176,7 @@ Analytics.log(metadata: eventObject)
 {: codeblock}
 
 ## 步驟 7. 使用日誌程式
+{: #analytics-logger}
 
 {{site.data.keyword.mobileanalytics_full}} Client SDK 提供的記載架構類似於您可能熟悉的其他記載架構，例如 `java.util.logging` 或 `log4j`。記載架構支援多個每一套件日誌程式實例、不同的記載層次、應用程式損毀的堆疊追蹤擷取等。
 
@@ -198,7 +203,7 @@ Analytics.log(metadata: eventObject)
 **附註：**請先確定您的應用程式已配置成使用 {{site.data.keyword.mobileanalytics_short}} Client SDK，然後使用記載架構。
 
 下列程式碼 Snippet 顯示「日誌程式」用法範例：
-```
+```swift
 // Configure Logger. Disabled by default;
 
 Logger.isLogStorageEnabled = true
@@ -241,14 +246,14 @@ Logger.send(completionHandler: { (response: Response?, error: Error?) in
 {: #location-logging}
 
 可能會透過這個提供的 API 從應用程式記載行動裝置的位置：
-```
+```swift
 Analytics.logLocation();
 ```
 
 此 API 可讓應用程式將其位置（以緯度、經度形式表示）傳送至應用程式階段作業之間的伺服器。除了明確的 `location-logging` API 呼叫之外，SDK 會傳送每個應用程式階段作業的裝置位置。位置會針對起始應用程式階段作業環境定義，以及使用者交換器應用程式階段作業（亦即，應用程式階段作業之間的使用者交換器）環境定義來傳送。起始設定 SDK 時，必須啟用位置 API。
 
 若要呼叫 `location-logging` API，請在 SDK 起始設定中，將 `collectLocation` 參數設為 `true`：
-```
+```swift
 Analytics.initialize(appName, apiKey,  hasUserContext, collectLocation, [BMSAnalytics.ALL])
 ```
 
@@ -265,7 +270,7 @@ Analytics.initialize(appName, apiKey,  hasUserContext, collectLocation, [BMSAnal
 `Analytics.send()` 方法會在**損毀**頁面上移入**損毀概觀**及**損毀**表格。您可以使用起始設定及傳送處理程序進行分析的方式來啟用圖表。
 
 `Logger.send()` 方法會在**疑難排解**頁面上移入**損毀摘要**及**損毀詳細資料**表格。您必須藉由在應用程式碼中新增陳述式，讓您的應用程式儲存及傳送日誌，以移入圖表：
-```
+```swift
 Logger.isLogStorageEnabled = true
 Logger.logLevelFilter = LogLevel.Fatal // or greater
 ```
@@ -281,7 +286,7 @@ Logger.logLevelFilter = LogLevel.Fatal // or greater
 使用 `hasUserContext=true` 來起始設定 {{site.data.keyword.mobileanalytics_short}}，以啟用使用者追蹤。否則，{{site.data.keyword.mobileanalytics_short}} 對於每個裝置只會擷取一位使用者。
 
 請新增下列程式碼，以在使用者登入時進行追蹤：
-```
+```swift
 Analytics.userIdentity = "username"
 ```
 {: codeblock}
@@ -297,12 +302,12 @@ Analytics.userIdentity = "username"
 4. 移至 {{site.data.keyword.mobileanalytics_short}} 主控台，以查看應用程式的用量分析。您也可以藉由[設定警示](/docs/services/mobileanalytics/app-monitoring.html#alerts)及[監視應用程式損毀](/docs/services/mobileanalytics/app-monitoring.html#monitor-app-crash)來監視應用程式。
 
 ## 下一步
-{: #what-to-do-next notoc}
+{: #next-analytics notoc}
 
  - 若要進一步瞭解服務，請閱讀[文件](/docs/services/mobileanalytics/index.html#getting-started-tutorial)。
 
  - 如需使用行動服務及 {{site.data.keyword.Bluemix_notm}} 的簡介，請參閱[開始使用 IBM Cloud 上的行動應用程式](/docs/services/mobile/index.html)。
 
- - 「入門範本套件」是運用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的所有可用入門範本套件。下載程式碼。執行應用程式！
+ - 「入門範本套件」是運用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://cloud.ibm.com/developer/mobile/dashboard)中的所有可用入門範本套件。下載程式碼。執行應用程式！
 
  - 您可以使用 [Swagger 使用者介面](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)，來快速檢閱 REST API 文件。

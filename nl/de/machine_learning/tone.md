@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-07"
+  years: 2018, 2019
+lastupdated: "2019-01-31"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -21,7 +22,7 @@ Benutzer in die Lage, die Wahrnehmung ihrer schriftlichen Kommunikation durch
 den Kommunikationspartner besser einzuschätzen.
 
 ## Funktionsweise
-{: ##how-it-works}
+{: #how-it-works-tone}
 
 1. Ihre App wählt einen zu analysierenden Text aus (z. B. eine
 Textnachricht oder einen Twitter-Feed).
@@ -29,43 +30,34 @@ Textnachricht oder einen Twitter-Feed).
 {{site.data.keyword.toneanalyzershort}}-Service.
 3. Der Service analysiert den Text mithilfe der linguistischen Analyse,
 um Emotionen und Tonfälle zu erkennen.
-4. Die Analyse des Service wird durch das Swift-SDK für Watson an Ihre App zurückgegeben.
+4. Die Analyse des Service wird durch das [Swift-SDK für Watson](https://github.com/watson-developer-cloud/swift-sdk) an Ihre App zurückgegeben.
 
 ## Vorbereitende Schritte
-{: ###before-you-begin}
+{: #prereqs-tone}
 
-Stellen Sie zunächst sicher, dass die folgenden Voraussetzungen gegeben
-sind:
-<ul>
-  <li>iOS 8.0+</li>
-  <li>Xcode 9.0+</li>
-  <li>Swift 3.2+ bzw. Swift 4.0+</li>
-  <li>Carthage</li>
-</ul>
+Stellen Sie sicher, dass die folgenden Voraussetzungen verfügbar sind:
 
-Es empfiehlt sich,
-[Carthage](https://github.com/Carthage/Carthage) zur
-Verwaltung von Abhängigkeiten und zum Build des Swift-SDK für Watson für Ihre
-Anwendung zu verwenden. Wenn Sie noch nicht mit Carthage gearbeitet haben,
-können Sie es mit [Homebrew](http://brew.sh/) installieren:
+* OS 10.0+
+* Xcode 9.3+
+* Swift 4.1+
+* CocoaPods, Carthage oder Swift Package Manager
+
+Sie können das [Swift-SDK für Watson](https://github.com/watson-developer-cloud/swift-sdk) mithilfe von [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods), [Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage) oder [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager) installieren. Bei Verwendung von CocoaPods (https://cocoapods.org/) zur Verwaltung von Abhängigkeiten erhalten Sie nur die von Ihnen benötigten Frameworks und nicht das gesamte Swift-SDK für Watson. Wenn Sie noch nicht mit CocoaPods gearbeitet haben, können Sie es problemlos installieren:
 
 ```bash
-$ brew update
-$ brew install carthage
+$ sudo gem install cocoapods
 ```
 {: codeblock}
 
 ## Schritt 1. Tone Analyzer-Instanz erstellen
-{: #create-and-configure-an-instance-of-tone-analyzer}
+{: #create-instance-tone}
 
 Stellen Sie eine Instanz des
 {{site.data.keyword.toneanalyzershort}}-Service bereit:
 
 1. Wählen Sie im {{site.data.keyword.cloud_notm}}-Katalog den
-Eintrag für {{site.data.keyword.toneanalyzershort}} aus. Die Anzeige
-für die Servicekonfiguration wird geöffnet.
-2. Vergeben Sie für die Serviceinstanz einen Namen oder verwenden Sie
-den voreingestellten Namen.
+Eintrag für {{site.data.keyword.toneanalyzershort}} aus. Die Anzeige für die Servicekonfiguration wird geöffnet.
+2. Vergeben Sie für die Serviceinstanz einen Namen oder verwenden Sie den voreingestellten Namen.
 3. Wählen Sie im Menü "Verbinden" eine
 App aus,
 falls Sie Ihre Instanz an eine App binden möchten.
@@ -77,152 +69,101 @@ Serviceberechtigungsnachweise anzuzeigen. Diese Werte werden verwendet, um von
 der App eine Verbindung zum Service herzustellen.
 
 ## Schritt 2. Abhängigkeiten herunterladen und erstellen
-{: ###download-and-build-dependencies}
+{: #download-depend-tone}
 
-Erstellen Sie mit einem Texteditor Ihrer Wahl eine neue Datei namens
-`Cartfile` im Stammverzeichnis Ihres Projekts (in dem sich die
-Datei `.xcodeproj` befindet). Fügen Sie anschließend eine
-Zeile hinzu, um das Swift-SDK für Watson als Abhängigkeit anzugeben:
+Erstellen Sie mit einem Texteditor Ihrer Wahl eine neue `Podfile` im Stammverzeichnis Ihres Projekts (in dem sich die Datei `.xcodeproj` befindet), indem Sie `pod init` ausführen. Fügen Sie anschließend eine Zeile hinzu, um das {{site.data.keyword.conversationshort}}-Framework des Swift-SDK für Watson als Abhängigkeit anzugeben:
 
-  ```
-  github "watson-developer-cloud/swift-sdk"
-  ```
-  {: codeblock}
+```pod
+use_frameworks!
+
+target 'MyApp' do
+    pod 'IBMWatsonToneAnalyzerV3'
+```
+{: codeblock}
 
 Für eine Produktions-App können Sie eine spezielle
-[Versionsvoraussetzung](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement)
+[Versionsvoraussetzung](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions)
 angeben, um unerwartete Änderungen aus neuen Releases des Swift-SDK für Watson
 zu verhindern.
 
-Da die Datei `Cartfile` jetzt vorhanden ist, können Sie
-die Abhängigkeiten herunterladen und erstellen. Navigieren Sie mithilfe eines
-Terminals zum Stammverzeichnis Ihres Projekts und führen Sie dann Carthage aus:
-  
-  ```bash
-  $ carthage update --platform iOS
+Da die Datei `Podfile` jetzt vorhanden ist, können Sie die Abhängigkeiten herunterladen. Navigieren Sie mithilfe eines Terminals zum Stammverzeichnis Ihres Projekts und führen Sie dann CocoaPods aus:
+
+```console
+pod install
+```
+{: codeblock}
+
+Mit Cocoapods wird das {{site.data.keyword.toneanalyzershort}}-Framework heruntergeladen und im Ordner `Pods/` Ihres Projekts erstellt.
+
+Zur Vermeidung von Pod-Erstellungsfehlern müssen Sie die Datei mit der Endung `.xcworkspace` und nicht mit der Endung `.xcodeproj` öffnen, wenn Sie das Projekt in Xcode öffnen.
+{: tip}
+
+## Schritt 3. Text in Ihrer App analysieren
+{: #analyze-text-tone}
+
+Die folgenden Beispiele unterstützen Sie beim Hinzufügen von {{site.data.keyword.toneanalyzershort}}-Funktionen zu Ihrer Anwendung, in der Regel in der Schnittstelle `ViewController.swift`. Mithilfe der folgenden Beispiele können Sie die Tone Analyzer-Aufrufe für Ihren Anwendungsfall erweitern.
+
+1. Fügen Sie eine Importanweisung für Tone Analyzer hinzu:
+  ```swift
+  import ToneAnalyzer
   ```
   {: codeblock}
 
-Carthage lädt das Swift-SDK für Watson herunter und erstellt dessen
-Frameworks im Ordner `Carthage/Build/iOS` Ihres Projekts.
-
-## Schritt 3. Frameworks zu einer App hinzufügen
-{: ###add-frameworks-to-your-app}
-
-### Schritte zum Verknüpfen von Tone Analyzer
-
-Nachdem die Frameworks des Swift-SDK für Watson durch Carthage erstellt
-worden sind, müssen Sie jetzt das Tone Analyzer-Framework mit Ihrer App
-verknüpfen.
-
-1. Öffnen Sie Ihre App in Xcode und wählen Sie Ihr Projekt aus, um die
-Projekteinstellungen zu öffnen.
-2. Wählen Sie Ihr App-Ziel aus und öffnen Sie dann die Registerkarte
-**General**.
-3. Blättern Sie zum Abschnitt "Linked Frameworks and Libraries" vor und
-klicken Sie auf das Symbol `+`.
-4. Wählen Sie in dem aufgerufenen Fenster **Add
-Other** aus und navigieren Sie zum Verzeichnis
-`Carthage/Build/iOS`. Wählen Sie
-**ToneAnalyzerV3.framework** aus, um das Framework mit Ihrer
-App zu verknüpfen.
-
-### Schritte zum Kopieren von Tone Analyzer
-
-Zusätzliche zum _Verknüpfen_ des Tone Analyzer-Frameworks
-müssen Sie das Framework auch in die App _kopieren_, damit es zur
-Laufzeit zugänglich ist. In Xcode gibt es mehrere unterschiedliche
-Möglichkeiten, ein Framework zu kopieren oder zu integrieren. Sie können jedoch
-ein Carthage-Script verwenden, um einen speziellen
-[Fehler bei der
-Übergabe im App Store](http://www.openradar.me/radar?id=6409498411401216) zu vermeiden.
-
-1. Navigieren Sie, während die Einstellungen Ihres App-Ziels in Xcode
-geöffnet sind, zur Registerkarte **Build Phases**.
-2. Klicken Sie auf das Symbol `+` und wählen Sie
-**New Run Script Phase** aus.
-3. Fügen Sie den Befehl `/usr/local/bin/carthage
-copy-frameworks` zur Scriptausführungsphase (Run Script Phase) hinzu.
-4. Fügen Sie das Tone Analyzer-Framework zur Liste "Input
-Files" hinzu:
-`$(SRCROOT)/Carthage/Build/iOS/ToneAnalyzerV3.framework`.
-
-Jetzt können Sie in Ihrer App mit dem Swift-SDK für Watson arbeiten.
-
-## Schritt 4. Text in Ihrer App analysieren
-{: #analyze-text-in-your-app}
-
-1. Öffnen Sie die Datei `ViewController.swift` in Xcode.
-2. Fügen Sie eine Importanweisung für Tone Analyzer hinzu: 
-    ```swift
-    import ToneAnalyzerV3
-    ```
-    {: codeblock}
-
-3. Erstellen Sie eine leere Funktion namens
-`toneAnalyzerExample` und rufen Sie diese Funktion aus
-`viewDidLoad` heraus auf.
-4. Fügen Sie den folgenden Code zur Funktion
-`toneAnalyzerExample` hinzu. Denken Sie daran, den
-Benutzernamen und das Kennwort für Ihren Service zu aktualisieren.
+2. Instanziieren Sie den Tone Analyzer-Service:
   ```swift
-  import UIKit
-  import ToneAnalyzerV3
+  let toneAnalyzer = ToneAnalyzer(version: "yyyy-mm-dd", apiKey: "your-api-key-here")
+  ```
+  {: codeblock}
 
-  class ViewController: UIViewController {
+  Ziehen Sie die [Versionsparameterdokumentation](https://cloud.ibm.com/apidocs/tone-analyzer#versioning) zurate oder verwenden Sie das Datum, an dem der {site.data.keyword.conversationshort}}-Service erstellt wurde.
+  {: tip}
 
-      override func viewDidLoad() {
-          super.viewDidLoad()
-          toneAnalyzerExample()
-      }
-
-      func toneAnalyzerExample() {
-
-          // instantiate service
-          let toneAnalyzer = ToneAnalyzer(
-              username: "your-username-here",
-              password: "your-password-here",
-              version: "yyyy-mm-dd"
-          )
-
-          // text to analyze
-          let review = """
-              I was asked to sign a third party contract a week out from stay. If it wasn't an 8 person group that
+3. Geben Sie Text für die Analyse an und verarbeiten Sie die Ergebnisse:
+  ```swift
+  // Text to analyze
+  let review = """
+      I was asked to sign a third party contract a week out from stay. If it wasn't an 8 person group that
               took a lot of wrangling I would have cancelled the booking straight away. Bathrooms - there are no
               stand alone bathrooms. Please consider this - you have to clear out the main bedroom to use that
               bathroom. Other option is you walk through a different bedroom to get to its en-suite. Signs all
               over the apartment - there are signs everywhere - some helpful - some telling you rules. Perhaps
               some people like this but It negatively affected our enjoyment of the accommodation. Stairs - lots
               of them - some had slightly bending wood which caused a minor injury.
-          """
+  """
 
-          // analyze text
-          let toneInput = ToneInput(text: review)
-          let failure = { (error: Error) in print(error) }
-          toneAnalyzer.tone(toneInput: toneInput, contentType: "application/json", failure: failure) { analysis in
-              for tone in analysis.documentTone.tones! {
-                  print("\(tone.toneName): \(tone.score)")
-              }
-          }
+  // Analyze text
+  let input = ToneInput(text: review)
+  toneAnalyzer.tone(toneInput: .toneInput(input)) { response, error in
+      if let error = error {
+          print(error)
+          return
       }
+
+      guard let tones = response?.result?.documentTone.tones else {
+          print("Failed to analyze the tone input")
+          return
+      }
+
+      for tone in tones {
+          print("\(tone.toneName): \(tone.score)")
+              }
   }
   ```
   {: codeblock}
 
-Wenn Sie Ihre App ausführen, wird die folgende Analyse in der
-Konsole angezeigt:
-```
-Sadness: 0.575803
+  Wenn Sie den Code ausführen, wird die folgende Analyse in der Konsole angezeigt:
+  ```
+  Sadness: 0.575803
 Tentative: 0.867377
-```
-{: screen}
+  ```
+  {: screen}
+
+4. Ziehen Sie für Informationen zur Funktionalität Ihrer Anwendung die [Tone Analyzer-Dokumentation](https://watson-developer-cloud.github.io/swift-sdk/services/ToneAnalyzerV3/index.html) des Watson-SDK zurate.
 
 ## Starter-Kits verwenden
 {: #tone_starterkits}
 
-[Starter-Kits](https://console.bluemix.net/developer/appledevelopment/starter-kits)
-bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums
-von {{site.data.keyword.cloud_notm}}. Den
+[Starter-Kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits) bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Den
 {{site.data.keyword.toneanalyzershort}}-Service können Sie verwenden,
 indem Sie das Starter-Kit **Tone Analyzer for iOS with
 Watson** auswählen. Dieser Service nutzt Deep-Learning-Funktionen, um
@@ -233,10 +174,10 @@ vertrauensvoll und mehr).
 So beginnen Sie die Verwendung dieses Starter-Kits:
 
 1. Wählen Sie das
-[hier](https://console.bluemix.net/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson)
+[hier](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson)
 verfügbare Starter-Kit aus.
 2. Erstellen Sie das Projekt mit den Standardservices.
-3. Laden Sie das Projekt herunter, indem Sie der Projektseite auf
+3. Laden Sie das Projekt herunter, indem Sie auf
 **Code herunterladen** klicken. Die
 Serviceberechtigungsnachweise werden in der Datei
 `BMSCredentials.plist` in den entsprechenden Schlüsselfeldern
@@ -245,10 +186,8 @@ eingefügt.
 ## Nächste Schritte
 {: #tone_next}
 
-Hervorragend! Sie haben {{site.data.keyword.toneanalyzershort}}
-zu Ihrer App hinzugefügt. Nutzen Sie diesen Schwung und probieren Sie
-gleich eine der folgenden Optionen aus:
+Hervorragend! Sie haben {{site.data.keyword.toneanalyzershort}} zu Ihrer App hinzugefügt. Nutzen Sie diesen Schwung und probieren
+Sie gleich eine der folgenden Optionen aus:
 
-* Sehen Sie sich das [Swift-SDK für Watson bei GitHub](https://github.com/watson-developer-cloud/swift-sdk) an.
+* Sehen Sie sich das [Swift-SDK für Watson bei GitHub](https://github.com/watson-developer-cloud/swift-sdk) an und erkunden Sie weitere unterstützte Watson-Services.
 * Lesen Sie weitere Informationen zu [IBM Watson {{site.data.keyword.toneanalyzershort}}](https://www.ibm.com/watson/services/tone-analyzer/).
-

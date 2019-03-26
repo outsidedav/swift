@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-08"
+  years: 2017, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -19,29 +20,32 @@ lastupdated: "2018-11-08"
 Swift 最重要的特性之一就是其類型安全。搭配使用 SQL Database 與 Swift 是合乎邏輯的選擇，因為這兩者都支援類型安全。
 
 ## 搭配使用 ORM 與 SQL Database
+{: sql-orm}
 
 使用「與物件相關的對映 (ORM)」，您可以將物件對映至關聯式資料庫，而不需要處理 SQL 陳述式。然後，您可以儲存物件以及從關聯式資料庫中擷取物件，而不需要自行執行太多剖析及序列化作業。
 
 ## 步驟 1. 開始使用 ORM
+{: #start-orm}
 
 搭配使用 [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM) 與 SQL 外掛程式，例如 [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) 或 [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL)。
 
 此範例使用 [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) 外掛程式。請遵循[這裡](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation)的指示，來安裝外掛程式。
 
 ## 步驟 2. 將 ORM 匯入應用程式
+{: #import-orm}
 
 1. 藉由新增 `Swift-Kuery-ORM` 及 `Swift-Kuery-PostgreSQL` 套件的方式，來更新 `Package.swift` 檔案：
   ```swift
      dependencies: [
       ...
-      // Add these two lines
+      /* Add these two lines */
       .package(url: "https://github.com/IBM-Swift/Swift-Kuery-ORM.git", from: "0.0.1"),
       .package(url: "https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL.git", from: "1.0.0"),
     ],
     targets: [
       .target(
         name: ...
-        // Add these two modules to your target(s) dependencies
+        /* Add these two modules to your target(s) dependencies */
         dependencies: [..., "SwiftKueryORM", "SwiftKueryPostgreSQL"]),
     ]
   ```
@@ -55,9 +59,10 @@ Swift 最重要的特性之一就是其類型安全。搭配使用 SQL Database 
   {: codeblock}
 
 ## 步驟 3. 建立資料庫
+{: #create-db-sql}
 
 1. 在您機器上設定 PostgreSQL 之後，使用終端機來建立資料庫：
-  ```bash
+  ```
   brew services start postgresql
   createdb school
   ```
@@ -73,6 +78,7 @@ Swift 最重要的特性之一就是其類型安全。搭配使用 SQL Database 
   **附註**：對於並行要求，系統會使用連線儲存區。
 
 ## 步驟 4. 定義模型
+{: #define-model-sql}
 
 1. 建立模型 `Grade`：
   ```swift
@@ -88,14 +94,16 @@ Swift 最重要的特性之一就是其類型安全。搭配使用 SQL Database 
   do {
     try Grade.createTableSync()
   } catch {
-    // Error
+    /* Error */
   }
   ```
   {: pre}
 
 ## 步驟 5. 管理資料
+{: #manage-data-sql}
 
 ### 儲存資料
+{: #save-data-sql}
 
 若要儲存 `Grade` 的實例，請建立一個實例，然後呼叫 `save()`：
 ```swift
@@ -109,6 +117,7 @@ grade.save { student, error in
 {: pre}
 
 ### 尋找資料
+{: #find-data-sql}
 
 若要從資料庫中擷取所有 Grades，您可以使用靜態呼叫 `findAll()`：
 ```swift
@@ -120,6 +129,7 @@ Grade.findAll { students, error in
 {: pre}
 
 ### 更新資料
+{: update-data-sql}
 
 更新資料庫中的 Grade 也使用類似的方法：
 ```swift
@@ -133,6 +143,7 @@ Grade.update(id: 1) { student, error in
 {: pre}
 
 ### 刪除資料
+{: #delete-data-sql}
 
 刪除資料庫中的 Grade 也使用類似的方法。
 ```swift
@@ -146,9 +157,11 @@ Grade.delete(id: 1) { error in
 這些呼叫全部都採用呼叫一次的處理程式，並在完成資料庫呼叫時執行該處理程式。
 
 ## 搭配使用 ORM 與 Kitura
+{: #kitura-orm}
 
 為了更容易試用 ORM，[FoodTrackerBackend 指導教學](https://github.com/IBM/FoodTrackerBackend)可以從 iOS 應用程式中儲存並提取 Meal 物件，並直接放進 PostgreSQL 資料庫中。即使您已完成指導教學，也值得您再試一次，以瞭解 Swift-Kuery-ORM 的強大功能，以及它如何簡化您的 Kitura 程式碼。
 
 ## 直接使用 Swift-Kuery
+{: #swift-kuery}
 
 如果因為您需要對資料庫有更多的控制權，而受到 ORM 的限制，您可以使用 SQL 抽象層 [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery)，在其中您可以建立 SQL 查詢。

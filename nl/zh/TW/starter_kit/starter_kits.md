@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-29"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -13,15 +14,15 @@ lastupdated: "2018-08-29"
 {:tip: .tip}
 
 # 使用入門範本套件建立 Swift 應用程式
-{: #intro}
+{: #starterkits-intro}
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple 可讓 Apple 開發人員透過各種入門範本套件建立應用程式、佈建及連接重要的 {{site.data.keyword.cloud_notm}} 最佳化服務，然後快速下載工作中的程式碼，或針對持續交付進行設定。使用者可以建立、檢視、配置及管理您的應用程式，以及下載您應用程式的程式碼。使用入門範本套件可協助您快速評估，並以全新的應用程式來測試 {{site.data.keyword.cloud_notm}} 服務。
 
-準備好了嗎？請立即造訪 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits)，以開始使用。
+準備好了嗎？請立即造訪 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits)，以開始使用。
 {: tip}
 
 ## 何謂入門範本套件？
-{: #starter_kits}
+{: #starterkits-what}
 
 使用 {{site.data.keyword.cloud_notm}} Developer Experience，您可以從各種入門範本套件中進行選擇。入門範本套件會指示 {{site.data.keyword.cloud_notm}} 以您選擇的語言，動態組裝架構正式作業應用程式，並準備好進行雲端部署。每個入門範本套件都包含一種語言、一個架構以及一個用於特定即時世界使用案例的型樣，其容許重複使用程式碼，而非重建程式碼。
 
@@ -30,7 +31,7 @@ lastupdated: "2018-08-29"
 入門範本套件包含的指示容許 {{site.data.keyword.cloud_notm}} 使用可攜式程式碼來自動產生有支架的應用程式，並指定在您從入門範本套件建立應用程式時，要自動佈建的資源。
 
 ## 使用 {{site.data.keyword.cloud_notm}} Developer Console for Apple
-{: #journey}
+{: #starterkits-journey}
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple 提供您一個無縫路徑，讓您針對特定使用案例，建置 Swift 新手入門應用程式。讓我們來看看在此過程中您可能採取的步驟。
 
@@ -77,5 +78,5 @@ lastupdated: "2018-08-29"
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式清單視圖](images/project_list_screen.png "應用程式清單視圖") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式清單視圖*
 
-如需相關資訊，請造訪[{{site.data.keyword.cloud_notm}} Developer Console for Apple 學習資源](https://console.bluemix.net/developer/appledevelopment/learning-resources)。
+如需相關資訊，請造訪[{{site.data.keyword.cloud_notm}} Developer Console for Apple 學習資源](https://cloud.ibm.com/developer/appledevelopment/learning-resources)。
 {: tip}

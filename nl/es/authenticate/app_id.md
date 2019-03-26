@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -15,6 +15,7 @@ lastupdated: "2018-11-12"
 {:note: .note}
 
 # Adición de autenticación de usuario
+{: #appid}
 
 La seguridad de las aplicaciones es increíblemente complicada. Para la mayoría de los desarrolladores, es una de las tareas más difíciles de la creación de una app. ¿Cómo puede estar seguro de que está protegiendo la información de los usuarios? Al integrar {{site.data.keyword.appid_full}} en sus apps, puede proteger recursos y añadir autenticación, incluso aunque no tenga mucha experiencia en seguridad.
 
@@ -23,7 +24,7 @@ Al exigir a los usuarios que inicien sesión, puede almacenar datos de usuario c
 Para ver todas las formas en que puede utilizar {{site.data.keyword.appid_short_notm}} y la información de arquitectura, consulte [Acerca de {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
 
 ## Antes de empezar
-{: #before}
+{: #prereqs-appid}
 
 Primero, asegúrese de cumplir los siguientes requisitos previos:
 * CocoaPods (versión 1.1.0 o posterior)
@@ -32,16 +33,17 @@ Primero, asegúrese de cumplir los siguientes requisitos previos:
 * Xcode (versión 9.0.1 o posterior)
 
 ## Paso 1. Creación de una instancia de {{site.data.keyword.appid_short_notm}}
-{: #create_instance}
+{: #create-instance-appid}
 
-Cree una instancia del servicio {{site.data.keyword.appid_short_notm}}: 
+Cree una instancia del servicio {{site.data.keyword.appid_short_notm}}:
 
-1. En el [catálogo de {{site.data.keyword.cloud_notm}}](https://console.bluemix.net/catalog/), seleccione {{site.data.keyword.appid_short_notm}}. Se abre la pantalla de configuración del servicio.
+1. En el [Catálogo de {{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/),
+seleccione {{site.data.keyword.appid_short_notm}}. Se abre la pantalla de configuración del servicio.
 2. Dé un nombre a la instancia de servicio, o utilice el nombre preestablecido.
 3. Seleccione el plan de precios y pulse **Crear**.
 
 ## Paso 2. Instalación del SDK de Swift de iOS
-{: #install_sdk}
+{: #install-sdk-appid}
 
 El servicio proporciona un SDK para ayudarle a facilitar la codificación de la app. El SDK debe estar instalado en el código de la app.
 
@@ -63,6 +65,7 @@ El servicio proporciona un SDK para ayudarle a facilitar la codificación de la 
     {: pre}
 
 ## Paso 3. Inicialización del SDK
+{: #initialize-sdk-appid}
 
 Después de inicializar el SDK en la app, puede empezar a configurar las preferencias de {{site.data.keyword.appid_short_notm}}.
 
@@ -80,8 +83,7 @@ Después de inicializar el SDK en la app, puede empezar a configurar las prefere
   ```
   {: codeblock}
 
-4. Pase los parámetros `tenantID ` y `region` para inicializar el SDK. Un lugar común, aunque no obligatorio, donde poner el código es en el método `application:didFinishLaunchingWithOptions` del `AppDelegate` de la app.
-    
+4. Pase los parámetros `tenantID` y `region` para inicializar el SDK. Un lugar común, aunque no obligatorio, donde poner el código es en el método `application:didFinishLaunchingWithOptions` del `AppDelegate` de la app.
   ```swift
   AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
   ```
@@ -119,8 +121,8 @@ Un proveedor de identidad proporciona la información de autenticación para los
 Puede actualizar las configuraciones en cualquier momento sin actualizar el código de la app.
 {: tip}
 
-
 ### Proveedores de identidad social
+{: #social-appid}
 
 Con {{site.data.keyword.appid_short_notm}}, puede utilizar proveedores de identidad social como Facebook y Google+ para proteger sus apps.
 
@@ -140,7 +142,7 @@ Para configurar los proveedores de identidad social:
 
         public func onAuthorizationCanceled() {
             //Autenticación cancelada por el usuario
-		}
+        }
 
         public func onAuthorizationFailure(error: AuthorizationError) {
             //Se ha producido una excepción
@@ -153,6 +155,7 @@ Para configurar los proveedores de identidad social:
 
 
 ### Directorio en la nube
+{: #cloud-dir-appid}
 
 Con {{site.data.keyword.appid_short_notm}}, puede gestionar su propio registro de usuarios denominado directorio en la nube. El directorio en la nube permite a los usuarios registrarse e iniciar sesión en sus apps móviles y web utilizando su correo electrónico y una contraseña.
 
@@ -168,35 +171,36 @@ Para configurar el directorio en la nube:
         ```swift
         class delegate : TokenResponseDelegate {
             public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-            //Usuario autenticado
-		}
+            /* Usuario autenticado */
+            }
 
             public func onAuthorizationFailure(error: AuthorizationError) {
-            //Se ha producido una excepción
-        }
+            /* Se ha producido una excepción */
+            }
         }
 
         AppID.sharedInstance.obtainTokensWithROP(username: username, password: password, delegate: delegate())
         ```
         {: codeblock}
+
     * Registro
         ```swift
         class delegate : AuthorizationDelegate {
           public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
              if accessToken == nil && identityToken == nil {
-              //es necesaria la verificación de correo electrónico
-        return
-       }
-           //Usuario autenticado
-		}
+              /* hace falta la verificación por correo electrónico */
+              return
+             }
+           /* Usuario autenticado */
+          }
 
           public func onAuthorizationCanceled() {
-              //Registro cancelado por el usuario
-			 }
+              /* Autenticación cancelada por el usuario */
+          }
 
           public func onAuthorizationFailure(error: AuthorizationError) {
-              //Se ha producido una excepción
-        }
+              /* Se ha producido una excepción */
+          }
         }
 
         AppID.sharedInstance.loginWidget?.launchSignUp(delegate: delegate())
@@ -207,16 +211,16 @@ Para configurar el directorio en la nube:
         ```swift
         class delegate : AuthorizationDelegate {
            public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-              //contraseña olvidada finalizada, en este caso accessToken e identityToken serán nulos.
+              /* olvido de contraseña finalizado, en este caso, accessToken e identityToken serán null. */
            }
 
            public func onAuthorizationCanceled() {
-               //contraseña olvidada cancelado por el usuario
+               /* olvido de contraseña cancelado por el usuario */
            }
 
            public func onAuthorizationFailure(error: AuthorizationError) {
-               //Se ha producido una excepción
-        }
+               /* Se ha producido una excepción */
+           }
         }
 
         AppID.sharedInstance.loginWidget?.launchForgotPassword(delegate: delegate())
@@ -260,7 +264,7 @@ Para configurar el directorio en la nube:
 
 
 ## Paso 5. Comprobación de la app
-{: #appid_testing}
+{: #testing-appid}
 
 ¿Todo se ha configurado correctamente? Puede probarlo ahora.
 
@@ -272,9 +276,9 @@ Para configurar el directorio en la nube:
 ¿Tiene problemas? Consulte [resolución de problemas de {{site.data.keyword.appid_short_notm}}](/docs/services/appid/ts_index.html).
 
 ## Pasos siguientes
-{: #appid_next}
+{: #next-appid}
 
 ¡Buen trabajo! Ha añadido un nivel de seguridad a la app. Mantenga el ritmo probando una de las opciones siguientes:
 
 * Obtenga más información y aproveche todas las características que {{site.data.keyword.appid_short_notm}} tiene que ofrecer, [consulte los documentos](/docs/services/appid/index.html).
-* Los kits de inicio son una de las formas más rápidas de utilizar las características de {{site.data.keyword.cloud_notm}}. Vea los kits de iniciación disponibles en el [panel de control de desarrollador de Mobile](https://console.bluemix.net/developer/mobile/dashboard). Descargue el código. Ejecute la app.
+* Los kits de inicio son una de las formas más rápidas de utilizar las características de {{site.data.keyword.cloud_notm}}. Vea los kits de inicio disponibles en el [panel de control de desarrollador de Mobile](https://cloud.ibm.com/developer/mobile/dashboard). Descargue el código. Ejecute la app.

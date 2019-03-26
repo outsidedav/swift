@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -24,13 +25,20 @@ O gerenciamento de configuração de serviço e de credenciais (ligações de se
 ## Incluindo  {{site.data.keyword.cloud_notm}}  nos aplicativos Swift existentes
 {: #addcloud-env}
 
-O caminho para os valores do ambiente de abstração pode ser diferente de um ambiente de nuvem para outro. A biblioteca [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) abstrai configuração do ambiente e credenciais de vários provedores de nuvem para que seu app Swift possa acessar de forma consistente as informações executando localmente ou no Cloud Foundry, no Kubernetes ou no {{site.data.keyword.openwhisk}}. A abstração de credenciais é fornecida pela biblioteca `CloudEnvironment`, que usa internamente a configuração [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) para Cloud Foundry e a [Configuração](https://github.com/IBM-Swift/Configuration) como um gerenciador de configuração.
+O caminho para os valores do ambiente de abstração pode ser diferente de um ambiente de nuvem para outro. 
+A biblioteca do [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git)
+abstrai configurações de ambiente e credenciais de vários provedores em nuvem para que seu app Swift
+possa acessar consistentemente as informações, executando localmente ou no Cloud Foundry, no Cloud
+Foundry Enterprise Environment, no Kubernetes, no {{site.data.keyword.openwhisk}} ou nas
+instâncias virtuais. A abstração de credenciais é fornecida pela biblioteca `CloudEnvironment`, que usa internamente a configuração [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) para Cloud Foundry e a [Configuração](https://github.com/IBM-Swift/Configuration) como um gerenciador de configuração.
 
 Com o `CloudEnvironment`, é possível abstrair detalhes de baixo nível do código-fonte do aplicativo definindo uma chave de consulta que seu aplicativo Swift pode usar para procurar seu valor correspondente.
 
 A biblioteca `CloudEnvironment` fornece uma chave de consulta consistente que pode ser usada no código-fonte. Em seguida, a biblioteca procura em uma matriz de padrões de procura para localizar um objeto JSON com os atributos de configuração ou as credenciais de serviço. 
 
 ### Incluindo o pacote CloudEnvironment no aplicativo Swift
+{: #add-cloudenv}
+
 Para usar o pacote `CloudEnvironment` em seu aplicativo Swift, especifique-o na seção **dependências:** de seu arquivo `Package.swift`:
 ```swift
 .package (url: "https: //github.com/IBM-Swift/CloudEnvironment.git ", de:" 8.0.0 "),
@@ -46,6 +54,8 @@ let cloudEnv = CloudEnv ()
 {: codeblock}
 
 ### Acessando Credenciais
+{: #access-credentials}
+
 Agora que a biblioteca `CloudEnvironment` foi inicializada, será possível acessar as suas credenciais, conforme mostrado nos exemplos a seguir:
 ```swift
 let cloudantCredentials = cloudEnv.getCloudantCredentials(name: "cloudant-credentials")
@@ -68,7 +78,9 @@ Esse exemplo fornece acesso aos conjuntos de credenciais para serviços, que ago
 {: #service_creds}
 
 A biblioteca `CloudEnvironment` usa um arquivo denominado `mappings.json`, localizado no diretório `config`, para comunicar onde as credenciais são armazenadas para cada serviço. O arquivo `mappings.json` suporta a procura de valores que usam os três tipos padrão de procura a seguir:
-- **`cloudfoundry`** - Um tipo de padrão usado para procurar um valor na variável de ambiente de serviços do Cloud Foundry (`VCAP_SERVICES`).
+- **`cloudfoundry`** - Um tipo de padrão usado para procurar um valor na variável de ambiente de serviços do Cloud Foundry (`VCAP_SERVICES`). Para
+o Cloud Foundry Enterprise Edition, veja este [tutorial de introdução](docs/cloud-foundry/getting-started.html#getting-started)
+para obter mais informações.
 - **`env`** - Um tipo de padrão usado para procurar um valor que é mapeado para uma variável de ambiente, como no Kubernetes ou Functions.
 - **`file`** - Um tipo de padrão usado para procurar um valor em um arquivo JSON. O caminho deve ser relativo à pasta raiz do aplicativo Swift.
 
@@ -108,11 +120,12 @@ Por motivos de segurança, os arquivos de credencial não pertencem aos reposit�
 Para obter mais informações sobre o arquivo `mappings.json`, efetue check-out da seção [Entendendo a credencial de serviço](configuration.html#service_creds).
 
 ## Usando o Gerenciador de configuração do Swift por meio de apps Starter Kit
+{: #configmanager-swift}
 
-Os apps Swift criados com [Starter Kits](https://console.bluemix.net/developer/appledevelopment/starter-kits/) vêm automaticamente com as credenciais e a configuração que são necessárias para execução local, e também em muitos ambientes de implementação da Nuvem (CF, K8s, VSI e Functions). A criação básica do gerenciador de configuração pode ser localizada em `Sources/Application/Application.swift`. Ao criar um app do kit do iniciador baseado em Swift com serviços, uma pasta `config` e o arquivo `mappings.json` são criados para você. Se você fizer download de seu app, a pasta `config` incluirá um arquivo `localdev-config.json` que tem todas as credenciais para seus serviços e estará presente no arquivo `.gitignore`.
+Os apps Swift criados com [Starter Kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits/) vêm automaticamente com as credenciais e a configuração que são necessárias para execução local, e também em muitos ambientes de implementação da Nuvem (CF, K8s, VSI e Functions). A criação básica do gerenciador de configuração pode ser localizada em `Sources/Application/Application.swift`. Ao criar um app do kit do iniciador baseado em Swift com serviços, uma pasta `config` e o arquivo `mappings.json` são criados para você. Se você fizer download de seu app, a pasta `config` incluirá um arquivo `localdev-config.json` que tem todas as credenciais para seus serviços e estará presente no arquivo `.gitignore`.
 
 ## Próximas Etapas
-{: #next notoc}
+{: #next-configß notoc}
 
 Efetue check-out de nossas três bibliotecas para ajudar seus aplicativos a se abstraírem de seus ambientes:
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-02-01"
 
 ---
 
@@ -14,17 +14,18 @@ lastupdated: "2018-11-12"
 {:tip: .tip}
 
 # 가용성이 높고 안전한 데이터베이스 작성
+{: #create-database-cluster}
 
 가용성이 높고 안전한 데이터베이스를 최대한 활용하기 위해 추가 로직을 애플리케이션에 임베드합니다. 제공된 코드 스니펫을 사용하여 MongoDB 데이터베이스를 작성하고 액세스할 수 있습니다. 
 
 {{site.data.keyword.ihsdbaas_full}} 사용을 위해 현재 지원되는 프로그래밍 언어는
-MongoKitten SDK 4.0.0이 포함된 Swift 4.0입니다. 
+MongoKitten SDK 4.0.0이 포함된 Swift 4.0입니다.
 
 ## 1단계. 데이터베이스 클러스터 작성
 {: #create_dbcluster}
 
 1. 다음 웹 사이트에서 {{site.data.keyword.ihsdbaas_full}} 서비스 구성 화면에 액세스하십시오.
-https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
+https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
 
 2. 다음 정보를 제공하십시오.
 
@@ -56,8 +57,8 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
     <dt>라이센스 계약</dt>
     <dd>라이센스 계약을 읽고 계약을 확인했으면 선택란을 선택하십시오.</dd>
 
-    <dt>가격 책정:</dt>
-		<dd>현재 솔루션은 하나의 가격 책정 카테고리만 무료로 제공합니다. 이후 버전에서는 가격 책정 카테고리를 선택할 수 있습니다.</dd>
+    <dt>가격:</dt>
+		<dd>현재 솔루션은 하나의 가격 카테고리만 무료로 제공합니다. 이후 버전에서는 가격 카테고리를 선택할 수 있습니다.</dd>
 	</dl>
 
 3. **작성**을 클릭하십시오.
@@ -73,7 +74,7 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
 6. 호스트 이름과 데이터베이스 클러스터에 속하는 작성된 세 가지 데이터베이스 인스턴스의 포트 번호를 수집하십시오. [데이터베이스에 연결](#connect_db) 섹션의 단계에서 호스트 이름, 포트 번호 및 사용자 인증 정보가 필요합니다.
 
 ## 2단계. 스타터 킷을 사용하여 프로젝트 작성
-{: #create_with_starter}
+{: #create_starter}
 
 서버 측 Swift 웹 프레임워크 Kitura를 기반으로 한 스타터 킷이 필요합니다.
 
@@ -81,7 +82,7 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
 
 스타터 킷에서 작성된 기존 프로젝트를 사용하거나 새 프로젝트를 작성하십시오.
 
-1. https://console.bluemix.net/developer/appservice/dashboard 에서 {{site.data.keyword.cloud_notm}} 앱 서비스 대시보드를 여십시오.
+1. https://cloud.ibm.com/developer/appservice/dashboard에서 {{site.data.keyword.cloud_notm}} 앱 서비스 대시보드를 여십시오.
 
 2. **스타터 킷** 탭을 선택하십시오.
 
@@ -93,12 +94,12 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
 
 5. 프로젝트 페이지에서 **코드 다운로드**를 클릭하십시오.
 
-6. 프로젝트 디렉토리에 압축한 파일의 압축을 푸십시오. 
+6. 프로젝트 디렉토리에 압축한 파일의 압축을 푸십시오.
 
 ## 3단계. 데이터베이스에 연결
 {: #connect_db}
 
-안전한 데이터 전송을 위해 다음 웹 사이트에서 인증 기관(CA) 파일을 다운로드하고 프로젝트 디렉토리에 이를 복사하십시오. 
+안전한 데이터 전송을 위해 다음 웹 사이트에서 인증 기관(CA) 파일을 다운로드하고 프로젝트 디렉토리에 이를 복사하십시오.
 https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project directory.
 
 1. 압축을 푼 다운로드된 코드 파일이 있는 프로젝트 디렉토리로 변경하십시오.
@@ -148,13 +149,13 @@ https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project direc
 복사하십시오.
 
   * 종속성 섹션에서 다음 행을 추가하십시오.
-   ```hljs
+   ```swift
    .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
    ```
    {: codeblock}
 
   * 대상 섹션에서 다음 행에 종속성 "MongoKitten"을 추가하십시오. **참고:** 값은 한 행에 지정해야 합니다.
-   ```hljs
+   ```swift
    .target(name: "Application", dependencies: [ "Kitura",
    "CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
    ```
@@ -163,46 +164,46 @@ https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project direc
 5. `Sources/Application/Application.swift` 파일을 편집하여 MongoKitten 사용을 통해 MongoDB에 대한 연결을 초기화십시오.
 
   * MongoKitten SDK를 가져오십시오.
-    ```
-	import MongoKitten
-	```
-	{: codeblock}
+    ```swift
+	  import MongoKitten
+	  ```
+	  {: codeblock}
 
   * 클래스 `ApplicationServices`를 추가하십시오.
-    ```hljs
-	cclass ApplicationServices {
-	// Service references
-	    public let mongoDBService: MongoKitten.Database
-	    public let myCredFile = "/swift-project/cred.json"
+    ```swift
+	  cclass ApplicationServices {
+	  /* Service references */
+	  public let mongoDBService: MongoKitten.Database
+	  public let myCredFile = "/swift-project/cred.json"
 
     public init() throws {
-        // Read credentials from json file cred.json
-	        struct ResponseData: Decodable {
+        /* Read credentials from json file cred.json */
+        struct ResponseData: Decodable {
             var uri: String
 	        }
 	        let data = try? Data(contentsOf: URL(fileURLWithPath: myCredFile))
 	        let decoder = JSONDecoder()
 	        let jsonData = try decoder.decode(ResponseData.self, from: data!)
 
-        // Run service initializers
-	        let server = try Server(jsonData.uri)
-	        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
-	    }
+        /* Run service initializers */
+        let server = try Server(jsonData.uri)
+        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
+    }
 	}
 	```
 	{: codeblock}
 
   * 공용 클래스 `App`에서 다음 행을 추가하여 데이터베이스 연결을 초기화하십시오.
-    ```hljs
-	public class App {
-	...
-	let services: ApplicationServices
+    ```swift
+	  public class App {
+	  ...
+	  let services: ApplicationServices
 
-	public init() throws {
-	   // Services
-	    services = try ApplicationServices()
-	 }
-	...
+	  public init() throws {
+	  /* Services */
+	  services = try ApplicationServices()
+	  }
+	  ...
     ```
     {: codeblock}
 
@@ -212,7 +213,7 @@ https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project direc
 1. `Sources/Application/Application.swift` 파일을 편집하고 데이터베이스 연결을 테스트하는 명령을 추가하여 데이터베이스 연결을 확인하십시오.
 예를 들어, `class ApplicationServices`에서 다음 명령을 추가하십시오.
 
-	```hljs
+	```swift
 		class ApplicationServices {
 		    ...
 		    public init() throws {
@@ -231,7 +232,7 @@ https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project direc
 [6단계](#use-step6)에서 설명된 대로 애플리케이션을 배치한 후 데이터베이스에 연결되면
 다음 메시지가 표시됩니다.
 
-```hljs
+```
 ...
 Connected to mongodb:
 MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>PortNumber_1</em>&gt;,&lt;<em>Hostname_2</em>&gt;&colon;&lt;<em>PortNumber_2</em>&gt;,&lt;<em>Hostname_3</em>&gt;&colon;&lt;<em>PortNumber_3</em>&gt;/admin&gt;
@@ -245,81 +246,11 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 이제 고유한 애플리케이션 코드를 프로젝트에 추가할 수 있습니다. MongoKitten API 작업에 대한 자세한 정보는 http://beta.openkitten.org/tutorials/ 를 참조하십시오.
 
 ## 6단계. 애플리케이션 배치
-{: #deploy_app}
+{: #deploy-dbcluster}
 
-필요한 빌드 도구를 사용하여 로컬로 또는 {{site.data.keyword.dev_cli_notm}}를 통해 {{site.data.keyword.cloud_notm}}(Cloud Foundry 또는 Kubernetes 클러스터)에서 애플리케이션을 실행할 수 있습니다.
+필요한 빌드 도구를 사용하여 [로컬로](/docs/swift/create_app_cli.html#swift-install-tools) 애플리케이션을 실행하거나 {{site.data.keyword.cloud_notm}}에 배치할 수 있습니다.
 
-애플리케이션을 호스트 시스템에서 로컬로 또는 Cloud Foundry 또는 Kubernetes 클러스터에서 실행할 수 있습니다.
-
-1. {{site.data.keyword.cloud_notm}} CLI를 [설치](/docs/cli/reference/bluemix_cli/get_started.html)하십시오.
-
-2. `ibmcloud plugin install dev` 명령을 사용하여 개발자 도구 플러그인을 설치하십시오.
-
-3. 애플리케이션을 [로컬 시스템](#deploy_local), [Cloud Foundry](#deploy_cf) 또는 [Kubernetes 클러스터](#deploy_cluster)에 배치하십시오.
-
-### 로컬로 배치
-{: #deploy_local}
-
-1. Docker가 설치되어 있고 로컬 호스트 시스템에서 실행 중인지 확인하십시오. https://www.docker.com/community-edition#/download 에서 Docker를 다운로드할 수 있습니다.
-
-2. 프로젝트 파일이 포함된 디렉토리로 전환하십시오.
-
-3. 애플리케이션을 로컬 컴퓨터에 배치하려면 다음 명령을 입력하십시오.
-	```
-	$ ibmcloud dev build
-	...
-	$ ibmcloud dev run
-	```
-	{: codeblock}
-
-	이 단계에서는 애플리케이션을 빌드하고 Docker 컨테이너 내부에서 애플리케이션을 로컬로 실행합니다.
-
-### Cloud Foundry에 배치
-{: #deploy_cf}
-
-1. 프로젝트 파일이 포함된 디렉토리로 전환하십시오.
-
-2. 다음에 표시된 대로 IBM Cloud 계정에 로그인하고 지역을 `us-south`로 설정하십시오.
-  ```hljs
-  $ ibmcloud login -a https://api.ng.bluemix.net
-  $ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
-  ```
-  {: codeblock}
-
-  **참고:** `ibmcloud login -a https://api.ng.bluemix.net` 명령을 실행하면 지역이 **us-south**로 자동 설정됩니다.
-
-3. 애플리케이션을 Cloud Foundry에 배치하려면 다음 명령을 입력하십시오.
-  ```
-$ ibmcloud dev deploy
-  ```
-  {: codeblock}
-
-  애플리케이션이 호스팅되는 위치에 대해 클릭 가능한 링크를 받게 됩니다.
-
-### Kubernetes 클러스터에 배치
-{: #deploy_cluster}
-
-1. https://console.bluemix.net/containers-kubernetes/clusters 에서 Kubernetes 클러스터를 작성하십시오.
-
-2. **클러스터 작성**을 클릭하십시오. 액세스 탭에는 작성된 Kubernetes 클러스터에 액세스하는 방법에 대한 정보가 표시됩니다.
-
-3. Kubernetes 클러스터에 대한 정보를 표시하려면 {{site.data.keyword.cloud_notm}} 앱 대시보드를 여십시오. 대시보드에는 작성된 클러스터, 데이터베이스 클러스터, Cloud Foundry 앱 및 Cloud Foundry 서비스와 같은 서비스의 목록이 표시됩니다.
-
-4. 프로젝트 파일이 포함된 디렉토리로 전환하십시오.
-
-5. 다음에 표시된 대로 {{site.data.keyword.cloud_notm}} 계정에 로그인하고 지역을 us-south로 설정하십시오.
-  ```hljs
-  $ ibmcloud login -a https://api.ng.bluemix.net
-  $ ibmcloud target -o <your-organization> -s <your-space>
-  ```
-  {: codeblock}
-
-  **참고:** `ibmcloud login -a https://api.ng.bluemix.net` 명령을 실행하면 지역이 **us-south**로 자동 설정됩니다.
-
-6. Kubernetes에서 애플리케이션을 배치하려면 다음 명령을 입력하십시오.
-  ```
-    $ ibmcloud dev deploy -t container
-  ```
-  {: codeblock}
-
-  Kubernetes 클러스터 및 Docker 레지스트리의 이름에 대해 프롬프트됩니다. 정보가 제공되면 애플리케이션이 Kubernetes 클러스터에 배치됩니다.
+대시보드에서 배치 도구 체인을 작성하려면 **클라우드에 배치**를 클릭하십시오. 선택하는 방법의 지시사항에 따라 배치 방법을 설정하십시오. 
+  * **[Kubernetes](/docs/apps/deploying/containers.html#containers)에 배치**. 이 옵션으로 고가용성 애플리케이션 컨테이너를 배치하고 관리하도록 작업자 노드라고 하는 호스트의 클러스터가 작성됩니다. 사용자는 클러스터를 작성하거나 기존 클러스터에 배치할 수 있습니다.
+  * **Cloud Foundry에 배치**. 이 옵션으로 기본 인프라를 관리하지 않아도 클라우드 기반 앱이 배치됩니다. 계정에 {{site.data.keyword.cfee_full_notm}}에 대한 액세스 권한이 있는 경우 **[퍼블릭 클라우드](/docs/cloud-foundry-public/about-cf.html#about-cf)** 또는 **[엔터프라이즈 환경](/docs/cloud-foundry-public/cfee.html#cfee)** 중에서 배치자 유형을 선택하여 사용자 엔터프라이즈 전용의 Cloud Foundry 애플리케이션을 호스팅하기 위한 격리된 환경을 작성하고 관리할 수 있습니다. 
+  * **[가상 서버](/docs/apps/vsi-deploy.html#vsi-deploy)에 배치**. 이 옵션으로 가상 서버 인스턴스가 프로비저닝되고, 앱을 포함한 이미지가 로드되고, 사용자를 위한 첫 번째 배치 주기가 시작됩니다. 

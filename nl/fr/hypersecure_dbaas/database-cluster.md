@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-02-01"
 
 ---
 
@@ -14,6 +14,7 @@ lastupdated: "2018-11-12"
 {:tip: .tip}
 
 # Création d'une base de données hautement disponible et sécurisée
+{: #create-database-cluster}
 
 Pour tirer pleinement parti d'une base de données hautement disponible et sécurisée, vous imbriquez une logique supplémentaire dans votre application. A l'aide des fragments de code fournis, vous pouvez créer une base de données MongoDB et y accéder. 
 
@@ -24,7 +25,7 @@ est Swift 4.0 avec MongoKitten SDK 4.0.0.
 {: #create_dbcluster}
 
 1. Accédez à l'écran de configuration de service {{site.data.keyword.ihsdbaas_full}} à l'adresse
-https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
+https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
 
 2. Fournissez les informations suivantes :
 
@@ -62,7 +63,7 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
 
 3. Cliquez sur **Créer**.
 
-  Le tableau de bord de {{site.data.keyword.cloud_notm}} s'affiche. Vous devrez peut-être actualiser votre navigateur pour voir le nouveau cluster, lequel est répertorié dans la section Services.</p></li>
+  Le tableau de bord d'{{site.data.keyword.cloud_notm}} s'affiche. Vous devrez peut-être actualiser votre navigateur pour voir le nouveau cluster, lequel est répertorié dans la section Services.</p></li>
 
 4. Lorsque vous sélectionnez le service, les informations de cluster s'affichent.
 
@@ -73,7 +74,7 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
 6. Obtenez le nom d'hôte et les numéros de port des trois instances de base de données créées qui appartiennent à votre cluster de base de données. Vous aurez besoin des noms d'hôtes, des numéros de port et des données d'identification de l'utilisateur pour les étapes de la section [Connexion à la base de données](#connect_db).
 
 ## Etape 2. Création d'un projet à l'aide d'un kit de démarrage
-{: #create_with_starter}
+{: #create_starter}
 
 Vous avez besoin d'un kit qui repose sur l'infrastructure Web Swift côté serveur Kitura.
 
@@ -81,7 +82,7 @@ Vous avez besoin d'un kit qui repose sur l'infrastructure Web Swift côté serve
 
 Utilisez un projet existant qui a été créé à partir de ce kit de démarrage, ou créez-en un nouveau.
 
-1. Ouvrez le tableau de bord du service d'application {{site.data.keyword.cloud_notm}} à l'adresse https://console.bluemix.net/developer/appservice/dashboard.
+1. Ouvrez le tableau de bord App Service d'{{site.data.keyword.cloud_notm}} à l'adresse https://cloud.ibm.com/developer/appservice/dashboard.
 
 2. Sélectionnez l'onglet **Kits de démarrage**.
 
@@ -99,7 +100,7 @@ Utilisez un projet existant qui a été créé à partir de ce kit de démarrage
 {: #connect_db}
 
 Pour garantir un transfert sécurisé des données, téléchargez le fichier de l'autorité de certification à l'adresse
-https://api.hypersecuredbaas.ibm.com/cert.pem, et copiez-le dans le répertoire de votre projet.
+https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project directory.
 
 1. Accédez au répertoire de votre projet où se trouvent les fichiers de code téléchargés développés.
 
@@ -148,13 +149,13 @@ https://api.hypersecuredbaas.ibm.com/cert.pem, et copiez-le dans le répertoire 
 du MongoKitten.
 
   * Dans la section dependencies, ajoutez la ligne suivante :
-   ```hljs
+   ```swift
    .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
    ```
    {: codeblock}
 
   * Dans la section targets, ajoutez la dépendance "MongoKitten" sur la ligne suivante. **Remarque :** La valeur doit être indiquée sur une seule ligne.
-   ```hljs
+   ```swift
    .target(name: "Application", dependencies: [ "Kitura",
    "CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
    ```
@@ -163,46 +164,46 @@ du MongoKitten.
 5. Editez le fichier `Sources/Application/Application.swift` pour initialiser la connectivité à MongoDB à l'aide de MongoKitten.
 
   * Importez le logiciel SDK MongoKitten :
-    ```
-	import MongoKitten
-	```
-	{: codeblock}
+    ```swift
+	  import MongoKitten
+	  ```
+	  {: codeblock}
 
   * Ajoutez la classe `ApplicationServices` :
-    ```hljs
-	cclass ApplicationServices {
-	// Service references
-	    public let mongoDBService: MongoKitten.Database
-	    public let myCredFile = "/swift-project/cred.json"
+    ```swift
+	  cclass ApplicationServices {
+	  /* Service references */
+	  public let mongoDBService: MongoKitten.Database
+	  public let myCredFile = "/swift-project/cred.json"
 
     public init() throws {
-        // Read credentials from json file cred.json
-	        struct ResponseData: Decodable {
+        /* Read credentials from json file cred.json */
+        struct ResponseData: Decodable {
             var uri: String
 	        }
 	        let data = try? Data(contentsOf: URL(fileURLWithPath: myCredFile))
 	        let decoder = JSONDecoder()
 	        let jsonData = try decoder.decode(ResponseData.self, from: data!)
 
-        // Run service initializers
-	        let server = try Server(jsonData.uri)
-	        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
-	    }
+        /* Run service initializers */
+        let server = try Server(jsonData.uri)
+        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
+    }
 	}
 	```
 	{: codeblock}
 
   * Dans public class `App`, ajoutez les lignes suivantes afin d'initialiser la connexion de base de données :
-    ```hljs
-	public class App {
-	...
-	let services: ApplicationServices
+    ```swift
+	  public class App {
+	  ...
+	  let services: ApplicationServices
 
-	public init() throws {
-	   // Services
-	    services = try ApplicationServices()
-	 }
-	...
+	  public init() throws {
+	  /* Services */
+	  services = try ApplicationServices()
+	  }
+	  ...
     ```
     {: codeblock}
 
@@ -212,7 +213,7 @@ du MongoKitten.
 1. Vérifiez votre connexion de base de données en éditant le fichier `Sources/Application/Application.swift` afin d'ajouter une commande pour tester ka connexion de base de données, connexion à la base de données.
 Par exemple, ajoutez la commande suivante dans `class ApplicationServices` :
 
-	```hljs
+	```swift
 		class ApplicationServices {
 		    ...
 		    public init() throws {
@@ -230,7 +231,7 @@ Par exemple, ajoutez la commande suivante dans `class ApplicationServices` :
 
 Après avoir déployé votre application dans l'[étape 6](#use-step6), le message suivant s'affiche, si votre connexion à la base de données aboutit :
 
-```hljs
+```
 ...
 Connected to mongodb:
 MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>PortNumber_1</em>&gt;,&lt;<em>Hostname_2</em>&gt;&colon;&lt;<em>PortNumber_2</em>&gt;,&lt;<em>Hostname_3</em>&gt;&colon;&lt;<em>PortNumber_3</em>&gt;/admin&gt;
@@ -238,87 +239,17 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ```
 {: screen}
 
-## Etape 5. Imbrication de votre code d'application 
+## Etape 5. Imbrication de votre code d'application
 {: #embed_appcode}
 
 Vous pouvez maintenant ajouter votre propre code d'application au projet. Pour plus d'informations sur l'utilisation de l'API MongoKitten, consultez l'adresse http://beta.openkitten.org/tutorials/.
 
-## Etape 6. Déploiement de votre application 
-{: #deploy_app}
+## Etape 6. Déploiement de votre application
+{: #deploy-dbcluster}
 
-Vous pouvez exécuter l'application en local avec les outils de génération nécessaires, ou dans {{site.data.keyword.cloud_notm}} (Cloud Foundry or Kubernetes Cluster) à l'aide de {{site.data.keyword.dev_cli_notm}}.
+Vous pouvez exécuter l'application [localement](/docs/swift/create_app_cli.html#swift-install-tools) avec les outils de génération requis ou déployer sur {{site.data.keyword.cloud_notm}}.
 
-Vous pouvez exécuter votre application en local sur votre système hôte, dans Cloud Foundry, ou dans un cluster Kubernetes.
-
-1. [Installez l'interface de ligne de commande ](/docs/cli/reference/bluemix_cli/get_started.html) {{site.data.keyword.cloud_notm}}
-
-2. Installez le plug-in Developer Tools à l'aide de la commande `ibmcloud plugin install dev`.
-
-3. Déployez l'application sur un [système local](#deploy_local), dans un cluster [Cloud Foundry](#deploy_cf) ou [Kubernetes](#deploy_cluster).
-
-### Déploiement en local
-{: #deploy_local}
-
-1. Assurez-vous que Docker est installé et opérationnel sur votre système hôte local. Vous pouvez télécharger Docker depuis l'adresse https://www.docker.com/community-edition#/download.
-
-2. Accédez au répertoire contenant vos fichiers de projet.
-
-3. Pour déployer l'application sur votre ordinateur local, exécutez les commandes suivantes :
-	```
-	$ ibmcloud dev build
-	...
-	$ ibmcloud dev run
-	```
-	{: codeblock}
-
-	Cette étape génère votre application et l'exécute en local dans un conteneur Docker.
-
-### Déploiement dans Cloud Foundry
-{: #deploy_cf}
-
-1. Accédez au répertoire contenant vos fichiers de projet.
-
-2. Connectez-vous à votre compte IBM Cloud, puis définissez la région sur `us-south`, comme illustré ici :
-  ```hljs
-  $ ibmcloud login -a https://api.ng.bluemix.net
-  $ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
-  ```
-  {: codeblock}
-
-  **Remarque :** L'exécution de la commande `ibmcloud login -a https://api.ng.bluemix.net` définit automatiquement la région sur **us-south**.
-
-3. Pour déployer l'application dans Cloud Foundry, entrez la commande suivante :
-  ```
-  $ ibmcloud dev deploy
-  ```
-  {: codeblock}
-
-  Vous recevez un lien cliquable à l'emplacement dans lequel votre application est hébergée.
-
-### Déploiement dans un cluster Kubernetes
-{: #deploy_cluster}
-
-1. Créez un cluster Kubernetes à l'adresse https://console.bluemix.net/containers-kubernetes/clusters.
-
-2. Cliquez sur **Créer un cluster**. L'onglet d'accès affiche des informations sur la manière d'accéder au cluster Kubernetes créé.
-
-3. Pour afficher des informations sur le cluster Kubernetes, ouvrez le tableau de bord {{site.data.keyword.cloud_notm}}. Le tableau de bord affiche une liste de vos services, tels que les clusters, les clusters de base de données, les applications Cloud Foundry, et les services Cloud Foundry créés.
-
-4. Accédez au répertoire contenant vos fichiers de projet.
-
-5. Connectez-vous à votre compte {{site.data.keyword.cloud_notm}}, puis définissez la région us-south, comme illustré ici :
-  ```hljs
-  $ ibmcloud login -a https://api.ng.bluemix.net
-  $ ibmcloud target -o <your-organization> -s <your-space>
-  ```
-  {: codeblock}
-
-  **Remarque :** L'exécution de la commande `ibmcloud login -a https://api.ng.bluemix.net` définit automatiquement la région sur **us-south**.
-
-6. Pour déployer votre application dans Kubernetes, entrez la commande suivante :
-  ```
-  $ ibmcloud dev deploy -t container
-  ```
-  {: codeblock}
-
-  Vous êtes invité à entrer le nom de votre cluster Kubernetes et le registre Docker. Une fois les informations fournies, votre application est déployée dans le cluster Kubernetes.
+Pour créer une chaîne d'outils de déploiement dans le tableau de bord, cliquez sur **Déployer dans le cloud**. Configurez votre méthode de déploiement en fonction des instructions s'appliquant à la méthode choisie.
+  * **Déployer dans [Kubernetes](/docs/apps/deploying/containers.html#containers)**. Cette option crée un cluster d'hôtes, appelé noeuds worker, afin de déployer et de gérer des conteneurs d'application à haute disponibilité. Vous pouvez créer un cluster ou déployer vers un cluster existant.
+  * **Déployer dans Cloud Foundry**. Cette option déploie votre application cloud native sans qu'il soit nécessaire de gérer l'infrastructure sous-jacente. Si votre compte a accès à {{site.data.keyword.cfee_full_notm}}, vous pouvez sélectionner le type de déployeur **[Public Cloud](/docs/cloud-foundry-public/about-cf.html#about-cf)** ou **[Enterprise Environment](/docs/cloud-foundry-public/cfee.html#cfee)**, que vous pouvez utiliser pour créer et gérer des environnements isolés pour l'hébergement de vos applications Cloud Foundry exclusivement pour votre entreprise.
+  * **Déployer sur un [serveur virtuel](/docs/apps/vsi-deploy.html#vsi-deploy)**. Cette option met à disposition une instance de serveur virtuel, charge une image qui inclut votre application, crée une chaîne d'outils DevOps et initie pour vous le premier cycle de déploiement.

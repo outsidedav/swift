@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2017-08-09"
+  years: 2017, 2019
+lastupdated: "2019-02-28"
 
 ---
 {:new_window: target="_blank"}
@@ -14,7 +14,7 @@ lastupdated: "2017-08-09"
 # Incluindo SDKs do Swift no app
 {: #sdk}
 
-Para incluir SDKs do {{site.data.keyword.Bluemix}} no app, escolha os SDKs que você deseja usar e configure seu gerenciador de dependência para puxar os SDKs para seu app.
+Para incluir SDKs do {{site.data.keyword.cloud}} no app, escolha os SDKs que você deseja usar e configure seu gerenciador de dependência para puxar os SDKs para seu app.
 
 ## Utilizando SDKs do Cliente
 {: #client_sdk}
@@ -22,6 +22,8 @@ Para incluir SDKs do {{site.data.keyword.Bluemix}} no app, escolha os SDKs que v
 É possível usar os SDKs a seguir em seu aplicativo móvel para alavancar seus respectivos recursos.
 
 ### Incluindo Serviços do Client SDK
+{: #add-client-sdk}
+
 - [SDK principal ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-core)
 - [SDK do {{site.data.keyword.appid_short}} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/ibm-cloud-security/appid-clientsdk-swift)
 - [SDK do {{site.data.keyword.mobileanalytics_short}} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)
@@ -32,6 +34,8 @@ Para incluir SDKs do {{site.data.keyword.Bluemix}} no app, escolha os SDKs que v
 - [SDK do Watson Swift ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/watson-developer-cloud/swift-sdk)
 
 ### Incluindo armazenamento do cliente
+{: #add-storage}
+
 - [Cloudant ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/cloudant/swift-cloudant)
 
 ## Incluindo SDKs do lado do servidor
@@ -40,13 +44,17 @@ Para incluir SDKs do {{site.data.keyword.Bluemix}} no app, escolha os SDKs que v
 Se você tiver um aplicativo do servidor Swift, será possível usar os SDKs a seguir para se comunicar com os respectivos serviços e opções de armazenamento.
 
 ### Utilizando Serviços do Lado do Servidor
+{: #use-serverside}
+
 - [SDK do servidor {{site.data.keyword.appid_short}} Swift ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/ibm-cloud-security/appid-serversdk-swift)
-- [{{site.data.keyword.openwhisk_short}} for iOS ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://console.bluemix.net/openwhisk/learn/ios-sdk)
+- [{{site.data.keyword.openwhisk_short}} for iOS ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/openwhisk/learn/ios-sdk)
 - [KituraKit ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/IBM-Swift/KituraKit)
 - [SDK do servidor {{site.data.keyword.mobilepushshort}} Swift ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/ibm-bluemix-mobile-services/bms-pushnotifications-serversdk-swift)
 - [SDK do Watson Swift ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/watson-developer-cloud/swift-sdk)
 
 ### Incluindo armazenamento do lado do servidor
+{: #add-serverside}
+
 - [Redis ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/IBM-Swift/Kitura-redis)
 - [CouchDB ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/IBM-Swift/Kitura-CouchDB)
 - [MongoDB ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/OpenKitten/MongoKitten)

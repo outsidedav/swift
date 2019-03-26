@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-29"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -13,15 +14,15 @@ lastupdated: "2018-08-29"
 {:tip: .tip}
 
 # 스타터 킷을 사용하여 Swift 앱 작성
-{: #intro}
+{: #starterkits-intro}
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple을 통해 개발자는 여러 스타터 킷에서 앱을 작성하고, 키 {{site.data.keyword.cloud_notm}} 최적화 서비스를 프로비저닝하고 연결할 수 있습니다. 사용자는 앱을 작성, 보기, 구성 및 관리하고 앱의 코드를 다운로드할 수 있습니다. 스타터 킷을 사용하면 신속하게 평가하고 새 앱으로 {{site.data.keyword.cloud_notm}} 서비스를 평가하고 테스트할 수 있습니다.
 
-시작하시겠습니까? [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits)에 방문하여 시작하십시오.
+시작하시겠습니까? [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits)에 방문하여 시작하십시오.
 {: tip}
 
 ## 스타터 킷의 개념
-{: #starter_kits}
+{: #starterkits-what}
 
 {{site.data.keyword.cloud_notm}} Developer Experience를 사용하여 여러 스타터 킷에서 선택할 수 있습니다. 스타터 킷은 {{site.data.keyword.cloud_notm}}에게 원하는 언어로 클라우드 배치 준비가 완료된 스켈레톤 프로덕션 앱을 동적으로 어셈블할 것을 지시합니다. 각 스타터 킷은 특정한 실제 유스 케이스에 언어, 프레임워크 및 패턴을 구현하여 코드를 다시 생성하지 않고 재사용하도록 합니다.
 
@@ -30,7 +31,7 @@ lastupdated: "2018-08-29"
 스타터 킷에는 {{site.data.keyword.cloud_notm}}가 포터블 코드를 사용하여 자동으로 스캐폴드된 앱을 생성할 수 있고 스타터 킷에서 앱을 생성할 때 자동 프로비저닝될 리소스를 지정할 수 있는 지시사항이 있습니다.
 
 ## {{site.data.keyword.cloud_notm}} Developer Console for Apple 사용
-{: #journey}
+{: #starterkits-journey}
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple은 특정 유스 케이스에 대한 Swift 스타터 앱을 빌드할 완벽한 경로를 제공합니다. 과정에서 수행할 단계를 살펴보십시오.
 
@@ -51,7 +52,7 @@ lastupdated: "2018-08-29"
 ### 앱 작성 보기
 {: #create_new_app_view}
 
-**앱 작성** 보기에서 앱의 이름을 지정하고 배치 및 라우팅 정보를 제공할 수 있습니다. 오른쪽에서 앱을 작성할 때 자동으로 프로비저닝되는 서비스(가격 책정 플랜 및 각 조항 포함)도 볼 수 있습니다. `Create`를 클릭하여 앱 세부사항 보기로 이동하십시오. {{site.data.keyword.cloud_notm}}에 로그인하지 않은 경우 지금 로그인해야 합니다.
+**앱 작성** 보기에서 앱의 이름을 지정하고 배치 및 라우팅 정보를 제공할 수 있습니다. 오른쪽에서 앱을 작성할 때 자동으로 프로비저닝되는 서비스(가격 플랜 및 각 조항 포함)도 볼 수 있습니다. `Create`를 클릭하여 앱 세부사항 보기로 이동하십시오. {{site.data.keyword.cloud_notm}}에 로그인하지 않은 경우 지금 로그인해야 합니다.
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 새 앱 작성 보기](images/create_new_project_screen.png "새 작성 보기") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 새 앱 작성 보기*
 
@@ -68,7 +69,7 @@ lastupdated: "2018-08-29"
 
 ### 코드 다운로드
 
-* 앱 세부사항 보기에서 생성할 **코드 다운로드**를 선택하여 코드에 액세스하고 앱에 맞는 코드를 다운로드할 수 있습니다. 
+* 앱 세부사항 보기에서 생성할 **코드 다운로드**를 선택하여 코드에 액세스하고 앱에 맞는 코드를 다운로드할 수 있습니다.
 
 ### 앱 목록 보기
 {: #app_list_view}
@@ -77,5 +78,5 @@ lastupdated: "2018-08-29"
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 앱 목록 보기](images/project_list_screen.png "앱 목록 보기") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 앱 목록 보기*
 
-자세한 정보는 [{{site.data.keyword.cloud_notm}} Developer Console for Apple 학습 리소스](https://console.bluemix.net/developer/appledevelopment/learning-resources)를 참조하십시오.
+자세한 정보는 [{{site.data.keyword.cloud_notm}} Developer Console for Apple 학습 리소스](https://cloud.ibm.com/developer/appledevelopment/learning-resources)를 참조하십시오.
 {: tip}

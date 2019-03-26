@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -15,6 +15,7 @@ lastupdated: "2018-11-12"
 {:note: .note}
 
 # 新增使用者鑑別
+{: #appid}
 
 應用程式安全非常複雜。對於大部分開發人員而言，這是建立應用程式較困難的作業之一。如何才能確定您正在保護使用者資訊？藉由將 {{site.data.keyword.appid_full}} 整合至您的應用程式，即可保護資源並新增鑑別，即使您沒有太多的安全經驗也可以做到。
 
@@ -23,7 +24,7 @@ lastupdated: "2018-11-12"
 如需可以使用 {{site.data.keyword.appid_short_notm}} 的所有方式以及架構資訊，請參閱[關於 {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html)。
 
 ## 開始之前
-{: #before}
+{: #prereqs-appid}
 
 首先，請確定您具備下列必要條件：
 * CocoaPods（1.1.0 版或更新版本）
@@ -32,16 +33,16 @@ lastupdated: "2018-11-12"
 * Xcode（9.0.1 版或更新版本）
 
 ## 步驟 1. 建立 {{site.data.keyword.appid_short_notm}} 實例
-{: #create_instance}
+{: #create-instance-appid}
 
 建立 {{site.data.keyword.appid_short_notm}} 服務的實例：
 
-1. 在 [{{site.data.keyword.cloud_notm}} 型錄](https://console.bluemix.net/catalog/)中，選取 {{site.data.keyword.appid_short_notm}}。即會開啟服務配置畫面。
+1. 在 [{{site.data.keyword.cloud_notm}} 型錄](https://cloud.ibm.com/catalog/)中，選取 {{site.data.keyword.appid_short_notm}}。即會開啟服務配置畫面。
 2. 提供服務實例的名稱，或使用預設名稱。
 3. 選取定價方案，然後按一下**建立**。
 
 ## 步驟 2. 安裝 iOS Swift SDK
-{: #install_sdk}
+{: #install-sdk-appid}
 
 此服務提供 SDK，以協助您輕鬆地以程式碼編寫應用程式。SDK 必須安裝在應用程式程式碼中。
 
@@ -63,6 +64,7 @@ lastupdated: "2018-11-12"
     {: pre}
 
 ## 步驟 3. 起始設定 SDK
+{: #initialize-sdk-appid}
 
 在應用程式中起始設定 SDK 之後，您可以開始配置 {{site.data.keyword.appid_short_notm}} 喜好設定。
 
@@ -120,8 +122,8 @@ lastupdated: "2018-11-12"
 您隨時都可以更新配置，而不需要更新應用程式程式碼。
 {: tip}
 
-
 ### 社交身分提供者
+{: #social-appid}
 
 使用 {{site.data.keyword.appid_short_notm}}，您可以使用社交身分提供者（例如，Facebook 及 Google+）來保護您的應用程式。
 
@@ -140,7 +142,7 @@ lastupdated: "2018-11-12"
         }
 
         public func onAuthorizationCanceled() {
-            //Authentication canceled by the user
+            //Authentication cancelled by the user
         }
 
         public func onAuthorizationFailure(error: AuthorizationError) {
@@ -154,6 +156,7 @@ lastupdated: "2018-11-12"
 
 
 ### 雲端目錄
+{: #cloud-dir-appid}
 
 使用 {{site.data.keyword.appid_short_notm}}，您可以管理自己的使用者登錄，稱為雲端目錄。雲端目錄可讓使用者使用其電子郵件及密碼，來註冊並登入行動及 Web 應用程式。
 
@@ -169,34 +172,35 @@ lastupdated: "2018-11-12"
         ```swift
         class delegate : TokenResponseDelegate {
             public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-            //User authenticated
+            /* User authenticated */
             }
 
             public func onAuthorizationFailure(error: AuthorizationError) {
-            //Exception occurred
+            /* Exception occurred */
             }
         }
 
         AppID.sharedInstance.obtainTokensWithROP(username: username, password: password, delegate: delegate())
         ```
         {: codeblock}
+
     * 註冊
         ```swift
         class delegate : AuthorizationDelegate {
           public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
              if accessToken == nil && identityToken == nil {
-              //email verification is required
+              /* email verification is required */
               return
              }
-           //User authenticated
+           /* User authenticated */
           }
 
           public func onAuthorizationCanceled() {
-              //Sign up canceled by the user
+              /* Sign up cancelled by the user */
           }
 
           public func onAuthorizationFailure(error: AuthorizationError) {
-              //Exception occurred
+              /* Exception occurred */
           }
         }
 
@@ -208,15 +212,15 @@ lastupdated: "2018-11-12"
         ```swift
         class delegate : AuthorizationDelegate {
            public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-              //forgot password finished, in this case accessToken and identityToken will be null.
+              /* forgot password finished, in this case accessToken and identityToken will be null. */
            }
 
            public func onAuthorizationCanceled() {
-               //forgot password canceled by the user
+               /* forgot password canceled by the user */
            }
 
            public func onAuthorizationFailure(error: AuthorizationError) {
-               //Exception occurred
+               /* Exception occurred */
            }
         }
 
@@ -261,7 +265,7 @@ lastupdated: "2018-11-12"
 
 
 ## 步驟 5. 測試應用程式
-{: #appid_testing}
+{: #testing-appid}
 
 所有項目都正確配置嗎？您可以測試看看！
 
@@ -273,9 +277,9 @@ lastupdated: "2018-11-12"
 有困難嗎？請參閱[疑難排解 {{site.data.keyword.appid_short_notm}}](/docs/services/appid/ts_index.html)。
 
 ## 後續步驟
-{: #appid_next}
+{: #next-appid}
 
 做得好！您已為應用程式新增一個安全等級。嘗試下列其中一個選項，以保持動力：
 
 * 進一步瞭解並充分運用 {{site.data.keyword.appid_short_notm}} 提供的所有特性，[請參閱文件](/docs/services/appid/index.html)！
-* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
+* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://cloud.ibm.com/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！

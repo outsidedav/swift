@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2017-2018
-lastupdated: "2018-11-08"
+  years: 2017, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -22,8 +23,9 @@ mobiles.
 Pour en savoir plus sur les différentes utilisations de {{site.data.keyword.cloudant_short_notm}}, voir [Concepts de base relatifs à {{site.data.keyword.cloudant_short_notm}}](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics).
 
 ## Avant de commencer
+{: #prereqs-cloudant}
 
-Tout d'abord, assurez-vous que vous respectez la configuration prérequise suivante :
+Tout d'abord, assurez-vous que la configuration prérequise suivante est respectée :
  * CocoaPods (version 1.1.0 ou ultérieure)
  * iOS (version 9 ou ultérieure)
  * MacOS (version 10.11.5 ou ultérieure)
@@ -33,17 +35,20 @@ Le logiciel SDK [{{site.data.keyword.cloudant_short_notm}} pour Swift ![Icône d
 {: tip}
 
 ## Etape 1. Création d'une instance de {{site.data.keyword.cloudant_short_notm}}
+{: #create-instance-cloudant}
 
-Pour créer une instance du service, consultez le tutoriel [Création d'une instance de base de données Cloudant NoSQL ![Icône de lien externe](../images/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/docs/services/Cloudant/tutorials/create_service.html#creating-a-cloudant-nosql-db-instance-on-ibm-cloud){:new_window}.
+Voir [Création d'une instance IBM Cloudant sur le tutoriel IBM Cloud ![Icône de lien externe](../images/launch-glyph.svg "Icône de lien externe")](/docs/services/Cloudant/tutorials/create_service.html){:new_window} to create an instance of the service.
 
 ## Etape 2. Installation du logiciel SDK
+{: #install-sdk-cloudant}
 
 ### Installation du logiciel SDK Swift iOS
+{: #install-swift-sdk-cloudant}
 
 Utilisez le logiciel SDK Swift Cloudant SDK pour simplifier le codage de votre application. Ce logiciel SDK doit être installé dans votre code d'application.
 
 1. Ouvrez votre répertoire projet Xcode existant sur le `Fichier pod`.
-2. Sous votre cible projets, ajoutez une dépendance pour le pod `SwiftCloudant`. Assurez-vous que la commande `use_frameworks!` figure également sous votre cible comme illustré dans l'exemple suivant.
+2. Sous votre cible projets, ajoutez une dépendance pour le pod `SwiftCloudant`. Assurez-vous que la commande `use_frameworks!` figure également sous votre cible, comme illustré dans l'exemple suivant.
     ```
     target '<yourTarget>' do
       use_frameworks!
@@ -59,6 +64,7 @@ Utilisez le logiciel SDK Swift Cloudant SDK pour simplifier le codage de votre a
     {: codeblock}
 
 ### Installation du logiciel SDK Swift côté serveur
+{: #install-serverside-cloudant}
 
 Pour une utilisation avec le Gestionnaire de package Swift pour le développement côté serveur, ajoutez la ligne suivante à vos dépendances dans votre `Package.swift` :
 ```swift
@@ -67,11 +73,12 @@ Pour une utilisation avec le Gestionnaire de package Swift pour le développemen
 {: codeblock}
 
 ## Etape 3. Initialisation du logiciel SDK
+{: #initialize-cloudant}
 
 Une fois le logiciel SDK initialisé dans votre application, vous pouvez commencer à utiliser {{site.data.keyword.cloudant_short_notm}} pour stocker les données.
 
 1.  Ajoutez l'importation ci-dessous dans votre fichier `AppDelegate.swift` ou fichier Swift côté serveur.
-    ```
+    ```swift
     import SwiftCloudant
     ```
     {: codeblock}
@@ -85,6 +92,8 @@ Une fois le logiciel SDK initialisé dans votre application, vous pouvez commenc
     {: codeblock}
 
 ### Opérations de base
+{: #basic-operations-cloudant}
+
 Ces opérations de base illustrent les principales actions permettant de créer, de lire et de supprimer vos documents à l'aide du client initialisé.
 
 #### Créer un document
@@ -142,8 +151,8 @@ Vous rencontrez des problèmes ? Consultez la [Référence d'API {{site.data.key
 ## Etapes suivantes
 {: #cloudant_next notoc}
 
-Félicitations ! Vous avez ajouté un niveau de persistance sécurisé à votre application. Poursuivez sur votre lancée en essayant l'une des options suivantes :
+Félicitations ! Vous avez ajouté un niveau de persistance sécurisé à votre application. Continuez sur votre lancée en essayant l'une des options suivantes :
 
 * Consultez le code source du [logiciel SDK pour Swift {{site.data.keyword.cloudant_short_notm}}![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/cloudant/swift-cloudant).
-* Les kits de démarrage constituent l'un des moyens les plus rapides pour utiliser les fonctionnalités d'{{site.data.keyword.cloud_notm}}. Le kit de démarrage **Infinite Scrolling with Cloudant NoSQL for iOS** illustre comment étendre un `ViewController` pour afficher les données à l'aide de la pagination. Ce modèle d'application est commun pour les développeurs iOS et il s'agit d'un bon exemple pour illustrer les possibilités de {{site.data.keyword.cloudant_short_notm}}. Vous pouvez voir les kits de démarrage disponibles dans le [tableau de bord Mobile Developer](https://console.bluemix.net/developer/mobile/dashboard). Téléchargez le code. Exécutez l'application.
-* Pour découvrir et bénéficier de toutes les fonctions offertes par {{site.data.keyword.cloudant_short_notm}}, [consultez les documentations](/docs/services/Cloudant/index.html) ! 
+* Les kits de démarrage constituent l'un des moyens les plus rapides d'utiliser les fonctionnalités d'{{site.data.keyword.cloud_notm}}. Le kit de démarrage **Infinite Scrolling with Cloudant NoSQL for iOS** illustre comment étendre un `ViewController` pour afficher les données à l'aide de la pagination. Ce modèle d'application est commun pour les développeurs iOS et il s'agit d'un bon exemple pour illustrer les possibilités de {{site.data.keyword.cloudant_short_notm}}. Vous pouvez voir les kits de démarrage disponibles dans le [tableau de bord Mobile Developer](https://cloud.ibm.com/developer/mobile/dashboard). Téléchargez le code. Exécutez l'application.
+* Pour découvrir et bénéficier de toutes les fonctions offertes par {{site.data.keyword.cloudant_short_notm}}, [consultez les documentations](/docs/services/Cloudant/index.html) !

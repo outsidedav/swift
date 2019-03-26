@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -48,7 +48,7 @@ Kubernetes 具有細緻入微的處理程序性能記號。它定義兩個探測
 | Errored  | 500 - 伺服器錯誤| 500 - 伺服器錯誤| 500 - 伺服器錯誤|
 
 ## 將性能檢查新增至現有 Swift 應用程式
-{: #add-healthcheck-existing}
+{: #existing-app}
 
 [性能](https://github.com/IBM-Swift/Health)程式庫可輕鬆地將性能檢查新增至您的 Swift 應用程式。性能檢查是可延伸的。如需[快取](https://github.com/IBM-Swift/Health#caching)以防止 DoS 攻擊或新增[自訂檢查](https://github.com/IBM-Swift/Health#implementing-a-health-check)的相關資訊，請參閱[效能](https://github.com/IBM-Swift/Health)程式庫。
 
@@ -74,7 +74,7 @@ Kubernetes 具有細緻入微的處理程序性能記號。它定義兩個探測
 
     ```swift
     router.get("/health") { request, response, next in
-        // let status = health.status.toDictionary()
+        /* let status = health.status.toDictionary() */
         let status = health.status.toSimpleDictionary()
         if health.status.state == .UP {
             try response.send(json: status).end()
@@ -116,16 +116,19 @@ func initializeHealthRoutes(app: App) {
 此範例使用標準字典，當您存取 `/health` 端點時，該字典會產生有效負載，例如 `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}`。
 
 ## readiness 及 liveness 探測的建議
+{: #recommend-probes}
 
 如果下游服務無法使用時沒有可接受的撤回措施存在，就緒檢查必須在其結果中包含下游服務連線的可行性。這並不表示直接呼叫下游服務所提供的性能檢查，因為基礎架構會為您檢查。相反地，請考慮驗證您應用程式對下游服務之現有參照的性能：這可能是與 WebSphere MQ 的 JMS 連線，或已起始設定的 Kafka 消費者或生產者。如果您檢查了對下游服務之內部參照的可行性，請將結果予以快取，將性能檢查對您應用程式的影響降至最低。
 
 相反地，liveness 探測對於檢查的對象可能很慎重，因為失敗會導致立即終止處理程序。簡單的 http 端點、一律傳回 `{"status": "UP"}` 與狀態碼 `200`，便是一個合理的選項。
 
 ### 新增 Kubernetes 就緒及存活的支援給 Swift 應用程式
+{: #kube-readiness-swift}
 
 若為替代的實作，例如，使用 **Codable** 或標準字典，請參閱[性能程式庫範例](https://github.com/IBM-Swift/Health#usage)。這些實作中有一部分能簡化可延伸性能檢查的建立，因為它們能支援快取針對支援服務所執行的檢查。在此情境中，建議您區分簡單的存活測試，與較強大而詳細的就緒檢查。
 
 ## 在 Kubernetes 中配置 readiness 和 liveness 探測
+{: #config-kube-readiness}
 
 請與 Kubernetes 部署同時宣告 liveness 和 readiness 探測。兩種探測都使用相同的配置參數：
 

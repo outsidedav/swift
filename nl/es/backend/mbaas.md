@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -21,4 +22,4 @@ La aplicación puede utilizar características externas mediante uno de estos do
 
 Por lo general, la adición de características externas directamente desde la aplicación móvil a través de un enfoque de estilo MBaaS es más directa. Hay que añadir menos elementos e infraestructura al primer conjunto de servicios. Sin embargo, este método carece de la máxima flexibilidad y ámbito que es posible a través del despliegue de un BFF.
 
-Una de las ventajas de la plataforma {{site.data.keyword.cloud_notm}} es que no es necesario decidir por adelantado. Todos los servicios proporcionados se pueden utilizar directamente desde el dispositivo móvil utilizando SDK basados en Swift proporcionados. La plataforma {{site.data.keyword.cloud_notm}} también da soporte a la escritura de su lógica de fondo en Swift, ya sea a través de un modelo sin servidor con {{site.data.keyword.openwhisk_short}}, o a través de Swift del lado del servidor con infraestructuras como Kitura. Debido a esta funcionalidad, cuando desee añadir lógica de fondo a través de un modelo BFF, puede hacerlo en Swift, y puede optar por migrar el uso de los SDK de Swift desde la aplicación al BFF. Como resultado, puede pasar de forma incremental de un enfoque de estilo MBaaS a un enfoque de BFF con un mínimo esfuerzo adicional. 
+Una de las ventajas de la plataforma {{site.data.keyword.cloud_notm}} es que no es necesario decidir por adelantado. Todos los servicios proporcionados se pueden utilizar directamente desde el dispositivo móvil utilizando SDK basados en Swift proporcionados. La plataforma {{site.data.keyword.cloud_notm}} también da soporte a la escritura de su lógica de fondo en Swift, ya sea a través de un modelo sin servidor con {{site.data.keyword.openwhisk_short}}, o a través de Swift del lado del servidor con infraestructuras como Kitura. Debido a esta funcionalidad, cuando desee añadir lógica de fondo a través de un modelo BFF, puede hacerlo en Swift, y puede optar por migrar el uso de los SDK de Swift desde la aplicación al BFF. Como resultado, puede pasar de forma incremental de un enfoque de estilo MBaaS a un enfoque de BFF con un mínimo esfuerzo adicional.

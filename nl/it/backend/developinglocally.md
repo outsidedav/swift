@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -12,12 +13,14 @@ lastupdated: "2018-11-12"
 {:pre: .pre}
 
 # Sviluppo in locale
+{: #develop-locally}
 
 Eseguendo uno sviluppo in locale, puoi facilmente creare, eseguire e verificare applicazioni Swift. Utilizzi {{site.data.keyword.dev_cli_short}} per eseguire tali azioni servendoti di comandi standard. 
 
 Puoi utilizzare {{site.data.keyword.dev_cli_short}} per gestire le tue applicazioni lato server con più di una dozzina di comandi. Accedi ad ulteriori informazioni sui diversi comandi nel documento relativo ai [comandi `ibmcloud dev` della CLI IBM Cloud Developer Tools](/docs/cli/idt/commands.html).
 
 ## Prima di cominciare
+{: #prereqs-local}
 
 Per sviluppare in locale, devi installare la {{site.data.keyword.dev_cli_notm}}. Utilizza questo comando per eseguire lo script di installazione:
 ```
@@ -28,6 +31,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 Vedi il documento relativo alla [Configurazione della CLI IBM Cloud Developer Tools](/docs/cli/idt/setting_up_idt.html) per ulteriori informazioni sulla configurazione e l'utilizzo della {{site.data.keyword.dev_cli_notm}}.
 
 ## Richiamo delle credenziali del servizio
+{: #credentials-local}
 
 Dopo che hai clonato la tua applicazione da Git, devi richiamare le credenziali per i servizi associati alla tua applicazione poiché non sono memorizzate nel repository Git per la tua applicazione. Il richiamo delle credenziali consente l'utilizzo dei servizi associati. Puoi facilmente scaricare le credenziali eseguendo questo comando nella root della directory dell'applicazione:
 ```
@@ -36,6 +40,7 @@ ibmcloud dev get-credentials
 {: codeblock}
 
 ## Creazione, esecuzione e sviluppo della tua applicazione
+{: #build-deploy-local}
 
 1. **Crea** - puoi ora creare la tua applicazione, che è un prerequisito per eseguire la tua applicazione.
   Utilizza questo comando nella root della directory dell'applicazione per creare la tua applicazione:

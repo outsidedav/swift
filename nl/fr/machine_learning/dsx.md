@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-06-04"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -13,19 +14,22 @@ lastupdated: "2018-06-04"
 {:tip: .tip}
 
 # Analyse de jeux de données avec des modèles générés personnalisés
+{: #dsx-overview}
 
 Watson Studio fournit l'environnement et les outils permettant de résoudre vos problèmes métier par une analyse collaborative des données. Vous pouvez choisir les outils dont vous avez besoin pour analyser, nettoyer et organiser les données. Apprenez à verser des données de flux, ou à créer, former et déployer des modèles d'apprentissage automatique. Watson Studio s'intègre à une large gamme de services {{site.data.keyword.cloud}} et au catalogue de connaissances Watson, lequel fournit une gestion de stratégie pour le contrôle des ressources, ainsi que des catalogues d'indexation pour les localiser. Pour en savoir plus, consultez la page https://dataplatform.ibm.com/.
 
 Watson Studio est structuré autour d'une architecture basée sur un projet, laquelle organise vos ressources pour la résolution d'un problème métier. Les ressources incluent les connexions au cloud et les magasins de données sur site, les fichiers de données, les collaborateurs et des ressources telles que des modèles. Pour en savoir plus, consultez la page https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics.
 
 ## Apprentissage automatique pour {{site.data.keyword.DSX}}
-{: #dsx}
+{: #dsx-learning}
 
 Avec {{site.data.keyword.DSX}}, il est possible d'entraîner des modèles et de les déployer, puis de consommer les résultats à l'aide d'API. Ces API peuvent ensuite être utilisées dans vos applications iOS ou Swift.
 
 Avec l'apprentissage automatique IBM Watson, une fois votre environnement défini, vous pouvez créer des modèles, les déployer dans le cloud, puis les entraîner. Pour plus d'informations, voir [Créer, déployer et entraîner des modèles avec {{site.data.keyword.pm_full}} et {{site.data.keyword.DSX}}](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics).
 
 ### Tutoriels
+{: #dsx-tutorials}
+
 - [Générer un modèle de régression logistique avec {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics)
 - [Générer un modèle Naive Bayes avec {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics)
 
@@ -41,15 +45,15 @@ Avec l'apprentissage automatique IBM Watson, une fois votre environnement défin
   * Pour un projet iOS, du simple ajout de la ressource {{site.data.keyword.pm_short}} à votre projet iOS, les données d'identification sont instantanément injectées dans votre application.
     Pour accéder aux données d'identification de votre application, copiez et collez le fragment de code suivant. Veillez également à ajouter le noeud final d'évaluation à votre application, lequel se trouve sous l'onglet `Implémentation` de votre déploiement de modèle.
 
-    ```Swift
-    // The url to your model's scoring endpoint
+    ```swift
+    /* The url to your model's scoring endpoint */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
 
-    // Your credentials
+    /* Your credentials */
     var machineLearningUsername: String!
     var machineLearningPassword: String!
 
-    // Machine Learning initialization
+    /* Machine Learning initialization */
     if let contents = Bundle.main.path(forResource:"BMSCredentials", ofType: "plist"),
        let dictionary = NSDictionary(contentsOfFile: contents),
        let username = dictionary["machinelearningUsername"] as? String,
@@ -64,19 +68,19 @@ Avec l'apprentissage automatique IBM Watson, une fois votre environnement défin
 
   * Pour une application côté serveur, ajoutez manuellement votre nom d'utilisateur et votre mot de passe à votre application ainsi que le noeud final d'évaluation, qui se trouve sous l'onglet `Implémentation` de votre déploiement de modèle.
 
-    ```Swift
-    // Your Machine Learning Credentials
+    ```swift
+    /* Your Machine Learning Credentials */
     let machineLearningUsername: String = "<your-ml-service-username>"
     let machineLearningPassword: String = "<your-ml-service-password>"
 
-    // The url to your model's scoring endpoint
+    /* The url to your model's scoring endpoint */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
     ```
     {: codeblock}
 
 4. Procédez à l'extraction des jetons d'accès et exécutez une analyse de prédiction sur les jeux de données de votre application avec un logiciel SDK client simple.
 
-  ```Swift
+  ```swift
   public class MachineLearning {
 
       private let username: String
@@ -175,7 +179,7 @@ Avec l'apprentissage automatique IBM Watson, une fois votre environnement défin
   {: codeblock}
 
 ### Exemple
-{: #example}
+{: #dsx-example}
 
 **Nom du scénario :** Product line prediction
 
@@ -183,7 +187,7 @@ Avec l'apprentissage automatique IBM Watson, une fois votre environnement défin
 
 Une fois le modèle déployé, vous pouvez effectuer une analyse de prédiction à l'aide du noeud final d'évaluation.
 
-```Swift
+```swift
 // The data you want to have analyzed
 let examplePayload: [String: Any] = [
     "fields": ["GENDER", "AGE", "MARITAL_STATUS", "PROFESSION"],
@@ -212,9 +216,11 @@ client.retrieveToken { token in
 ## Etapes suivantes
 {: #dsx_next}
 
-Félicitations ! Vous pouvez maintenant analyser les jeux de données à l'aide de modèles d'apprentissage automatique générés personnalisés. Poursuivez sur votre lancée en découvrant les fonctionnalités offertes par {{site.data.keyword.pm_short}} à la section relative à la [sciences des données et l'apprentissage automatique](https://www.ibm.com/analytics/data-science/machine-learning).
+Félicitations ! Vous pouvez maintenant analyser les jeux de données à l'aide de modèles d'apprentissage automatique générés personnalisés. Continuez sur votre lancée en découvrant les fonctionnalités offertes par {{site.data.keyword.pm_short}} à la section relative à la [sciences des données et l'apprentissage automatique](https://www.ibm.com/analytics/data-science/machine-learning).
 
 ### Liens connexes
+{: #dsx-related}
+
 * [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling/index.html#using-machine-learning-with-data-science-experience)
 * [{{site.data.keyword.DSX}}](https://datascience.ibm.com/)
 * [Documentation {{site.data.keyword.DSX}}](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics)

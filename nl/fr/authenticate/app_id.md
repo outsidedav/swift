@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -15,6 +15,7 @@ lastupdated: "2018-11-12"
 {:note: .note}
 
 # Ajout d'une authentification d'utilisateur
+{: #appid}
 
 La sécurité des applications est extrêmement complexe. Pour la plupart des développeurs, il s'agit de l'une des tâches les plus difficiles lors de la création d'une application. Comment pouvez-vous être sûr de protéger les informations de vos utilisateurs ? En intégrant {{site.data.keyword.appid_full}} à vos applications, vous pouvez sécuriser les ressources et ajouter un processus d'authentification, même si vous ne possédez pas une grande expérience en matière de sécurité.
 
@@ -23,25 +24,25 @@ En demandant aux utilisateurs de se connecter, vous pouvez stocker les données 
 Pour en savoir plus sur les différentes utilisations du service {{site.data.keyword.appid_short_notm}} et les informations d'architecture, voir [A propos de {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
 
 ## Avant de commencer
-{: #before}
+{: #prereqs-appid}
 
-Tout d'abord, assurez-vous que vous respectez la configuration prérequise suivante :
+Tout d'abord, assurez-vous que la configuration prérequise suivante est respectée :
 * CocoaPods (version 1.1.0 ou ultérieure)
 * iOS (version 9 ou ultérieure)
 * MacOS (version 10.11.5 ou ultérieure)
 * Xcode (version 9.0.1 ou ultérieure)
 
 ## Etape 1. Création d'une instance de {{site.data.keyword.appid_short_notm}}
-{: #create_instance}
+{: #create-instance-appid}
 
 Créez une instance du service {{site.data.keyword.appid_short_notm}} :
 
-1. Dans le catalogue [{{site.data.keyword.cloud_notm}}](https://console.bluemix.net/catalog/), sélectionnez {{site.data.keyword.appid_short_notm}}. L'écran de configuration du service s'ouvre.
+1. Dans le [catalogue {{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/), sélectionnez {{site.data.keyword.appid_short_notm}}. L'écran de configuration du service s'ouvre.
 2. Donnez un nom à votre instance de service ou utilisez le nom prédéfini.
 3. Sélectionnez votre plan de tarification, puis cliquez sur **Créer**.
 
-## Etape 2. Installation du logiciel SDK Swift iOS 
-{: #install_sdk}
+## Etape 2. Installation du logiciel SDK Swift iOS
+{: #install-sdk-appid}
 
 Le service fournit un logiciel SDK pour simplifier le codage de votre application. Ce logiciel SDK doit être installé dans votre code d'application.
 
@@ -63,6 +64,7 @@ Le service fournit un logiciel SDK pour simplifier le codage de votre applicatio
     {: pre}
 
 ## Etape 3. Initialisation du logiciel SDK
+{: #initialize-sdk-appid}
 
 Une fois le logiciel SDK initialisé dans votre application, vous pouvez commencer à configurer vos préférences {{site.data.keyword.appid_short_notm}}.
 
@@ -118,8 +120,8 @@ Un fournisseur d'identité fournit les informations d'authentification pour vos 
 Vous pouvez mettre à jour vos configurations à tout moment sans mettre à jour le code de votre application.
 {: tip}
 
-
 ### Fournisseurs d'identité de réseaux sociaux
+{: #social-appid}
 
 Avec {{site.data.keyword.appid_short_notm}}, vous pouvez utiliser des fournisseurs d'identité de réseaux sociaux tels que Facebook et Google+ pour sécuriser vos applications.
 
@@ -138,7 +140,7 @@ Pour configurer des fournisseurs d'identité de réseaux sociaux :
         }
 
         public func onAuthorizationCanceled() {
-            //Authentication canceled by the user
+            //Authentication cancelled by the user
         }
 
         public func onAuthorizationFailure(error: AuthorizationError) {
@@ -152,6 +154,7 @@ Pour configurer des fournisseurs d'identité de réseaux sociaux :
 
 
 ### Répertoire cloud
+{: #cloud-dir-appid}
 
 Avec {{site.data.keyword.appid_short_notm}}, vous pouvez gérer votre propre registre d'utilisateurs appelé répertoire cloud. Le répertoire cloud permet aux utilisateurs de s'inscrire et de se connecter à vos applications mobile et Web à l'aide de leur e-mail et d'un mot de passe.
 
@@ -167,34 +170,35 @@ Pour configurer le répertoire cloud :
         ```swift
         class delegate : TokenResponseDelegate {
             public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-            //User authenticated
+            /* User authenticated */
             }
 
             public func onAuthorizationFailure(error: AuthorizationError) {
-            //Exception occurred
+            /* Exception occurred */
             }
         }
 
         AppID.sharedInstance.obtainTokensWithROP(username: username, password: password, delegate: delegate())
         ```
         {: codeblock}
+
     * Sign up
         ```swift
         class delegate : AuthorizationDelegate {
           public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
              if accessToken == nil && identityToken == nil {
-              //email verification is required
+              /* email verification is required */
               return
              }
-           //User authenticated
+           /* User authenticated */
           }
 
           public func onAuthorizationCanceled() {
-              //Sign up canceled by the user
+              /* Sign up cancelled by the user */
           }
 
           public func onAuthorizationFailure(error: AuthorizationError) {
-              //Exception occurred
+              /* Exception occurred */
           }
         }
 
@@ -206,15 +210,15 @@ Pour configurer le répertoire cloud :
         ```swift
         class delegate : AuthorizationDelegate {
            public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-              //forgot password finished, in this case accessToken and identityToken will be null.
+              /* forgot password finished, in this case accessToken and identityToken will be null. */
            }
 
            public func onAuthorizationCanceled() {
-               //forgot password canceled by the user
+               /* forgot password canceled by the user */
            }
 
            public func onAuthorizationFailure(error: AuthorizationError) {
-               //Exception occurred
+               /* Exception occurred */
            }
         }
 
@@ -259,7 +263,7 @@ Pour configurer le répertoire cloud :
 
 
 ## Etape 5. Test de votre application
-{: #appid_testing}
+{: #testing-appid}
 
 Est-ce que tout est correctement configuré ? Vous pouvez le tester !
 
@@ -271,9 +275,9 @@ Est-ce que tout est correctement configuré ? Vous pouvez le tester !
 Vous rencontrez des problèmes ? Consultez la section [Traitement des incidents dans {{site.data.keyword.appid_short_notm}}](/docs/services/appid/ts_index.html).
 
 ## Etapes suivantes
-{: #appid_next}
+{: #next-appid}
 
-Félicitations ! Vous avez ajouté un niveau de sécurité à votre application. Poursuivez sur votre lancée en essayant l'une des options suivantes :
+Félicitations ! Vous avez ajouté un niveau de sécurité à votre application. Continuez sur votre lancée en essayant l'une des options suivantes :
 
 * Pour découvrir et tirer parti de toutes les fonctions offertes par {{site.data.keyword.appid_short_notm}}, [consultez les documentations](/docs/services/appid/index.html) !
-* Les kits de démarrage constituent l'un des moyens les plus rapides d'utiliser les fonctionnalités de {{site.data.keyword.cloud_notm}}. Vous pouvez voir les kits de démarrage disponibles dans le [tableau de bord Mobile Developer](https://console.bluemix.net/developer/mobile/dashboard). Téléchargez le code. Exécutez l'application.
+* Les kits de démarrage constituent l'un des moyens les plus rapides d'utiliser les fonctionnalités d'{{site.data.keyword.cloud_notm}}. Vous pouvez voir les kits de démarrage disponibles dans le [tableau de bord Mobile Developer](https://cloud.ibm.com/developer/mobile/dashboard). Téléchargez le code. Exécutez l'application.

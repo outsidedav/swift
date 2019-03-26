@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-03-07"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -17,11 +18,12 @@ lastupdated: "2018-11-12"
 
 [Kitura](http://www.kitura.io) 是一個伺服器端 Swift 架構，用來建置 iOS 後端及 Web 應用程式。此架構可建立 REST API，只要使用 URLSession SDK（例如 Alamofire、RestKit），或 Kitura 自己提供的 [KituraKit](https://github.com/ibm-swift/kiturakit) SDK，即可從 iOS 應用程式呼叫該 REST API。
 
-Kitura 可與 {{site.data.keyword.cloud}} 提供的所有服務與特性整合，包括 {{site.data.keyword. appid_short}}、{{site.data.keyword.mobilepushshort}} 及 {{site.data.keyword.mobileanalytics_short}}，以及資料庫、機器學習及其他服務。然後，可以在 {{site.data.keyword.cloud}} 中，使用 Cloud Foundry 或 Docker（Kubernetes 型）平台，來部署及自動擴充 Kitura。
+Kitura 可與 {{site.data.keyword.cloud}} 提供的所有服務與特性整合，包括 {{site.data.keyword.appid_short}}、{{site.data.keyword.mobilepushshort}} 及 {{site.data.keyword.mobileanalytics_short}}，以及資料庫、機器學習及其他服務。然後，可以在 {{site.data.keyword.cloud}} 中，使用 Cloud Foundry 或 Docker（Kubernetes 型）平台，來部署及自動擴充 Kitura。
 
-Kitura 提供 `kitura` [指令行介面 (CLI)](http://www.kitura.io/en/starter/gettingstarted.html)，可簡化建立、建置、測試及部署 Kitura 應用程式。使用 Kitura CLI 所建置的應用程式完全支援部署至支援 Cloud Foundry、Docker 及 Kubernetes 技術的任何雲端。不過，如果您是特別針對 {{site.data.keyword.cloud_notm}} 進行建置，則建議在瀏覽器中使用 IBM Apple Development Console，或者使用 {{site.data.keyword.dev_cli_notm}}。此外，當這兩種方法的基礎技術相同時，Apple Development Console 和 IBM Developer Tools 會為您建立一個受管理專案及部署管線，並佈建您應用程式所需的服務。
+Kitura 提供 `kitura` [指令行介面 (CLI)](https://www.kitura.io/guides/kituracli/gettingstarted.html)，可簡化建立、建置、測試及部署 Kitura 應用程式。使用 Kitura CLI 所建置的應用程式完全支援部署至支援 Cloud Foundry、Docker 及 Kubernetes 技術的任何雲端。不過，如果您是特別針對 {{site.data.keyword.cloud_notm}} 進行建置，則建議在瀏覽器中使用 IBM Apple Development Console，或者使用 {{site.data.keyword.dev_cli_notm}}。此外，當這兩種方法的基礎技術相同時，Apple Development Console 和 IBM Developer Tools 會為您建立一個受管理專案及部署管線，並佈建您應用程式所需的服務。
 
 ## 開始之前
+{: #prereqs-kitura}
 
 首先，請確定您具備下列必要條件：  
 
@@ -46,7 +48,7 @@ Kitura 提供 `kitura` [指令行介面 (CLI)](http://www.kitura.io/en/starter/g
 即會建立一個專案，但是該專案尚未使用任何其他服務。您可以按一下**新增資源**按鈕來新增服務，或者按一下**下載程式碼**按鈕來取得專案的程式碼。您也可以輕鬆地將服務新增至現有專案。
 
 ## 步驟 2. 新增服務
-{: #add_services}
+{: #add_services-kitura}
 
 1. 按一下**新增資源**按鈕，以新增服務。即會顯示服務種類。例如，選取**資料**可查看可用的資料庫，然後選取 **Cloudant NoSQL DB**。
 2. 選取服務的定價方案，例如，「精簡」，然後按一下**建立**。
@@ -56,7 +58,7 @@ Kitura 提供 `kitura` [指令行介面 (CLI)](http://www.kitura.io/en/starter/g
 下載專案之後，即可開始使用您的應用程式。
 
 ## 步驟 3. 使用 Xcode 開發應用程式
-{: #develop_xcode}
+{: #develop_xcode-kitura}
 
 下載專案之後，您可以使用 Xcode 來修改及開發該專案，然後上傳修改過的應用程式，以部署至雲端。
 
@@ -77,7 +79,7 @@ Kitura 提供 `kitura` [指令行介面 (CLI)](http://www.kitura.io/en/starter/g
   * Kitura 性能檢查：[http://localhost:8080/health]()
 
 ## 步驟 5. 新增 REST API
-{: #add_restapi}
+{: #add_restapi-kitura}
 
 即會建立架構 Kitura 伺服器，但它不提供 iOS 應用程式可使用的任何 REST API。使用最少的程式碼，在 Kitura 中新增 REST API。使用步驟可針對 `/meals` 上的 `GET` 要求新增一個 REST API，其設計目的為傳回 Kitura 伺服器所儲存的 `Meal` 物件。
 
@@ -99,13 +101,12 @@ Kitura 提供 `kitura` [指令行介面 (CLI)](http://www.kitura.io/en/starter/g
   {: codeblock}
 
 3. 藉由將下列程式碼新增至 `postInit()` 函數，來將 `/meals` 上 `GET` 要求的處理程式新增至 `Sources/Application/Application.swift` 檔案：  
-
   ```swift
   router.get("/meals", handler: loadHandler)
   ```
   {: codeblock}
 
-4. 藉由將下列程式碼新增為 `App` 類別中的另一個函數，來將 loadHandler 函數實作至 `Sources/Application/Application.swift` 檔案：  
+4. 藉由將下列程式碼新增為 `App` 類別中的另一個函數，來將 loadHandler 函數實作至 `Sources/Application/Application.swift` 檔案：
   ```swift
   func loadHandler(completion: ([Meal]?, RequestError?) -> Void ) {
       let meals: [Meal] = self.mealStore.map({ $0.value })
@@ -122,7 +123,7 @@ Kitura 提供 `kitura` [指令行介面 (CLI)](http://www.kitura.io/en/starter/g
 6. 使用 `GET` 要求（其符合 Web 瀏覽器要求伺服器中資料的方式），測試 REST API： 
 
   您可以使用下列 URL 來測試 REST API：  
-  ```
+  ```swift
   * `GET /meals`:	[http://localhost:8080/meals]()
   ```
   {: codeblock}
@@ -133,7 +134,7 @@ Kitura 提供 `kitura` [指令行介面 (CLI)](http://www.kitura.io/en/starter/g
 {: tip}
 
 ## 步驟 6. 將 KituraKit 安裝至 iOS 應用程式
-{: #kiturakit}
+{: #install-kiturakit}
 
 使用 Kitura 伺服器所建置的 REST API 為標準 Web API，可從任何應用程式中使用，不論使用的用戶端程式庫為何，或者用戶端以哪種語言撰寫。這表示您可以使用 Alamofire、RestKit 或 URLSession 來連線至伺服器。此外，Kitura 也提供最佳的訂製用戶端連接器，以簡化以 KituraKit 形式從 iOS 呼叫其 REST API 的作業。 
 
@@ -148,19 +149,19 @@ KituraKit 提供 Kitura 中所用路由器處理程式 API 的鏡映影像，使
   {: codeblock}
 
 2. 編輯 Podfile，為您的專案設定一個 iOS 11 廣域平台，方法為將下列這一行：
-  ```
+  ```pod
   # platform :ios, '9.0'
   ```
   {: codeblock}
 
   取代為下列程式碼：
-  ```
+  ```pod
   platform :ios, '11.0'
   ```
   {: codeblock}
 
 3. 透過在 `# Pods for <application name>` 下新增下列內容，將 KituraKit 新增至 Podfile：
-  ```
+  ```pod
   pod 'KituraKit', :git => 'https://github.com/IBM-Swift/KituraKit.git', :branch => 'pod'
   ```
   {: codeblock}
@@ -186,20 +187,20 @@ KituraKit 提供 Kitura 中所用路由器處理程式 API 的鏡映影像，使
   ```swift
   import KituraKit
   
-  // Connect to the Kitura server on http://localhost:8080
+  /* Connect to the Kitura server on http://localhost:8080 */
   guard let client = KituraKit(baseURL: "http://localhost:8080") else {
       print("Error creating KituraKit client")
       return
   }
   
-  // Make a request to `GET /meals`, expecting a [Meal] or a RequestError
+  /* Make a request to `GET /meals`, expecting a [Meal] or a RequestError */
   client.get("/meals") { (meals: [Meal]?, error: RequestError?) in
-      // Check for an error
+      /* Check for an error */
       guard error == nil else {
           print("Error saving meal to Kitura: \(error!)")
           return
       }
-      // Check for meals
+      /* Check for meals */
       guard let meals = meals else {
           print("Received Meals!")
           return
@@ -214,6 +215,6 @@ KituraKit 提供 Kitura 中所用路由器處理程式 API 的鏡映影像，使
 {: tip}
 
 ## 後續步驟
-{: #next notoc}
+{: #next-kitura notoc}
 
-現在，您具有 Kitura 伺服器，且您的 iOS 應用程式可以呼叫其所提供的 REST API，表示您已準備好可將伺服器部署至 {{site.data.keyword.cloud_notm}}。使用 Containers with Kubernetes、Secure Containers 或 Cloud Foundry，即可完成部署作業。
+現在，您具有 Kitura 伺服器，且您的 iOS 應用程式可以呼叫其所提供的 REST API，表示您已準備好可將伺服器部署至 {{site.data.keyword.cloud_notm}}。使用容器搭配 Kubernetes、安全容器、Cloud Foundry、Cloud Foundry Enterprise Environment 或虛擬實例，即可完成[部署](/docs/swift/deploying_apps.html)。

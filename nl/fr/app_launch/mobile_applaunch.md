@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-11-12"
 
 Le service {{site.data.keyword.engage_short}} définit une fonction, crée un public sur la base de plateformes d'appareil (y compris les attributs de public personnalisés), et définit finalement une interaction qui orchestre l'heure et l'emplacement de la fonction. Une fois les logiciels SDK utilisés, ainsi que la fonction et les attributs de métrique qui sont incorporés dans l'application, le service commence à mesurer les expériences du public. Vous pouvez maintenant utiliser votre application en fonction de ces informations pour créer des engagements clients personnalisés à travers les différentes catégories d'utilisateurs de votre application.
 
-![Aperçu de l'engagement cognitif](images/process_app_launch.png) Figure 1. Vue d'ensemble du cycle de vie du service {{site.data.keyword.engage_short}} 
+![Aperçu de l'engagement cognitif](images/process_app_launch.png) Figure 1. Vue d'ensemble du cycle de vie du service {{site.data.keyword.engage_short}}
 
 Les fonctions du service {{site.data.keyword.engage_short}} sont les suivantes :
 
@@ -45,9 +45,10 @@ Les fonctions du service {{site.data.keyword.engage_short}} sont les suivantes :
     Encouragez l'interaction avec les clients. Des notifications peuvent être ciblées pour tous les utilisateurs d'une application ou pour un ensemble spécifique d'utilisateurs et d'appareils. Il est aussi possible de définir un planning de messages. L'interaction utilisateur joue un rôle essentiel dans les relations client.
 
 
-## Avant de commencer :
+## Avant de commencer
+{: #prereqs-applaunch}
 
-Tout d'abord, assurez-vous que vous respectez la configuration prérequise suivante :
+Tout d'abord, assurez-vous que la configuration prérequise suivante est respectée :
 
  - iOS 10+
  - Xcode 9
@@ -63,16 +64,16 @@ Tout d'abord, assurez-vous que vous respectez la configuration prérequise suiva
 4. Dans le panneau de navigation, cliquez sur **Connexions** pour sélectionner une application et la lier à votre service. Vous pouvez lier l'instance de service à votre application ultérieurement si vous ne la liez pas pendant l'étape de création.
 
 ## Etape 2. Initialisation de votre application
-{: #step2}
+{: #initialize-applaunch}
 
-Le service fournit des logiciels SDK spécifiques à la plateforme afin de simplifier le développement d'application. Les logiciels SDK {{site.data.keyword.cloud_notm}} Mobile Services Swift peuvent être installés avec CocoaPods ou Carthage. 
+Le service fournit des logiciels SDK spécifiques à la plateforme afin de simplifier le développement d'application. Les logiciels SDK Swift d'{{site.data.keyword.cloud_notm}} Mobile Services peuvent être installés avec CocoaPods ou Carthage.
 
 1. Cliquez sur **Paramètres**.
-2. Installez le logiciel [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Pour plus d'informations, consultez le fichier `README` qui contient les étapes d'installation et des concepts techniques. 
+2. Installez le logiciel [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Pour plus d'informations, consultez le fichier `README` qui contient les étapes d'installation et des concepts techniques.
 3. Copiez les clés de configuration pour initialiser votre application. Utilisez la valeur confidentielle de l'application, l'identificateur global unique de l'application et la valeur confidentielle du client pour configurer votre application et créer des engagements.
 
 ## Etape 3. Création d'une fonction
-{: #step3}
+{: #create-feature-applaunch}
 
 Le service {{site.data.keyword.engage_short}} crée et teste les réponses aux fonctions.
 
@@ -92,13 +93,14 @@ Pour créer une fonction, procédez comme suit :
 La fenêtre des détails de la fonction peut exporter la fonction en tant que fichier JSON, lequel peut être utilisé dans l'application client pour charger les valeurs par défaut.
 
 ## Etape 4. Création d'un public
-{: #step4}
+{: #audience-applaunch}
 
 ![Création d'un public](images/create_audience_animated.gif){: gif}
 
 Pour créer un public, procédez comme suit :
 
 ### Création d'un **attribut de public**:
+{: #audience-attrib-applaunch}
 
 1. Cliquez sur **Public** > **Créer un attribut**.
 2. Indiquez les valeurs suivantes :
@@ -110,6 +112,7 @@ Pour créer un public, procédez comme suit :
   Vous pouvez choisir de créer plus d'un attribut d'audience, comme indiqué dans l'image suivante, en fonction de vos besoins.
 
 ### Création d'un **public**:
+{: #audience-create-applaunch}
 
 1. Cliquez sur **Créer un public**.
 2. Entrez un nom et une description appropriés dans la fenêtre Nouveau public.
@@ -120,10 +123,12 @@ Pour créer un public, procédez comme suit :
 Vous pouvez maintenant créer un engagement.
 
 ## Etape 5. Création d'un engagement
+{: #engagement-applaunch}
 
 Un engagement est une instanciation d'une fonction avec des propriétés initialisées et qui se connecte à l'un des publics prédéfinis. Vous pouvez créer un engagement à l'aide de **Feature Control** ou de **In-App Messaging**.
 
 ### Activation de la fonction de contrôle de fonction
+{: #feature-control-applaunch}
 
 Grâce à cet engagement, le propriétaire d'une application peut contrôler la visibilité d'une fonction en l'activant ou en la désactivant lors de l'exécution. Une fonction peut être activée ou désactivée pour tous les utilisateurs d'une application ou pour un ensemble spécifique d'utilisateurs et d'appareils.
 
@@ -155,6 +160,7 @@ Procédez comme suit pour créer un engagement à l'aide de la fonction Feature 
 Vous pouvez maintenant mesurer les [performances](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de votre engagement.
 
 ### Activation de la fonction de messagerie dans les applications
+{: #app-message-applaunch}
 
 Avec cet engagement, le propriétaire d'une application peut envoyer des notifications aux utilisateurs de l'application alors qu'ils utilisent activement l'application.
 
@@ -194,17 +200,17 @@ Procédez comme suit pour créer un engagement qui utilise l'option de messageri
 
 6. Sélectionnez un **événement** et cliquez sur **Next**.
 
-7. Mappez les éléments aux métriques que vous voulez mesurer. Sélectionnez l'élément et entrez les détails des métriques. Cliquez sur **Save**.
+7. Mappez les éléments aux métriques que vous voulez mesurer. Sélectionnez l'élément et entrez les détails des métriques. Cliquez sur **Sauvegarder**.
 
-  Le nouvel engagement apparaît maintenant dans la fenêtre Engagement Details.
+  La nouvel engagement apparaît maintenant dans la fenêtre des détails d'engagement.
 
 Vous pouvez maintenant mesurer les [performances](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de votre engagement.
 
 ## Onglet Quick Links
-{: #links notoc}
+{: #links-applaunch notoc}
 
 Consultez les liens suivants pour évaluer et comprendre les fonctions de {{site.data.keyword.engage_short}} :
 
- - Essayez le [service App Launch](https://console.bluemix.net/catalog/services/app-launch).
+ - Essayez le [service App Launch](https://cloud.ibm.com/catalog/services/app-launch).
  - [Blogues et Vidéos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - Pour plus d'informations, voir le [tutoriel d'initiation à App Launch](/docs/services/app-launch/index.html#gettingstartedtemplate).
+ - Pour plus d'informations, voir le [tutoriel d'initiation à App Launch](/docs/services/app-launch/index.html).

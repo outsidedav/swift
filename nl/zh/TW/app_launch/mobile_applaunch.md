@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -46,6 +46,7 @@ lastupdated: "2018-11-12"
 
 
 ## 開始之前
+{: #prereqs-applaunch}
 
 首先，請確定您具備下列必要條件：
 
@@ -63,7 +64,7 @@ lastupdated: "2018-11-12"
 4. 在導覽窗格中，按一下**連線**，選取應用程式，並將其連結至您的服務。如果建立期間未連結服務實例與應用程式，您可以稍後再進行此操作。
 
 ## 步驟 2. 起始設定應用程式
-{: #step2}
+{: #initialize-applaunch}
 
 此服務提供平台專用的 SDK，用來簡化應用程式開發作業。{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK 可與 CocoaPods 或 Carthage 一同安裝。
 
@@ -72,7 +73,7 @@ lastupdated: "2018-11-12"
 3. 複製配置金鑰，以起始設定應用程式。使用應用程式密碼、應用程式 GUID 以及用戶端密碼，來配置應用程式及建立參與。
 
 ## 步驟 3. 建立特性
-{: #step3}
+{: #create-feature-applaunch}
 
 {{site.data.keyword.engage_short}} 服務會建立並測試特性的回應。
 
@@ -92,13 +93,14 @@ lastupdated: "2018-11-12"
 「特性詳細資料」視窗可以將特性匯出成 JSON 檔，該檔案可在用戶端應用程式中，用來載入預設值。
 
 ## 步驟 4. 建立對象
-{: #step4}
+{: #audience-applaunch}
 
 ![建立對象](images/create_audience_animated.gif){: gif}
 
 若要建立對象，請完成下列步驟：
 
 ### 建立**對象屬性**：
+{: #audience-attrib-applaunch}
 
 1. 按一下**對象** > **建立屬性**。
 2. 提供下列值：
@@ -110,6 +112,7 @@ lastupdated: "2018-11-12"
   您可以根據您的需求選擇建立多個對象屬性，如下圖中所列。
 
 ### 建立**對象**：
+{: #audience-create-applaunch}
 
 1. 按一下**建立對象**。
 2. 在「新的對象」視窗上提供適當的名稱及說明。
@@ -120,10 +123,12 @@ lastupdated: "2018-11-12"
 您現在可以建立「參與」。
 
 ## 步驟 5. 建立參與
+{: #engagement-applaunch}
 
 「參與」是「特性」的實例化，其已起始設定內容，並連接其中一個預先定義的對象。您可以使用**特性控制**或**應用程式內傳訊**，來建立參與。
 
 ### 啟用特性控制功能
+{: #feature-control-applaunch}
 
 透過此參與，應用程式擁有者可以藉由在運行環境啟用或停用特性，來控制特性的可見度。可以針對所有應用程式使用者，或針對特定集合的使用者及裝置，來啟用或停用特性。
 
@@ -155,6 +160,7 @@ lastupdated: "2018-11-12"
 您現在可以測量參與的[效能](/docs/services/app-launch/app_measure_performance.html#applaunch_type)。
 
 ### 啟用應用程式內傳訊功能
+{: #app-message-applaunch}
 
 透過此參與，應用程式擁有者可以在應用程式使用者正在使用應用程式時，傳送通知給該使用者。
 
@@ -201,10 +207,10 @@ lastupdated: "2018-11-12"
 您現在可以測量參與的[效能](/docs/services/app-launch/app_measure_performance.html#applaunch_type)。
 
 ## 快速鏈結
-{: #links notoc}
+{: #links-applaunch notoc}
 
 請查看下列鏈結以取得見解，並瞭解 {{site.data.keyword.engage_short}} 的特性：
 
- - 試用 [App Launch 服務](https://console.bluemix.net/catalog/services/app-launch)。
+ - 試用 [App Launch 服務](https://cloud.ibm.com/catalog/services/app-launch)。
  - [部落格及視訊](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - 如需相關資訊，請參閱 [App Launch - 入門指導教學](/docs/services/app-launch/index.html#gettingstartedtemplate)。
+ - 如需相關資訊，請參閱 [App Launch - 入門指導教學](/docs/services/app-launch/index.html)。

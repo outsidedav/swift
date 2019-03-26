@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -15,22 +16,24 @@ lastupdated: "2018-11-08"
 # Configuration de l'environnement Swift
 {: #configuration}
 
-Le développement pour le cloud comporte deux pratiques étroitement liées qui se chevauchent dans la manière dont vous gérez les données de configuration. La première consiste à devoir générer des artefacts non modifiables afin de minimiser la probabilité que des erreurs soient introduites lorsque votre application passe du développement en production. La seconde indique que vous devez atteindre la parité entre vos environnements de développement et de production, et ce afin d'éviter les problèmes créés par le code spécifique à l'environnement. 
+Le développement pour le cloud comporte deux pratiques étroitement liées qui se chevauchent dans la manière dont vous gérez les données de configuration. La première consiste à devoir générer des artefacts non modifiables afin de minimiser la probabilité que des erreurs soient introduites lorsque votre application passe du développement en production. La seconde indique que vous devez atteindre la parité entre vos environnements de développement et de production afin d'éviter les problèmes créés par le code spécifique à l'environnement. 
 
 La gestion de la configuration de service et des données d'identification (liaisons de service) varie entre les plateformes. Cloud Foundry stocke des détails de liaison de service dans un objet JSON converti sous forme de chaîne qui est transmis à l'application en tant que variable d'environnement `VCAP_SERVICES`. Kubernetes stocke les liaisons de service sous forme d'attributs à plat ou JSON représentés sous forme de chaîne dans `ConfigMaps` ou `Secrets`, lesquels peuvent être transmis à l'application conteneurisée en tant que variables d'environnement ou montés en tant que volume temporaire. Le développement local a sa propre configuration, car les tests locaux sont souvent un dérivé simplifié de tout ce qui s'exécute dans le cloud. Il peut être difficile d'alterner entre ces différentes variations de manière portable sans disposer de chemins de code spécifiques à un environnement.
 
 Vous pouvez suivre de simples instructions qui vous aideront à écrire des applications portables, et les utilitaires que vous pouvez utiliser pour encapsuler la recherche de liaisons de service (ou autre configuration) dans des emplacements spécifiques à un environnement. Qu'il s'agisse d'ajouter une prise en charge de cloud à des applications existantes ou de créer des applications avec des kits de démarrage, l'objectif est de permettre une portabilité pour que les applications Swift puissent être utilisées sur un grand nombre de plateformes de déploiement.
 
-## Ajout de {{site.data.keyword.cloud_notm}} à des applications Swift existantes
+## Ajout d'{{site.data.keyword.cloud_notm}} à des applications Swift existantes
 {: #addcloud-env}
 
-Le processus qui permet d'extraire les valeurs de l'environnement peut différer d'un environnement cloud à l'autre. La bibliothèque [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) masque la configuration d'environnement et les informations d'identification de différents fournisseurs de cloud de sorte que votre application Swift puisse accéder de manière cohérente aux informations en s'exécutant en local ou dans Cloud Foundry, Kubernetes ou {{site.data.keyword.openwhisk}}. Le masquage des données d'identification est effectué par la bibliothèque `CloudEnvironment`, laquelle utilise en interne [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) pour la configuration Cloud Foundry et [Configuration](https://github.com/IBM-Swift/Configuration) comme gestionnaire de configuration.
+Le processus qui permet d'extraire les valeurs de l'environnement peut différer d'un environnement cloud à l'autre. La bibliothèque [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) résume la configuration de l'environnement et les informations d'identification de divers fournisseurs de cloud afin que votre application Swift puisse accéder de manière cohérente aux informations en exécutant localement ou dans des instances Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} ou virtuelles. Le masquage des données d'identification est effectué par la bibliothèque `CloudEnvironment`, laquelle utilise en interne [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) pour la configuration Cloud Foundry et [Configuration](https://github.com/IBM-Swift/Configuration) comme gestionnaire de configuration.
 
 Avec `CloudEnvironment`, vous pouvez extraire les détails de faible niveau du code source de votre application en définissant une clé de recherche que votre application Swift peut utiliser pour la recherche de sa valeur correspondante.
 
 La bibliothèque `CloudEnvironment` fournit une clé de recherche cohérente qui peut être utilisée dans votre code source. La bibliothèque effectue ensuite des recherches dans un tableau de modèles de recherche pour trouver un objet JSON contenant les attributs de configuration ou les données d'identification du service. 
 
 ### Ajout du package CloudEnvironment à votre application Swift
+{: #add-cloudenv}
+
 Pour utiliser le package `CloudEnvironment` dans votre application Swift, indiquez-le dans la section **dependencies:** de votre fichier `Package.swift` :
 ```swift
 .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", from: "8.0.0"),
@@ -46,6 +49,8 @@ let cloudEnv = CloudEnv()
 {: codeblock}
 
 ### Accès aux données d'identification
+{: #access-credentials}
+
 Maintenant que la bibliothèque `CloudEnvironment` est initialisée, vous pouvez accéder à vos données d'identification comme illustré dans les exemples suivants :
 ```swift
 let cloudantCredentials = cloudEnv.getCloudantCredentials(name: "cloudant-credentials")
@@ -68,7 +73,7 @@ Cet exemple permet d'accéder aux jeux de données d'identification pour les ser
 {: #service_creds}
 
 La bibliothèque `CloudEnvironment` utilise un fichier nommé `mappings.json`, qui se trouve dans le répertoire `config`, pour communiquer l'emplacement de stockage des données d'identification pour chaque service. Le fichier `mappings.json` prend en charge la recherche de valeurs au moyen des trois modèles de recherche suivants :
-- **`cloudfoundry`** - Type de pattern utilisé pour la recherche d'une valeur dans la variable d'environnement des services de Foundry (`VCAP_SERVICES`).
+- **`cloudfoundry`** - Type de pattern utilisé pour la recherche d'une valeur dans la variable d'environnement des services de Foundry (`VCAP_SERVICES`). Pour Cloud Foundry Enterprise Edition, voir ce [tutoriel d'initiation](docs/cloud-foundry/getting-started.html#getting-started) pour de plus amples informations.
 - **`env`** - Type de pattern utilisé pour la recherche d'une valeur qui est mappée à une variable d'environnement, comme dans Kubernetes ou Functions.
 - **`file`** - Type de pattern utilisé pour la recherche d'une valeur dans un fichier JSON. Le chemin doit être relatif au dossier racine de votre application Swift.
 
@@ -108,11 +113,12 @@ Pour des raisons de sécurité, les fichiers de données d'identification ne doi
 Pour plus d'informations sur le fichier `mappings.json`, consultez la section [Présentation des données d'identification de service](configuration.html#service_creds).
 
 ## Utilisation du gestionnaire de configuration Swift depuis les applications du kit de démarrage
+{: #configmanager-swift}
 
-Les applications Swift qui sont créées avec les [kits de démarrage](https://console.bluemix.net/developer/appledevelopment/starter-kits/) sont fournies automatiquement avec les données d'identification et la configuration nécessaire à une exécution en local, ainsi que dans de nombreux environnements de déploiement en cloud (CF, K8s, VSI et Functions). La création de base du gestionnaire de configuration se trouve dans `Sources/Application/Application.swift`. Lorsque vous créez un application du kit de démarrage basée sur Swift avec des services, un dossier `config` et un fichier `mappings.json` sont créés pour vous. Si vous téléchargez l'application, le dossier `config` contient un fichier `localdev-config.json` qui comporte toutes les données d'identification de vos services, et est présent dans le fichier `.gitignore`.
+Les applications Swift qui sont créées avec les [kits de démarrage](https://cloud.ibm.com/developer/appledevelopment/starter-kits/) sont fournies automatiquement avec les données d'identification et la configuration nécessaire à une exécution en local, ainsi que dans de nombreux environnements de déploiement en cloud (CF, K8s, VSI et Functions). La création de base du gestionnaire de configuration se trouve dans `Sources/Application/Application.swift`. Lorsque vous créez un application du kit de démarrage basée sur Swift avec des services, un dossier `config` et un fichier `mappings.json` sont créés pour vous. Si vous téléchargez l'application, le dossier `config` contient un fichier `localdev-config.json` qui comporte toutes les données d'identification de vos services, et est présent dans le fichier `.gitignore`.
 
 ## Etapes suivantes
-{: #next notoc}
+{: #next-configß notoc}
 
 Consultez les trois bibliothèques pour permettre le masquage de vos applications dans leurs environnements :
 

@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2017-2018
-lastupdated: "2018-11-08"
+  years: 2017, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -21,6 +22,7 @@ lastupdated: "2018-11-08"
 如需可以使用 {{site.data.keyword.cloudant_short_notm}} 的所有方式，請參閱 [{{site.data.keyword.cloudant_short_notm}} 基本概念](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics)。
 
 ## 開始之前
+{: #prereqs-cloudant}
 
 首先，請確定您具備下列必要條件：
  * CocoaPods（1.1.0 版或更新版本）
@@ -32,12 +34,15 @@ lastupdated: "2018-11-08"
 {: tip}
 
 ## 步驟 1. 建立 {{site.data.keyword.cloudant_short_notm}} 實例
+{: #create-instance-cloudant}
 
-請參閱[在 IBM Cloud 上建立 Cloudant NoSQL DB 實例指導教學 ![外部鏈結圖示](../images/launch-glyph.svg "外部鏈結圖示")](https://console.bluemix.net/docs/services/Cloudant/tutorials/create_service.html#creating-a-cloudant-nosql-db-instance-on-ibm-cloud){:new_window}，以建立服務的實例。
+請參閱[在 IBM Cloud 上建立 IBM Cloudant 實例指導教學 ![外部鏈結圖示](../images/launch-glyph.svg "外部鏈結圖示")](/docs/services/Cloudant/tutorials/create_service.html){:new_window}，以建立服務的實例。
 
 ## 步驟 2. 安裝 SDK
+{: #install-sdk-cloudant}
 
 ### 安裝 iOS Swift SDK
+{: #install-swift-sdk-cloudant}
 
 使用 Swift Cloudant SDK，協助您輕鬆地以程式碼編寫應用程式。SDK 必須安裝在應用程式程式碼中。
 
@@ -58,6 +63,7 @@ lastupdated: "2018-11-08"
     {: codeblock}
 
 ### 安裝伺服器端 Swift SDK
+{: #install-serverside-cloudant}
 
 若要搭配使用 Swift Package Manager 來進行伺服器端開發，請在 `Package.swift` 中，將下列這一行新增至相依關係中：
 ```swift
@@ -66,11 +72,12 @@ lastupdated: "2018-11-08"
 {: codeblock}
 
 ## 步驟 3. 起始設定 SDK
+{: #initialize-cloudant}
 
 在應用程式中起始設定 SDK 之後，您可以開始使用 {{site.data.keyword.cloudant_short_notm}} 來儲存資料。
 
 1.  將下列 import 新增至 `AppDelegate.swift` 或伺服器端 Swift 檔。
-    ```
+    ```swift
     import SwiftCloudant
     ```
     {: codeblock}
@@ -84,6 +91,8 @@ lastupdated: "2018-11-08"
     {: codeblock}
 
 ### 基本作業
+{: #basic-operations-cloudant}
+
 這些基本作業說明使用已起始設定的用戶端來建立、讀取及刪除文件的基本動作。
 
 #### 建立文件
@@ -144,5 +153,5 @@ client.add(operation: delete)
 做得好！您已為應用程式新增一個安全持續性等級。嘗試下列其中一個選項，以保持動力：
 
 * 檢視 [{{site.data.keyword.cloudant_short_notm}} SDK for Swift ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/cloudant/swift-cloudant) 原始碼。
-* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。**Infinite Scrolling with Cloudant NoSQL for iOS** 入門範本套件說明如何延伸 `ViewController`，以使用分頁來顯示資料。iOS 開發人員經常使用這個應用程式型樣，這個型樣是說明 {{site.data.keyword.cloudant_short_notm}} 的功能時的良好範例。請檢視[行動開發人員儀表板](https://console.bluemix.net/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
+* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。**Infinite Scrolling with Cloudant NoSQL for iOS** 入門範本套件說明如何延伸 `ViewController`，以使用分頁來顯示資料。iOS 開發人員經常使用這個應用程式型樣，這個型樣是說明 {{site.data.keyword.cloudant_short_notm}} 的功能時的良好範例。請檢視[行動開發人員儀表板](https://cloud.ibm.com/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
 * 進一步瞭解並充分運用 {{site.data.keyword.cloudant_short_notm}} 提供的所有特性，[請參閱文件](/docs/services/Cloudant/index.html)！

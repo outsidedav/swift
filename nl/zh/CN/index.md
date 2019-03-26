@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-31"
 
 ---
 
@@ -12,21 +12,23 @@ lastupdated: "2018-11-08"
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:note: .note}
 
 # 入门教程
-{: #set_up}
+{: #getting_started_swift}
 
 {{site.data.keyword.cloud}} 提供了多种解决方案和服务，用于支持 Swift 开发者构建具有客户所要求的安全性、AI 和价值的应用程序。通过丰富的产品与 SDK 的组合，您可以使用这些服务，快速地将最新的应用程序推向市场。此 Swift 编程教程向您介绍了如何将服务添加到新的或现有 Swift 应用程序中，而不论它是 iOS 客户端还是服务器端 Swift。
 {: shortdesc}
 
-以下教程将说明如何使用 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) 中的空入门模板工具包，通过 {{site.data.keyword.mobileanalytics_full}} 轻松地创建 Swift 移动应用程序。在控制台中，添加 {{site.data.keyword.mobileanalytics_short}} 服务，下载代码，在 Xcode 中本地运行 iOS 应用程序，以及配置和监视应用程序。
+以下教程将说明如何使用 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) 中的空入门模板工具包，通过 {{site.data.keyword.mobileanalytics_full}} 轻松地创建 Swift 移动应用程序。在控制台中，添加 {{site.data.keyword.mobileanalytics_short}} 服务，下载代码，在 Xcode 中本地运行 iOS 应用程序，以及配置和监视应用程序。
 
 ## 步骤 1. 对开发者的需求
-{: #dev-requirements}
+{: #dev-requirements-swift}
 
 要在 {{site.data.keyword.cloud_notm}} 上开始进行 iOS 开发，请确保满足以下需求。
 
 ### 操作系统
+{: #swift-os-requirements}
 
 开发 Swift 应用程序时，最好使用支持 MacOS 的最新硬件，并使用最新的 iOS 发行版进行测试。注册 [Apple Developer](https://developer.apple.com/) 帐户，以支持在物理设备上进行测试。
 
@@ -38,116 +40,105 @@ lastupdated: "2018-11-08"
 - 在将应用程序提交到 Apple 之前，查看 [App Store 提交准则](https://developer.apple.com/app-store/guidelines/)。
 
 ### SDK 和依赖项管理
+{: #swift-sdk-management}
 
-以下工具用于确保可以安装本机 SDK 以使用各种 {{site.data.keyword.cloud_notm}} 服务。
+以下工具用于确保可以安装本机 SDK 以使用各种 {{site.data.keyword.cloud_notm}} 服务。您可以使用 CocoaPods 或 Carthage 来管理依赖关系。
 
-1. 安装 [CocoaPods](https://cocoapods.org/) 以支持 {{site.data.keyword.cloud_notm}} SDK：
+* **使用 CocoaPods** - 安装 [CocoaPods](https://cocoapods.org/) 以支持 {{site.data.keyword.cloud_notm}} SDK：
   ```
 sudo gem install cocoapods
 ```
   {: codeblock}
-  
-2. 安装 [Homebrew](https://brew.sh/) 以帮助安装 Carthage：
+
+* **使用 Carthage** - 部分 SDK 还可通过 [Carthage](https://github.com/Carthage/Carthage) 或 [Swift Package Manager](https://swift.org/package-manager/) 依赖关系管理器提供。要使用 Carthage 管理依赖关系，请执行以下步骤：
+
+  安装 [Homebrew](https://brew.sh/) 以帮助安装 Carthage：
   ```
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   ```
   {: codeblock}
 
-3. 安装 [Carthage](https://github.com/Carthage/Carthage) 以支持 Watson SDK：
+  安装 Carthage：
   ```
   brew install carthage
   ```
   {: codeblock}
 
 ## 步骤 2. 创建定制 iOS Swift 应用程序
-{: #create-ios-app}
+{: #create-ios-app-swift}
 
-1. 登录到 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits)。
+1. 登录到 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits)。
 2. 单击**创建应用程序**。
-3. 在[空入门模板](https://console.bluemix.net/developer/appledevelopment/create-app)页面上，可以使用缺省配置或根据需要更新字段。确保 **iOS Swift** 是所选语言。单击**创建**。
+3. 在[空入门模板](https://cloud.ibm.com/developer/appledevelopment/create-app)页面上，可以使用缺省配置或根据需要更新字段。确保 **iOS Swift** 是所选语言。单击**创建**。
 
-## 步骤 3. 添加 {{site.data.keyword.mobileanalytics_short}} 服务
-{: #adding-services}
+## 步骤 3. 添加 {{site.data.keyword.cloudant_short_notm}} 服务
+{: #resources-swift}
+
+现在，您可以将服务添加到 Swift 应用程序。此教程用于将 {{site.data.keyword.cloudant_short_notm}} 服务添加到 Swift 应用程序，该应用程序创建全面受管的、分发式
+`JSON` 文档数据库。Cloudant 在确保数据安全和同步的轻量级框架中，赋予您的应用程序可伸缩性、高可用性和耐久性。
 
 1. 在“应用程序详细信息”页面中，单击**添加资源**按钮。
-2. 选择**移动**，然后单击**下一步**。
-3. 选择 **{{site.data.keyword.mobileanalytics_short}}**，然后单击**下一步**。
+2. 选择**数据**，然后单击**下一步**。
+3. 选择 **Cloudant**，然后单击**下一步**。
 4. 单击**创建**。
+5. 创建服务后，单击服务以进行启动。在此新页面上，选择**启动 Cloudant 仪表板**以开始创建数据库和 JSON 文档。或者，可以通过编程方式完成此操作。
 
 ## 步骤 4. 下载代码并设置客户端 SDK
-{: #run-locally}
+{: #run-locally-swift}
 
-要下载代码，请单击`应用程序` > `您的应用程序`下的**下载代码**。下载的代码随附 **{{site.data.keyword.mobileanalytics_short}}** 客户端 SDK。客户端 SDK 在 CocoaPods 和 Carthage 上可用。对于此解决方案，请使用 CocoaPods。
+要下载代码，请单击`应用程序` > `您的应用程序`下的**下载代码**。下载的代码中包含了 [SwiftCloudant SDK](https://github.com/cloudant/swift-cloudant) 以及一些基本初始化代码。客户端 SDK 在 CocoaPods 和 Swift Package Manager 上可用。此解决方案使用 CocoaPods。
 
-1. 解压缩下载的代码。 然后，使用终端浏览至解压缩的文件夹。
+1. 解压缩已下载的代码。然后，使用终端浏览至解压缩的文件夹。
   ```
   cd <Name of Project>
   ```
+
 2. 文件夹中包含具有必需依赖项的 Podfile。运行以下命令安装依赖项（客户端 SDK）：
   ```
-pod install
-```
-  {: codeblock}
-
-## 步骤 5. 配置应用程序以使用 {{site.data.keyword.mobileanalytics_short}}
-{: #configure-analytics}
-
-1. 在 Xcode 中打开 `.xcworkspace` 并浏览至 `AppDelegate.swift`。
-  **注：**确保始终打开的是新 Xcode 工作空间，而不是原始 Xcode 项目文件：`MyApp.xcworkspace`。
-     ![打开的 Xcode](images/Xcode.png)
-
-  `BMSCore` 是核心 SDK，也是移动式客户端 SDK 的基础。`BMSClient` 是 `BMSCore` 的类，在 `AppDelegate.swift` 中进行初始化。{{site.data.keyword.mobileanalytics_short}} SDK 已经与 `BMSCore` 一起导入到项目中。
-  
-2. 已包含分析初始化代码，如以下片段中所示：
-  ```
-  // 分析客户端 SDK 配置为记录生命周期事件。
-         	Analytics.initialize(appName:dictionary["appName"] as? String,
-        			     apiKey: dictionary["analyticsApiKey"] as? String,
-        	        	     deviceEvents: .lifecycle)
-
-        	// 启用记录器（缺省情况下已禁用），并将级别设置为 ERROR（缺省情况下为 DEBUG）。
-        	Logger.isLogStorageEnabled = true
-        	Logger.logLevelFilter = .error
+  pod install
   ```
   {: codeblock}
 
-  **注：**服务凭证是 `BMSCredentials.plist` 文件的一部分。
+## 步骤 5. 配置应用程序以使用新数据库
+{: #config-db-swift}
 
-3. 使用 `logger` 收集使用情况分析。浏览至 `ViewController.swift` 文件可看到以下代码。
-  ```
-   func didBecomeActive(_ notification: Notification) {
-       Analytics.send()
-       Logger.send()
-    }
+1. 使用 XcodeOpen 打开以 `.xcworkspace` 结尾的文件名，并导航到 `ViewController.swift`。`SwiftCloudant` 是核心的 Cloudant SDK。`CouchDBClient` 是 `SwiftCloudant` 的类，在 `ViewController.swift` 中进行初始化。
+
+  始终打开新的 Xcode 工作空间，而不是原始的 Xcode 项目文件：`MyApp.xcworkspace`。
+  {: tip}
+
+2. 已经包含数据库初始化代码，如下面的片段所示：
+  ```swift
+  /* Read the Cloudant credentials and intialize database connection */
+  if let contents = Bundle.main.path(forResource:"BMSCredentials", ofType: "plist"), let dictionary = NSDictionary(contentsOfFile: contents) {
+            let url = URL(string: dictionary["cloudantUrl"] as! String)
+            let client = CouchDBClient(url:url!,
+                                       username:dictionary["cloudantUsername"] as? String,
+                                       password:dictionary["cloudantPassword"] as? String)
+        }
   ```
   {: codeblock}
 
-   有关高级分析和日志记录功能，请参阅[收集使用情况分析](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#app-monitoring-gathering-analytics)和[日志记录](https://console.bluemix.net/docs/services/mobileanalytics/sdk.html#enabling-configuring-and-using-logger)。
-   {:tip}
+  服务凭证是 `BMSCredentials.plist` 文件的一部分。
+  {: note}
 
-## 步骤 6. 使用 {{site.data.keyword.mobileanalytics_short}} 监视应用程序
-{{site.data.keyword.mobileanalytics_short}} 服务为移动应用程序开发者和应用程序所有者提供关键应用程序使用情况和性能洞察。通过使用 {{site.data.keyword.mobileanalytics_short}}，应用程序所有者和开发者可以了解用户端正在发生的情况。他们可以使用此洞察来构建与用户相关的更完善的应用程序，从而在海量的移动应用程序中脱颖而出。
+## 步骤 6. 构建数据库操作
+{: #build_ops-swift}
 
-该服务包括 {{site.data.keyword.mobileanalytics_short}} Console，开发人员和应用程序所有者可以在这里监视移动应用程序性能，查看使用情况统计信息，以及搜索设备日志。
-
-1. 从您创建的移动应用程序中打开 `{{site.data.keyword.mobileanalytics_short}}` 服务，或者单击服务旁边的三个垂直点，然后选择`打开仪表板`。
-2. 可以通过禁用`演示方式`来查看实时用户、会话和其他应用程序数据。可以按以下条件来过滤分析信息：
-    * 日期。
-    * 应用程序。
-    * 操作系统。
-    * 应用程序的版本。
-         ![{{site.data.keyword.mobileanalytics_short}}](images/mobile_analytics.png)
-3. [单击此处](https://console.bluemix.net/docs/services/mobileanalytics/app-monitoring.html#monitoringapps)以设置警报、监视应用程序崩溃和监视网络请求。
+既然您拥有有效的数据库连接和 SDK 设置，您可以开始为您的特定用例构建基本的[创建、读取、更新和破坏操作](./data/cloudant.html#basic-operations)。
 
 ## 后续步骤
-{: #next-steps}
+{: #next-swift}
 
 ### 添加更多服务
+{: #moreresources-swift}
+
 可以直接在 Web 控制台中向 iOS 应用程序添加更多服务，例如以下常用服务：
 
 * [添加 Push Notifications 服务](/docs/services/mobilepush/index.html)
 * [添加使用应用程序标识进行的用户认证](/docs/services/appid/index.html)
 
 ### 使用 {{site.data.keyword.cloud_notm}} Developer Tools
-您还可以了解如何使用 [{{site.data.keyword.cloud_notm}} Developer Tools ](../cli/index.html)来开发 Swift 应用程序。Developer Tools 提供了一种用于创建、开发和部署完整 Web、移动和微服务应用程序的命令行方法。
+{: #devtools-swift}
 
+您还可以了解如何使用 [{{site.data.keyword.cloud_notm}} 开发者工具](/docs/cli/index.html)来开发 Swift 应用程序。开发者工具提供了一种用于创建、开发和部署完整 Web、移动和微服务应用程序的命令行方法。

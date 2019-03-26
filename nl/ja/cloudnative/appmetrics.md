@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-20"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -63,6 +63,7 @@ let smd = try SwiftMetricsDash(swiftMetricsInstance : metrics)
 デフォルトで、`SwiftMetricsDash` は、独自の Kitura サーバーを開始し、`http://<hostname>:<port>/swiftmetrics-dash` ページで要求を listen します。 HTTP 要求やイベント・ループの待ち時間などの新しいアプリケーション・メトリックを参照するには、ダッシュボードにアクセスしてください。
 
 ## スターター・キットでのアプリケーション・メトリックの使用
+{: #appmetrics-starterkits}
 
 スターター・キットから作成されるサーバー・サイドの Swift アプリケーションには `SwiftMetrics`、`SwiftMetricsDash`、`SwiftMetricsPrometheus` が含まれており、Prometheus エンドポイントを使用する Kubernetes 環境でメトリックの収集に使用する準備ができています。
 

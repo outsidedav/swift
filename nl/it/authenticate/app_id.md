@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -15,6 +15,7 @@ lastupdated: "2018-11-12"
 {:note: .note}
 
 # Aggiunta dell'autenticazione utente
+{: #appid}
 
 La sicurezza delle applicazioni è incredibilmente complicata. Per la maggior parte degli sviluppatori, è una delle attività più difficili della creazione di un'applicazione. Come fai a essere sicuro che stai proteggendo le informazioni dei tuoi utenti? Integrando {{site.data.keyword.appid_full}} nelle tue applicazioni, puoi proteggere le risorse e aggiungere l'autenticazione, anche quando non hai tanta esperienza nel campo della sicurezza.
 
@@ -23,7 +24,7 @@ Richiedendo agli utenti di eseguire l'accesso, puoi memorizzare i dati utente qu
 Per tutti i modi in cui puoi utilizzare {{site.data.keyword.appid_short_notm}} e le informazioni sull'architettura, vedi [Informazioni su {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
 
 ## Prima di cominciare
-{: #before}
+{: #prereqs-appid}
 
 Assicurati innanzitutto di disporre dei seguenti prerequisiti pronti a essere utilizzati:
 * CocoaPods (versione 1.1.0 o superiore)
@@ -32,16 +33,16 @@ Assicurati innanzitutto di disporre dei seguenti prerequisiti pronti a essere ut
 * Xcode (versione 9.0.1 o superiore)
 
 ## Passo 1: Creazione di un'istanza di {{site.data.keyword.appid_short_notm}}
-{: #create_instance}
+{: #create-instance-appid}
 
 Crea un'istanza del servizio {{site.data.keyword.appid_short_notm}}:
 
-1. Nel catalogo [{{site.data.keyword.cloud_notm}}](https://console.bluemix.net/catalog/), seleziona {{site.data.keyword.appid_short_notm}}. Viene visualizzata la schermata di configurazione del servizio.
+1. Nel catalogo [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/), seleziona {{site.data.keyword.appid_short_notm}}. Viene visualizzata la schermata di configurazione del servizio.
 2. Assegna un nome alla tua istanza del servizio oppure utilizza il nome preimpostato.
 3. Seleziona il tuo piano dei prezzi e fai clic su **Crea**.
 
 ## Passo 2: Installazione dell'SDK Swift iOS
-{: #install_sdk}
+{: #install-sdk-appid}
 
 Il servizio fornisce un SDK per semplificare la codifica della tua applicazione. L'SDK deve essere installato nel tuo codice dell'applicazione.
 
@@ -63,6 +64,7 @@ Il servizio fornisce un SDK per semplificare la codifica della tua applicazione.
     {: pre}
 
 ## Passo 3. Inizializzazione dell'SDK
+{: #initialize-sdk-appid}
 
 Dopo che hai inizializzato l'SDK nella tua applicazione, puoi iniziare a configurare le tue preferenze {{site.data.keyword.appid_short_notm}}.
 
@@ -118,8 +120,8 @@ Un provider di identità fornisce le informazioni di autenticazione per i tuoi u
 Puoi aggiornare le tue configurazioni in qualsiasi momento aggiornando il tuo codice dell'applicazione.
 {: tip}
 
-
 ### Provider di identità social
+{: #social-appid}
 
 Con {{site.data.keyword.appid_short_notm}}, puoi utilizzare i provider di identità social quali Facebook e Google+ per proteggere le tue applicazioni.
 
@@ -138,7 +140,7 @@ Per configurare i provider di identità social:
         }
 
         public func onAuthorizationCanceled() {
-            //Authentication canceled by the user
+            //Authentication cancelled by the user
         }
 
         public func onAuthorizationFailure(error: AuthorizationError) {
@@ -152,6 +154,7 @@ Per configurare i provider di identità social:
 
 
 ### Cloud directory
+{: #cloud-dir-appid}
 
 Con {{site.data.keyword.appid_short_notm}}, puoi gestire il tuo registro utenti denominato cloud directory. Cloud directory abilita gli utenti a registrarsi e ad accedere alle tue applicazioni mobili e web utilizzando la loro email e una password.
 
@@ -167,34 +170,35 @@ Per configurare cloud directory:
         ```swift
         class delegate : TokenResponseDelegate {
             public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-            //User authenticated
+            /* User authenticated */
             }
 
             public func onAuthorizationFailure(error: AuthorizationError) {
-            //Exception occurred
+            /* Exception occurred */
             }
         }
 
         AppID.sharedInstance.obtainTokensWithROP(username: username, password: password, delegate: delegate())
         ```
         {: codeblock}
+
     * Registrazione
         ```swift
         class delegate : AuthorizationDelegate {
           public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
              if accessToken == nil && identityToken == nil {
-              //email verification is required
+              /* email verification is required */
               return
              }
-           //User authenticated
+           /* User authenticated */
           }
 
           public func onAuthorizationCanceled() {
-              //Sign up canceled by the user
+              /* Sign up cancelled by the user */
           }
 
           public func onAuthorizationFailure(error: AuthorizationError) {
-              //Exception occurred
+              /* Exception occurred */
           }
         }
 
@@ -206,15 +210,15 @@ Per configurare cloud directory:
         ```swift
         class delegate : AuthorizationDelegate {
            public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-              //forgot password finished, in this case accessToken and identityToken will be null.
+              /* forgot password finished, in this case accessToken and identityToken will be null. */
            }
 
            public func onAuthorizationCanceled() {
-               //forgot password canceled by the user
+               /* forgot password canceled by the user */
            }
 
            public func onAuthorizationFailure(error: AuthorizationError) {
-               //Exception occurred
+               /* Exception occurred */
            }
         }
 
@@ -259,7 +263,7 @@ Per configurare cloud directory:
 
 
 ## Passo 5. Verifica della tua applicazione
-{: #appid_testing}
+{: #testing-appid}
 
 È tutto configurato correttamente? Ora puoi eseguire le verifiche.
 
@@ -271,9 +275,9 @@ Per configurare cloud directory:
 Problemi? Controlla [Risoluzione dei problemi di {{site.data.keyword.appid_short_notm}}](/docs/services/appid/ts_index.html).
 
 ## Passi successivi
-{: #appid_next}
+{: #next-appid}
 
 Ottimo lavoro. Hai aggiunto un livello di sicurezza alla tua applicazione. Non fermarti ora e continua provando una delle seguenti opzioni:
 
 * Scopri di più e avvaliti di tutte le funzioni che {{site.data.keyword.appid_short_notm}} ha da offrire, [controlla la documentazione](/docs/services/appid/index.html)!
-* I kit starter sono uno dei modi più rapidi per utilizzare le funzioni di {{site.data.keyword.cloud_notm}}. Visualizza i kit starter disponibili nel [dashboard degli sviluppatori di applicazioni mobili](https://console.bluemix.net/developer/mobile/dashboard). Scarica il codice. Esegui l'applicazione!
+* I kit starter sono uno dei modi più rapidi per utilizzare le funzioni di {{site.data.keyword.cloud_notm}}. Visualizza i kit starter disponibili nel [dashboard degli sviluppatori di applicazioni mobili](https://cloud.ibm.com/developer/mobile/dashboard). Scarica il codice. Esegui l'applicazione!

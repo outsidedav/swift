@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-01"
 
 ---
 
@@ -36,12 +36,14 @@ Informationen zu den Befehlen `ibmcloud dev` finden Sie unter
 Cloud Developer Tools](/docs/cli/idt/commands.html).
 
 ## Schritt 1. Voraussetzungen für die Entwicklung
+{: #prereqs-swift-cli}
 
 Damit Sie in die Verwendung von
 {{site.data.keyword.cloud_notm}} einsteigen können, müssen die
 folgenden Voraussetzungen erfüllt sein.
 
 ### Betriebssystem
+{: #swift-cli-os-reqs}
 
 Es hat sich bewährt, zur Entwicklung von Swift-Apps die neueste
 unterstützte Mac OS-Hardware zu verwenden und bei Tests die neuesten
@@ -50,7 +52,7 @@ iOS-Releases zu nutzen. Registrieren Sie sich für ein Konto des Typs
 einer physischen Einheit zu ermöglichen.
 
 ### iOS und Xcode
-{: #ios_and_xcode}
+{: #swift-cli-ios_xcode}
 
 - [Installieren Sie Xcode
 8+ (oder höher)](https://developer.apple.com/xcode/)
@@ -62,6 +64,7 @@ die Bereitstellung für iOS-Geräte 8 (oder höher) vor.](https://support.apple.
 Submission Guidelines](https://developer.apple.com/app-store/guidelines/) entnehmen können.
 
 ### SDKs und Abhängigkeitsmanagement
+{: #swift-cli-sdk-dependency}
 
 Die folgenden Tools gewährleisten, dass Sie die nativen SDKs zur
 Verwendung mit den verschiedenen
@@ -88,12 +91,12 @@ Unterstützung der Carthage-Installation.](https://brew.sh/)
   {: codeblock}
 
 ## Schritt 2. Tools für die lokale Entwicklung installieren
+{: #swift-cli-install-tools}
 
 {{site.data.keyword.cloud}} stellt lokale Tools für die
 Befehlszeilenschnittstelle bereit, die Ihnen bei der Arbeit mit
-unterschiedlichen Aspekten von {{site.data.keyword.cloud_notm}} helfen. Weitere
-Angaben enthält der Abschnitt [Informationen zu {{site.data.keyword.dev_cli_long}}](../cli/index.html). Sie können die Tools zum Testen eines Swift-Back-End-Programms vor der Cloudbereitstellung in einem
-lokalen Docker-Image zu installieren. 
+unterschiedlichen Aspekten von {{site.data.keyword.cloud_notm}} helfen. Weitere Angaben enthält der Abschnitt [Informationen zu {{site.data.keyword.dev_cli_long}}](/docs/cli/index.html). Sie können die Tools zum Testen eines Swift-Back-End-Programms vor der Cloudbereitstellung in einem
+lokalen Docker-Image zu installieren.
 
 * Führen Sie bei Mac OS und Linux den folgenden Befehl aus:
   ```
@@ -113,6 +116,7 @@ ausführen** aus.
   {: tip}
 
 ## Schritt 3. Swift-App erstellen
+{: #create-swift-app-cli}
 
 1. Führen Sie den Befehl `ibmcloud dev create` über die
 Befehlszeilenschnittstelle von
@@ -128,7 +132,7 @@ Starter zu generieren.
 sich für ein gebührenfreies Konto
 [registrieren
 ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen
-Link")](https://console.bluemix.net/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter). Melden Sie sich mit
+Link")](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter). Melden Sie sich mit
 dem Befehl `ibmcloud login` über die Befehlszeile an.
   {: tip}
 
@@ -183,6 +187,7 @@ OpenAPI 2.0 als URL angeben:
   {: screen}
 
 ## Schritt 4. Anwendung erstellen, ausführen und bereitstellen
+{: #swift-cli-deploy}
 
 Jetzt können Sie Ihre Anwendung mit
 {{site.data.keyword.dev_cli_short}} erstellen, ausführen und
@@ -208,8 +213,7 @@ folgenden Befehl in einem lokalen Container ausführen:
   {: codeblock}
 
   Wenn der Befehl erfolgreich ausgeführt wird, werden ein lokaler Host
-und
-ein lokaler Port zum Anzeigen der Landing-Page Ihrer Anwendung angezeigt.
+und ein lokaler Port zum Anzeigen der Landing-Page Ihrer Anwendung angezeigt.
 
 3. **Bereitstellung**
 
@@ -221,14 +225,14 @@ mit dem Befehl `deploy` bereit:
   {: codeblock}
 
 ## Nächste Schritte
+{: #swift-cli-next}
 
 Informieren Sie sich über die Verwendung der
 {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple, mit deren
 Hilfe Entwickler ausgehend von verschiedenen Starter-Kits Apps erstellen,
 bereitstellen und mit wichtigen
 {{site.data.keyword.cloud_notm}}-optimierten Services verbinden und danach umgehend funktionsfähigen Code
-herunterladen oder dessen kontinuierliche Bereitstellung konfigurieren können. 
-Benutzer können Ihre App erstellen, anzeigen, konfigurieren und verwalten sowie
+herunterladen oder dessen kontinuierliche Bereitstellung konfigurieren können. Benutzer können Ihre App erstellen, anzeigen, konfigurieren und verwalten sowie
 den Code Ihrer App herunterladen. Die Verwendung der Entwicklerkonsole für
 Apple ermöglicht es
 Ihnen, {{site.data.keyword.cloud_notm}}-Services mit einer brandneuen
@@ -236,7 +240,7 @@ App zügig auszuwerten und zu testen.
 
 Wollen Sie gleich loslegen? In der
 [{{site.data.keyword.cloud_notm}}-Entwicklerkonsole
-für Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) können Sie sofort anfangen.
+für Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) können Sie sofort anfangen.
 {: tip}
 
 Weitere Informationen finden Sie im Abschnitt

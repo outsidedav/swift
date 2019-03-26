@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -42,22 +43,16 @@ Codepfade kann eine Herausforderung darstellen.
 Es gibt einfache Richtlinien, durch deren Berücksichtigung Sie
 portierbare Anwendungen schreiben können, sowie Dienstprogramme, mit
 deren Hilfe Sie die Suche nach Servicebindungen (oder anderen
-Konfigurationsfakten) in umgebungsspezifische Positionen einbinden können. Unabhängig
+Konfigurationsfakten) in umgebungsspezifische Positionen einbinden können.Unabhängig
 davon, ob Sie bestehende Anwendungen mit einer Cloudunterstützung ausstatten
 oder Apps mit Starter-Kits erstellen müssen, besteht das Ziel in einer
-Portierbarkeit für Swift-Apps, damit diese auf vielen Bereitstellungsplattform verwendet werden können. 
+Portierbarkeit für Swift-Apps, damit diese auf vielen Bereitstellungsplattform verwendet werden können.
 
 ## {{site.data.keyword.cloud_notm}} zu vorhandenen
 Swift-Anwendungen hinzufügen
 {: #addcloud-env}
 
-Der Pfad für die Abstraktion von Umgebungswerten kann von Cloudumgebung zu Cloudumgebung unterschiedlich sein. In der Bibliothek
-[CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git)
-sind die Umgebungskonfigurationen und Berechtigungsnachweise verschiedener
-Cloud-Provider in abstrahierter Form enthalten, sodass Ihre Swift-App
-bei einer lokalen Ausführung bzw. einer Ausführung in Cloud Foundry, Kubernetes
-oder {{site.data.keyword.openwhisk}} konsistent auf die Informationen
-zugreifen kann. Die Abstraktion der Berechtigungsnachweise wird von der
+Der Pfad für die Abstraktion von Umgebungswerten kann von Cloudumgebung zu Cloudumgebung unterschiedlich sein. In der Bibliothek [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) sind die Umgebungskonfigurationen und Berechtigungsnachweise verschiedener Cloud-Provider in abstrahierter Form enthalten, sodass Ihre Swift-App bei einer lokalen Ausführung bzw. einer Ausführung in Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} oder virtuellen Instanzen konsistent auf die Informationen zugreifen kann. Die Abstraktion der Berechtigungsnachweise wird von der
 Bibliothek
 `CloudEnvironment` bereitgestellt, die intern
 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) für
@@ -77,6 +72,8 @@ Bibliothek sucht dann in einem Bereich von Suchmustern nach einem JSON-Objekt mi
 den Konfigurationsattributen oder Serviceberechtigungsnachweisen. 
 
 ### Paket für CloudEnvironment zu Ihrer Swift-Anwendung hinzufügen
+{: #add-cloudenv}
+
 Um das Paket für `CloudEnvironment` in Ihrer
 Swift-Anwendung zu verwenden, geben Sie es im Abschnitt
 **dependencies:** der Datei `Package.swift`
@@ -96,6 +93,8 @@ let cloudEnv = CloudEnv()
 {: codeblock}
 
 ### Auf Berechtigungsnachweise zugreifen
+{: #access-credentials}
+
 Nachdem die Bibliothek `CloudEnvironment` hiermit
 initialisiert wurde, können Sie nun wie in den folgenden Beispielen gezeigt auf
 Ihre Berechtigungsnachweise zugreifen:
@@ -134,7 +133,7 @@ Berechtigungsnachweise für jeden Service gespeichert sind. Die Datei `mappings.
 drei Suchmustertypen verwenden:
 - **`cloudfoundry`** - Dieser
 Mustertyp wird für die Suche nach einem Wert in der Umgebungsvariablen für
-Cloud Foundry-Services (`VCAP_SERVICES`) verwendet.
+Cloud Foundry-Services (`VCAP_SERVICES`) verwendet. Weitere Informationen zu Cloud Foundry Enterprise Edition finden Sie in diesem [Lernprogramm zu Einführung](docs/cloud-foundry/getting-started.html#getting-started).
 - **`env`** - Dieser Mustertyp wird
 für die Suche nach einem Wert verwendet, der einer Umgebungsvariablen
 zugeordnet ist, beispielsweise in Kubernetes oder Functions.
@@ -180,7 +179,7 @@ dann nach `my_awesome_cloudant_db_credentials` als
 Umgebungsvariable. Falls diese nicht definiert ist, sucht er anschließend
 nach dem Inhalt der Datei
 `my-awesome-object-storage-credentials.json` im Ordner
-`localdev`.  
+`localdev`. 
 
 Wenn die Anwendung lokal ausgeführt wird, kann sie Berechtigungsnachweise
 verwenden, die in einer Datei gespeichert sind, z. B. wie im obigen
@@ -202,9 +201,10 @@ der Abschnitt [Wissenswertes über
 Serviceberechtigungsnachweise](configuration.html#service_creds).
 
 ## Swift-Konfigurationsmanager aus Starter-Kit-Apps heraus verwenden
+{: #configmanager-swift}
 
 Mit
-[Starter-Kits](https://console.bluemix.net/developer/appledevelopment/starter-kits/)
+[Starter-Kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits/)
 erstellte Swift-Apps besitzen automatisch die Berechtigungsnachweise und die
 Konfiguration, die zur lokalen Ausführung wie auch zur Ausführung in vielen
 Cloudbereitstellungsumgebung (CF, K8s, VSI und Functions) benötigt werden. Die
@@ -219,7 +219,7 @@ Berechtigungsnachweise für Ihre Services enthalten sind; der Ordner befindet
 sich in der Datei `.gitignore`.
 
 ## Nächste Schritte
-{: #next notoc}
+{: #next-configß notoc}
 
 Sehen Sie sich die drei folgenden Bibliotheken an, damit Ihre Anwendungen
 selbst Abstraktionen aus ihren Umgebungen definieren können:

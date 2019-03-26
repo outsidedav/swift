@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -48,7 +48,7 @@ Kubernetes 提供了细致入微的进程运行状况检查。它定义了两个
 | 出错     | 500 - 服务器错误            | 500 - 服务器错误            | 500 - 服务器错误            |
 
 ## 向现有 Swift 应用程序添加运行状况检查
-{: #add-healthcheck-existing}
+{: #existing-app}
 
 通过 [Health](https://github.com/IBM-Swift/Health) 库，可以轻松地将运行状况检查添加到 Swift 应用程序。运行状况检查可扩展。有关[高速缓存](https://github.com/IBM-Swift/Health#caching)以防止 DoS 攻击或添加[定制检查](https://github.com/IBM-Swift/Health#implementing-a-health-check)的更多信息，请参阅 [Health](https://github.com/IBM-Swift/Health) 库。
 
@@ -75,11 +75,11 @@ import Health
 3. 添加路由定义，以定义运行状况检查端点：
 
     ```swift
-router.get("/health") { request, response, next in
-  // let status = health.status.toDictionary()
-  let status = health.status.toSimpleDictionary()
-  if health.status.state == .UP {
-    try response.send(json: status).end()
+    router.get("/health") { request, response, next in
+        /* let status = health.status.toDictionary() */
+        let status = health.status.toSimpleDictionary()
+        if health.status.state == .UP {
+            try response.send(json: status).end()
   } else {
     try response.status(.serviceUnavailable).send(json: status).end()
         }
@@ -118,16 +118,19 @@ func initializeHealthRoutes(app: App) {
 该示例使用标准字典，在访问 `/health` 端点时，会生成有效内容，例如 `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}`。
 
 ## 针对就绪情况和活跃度探测器的建议
+{: #recommend-probes}
 
 当下游服务不可用时，如果不存在可接受的回退，那么就绪情况检查必须在其结果中包含与下游服务进行连接的可行性。这并不意味着要调用下游服务直接提供的运行状况检查，因为基础架构会为您执行该项检查。请考虑验证应用程序对下游服务的现有引用的运行状况：可能是与 WebSphere MQ 的 JMS 连接，也可能是已初始化的 Kafka 使用者或生产者。如果您需要检查对下游服务的内部引用的可行性，请对结果进行高速缓存，以最小化运行状况检查对应用程序的影响。
 
 相比之下，您需要慎重考虑活跃度探测器的检查内容，因为一旦失败即会立即终止进程。较为合理的做法是使用一个简单的 HTTP 端点，让它始终返回状态码为 `200` 的 `{"status": "UP"}`。
 
 ### 向 Swift 应用程序添加对 Kubernees 就绪情况和活跃度的支持
+{: #kube-readiness-swift}
 
 有关备用实施方案（例如，使用 **Codable** 或标准字典）的信息，请参阅 [Health 库示例](https://github.com/IBM-Swift/Health#usage)。某些备用实施方案简化了对可扩展运行状况检查的创建，并且支持高速缓存对后备服务执行的检查。在此场景中，您需要将简单的活跃度测试与更稳健的详细就绪情况检查分隔开。
 
 ## 在 Kubernees 中配置就绪情况和活跃度探测器
+{: #config-kube-readiness}
 
 您可以将活跃度和就绪情况探测器与您的 Kubernetes 部署一起声明。这两个探测器使用的配置参数相同：
 

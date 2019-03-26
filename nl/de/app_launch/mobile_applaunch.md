@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -78,6 +78,7 @@ Kundenbeziehungen.
 
 
 ## Vorbereitende Schritte
+{: #prereqs-applaunch}
 
 Stellen Sie zunächst sicher, dass die folgenden Voraussetzungen gegeben
 sind:
@@ -92,10 +93,8 @@ erstellen
 {: ##app_launch_create}
 
 1. Klicken Sie im {{site.data.keyword.cloud_notm}}-Katalog auf
-**Mobile** > **App Launch**. Die Anzeige
-für die Servicekonfiguration wird geöffnet.
-2. Vergeben Sie für die Serviceinstanz einen Namen oder verwenden Sie
-den voreingestellten Namen.
+**Mobile** > **App Launch**. Die Anzeige für die Servicekonfiguration wird geöffnet.
+2. Vergeben Sie für die Serviceinstanz einen Namen oder verwenden Sie den voreingestellten Namen.
 3. Klicken Sie auf **Erstellen**.
 4. Klicken Sie im Navigationsbereich
 auf **Verbindungen**, um eine App auszuwählen und an Ihren
@@ -103,25 +102,25 @@ Service zu binden. Falls Sie während der Erstellung keine Bindung herstellen,
 können Sie Ihre App auch später an die Serviceinstanz binden.
 
 ## Schritt 2. App initialisieren
-{: #step2}
+{: #initialize-applaunch}
 
 Der Service stellt plattformspezifische SDKs bereit, um die
 Anwendungsentwicklung zu vereinfachen. Die
 {{site.data.keyword.cloud_notm}}-Swift-SDKs für Mobile-Services können
-entweder mit CocoaPods oder Carthage installiert werden. 
+entweder mit CocoaPods oder Carthage installiert werden.
 
 1. Klicken Sie auf **Einstellungen**.
 2. Installieren Sie das
 [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Weitere
 Informationen enthält die `README`-Datei, in der auch die Installation und
-technische Konzepte erläutert werden. 
+technische Konzepte erläutert werden.
 3. Kopieren Sie die Konfigurationsschlüssel, um Ihre App zu
 initialisieren. Verwenden Sie den geheimen App-Schlüssel, die App-GUID und den
 geheimen Clientschlüssel, um Ihre App zu konfigurieren und Kundenprojekte zu
 erstellen.
 
 ## Schritt 3. Feature erstellen
-{: #step3}
+{: #create-feature-applaunch}
 
 Der {{site.data.keyword.engage_short}}-Service erstellt Features
 und testet die Reaktionen darauf.
@@ -149,18 +148,17 @@ in **Bereit** zu aktualisieren.
 Feature-Codes in Ihre iOS-App einbezogen werden.
 9. Das Feature kann jetzt verwendet werden.
 
-Im Fenster "Featuredetails" können Sie das Feature als JSON-Datei
-exportieren, die in der Clientanwendung zum Laden der Standardwerte verwendet
-werden kann.
+Im Fenster 'Featuredetails' können Sie das Feature als JSON-Datei exportieren, die in der Clientanwendung zum Laden der Standardwerte verwendet werden kann.
 
 ## Schritt 4. Zielgruppe erstellen
-{: #step4}
+{: #audience-applaunch}
 
 ![Zielgruppe erstellen](images/create_audience_animated.gif){: gif}
 
 Gehen Sie zum Erstellen einer Zielgruppe wie folgt vor:
 
 ### **Zielgruppenattribut** erstellen:
+{: #audience-attrib-applaunch}
 
 1. Klicken Sie auf **Zielgruppe** >
 **Attribut erstellen**.
@@ -175,6 +173,7 @@ des Attributs an.
 mehr als ein Zielgruppenattribut erstellen.
 
 ### **Zielgruppe** erstellen:
+{: #audience-create-applaunch}
 
 1. Klicken Sie auf **Zielgruppe erstellen**.
 2. Geben Sie im Fenster "Neue Zielgruppe" einen geeigneten Namen und
@@ -182,12 +181,12 @@ eine Beschreibung an.
 3. Wählen Sie ein Attribut aus und klicken Sie auf **Hinzufügen**.
 4. Wählen Sie unter den aufgelisteten Attributen die erforderlichen
 Optionen aus.
-5. Klicken Sie auf
-**Speichern**.
+5. Klicken Sie auf **Speichern**.
 
 Nun können Sie ein Kundenprojekt erstellen.
 
 ## Schritt 5. Kundenprojekt erstellen
+{: #engagement-applaunch}
 
 Ein Kundenprojekt ist die Instanziierung eines Features mit
 initialisierten Eigenschaften, die einer der vordefinierten Zielgruppen
@@ -196,6 +195,7 @@ zugeordnet wird. Zur Erstellung eines Kundenprojekts können Sie entweder die
 Messaging** verwenden.
 
 ### Funktion "Featuresteuerung" aktivieren
+{: #feature-control-applaunch}
 
 Bei einem solchen Kundenprojekt kann ein App-Eigner die Sichtbarkeit
 eines Features steuern, indem es zur Laufzeit aktiviert oder inaktiviert wird. Ein
@@ -213,12 +213,9 @@ Gehen Sie folgendermaßen vor, um ein Kundenprojekt unter Verwendung der
 Featuresteuerung zu erstellen:
 
 1. Erstellen Sie das Kundenprojekt mit einem der folgenden Verfahren:
-  - Klicken Sie im Navigationsbereich auf
-**Kundenprojekte**.
+  - Klicken Sie im Navigationsbereich auf **Kundenprojekte**.
   - Wählen Sie für das neu von Ihnen erstellte Feature die Option **Kundenprojekte erstellen** aus.
-  - Klicken Sie im Navigationsbereich auf
-**Übersicht** > **Neues Kundenprojekt
-erstellen**.
+  - Klicken Sie im Navigationsbereich auf **Übersicht** > **Neues Kundenprojekt erstellen**.
 
   Das Fenster "Neues Kundenprojekt" wird angezeigt.
 
@@ -231,21 +228,17 @@ Einstellung **Featuresteuerung** aus.
   - Wenn Sie ein gesteuertes Experiment mit mehr als einer Variante des
 Features durchführen möchten, wählen Sie die Option
 **A/B-Test** bei **Experimenttyp
-auswählen** aus. Klicken Sie auf
-**Weiter**.
+auswählen** aus. Klicken Sie auf **Weiter**.
 
 3. Wählen Sie das von Ihnen erstellte Feature aus. Sie können auch die
-Varianten hinzufügen und definieren, mit denen Sie experimentieren möchten. Klicken Sie auf
-**Weiter**.
+Varianten hinzufügen und definieren, mit denen Sie experimentieren möchten. Klicken Sie auf **Weiter**.
 
-4. Wählen Sie eine Zielgruppe aus. Klicken Sie auf
-**Weiter**.
+4. Wählen Sie eine Zielgruppe aus. Klicken Sie auf **Weiter**.
 
 5. Definieren Sie einen Auslöser, indem Sie "Zeit" und dann ein Datum
 oder eine Uhrzeit für den
 **Start** und ein Datum oder eine
-Uhrzeit für das **Ende** auswählen. Klicken Sie auf
-**Speichern**.
+Uhrzeit für das **Ende** auswählen. Klicken Sie auf **Speichern**.
 
   Das neue Kundenprojekt wird nun im Fenster "Kundenprojektdetails"
 angezeigt.
@@ -255,6 +248,7 @@ Jetzt können Sie die
 Ihres Kundenprojekts messen.
 
 ### Funktion "App-internes Messaging" aktivieren
+{: #app-message-applaunch}
 
 Bei einem solchen Kundenprojekt kann ein App-Eigner Benachrichtigungen an
 die App-Benutzer senden, während sie die Anwendung aktiv nutzen.
@@ -269,7 +263,7 @@ Terminierung können Sie auch ein Ereignis verwenden. Diese Nachrichten sind
 stärker angepasst, da sie unter anderem auf den Analyseerkenntnissen über Auswahl,
 Interaktionen, Gerät, Anwendungsprotokollen des Benutzers basieren.
 
-Sehen Sie sich die folgenden Beispiel für In-App-Nachrichten an: 
+Sehen Sie sich die folgenden Beispiel für In-App-Nachrichten an:
 
 - Versand von angepassten Nachrichten
 - Versand von Nachrichten an Benutzer, die Push-Benachrichtigungen
@@ -285,13 +279,10 @@ Gehen Sie folgendermaßen vor, um ein Kundenprojekt mit Verwendung der
 Messagingoption zu erstellen:
 
 1. Erstellen Sie das Kundenprojekt mit einem der folgenden Verfahren:
-  - Klicken Sie im Navigationsbereich auf
-**Kundenprojekte**.
+  - Klicken Sie im Navigationsbereich auf **Kundenprojekte**.
   - Wählen Sie für das neu von Ihnen erstellte Feature die Option
 **Kundenprojekt erstellen** aus.
-  - Klicken Sie im Navigationsbereich auf
-**Übersicht** > **Neues Kundenprojekt
-erstellen**.
+  - Klicken Sie im Navigationsbereich auf **Übersicht** > **Neues Kundenprojekt erstellen**.
 
   Das Fenster "Neues Kundenprojekt" wird angezeigt.
 
@@ -304,14 +295,12 @@ Einstellung **App-internes Messaging** aus.
   - Wenn Sie ein gesteuertes Experiment mit mehreren Varianten der
 Messagingfunktion durchführen möchten, wählen Sie die Option
 **A/B-Test** bei **Experimenttyp
-auswählen** aus. Klicken Sie auf
-**Weiter**.
+auswählen** aus. Klicken Sie auf **Weiter**.
 
 3. Geben Sie die Nachrichteneigenschaften ein und klicken Sie auf **Weiter**.
 
 4. Wählen Sie die **Zielgruppe** und den Prozentsatz
-der Zielgruppe aus, die Sie erreichen wollen. Klicken Sie auf
-**Weiter**.
+der Zielgruppe aus, die Sie erreichen wollen. Klicken Sie auf **Weiter**.
 
 5. Definieren Sie einen Auslöser, indem Sie **Datum und Uhrzeit
 für Start/Ende** auswählen.
@@ -320,8 +309,7 @@ für Start/Ende** auswählen.
 auf **Weiter**.
 
 7. Ordnen Sie die Elemente den Metriken zu, die Sie messen wollen. Wählen
-Sie ein Element aus und geben Sie die Metrikdetails ein. Klicken Sie auf
-**Speichern**.
+Sie ein Element aus und geben Sie die Metrikdetails ein. Klicken Sie auf **Speichern**.
 
   Das neue Kundenprojekt wird nun im Fenster "Kundenprojektdetails"
 angezeigt.
@@ -331,12 +319,12 @@ Jetzt können Sie die
 Ihres Kundenprojekts messen.
 
 ## Quick Links
-{: #links notoc}
+{: #links-applaunch notoc}
 
 Die folgenden Links vermitteln Ihnen Einblicke und Kenntnisse über die
 Features von {{site.data.keyword.engage_short}}:
 
- - Probieren Sie den [App Launch-Service](https://console.bluemix.net/catalog/services/app-launch) aus.
+ - Probieren Sie den [App Launch-Service](https://cloud.ibm.com/catalog/services/app-launch) aus.
  - [Blogs
 und Videos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - Weitere Informationen finden Sie unter [App Launch - Lernprogramm 'Einführung'](/docs/services/app-launch/index.html#gettingstartedtemplate).
+ - Weitere Informationen finden Sie unter [App Launch - Lernprogramm 'Einführung'](/docs/services/app-launch/index.html).

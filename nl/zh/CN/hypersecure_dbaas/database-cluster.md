@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-02-01"
 
 ---
 
@@ -14,6 +14,7 @@ lastupdated: "2018-11-12"
 {:tip: .tip}
 
 # 创建高可用性的安全数据库
+{: #create-database-cluster}
 
 为了充分利用高可用性的安全数据库，可以在应用程序中嵌入额外的逻辑。通过使用提供的代码片段，可以创建和访问 MongoDB 数据库。 
 
@@ -23,7 +24,7 @@ lastupdated: "2018-11-12"
 {: #create_dbcluster}
 
 1. 访问 {{site.data.keyword.ihsdbaas_full}} 服务配置屏幕：
-https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
+https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
 
 2. 提供以下信息：
 
@@ -72,7 +73,7 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
 6. 收集三个所创建数据库实例（属于您的数据库集群）的主机名和端口号。要执行[连接到数据库](#connect_db)部分中的步骤，您需要有主机名、端口号和用户凭证。
 
 ## 步骤 2. 使用入门模板工具包创建项目
-{: #create_with_starter}
+{: #create_starter}
 
 您需要基于服务器端 Swift Web 框架 Kitura 的入门模板工具包。
 
@@ -80,7 +81,7 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
 
 使用通过此入门模板工具包创建的现有项目，或者创建新项目。
 
-1. 打开 {{site.data.keyword.cloud_notm}} App Service 仪表板：https://console.bluemix.net/developer/appservice/dashboard.
+1. 打开 {{site.data.keyword.cloud_notm}} App Service 仪表板：https://cloud.ibm.com/developer/appservice/dashboard。
 
 2. 选择**入门模板工具包**选项卡。
 
@@ -96,7 +97,7 @@ https://console.bluemix.net/catalog/services/hyper-protect-dbaas.
 {: #connect_db}
 
 要确保安全数据传输，请从以下网址下载认证中心 (CA) 文件：
-https://api.hypersecuredbaas.ibm.com/cert.pem，然后将其复制到项目目录中。
+https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project directory.
 
 1. 切换到包含已下载并且已展开的代码文件的项目目录。
 
@@ -146,14 +147,14 @@ https://api.hypersecuredbaas.ibm.com/cert.pem，然后将其复制到项目目�
 
   * 在 dependencies 部分中，添加以下行：
 			
-   ```hljs
+   ```swift
    .package(url: "https://github.com/OpenKitten/MongoKitten.git", from: "4.0.0"),
    ```
    {: codeblock}
 
   * 在 targets 部分中，将依赖项“MongoKitten”添加到以下行。**注：**这些值必须在一行中指定。
 			
-   ```hljs
+   ```swift
    .target(name: "Application", dependencies: [ "Kitura",
    "CloudEnvironment","SwiftMetrics","Health","MongoKitten", ]),
    ```
@@ -162,46 +163,46 @@ https://api.hypersecuredbaas.ibm.com/cert.pem，然后将其复制到项目目�
 5. 编辑 `Sources/Application/Application.swift` 文件，以使用 MongoKitten 初始化与 MongoDB 的连接。
 
   * 导入 MongoKitten SDK：
-		```
-	import MongoKitten
-		```
-	{: codeblock}
+		```swift
+	  import MongoKitten
+	  ```
+	  {: codeblock}
 
   * 添加 `ApplicationServices` 类：
-    ```hljs
-	cclass ApplicationServices {
-	// 服务引用
-	    public let mongoDBService: MongoKitten.Database
-	    public let myCredFile = "/swift-project/cred.json"
+    ```swift
+	  cclass ApplicationServices {
+	  /* Service references */
+	  public let mongoDBService: MongoKitten.Database
+	  public let myCredFile = "/swift-project/cred.json"
 
     public init() throws {
-	        // 从 JSON 文件 cred.json 读取凭证
-	        struct ResponseData: Decodable {
-	            var uri: String
+	        /* Read credentials from json file cred.json */
+        struct ResponseData: Decodable {
+            var uri: String
 	        }
 	        let data = try? Data(contentsOf: URL(fileURLWithPath: myCredFile))
 	        let decoder = JSONDecoder()
 	        let jsonData = try decoder.decode(ResponseData.self, from: data!)
 
-        // 运行服务初始化程序
-	        let server = try Server(jsonData.uri)
-	        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
-	    }
-		}
+        /* Run service initializers */
+        let server = try Server(jsonData.uri)
+        mongoDBService = MongoKitten.Database(named: "admin", atServer: 		server)
+    }
+	}
 	```
 	{: codeblock}
 
   * 在公共类 `App` 中，添加以下行以初始化数据库连接：
-    ```hljs
-	public class App {
-	...
-	let services: ApplicationServices
+    ```swift
+	  public class App {
+	  ...
+	  let services: ApplicationServices
 
-	public init() throws {
-		        // Services
-	    services = try ApplicationServices()
-	 }
-	...
+	  public init() throws {
+		        /* Services */
+	  services = try ApplicationServices()
+	  }
+	  ...
     ```
     {: codeblock}
 
@@ -210,7 +211,7 @@ https://api.hypersecuredbaas.ibm.com/cert.pem，然后将其复制到项目目�
 
 1. 通过编辑 `Sources/Application/Application.swift` 文件并添加用于测试数据库连接的命令，以验证数据库连接。例如，在 `class ApplicationServices` 中添加以下命令：
 
-	```hljs
+	```swift
 		class ApplicationServices {
 		    ...
 		    public init() throws {
@@ -228,7 +229,7 @@ https://api.hypersecuredbaas.ibm.com/cert.pem，然后将其复制到项目目�
 
 在[步骤 6](#use-step6) 中部署应用程序后，将显示以下消息（如果数据库连接成功）：
 
-```hljs
+```
 ...
 Connected to mongodb:
 MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>PortNumber_1</em>&gt;,&lt;<em>Hostname_2</em>&gt;&colon;&lt;<em>PortNumber_2</em>&gt;,&lt;<em>Hostname_3</em>&gt;&colon;&lt;<em>PortNumber_3</em>&gt;/admin&gt;
@@ -242,85 +243,12 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 现在，您可以将自己的应用程序代码添加到项目。有关使用 MongoKitten API 的更多信息，请参阅 http://beta.openkitten.org/tutorials/。
 
 ## 步骤 6. 部署应用程序
-{: #deploy_app}
+{: #deploy-dbcluster}
 
-可以使用必要的构建工具在本地运行应用程序，也可以通过 {{site.data.keyword.dev_cli_notm}} 在 {{site.data.keyword.cloud_notm}}（Cloud Foundry 或 Kubernetes 集群）中运行应用程序。
+您可以使用必要的构建工具[在本地](/docs/swift/create_app_cli.html#swift-install-tools)运行应用程序，也可以将其部署到 {{site.data.keyword.cloud_notm}}。
 
-可以在主机系统上本地运行应用程序，也可以在 Cloud Foundry 或 Kubernetes 集群中运行应用程序。
-
-1. [安装](/docs/cli/reference/bluemix_cli/get_started.html) {{site.data.keyword.cloud_notm}} CLI
-
-2. 使用 `ibmcloud plugin install dev` 命令安装 Developer Tools 插件。
-
-3. 将应用程序部署到[本地系统](#deploy_local)、[Cloud Foundry](#deploy_cf) 或 [Kubernetes 集群](#deploy_cluster)。
-
-### 本地部署
-{: #deploy_local}
-
-1. 确保 Docker 已在本地主机系统上安装并运行。可以从 https://www.docker.com/community-edition#/download 下载 Docker。
-
-2. 切换到包含项目文件的目录。
-
-3. 要在本地计算机上部署应用程序，请输入以下命令：
-	```
-	$ ibmcloud dev build
-	...
-	$ ibmcloud dev run
-	```
-	{: codeblock}
-
-	此步骤构建应用程序，并在 Docker 容器内本地运行该应用程序。
-
-### 部署到 Cloud Foundry
-{: #deploy_cf}
-
-1. 切换到包含项目文件的目录。
-
-2. 登录到 IBM Cloud 帐户，并将区域设置为 ``，如下所示：
-	
-  ```hljs
-  $ ibmcloud login -a https://api.ng.bluemix.net
-  $ ibmcloud target -o &lt;<em>your-organization</em>&gt; -s &lt;<em>your-space</em>&gt;
-  ```
-  {: codeblock}
-
-  **注：**发出 `ibmcloud login -a https://api.ng.bluemix.net` 命令会自动将区域设置为 **us-south**。
-
-3. 要将应用程序部署到 Cloud Foundry，请输入以下命令：
-	
-  ```
-$ ibmcloud dev deploy
-	```
-  {: codeblock}
-
-  您会收到指向应用程序托管位置的可单击链接。
-
-### 部署到 Kubernetes 集群
-{: #deploy_cluster}
-
-1. 创建 Kubernetes 集群：https://console.bluemix.net/containers-kubernetes/clusters。
-
-2. 单击**创建集群**。“访问”选项卡显示有关如何访问已创建 Kubernetes 集群的信息。
-
-3. 要显示有关 Kubernetes 集群的信息，请打开 {{site.data.keyword.cloud_notm}} 应用程序仪表板。该仪表板显示服务列表，例如创建的集群、数据库集群、Cloud Foundry 应用程序和 Cloud Foundry 服务。
-
-4. 切换到包含项目文件的目录。
-
-5. 登录到 {{site.data.keyword.cloud_notm}} 帐户，并将区域设置为 us-south，如下所示：
-	
-  ```hljs
-  $ ibmcloud login -a https://api.ng.bluemix.net
-  $ ibmcloud target -o <your-organization> -s <your-space>
-  ```
-  {: codeblock}
-
-  **注：**发出 `ibmcloud login -a https://api.ng.bluemix.net` 命令会自动将区域设置为 **us-south**。
-
-6. 要在 Kubernetes 中部署应用程序，请输入以下命令：
-	
-  ```
-    $ ibmcloud dev deploy -t container
-    ```
-  {: codeblock}
-
-  系统将提示您输入 Kubernetes 集群和 Docker 注册表的名称。提供这些信息后，即会将应用程序部署到 Kubernetes 集群。
+要在仪表板中创建部署工具链，请单击**部署到云**。根据您所选方法的指示信息来设置部署方法：
+  * **部署到 [Kubernetes](/docs/apps/deploying/containers.html#containers)**。此选项创建称为工作程序节点的主机集群，以部署和管理高可用性应用程序容器。您可以创建一个集群，也可以部署到现有集群。
+  * **部署到 Cloud Foundry**。借助此选项，您无需管理底层的基础架构就可以部署云本机应用程序。如果您的帐户可以访问 {{site.data.keyword.cfee_full_notm}}，那么您可以选择部署程序类型**[公共云
+](/docs/cloud-foundry-public/about-cf.html#about-cf)或者[企业环境](/docs/cloud-foundry-public/cfee.html#cfee)，您可以将其用于创建和管理隔离环境，专门托管针对企业的 Cloud Foundry 应用程序。
+  * **部署到[虚拟服务器](/docs/apps/vsi-deploy.html#vsi-deploy)**。此选项为您供应虚拟服务器实例，装入包含应用程序的映像，创建 DevOps 工具链，并启动第一个部署周期。

@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -12,6 +13,7 @@ lastupdated: "2018-11-12"
 {:pre: .pre}
 
 # Anwendungen lokal entwickeln
+{: #develop-locally}
 
 Bei einer lokalen Entwicklung können Sie Swift-Apps ohne großen
 Aufwand erstellen,
@@ -26,6 +28,7 @@ Informationen zu den verschiedenen Befehlen enthält der Abschnitt
 dev der Befehlszeilenschnittstelle von IBM Cloud Developer Tools](/docs/cli/idt/commands.html).
 
 ## Vorbereitende Schritte
+{: #prereqs-local}
 
 Für die lokale Entwicklung müssen Sie
 {{site.data.keyword.dev_cli_notm}} installieren. Führen Sie das
@@ -38,6 +41,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 Weitere Informationen zum Konfigurieren und zur Verwendung der {{site.data.keyword.dev_cli_notm}} finden Sie unter [IBM Cloud Developer Tools-Befehlszeilenschnittstelle einrichten](/docs/cli/idt/setting_up_idt.html).
 
 ## Serviceberechtigungsnachweise abrufen
+{: #credentials-local}
 
 Nachdem Sie Ihre Anwendung aus Git geklont haben, müssen Sie die
 Berechtigungsnachweise für Services abrufen, die an Ihre Anwendung gebunden
@@ -52,6 +56,7 @@ ibmcloud dev get-credentials
 {: codeblock}
 
 ## Anwendung erstellen, ausführen und bereitstellen
+{: #build-deploy-local}
 
 1. **Erstellung** - Sie können jetzt Ihre Anwendung erstellen; dies ist eine Voraussetzung
 für die Ausführung der Anwendung.

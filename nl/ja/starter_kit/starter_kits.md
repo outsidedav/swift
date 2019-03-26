@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-29"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -13,15 +14,15 @@ lastupdated: "2018-08-29"
 {:tip: .tip}
 
 # スターター・キットを使用した Swift アプリの作成
-{: #intro}
+{: #starterkits-intro}
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple は、Apple の開発者がさまざまなスターター・キットからアプリを作成し、{{site.data.keyword.cloud_notm}} 用に最適化された主要サービスをプロビジョンして接続し、作業用コードを素早くダウンロードしたり継続的デリバリーのためのセットアップを行ったりすることを支援します。 ユーザーは、アプリのコードをダウンロードできるだけでなく、アプリを作成、表示、構成、管理できます。 スターター・キットの使用により、まったく新しいアプリを使用して {{site.data.keyword.cloud_notm}} サービスを素早く評価およびテストすることができます。
 
-開始の準備ができましたか? 今すぐ [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) にアクセスして始めましょう。
+開始の準備ができましたか? 今すぐ [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) にアクセスして始めましょう。
 {: tip}
 
 ## スターター・キットについて
-{: #starter_kits}
+{: #starterkits-what}
 
 {{site.data.keyword.cloud_notm}} Developer Experience では、さまざまなスターター・キットの中から選択できます。 スターター・キットにより、{{site.data.keyword.cloud_notm}} は、開発者が選択した言語で、クラウド・デプロイメントの準備が完了したスケルトン実動アプリを動的にアセンブルします。 各スターター・キットは、コードを再作成するのではなく、コードを再利用できる、特定の実世界のユース・ケースの言語、フレームワーク、およびパターンを具体化します。
 
@@ -30,7 +31,7 @@ lastupdated: "2018-08-29"
 スターター・キットには、{{site.data.keyword.cloud_notm}} で、スターター・キットからアプリを作成するときに、移植可能コードを使用して自動的にスキャフォールドされたアプリを作成し、自動的にプロビジョンするリソースを指定できるようにするための手順が含まれています。
 
 ## {{site.data.keyword.cloud_notm}} Developer Console for Apple の使用
-{: #journey}
+{: #starterkits-journey}
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple には、特定のユース・ケース用の Swift スターター・アプリを作成するためのシームレス・パスが用意されています。 その過程で実行するステップを確認しましょう。
 
@@ -62,7 +63,7 @@ lastupdated: "2018-08-29"
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple の「アプリの詳細 (App Details)」ビュー](images/project_details_screen.png "「アプリの詳細 (App Details)」ビュー") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple の「アプリの詳細 (App Details)」ビュー*
 
-「アプリの詳細 (App Details)」ビューを使用することで、新しいサービスまたは既存のサービスを、オリジナルのスターター・キットに含まれていないアプリに追加できます。 サービス・リスト・ボックスの**「リソースの追加」**リンクをクリックすると、サービスが追加されます。使用可能なサービスは、アプリのタイプと領域で使用可能なサービスによって異なります。したがって、すべてのサービスがすべてのアプリに関連付けられるわけではありません。
+「アプリの詳細 (App Details)」ビューを使用することで、新しいサービスまたは既存のサービスを、オリジナルのスターター・キットに含まれていないアプリに追加できます。 サービス・リスト・ボックスの**「リソースの追加」**リンクをクリックすると、サービスが追加されます。 使用可能なサービスは、アプリのタイプと領域で使用可能なサービスによって異なります。したがって、すべてのサービスがすべてのアプリに関連付けられるわけではありません。
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple の「リソースの追加 (Add Resource)」ダイアログ](images/add_resource_screen.png "「リソースの追加 (Add Resource)」ダイアログ") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple の「リソースの追加 (Add Resource)」ダイアログ*
 
@@ -77,5 +78,5 @@ lastupdated: "2018-08-29"
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple の「アプリのリスト (App List)」ビュー](images/project_list_screen.png "「アプリのリスト (App List)」ビュー") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple の「アプリのリスト (App List)」ビュー*
 
-詳しくは、 [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://console.bluemix.net/developer/appledevelopment/learning-resources) を参照してください。
+詳しくは、 [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://cloud.ibm.com/developer/appledevelopment/learning-resources) を参照してください。
 {: tip}

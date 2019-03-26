@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-06-04"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -13,19 +14,22 @@ lastupdated: "2018-06-04"
 {:tip: .tip}
 
 # Análisis de conjuntos de datos con modelos generados personalizados
+{: #dsx-overview}
 
 Watson Studio le proporciona el entorno y las herramientas para resolver sus problemas empresariales mediante el análisis en colaboración de datos. Puede elegir las herramientas que necesita para analizar, limpiar y organizar los datos. Aprenda a ingerir datos en streaming, o a crear, entrenar y desplegar modelos de aprendizaje automático. Watson Studio se integra con un amplio rango de servicios de {{site.data.keyword.cloud}} y Watson Knowledge Catalog, que proporciona gestión de políticas para controlar activos, y catálogos para indexarlos para localizarlos. Obtenga más información en https://dataplatform.ibm.com/.
 
 Watson Studio está estructurado en torno a una arquitectura basada en proyectos, que organiza sus recursos para resolver un problema empresarial. Entre los recursos se incluyen conexiones a la nube y a almacenes de datos locales, archivos de datos, colaboradores y activos analíticos como modelos. Obtenga más información en https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics.
 
 ## Aprendizaje automático para {{site.data.keyword.DSX}}
-{: #dsx}
+{: #dsx-learning}
 
 Al utilizar {{site.data.keyword.DSX}}, es posible entrenar modelos y desplegarlos y luego consumir los resultados utilizando API. A continuación, estas API se pueden utilizar en las aplicaciones de iOS o Swift.
 
 Con IBM Watson Machine Learning, después de configurar el entorno, puede crear modelos, desplegarlos en la nube y entrenarlos. Para obtener más información, consulte [Crear, desplegar y entrenar modelos con {{site.data.keyword.pm_full}} y {{site.data.keyword.DSX}}](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics).
 
 ### Guías de aprendizaje
+{: #dsx-tutorials}
+
 - [Crear un modelo de regresión logística con {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics)
 - [Crear un modelo bayesiano ingenuo con {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics)
 
@@ -41,15 +45,15 @@ Con IBM Watson Machine Learning, después de configurar el entorno, puede crear 
   * Para un proyecto de iOS, simplemente añadiendo el recurso {{site.data.keyword.pm_short}} al proyecto de iOS, las credenciales se inyectan de forma instantánea en la app.
     Para acceder a las credenciales desde la aplicación, copie y pegue el siguiente fragmento de código. Además, asegúrese de añadir el punto final de puntuación a la app, que se puede encontrar dentro del separador `implementación` del despliegue del modelo.
 
-    ```Swift
-    // URL al punto final de puntuación de su modelo
+    ```swift
+    /* URL al punto final de puntuación de su modelo */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
 
-    // Sus credenciales
+    /* Credenciales de usuario */
     var machineLearningUsername: String!
     var machineLearningPassword: String!
 
-    // Inicialización de aprendizaje automático
+    /* Inicialización de aprendizaje automático */
     if let contents = Bundle.main.path(forResource:"BMSCredentials", ofType: "plist"),
        let dictionary = NSDictionary(contentsOfFile: contents),
        let username = dictionary["machinelearningUsername"] as? String,
@@ -64,19 +68,19 @@ Con IBM Watson Machine Learning, después de configurar el entorno, puede crear 
 
   * Para la aplicación del lado del servidor, añada manualmente el nombre de usuario y la contraseña a la aplicación, así como el punto final de puntuación, que se puede encontrar dentro del separador `implementación` del despliegue del modelo.
 
-    ```Swift
-    // Sus credenciales de Machine Learning
+    ```swift
+    /* Sus credenciales de Machine Learning */
     let machineLearningUsername: String = "<your-ml-service-username>"
     let machineLearningPassword: String = "<your-ml-service-password>"
 
-    // URL al punto final de puntuación de su modelo
+    /* URL al punto final de puntuación de su modelo */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
     ```
     {: codeblock}
 
 4. Recupere las señales de acceso y realice un análisis predictivo de los conjuntos de datos de la aplicación con un SDK de cliente simple.
 
-  ```Swift
+  ```swift
   public class MachineLearning {
 
       private let username: String
@@ -175,7 +179,7 @@ Con IBM Watson Machine Learning, después de configurar el entorno, puede crear 
   {: codeblock}
 
 ### Ejemplo
-{: #example}
+{: #dsx-example}
 
 **Nombre del caso de ejemplo:** Predicción de línea de productos
 
@@ -183,7 +187,7 @@ Con IBM Watson Machine Learning, después de configurar el entorno, puede crear 
 
 Una vez que se ha desplegado el modelo, puede realizar un análisis predictivo utilizando el punto final de puntuación.
 
-```Swift
+```swift
 // Los datos que desea que se analicen
 let examplePayload: [String: Any] = [
     "fields": ["GENDER", "AGE", "MARITAL_STATUS", "PROFESSION"],
@@ -215,6 +219,8 @@ client.retrieveToken { token in
 ¡Buen trabajo! Ahora puede analizar conjuntos de datos utilizando modelos de aprendizaje automático generados personalizados. Mantenga el ritmo aprendiendo más sobre las características que {{site.data.keyword.pm_short}} tiene que ofrecer en [Experiencia en datos y aprendizaje automático](https://www.ibm.com/analytics/data-science/machine-learning).
 
 ### Enlaces relacionados
+{: #dsx-related}
+
 * [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling/index.html#using-machine-learning-with-data-science-experience)
 * [{{site.data.keyword.DSX}}](https://datascience.ibm.com/)
 * [Documentación de {{site.data.keyword.DSX}}](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics)

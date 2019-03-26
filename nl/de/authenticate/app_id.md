@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -15,6 +15,7 @@ lastupdated: "2018-11-12"
 {:note: .note}
 
 # Benutzerauthentifizierung hinzufügen
+{: #appid}
 
 Anwendungssicherheit ist ein sehr kompliziertes Thema. Für die meisten
 Entwickler stellt sie eine der schwierigsten Aufgaben beim Erstellen einer App
@@ -35,7 +36,7 @@ Informationen zu allen Möglichkeiten für die Nutzung von
 Architektur finden Sie unter [Informationen zu {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
 
 ## Vorbereitende Schritte
-{: #before}
+{: #prereqs-appid}
 
 Stellen Sie zunächst sicher, dass die folgenden Voraussetzungen gegeben
 sind:
@@ -46,24 +47,23 @@ sind:
 
 ## Schritt 1. Instanz von {{site.data.keyword.appid_short_notm}}
 erstellen
-{: #create_instance}
+{: #create-instance-appid}
 
 Stellen Sie eine Instanz des {{site.data.keyword.appid_short_notm}}-Service bereit:
 
 1. Wählen Sie im
-[{{site.data.keyword.cloud_notm}}-Katalog](https://console.bluemix.net/catalog/)
-den Eintrag für {{site.data.keyword.appid_short_notm}} aus. Die Anzeige
-für die Servicekonfiguration wird geöffnet.
-2. Vergeben Sie für die Serviceinstanz einen Namen oder verwenden Sie
-den voreingestellten Namen.
+[{{site.data.keyword.cloud_notm}}-Katalog](https://cloud.ibm.com/catalog/)
+den Eintrag für {{site.data.keyword.appid_short_notm}} aus. Die Anzeige für die Servicekonfiguration wird geöffnet.
+2. Vergeben Sie für die Serviceinstanz einen Namen oder verwenden Sie den voreingestellten Namen.
 3. Wählen Sie Ihren Preistarif aus und
 klicken Sie auf **Erstellen**.
 
 ## Schritt 2. Swift-SDK für iOS installieren
-{: #install_sdk}
+{: #install-sdk-appid}
 
 Der Service bietet ein SDK, das die Codierung Ihrer App
-vereinfacht. Das SDK muss in Ihrem App-Code installiert sein.
+vereinfacht. Das SDK
+muss in Ihrem App-Code installiert sein.
 
 1. Öffnen Sie das vorhandene XCode-Projektverzeichnis für die
 `Poddatei`.
@@ -71,8 +71,8 @@ vereinfacht. Das SDK muss in Ihrem App-Code installiert sein.
 2. Fügen Sie unter dem Ziel Ihres Projekts (Abschnitt "target") eine
 Abhängigkeit für den Pod
 `BluemixAppID` hinzu. Stellen Sie sicher, dass der Befehl
-`use_frameworks!` ebenfalls wie im folgenden Beispiel gezeigt
-unter Ihrem Ziel angegeben ist.
+`use_frameworks!` ebenfalls wie im
+folgenden Beispiel gezeigt unter Ihrem Ziel angegeben ist.
     ```swift
     target '<yourTarget>' do
       use_frameworks!
@@ -88,6 +88,7 @@ unter Ihrem Ziel angegeben ist.
     {: pre}
 
 ## Schritt 3. SDK initialisieren
+{: #initialize-sdk-appid}
 
 Nachdem Sie das SDK in Ihrer App initialisiert haben, können Sie mit der
 Konfiguration der {{site.data.keyword.appid_short_notm}}-Einstellungen beginnen.
@@ -113,7 +114,7 @@ Ihrer Datei `AppDelegate.swift` hinzu.
   {: codeblock}
 
 4. Übergeben Sie die Parameter `tenant ID` und `region`, um die SDK zu initialisieren. Eine gängige, aber nicht verbindliche Position für den Code ist
-die Methode `application:didFinishLaunchingWithOptions` von `AppDelegate` in Ihrer App. 
+die Methode `application:didFinishLaunchingWithOptions` von `AppDelegate` in Ihrer App.
   ```swift
   AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
   ```
@@ -162,8 +163,8 @@ Ihre Konfigurationen können Sie jederzeit ohne eine Aktualisierung Ihres
 App-Codes aktualisieren.
 {: tip}
 
-
 ### Social-Media-Identitätsprovider
+{: #social-appid}
 
 Bei {{site.data.keyword.appid_short_notm}} können Sie
 Social-Media-Identitätsprovider wie Facebook und Google+ verwenden, um Ihre
@@ -196,7 +197,7 @@ Anmeldewidget mit Ihrer App aufzurufen.
         }
 
         public func onAuthorizationCanceled() {
-            //Authentication canceled by the user
+            //Authentication cancelled by the user
         }
 
         public func onAuthorizationFailure(error: AuthorizationError) {
@@ -210,6 +211,7 @@ Anmeldewidget mit Ihrer App aufzurufen.
 
 
 ### Cloudverzeichnis
+{: #cloud-dir-appid}
 
 Bei {{site.data.keyword.appid_short_notm}} können Sie eine eigene
 Benutzerregistry verwalten, die als "Cloudverzeichnis" bezeichnet wird. Das
@@ -235,34 +237,35 @@ Anwendung an.
         ```swift
         class delegate : TokenResponseDelegate {
             public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-            //User authenticated
+            /* User authenticated */
             }
 
             public func onAuthorizationFailure(error: AuthorizationError) {
-            //Exception occurred
+            /* Exception occurred */
             }
         }
 
         AppID.sharedInstance.obtainTokensWithROP(username: username, password: password, delegate: delegate())
         ```
         {: codeblock}
+
     * Anmeldung
         ```swift
         class delegate : AuthorizationDelegate {
           public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
              if accessToken == nil && identityToken == nil {
-              //email verification is required
+              /* email verification is required */
               return
              }
-           //User authenticated
+           /* User authenticated */
           }
 
           public func onAuthorizationCanceled() {
-              //Sign up canceled by the user
+              /* Sign up cancelled by the user */
           }
 
           public func onAuthorizationFailure(error: AuthorizationError) {
-              //Exception occurred
+              /* Exception occurred */
           }
         }
 
@@ -274,15 +277,15 @@ Anwendung an.
         ```swift
         class delegate : AuthorizationDelegate {
            public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-              //forgot password finished, in this case accessToken and identityToken will be null.
+              /* forgot password finished, in this case accessToken and identityToken will be null. */
            }
 
            public func onAuthorizationCanceled() {
-               //forgot password canceled by the user
+               /* forgot password canceled by the user */
            }
 
            public func onAuthorizationFailure(error: AuthorizationError) {
-               //Exception occurred
+               /* Exception occurred */
            }
         }
 
@@ -327,7 +330,7 @@ Anwendung an.
 
 
 ## Schritt 5. App testen
-{: #appid_testing}
+{: #testing-appid}
 
 Ist alles richtig konfiguriert? Jetzt können Sie testen, ob Sie alles richtig konfiguriert haben.
 
@@ -343,13 +346,13 @@ Anmeldewidget im {{site.data.keyword.appid_short_notm}}-Dashboard.
 Falls Probleme auftreten, finden Sie im Abschnitt [Fehlerbehebung bei {{site.data.keyword.appid_short_notm}}](/docs/services/appid/ts_index.html) weitere Informationen.
 
 ## Nächste Schritte
-{: #appid_next}
+{: #next-appid}
 
-Hervorragend! Sie haben Ihre App mit einer Sicherheitsstufe ausgestattet. Nutzen Sie diesen Schwung und probieren Sie gleich eine der folgenden Optionen
-aus:
+Hervorragend! Sie haben Ihre App mit einer Sicherheitsstufe ausgestattet. Nutzen Sie diesen Schwung und probieren
+Sie gleich eine der folgenden Optionen aus:
 
 * Lesen Sie weitere Informationen zu
 {{site.data.keyword.appid_short_notm}} in der
 [Dokumentation](/docs/services/appid/index.html). Dort
 erfahren Sie auch, wie Sie alle gebotenen Funktionen nutzen können.
-* Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://console.bluemix.net/developer/mobile/dashboard) werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.
+* Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://cloud.ibm.com/developer/mobile/dashboard) werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.

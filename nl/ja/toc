@@ -18,7 +18,6 @@ IBM Cloud での Swift のプログラミング
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    analytics/mobile_analytics.md
     push/push_notifications.md
     app_launch/mobile_applaunch.md
     
@@ -67,7 +66,7 @@ IBM Cloud での Swift のプログラミング
 
     {: .navgroup id="reference"}
     sdk.md
-    [API の資料](https://console.bluemix.net/apidocs)
+    [API の資料](https://cloud.ibm.com/apidocs)
     [IBM コードのサンプル・アプリ](https://developer.ibm.com/code/technologies/swift-on-the-server/)
     [IBM Cloud 開発者センター](https://developer.ibm.com/swift/)
     {: .navgroup-end}

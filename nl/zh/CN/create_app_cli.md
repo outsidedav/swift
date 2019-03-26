@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-01"
 
 ---
 
@@ -24,21 +24,24 @@ lastupdated: "2018-11-08"
 可以使用 {{site.data.keyword.dev_cli_short}} 通过十几个命令来管理服务器端应用程序。了解有关 [IBM Cloud Developer Tools CLI](/docs/cli/idt/commands.html) 中 `ibmcloud dev` 命令的更多信息。
 
 ## 步骤 1. 对开发者的需求
+{: #prereqs-swift-cli}
 
 要开始使用 {{site.data.keyword.cloud_notm}}，请确保满足以下需求。
 
 ### 操作系统
+{: #swift-cli-os-reqs}
 
 开发 Swift 应用程序时，最好使用支持 MacOS 的最新硬件，并使用最新的 iOS 发行版进行测试。注册 [Apple Developer](https://developer.apple.com/) 帐户，以支持在物理设备上进行测试。
 
 ### iOS 和 Xcode
-{: #ios_and_xcode}
+{: #swift-cli-ios_xcode}
 
 - [安装 Xcode 8+（或更高版本）](https://developer.apple.com/xcode/)
 - [部署到 iOS 设备 8（或更高版本）](https://support.apple.com/downloads/ios)
 - 将应用程序提交到 Apple 之前，请查看 [App Store 提交准则](https://developer.apple.com/app-store/guidelines/)
 
 ### SDK 和依赖项管理
+{: #swift-cli-sdk-dependency}
 
 以下工具用于确保可以安装本机 SDK 以使用各种 {{site.data.keyword.cloud_notm}} 服务。
 
@@ -61,8 +64,9 @@ sudo gem install cocoapods
   {: codeblock}
 
 ## 步骤 2. 安装用于本地开发的工具
+{: #swift-cli-install-tools}
 
-{{site.data.keyword.cloud}} 提供了本地 CLI 工具，可帮助您使用 {{site.data.keyword.cloud_notm}} 的各方面功能。有关更多信息，请参阅 [{{site.data.keyword.dev_cli_long}} 信息](../cli/index.html)。在进行云部署之前，您可以使用这些工具对本地 Docker 映像中的 Swift 后端进行测试。
+{{site.data.keyword.cloud}} 提供了本地 CLI 工具，可帮助您使用 {{site.data.keyword.cloud_notm}} 的各方面功能。有关更多信息，请参阅 [{{site.data.keyword.dev_cli_long}} 信息](/docs/cli/index.html)。在进行云部署之前，您可以使用这些工具对本地 Docker 映像中的 Swift 后端进行测试。
 
 * 对于 MacOS 和 Linux，运行以下命令：
   ```
@@ -80,6 +84,7 @@ Set-ExecutionPolicy Unrestricted; iex(New-Object Net.WebClient).DownloadString('
   {: tip}
 
 ## 步骤 3. 创建 Swift 应用程序
+{: #create-swift-app-cli}
 
 1. 通过 {{site.data.keyword.dev_cli_short}} CLI 运行 `ibmcloud dev create` 命令以生成预配置的入门模板。 
   ```
@@ -87,7 +92,7 @@ ibmcloud dev create
 ```
   {: codeblock}
 
-  确保使用 {{site.data.keyword.cloud_notm}} 帐户登录以创建项目。首次使用的用户可以[注册 ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) 免费帐户。在命令行上使用 `ibmcloud login` 命令登录。
+  确保使用 {{site.data.keyword.cloud_notm}} 帐户登录以创建项目。首次使用的用户可以[注册 ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) 免费帐户。在命令行上使用 `ibmcloud login` 命令登录。
   {: tip}
 
 2. 出现提示时，选择选项 1，然后选择 6，最后选择 2，如以下示例中所示：
@@ -137,6 +142,7 @@ ibmcloud dev create
   {: screen}
 
 ## 步骤 4. 构建、运行和部署应用程序
+{: #swift-cli-deploy}
 
 现在，可以使用 {{site.data.keyword.dev_cli_short}} 来构建、运行和部署应用程序。
 
@@ -167,10 +173,11 @@ ibmcloud dev create
   {: codeblock}
 
 ## 后续步骤
+{: #swift-cli-next}
 
 了解如何使用 {{site.data.keyword.cloud_notm}} Developer Console for Apple。通过此控制台，开发者可以使用各种入门模板工具包来创建应用程序，创建和连接 {{site.data.keyword.cloud_notm}} 优化的关键服务，然后快速下载可正常运行的代码或针对持续交付进行设置。用户可以创建、查看、配置和管理应用程序，以及下载应用程序的代码。通过 Developer Console for Apple，可以使用全新的应用程序快速评估和测试 {{site.data.keyword.cloud_notm}} 服务。
 
-准备好开始了吗？请立即访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) 以开始。
+准备好开始了吗？请立即访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) 以开始。
 {: tip}
 
 有关更多信息，请参阅[使用入门模板工具包开发 Swift 应用程序](/docs/swift/starter_kit/starter_kits.html)。

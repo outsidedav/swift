@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-29"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -13,15 +14,15 @@ lastupdated: "2018-08-29"
 {:tip: .tip}
 
 # 使用入门模板工具包创建 Swift 应用程序
-{: #intro}
+{: #starterkits-intro}
 
 通过 {{site.data.keyword.cloud_notm}} Developer Console for Apple，Apple 开发者可利用各种入门模板工具包来创建应用程序，供应和连接 {{site.data.keyword.cloud_notm}} 优化的关键服务，然后快速下载可正常运作的代码或设置为持续交付。用户可以创建、查看、配置和管理应用程序，以及下载应用程序的代码。使用入门模板工具包可帮助您使用全新的应用程序快速评估和测试 {{site.data.keyword.cloud_notm}} 服务。
 
-准备好开始了吗？请立即访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) 以开始。
+准备好开始了吗？请立即访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) 以开始。
 {: tip}
 
 ## 什么是入门模板工具包？
-{: #starter_kits}
+{: #starterkits-what}
 
 通过 {{site.data.keyword.cloud_notm}} Developer Experience，可以从各种入门模板工具包中进行选择。入门模板工具包指示 {{site.data.keyword.cloud_notm}} 以您选择的语言动态组合框架生产应用程序，该应用程序可随时进行云部署。每个入门模板工具包都包含语言、框架以及用于特定现实世界用例的模式，该用例允许复用代码，而不用重新创建代码。
 
@@ -30,7 +31,7 @@ lastupdated: "2018-08-29"
 入门模板工具包中包含的指示信息允许 {{site.data.keyword.cloud_notm}} 使用可移植代码来自动生成搭建有脚手架的应用程序，并可指定在通过入门模板工具包创建应用程序时要自动供应的资源。
 
 ## 使用 {{site.data.keyword.cloud_notm}} Developer Console for Apple
-{: #journey}
+{: #starterkits-journey}
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple 提供了一种无缝的方法，用于针对特定用例构建 Swift 入门模板应用程序。下面我们来看看在此行程中您可能会执行的步骤。
 
@@ -51,7 +52,7 @@ lastupdated: "2018-08-29"
 ### “创建应用程序”视图
 {: #create_new_app_view}
 
-在**创建应用程序**视图中，可以对应用程序命名以及提供部署和路由信息。在右侧，还可以查看在创建应用程序时自动供应的服务，以及定价套餐和每个服务的条款。单击`创建`可移至“应用程序详细信息”视图。如果您未登录到 {{site.data.keyword.cloud_notm}}，那么现在需要登录。
+在**创建应用程序**视图中，可以对应用程序命名以及提供部署和路由信息。在右侧，还可以查看在创建应用程序时自动供应的服务，以及价格套餐和每个服务的条款。单击`创建`可移至“应用程序详细信息”视图。如果您未登录到 {{site.data.keyword.cloud_notm}}，那么现在需要登录。
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“创建新应用程序”视图](images/create_new_project_screen.png "“创建新应用程序”视图")<br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“创建新应用程序”视图*
 
@@ -77,5 +78,5 @@ lastupdated: "2018-08-29"
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序列表”视图](images/project_list_screen.png "“应用程序列表”视图")<br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序列表”视图*
 
-有关更多信息，请访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple 学习资源](https://console.bluemix.net/developer/appledevelopment/learning-resources)。
+有关更多信息，请访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple 学习资源](https://cloud.ibm.com/developer/appledevelopment/learning-resources)。
 {: tip}

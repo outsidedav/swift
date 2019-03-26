@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2017-08-09"
+  years: 2017, 2019
+lastupdated: "2019-02-28"
 
 ---
 {:new_window: target="_blank"}
@@ -14,7 +14,7 @@ lastupdated: "2017-08-09"
 # アプリへの Swift SDK の追加
 {: #sdk}
 
-{{site.data.keyword.Bluemix}} SDK をアプリに追加するには、使用する SDK を選択し、依存関係マネージャーを構成して SDK をアプリにプルします。
+{{site.data.keyword.cloud}} SDK をアプリに追加するには、使用する SDK を選択し、依存関係マネージャーを構成して SDK をアプリにプルします。
 
 ## Client SDK の使用
 {: #client_sdk}
@@ -22,6 +22,8 @@ lastupdated: "2017-08-09"
 モバイル・アプリケーションで以下の SDK を使用して、それぞれの機能を活用することができます。
 
 ### Client SDK サービスの追加
+{: #add-client-sdk}
+
 - [Core SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-core)
 - [{{site.data.keyword.appid_short}} SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-cloud-security/appid-clientsdk-swift)
 - [{{site.data.keyword.mobileanalytics_short}} SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)
@@ -32,6 +34,8 @@ lastupdated: "2017-08-09"
 - [Watson Swift SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/watson-developer-cloud/swift-sdk)
 
 ### クライアント・ストレージの追加
+{: #add-storage}
+
 - [Cloudant ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/cloudant/swift-cloudant)
 
 ## サーバー・サイド SDK の追加
@@ -40,13 +44,17 @@ lastupdated: "2017-08-09"
 Swift サーバー・アプリケーションがある場合は、以下の SDK を使用して、それぞれのサービスおよびストレージ・オプションと通信できます。
 
 ### サーバー・サイド・サービスの使用
+{: #use-serverside}
+
 - [{{site.data.keyword.appid_short}}Swift サーバー SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-cloud-security/appid-serversdk-swift)
-- [{{site.data.keyword.openwhisk_short}} for iOS ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net/openwhisk/learn/ios-sdk)
+- [{{site.data.keyword.openwhisk_short}} for iOS ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/openwhisk/learn/ios-sdk)
 - [KituraKit ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/IBM-Swift/KituraKit)
 - [{{site.data.keyword.mobilepushshort}}Swift サーバー SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-bluemix-mobile-services/bms-pushnotifications-serversdk-swift)
 - [Watson Swift SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/watson-developer-cloud/swift-sdk)
 
 ### サーバー・サイド・ストレージの追加
+{: #add-serverside}
+
 - [Redis ![外部リンク・アイコン](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Swift/Kitura-redis)
 - [CouchDB ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/IBM-Swift/Kitura-CouchDB)
 - [MongoDB ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/OpenKitten/MongoKitten)

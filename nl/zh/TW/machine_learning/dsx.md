@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-06-04"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -13,19 +14,22 @@ lastupdated: "2018-06-04"
 {:tip: .tip}
 
 # 使用自訂產生的模型來分析資料集
+{: #dsx-overview}
 
 Watson Studio 提供的環境及工具，可讓您藉由協同分析資料來解決商業問題。您可以選擇需要的工具，來分析、清理及組織資料。學習汲取多媒體串流資料，或建立、訓練及部署機器學習模型。Watson Studio 與各式各樣的 {{site.data.keyword.cloud}} 服務及 Watson Knowledge Catalog 整合，提供原則管理來控制資產，並提供型錄來建立索引，以進行定位。如需進一步瞭解，請造訪 https://dataplatform.ibm.com/。
 
 Watson Studio 的結構為專案型架構，其會組織您的資源以解決商業問題。資源包括與雲端的連線，以及內部部署資料儲存、資料檔案、合作程式以及分析資產（例如，模型）。如需進一步瞭解，請造訪 https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics。
 
 ## {{site.data.keyword.DSX}} 的機器學習
-{: #dsx}
+{: #dsx-learning}
 
 使用 {{site.data.keyword.DSX}}，即可利用 API 來訓練模型然後進行部署，最後再好好利用結果。然後，可以在您的 iOS 或 Swift 應用程式中使用這些 API。
 
 使用 IBM Watson Machine Learning，在設定環境之後，您可以建立模型、將其部署至雲端，然後進行訓練。如需相關資訊，請參閱[使用 {{site.data.keyword.pm_full}} 及 {{site.data.keyword.DSX}} 來建立、部署及訓練模型](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics)。
 
 ### 指導教學
+{: #dsx-tutorials}
+
 - [使用 {{site.data.keyword.pm_short}} 來建置邏輯迴歸模型](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics)
 - [使用 {{site.data.keyword.pm_short}} 來建置單純貝氏分類器模型](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics)
 
@@ -41,15 +45,15 @@ Watson Studio 的結構為專案型架構，其會組織您的資源以解決商
   * 若為 iOS 專案，只要將 {{site.data.keyword.pm_short}} 資源新增至 iOS 專案，認證就會即時注入您的應用程式。
     若要從應用程式中存取認證，請複製貼上下列程式碼 Snippet。此外，也請務必將評分端點新增至應用程式，其位於您模型的部署 `implementation` 標籤內。
 
-    ```Swift
-    // The url to your model's scoring endpoint
+    ```swift
+    /* The url to your model's scoring endpoint */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
 
-    // Your credentials
+    /* Your credentials */
     var machineLearningUsername: String!
     var machineLearningPassword: String!
 
-    // Machine Learning initialization
+    /* Machine Learning initialization */
     if let contents = Bundle.main.path(forResource:"BMSCredentials", ofType: "plist"),
        let dictionary = NSDictionary(contentsOfFile: contents),
        let username = dictionary["machinelearningUsername"] as? String,
@@ -65,19 +69,19 @@ Watson Studio 的結構為專案型架構，其會組織您的資源以解決商
 
   * 若為伺服器端應用程式，請手動將使用者名稱及密碼新增至您的應用程式，評分端點也要新增，其位於模型的部署 `implementation` 標籤內。
 
-    ```Swift
-    // Your Machine Learning Credentials
+    ```swift
+    /* Your Machine Learning Credentials */
     let machineLearningUsername: String = "<your-ml-service-username>"
     let machineLearningPassword: String = "<your-ml-service-password>"
 
-    // The url to your model's scoring endpoint
+    /* The url to your model's scoring endpoint */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
     ```
     {: codeblock}
 
 4. 使用簡單的 Client SDK，對應用程式中的資料集，擷取存取記號並執行預測分析。
 
-  ```Swift
+  ```swift
   public class MachineLearning {
 
       private let username: String
@@ -176,7 +180,7 @@ Watson Studio 的結構為專案型架構，其會組織您的資源以解決商
   {: codeblock}
 
 ### 範例
-{: #example}
+{: #dsx-example}
 
 **情境名稱：**產品線預測
 
@@ -184,7 +188,7 @@ Watson Studio 的結構為專案型架構，其會組織您的資源以解決商
 
 在模型部署完成之後，您即可使用評分端點來執行預測分析。
 
-```Swift
+```swift
 // The data you want to have analyzed
 let examplePayload: [String: Any] = [
     "fields": ["GENDER", "AGE", "MARITAL_STATUS", "PROFESSION"],
@@ -216,6 +220,8 @@ client.retrieveToken { token in
 做得好！現在，您可以使用自訂產生的機器學習模型來分析資料集。藉由在[資料科學及機器學習](https://www.ibm.com/analytics/data-science/machine-learning)中進一步瞭解 {{site.data.keyword.pm_short}} 提供的特性，來保持動力。
 
 ### 相關鏈結
+{: #dsx-related}
+
 * [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling/index.html#using-machine-learning-with-data-science-experience)
 * [{{site.data.keyword.DSX}}](https://datascience.ibm.com/)
 * [{{site.data.keyword.DSX}} 文件](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics)

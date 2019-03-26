@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-29"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -12,41 +13,41 @@ lastupdated: "2018-08-29"
 {:pre: .pre}
 {:tip: .tip}
 
-# Creación de apps de Swift con kits de iniciación
-{: #intro}
+# Creación de apps de Swift con kits de inicio
+{: #starterkits-intro}
 
-La consola del desarrollador de {{site.data.keyword.cloud_notm}} permite a los desarrolladores crear apps a partir de varios kits de iniciación, a suministrar y conectar servicios clave optimizados para {{site.data.keyword.cloud_notm}} y a descargar rápidamente código de trabajo o a realizar la configuración para un suministro continuo. Los usuarios pueden crear, ver, configurar y gestionar la app, así como descargar el código de la misma. El uso de kits de iniciación le ayuda a evaluar y probar con rapidez los servicios de {{site.data.keyword.cloud_notm}} con una app completamente nueva.
+{{site.data.keyword.cloud_notm}} Developer Console for Apple permite a los desarrolladores crear apps a partir de varios kits de inicio, a suministrar y conectar servicios clave optimizados para {{site.data.keyword.cloud_notm}} y a descargar rápidamente código de trabajo o a realizar la configuración para un suministro continuo. Los usuarios pueden crear, ver, configurar y gestionar la app, así como descargar el código de la misma. El uso de kits de inicio le ayuda a evaluar y probar con rapidez los servicios de {{site.data.keyword.cloud_notm}} con una app completamente nueva.
 
-¿Listo para lanzarse? Visite la [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) ahora para empezar.
+¿Listo para lanzarse? Visite la [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) ahora para empezar.
 {: tip}
 
-## ¿Qué es un kit de iniciación?
-{: #starter_kits}
+## ¿Qué es un kit de inicio?
+{: #starterkits-what}
 
-Con la {{site.data.keyword.cloud_notm}} Developer Experience, puede elegir entre varios kits de iniciación. Los kits de iniciación instruyen a {{site.data.keyword.cloud_notm}} a ensamblar una app de producción de esqueleto, en el lenguaje de su elección, listo para el despliegue en la nube. Cada kit de iniciación incluye un lenguaje, una infraestructura y un patrón para un caso de uso específico en el mundo real que permite reutilizar el código en lugar de reinventarlo.
+Con la {{site.data.keyword.cloud_notm}} Developer Experience, puede elegir entre varios kits de inicio. Los kits de inicio instruyen a {{site.data.keyword.cloud_notm}} a ensamblar una app de producción de esqueleto, en el lenguaje de su elección, listo para el despliegue en la nube. Cada kit de inicio incluye un lenguaje, una infraestructura y un patrón para un caso de uso específico en el mundo real que permite reutilizar el código en lugar de reinventarlo.
 
-Los kits de iniciación están listos para ser utilizados en producción y se centran en demostrar una implementación de un patrón clave utilizando un tiempo de ejecución (por ejemplo, Swift). En algunos casos, los kits de iniciación ofrecen una experiencia de usuario simple para resaltar la integración del servicio. En otros casos, los kits de iniciación representan una implementación personalizable de un caso de uso sofisticado.
+Los kits de inicio están listos para ser utilizados en producción y se centran en demostrar una implementación de un patrón clave utilizando un tiempo de ejecución (por ejemplo, Swift). En algunos casos, los kits de inicio ofrecen una experiencia de usuario simple para resaltar la integración del servicio. En otros casos, los kits de inicio representan una implementación personalizable de un caso de uso sofisticado.
 
-Los kits de iniciación contienen instrucciones que permiten a {{site.data.keyword.cloud_notm}} generar automáticamente apps estructurales con código portátil, y especificar recursos para que se suministren automáticamente al crear una app desde el kit de iniciación.
+Los kits de inicio contienen instrucciones que permiten a {{site.data.keyword.cloud_notm}} generar automáticamente apps estructurales con código portátil, y especificar recursos para que se suministren automáticamente al crear una app desde el kit de inicio.
 
 ## Utilización de la {{site.data.keyword.cloud_notm}} Developer Console for Apple
-{: #journey}
+{: #starterkits-journey}
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple le proporciona una vía de acceso sencilla para crear una app de inicio de Swift para el caso de uso específico. Vamos a ver los pasos que puede realizar.
 
 ### Pantalla de visión general
 {: #overview_screen}
 
-La pantalla Visión general le proporciona contenido que se adapta a un conjunto de casos de uso como Watson, Weather, etc. Desde la pantalla de visión general, puede ver documentación, acceder a los recursos educativos, examinar los servicios, ver kits de iniciación destacados o enlazar a una colección más grande de kits de iniciación. Pulse `Kits de iniciación` en el área de navegación de la izquierda para entrar en la vista Kits de iniciación.
+La pantalla Visión general le proporciona contenido que se adapta a un conjunto de casos de uso como Watson, Weather, etc. Desde la pantalla de visión general, puede ver documentación, acceder a los recursos educativos, examinar los servicios, ver kits de inicio destacados o enlazar a una colección más grande de kits de inicio. Pulse `Kits de inicio` en el área de navegación de la izquierda para entrar en la vista Kits de inicio.
 
 ![Pantalla Visión general de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/overview_screen.png "Pantalla Visión general") <br> *Pantalla Visión general de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
-### Vista de kits de iniciación
+### Vista de kits de inicio
 {: #starter_kits_view}
 
-La vista Kits de iniciación muestra la colección de kits de iniciación específicos de un área de caso de uso. Puede pulsar varios enlaces en una tarjeta del kit de iniciación para ver las demostraciones y más información. Seleccione un kit de iniciación para ir a la vista Crear app.
+La vista Kits de inicio muestra la colección de kits de inicio específicos de un área de caso de uso. Puede pulsar varios enlaces en una tarjeta del kit de inicio para ver las demostraciones y más información. Seleccione un kit de inicio para ir a la vista Crear app.
 
-![Vista Kits de iniciación de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/starter_kits_screen.png "Vista Kits de iniciación") <br> *Vista Kits de iniciación de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
+![Vista Kits de inicio de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/starter_kits_screen.png "Vista Kits de inicio") <br> *Vista Kits de inicio de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
 ### Crear vista de app
 {: #create_new_app_view}
@@ -62,7 +63,7 @@ La vista Detalles de la app muestra una lista de servicios que están configurad
 
 ![Vista Detalles de app de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/project_details_screen.png "Vista Detalles de app") <br> *Vista Detalles de app de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
-Al utilizar la vista Detalles de app, puede añadir servicios nuevos o existentes a la app que no formaban parte del Kit de iniciación original. Pulse el enlace **Añadir recurso** en el recuadro de lista de servicios para añadir servicios. Los servicios disponibles dependen del tipo de app y de los servicios que están disponibles en una región, por lo que no todos los servicios están disponibles para asociarse con todas las apps.
+Al utilizar la vista Detalles de app, puede añadir servicios nuevos o existentes a la app que no formaban parte del Kit de inicio original. Pulse el enlace **Añadir recurso** en el recuadro de lista de servicios para añadir servicios. Los servicios disponibles dependen del tipo de app y de los servicios que están disponibles en una región, por lo que no todos los servicios están disponibles para asociarse con todas las apps.
 
 ![ Diálogo Añadir recurso de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/add_resource_screen.png "Diálogo Añadir recurso") <br> *Diálogo Añadir recurso de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
@@ -77,5 +78,5 @@ Puede obtener una lista de todas las apps creadas desde la vista Lista de apps. 
 
 ![Vista Lista de apps de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/project_list_screen.png "Vista Lista de apps") <br> *Vista Lista de apps de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
-Para obtener más información, visite los [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://console.bluemix.net/developer/appledevelopment/learning-resources).
+Para obtener más información, visite [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://cloud.ibm.com/developer/appledevelopment/learning-resources).
 {: tip}

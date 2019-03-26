@@ -18,7 +18,6 @@
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    analytics/mobile_analytics.md
     push/push_notifications.md
     app_launch/mobile_applaunch.md
     
@@ -67,7 +66,7 @@
 
     {: .navgroup id="reference"}
     sdk.md
-    [API 文件](https://console.bluemix.net/apidocs)
+    [API 文件](https://cloud.ibm.com/apidocs)
     [關於 IBM Code 的範例應用程式](https://developer.ibm.com/code/technologies/swift-on-the-server/)
     [IBM Cloud 開發人員中心](https://developer.ibm.com/swift/)
     {: .navgroup-end}

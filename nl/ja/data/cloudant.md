@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2017-2018
-lastupdated: "2018-11-08"
+  years: 2017, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -20,7 +21,8 @@ lastupdated: "2018-11-08"
 
 {{site.data.keyword.cloudant_short_notm}} を使用するためのすべての方法については、[{{site.data.keyword.cloudant_short_notm}} Basics](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics) を参照してください。
 
-## 始めに
+## 始める前に
+{: #prereqs-cloudant}
 
 まず、以下の前提条件が整っていることを確認してください。
  * CocoaPods (バージョン 1.1.0 以上)
@@ -32,12 +34,15 @@ lastupdated: "2018-11-08"
 {: tip}
 
 ## ステップ 1. {{site.data.keyword.cloudant_short_notm}} インスタンスの作成
+{: #create-instance-cloudant}
 
-[IBM Cloud 上の Cloudant NoSQL DB インスタンスの作成に関するチュートリアル ![外部リンク・アイコン](../images/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net/docs/services/Cloudant/tutorials/create_service.html#creating-a-cloudant-nosql-db-instance-on-ibm-cloud){:new_window} を参照して、サービスのインスタンスを作成してください。
+[IBM Cloud での IBM Cloudant インスタンスの作成に関するチュートリアル ![外部リンク・アイコン](../images/launch-glyph.svg "外部リンク・アイコン")](/docs/services/Cloudant/tutorials/create_service.html){:new_window} を参照して、サービスのインスタンスを作成してください。
 
 ## ステップ 2. SDK のインストール
+{: #install-sdk-cloudant}
 
 ### iOS Swift SDK のインストール
+{: #install-swift-sdk-cloudant}
 
 Swift Cloudant SDK を使用すると、アプリをコーディングしやすくなります。 この SDK は、アプリ・コードにインストールする必要があります。
 
@@ -58,6 +63,7 @@ Swift Cloudant SDK を使用すると、アプリをコーディングしやす�
     {: codeblock}
 
 ### サーバー・サイド Swift SDK のインストール
+{: #install-serverside-cloudant}
 
 サーバー・サイド開発用 Swift Package Manager とともに使用するには、`Package.swift` 内の依存関係に次の行を追加します。
 ```swift
@@ -66,11 +72,12 @@ Swift Cloudant SDK を使用すると、アプリをコーディングしやす�
 {: codeblock}
 
 ## ステップ 3. SDK の初期化
+{: #initialize-cloudant}
 
 アプリ内の SDK を初期化したら、まず {{site.data.keyword.cloudant_short_notm}} を使用してデータを保管することができます。
 
 1.  ご使用の `AppDelegate.swift` またはサーバー・サイドの swift ファイルに、次の import を追加します。
-    ```
+    ```swift
     import SwiftCloudant
     ```
     {: codeblock}
@@ -84,6 +91,8 @@ Swift Cloudant SDK を使用すると、アプリをコーディングしやす�
     {: codeblock}
 
 ### 基本操作
+{: #basic-operations-cloudant}
+
 これらの基本操作は、初期化済みクライアントを使用してドキュメントの作成、読み取り、削除を行うための基本的アクションを示しています。
 
 #### ドキュメントの作成
@@ -144,5 +153,5 @@ client.add(operation: delete)
 お疲れさまでした。 ある程度のセキュア・パーシスタンスをアプリに追加しました。 この調子で、以下のいずれかのオプションを試してみてください。
 
 * [{{site.data.keyword.cloudant_short_notm}} SDK for Swift ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/cloudant/swift-cloudant) のソース・コードを調べる。
-* スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 **Infinite Scrolling with Cloudant NoSQL for iOS** スターター・キットは、`ViewController` を拡張してページ編集を使用してデータを表示する方法を示しています。 このパターンのアプリは iOS 開発者にとって一般的なもので、{{site.data.keyword.cloudant_short_notm}} の機能を示すための良い例です。 [モバイル開発者ダッシュボード](https://console.bluemix.net/developer/mobile/dashboard)で、使用可能なスターター・キットを確認できます。 コードをダウンロードし、 アプリを実行してください。
+* スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 **Infinite Scrolling with Cloudant NoSQL for iOS** スターター・キットは、`ViewController` を拡張してページ編集を使用してデータを表示する方法を示しています。 このパターンのアプリは iOS 開発者にとって一般的なもので、{{site.data.keyword.cloudant_short_notm}} の機能を示すための良い例です。 [モバイル開発者ダッシュボード](https://cloud.ibm.com/developer/mobile/dashboard)で、使用可能なスターター・キットを確認できます。 コードをダウンロードし、 アプリを実行します。
 * {{site.data.keyword.cloudant_short_notm}} に用意されているすべての機能の詳細を確認して利用するには、[この資料](/docs/services/Cloudant/index.html)を参照してください。

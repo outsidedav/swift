@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -15,6 +15,7 @@ lastupdated: "2018-11-12"
 {:note: .note}
 
 # Incluindo Autenticação do Usuário
+{: #appid}
 
 A segurança do aplicativo é incrivelmente complicada. Para a maioria dos desenvolvedores, é uma das tarefas mais difíceis da criação de um app. Como você pode ter certeza de que está protegendo as informações de seus usuários? Ao integrar o {{site.data.keyword.appid_full}} em seus aplicativos, é possível proteger os recursos e incluir a autenticação, mesmo quando você não tem muita experiência em segurança.
 
@@ -23,7 +24,7 @@ Ao requerer que os usuários efetuem login, é possível armazenar dados do usu�
 Para obter todas as maneiras de uso do {{site.data.keyword.appid_short_notm}} e informações de arquitetura, consulte [Sobre o {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
 
 ## Antes de começar
-{: #before}
+{: #prereqs-appid}
 
 Primeiro, verifique se os pré-requisitos a seguir estão prontos para execução:
 * CocoaPods (versão 1.1.0 ou superior)
@@ -32,16 +33,16 @@ Primeiro, verifique se os pré-requisitos a seguir estão prontos para execuçã
 * Xcode (versão 9.0.1 ou superior)
 
 ## Etapa 1. Criando uma instância do  {{site.data.keyword.appid_short_notm}}
-{: #create_instance}
+{: #create-instance-appid}
 
 Crie uma instância de serviço do {{site.data.keyword.appid_short_notm}}:
 
-1. No  [ {{site.data.keyword.cloud_notm}}  catálogo ](https://console.bluemix.net/catalog/), selecione  {{site.data.keyword.appid_short_notm}}. A tela de configuração de serviço é aberta.
+1. No  [ {{site.data.keyword.cloud_notm}}  catálogo ](https://cloud.ibm.com/catalog/), selecione  {{site.data.keyword.appid_short_notm}}. A tela de configuração de serviço é aberta.
 2. Dê um nome à sua instância de serviço ou use o nome de pré-configuração.
 3. Selecione o seu plano de precificação e clique em **Criar**.
 
 ## Etapa 2. Instalando o SDK do iOS Swift
-{: #install_sdk}
+{: #install-sdk-appid}
 
 O serviço fornece um SDK para ajudar a facilitar a codificação do app. O SDK deve ser instalado em seu código de app.
 
@@ -63,6 +64,7 @@ O serviço fornece um SDK para ajudar a facilitar a codificação do app. O SDK 
     {: pre}
 
 ## Etapa 3. Inicializando o SDK
+{: #initialize-sdk-appid}
 
 Depois de inicializar o SDK em seu app, é possível iniciar a configuração de suas preferências do {{site.data.keyword.appid_short_notm}}.
 
@@ -118,8 +120,8 @@ Um provedor de identidade fornece as informações sobre autenticação para seu
 É possível atualizar suas configurações a qualquer momento sem atualizar o código do app.
 {: tip}
 
-
 ### Provedores de identidade social
+{: #social-appid}
 
 Com o {{site.data.keyword.appid_short_notm}}, é possível usar provedores de identidade social, como o Facebook e o Google+, para proteger seus apps.
 
@@ -138,7 +140,7 @@ Para configurar provedores de identidade social:
         }
 
         public func onAuthorizationCanceled() {
-            //Authentication canceled by the user
+            //Authentication cancelled by the user
         }
 
         public func onAuthorizationFailure(error: AuthorizationError) {
@@ -152,6 +154,7 @@ Para configurar provedores de identidade social:
 
 
 ### Diretório da nuvem
+{: #cloud-dir-appid}
 
 Com o {{site.data.keyword.appid_short_notm}}, é possível gerenciar seu próprio registro de usuário chamado diretório da nuvem. O diretório da nuvem permite que os usuários se conectem e se inscrevam nos apps móveis e da web usando seu e-mail e uma senha.
 
@@ -167,35 +170,32 @@ Para configurar o diretório de nuvem:
         ```swift
         class delegate : TokenResponseDelegate {
             public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-            //User authenticated
-            }
+            /* Autenticado pelo usuário */ }
 
             public func onAuthorizationFailure(error: AuthorizationError) {
-            //Exception occurred
-            }
+            /* Ocorreu uma exceção */ }
         }
 
         AppID.sharedInstance.obtainTokensWithROP(username: username, password: password, delegate: delegate())
         ```
         {: codeblock}
+
     * Inscrever
         ```swift
         class delegate : AuthorizationDelegate {
           public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
              if accessToken == nil && identityToken == nil {
-              //email verification is required
+              /* email verification is required */
               return
              }
-           //User authenticated
-          }
+           /* Autenticado pelo usuário */ }
 
           public func onAuthorizationCanceled() {
-              //Sign up canceled by the user
+              /* Sign up cancelled by the user */
           }
 
           public func onAuthorizationFailure(error: AuthorizationError) {
-              //Exception occurred
-          }
+              /* Ocorreu uma exceção */ }
         }
 
         AppID.sharedInstance.loginWidget?.launchSignUp(delegate: delegate())
@@ -206,16 +206,15 @@ Para configurar o diretório de nuvem:
         ```swift
         class delegate : AuthorizationDelegate {
            public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-              //forgot password finished, in this case accessToken and identityToken will be null.
+              /* forgot password finished, in this case accessToken and identityToken will be null. */
            }
 
            public func onAuthorizationCanceled() {
-               //forgot password canceled by the user
+               /* forgot password canceled by the user */
            }
 
            public func onAuthorizationFailure(error: AuthorizationError) {
-               //Exception occurred
-           }
+               /* Ocorreu uma exceção */ }
         }
 
         AppID.sharedInstance.loginWidget?.launchForgotPassword(delegate: delegate())
@@ -259,7 +258,7 @@ Para configurar o diretório de nuvem:
 
 
 ## Etapa 5. Testando seu aplicativo
-{: #appid_testing}
+{: #testing-appid}
 
 Tudo está configurado corretamente? Você pode testá-lo!
 
@@ -271,9 +270,9 @@ Tudo está configurado corretamente? Você pode testá-lo!
 Tendo problemas? Efetue o registro de saída de  [ resolução de problemas  {{site.data.keyword.appid_short_notm}} ](/docs/services/appid/ts_index.html).
 
 ## Próximas etapas
-{: #appid_next}
+{: #next-appid}
 
 Ótimo trabalho! Você incluiu um nível de segurança no app. Tente uma das opções a seguir para manter o ritmo:
 
 * Obtenha mais informações e aproveite todos os recursos que o {{site.data.keyword.appid_short_notm}} tem a oferecer; [verifique os docs](/docs/services/appid/index.html).
-* Os kits do iniciador são uma das maneiras mais rápidas de usar os recursos do {{site.data.keyword.cloud_notm}}. Visualize os kits do iniciador disponíveis no [Painel do desenvolvedor de dispositivo móvel](https://console.bluemix.net/developer/mobile/dashboard). Faça download do código. Execute o app.
+* Os kits do iniciador são uma das maneiras mais rápidas de usar os recursos do {{site.data.keyword.cloud_notm}}. Visualize os kits do iniciador disponíveis no [Painel do desenvolvedor de dispositivo móvel](https://cloud.ibm.com/developer/mobile/dashboard). Faça download do código. Execute o app.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2018-11-12"
 {:tip: .tip}
 
 # Serverunabhängige Entwicklung
-{: #serverless}
+{: #serverless-dev-swift}
 
 Was bedeutet "serverunabhängig"? Das serverunabhängige Entwicklungsmuster
 nimmt auf eine Anwendungsentwicklung Bezug, bei der die serverseitige Logik in
@@ -31,7 +31,7 @@ für die serverseitige Entwicklung können sich Anwendungsentwickler bei der
 serverunabhängigen Architektur ganz darauf konzentrieren, Code zu schreiben, der zur Änderung von Daten reaktiv ausgeführt
 wird.
 
-[{{site.data.keyword.openwhisk}}](https://console.bluemix.net/openwhisk/),
+[{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/),
 das IBM Produktangebot für FaaS, soll eine einfache serverseitige
 Entwicklungsumgebung bereitstellen, die kein Fachwissen über die Serverseite
 erfordert. Bei Verwendung der serverunabhängigen Technologie können
@@ -43,7 +43,7 @@ Cloudlösung mit verbesserter Leistung sein und dank seiner nutzungsabhängigen
 Gebührenstruktur zur Kosteneinsparung beitragen.
 
 ## Architekturänderungen
-{: #comparison}
+{: #comparison-serverless}
 
 Um Ihnen die Vorteile zu veranschaulichen, die sich hinsichtlich der
 Architektur durch einen Umstieg auf FaaS ergeben, werden anhand einer einfachen
@@ -92,26 +92,29 @@ bieten. Über einige der häufigsten [Anwendungsfälle](#use_cases)
 können Sie sich anhand einiger spezieller Beispiele informieren.
 
 ## Vorteile der Serverunabhängigkeit
-{: #benefits}
+{: #benefits-serverless}
 
 ### Geringere Kosten
+{: #reduced-cost-serverless}
 
 Das Outsourcing von Zeit und Kosten, die mit der Systemadministration
 einhergehen, verringert die Gesamtkosten, die mit konventionellen
 Back-End-Servern verbunden sind. Darüber hinaus unterscheidet sich
-{{site.data.keyword.openwhisk_short}}  von den herkömmlichen
-Computing-Technologien, da Sie nur für die Zeit bezahlen, die Ihr Code
+{{site.data.keyword.openwhisk_short}} von den herkömmlichen
+Datenverarbeitungstechnologien, da Sie nur für die Zeit bezahlen, die Ihr Code
 benötigt, um Anforderungen zu erfüllen (aufgerundet auf die nächsten 100
 Millisekunden). Dies ermöglicht im Vergleich zu anderen Technologien wie
 virtuellen Maschinen und Containern, die wahrscheinlich nicht zu
-100% ausgelastet sind und Speicher im System Ihres Cloud-Providers belegen,
+100 % ausgelastet sind und Speicher im System Ihres Cloud-Providers belegen,
 deutliche Kosteneinsparungen.
 
 ### Hochverfügbarkeit und Skalierbarkeit
+{: #ha-serverless}
 
 Serverunabhängige Architekturen bieten eine sofortige Skalierbarkeit mit nahezu konstanter Verfügbarkeit.
 
 ### Geschwindigkeit und vereinfachte Entwicklung
+{: #speed-serverless}
 
 Das serverunabhängige Konzept beschleunigt die Anwendungsentwicklung,
 weil keine Systemadministration mehr erforderlich ist und einfache
@@ -120,9 +123,10 @@ mit Aktionsfolgen erstellen, die als Reaktion auf eine ereignisgesteuerte
 Realität ausgeführt werden.
 
 ## Beispielanwendungsfälle
-{: #use_cases}
+{: #use-cases-serverless}
 
 ### Mobiles Back-End
+{: #mobile-backend-serverless}
 ![](./images/cloud-functions-rest-api-trigger.png)
 
 Entwickler für Mobilgeräte können leicht auf serverseitige Logik
@@ -132,6 +136,7 @@ besitzen zu müssen, können Sie Funktionen in Sprachen
 wie Swift implementieren und problemlos serverseitige Funktionen nutzen.
 
 ### Datenverarbeitung
+{: #data-processing-serverless}
 
 ![](./images/cloud-functions-cloudant-trigger.png)
 
@@ -141,28 +146,30 @@ wie Klangnormalisierung, Grafikdrehung, Geräuschreduzierung,
 Piktogrammgenerierung oder Videotranscodierung ohne Weiteres automatisieren.
 
 ### Kognitive Datenverarbeitung
+{: #cognitive-serverless}
 
 Sie können Daten analysieren, sobald sie verfügbar sind. Binden Sie
 leistungsfähige kognitive Services wie IBM Watson in Ihre Funktionalität ein,
 um Objekte oder Personen in Bildern bzw. Videos zu erkennen.
 
 ### Geplante Tasks
+{: #tasks-serverless}
 
 Sie können Funktionen regelmäßig ausführen lassen und Zeitpläne
 definieren, die den Zeitpunkt für die Ausführung von Aktionen mit einer
 Cron-ähnlichen Syntax angeben.
 
 ## API-Referenz
-{: #openwhisk_start_api notoc}
+{: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [REST-API](https://console.{DomainName}/apidocs/98)
+* [REST-API](https://cloud.ibm.com/apidocs)
 
 ## Zugehörige Links
-{: #general notoc}
+{: #related-serverless notoc}
 
-* [{{site.data.keyword.openwhisk_short}} entdecken](http://www.ibm.com/cloud-computing/bluemix/openwhisk/)
+* [{{site.data.keyword.openwhisk_short}} entdecken](https://www.ibm.com/cloud/functions)
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
 * [Website des OpenWhisk-Projekts von
 Apache](http://openwhisk.org)
-* [More on Serverless](https://martinfowler.com/articles/serverless.html)
+* [Weitere Informationen zu Serverless-Architekturen](https://martinfowler.com/articles/serverless.html)

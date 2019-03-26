@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -15,15 +15,16 @@ lastupdated: "2018-11-12"
 {:note: .note}
 
 # ユーザー認証の追加
+{: #appid}
 
-アプリケーション・セキュリティーは非常に複雑です。ほとんどの開発者にとって、アプリ作成における難題の 1 つとなっています。確実にユーザー情報を保護するにはどうすればよいでしょうか? アプリに {{site.data.keyword.appid_full}} を統合することによって、セキュリティーに関する経験があまりなくても、リソースを保護し、認証を追加することができます。
+アプリケーション・セキュリティーは非常に複雑です。 ほとんどの開発者にとって、アプリ作成における難題の 1 つとなっています。 確実にユーザー情報を保護するにはどうすればよいでしょうか? アプリに {{site.data.keyword.appid_full}} を統合することによって、セキュリティーに関する経験があまりなくても、リソースを保護し、認証を追加することができます。
 
 ユーザーにサインインを要求することで、アプリ設定などのユーザー・データ (または公開されているソーシャル・プロファイル情報) を保管し、そのデータを使用してアプリ内のエクスペリエンスをユーザーごとにカスタマイズできます。 {{site.data.keyword.appid_short_notm}} により手軽なログイン・フレームワークが提供されていますが、クラウド・ディレクトリーで使用するために、独自のブランド・マークが付いたサインイン画面を表示させることもできます。
 
 {{site.data.keyword.appid_short_notm}} の詳しい使用方法とアーキテクチャー情報については、[{{site.data.keyword.appid_short_notm}} について](/docs/services/appid/about.html)を参照してください。
 
-## 始めに
-{: #before}
+## 始める前に
+{: #prereqs-appid}
 
 まず、以下の前提条件が整っていることを確認してください。
 * CocoaPods (バージョン 1.1.0 以上)
@@ -32,16 +33,16 @@ lastupdated: "2018-11-12"
 * Xcode (バージョン 9.0.1 以上)
 
 ## ステップ 1. {{site.data.keyword.appid_short_notm}} のインスタンスの作成
-{: #create_instance}
+{: #create-instance-appid}
 
 {{site.data.keyword.appid_short_notm}} サービスのインスタンスを次のように作成します。
 
-1. [{{site.data.keyword.cloud_notm}} カタログ](https://console.bluemix.net/catalog/)で、{{site.data.keyword.appid_short_notm}} を選択します。 サービス構成画面が開きます。
+1. [{{site.data.keyword.cloud_notm}} カタログ](https://cloud.ibm.com/catalog/)で、{{site.data.keyword.appid_short_notm}} を選択します。 サービス構成画面が開きます。
 2. サービス・インスタンスに名前を付けます。または、事前設定された名前を使用します。
 3. 料金プランを選択し、**「作成」**をクリックします。
 
 ## ステップ 2. iOS Swift SDK のインストール
-{: #install_sdk}
+{: #install-sdk-appid}
 
 このサービスで提供されている SDK を使用すると、アプリのコーディングがより簡単になります。 この SDK は、アプリ・コードにインストールする必要があります。
 
@@ -63,6 +64,7 @@ lastupdated: "2018-11-12"
     {: pre}
 
 ## ステップ 3. SDK の初期化
+{: #initialize-sdk-appid}
 
 アプリで SDK を初期化した後、{{site.data.keyword.appid_short_notm}} の設定を開始できます。
 
@@ -80,7 +82,7 @@ lastupdated: "2018-11-12"
   ```
   {: codeblock}
 
-4. `tenant ID` および `region` パラメーターを渡して、SDK を初期化します。このコードを入れる一般的な場所 (ただし必須の場所ではありません) は、アプリの `AppDelegate` の `application:didFinishLaunchingWithOptions` メソッド内です。
+4. `tenant ID` および `region` パラメーターを渡して、SDK を初期化します。 このコードを入れる一般的な場所 (ただし必須の場所ではありません) は、アプリの `AppDelegate` の `application:didFinishLaunchingWithOptions` メソッド内です。
   ```swift
   AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
   ```
@@ -118,8 +120,8 @@ ID プロバイダーが提供するユーザー認証情報を使用して、�
 アプリ・コードを更新せずに、いつでも構成を更新できます。
 {: tip}
 
-
 ### ソーシャル ID プロバイダー
+{: #social-appid}
 
 {{site.data.keyword.appid_short_notm}} では、Facebook や Google+ などのソーシャル ID プロバイダーを使ってアプリを保護することができます。
 
@@ -152,6 +154,7 @@ ID プロバイダーが提供するユーザー認証情報を使用して、�
 
 
 ### クラウド・ディレクトリー
+{: #cloud-dir-appid}
 
 {{site.data.keyword.appid_short_notm}} では、クラウド・ディレクトリーという独自のユーザー・レジストリーを管理できます。 クラウド・ディレクトリーを使用すると、ユーザーは自分の E メールとパスワードを使用してモバイル・アプリや Web アプリにサインアップ/サインインできます。
 
@@ -167,35 +170,36 @@ ID プロバイダーが提供するユーザー認証情報を使用して、�
         ```swift
         class delegate : TokenResponseDelegate {
             public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-            //ユーザー認証済み
+            /* ユーザーが認証された */
             }
 
             public func onAuthorizationFailure(error: AuthorizationError) {
-            //例外の発生
-           }
+            /* 例外が発生した */
+            }
         }
 
         AppID.sharedInstance.obtainTokensWithROP(username: username, password: password, delegate: delegate())
         ```
         {: codeblock}
+
     * サインアップ
         ```swift
         class delegate : AuthorizationDelegate {
           public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
              if accessToken == nil && identityToken == nil {
-              //E メール検証が必要
+              /* E メール検証が必要 */
               return
              }
-           //ユーザー認証済み
-          }
+           /* ユーザーが認証された */
+            }
 
           public func onAuthorizationCanceled() {
-              //ユーザーによるサインアップの取り消し
+              /* ユーザーによるサインアップの取り消し */
           }
 
           public func onAuthorizationFailure(error: AuthorizationError) {
-              //例外の発生
-          }
+              /* 例外が発生した */
+            }
         }
 
         AppID.sharedInstance.loginWidget?.launchSignUp(delegate: delegate())
@@ -206,16 +210,16 @@ ID プロバイダーが提供するユーザー認証情報を使用して、�
         ```swift
         class delegate : AuthorizationDelegate {
            public func onAuthorizationSuccess(accessToken: AccessToken?, identityToken: IdentityToken?, response:Response?) {
-              //パスワード忘れ処理の終了。この場合 accessToken と identityToken はヌル。
+              /* パスワード忘れ処理の終了。この場合 accessToken と identityToken はヌル。*/
            }
 
            public func onAuthorizationCanceled() {
-               //ユーザーによるパスワード忘れ処理の取り消し
+               /* ユーザーによるパスワード忘れ処理の取り消し */
            }
 
            public func onAuthorizationFailure(error: AuthorizationError) {
-               //例外の発生
-           }
+               /* 例外が発生した */
+            }
         }
 
         AppID.sharedInstance.loginWidget?.launchForgotPassword(delegate: delegate())
@@ -259,7 +263,7 @@ ID プロバイダーが提供するユーザー認証情報を使用して、�
 
 
 ## ステップ 5. アプリのテスト
-{: #appid_testing}
+{: #testing-appid}
 
 すべて正しく構成されましたか? テストできます。
 
@@ -271,9 +275,9 @@ ID プロバイダーが提供するユーザー認証情報を使用して、�
 問題が発生する場合は、 [{{site.data.keyword.appid_short_notm}} のトラブルシューティング](/docs/services/appid/ts_index.html)を確認してください。
 
 ## 次のステップ
-{: #appid_next}
+{: #next-appid}
 
 お疲れさまでした。 これでアプリに一定のレベルのセキュリティーが追加されました。 この調子で、以下のいずれかのオプションを試してみてください。
 
 * {{site.data.keyword.appid_short_notm}} に備わっているすべての機能を確認して利用するには、[ドキュメント](/docs/services/appid/index.html)をご確認ください。
-* スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 [モバイル開発者ダッシュボード](https://console.bluemix.net/developer/mobile/dashboard)で、使用可能なスターター・キットを確認できます。 コードをダウンロードし、 アプリを実行してください。
+* スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 [モバイル開発者ダッシュボード](https://cloud.ibm.com/developer/mobile/dashboard)で、使用可能なスターター・キットを確認できます。 コードをダウンロードし、 アプリを実行します。

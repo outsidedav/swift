@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-03-07"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -17,13 +18,14 @@ lastupdated: "2018-11-12"
 
 [Kitura](http://www.kitura.io) est une infrastructure Swift côté serveur pour la génération d'applications de back end et d'applications Web iOS. Cette infrastructure crée des API REST qui peuvent être appelées depuis l'application iOS à l'aide de logiciels SDK URLSession tels que Alamofire, RestKit ou du logiciel SDK [KituraKit](https://github.com/ibm-swift/kiturakit) fourni par Kitura lui-même.
 
-Kitura est capable d'intégrer tous les services et fonctionnalités fournis par {{site.data.keyword.cloud}}, y compris {{site.data.keyword. appid_short}}, {{site.data.keyword.mobilepushshort}} et {{site.data.keyword.mobileanalytics_short}}, ainsi que des bases de données, l'apprentissage automatique et d'autres services. Kitura peut ensuite être déployé et mis automatiquement à l'échelle à l'aide des plateformes Cloud Foundry ou de Docker (basés sur Kubernetes) dans {{site.data.keyword.cloud}}.
+Kitura est capable d'intégrer tous les services et fonctionnalités fournis par {{site.data.keyword.cloud}}, y compris {{site.data.keyword.appid_short}}, {{site.data.keyword.mobilepushshort}} et {{site.data.keyword.mobileanalytics_short}}, ainsi que des bases de données, l'apprentissage automatique et d'autres services. Kitura peut ensuite être déployé et mis automatiquement à l'échelle à l'aide des plateformes Cloud Foundry ou de Docker (basés sur Kubernetes) dans {{site.data.keyword.cloud}}.
 
-Kitura fournit une [interface de ligne de commande](http://www.kitura.io/en/starter/gettingstarted.html) `kitura` qui simplifie la création, la génération et le test, ainsi que le déploiement d'applications Kitura. Les applications qui sont générées à l'aide de l'interface CLI Kitura incluent une prise en charge complète pour le déploiement sur n'importe quel cloud prenant en charge les technologies Cloud Foundry, Docker et Kubernetes. Toutefois, si vous générez spécifiquement pour {{site.data.keyword.cloud_notm}}, il est recommandé d'utiliser la console de développement Apple d'IBM dans le navigateur ou d'utiliser {{site.data.keyword.dev_cli_notm}}. Par ailleurs, comme les deux méthodes partagent une technologie sous-jacente, la console de développement Apple et IBM Developer Tools créent un projet hébergé et une pipeline de déploiement pour vous, et ils mettent à disposition les services dont votre application a besoin.
+Kitura offre une [interface de ligne de commande](https://www.kitura.io/guides/kituracli/gettingstarted.html) `kitura` qui simplifie la création, la génération, le test et le déploiement des applications Kitura. Les applications qui sont générées à l'aide de l'interface CLI Kitura incluent une prise en charge complète pour le déploiement sur n'importe quel cloud prenant en charge les technologies Cloud Foundry, Docker et Kubernetes. Toutefois, si vous générez spécifiquement pour {{site.data.keyword.cloud_notm}}, il est recommandé d'utiliser la console de développement Apple d'IBM dans le navigateur ou d'utiliser {{site.data.keyword.dev_cli_notm}}. Par ailleurs, comme les deux méthodes partagent une technologie sous-jacente, la console de développement Apple et IBM Developer Tools créent un projet hébergé et une pipeline de déploiement pour vous, et ils mettent à disposition les services dont votre application a besoin.
 
 ## Avant de commencer
+{: #prereqs-kitura}
 
-Tout d'abord, assurez-vous que vous respectez la configuration prérequise suivante :  
+Tout d'abord, assurez-vous que la configuration prérequise suivante est respectée :  
 
 * iOS 11.0+  
 * Xcode 9.0  
@@ -46,17 +48,17 @@ Tout d'abord, assurez-vous que vous respectez la configuration prérequise suiva
 Un projet est créé, mais il n'utilise pas encore de services supplémentaires. Vous pouvez ajouter des services en cliquant sur le bouton **Ajouter une ressource** ou en cliquant sur le bouton **Télécharger le code** pour obtenir le code du projet. Vous pouvez aussi ajouter facilement des services à un projet existant.
 
 ## Etape 2. Ajout de services
-{: #add_services}
+{: #add_services-kitura}
 
 1. Cliquez sur le bouton **Ajouter une ressource** pour ajouter des services. Les catégories de service s'affichent. Par exemple, sélectionnez **Données** pour consulter les bases de données disponibles, et sélectionnez **Cloudant NoSQL DB**.
 2. Sélectionnez un plan de tarification pour le service, par exemple Lite, et cliquez sur **Créer**.
 
-Une instance du service est créée. Elle fournit les informations d'identification de l'application et, dans certains cas, ajoute le code nécessaire à votre projet pour inclure la connexion correcte au service. Vous pouvez désormais ajouter d'autres services à l'aide du bouton **Ajouter une ressource** ou en cliquant sur **Télécharger le code** pour obtenir le code du projet. 
+Une instance du service est créée. Elle fournit les informations d'identification de l'application et, dans certains cas, ajoute le code nécessaire à votre projet pour inclure la connexion correcte au service. Vous pouvez désormais ajouter d'autres services à l'aide du bouton **Ajouter une ressource** ou en cliquant sur **Télécharger le code** pour obtenir le code du projet.
 
 Une fois le projet téléchargé, vous pouvez commencer à gérer votre application.
 
 ## Etape 3. Développement de votre application avec Xcode
-{: #develop_xcode}
+{: #develop_xcode-kitura}
 
 Une fois votre projet téléchargé, vous pouvez le modifier et le développer à l'aide de Xcode, puis envoyer par téléchargement votre application modifiée pour le déploiement dans le cloud.
 
@@ -72,15 +74,15 @@ Une fois votre projet téléchargé, vous pouvez le modifier et le développer �
 2. Définissez la cible Xcode pour le projet.  
   Pour lancer le serveur Kitura, vous devez éditer le schéma en cliquant sur la section **project_name-Package** dans la barre d'outils et en sélectionnant la cible **project_name** dans le menu. Vérifiez que l'appareil cible est défini sur **My Mac**.
 
-3. Exécutez le serveur Kitura localement.
+3. Exécutez le serveur Kitura localement. 
   Cliquez sur **Exécuter** ou utilisez le raccourci clavier `⌘+R` pour démarrer le serveur Kitura. Une fois le serveur démarré, vous pouvez vérifier que les URL Kitura standard suivantes sont opérationnelles :
   * Surveillance Kitura : [http://localhost:8080/swiftmetrics-dash/]()
   * Vérification de l'intégrité Kitura : [http://localhost:8080/health]()
 
 ## Etape 5. Ajout d'API REST
-{: #add_restapi}
+{: #add_restapi-kitura}
 
-Un squelette de serveur Kitura est créé, mais il ne fournit pas une API REST pouvant être utilisée par une application iOS. Ajoutez des API REST dans Kitura avec un codage minimal. Utilisez les étapes suivantes pour ajouter une API REST pour les requêtes `GET` sur `/meals`, qui est conçue pour retourner les objets `Meal` qui sont enregistrés par le serveur Kitura. 
+Un squelette de serveur Kitura est créé, mais il ne fournit pas une API REST pouvant être utilisée par une application iOS. Ajoutez des API REST dans Kitura avec un codage minimal. Utilisez les étapes suivantes pour ajouter une API REST pour les requêtes `GET` sur `/meals`, qui est conçue pour retourner les objets `Meal` qui sont enregistrés par le serveur Kitura.
 
 1. Ajoutez une structure `Meal` dans le fichier `Sources/Application/Application.swift` :  
   Avant la déclaration de la classe `App`, ajoutez les lignes suivantes pour créer une structure Meal conforme au protocole Codable :  
@@ -100,13 +102,12 @@ Un squelette de serveur Kitura est créé, mais il ne fournit pas une API REST p
   {: codeblock}
 
 3. Ajoutez un gestionnaire pour les demandes `GET` sur `/meals` dans le fichier `Sources/Application/Application.swift` en ajoutant le code suivant dans la fonction `postInit()` :  
-
   ```swift
   router.get("/meals", handler: loadHandler)
   ```
   {: codeblock}
 
-4. Implémentez la fonction loadHandler dans le fichier `Sources/Application/Application.swift` en ajoutant le code suivant en tant qu'autre fonction dans la classe `App` :  
+4. Implémentez la fonction loadHandler dans le fichier `Sources/Application/Application.swift` en ajoutant le code suivant en tant qu'autre fonction dans la classe `App` :
   ```swift
   func loadHandler(completion: ([Meal]?, RequestError?) -> Void ) {
       let meals: [Meal] = self.mealStore.map({ $0.value })
@@ -123,7 +124,7 @@ Vous disposez maintenant d'une API REST pour les demandes `GET` sur `/meals` qui
 6. Testez l'API REST en utilisant une requête `GET`, qui correspond à la manière dont les navigateurs Web demandent des données à un serveur. 
 
   Vous pouvez tester l'API REST à l'aide de l'URL suivante :  
-  ```
+  ```swift
   * `GET /meals`:	[http://localhost:8080/meals]()
   ```
   {: codeblock}
@@ -134,7 +135,7 @@ Vous pouvez utiliser le tutoriel [FoodTracker Backend](https://github.com/IBM/Fo
 {: tip}
 
 ## Etape 6. Installation de KituraKit dans votre application iOS
-{: #kiturakit}
+{: #install-kiturakit}
 
 Les API REST générées par l'utilisation du serveur Kitura sont des API Web standard, utilisables depuis n'importe quelle application quelle que soit la bibliothèque client qui est utilisée ou le langage dans lequel est écrit le client. Cela signifie que vous pouvez utiliser Alamofire, RestKit ou URLSession pour établir des connexions au serveur. Kitura fournit également un connecteur client spécifique et optimisé afin de simplifier l'appel de ses API REST depuis iOS, au format de KituraKit. 
 
@@ -149,19 +150,19 @@ Les étapes suivantes illustrent l'installation de KituraKit dans votre applicat
   {: codeblock}
 
 2. Editez le fichier Pod afin de définir une plateforme globale de iOS 11 pour votre projet en remplaçant la ligne suivante :
-  ```
+  ```pod
   # platform :ios, '9.0'
   ```
   {: codeblock}
 
   Par le code suivant :
-	```
+	```pod
   platform :ios, '11.0'
   ```
   {: codeblock}
 
 3. Ajoutez KituraKit au profil en ajoutant ce qui suit sous `# Pods for <application name>` :
-  ```
+  ```pod
   pod 'KituraKit', :git => 'https://github.com/IBM-Swift/KituraKit.git', :branch => 'pod'
   ```
   {: codeblock}
@@ -187,20 +188,20 @@ Les étapes suivantes illustrent l'installation de KituraKit dans votre applicat
   ```swift
   import KituraKit
   
-  // Connect to the Kitura server on http://localhost:8080
+  /* Connect to the Kitura server on http://localhost:8080 */
   guard let client = KituraKit(baseURL: "http://localhost:8080") else {
       print("Error creating KituraKit client")
       return
   }
   
-  // Make a request to `GET /meals`, expecting a [Meal] or a RequestError
+  /* Make a request to `GET /meals`, expecting a [Meal] or a RequestError */
   client.get("/meals") { (meals: [Meal]?, error: RequestError?) in
-      // Check for an error
+      /* Check for an error */
       guard error == nil else {
           print("Error saving meal to Kitura: \(error!)")
           return
       }
-      // Check for meals
+      /* Check for meals */
       guard let meals = meals else {
           print("Received Meals!")
           return
@@ -214,7 +215,7 @@ The Kitura server is called by using `client.get("/meals")` with a callback that
 You can use the [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) tutorial, which helps you build a set of REST APIs for storing, fetching, and deleting `Meal` objects from an iOS application, including storing the data in a database.
 {: tip}
 
-## Prochaines étapes
-{: #next notoc}
+## Next Steps
+{: #next-kitura notoc}
 
-Maintenant que vous avez un serveur Kitura qui fournit une API REST pouvant être appelée par votre application iOS, vous êtes prêt à déployer votre serveur sur {{site.data.keyword.cloud_notm}}. Les déploiements peuvent être effectués à l'aide de conteneurs avec Kubernetes, de conteneurs sécurisés ou avec Cloud Foundry.
+Now that you have a Kitura server that provides a REST API that can be called by your iOS application, you're ready to deploy your server to {{site.data.keyword.cloud_notm}}. [Deployments](/docs/swift/deploying_apps.html) can be done by using containers with Kubernetes, secure containers, Cloud Foundry, Cloud Foundry Enterprise Environment, or virtual instances.

@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -12,12 +13,12 @@ lastupdated: "2018-11-12"
 {:pre: .pre}
 
 # Installation de logiciels SDK dans les applications client
-{: #installing}
+{: #install-sdks}
 
 Les logiciels SDK iOS d'{{site.data.keyword.cloud}} prennent en charge différents gestionnaires de dépendances connus, ce qui vous permet d'installer et d'utiliser facilement des services {{site.data.keyword.cloud_notm}} au sein de vos applications.
 
 ## Installation avec CocoaPods
-{: #installing_with_cocoapods}
+{: #install_cocoapods}
 
 Pour installer un logiciel SDK à l'aide CocoaPods, ajoutez-le à votre `fichier Pod`. Si votre projet n'a pas encore de `fichier Pod`, utilisez la commande `pod init`.
 ```ruby
@@ -34,7 +35,7 @@ Exécutez `pod install` et ouvrez le fichier `.xcworkspace` généré.
 Pour plus d'informations, voir les [Guides CocoaPods](https://guides.cocoapods.org/using/index.html).
 
 ## Installation avec Carthage
-{: #installing_with_carthage}
+{: #install_carthage}
 
 Pour installer un logiciel SDK avec Carthage, ajoutez la ligne suivante à votre `Cartfile` :
 ```
@@ -47,10 +48,10 @@ Exécutez `carthage update` pour démarrer le processus de génération. Une foi
 Pour plus d'informations, voir la documentation [Initiation à Carthage](https://github.com/Carthage/Carthage#getting-started).
 
 ## Installation avec le gestionnaire de package Swift
-{: #installing_with_swift_package_manager}
+{: #install_swift_package}
 
 Pour installer un logiciel SDK à l'aide du gestionnaire de package Swift, ajoutez la ligne suivante à vos dépendances dans votre `Package.swift` :
-```
+```swift
 .Package(url: "<SDK git url>")
 ```
 {: codeblock}
@@ -60,6 +61,6 @@ Exécutez `swift build` pour démarrer le processus de génération.
 Pour plus d'informations, voir a [Présentation du gestionnaire de package Swift](https://swift.org/package-manager/).
 
 ## Installation manuelle
-{: #installing_manually}
+{: #install_manually}
 
 Pour installer manuellement un logiciel SDK, téléchargez le logiciel SDK et ajoutez manuellement les fichiers source dans votre projet.

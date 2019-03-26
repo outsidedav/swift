@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-08"
+  years: 2017, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -19,29 +20,32 @@ A Linguagem de Consulta Estruturada (SQL) é uma linguagem específica do domín
 Um dos recursos mais importantes do Swift é a sua segurança de tipo. Usar um banco de dados SQL com o Swift é uma escolha lógica, porque a segurança de tipo é suportada por ambos.
 
 ## Usando o ORM com um Banco de Dados SQL
+{: sql-orm}
 
 Com o Mapeamento de objeto relacional (ORM), é possível mapear objetos para bancos de dados relacionais sem precisar lidar com instruções SQL. Em seguida, será possível armazenar e recuperar objetos de um banco de dados relacional sem executar muito da análise e da própria serialização.
 
 ## Etapa 1. Introdução ao ORM
+{: #start-orm}
 
 Use o [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM) com um plug-in SQL, como [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) ou [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL).
 
 Para este exemplo, o plug-in [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) é usado. Siga as instruções para instalar o plug-in [aqui](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation).
 
 ## Etapa 2. Importando o ORM para seu aplicativo
+{: #import-orm}
 
 1. Atualize o arquivo `Package.swift` incluindo os pacotes `Swift-Kuery-ORM` e `Swift-Kuery-PostgreSQL`:
   ```swift
      dependencies: [
       ...
-      // Add these two lines
-      .package(url: "https://github.com/IBM-Swift/Swift-Kuery-ORM.git", from: "0.0.1"),
+      / * Inclua estas duas linhas */
+      .package (url: "https: //github.com/IBM-Swift/Swift-Kuery-ORM.git ", de:" 0.0.1 "),
       .package(url: "https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL.git", from: "1.0.0"),
     ],
     targets: [
       .target(
         name: ...
-        // Add these two modules to your target(s) dependencies
+        /* Add these two modules to your target(s) dependencies */
         dependencies: [..., "SwiftKueryORM", "SwiftKueryPostgreSQL"]),
     ]
   ```
@@ -54,9 +58,10 @@ Para este exemplo, o plug-in [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuer
   {: codeblock}
 
 ## Etapa 3. Criando seu Banco de Dados
+{: #create-db-sql}
 
 1. Depois que PostgreSQL for configurado em sua máquina, use um terminal para criar o banco de dados:
-  ```bash
+  ```
   brew services start postgresql
   createdb school
   ```
@@ -71,9 +76,10 @@ Para este exemplo, o plug-in [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuer
 
   **Nota**: um conjunto de conexões é usado para solicitações simultâneas.
 
-## Etapa 4. Definindo seu Modelo
+## Etapa 4. Definindo seu modelo
+{: #define-model-sql}
 
-1. Crie o Modelo,  ` Classificação `:
+1. Crie o modelo,  ` Grade `:
   ```swift
   struct Grade: Modelo {
     var course: String
@@ -87,13 +93,15 @@ Para este exemplo, o plug-in [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuer
   fazer {
     try Grade.createTableSync()
   } catch {
-    // Erro }
+    / * Erro */ }
   ```
   {: pre}
 
 ## Etapa 5. Gerenciando seus dados
+{: #manage-data-sql}
 
 ### Salvando Dados
+{: #save-data-sql}
 
 Para salvar uma instância de `Grade`, crie uma instância e chame `save()`:
 ```swift
@@ -107,6 +115,7 @@ grade.save { student, error in
 {: pre}
 
 ### Localizando Dados
+{: #find-data-sql}
 
 Para recuperar todas as Notas do banco de dados, é possível usar a chamada estática `findAll()`:
 ```swift
@@ -118,6 +127,7 @@ Grade.findAll { students, error in
 {: pre}
 
 ### Atualizando Dados
+{: update-data-sql}
 
 Uma abordagem semelhante é usada para atualizar uma Nota do banco de dados:
 ```swift
@@ -131,6 +141,7 @@ Grade.update(id: 1) { student, error in
 {: pre}
 
 ### Excluindo dados
+{: #delete-data-sql}
 
 Uma abordagem semelhante é usada para excluir uma Nota do banco de dados.
 ```swift
@@ -144,9 +155,11 @@ Grade.delete(id: 1) { error in
 Todas essas chamadas usam um manipulador que é chamado uma vez e o executa quando a chamada do banco de dados é concluída.
 
 ## Usando o ORM com Kitura
+{: #kitura-orm}
 
 Para facilitar a experiência com o ORM, o [tutorial do FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) pode salvar e buscar objetos de Meal por meio do app iOS diretamente em um banco de dados PostgreSQL. Mesmo se você concluir o tutorial, vale a pena consultá-lo novamente para ver o poder do Swift-Kuery-ORM e como ele pode simplificar o seu código do Kitura.
 
 ## Usando Swift-Kuery diretamente
+{: #swift-kuery}
 
 Se o ORM o limitar porque você precisa de mais controle sobre seu banco de dados, será possível usar a camada de abstração de SQL, [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery), na qual será possível fazer uma consulta SQL.

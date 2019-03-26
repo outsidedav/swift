@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -15,18 +16,18 @@ lastupdated: "2018-11-08"
 # Registro en Swift
 {: #logging_swift}
 
-Los mensajes de registro son series con información contextual sobre el estado y la actividad del microservicio en el momento en que se realiza la entrada de registro. Los registros son necesarios para diagnosticar cómo y por qué fallan los servicios, y desempeñan un rol de soporte a las [métricas de app](appmetrics.html) en la supervisión del estado de la aplicación.
+Los mensajes de registro son series con información contextual sobre el estado y la actividad del microservicio en el momento en que se realiza la entrada de registro. Los registros son necesarios para diagnosticar cómo y por qué fallan los servicios, y desempeñan un rol de soporte a las [métricas de app](/docs/swift/cloudnative/appmetrics.html) en la supervisión del estado de la aplicación.
 
 Dada la naturaleza transitoria de los procesos en entornos de nube, los registros deben recopilarse y enviarse a otro lugar, normalmente a una ubicación centralizada para su análisis. La forma más coherente de iniciar sesión en entornos de nube es enviar entradas de registro a la salida estándar y a las secuencias de error, que deja que la infraestructura maneje el resto.
 
-
 ## Adición de registro a la app Swift
+{: #logging-add}
 
 [HeliumLogger](https://github.com/IBM-Swift/HeliumLogger) es una infraestructura de registro ligera y popular para Swift, y proporciona muchas ventajas nativas, como el registro en la salida estándar y en distintos niveles de registro.
 
 [LoggerAPI](https://github.com/IBM-Swift/LoggerAPI) es el protocolo de registrador que proporciona una interfaz de registro común para distintos tipos de registradores en Swift. Kitura utiliza la `LoggerAPI` a lo largo de su implementación.
 
-Para utilizar `HeliumLogger`, añada el siguiente código a la sección **dependencies:** del archivo `Package.swift` para todos los destinos adecuados: 
+Para utilizar `HeliumLogger`, añada el siguiente código a la sección **dependencies:** del archivo `Package.swift` para todos los destinos adecuados:
 ```swift
 .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1")
 ```
@@ -49,9 +50,9 @@ En el ejemplo proporcionado, el [nivel de registro](http://ibm-swift.github.io/H
 Para obtener más información sobre la personalización de los mensajes de registro, consulte la [documentación de referencia de la API HeliumLogger](http://ibm-swift.github.io/HeliumLogger/) oficial.
 
 ## Funcionamiento de los registros con kits de inicio
-{: #monitoring}
+{: #logging-starterkits}
 
-De forma predeterminada, las apps Swift creadas utilizando el {{site.data.keyword.cloud_notm}} App Service vienen con `HeliumLogger`. La ejecución de la app de forma nativa o en un entorno de nube genera la salida siguiente:
+De forma predeterminada, las apps Swift creadas utilizando {{site.data.keyword.cloud_notm}} App Service vienen con `HeliumLogger`. La ejecución de la app de forma nativa o en un entorno de nube genera la salida siguiente:
 ```
 [2018-07-31T15:41:05.332-05:00] [INFO] [HTTPServer.swift:195 listen(on:)] Listening on port 8080.
 ```
@@ -69,13 +70,14 @@ El nivel de registro se establece explícitamente en `.info` para registrar mens
 {: tip}
 
 ## Pasos siguientes
-{: #next_steps}
+{: #next-logging}
 
 Obtenga más información sobre la visualización de los registros en cada uno de los entornos de despliegue:
 * [Registros de Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/)
-* [Registros de Cloud Foundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
-* [{{site.data.keyword.openwhisk}} Registros y supervisión](https://console.bluemix.net/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
+* [Registros de Cloud Foundry](/docs/cli/reference/ibmcloud/bx_cli.html)
+* [Cloud Foundry Enterprise Environment: Auditoría y registro](docs/cloud-foundry/auditing-logging.html)
+* [Supervisión y registro de {{site.data.keyword.openwhisk}}](/docs/openwhisk/openwhisk_logs.html)
 
 Más información sobre cómo implementar y utilizar un agregador de registros:
-* [{{site.data.keyword.cloud_notm}} Log Analysis ](https://console.bluemix.net/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
+* [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis/log_analysis_ov.html)
 * [Pila de ELK privada de {{site.data.keyword.cloud_notm}}](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

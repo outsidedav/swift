@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -12,12 +13,12 @@ lastupdated: "2018-11-12"
 {:pre: .pre}
 
 # 클라이언트 앱에 SDK 설치
-{: #installing}
+{: #install-sdks}
 
 {{site.data.keyword.cloud}} iOS SDK는 자주 사용되는 여러 종속성 관리자를 지원하므로 고유한 애플리케이션 내의 {{site.data.keyword.cloud_notm}} 서비스를 쉽게 설치하고 사용할 수 있습니다.
 
 ## CocoaPods를 사용하여 설치
-{: #installing_with_cocoapods}
+{: #install_cocoapods}
 
 CocoaPods를 사용하여 SDK를 설치하려면 CocoaPods를 `Podfile`에 추가하십시오. 프로젝트에 아직 `Podfile`이 없으면 `pod init` 명령을 사용하십시오.
 ```ruby
@@ -34,7 +35,7 @@ end
 자세한 정보는 [CocoaPods 안내서](https://guides.cocoapods.org/using/index.html)를 참조하십시오.
 
 ## Carthage를 사용하여 설치
-{: #installing_with_carthage}
+{: #install_carthage}
 
 Carthage를 사용하여 SDK를 설치하려면 다음 행을 `Cartfile`에 추가하십시오.
 ```
@@ -47,10 +48,10 @@ github "<github org name>/<github project name>"
 자세한 정보는 [Carthage 시작하기](https://github.com/Carthage/Carthage#getting-started) 문서를 참조하십시오.
 
 ## Swift 패키지 관리자를 사용하여 설치
-{: #installing_with_swift_package_manager}
+{: #install_swift_package}
 
 Swift 패키지 관리자를 사용하여 SDK를 설치하려면 `Package.swift`의 종속성에 다음 행을 추가하십시오.
-```
+```swift
 .Package(url: "<SDK git url>")
 ```
 {: codeblock}
@@ -60,6 +61,6 @@ Swift 패키지 관리자를 사용하여 SDK를 설치하려면 `Package.swift`
 자세한 정보는 [Swift 패키지 관리자 개요](https://swift.org/package-manager/)를 참조하십시오.
 
 ## 수동으로 설치
-{: #installing_manually}
+{: #install_manually}
 
 SDK를 수동으로 설치하려면 SDK를 다운로드하고 소스 파일을 프로젝트에 수동으로 추가하십시오.

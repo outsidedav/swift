@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -31,9 +32,10 @@ lastupdated: "2018-11-12"
 
  - **Identifier et résoudre la cause profonde d'un problème** - Utilisez la journalisation personnalisée dans votre application, chargez les journaux de façon automatique et effectuez des recherches dans ces derniers depuis la console. Explorez en aval les événements de panne pour voir les traces de pile.
 
-## Avant de commencer :
+## Avant de commencer
+{: #prereqs-analytics}
 
-Tout d'abord, assurez-vous que vous respectez la configuration prérequise suivante :
+Tout d'abord, assurez-vous que la configuration prérequise suivante est respectée :
 
  - iOS 8.0+ / watchOS 2.0+
  - Xcode 7.3, 8.0
@@ -41,14 +43,15 @@ Tout d'abord, assurez-vous que vous respectez la configuration prérequise suiva
  - CocoaPods ou Carthage
 
 ## Etape 1. Création d'une instance de {{site.data.keyword.mobileanalytics_short}}
-{: #mobile_analytics_create}
+{: #create-analytics}
 
 1. Dans le catalogue {{site.data.keyword.cloud_notm}}, cliquez sur **Mobile** > **{{site.data.keyword.mobileanalytics_short}}**. L'écran de configuration du service s'ouvre.
 2. Donnez un nom à votre instance de service ou utilisez le nom prédéfini.
 3. Cliquez sur **Créer**.
 4. Dans le panneau de navigation, cliquez sur **Connexions** pour sélectionner une application et la lier à votre service. Vous pouvez lier l'instance de service à votre application ultérieurement si vous ne la liez pas pendant l'étape de création.
 
-## Etape 2. Installation du logiciel SDK Swift iOS 
+## Etape 2. Installation du logiciel SDK Swift iOS
+{: #install-analytics-swift}
 
 Le service fournit des logiciels SDK spécifiques à la plateforme afin de simplifier le développement d'application. Les logiciels SDK Swift d'{{site.data.keyword.cloud_notm}} Mobile Services peuvent être installés avec CocoaPods ou Carthage. Pour plus d'informations, consultez le site [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics).
 
@@ -61,14 +64,14 @@ Vous pouvez instrumenter votre application mobile à l'aide du logiciel SDK d'{{
 Le logiciel SDK {{site.data.keyword.mobileanalytics_short}} est distribué avec [CocoaPods ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cocoapods.org/){: new_window} et [Carthage ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/Carthage/Carthage#getting-started){: new_window}, qui sont des gestionnaires de dépendance pour les projets Cocoa. CocoaPods et Carthage téléchargent automatiquement des artéfacts depuis des référentiels afin de les rendre disponibles pour votre application. Sélectionnez CocoaPods ou Carthage :
 
 ### CocoaPods
-{: #cocoapods}
+{: #cocoapods-analytics}
 
 1. Suivez les [instructions du logiciel SDK Swift d'{{site.data.keyword.Bluemix_notm}} Mobile Services ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window} sur GitHub pour installer `BMSAnalytics` à l'aide de CocoaPods et l'ajouter à votre fichier Pod.
 
 2. Après avoir installé le logiciel SDK pour client iOS, [importez et initialisez](sdk.html#initalize-ma-sdk) le logiciel SDK Analytics Client.   
 
 ### Carthage
-{: #carthage}
+{: #carthage-analytics}
 
 Si vous n'utilisez pas CocoaPods, vous pouvez ajouter des infrastructures à votre projet à l'aide de [Carthage ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos){: new_window}.
 
@@ -77,6 +80,7 @@ Si vous n'utilisez pas CocoaPods, vous pouvez ajouter des infrastructures à vot
 2. Après avoir installé le logiciel SDK pour client iOS, importez puis initialisez le logiciel SDK Analytics Client.
 
 ## Etape 3. Initialisation du logiciel SDK
+{: #initialize-analytics}
 
 Avec {{site.data.keyword.mobileanalytics_short}}, vous pouvez collecter les catégories de données suivantes, chacune nécessitant un degré différent d'instrumentation :
 
@@ -106,7 +110,7 @@ Initialisez votre application pour qu'elle envoie des journaux au service {{site
 1. Importez le logiciel SDK client.
 
     Le logiciel SDK Swift est disponible pour iOS et watchOS. Importez les infrastructures `BMSCore` et `BMSAnalytics` en ajoutant les instructions `import` suivantes au début de votre fichier de projet `AppDelegate.swift` :
-	```
+	```swift
 	import BMSCore
 	import BMSAnalytics
 	```
@@ -115,7 +119,7 @@ Initialisez votre application pour qu'elle envoie des journaux au service {{site
 2. Initialisez le logiciel SDK client {{site.data.keyword.mobileanalytics_short}} dans votre application.
 
 	Tout d'abord, initialisez la classe `BMSClient` en plaçant le code d'initialisation dans la méthode `application (_:didFinishLaunchingWithOptions:)` de votre délégué d'application, ou dans un emplacement approprié pour votre projet.
-	```
+	```swift
 	BMSClient.sharedInstance.initialize(bluemixRegion: BMSClient.Region.usSouth) // Make sure that you point to your region
 	```
 	{: codeblock}
@@ -127,7 +131,7 @@ Initialisez votre application pour qu'elle envoie des journaux au service {{site
 	Le nom que vous sélectionnez pour votre application (`your_app_name_here`) s'affiche dans la console {{site.data.keyword.mobileanalytics_short}} comme nom d'application. Le nom d'application est utilisé pour filtrer la recherche des journaux d'application dans votre tableau de bord. Lorsque vous utilisez le même nom d'application sur plusieurs plateformes (par exemple, iOS), vous pouvez voir tous les journaux de cette application sous le même nom, quelle que soit la plateforme à partir de laquelle les journaux ont été envoyés.
 
 	Vous devez aussi connaître la valeur de la [clé d'API](#analytics-clientkey).
-	```
+	```swift
 	Analytics.initialize(appName: "your_app_name_here", apiKey: "your_api_key_here", hasUserContext: false, collectLocation: true, deviceEvents: .lifecycle, .network)
 	```
     {: codeblock}
@@ -135,12 +139,12 @@ Initialisez votre application pour qu'elle envoie des journaux au service {{site
 4. L'application est maintenant initialisée et prête pour la collecte d'analyses. Ensuite, vous pouvez envoyer des données d'analyse au service {{site.data.keyword.mobileanalytics_short}}.		
 
 ## Etape 6. Collecte des analyses d'utilisation
-{: #app-monitoring-gathering-analytics}
+{: #usage-analytics}
 
 Vous pouvez configurer l'enregistrement des données d'analyse d'utilisation et leur envoi au service {{site.data.keyword.mobileanalytics_short}} par le logiciel SDK client de {{site.data.keyword.mobileanalytics_short}}.
 
 Utilisez les API suivantes pour démarrer l'enregistrement et l'envoi des données d'analyse d'utilisation :
-```
+```swift
 // Disable recording of usage analytics (eg: to save disk space)
 // Recording is enabled by default
 
@@ -154,18 +158,17 @@ Analytics.isEnabled = true
 
 Analytics.send(completionHandler: { (response: Response?, error: Error?) in
     if let response = response {
-
 	  // Handle Analytics send success here.
     }
     if let error = error {
-        // Handle Analytics send failure here.
+      // Handle Analytics send failure here.
     }
 })
 ```
 {: codeblock}
 
 Exemple d'analyse d'utilisation pour consignation d'un événement :
-```
+```swift
 // Log a custom analytics event
 let eventObject = ["customProperty": "propertyValue"]
 Analytics.log(metadata: eventObject)
@@ -173,6 +176,7 @@ Analytics.log(metadata: eventObject)
 {: codeblock}
 
 ## Etape 7. Utilisation du Journal d'événements
+{: #analytics-logger}
 
 Le logiciel SDK client {{site.data.keyword.mobileanalytics_full}} fournit une infrastructure de journalisation similaire à d'autres infrastructures que vous pouvez connaître, telles que `java.util.logging` ou `log4j`. L'infrastructure de journalisation prend en charge plusieurs instances de journal d'événements par module, différents niveaux de journalisation, la capture de traces de pile pour une panne d'application, etc.
 
@@ -199,7 +203,7 @@ Lorsque le niveau du consignateur est défini sur `DEBUG`, vous obtenez égaleme
 **Remarque :** Veillez à ce que votre application soit configurée pour l'utilisation du logiciel SDK {{site.data.keyword.mobileanalytics_short}} Client avant d'utiliser l'infrastructure de journalisation.
 
 Le fragment de code suivant est un exemple d'utilisation de Logger :
-```
+```swift
 // Configure Logger. Disabled by default;
 
 Logger.isLogStorageEnabled = true
@@ -242,14 +246,14 @@ Pour des raisons de confidentialité, vous pouvez désactiver la sortie du journ
 {: #location-logging}
 
 L'emplacement de l'appareil mobile doit être consigné depuis l'application à l'aide de l'API fournie :
-```
+```swift
 Analytics.logLocation();
 ```
 
 Cette API permet à l'application d'envoyer son emplacement (latitude et longitude, par exemple), au serveur entre deux sessions d'application. Pour les autres appels non explicites à l'API `location-logging`, le logiciel SDK envoie l'emplacement d'appareil pour chaque App-Session. L'emplacement est envoyé pour le contexte de session d'application initiale et le contexte de session d'application de changement d'utilisateur (qui est un changement d'utilisateur entre une session d'application ). L'API d'emplacement doit être activée dans l'initialisation du logiciel SDK.
 
 Pour appeler l'API `location-logging`, définissez le paramètre `collectLocation` sur `true` dans l'initialisation du logiciel SDK :
-```
+```swift
 Analytics.initialize(appName, apiKey,  hasUserContext, collectLocation, [BMSAnalytics.ALL])
 ```
 
@@ -266,7 +270,7 @@ Vous pouvez visualiser les [données de panne d'application ](app-monitoring.htm
 La méthode `Analytics.send()` remplit les tableaux **Vue d'ensemble des pannes** et **Pannes** de la page **Pannes**. Vous pouvez activer les graphiques à l'aide du processus d'initialisation et d'envoi pour analyse.
 
 La méthode `Logger.send()` alimente les tables **Récapitulatif des pannes** et **Détails de la panne** sur la page **Traitement des incidents**. Vous devez activer votre application pour le stockage et l'envoi de journaux afin d'alimenter les graphiques par l'ajout d'une instruction dans votre code d'application :
-```
+```swift
 Logger.isLogStorageEnabled = true
 Logger.logLevelFilter = LogLevel.Fatal // or greater
 ```
@@ -282,7 +286,7 @@ Si votre application peut reconnaître des utilisateurs uniques sur un appareil,
 Activez le suivi des utilisateurs en initialisant {{site.data.keyword.mobileanalytics_short}} avec `hasUserContext=true`. Sinon, {{site.data.keyword.mobileanalytics_short}} ne capture qu'un seul utilisateur par appareil.
 
 Ajoutez le code suivant pour savoir à quel moment l'utilisateur se connecte :
-```
+```swift
 Analytics.userIdentity = "username"
 ```
 {: codeblock}
@@ -298,12 +302,12 @@ Est-ce que tout est correctement configuré ? Il est temps de tester !
 4. Accédez à la console {{site.data.keyword.mobileanalytics_short}} pour voir les analyses d'utilisation de votre application. Vous pouvez également surveiller votre application en [définissant des alertes](/docs/services/mobileanalytics/app-monitoring.html#alerts) et en [surveillant les pannes d'application](/docs/services/mobileanalytics/app-monitoring.html#monitor-app-crash).
 
 ## Etapes suivantes
-{: #what-to-do-next notoc}
+{: #next-analytics notoc}
 
  - Pour en savoir plus sur le service, lisez la [documentation](/docs/services/mobileanalytics/index.html#getting-started-tutorial).
 
  - Pour une présentation de l'utilisation des services mobiles et d'{{site.data.keyword.Bluemix_notm}}, voir [Mise en route avec les applications mobiles sur IBM Cloud](/docs/services/mobile/index.html).
 
- - Les kits de démarrage constituent l'un des moyens les plus rapides d'utiliser les fonctionnalités de {{site.data.keyword.cloud_notm}}. Vous pouvez voir tous les kits de démarrage disponibles dans le [tableau de bord Mobile Developer](https://console.bluemix.net/developer/mobile/dashboard). Téléchargez le code. Exécutez l'application.
+ - Les kits de démarrage constituent l'un des moyens les plus rapides d'utiliser les fonctionnalités d'{{site.data.keyword.cloud_notm}}. Vous pouvez voir tous les kits de démarrage disponibles dans le [tableau de bord Mobile Developer](https://cloud.ibm.com/developer/mobile/dashboard). Téléchargez le code. Exécutez l'application.
 
  - Vous pouvez utiliser l'[Interface utilisateur swagger](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/) pour passer rapidement en revue la documentation d'API REST.

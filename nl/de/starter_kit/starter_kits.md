@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-29"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -13,7 +14,7 @@ lastupdated: "2018-08-29"
 {:tip: .tip}
 
 # Swift-Apps mit Starter-Kits erstellen
-{: #intro}
+{: #starterkits-intro}
 
 In der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für
 Apple
@@ -27,11 +28,13 @@ herunterladen. Die Verwendung der Starter-Kits ermöglicht es Ihnen,
 {{site.data.keyword.cloud_notm}}-Services mit einer brandneuen App
 zügig auszuwerten und zu testen.
 
-Wollen Sie gleich loslegen? In der [{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) können Sie sofort anfangen.
+Wollen Sie gleich loslegen? In der
+[{{site.data.keyword.cloud_notm}}-Entwicklerkonsole
+für Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) können Sie sofort anfangen.
 {: tip}
 
 ## Was ist ein Starter-Kit?
-{: #starter_kits}
+{: #starterkits-what}
 
 Bei {{site.data.keyword.cloud_notm}} Developer Experience können
 Sie unter verschiedenen Starter-Kits wählen. Starter-Kits weisen
@@ -56,7 +59,7 @@ aus dem Starter-Kit erstellen.
 
 ## {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple
 verwenden
-{: #journey}
+{: #starterkits-journey}
 
 In der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für
 Apple erhalten Sie einen nahtlosen Pfad zur Erstellung einer
@@ -129,7 +132,7 @@ verfügbar sind. Daher können nicht alle Services allen Apps zugeordnet werden.
 
 ### Eigenen Code herunterladen
 
-* In der Ansicht "App-Details" können Sie auf Ihren eigenen Code zugreifen, in dem Sie **Code herunterladen** auswählen, um den Code für Ihre App zu generieren und herunterzuladen. 
+* In der Ansicht "App-Details" können Sie auf Ihren eigenen Code zugreifen, in dem Sie **Code herunterladen** auswählen, um den Code für Ihre App zu generieren und herunterzuladen.
 
 ### Ansicht "App-Liste"
 {: #app_list_view}
@@ -140,5 +143,5 @@ einen App-Namen klicken, werden Sie zur Ansicht "App-Details" zurückgeführt.
 
 ![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'App-Liste'](images/project_list_screen.png "Ansicht 'App-Liste'") <br> *Ansicht "App-Liste" in der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple*
 
-Weitere Informationen sind in den [Lernressourcen zur {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://console.bluemix.net/developer/appledevelopment/learning-resources) verfügbar.
+Weitere Informationen sind in den [Lernressourcen zur {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://cloud.ibm.com/developer/appledevelopment/learning-resources) verfügbar.
 {: tip}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-20"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -63,6 +63,7 @@ let smd = try SwiftMetricsDash(swiftMetricsInstance : metrics)
 依預設，`SwiftMetricsDash` 會啟動自己的 Kitura 伺服器，並在 `http://<hostname>:<port>/swiftmetrics-dash` 下提供頁面。存取儀表板，以查看新的應用程式度量值，包括 HTTP 要求及事件迴圈延遲。
 
 ## 使用入門範本套件中的應用程式度量值
+{: #appmetrics-starterkits}
 
 從「入門範本套件」建立的伺服器端 Swift 應用程式包括 `SwiftMetrics`、`SwiftMetricsDash` 及 `SwiftMetricsPrometheus`，因此，它們已經備妥，用來在使用 Prometheus 端點的 Kubernetes 環境中收集度量值。
 

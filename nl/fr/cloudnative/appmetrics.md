@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-20"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -21,7 +21,7 @@ Les métriques d'application sont importantes pour la surveillance des performan
 Les métriques d'application sont capturées sous forme de données de séries temporelles. L'agrégation et la visualisation des métriques capturées permettent d'identifier des problèmes courants liés aux performances tels que :
 
 * Faibles temps de réponse HTTP sur tout ou partie des routes
-* Débit médiocre dans l'application 
+* Débit médiocre dans l'application
 * Pics de demandes entraînant des ralentissements
 * Utilisation de l'UC plus élevée que prévu
 * Utilisation de la mémoire élevée ou en augmentation (possible fuite de mémoire)
@@ -63,6 +63,7 @@ let smd = try SwiftMetricsDash(swiftMetricsInstance : metrics)
 Par défaut, `SwiftMetricsDash` démarre son propre serveur Kitura, puis présente la page sous `http://<hostname>:<port>/swiftmetrics-dash`. Accédez au tableau de bord pour voir vos nouvelles métriques d'application, y compris les demandes HTTP et la latence de boucle d'événements.
 
 ## Utilisation de métriques d'application dans les kits de démarrage
+{: #appmetrics-starterkits}
 
 Les applications Swift côté serveur qui sont créées à partir des kits de démarrage incluent `SwiftMetrics`, `SwiftMetricsDash` et `SwiftMetricsPrometheus` et sont donc prêtes à être utilisées dans des environnements Kubernetes utilisant des noeuds finaux Prometheus pour la collecte de métriques.
 

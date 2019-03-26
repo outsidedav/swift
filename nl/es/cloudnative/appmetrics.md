@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-20"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -35,7 +35,7 @@ Utilice [Métricas de aplicación para Swift](https://developer.ibm.com/swift/mo
 
 * La biblioteca `SwiftMetricsDash` consume las métricas producidas por `SwiftMetrics` y proporciona un panel de control incorporado para la visualización.
 
-Para habilitar la API de supervisión base, añada `SwiftMetrics` a la sección **dependencies:** del `Package.swift`, y asegúrese de añadirlo al destino adecuado: 
+Para habilitar la API de supervisión base, añada `SwiftMetrics` a la sección **dependencies:** del `Package.swift`, y asegúrese de añadirlo al destino adecuado:
 ```swift
 .package(url: "https://github.com/RuntimeTools/SwiftMetrics.git", from: "2.4.0")
 ```
@@ -62,9 +62,10 @@ let smd = try SwiftMetricsDash(swiftMetricsInstance : metrics)
 
 De forma predeterminada, `SwiftMetricsDash` inicia su propio servidor Kitura, y sirve la página en `http://<hostname>:<port>/swiftmetrics-dash`. Acceda al panel de control para ver las nuevas métricas de aplicación, incluidas las solicitudes HTTP y la latencia de bucle de suceso.
 
-## Utilización de métricas de aplicación en kits de iniciación
+## Utilización de métricas de aplicación en kits de inicio
+{: #appmetrics-starterkits}
 
-Las aplicaciones Swift del lado del servidor que se crean a partir de kits de iniciación incluyen `SwiftMetrics`, `SwiftMetricsDash` y `SwiftMetricsPrometheus`, de modo que están listas para utilizarse en entornos de Kubernetes que utilizan puntos finales de Prometheus para la recopilación de métricas.
+Las aplicaciones Swift del lado del servidor que se crean a partir de kits de inicio incluyen `SwiftMetrics`, `SwiftMetricsDash` y `SwiftMetricsPrometheus`, de modo que están listas para utilizarse en entornos de Kubernetes que utilizan puntos finales de Prometheus para la recopilación de métricas.
 
 El código `SwiftMetrics` se puede encontrar en `/Sources/Application/Metrics.swift`:
 ```swift

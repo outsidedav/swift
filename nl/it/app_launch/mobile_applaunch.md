@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -46,6 +46,7 @@ Consulta le seguenti funzioni del servizio {{site.data.keyword.engage_short}}:
 
 
 ## Prima di cominciare
+{: #prereqs-applaunch}
 
 Assicurati innanzitutto di disporre dei seguenti prerequisiti pronti a essere utilizzati:
 
@@ -59,20 +60,20 @@ Assicurati innanzitutto di disporre dei seguenti prerequisiti pronti a essere ut
 
 1. Nel catalogo {{site.data.keyword.cloud_notm}}, fai clic su **Mobile** > **App Launch**. Viene visualizzata la schermata di configurazione del servizio.
 2. Assegna un nome alla tua istanza del servizio oppure utilizza il nome preimpostato.
-3. Fai clic su **Crea**.
+3. Fai clic su **Create**.
 4. Nel riquadro di navigazione, fai clic su **Connessioni** per selezionare un'applicazione ed eseguirne il bind al tuo servizio. Puoi eseguire il bind dell'istanza del servizio alla tua applicazione in un secondo momento, se la lasci senza bind durante la creazione.
 
 ## Passo 2. Inizializzazione della tua applicazione
-{: #step2}
+{: #initialize-applaunch}
 
-Il servizio fornisce degli SDK specifici per la piattaforma per semplificare lo sviluppo delle applicazioni. Gli SDK Swift {{site.data.keyword.cloud_notm}} Mobile Services possono essere installati con CocoaPods o Carthage. 
+Il servizio fornisce degli SDK specifici per la piattaforma per semplificare lo sviluppo delle applicazioni. Gli SDK Swift {{site.data.keyword.cloud_notm}} Mobile Services possono essere installati con CocoaPods o Carthage.
 
 1. Fai clic su **Settings**.
 2. Installa l'[SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Per ulteriori informazioni, vedi il file `README` che include la procedura di installazione e i concetti tecnici.
 3. Copia le chiavi di configurazione per inizializzare la tua applicazione. Utilizza il segreto dell'applicazione, il GUID dell'applicazione e il segreto del client per configurare la tua applicazione e creare coinvolgimenti.
 
 ## Passo 3. Creazione di una funzione
-{: #step3}
+{: #create-feature-applaunch}
 
 Il servizio {{site.data.keyword.engage_short}} crea e verifica le risposte alle funzioni.
 
@@ -92,13 +93,14 @@ Per creare una funzione, completa la seguente procedura:
 La finestra Feature Details può esportare la funzione come un file JSON, che può essere utilizzato nell'applicazione client per caricare i valori predefiniti.
 
 ## Passo 4. Creazione dei destinatari
-{: #step4}
+{: #audience-applaunch}
 
 ![Crea destinatari](images/create_audience_animated.gif){: gif}
 
 Per creare i destinatari, completa la seguente procedura:
 
 ### Creazione di un **attributo destinatari**:
+{: #audience-attrib-applaunch}
 
 1. Fai clic su **Audience** > **Create Attribute**.
 2. Fornisci i seguenti valori:
@@ -110,6 +112,7 @@ Per creare i destinatari, completa la seguente procedura:
   Puoi scegliere di creare più di un attributo di destinatari, come elencato nella seguente immagine, in base alle tue esigenze.
 
 ### Creazione dei **destinatari**:
+{: #audience-create-applaunch}
 
 1. Fai clic su **Create Audience**.
 2. Fornisci un nome e una descrizione appropriati nella finestra New Audience.
@@ -120,10 +123,12 @@ Per creare i destinatari, completa la seguente procedura:
 Puoi ora creare un coinvolgimento:
 
 ## Passo 5. Creazione di un coinvolgimento
+{: #engagement-applaunch}
 
 Un coinvolgimento è un'istanziazione di una funzione con proprietà inizializzate e con un'associazione a uno dei destinatari predefiniti. Puoi creare un coinvolgimento utilizzando **Feature Control** o **In-App Messaging**.
 
 ### Abilitazione della funzionalità Feature Control
+{: #feature-control-applaunch}
 
 Tramite questo coinvolgimento, il proprietario di un'applicazione può controllare la visibilità di una funzione abilitandola o disabilitandola al runtime. Una funzione può essere abilitata o disabilitata per tutti gli utenti dell'applicazione o per una serie specifica di utenti e dispositivi.
 
@@ -155,6 +160,7 @@ Completa la seguente procedura per creare un coinvolgimento utilizzando Feature 
 Puoi ora misurare le [prestazioni](/docs/services/app-launch/app_measure_performance.html#applaunch_type) del tuo coinvolgimento.
 
 ### Abilitazione della funzionalità di messaggistica interna all'applicazione
+{: #app-message-applaunch}
 
 Mediante questo coinvolgimento, un proprietario di un'applicazione può inviare delle notifiche agli utenti dell'applicazione mentre la stanno utilizzando attivamente.
 
@@ -201,10 +207,10 @@ Completa la seguente procedura per creare un coinvolgimento che utilizza l'opzio
 Puoi ora misurare le [prestazioni](/docs/services/app-launch/app_measure_performance.html#applaunch_type) del tuo coinvolgimento.
 
 ## Link rapidi
-{: #links notoc}
+{: #links-applaunch notoc}
 
 Controlla i seguenti link per acquisire informazioni approfondite e comprendere le funzioni di {{site.data.keyword.engage_short}}:
 
- - Prova il [servizio App Launch](https://console.bluemix.net/catalog/services/app-launch).
+ - Prova il [servizio App Launch](https://cloud.ibm.com/catalog/services/app-launch).
  - [Blog e video](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - Per ulteriori informazioni, consulta [App Launch - Esercitazione introduttiva](/docs/services/app-launch/index.html#gettingstartedtemplate).
+ - Per ulteriori informazioni, consulta [App Launch - Esercitazione introduttiva](/docs/services/app-launch/index.html).

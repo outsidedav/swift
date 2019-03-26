@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -32,6 +33,7 @@ O {{site.data.keyword.mobileanalytics_short}} on {{site.data.keyword.cloud_notm}
  - **Solucionar problemas na causa raiz** - Use a criação de log customizada em seu aplicativo e faça upload automaticamente dos logs e procure-os no console. Realize drill down em eventos de travamento para ver os rastreios de pilha.
 
 ## Antes de começar
+{: #prereqs-analytics}
 
 Primeiro, verifique se os pré-requisitos a seguir estão prontos para execução:
 
@@ -41,7 +43,7 @@ Primeiro, verifique se os pré-requisitos a seguir estão prontos para execuçã
  - CocoaPods ou Carthage
 
 ## Etapa 1. Criando uma instância do  {{site.data.keyword.mobileanalytics_short}}
-{: #mobile_analytics_create}
+{: #create-analytics}
 
 1. No catálogo do {{site.data.keyword.cloud_notm}}, clique em **Remoto** > **{{site.data.keyword.mobileanalytics_short}}**. A tela de configuração de serviço é aberta.
 2. Dê um nome à sua instância de serviço ou use o nome de pré-configuração.
@@ -49,6 +51,7 @@ Primeiro, verifique se os pré-requisitos a seguir estão prontos para execuçã
 4. Na área de janela de navegação, clique em **Conexões** para selecionar um app e ligá-lo a seu serviço. É possível ligar a instância de serviço ao seu app posteriormente se ele não estiver vinculado durante a criação.
 
 ## Etapa 2. Instalando o SDK do iOS Swift
+{: #install-analytics-swift}
 
 O serviço fornece SDKs específicos de plataforma para simplificar o desenvolvimento de aplicativo. Os SDKs do {{site.data.keyword.cloud_notm}} Mobile Services Swift podem ser instalados com o CocoaPods ou o Carthage. Para obter mais informações, consulte  [ https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics ](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics).
 
@@ -61,14 +64,14 @@ O serviço fornece SDKs específicos de plataforma para simplificar o desenvolvi
 O {{site.data.keyword.mobileanalytics_short}} SDK é distribuído com [CocoaPods ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cocoapods.org/){: new_window} e [Carthage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Carthage/Carthage#getting-started){: new_window}, que são gerenciadores de dependência para projeto Cocoa. O CocoaPods e o Carthage fazem download automaticamente de artefatos de repositórios para disponibilizá-los para seu aplicativo. Selecione CocoaPods ou Carthage:
 
 ### CocoaPods
-{: #cocoapods}
+{: #cocoapods-analytics}
 
 1. Siga as [instruções do SDK do {{site.data.keyword.Bluemix_notm}} Mobile Services Swift ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics/tree/development#cocoapods){: new_window} no GitHub para instalar o `BMSAnalytics` usando o CocoaPods e inclua-o em seu Podfile.
 
 2. Depois de instalar o iOS Client SDK, [importe e inicialize](sdk.html#initalize-ma-sdk) o Analytics Client SDK.   
 
 ### Cartago
-{: #carthage}
+{: #carthage-analytics}
 
 Se você não estiver usando o CocoaPods, será possível incluir as estruturas em seu projeto usando o [Carthage ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos){: new_window}.
 
@@ -77,6 +80,7 @@ Se você não estiver usando o CocoaPods, será possível incluir as estruturas 
 2. Depois de instalar o iOS Client SDK, importe e, em seguida, inicialize o Analytics Client SDK.
 
 ## Etapa 3. Inicializando o SDK
+{: #initialize-analytics}
 
 Ao usar o {{site.data.keyword.mobileanalytics_short}}, é possível coletar as categorias de dados a seguir, cada uma das quais requer um grau diferente de instrumentação:
 
@@ -106,8 +110,9 @@ Inicialize seu aplicativo para permitir o envio de logs para o serviço {{site.d
 
     O Swift SDK está disponível para iOS e watchOS. Importe as estruturas `BMSCore` e `BMSAnalytics` ao incluir as instruções de `importação` a seguir no início do seu arquivo de
 projeto `AppDelegate.swift`:
-	```
-	importar BMSAnalytics BMSCore de importação
+	```swift
+	import BMSCore
+	import BMSAnalytics
 	```
 	{: codeblock}  
 
@@ -116,7 +121,7 @@ projeto `AppDelegate.swift`:
 aplicativo.
 
 	Primeiramente, inicialize a classe `BMSClient` colocando o código de inicialização no método `application(_:didFinishLaunchingWithOptions:)` de seu representante de aplicativo ou em um local que funcione melhor para seu projeto.
-	```
+	```swift
 	BMSClient.sharedInstance.initialize(bluemixRegion: BMSClient.Region.usSouth) // Make sure that you point to your region
 	```
 	{: codeblock}
@@ -131,7 +136,7 @@ dando a ele seu nome do seu aplicativo.
 {{site.data.keyword.mobileanalytics_short}} como o nome do aplicativo. O nome do aplicativo é usado como um filtro para procurar logs do aplicativo no painel. Ao usar o mesmo nome de aplicativo nas plataformas (por exemplo, iOS), é possível ver todos os logs desse aplicativo com o mesmo nome, independentemente de qual plataforma os logs foram enviados.
 
 	Você precisa também do valor [Chave API](#analytics-clientkey).
-	```
+	```swift
 	Analytics.initialize(appName: "your_app_name_here", apiKey: "your_api_key_here", hasUserContext: false, collectLocation: true, deviceEvents: .lifecycle, .network)
 	```
     {: codeblock}
@@ -139,12 +144,12 @@ dando a ele seu nome do seu aplicativo.
 4. O aplicativo agora está inicializado e pronto para coletar analítica. Em seguida, é possível enviar dados de analítica para o serviço {{site.data.keyword.mobileanalytics_short}}.		
 
 ## Etapa 6. Reunindo analítica de uso
-{: #app-monitoring-gathering-analytics}
+{: #usage-analytics}
 
 É possível configurar o {{site.data.keyword.mobileanalytics_short}} client SDK para registrar a analítica de uso e enviar os dados registrados para o serviço {{site.data.keyword.mobileanalytics_short}}.
 
 Use as APIs a seguir para iniciar a gravação e o envio da análise de uso:
-```
+```swift
 // Disable recording of usage analytics (eg: to save disk space)
 // Recording is enabled by default
 
@@ -158,18 +163,17 @@ Analytics.isEnabled = true
 
 Analytics.send (completionHandler: { in
     if let response = response {
-
 	  // Handle Analytics send success here.
     }
     if let error = error {
-        // Manipular a falha de envio de analítica aqui.
+      // Manipular a falha de envio de analítica aqui.
     }
 })
 ```
 {: codeblock}
 
 Amostra de análise de uso para registrar um evento:
-```
+```swift
 // Log a custom analytics event
 let eventObject = ["customProperty": "propertyValue"]
 Analytics.log(metadata: eventObject)
@@ -177,6 +181,7 @@ Analytics.log(metadata: eventObject)
 {: codeblock}
 
 ## Etapa 7. Utilizando o Logger
+{: #analytics-logger}
 
 O {{site.data.keyword.mobileanalytics_full}} Client SDK fornece uma estrutura de criação de log que é semelhante a outras estruturas de log com as quais você pode estar familiarizado, tais como, `java.util.logging` ou `log4j`. A estrutura de criação de log suporta múltiplas instâncias do criador de logs por pacote, níveis diferentes de log, captura de rastreios de pilha para um travamento do aplicativo e muito mais.
 
@@ -205,7 +210,7 @@ do cliente Mobile Analytics, que serão incluídos ao enviar logs.
 **Nota:** certifique-se de que o seu aplicativo esteja configurado para usar o {{site.data.keyword.mobileanalytics_short}} Client SDK antes de usar a estrutura de criação de log.
 
 Os fragmentos de código a seguir mostram o uso do criador de logs de amostra:
-```
+```swift
 // Configure o Logger. Desativado por padrão;
 
 Logger.isLogStorageEnabled = true
@@ -248,14 +253,14 @@ Por questões de privacidade, é possível desativar a saída do Criador de Logs
 {: #location-logging}
 
 O local do dispositivo móvel pode ser registrado usando o app por meio desta API fornecida:
-```
+```swift
 Analytics.logLocation ();
 ```
 
 A API permite que o app envie seu local (como latitude e longitude) para o servidor entre as sessões do aplicativo. Além de chamadas explícitas para a API `location-logging`, o SDK envia a localização de dispositivo para cada Sessão de app. O local é enviado para o contexto de sessão de app inicial e para o contexto de sessão do app do comutador do usuário (ou seja, um comutador de um usuário entre uma sessão de app). A API de localização deve ser ativada na inicialização do SDK.
 
 Para chamar a API `location-logging`, configure o parâmetro `collectLocation` como `true` na inicialização do SDK:
-```
+```swift
 Analytics.initialize(appName, apiKey,  hasUserContext, collectLocation, [BMSAnalytics.ALL])
 ```
 
@@ -276,7 +281,7 @@ O método `Analytics.send()` preenche as tabelas **Visão geral de travamento** 
 na página **Travamentos**. É possível ativar os gráficos usando o processo de inicialização e envio para a análise de dados.
 
 O método `Logger.send()` preenche as tabelas **Resumo de travamento** e **Detalhes do travamento** na página **Resolução de problemas**. Deve-se ativar seu aplicativo para armazenar e enviar logs para preencher os gráficos incluindo uma instrução no código de aplicativo:
-```
+```swift
 Logger.isLogStorageEnabled = true
 Logger.logLevelFilter = LogLevel.Fatal // or greater
 ```
@@ -293,7 +298,7 @@ Ative o rastreamento de usuário inicializando {{site.data.keyword.mobileanalyti
 `hasUserContext=true`. Caso contrário, o {{site.data.keyword.mobileanalytics_short}} irá capturar apenas um usuário por dispositivo.
 
 Inclua o código a seguir para controlar quando o usuário efetua login:
-```
+```swift
 Analytics.userIdentity = "username"
 ```
 {: codeblock}
@@ -309,12 +314,12 @@ Tudo está configurado corretamente? Hora de testá-lo!
 4. Acesse o console do {{site.data.keyword.mobileanalytics_short}} para ver a analítica de uso para seu aplicativo. Também é possível monitorar seu aplicativo [configurando alertas](/docs/services/mobileanalytics/app-monitoring.html#alerts) e [monitorando travamentos do app](/docs/services/mobileanalytics/app-monitoring.html#monitor-app-crash).
 
 ## O que Fazer a Seguir
-{: #what-to-do-next notoc}
+{: #next-analytics notoc}
 
  - Para saber mais sobre o serviço, leia toda a [documentação](/docs/services/mobileanalytics/index.html#getting-started-tutorial).
 
  - Para obter uma introdução ao trabalho com serviços móveis e o {{site.data.keyword.Bluemix_notm}}, consulte [Introdução aos apps móveis no IBM Cloud](/docs/services/mobile/index.html).
 
- - Os kits do iniciador são uma das maneiras mais rápidas de aproveitar os recursos do {{site.data.keyword.cloud_notm}}. Visualize todos os kits do iniciador disponíveis no [Painel do desenvolvedor do dispositivo móvel](https://console.bluemix.net/developer/mobile/dashboard). Faça download do código. Execute o app.
+ - Os kits do iniciador são uma das maneiras mais rápidas de aproveitar os recursos do {{site.data.keyword.cloud_notm}}. Visualize todos os kits do iniciador disponíveis no [Painel do desenvolvedor do dispositivo móvel](https://cloud.ibm.com/developer/mobile/dashboard). Faça download do código. Execute o app.
 
  - É possível usar o [Swagger UI](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/) para revisar rapidamente a documentação da API de REST.

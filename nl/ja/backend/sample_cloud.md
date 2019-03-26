@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -15,7 +16,7 @@ lastupdated: "2018-11-12"
 # iOS と Cloud のロジックのユース・ケース
 {: #sample_cloud}
 
-Backend For Frontend (BFF) を使用する iOS アプリケーションの例については、[画像共有サンプル・アプリケーションの BluePic](https://github.com/IBM/BluePic) を参照してください。BluePic アプリは以下のテクノロジーを使用します。
+Backend For Frontend (BFF) を使用する iOS アプリケーションの例については、[画像共有サンプル・アプリケーションの BluePic](https://github.com/IBM/BluePic) を参照してください。 BluePic アプリは以下のテクノロジーを使用します。
 
 * Object Storage と Cloudant を使用して画像データを保管します。
 * Watson Visual Recognition と IBM Weather Company サービスを使用して、追加情報を画像に追加します。

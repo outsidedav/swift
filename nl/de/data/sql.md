@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-08"
+  years: 2017, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -26,6 +27,7 @@ mit Swift ist eine logische Option, da die Typsicherheit von beiden unterstützt
 wird.
 
 ## ORM mit einer SQL-Datenbank verwenden
+{: sql-orm}
 
 Mittels ORM (Object-Relational Mapping, objektrelationale Zuordnung)
 können Sie Objekte zu relationalen Datenbanken zuordnen, ohne sich mit
@@ -34,6 +36,7 @@ relationalen Datenbank speichern und daraus abrufen, ohne sich selbst um
 Syntaxanalyse und Serialisierung kümmern zu müssen.
 
 ## Schritt 1. Einführung in ORM
+{: #start-orm}
 
 Verwenden Sie
 [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM)
@@ -47,20 +50,21 @@ In diesem Beispiel wird das Plug-in [ PostgreSQL
 verfügbaren Anweisungen, um das Plug-in zu installieren.
 
 ## Schritt 2. ORM in Ihre Anwendung importieren
+{: #import-orm}
 
 1. Aktualisieren Sie die Datei `Package.swift`,
 indem Sie die Pakete `Swift-Kuery-ORM` und `Swift-Kuery-PostgreSQL` hinzufügen:
   ```swift
      dependencies: [
       ...
-      // Add these two lines
+      /* Add these two lines */
       .package(url: "https://github.com/IBM-Swift/Swift-Kuery-ORM.git", from: "0.0.1"),
       .package(url: "https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL.git", from: "1.0.0"),
     ],
     targets: [
       .target(
         name: ...
-        // Add these two modules to your target(s) dependencies
+        /* Add these two modules to your target(s) dependencies */
         dependencies: [..., "SwiftKueryORM", "SwiftKueryPostgreSQL"]),
     ]
   ```
@@ -75,10 +79,11 @@ Anfang Ihrer Datei `Application.swift` hinzu, um die ORM-Funktionalität hinzuzu
   {: codeblock}
 
 ## Schritt 3. Datenbank erstellen
+{: #create-db-sql}
 
 1. Nachdem Sie PostgreSQL auf Ihrer Maschine konfiguriert haben,
 verwenden Sie ein Terminal, um die Datenbank zu erstellen:
-  ```bash
+  ```
   brew services start postgresql
   createdb school
   ```
@@ -96,8 +101,9 @@ Ihrer Datei `Application.swift`:
 ein Verbindungspool genutzt.
 
 ## Schritt 4. Modell definieren
+{: #define-model-sql}
 
-1. Erstellen sie das Modell `Grade`:
+1. Erstellen Sie das Modell `Grade`:
   ```swift
   struct Grade: Model {
     var course: String
@@ -111,14 +117,16 @@ ein Verbindungspool genutzt.
   do {
     try Grade.createTableSync()
   } catch {
-    // Error
+    /* Error */
   }
   ```
   {: pre}
 
 ## Schritt 5. Daten verwalten
+{: #manage-data-sql}
 
 ### Daten speichern
+{: #save-data-sql}
 
 Um eine Instanz des Modells `Grade` zu speichern,
 erstellen Sie eine Instanz und rufen Sie die Methode `save()`
@@ -134,6 +142,7 @@ grade.save { student, error in
 {: pre}
 
 ### Daten suchen
+{: #find-data-sql}
 
 Um alle Grade-Instanzen aus der Datenbank abzurufen, können Sie den
 statischen Aufruf `findAll()` verwenden:
@@ -146,6 +155,7 @@ Grade.findAll { students, error in
 {: pre}
 
 ### Daten aktualisieren
+{: update-data-sql}
 
 Eine ähnliche Methode wird verwendet, um eine Grade-Instanz aus der
 Datenbank zu aktualisieren:
@@ -160,6 +170,7 @@ Grade.update(id: 1) { student, error in
 {: pre}
 
 ### Daten löschen
+{: #delete-data-sql}
 
 Eine ähnliche Methode wird verwendet, um eine Grade-Instanz aus der
 Datenbank zu löschen.
@@ -175,16 +186,17 @@ Alle diese Aufrufe verwenden einen Handler, der einmal aufgerufen und
 nach Abschluss des Datenbankaufrufs ausgeführt wird.
 
 ## ORM mit Kitura verwenden
+{: #kitura-orm}
 
 Um das Ausprobieren von ORM zu vereinfachen, kann das Lernprogramm
 [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend)
-die Objekte "Meal" aus der iOS-App direkt in eine PostgreSQL-Datenbank abrufen.
-Auch wenn Sie das Lernprogramm bereits abgeschlossen haben,
+die Objekte "Meal" aus der iOS-App direkt in eine PostgreSQL-Datenbank abrufen. Auch wenn Sie das Lernprogramm bereits abgeschlossen haben,
 ist es sinnvoll, es noch einmal durchzuarbeiten, denn es demonstriert die
 Leistungsstärke von Swift-Kuery-ORM und zeigt, wie Ihr Kitura-Code hiermit
 vereinfacht werden kann.
 
 ## Swift-Kuery direkt verwenden
+{: #swift-kuery}
 
 Wenn Sie durch ORM eingeschränkt werden, weil Sie eine größere Steuerung
 für Ihre Datenbank benötigen, können Sie die SQL-Abstraktionsebene

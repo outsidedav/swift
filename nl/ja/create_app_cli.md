@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-01"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-11-08"
 # CLI を使用したサーバー・サイド Swift アプリの作成
 {: #swift_cli}
 
-{{site.data.keyword.cloud}} は、顧客が求めるセキュリティー、AI、価値を Swift 開発者およびアプリケーションが実現できるようにするためのソリューションとサービスを提供します。オファリングと SDK の幅広いポートフォリオが用意されているので、これらのサービスを使用し、最先端のアプリケーションを迅速に市場に出すことができます。
+{{site.data.keyword.cloud}} は、顧客が求めるセキュリティー、AI、価値を Swift 開発者およびアプリケーションが実現できるようにするためのソリューションとサービスを提供します。 オファリングと SDK の幅広いポートフォリオが用意されているので、これらのサービスを使用し、最先端のアプリケーションを迅速に市場に出すことができます。
 {: shortdesc}
 
 以下のガイドは、サーバー・サイド Swift アプリのビルド、ローカル実行、デプロイに役立つことを目的としています。 {{site.data.keyword.dev_cli_long}} を使用してこれらのアクションを標準コマンドで実行する方法について説明します。
@@ -24,21 +24,24 @@ lastupdated: "2018-11-08"
 {{site.data.keyword.dev_cli_short}} を使用すると、10 以上のコマンドを使用してサーバー・サイドのアプリケーションを管理できます。 `ibmcloud dev` コマンドの詳細については、[IBM Cloud Developer Tools CLI](/docs/cli/idt/commands.html) を参照してください。
 
 ## ステップ 1. 開発者向けの要件
+{: #prereqs-swift-cli}
 
 {{site.data.keyword.cloud_notm}} を始めるには、以下の要件を満たしていることを確認してください。
 
 ### オペレーティング・システム
+{: #swift-cli-os-reqs}
 
-MacOS がサポートする最新のハードウェアを使用し、最新の iOS リリースでテストすることで、ベスト・プラクティスに従った Swift アプリの開発を行います。[Apple Developer](https://developer.apple.com/) アカウントに登録して、物理デバイス上でテストできるようにしてください。
+MacOS がサポートする最新のハードウェアを使用し、最新の iOS リリースでテストすることで、ベスト・プラクティスに従った Swift アプリの開発を行います。 [Apple Developer](https://developer.apple.com/) アカウントに登録して、物理デバイス上でテストできるようにしてください。
 
-### iOS と Xcode
-{: #ios_and_xcode}
+### iOS および Xcode
+{: #swift-cli-ios_xcode}
 
 - [Xcode 8+ (以上) をインストールする](https://developer.apple.com/xcode/)
 - [iOS デバイス 8 (以上) にデプロイする](https://support.apple.com/downloads/ios)
 - Apple へのアプリ送信の前に [App Store Submission Guidelines](https://developer.apple.com/app-store/guidelines/) を確認する
 
 ### SDK と依存関係の管理
+{: #swift-cli-sdk-dependency}
 
 以下のツールを使用すると、さまざまな {{site.data.keyword.cloud_notm}} サービスを扱うネイティブ SDK をインストールできます。
 
@@ -61,8 +64,9 @@ MacOS がサポートする最新のハードウェアを使用し、最新の i
   {: codeblock}
 
 ## ステップ 2. ローカル開発用ツールのインストール
+{: #swift-cli-install-tools}
 
-{{site.data.keyword.cloud}} には、{{site.data.keyword.cloud_notm}} のさまざまな側面を扱うのに役立つローカル CLI ツールが用意されています. 詳しくは、[{{site.data.keyword.dev_cli_long}} 情報](../cli/index.html)を参照してください。 これらのツールは、クラウド・デプロイメントの前にローカル Docker イメージ内の Swift バックエンドをテストするために使用できます。
+{{site.data.keyword.cloud}} には、{{site.data.keyword.cloud_notm}} のさまざまな側面を扱うのに役立つローカル CLI ツールが用意されています. 詳しくは、[{{site.data.keyword.dev_cli_long}} 情報](/docs/cli/index.html)を参照してください。 これらのツールは、クラウド・デプロイメントの前にローカル Docker イメージ内の Swift バックエンドをテストするために使用できます。
 
 * MacOS および Linux の場合は、次のコマンドを実行します。
   ```
@@ -80,6 +84,7 @@ MacOS がサポートする最新のハードウェアを使用し、最新の i
   {: tip}
 
 ## ステップ 3. Swift アプリの作成
+{: #create-swift-app-cli}
 
 1. {{site.data.keyword.dev_cli_short}} CLI から `ibmcloud dev create` コマンドを実行して、事前構成済みスターターを生成します。 
   ```
@@ -87,7 +92,7 @@ MacOS がサポートする最新のハードウェアを使用し、最新の i
   ```
   {: codeblock}
 
-  プロジェクトを作成するためには、{{site.data.keyword.cloud_notm}} アカウントでログインする必要があります。 初めてのユーザーは、無料アカウントに[登録 ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) できます。 コマンド・ラインでログインするには、`ibmcloud login` コマンドを使用します。
+  プロジェクトを作成するためには、{{site.data.keyword.cloud_notm}} アカウントでログインする必要があります。 初めてのユーザーは、無料アカウントに[登録 ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) できます。 コマンド・ラインでログインするには、`ibmcloud login` コマンドを使用します。
   {: tip}
 
 2. プロンプトが出されたら、次の例に示すように、オプション 1、次に 6、最後に 2 を選択します。
@@ -137,6 +142,7 @@ MacOS がサポートする最新のハードウェアを使用し、最新の i
   {: screen}
 
 ## ステップ 4. アプリケーションのビルド、実行、デプロイ
+{: #swift-cli-deploy}
 
 {{site.data.keyword.dev_cli_short}} を使用してアプリケーションをビルド、実行、デプロイできるようになりました。
 
@@ -167,10 +173,11 @@ MacOS がサポートする最新のハードウェアを使用し、最新の i
   {: codeblock}
 
 ## 次のステップ
+{: #swift-cli-next}
 
-{{site.data.keyword.cloud_notm}} Developer Console for Apple の使用方法を学びます。開発者はこれを使用することにより、さまざまなスターター・キットからアプリを作成し、重要な {{site.data.keyword.cloud_notm}} 最適化サービスを作成して接続した後、有効なコードを素早くダウンロードしたり、継続的デリバリーのためのセットアップを行ったりします。ユーザーは、アプリのコードをダウンロードできるだけでなく、アプリを作成、表示、構成、管理できます。 Developer Console for Apple を使用することによって、新しいアプリで {{site.data.keyword.cloud_notm}} サービスを迅速に評価し、テストすることができます。
+{{site.data.keyword.cloud_notm}} Developer Console for Apple の使用方法を学びます。開発者はこれを使用することにより、さまざまなスターター・キットからアプリを作成し、重要な {{site.data.keyword.cloud_notm}} 最適化サービスを作成して接続した後、有効なコードを素早くダウンロードしたり、継続的デリバリーのためのセットアップを行ったりします。 ユーザーは、アプリのコードをダウンロードできるだけでなく、アプリを作成、表示、構成、管理できます。 Developer Console for Apple を使用することによって、新しいアプリで {{site.data.keyword.cloud_notm}} サービスを迅速に評価し、テストすることができます。
 
-開始の準備ができましたか? 今すぐ [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) にアクセスして始めましょう。
+開始の準備ができましたか? 今すぐ [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) にアクセスして始めましょう。
 {: tip}
 
 詳しくは、[スターター・キットを使用した Swift アプリの作成](/docs/swift/starter_kit/starter_kits.html)を参照してください。

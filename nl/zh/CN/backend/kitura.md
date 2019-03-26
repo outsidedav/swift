@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-03-07"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -17,11 +18,12 @@ lastupdated: "2018-11-12"
 
 [Kitura](http://www.kitura.io) 是一种服务器端 Swift 框架，用于构建 iOS 后端和 Web 应用程序。此框架使用 Kitura 本身提供的 URLSession SDK（例如，Alamofire、RestKit 或 [KituraKit](https://github.com/ibm-swift/kiturakit) SDK）来创建可从 iOS 应用程序调用的 REST API。
 
-Kitura 能够与 {{site.data.keyword.cloud}} 提供的所有服务和功能进行集成，包括 {{site.data.keyword. appid_short}}、{{site.data.keyword.mobilepushshort}} 和 {{site.data.keyword.mobileanalytics_short}} 以及数据库、机器学习和其他服务。然后，可以使用 {{site.data.keyword.cloud}} 中的 Cloud Foundry 或 Docker（基于 Kubernetes）平台来部署和自动扩展 Kitura。
+Kitura 能够与 {{site.data.keyword.cloud}} 提供的所有服务和功能进行集成，包括 {{site.data.keyword.appid_short}}、{{site.data.keyword.mobilepushshort}} 和 {{site.data.keyword.mobileanalytics_short}} 以及数据库、机器学习和其他服务。然后，可以使用 {{site.data.keyword.cloud}} 中的 Cloud Foundry 或 Docker（基于 Kubernetes）平台来部署和自动缩放 Kitura。
 
-Kitura 提供了 `kitura` [命令行界面 (CLI)](https://www.kitura.io/guides/kituracli/gettingstarted.html)，用于简化创建、构建、测试和部署 Kitura 应用程序。使用 Kitura CLI 构建的应用程序完全支持部署到任何支持 Cloud Foundry、Docker 和 Kubernetes 技术的云。但是，如果要专门针对 {{site.data.keyword.cloud_notm}} 进行构建，建议您在浏览器中使用 IBM Apple Development Console 或使用 {{site.data.keyword.dev_cli_notm}}。此外，虽然这两种方法都共享底层技术，但 Apple Development Console 和 IBM Developer Tools 会创建托管的项目和部署管道，以及供应应用程序所需的服务。
+Kitura 提供了 `kitura` [命令行界面 (CLI)](https://www.kitura.io/guides/kituracli/gettingstarted.html)，用于简化 Kitura 应用程序的创建、构建、测试和部署。使用 Kitura CLI 构建的应用程序完全支持部署到任何支持 Cloud Foundry、Docker 和 Kubernetes 技术的云。但是，如果要专门针对 {{site.data.keyword.cloud_notm}} 进行构建，建议您在浏览器中使用 IBM Apple Development Console 或使用 {{site.data.keyword.dev_cli_notm}}。此外，虽然这两种方法都共享底层技术，但 Apple Development Console 和 IBM Developer Tools 会创建托管的项目和部署管道，以及供应应用程序所需的服务。
 
 ## 开始之前
+{: #prereqs-kitura}
 
 首先，请确保您已准备好以下必备软件：  
 
@@ -46,17 +48,17 @@ Kitura 提供了 `kitura` [命令行界面 (CLI)](https://www.kitura.io/guides/k
 这将创建一个项目，但该项目尚未使用任何其他服务。要添加服务，可以单击**添加资源**按钮，或单击**下载代码**按钮来获取项目的代码。您还可以轻松地将服务添加到现有项目。
 
 ## 步骤 2. 添加服务
-{: #add_services}
+{: #add_services-kitura}
 
 1. 单击**添加资源**按钮以添加服务。这将显示服务类别。例如，选择**数据**以查看可用数据库，然后选择 **Cloudant NoSQL DB**。
-2. 选择服务的定价套餐（如轻量），然后单击**创建**。
+2. 选择服务的价格套餐（如轻量），然后单击**创建**。
 
 这将创建服务的实例，其中会提供应用程序的凭证，在某些情况下，还会将必要的代码添加到项目，以包含与服务的正确连接。现在，要添加更多服务，可以使用**添加资源**按钮，或单击**下载代码**按钮来获取项目的代码。
 
 下载项目后，可以开始使用应用程序。
 
 ## 步骤 3. 使用 Xcode 开发应用程序
-{: #develop_xcode}
+{: #develop_xcode-kitura}
 
 下载项目后，可以使用 Xcode 来修改和开发项目，然后上传修改的应用程序以部署到云。
 
@@ -77,7 +79,7 @@ Kitura 提供了 `kitura` [命令行界面 (CLI)](https://www.kitura.io/guides/k
   * Kitura 运行状况检查：[http://localhost:8080/health]()
 
 ## 步骤 5. 添加 REST API
-{: #add_restapi}
+{: #add_restapi-kitura}
 
 已创建框架 Kitura 服务器，但并未提供 iOS 应用程序可使用的任何 REST API。在 Kitura 中通过最少的编码添加 REST API。按照以下步骤，添加 REST API 以对 `/meals` 发出 `GET` 请求，该请求可返回 Kitura 服务器存储的 `Meal` 对象。
 
@@ -99,13 +101,12 @@ Kitura 提供了 `kitura` [命令行界面 (CLI)](https://www.kitura.io/guides/k
   {: codeblock}
 
 3. 通过将以下代码添加到 `postInit()` 函数中，将用于处理对 `/meals` 发出的 `GET` 请求的处理程序添加到 `Sources/Application/Application.swift` 文件：  
-
   ```swift
   router.get("/meals", handler: loadHandler)
   ```
   {: codeblock}
 
-4. 通过将以下代码作为另一个函数添加到 `App` 类中，将 loadHandler 函数实现到 `Sources/Application/Application.swift` 文件：  
+4. 通过将以下代码作为另一个函数添加到 `App` 类中，将 loadHandler 函数实现到 `Sources/Application/Application.swift` 文件：
   ```swift
   func loadHandler(completion: ([Meal]?, RequestError?) -> Void ) {
       let meals: [Meal] = self.mealStore.map({ $0.value })
@@ -122,7 +123,7 @@ Kitura 提供了 `kitura` [命令行界面 (CLI)](https://www.kitura.io/guides/k
 6. 使用 `GET` 请求来测试 REST API，这与 Web 浏览器从服务器请求数据的方式相同。 
 
   您可以使用以下 URL 测试 REST API：  
-  ```
+  ```swift
   * `GET /meals`:	[http://localhost:8080/meals]()
   ```
   {: codeblock}
@@ -133,7 +134,7 @@ Kitura 提供了 `kitura` [命令行界面 (CLI)](https://www.kitura.io/guides/k
 {: tip}
 
 ## 步骤 6. 将 KituraKit 安装到 iOS 应用程序中
-{: #kiturakit}
+{: #install-kiturakit}
 
 使用 Kitura 服务器构建的 REST API 是标准 Web API，可通过任何应用程序使用，与使用的客户端库或编写客户端的语言无关。这意味着您可以使用 Alamofire、RestKit 或 URLSession 建立与服务器的连接。Kitura 还提供了一个 KituraKit 形式的经过优化的定制客户端连接器，以简化从 iOS 调用其 REST API 的过程。 
 
@@ -148,19 +149,19 @@ KituraKit 提供了 Kitura 中使用的路由器处理程序 API 的镜像映像
   {: codeblock}
 
 2. 编辑 Podfile，为项目设置 iOS 11 的全局平台，方法是将以下行：
-  ```
+  ```pod
   # platform :ios, '9.0'
   ```
   {: codeblock}
 
   替换为以下代码：
-	```
+	```pod
   platform :ios, '11.0'
   ```
   {: codeblock}
 
 3. 通过在 `# Pods for <application name>` 下添加以下内容，将 KituraKit 添加到 Podfile 中：
-  ```
+  ```pod
   pod 'KituraKit', :git => 'https://github.com/IBM-Swift/KituraKit.git', :branch => 'pod'
   ```
   {: codeblock}
@@ -186,20 +187,20 @@ KituraKit 提供了 Kitura 中使用的路由器处理程序 API 的镜像映像
   ```swift
   import KituraKit
   
-  // 在 http://localhost:8080 上连接到 Kitura 服务器
+  /* Connect to the Kitura server on http://localhost:8080 */
   guard let client = KituraKit(baseURL: "http://localhost:8080") else {
       print("Error creating KituraKit client")
       return
   }
   
-  // 向 `GET /meals` 发出请求，期望返回 [Meal] 或 RequestError
+  /* Make a request to `GET /meals`, expecting a [Meal] or a RequestError */
   client.get("/meals") { (meals: [Meal]?, error: RequestError?) in
-      // 检查是否有错误
+      /* Check for an error */
       guard error == nil else {
           print("Error saving meal to Kitura: \(error!)")
           return
       }
-      // 检查是否有 meals
+      /* Check for meals */
       guard let meals = meals else {
           print("Received Meals!")
           return
@@ -213,6 +214,6 @@ KituraKit 提供了 Kitura 中使用的路由器处理程序 API 的镜像映像
 可以使用 [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) 教程，该教程可帮助您构建一组 REST API，用于存储、访存和删除 iOS 应用程序中的 `Meal` 对象，包括将数据存储在数据库中。
 {: tip}
 ## 后续步骤
-{: #next notoc}
+{: #next-kitura notoc}
 
-现在，您有了一个 Kitura 服务器，它提供可由 iOS 应用程序调用的 REST API，您可以随时将服务器部署到 {{site.data.keyword.cloud_notm}}。部署可以通过将 Containers 与 Kubernetes、Secure Containers 或 Cloud Foundry 配合使用来完成。
+既然您有了一个 Kitura 服务器，它提供可由 iOS 应用程序调用的 REST API，您可以随时将服务器部署到 {{site.data.keyword.cloud_notm}}。[Deployments](/docs/swift/deploying_apps.html) 可以通过将容器与 Kubernetes、安全容器、Cloud Foundry、Cloud Foundry Enterprise Environment 或虚拟实例配合使用来完成。

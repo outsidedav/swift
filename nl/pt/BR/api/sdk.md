@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-02-28"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -15,24 +16,24 @@ lastupdated: "2018-11-12"
 # Incluindo serviços de backend em seu app com um SDK gerado
 {: #sdk-cli}
 
-O plug-in {{site.data.keyword.IBM}} SDK Generator pode ser instalado na [CLI do {{site.data.keyword.cloud_notm}}](/docs/cli/reference/bluemix_cli/get_started.html).
+O plug-in do {{site.data.keyword.IBM}} SDK Generator pode ser instalado na [CLI do {{site.data.keyword.cloud_notm}}](/docs/cli/index.html).
 
 Com o plug-in do {{site.data.keyword.IBM_notm}} SDK Generator, é possível integrar os serviços de back-end ao app usando um SDK gerado. Quando ocorrer uma mudança em uma API de REST, será possível gerar novamente o SDK e substituir o antigo para fazer upgrade facilmente do SDK. É possível, então, incluir a CLI em um pipeline do DevOps e assegurar que o SDK seja sempre consistente com a especificação de API toda vez que o aplicativo for construído.
 
 A definição da API de REST deve ser válida e hospedada em um end point do servidor ativo ou em um arquivo local em seu sistema.
 
 ## Antes de começar
-{: #prereqs}
+{: #prereqs-sdk-cli}
 
 Assegure-se de que você tenha os pré-requisitos a seguir:
 
-* Uma conta do [{{site.data.keyword.cloud_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://bluemix.net){: new_window}.
+* Uma conta do [{{site.data.keyword.cloud_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://cloud.ibm.com){: new_window}.
 * Uma definição de API válida que esteja em conformidade com a especificação [Open API ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.openapis.org/){: new_window}.
 
 ## Instalando o plug-in SDK
-{: #installation}
+{: #install-sdk-cli}
 
-1. [ Instale a  {{site.data.keyword.cloud_notm}}  CLI ](/docs/cli/reference/bluemix_cli/get_started.html).
+1. [ Instale a  {{site.data.keyword.cloud_notm}}  CLI ](/docs/cli/index.html).
 
 2. [ Instale o plug-in SDK ](/docs/cli/sdk/index.html).
   ```
@@ -41,7 +42,7 @@ Assegure-se de que você tenha os pré-requisitos a seguir:
   {: codeblock}
 
 ## Gerando o SDK
-{: #commands}
+{: #commands-sdk-cli}
 
 Gerar um SDK inserindo:
 ```
@@ -50,14 +51,14 @@ ibmcloud sdk generate [ argumentos ...] [ opções de comando ]
 {: codeblock}
 
 ### Argumentos
-{: #gen-args}
+{: #gen-args-sdk-cli}
 
 * **APP_NAME** - O nome do app Cloud Foundry no espaço atual.
 * **OPENAPI_DOC_LOCATION**: uma URL ou um caminho de arquivo relativo para a definição de API de REST bruta JSON ou yaml.
 * **GENERATED_SDK_NAME** (opcional) - O nome do SDK gerado.
 
 ### Opções
-{: #gen-options}
+{: #gen-options-sdk-cli}
 
 ** Plataforma **  (obrigatório):
   * `--ios` - Gerar um SDK do iOS Swift.
@@ -70,7 +71,7 @@ Especifica o tipo para o argumento `OPENAPI_DOC_LOCATION`.
 
   * ` -r ` -Uma URL remota.
   * ` -f ` -Um nome de arquivo.
-  * ` -a ` -O aplicativo que é executado no  {{site.data.keyword.coud_notm}}
+  * ` -a ` -O aplicativo que é executado no  {{site.data.keyword.cloud_notm}}
   * ` -l ` -A URL do host local.
 
 ** Opcional **:
@@ -78,7 +79,7 @@ Especifica o tipo para o argumento `OPENAPI_DOC_LOCATION`.
   * `--unzip`: extrai o SDK gerado (sobrescreve os dados existentes se os artefatos de SDK estão presentes).
 
 ### Uso
-{: #gen-usage}
+{: #gen-usage-sdk-cli}
 
 Para gerar um SDK de um app Cloud Foundry que está em execução no {{site.data.keyword.cloud_notm}}, é possível usar o nome do app como um parâmetro para a CLI. O comando a seguir usa o nome do app como o `SDK_Name`.
 
@@ -96,18 +97,18 @@ ibmcloud sdk generate [OPENAPI_DOC_LOCATION] [SDK_Name] [LOCATION] [PLATFORM]
 
 
 ## Validando as Definições de Open API
-{: #validating}
+{: #validating-sdk-cli}
 
 Execute o comando a seguir: `ibmcloud sdk validate [argument]`
 
 ### Argumentos
-{: #val-args}
+{: #val-args-sdk-cli}
 
 * `APP_NAME` - O nome do app Cloud Foundry no espaço atual.
 * `OPENAPI_DOC_LOCATION`: uma URL ou um caminho de arquivo relativo para a definição de API de REST bruta JSON ou yaml.
 
 ### Uso
-{: #val-usage}
+{: #val-usage-sdk-cli}
 
 Para validar uma especificação de API do app Cloud Foundry que está em execução no {{site.data.keyword.cloud_notm}}, é possível usar o nome do app como um parâmetro para a CLI.
 ```

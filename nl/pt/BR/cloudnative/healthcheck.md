@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -40,7 +40,7 @@ A seguinte tabela fornece diretrizes sobre as respostas que os terminais de pron
 
 | Estado    | Prontidão                   | Vivacidade                   | Saúde                    |
 |----------|-----------------------------|----------------------------|---------------------------|
-|          | Não OK não causa carregamento       | Não OK causa reinicialização      | Não OK causa reinicialização    |
+|          | Não OK não causa carregamento       | Não OK causa reinicialização      | Não OK causa reinicialização     |
 | Iniciando | 503 - Indisponível           | 200 - OK                   | Use o atraso para evitar o teste   |
 | Ativo       | 200 - OK                    | 200 - OK                   | 200 - OK                  |
 | Parando | 503 - Indisponível           | 200 - OK                   | 503 - Indisponível         |
@@ -48,7 +48,7 @@ A seguinte tabela fornece diretrizes sobre as respostas que os terminais de pron
 | Com erro  | 500 - Erro do servidor          | 500 - Erro do servidor         | 500 - Erro do servidor        |
 
 ## Incluindo uma verificação de funcionamento em um app Swift existente
-{: #add-healthcheck-existing}
+{: #existing-app}
 
 A biblioteca [Health](https://github.com/IBM-Swift/Health) facilita a inclusão de uma verificação de funcionamento no aplicativo Swift. As verificações de funcionamento são extensíveis. Para obter mais informações sobre o [armazenamento em cache](https://github.com/IBM-Swift/Health#caching) para evitar ataques DoS ou a inclusão de [verificações customizadas](https://github.com/IBM-Swift/Health#implementing-a-health-check), consulte a biblioteca [Health](https://github.com/IBM-Swift/Health).
 
@@ -74,9 +74,9 @@ Para incluir a biblioteca de funcionamento em um app Swift existente, consulte a
 
     ```swift
     router.get("/health") { request, response, next in
-  // let status = health.status.toDictionary()
-  let status = health.status.toSimpleDictionary()
-  if health.status.state == .UP {
+        /* let status = health.status.toDictionary() */
+        let status = health.status.toSimpleDictionary()
+        if health.status.state == .UP {
             try response.send(json: status).end()
   } else {
             try response.status(.serviceUnavailable).send(json: status).end()
@@ -114,16 +114,19 @@ func initializeHealthRoutes (app: App) {
 O exemplo usa o dicionário padrão, que produz uma carga útil, como `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}` quando você acessa o terminal `/health`.
 
 ## Recomendações para as análises de prontidão e de vivacidade
+{: #recommend-probes}
 
 As análises de prontidão deverão incluir a viabilidade de conexões com serviços de recebimento de dados em seu resultado se existir um fallback não aceitável para quando o serviço de recebimento de dados estiver indisponível. Isso não significa chamar a verificação de funcionamento que é fornecida pelo serviço de recebimento de dados diretamente, pois a infraestrutura verifica isso para você. Em vez disso, considere verificar o funcionamento das referências existentes que seu aplicativo tem para os serviços de recebimento de dados: essa pode ser uma conexão JMS com o WebSphere MQ ou um consumidor ou produtor Kafka inicializado. Se você verificar a viabilidade de referências internas para os serviços de recebimento de dados, armazene em cache o resultado para minimizar o impacto que a verificação de funcionamento terá em seu aplicativo.
 
 Uma análise de vivacidade, por contraste, pode ser deliberada sobre o que é verificado, pois uma falha resulta em término imediato do processo. Um terminal HTTP simples que sempre retorna `{"status": "UP"}` com o código de status `200` é uma opção razoável.
 
 ### Inclua suporte para prontidão e vivacidade do Kubernetes em um app Swift
+{: #kube-readiness-swift}
 
 Para implementações alternativas, como o uso de **Codable** ou o dicionário padrão, consulte [Exemplos de biblioteca de funcionamento](https://github.com/IBM-Swift/Health#usage). Algumas dessas implementações simplificam a criação de verificações de funcionamento extensíveis com suporte para verificações de armazenamento em cache que são executadas com relação aos serviços auxiliares. Nesse cenário, você gostaria de separar o teste de vivacidade simples da verificação de prontidão detalhada e mais robusta.
 
 ## Configurando as análises de prontidão e vivacidade no Kubernetes
+{: #config-kube-readiness}
 
 Declare as análises de prontidão e vivacidade juntamente com a implementação do Kubernetes. As duas análises usam os mesmos parâmetros de configuração:
 

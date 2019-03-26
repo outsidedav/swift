@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-12"
+  years: 2017, 2019
+lastupdated: "2019-01-15"
 
 ---
 {:new_window: target="_blank"}
@@ -26,6 +26,7 @@ lastupdated: "2018-11-12"
 ![Push 概览图](images/push_notification_lifecycle.jpg) 图 1. {{site.data.keyword.mobilepushshort}} 服务生命周期概览图
 
 ## 开始之前
+{: #prereqs-push}
 
 首先，请确保您已准备好以下必备软件：
 
@@ -44,13 +45,13 @@ lastupdated: "2018-11-12"
 
 
 ## 步骤 2. 获取通知提供程序凭证
-{: #get_creds}
+{: #get_creds-push}
 
-要设置 Push Notifications 服务，您需要从 Apple 推送通知服务 (APNs) 获取必需的凭证。执行此处的步骤来[获取并配置 APNs 凭证 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}。
+要设置 Push Notifications 服务，您需要从 Apple 推送通知服务 (APNs) 获取必需的凭证。执行此处的步骤来[获取并配置 APNs 凭证 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}。
 
 
 ## 步骤 3. 配置服务实例
-{: #enable-push-ios-notifications}
+{: #config-resource-push}
 
 要使用 {{site.data.keyword.mobilepushshort}} 服务来发送通知，请上传您创建的 `.p12` 密钥库，其中包含构建和发布应用程序所需的专用密钥和 SSL 证书。此外，也可以使用 REST API 来上传 APNs 证书。
 
@@ -80,13 +81,14 @@ lastupdated: "2018-11-12"
 	![{{site.data.keyword.mobilepushshort}} 控制台](images/push_configure_safari.jpg)
 
 ## 步骤 4. 设置服务客户端 SDK
+{: #service-client-push}
 
 要使 iOS 应用程序能够在设备上接收推送通知，您需要为 {{site.data.keyword.mobilepushshort}} 服务配置 iOS SDK。
 
 {{site.data.keyword.cloud_notm}} Mobile Services Swift SDK 可通过 CocoaPods 或 Carthage 来进行安装。有关更多信息，请参阅 [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application)。
 
-
 ## 步骤 5. 发送通知
+{: #send-notify-push}
 
 开发应用程序后，可以发送基本推送通知。
 
@@ -107,7 +109,7 @@ lastupdated: "2018-11-12"
 	![Android 上的后台推送通知](images/background.png)
 
 ### 可选设置
-{: #push_step_4_ios}
+{: #optional-push}
 
 可以定制用于将通知发送至 iOS 设备的 {{site.data.keyword.mobilepushshort}} 设置。支持以下可选的定制选项。
 
@@ -118,16 +120,17 @@ lastupdated: "2018-11-12"
 您还可以选择启用[交互式通知](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#interactive-notifications)和[富媒体通知](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enabling-rich-media-notifications)。
 
 ## 步骤 6. 监视传递的通知
-{: #push_step_4_monitor}
+{: #monitor-push}
 
 {{site.data.keyword.mobilepushshort}} 服务提供监视实用程序，以帮助您检查已发送消息的状态。要配置监视实用程序，请参阅[启用 iOS 应用程序的监视](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring)。
 
 ## 后续步骤
+{: #next-push}
 
  - 要了解有关服务的更多信息并利用所有功能，请通读[文档](/docs/services/mobilepush/c_overview_push.html#overview-push)。
 
  - 有关使用移动服务和 {{site.data.keyword.cloud_notm}} 的简介，请参阅 [{{site.data.keyword.cloud_notm}} 上的移动应用程序入门](/docs/services/mobile/index.html)。
 
- - 入门模板工具包是使用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。请在 [Mobile 开发者仪表板](https://console.bluemix.net/developer/mobile/dashboard)中查看可用的入门模板工具包。下载代码。运行应用程序！
+ - 入门模板工具包是使用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。请在 [Mobile 开发者仪表板](https://cloud.ibm.com/developer/mobile/dashboard)中查看可用的入门模板工具包。下载代码。运行应用程序！
 
  - 可以使用 [Swagger UI](https://mobile.ng.bluemix.net/imfpush/) 来快速查看 REST API 文档。

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -19,8 +19,9 @@ lastupdated: "2018-11-12"
 Puede utilizar API Connect para gestionar las API en {{site.data.keyword.cloud}}, tanto si se mantienen dentro o fuera de {{site.data.keyword.cloud_notm}}. Aprenda a gestionar las API para que pueda controlar el uso, aumentar la adopción y realizar un seguimiento de las estadísticas.
 
 ## Creación de una instancia de API Connect
+{: #create-apiconnect}
 
-Vaya al [Catálogo](https://console.bluemix.net/catalog/) y cree una instancia de API Connect para gestionar las API.
+Vaya al [Catálogo](https://cloud.ibm.com/catalog/) y cree una instancia de API Connect para gestionar las API.
 
 Utilice el `Menú->API` para acceder a la consola de API Connect Management.
 
@@ -35,6 +36,7 @@ Una vez definida la API, puede definir Open API Specifications (Swagger) en vari
 - [Bucle de retorno](https://loopback.io/)
 
 ## Definición de la API gestionada
+{: #define-apiconnect}
 
 Puede definir un proxy de API que gestiona la pasarela de API entre la aplicación cliente y la lógica del programa de fondo. Utilice los pasos siguientes para crear un proxy utilizando YAML o JSON de la Open API Specification (documento de Swagger). 
 
@@ -46,12 +48,13 @@ Puede definir un proxy de API que gestiona la pasarela de API entre la aplicaci�
 Debe configurar el punto final externo para que apunte al URL que enlaza a la aplicación de lógica de programa de fondo. 
 
 ## Creación de un programa de fondo de Swift
+{: #create-backend-apiconnect}
 
 Puede crear la app Swift de programa de fondo en función de esta API. 
 
 Desde la Apple Development Console, realice los pasos siguientes:
 
-1. Seleccione **Kits de iniciación**.
+1. Seleccione **Kits de inicio**.
 2. Pulse **Crear app**.
 3. Seleccione **Swift** como lenguaje.
 
@@ -113,8 +116,9 @@ func initializePet_Routes(app: App) {
 Una vez que se ha definido la API mediante {{site.data.keyword.openwhisk_short}} o mediante un tiempo de ejecución completo de Swift de pila, y se ha creado la definición de API Connect, puede consumir la API en las apps de iOS.
 
 ## Consumo de la API en una app para móvil de app de iOS
+{: #consume-apiconnect}
 
-Para consumir la API de programa de fondo en la app de iOS, cree un kit de iniciación de Mobile utilizando la consola de Apple. Si utiliza la vista Kit de iniciación, cree un kit de iniciación de iOS Swift de cualquier tipo.
+Para consumir la API de programa de fondo en la app de iOS, cree un kit de inicio de Mobile utilizando la consola de Apple. Si utiliza la vista Kit de inicio, cree un kit de inicio de iOS Swift de cualquier tipo.
 
 Pulse **Añadir recurso** y seleccione una API. 
 
@@ -135,10 +139,12 @@ En la carpeta `Activos` hay un archivo que gestiona el URL en la API, que de for
 Abra el archivo `PLIST` y sustituya el valor de host por el valor que se copia desde la ruta de la API que permite que el SDK llame a la API en el {{site.data.keyword.cloud_notm}}.
 
 ## Documentación
+{: #docs-apiconnect}
 
 Cuando el SDK se incluye en el proyecto de app de iOS, hay disponible un archivo *README.html* en la carpeta `Docs`. Abra la carpeta `Docs` en un navegador externo y lea las instrucciones sobre cómo utilizar el proyecto.
 
 ## Recreación del SDK después de un cambio de API
+{: #change-apiconnect}
 
 Si los cambios de API o las nuevas características pasan a estar disponibles, y se añade {{site.data.keyword.openwhisk}}, puede volver a crear el SDK del cliente utilizando el mandato `ibmcloud sdk`. Para obtener más información, ejemplos y ayuda de sintaxis, consulte la documentación de [Generador de SDK](/docs/cli/sdk/index.html).
 
@@ -161,10 +167,13 @@ Para habilitar la creación de un SDK, utilice el archivo YAML o JSON de Open AP
     El SDK se vuelve a crear en el directorio de proyecto de app de iOS para que pueda seguir trabajando con la API.
 
 ## Referencia
+{: #reference-apiconnect}
 
-El SDK de ejemplo siguiente se crea para {{site.data.keyword.openwhisk_short}} desde el kit de iniciación. Puede ver cada una de las Acciones y los fragmentos de código de Swift que puede incluir en la app de iOS.
+El SDK de ejemplo siguiente se crea para {{site.data.keyword.openwhisk_short}} desde el kit de inicio. Puede ver cada una de las Acciones y los fragmentos de código de Swift que puede incluir en la app de iOS.
 
 ### Métodos de API predeterminados
+{: #default-methods-apiconnect}
+
  * [`getCreate`](#getCreate)
  * [`getDelete`](#getDelete)
  * [`getDeleteall`](#getDeleteall)
@@ -173,6 +182,8 @@ El SDK de ejemplo siguiente se crea para {{site.data.keyword.openwhisk_short}} d
  * [`getUpdate`](#getUpdate)
 
 ### Uso de `getCreate`
+{: #getcreate-apiconnect}
+
 {: #getCreate}
 
 ```swift
@@ -186,10 +197,13 @@ public static func getCreate(completionHandler: @escaping (_ response: Response?
     - El cierre toma como argumentos `Response?` y `Error?`.
 
 ### Autenticación con `getCreate`
+{: #auth-getcreate}
 
 No se necesita autenticación
 
 ### Ejemplo que utiliza `getCreate`
+{: #example-getcreate}
+
 ```swift
 DefaultAPI.getCreate() { (response, error) in
     guard error == nil else {
@@ -209,7 +223,7 @@ DefaultAPI.getCreate() { (response, error) in
 {: codeblock}
 
 ### Uso de `getDelete`
-{: #getDelete}
+{: #getdelete}
 
 ```swift
 public static func getDelete(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -222,10 +236,13 @@ public static func getDelete(completionHandler: @escaping (_ response: Response?
     - El cierre toma como argumentos `Response?` y `Error?`.
 
 ### Autenticación con `getDelete`
+{: #auth-getdelete}
 
 No se necesita autenticación
 
 ### Ejemplo que utiliza `getDelete`
+{: #example-getdelete}
+
 ```swift
 DefaultAPI.getDelete() { (response, error) in
     guard error == nil else {
@@ -245,7 +262,7 @@ DefaultAPI.getDelete() { (response, error) in
 {: codeblock}
 
 ### Uso de `getDeleteall`
-{: #getDeleteall}
+{: #getdeleteall}
 
 ```swift
 public static func getDeleteall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -258,10 +275,12 @@ public static func getDeleteall(completionHandler: @escaping (_ response: Respon
     - El cierre toma como argumentos `Response?` y `Error?`.
 
 ### Autenticación con `getDeleteall`
+{: #auth-getdeleteall}
 
 No se necesita autenticación
 
 ### Ejemplo que utiliza `getDeleteall`
+{: #example-getdeleteall}
 
 ```swift
 DefaultAPI.getDeleteall() { (response, error) in
@@ -282,7 +301,7 @@ DefaultAPI.getDeleteall() { (response, error) in
 {: codeblock}
 
 ### Uso de `getRead`
-{: #getRead}
+{: #getread}
 
 ```swift
 public static func getRead(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -295,10 +314,13 @@ public static func getRead(completionHandler: @escaping (_ response: Response?, 
     - El cierre toma como argumentos `Response?` y `Error?`.
 
 ### Autenticación con `getRead`
+{: #auth-getread}
 
 No se necesita autenticación
 
 ### Ejemplo que utiliza `getRead`
+{: #example-getread}
+
 ```swift
 DefaultAPI.getRead() { (response, error) in
     guard error == nil else {
@@ -318,7 +340,7 @@ DefaultAPI.getRead() { (response, error) in
 {: codeblock}
 
 ### Uso de `getReadall`
-{: #getReadall}
+{: #getreadall}
 
 ```swift
 public static func getReadall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -331,10 +353,13 @@ public static func getReadall(completionHandler: @escaping (_ response: Response
     - El cierre toma como argumentos `Response?` y `Error?`.
 
 ### Autenticación con `getReadall`
+{: #auth-getreadall}
 
 No se necesita autenticación
 
 ### Ejemplo que utiliza `getReadall`
+{: #example-getreadall}
+
 ```swift
 DefaultAPI.getReadall() { (response, error) in
     guard error == nil else {
@@ -354,7 +379,7 @@ DefaultAPI.getReadall() { (response, error) in
 {: codeblock}
 
 ### Uso de `getUpdate`
-{: #getUpdate}
+{: #getupdate}
 
 ```swift
 public static func getUpdate(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -367,10 +392,13 @@ public static func getUpdate(completionHandler: @escaping (_ response: Response?
     - El cierre toma como argumentos `Response?` y `Error?`.
 
 ### Autenticación con `getUpdate`
+{: #auth-getupdate}
 
 No se necesita autenticación
 
 ### Ejemplo que utiliza `getUpdate`
+{: #example-getupdate}
+
 ```swift
 DefaultAPI.getUpdate() { (response, error) in
     guard error == nil else {

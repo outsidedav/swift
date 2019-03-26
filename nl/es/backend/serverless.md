@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -15,16 +15,16 @@ lastupdated: "2018-11-12"
 {:tip: .tip}
 
 # Desarrollo sin servidor
-{: #serverless}
+{: #serverless-dev-swift}
 
 ¿Qué es sin servidor? El patrón de desarrollo sin servidor hace referencia al desarrollo de aplicaciones en el que la lógica del lado del servidor se ejecuta en contenedores sin estado. Los contenedores se desencadenan por sucesos, son efímeros (duran una sola ejecución) y los gestiona un tercero. Este paradigma, también conocido como FaaS (Functions as a Service), es donde el desarrollador proporciona una función sin estado que se puede desencadenar y ejecutar sin crear ni gestionar de forma explícita un servidor.
 
 Mediante la abstracción de la infraestructura y los marcos necesarios para el desarrollo del lado del servidor, la arquitectura sin servidor permite a los desarrolladores centrarse en escribir código para que se ejecuten de forma reactiva para cambiar los datos.
 
-La oferta de FaaS de IBM, [{{site.data.keyword.openwhisk}}](https://console.bluemix.net/openwhisk/), se esfuerza por ofrecer una experiencia de desarrollo sencilla de servidor sin necesidad de tener conocimientos especializados del lado del servidor. Mediante la utilización de tecnología sin servidor, puede desarrollar rápidamente soluciones de fondo ampliables para satisfacer prácticamente cualquier demanda de carga de trabajo sin la necesidad de crear recursos antes de tiempo. Para las aplicaciones que tienen patrones de carga impredecibles o un tiempo de inactividad de servidor alto, {{site.data.keyword.openwhisk_short}} puede ser una excelente solución en la nube con un rendimiento mejorado, y su sistema de "pagar por lo que utilice" ayuda a reducir los costes.
+La oferta de FaaS de IBM, [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/), se esfuerza por ofrecer una experiencia de desarrollo sencilla de servidor sin necesidad de tener conocimientos especializados del lado del servidor. Mediante la utilización de tecnología sin servidor, puede desarrollar rápidamente soluciones de fondo ampliables para satisfacer prácticamente cualquier demanda de carga de trabajo sin la necesidad de crear recursos antes de tiempo. Para las aplicaciones que tienen patrones de carga impredecibles o un tiempo de inactividad de servidor alto, {{site.data.keyword.openwhisk_short}} puede ser una excelente solución en la nube con un rendimiento mejorado, y su sistema de "pagar por lo que utilice" ayuda a reducir los costes.
 
 ## Cambios arquitectónicos
-{: #comparison}
+{: #comparison-serverless}
 
 Para ayudarle a comprender los beneficios arquitectónicos de cambiar a FaaS, las arquitecturas tradicionales y FaaS se comparan utilizando una aplicación de iOS simple que se enlaza a una base de datos.
 
@@ -51,52 +51,59 @@ En un modelo puramente sin servidor, el cliente a menudo asume responsabilidades
 Aunque las arquitecturas sin servidor no son siempre ideales, pueden proporcionar ventajas importantes con el equipo y las condiciones de uso adecuados. Consulte algunos ejemplos específicos para obtener información sobre unos pocos de los [casos de uso](#use_cases) más comunes.
 
 ## Prestaciones sin servidor
-{: #benefits}
+{: #benefits-serverless}
 
 ### Coste reducido
+{: #reduced-cost-serverless}
 
 Externalizar el tiempo y el coste monetario asociado con la administración de sistema reduce el coste global asociado con los servidores de fondo tradicionales. Además, {{site.data.keyword.openwhisk_short}} es diferente de las tecnologías de cálculo tradicionales porque solo paga por el tiempo que tarda el código en satisfacer las solicitudes, redondeado a los 100 ms más próximos. Es posible conseguir un ahorro de costes considerable en relación con otras tecnologías, como las VM y los contenedores, que no es probable que se utilicen al 100 % y consumen memoria en el sistema de su proveedor de nube.
 
 ### Alta disponibilidad y escalabilidad
+{: #ha-serverless}
 
 Las arquitecturas sin servidor proporcionan de forma inherente escalabilidad instantánea con una disponibilidad casi constante.
 
 ### Desarrollo rápido y simplificado
+{: #speed-serverless}
 
 Al eliminar la necesidad de administración del sistema y de proporcionar interfaces simples para el despliegue, el paradigma sin servidor acelera el desarrollo de aplicaciones. Los desarrolladores pueden crear rápidamente apps con secuencias de acción que se ejecutan en respuesta a un mundo controlado por sucesos.
 
 ## Casos de uso de ejemplo
-{: #use_cases}
+{: #use-cases-serverless}
 
 ### Backend móvil
+{: #mobile-backend-serverless}
 ![](./images/cloud-functions-rest-api-trigger.png)
 
 Los desarrolladores de móvil pueden acceder fácilmente a la lógica en el lado del servidor y externalizar tareas de computación intensas a una plataforma en la nube. Puede implementar funciones en lenguajes como Swift y consumir funciones en el lado del servidor fácilmente utilizando el SDK de iOS sin necesidad de tener experiencia en el lado del servidor.
 
 ### Proceso de datos
+{: #data-processing-serverless}
 
 ![](./images/cloud-functions-cloudant-trigger.png)
 
 Puede ejecutar código cuando se actualicen los datos de su almacén de datos a través de desencadenantes integrados. También puede automatizar procesos fácilmente como la normalización de audio, rotación de imágenes, nitidez, reducción de ruido, generación de miniaturas o transcodificación de vídeo a través de un modelo de programación funcional del lado del servidor.
 
 ### Proceso de datos cognitivo
+{: #cognitive-serverless}
 
 Puede analizar los datos en cuanto estén disponibles. Su función puede aprovechar los potentes servicios cognitivos, como IBM Watson, para detectar objetos o personas en imágenes o vídeos.
 
 ### Tareas planificadas
+{: #tasks-serverless}
 
 Ejecute sus funciones periódicamente y defina planificaciones que siguen una sintaxis cronológica para especificar cuándo se deben ejecutar las acciones.
 
 ## Referencia de API
-{: #openwhisk_start_api notoc}
+{: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [API REST](https://console.{DomainName}/apidocs/98)
+* [API REST](https://cloud.ibm.com/apidocs)
 
 ## Enlaces relacionados
-{: #general notoc}
+{: #related-serverless notoc}
 
-* [Descubrir {{site.data.keyword.openwhisk_short}}](http://www.ibm.com/cloud-computing/bluemix/openwhisk/)
+* [Descubrir {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions)
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
 * [Sitio web del proyecto Apache OpenWhisk](http://openwhisk.org)
 * [Más información sobre la arquitectura sin servidor](https://martinfowler.com/articles/serverless.html)

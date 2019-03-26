@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -24,28 +24,29 @@ El servicio {{site.data.keyword.engage_short}} define una característica, crea 
 
 Consulte las siguientes características del servicio {{site.data.keyword.engage_short}}:
 
- - **Acelerar el despliegue de características **
+ - **Acelerar el despliegue de características**
 
     Acelere la entrega de características a su app a través de releases controlados al mitigar riesgos. Publique características a un subconjunto de segmentos de público y realice despliegues más grandes o bien cambie decisiones en función de los comentarios en tiempo real. Separe las presentaciones de una característica del ciclo normal de release.
 
- - **Segmentar el público **
+ - **Segmentar el público**
 
     Los segmentos de usuario se pueden definir en función de los atributos conductuales, demográficos y contextuales. También puede presentar características a un determinado porcentaje de toda la base de usuarios. Los indicadores clave de rendimiento se pueden definir para cada característica y código en el lado del cliente para medir los resultados.
 
- - **Adaptar la aplicación en función del contexto **
+ - **Adaptar la aplicación en función del contexto**
 
     Se puede personalizar el comportamiento de la aplicación, la interfaz de usuario y las notificaciones según los segmentos de público específicos. Por ejemplo, se puede cambiar el fondo de la app en función de la ubicación del usuario. Dicha personalización mejora la fidelización de los usuarios con la aplicación.
 
- - **Características de pruebas A / B **
+ - **Características de pruebas A / B**
 
     Gane confianza experimentando. Puede comparar las dos variantes de las características de aplicación poniéndolas en funcionamiento a la vez. Podrá tomar decisiones a partir de datos concretos.
 
- - **Incremente la fidelización del cliente **
+ - **Incremente la fidelización del cliente**
 
     Promueva la fidelización del usuario. Las notificaciones se pueden destinar a todos los usuarios de la aplicación o a un conjunto específico de usuarios y dispositivos. Se puede planificar el envío de mensajes. La interacción del usuario desempeña un papel vital en las relaciones con los clientes.
 
 
 ## Antes de empezar
+{: #prereqs-applaunch}
 
 Primero, asegúrese de cumplir los siguientes requisitos previos:
 
@@ -63,7 +64,7 @@ Primero, asegúrese de cumplir los siguientes requisitos previos:
 4. En el panel de navegación, pulse **Conexiones** para seleccionar una app y enlazarla al servicio. Puede enlazar la instancia de servicio a su app más adelante si la deja desenlazada durante la creación.
 
 ## Paso 2. Inicialización de la app
-{: #step2}
+{: #initialize-applaunch}
 
 El servicio proporciona SDK específicos de la plataforma para simplificar el desarrollo de aplicaciones. Los SDK de Swift de {{site.data.keyword.cloud_notm}} Mobile Services se pueden instalar con CocoaPods o Carthage.
 
@@ -72,7 +73,7 @@ El servicio proporciona SDK específicos de la plataforma para simplificar el de
 3. Copie las claves de configuración para inicializar la app. Utilice el secreto de app, el GUID de app y el secreto de cliente para configurar su app y crear fidelizaciones.
 
 ## Paso 3. Creación de una característica
-{: #step3}
+{: #create-feature-applaunch}
 
 El servicio {{site.data.keyword.engage_short}} crea y prueba respuestas a las características.
 
@@ -92,13 +93,14 @@ Para crear una característica, realice los pasos siguientes:
 La ventana Detalles de característica puede exportar la característica como un archivo JSON, que puede ser utilizado en la aplicación cliente para cargar los valores predeterminados.
 
 ## Paso 4. Creación de un público
-{: #step4}
+{: #audience-applaunch}
 
 ![Crear público](images/create_audience_animated.gif){: gif}
 
 Para crear un público, realice los pasos siguientes:
 
 ### Creación de un **atributo de público**:
+{: #audience-attrib-applaunch}
 
 1. Pulse en **Público** > **Crear atributo**.
 2. Indique los siguientes valores:
@@ -110,6 +112,7 @@ Para crear un público, realice los pasos siguientes:
   En función de lo que necesite, puede crear más de un atributo de público, como muestra la lista de la imagen siguiente.
 
 ### Creación de un **público**:
+{: #audience-create-applaunch}
 
 1. Pulse **Crear público**.
 2. Indique un nombre y una descripción apropiados en la ventana Nuevo público.
@@ -120,10 +123,12 @@ Para crear un público, realice los pasos siguientes:
 Ahora podrá crear una fidelización.
 
 ## Paso 5. Creación de una fidelización
+{: #engagement-applaunch}
 
 Un Compromiso es una instancia de una característica con propiedades inicializadas y que adjuntan uno de los auditorios predefinidos. Puede crear un compromiso utilizando **Control de características** o **Mensajería en app**.
 
 ### Habilitación de la capacidad de control de características
+{: #feature-control-applaunch}
 
 A través de esta fidelización, el propietario de una app puede controlar la visibilidad de una característica habilitando o inhabilitándola durante el tiempo de ejecución. Se puede habilitar o inhabilitar una característica para todos los usuarios de la aplicación o para un conjunto específico de usuarios y dispositivos.
 
@@ -155,6 +160,7 @@ Efectúe los pasos siguientes para crear una fidelización mediante Control de c
 Ahora puede medir el [rendimiento](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de su fidelización.
 
 ### Habilitación de la capacidad de mensajería in-app
+{: #app-message-applaunch}
 
 A través de esta fidelización, el propietario de una app puede enviar notificaciones a los usuarios de la app mientras están utilizando la aplicación.
 
@@ -183,7 +189,7 @@ Efectúe los pasos siguientes para crear una fidelización que utiliza la opció
   Aparecerá la ventana Nueva fidelización.
 
 2. Indique un nombre y una descripción para la nueva fidelización. Indique un nombre de fidelización exclusivo, que no aparezca ya en la lista de Fidelizaciones.
-  - **Seleccione Tipo de fidelización ** como **Mensajería in-app**
+  - **Seleccione Tipo de fidelización** como **Mensajería in-app**
   - Para realizar un experimento controlado con múltiples variantes de la característica de mensajería, seleccione **Pruebas A/B** en **Seleccionar tipo de experimentación**. Pulse **Siguiente**.
 
 3. Especifique las propiedades del mensaje y pulse **Siguiente**.
@@ -201,10 +207,10 @@ Efectúe los pasos siguientes para crear una fidelización que utiliza la opció
 Ahora puede medir el [rendimiento](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de su fidelización.
 
 ## Enlaces rápidos
-{: #links notoc}
+{: #links-applaunch notoc}
 
 Consulte los enlaces siguientes para obtener una visión general y conocer las características de {{site.data.keyword.engage_short}}:
 
- - Pruebe el [servicio App Launch](https://console.bluemix.net/catalog/services/app-launch).
+ - Pruebe el [servicio App Launch](https://cloud.ibm.com/catalog/services/app-launch).
  - [Blogs y vídeos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - Para obtener más información, consulte la [Guía de aprendizaje de iniciación de App Launch](/docs/services/app-launch/index.html#gettingstartedtemplate).
+ - Para obtener más información, consulte la [Guía de aprendizaje de iniciación de App Launch](/docs/services/app-launch/index.html).

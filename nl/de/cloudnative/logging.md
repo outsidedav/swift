@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -16,7 +17,7 @@ lastupdated: "2018-11-08"
 {: #logging_swift}
 
 Protokollnachrichten sind Zeichenfolgen mit Kontextinformationen über den Status und die Aktivität des Mikroservice zum Zeitpunkt des Protokolleintrags. Protokolle werden benötigt, um zu diagnostizieren, wie und warum
-Services fehlschlagen. Sie spielen ferner eine unterstützende Rolle für [App-Metriken](appmetrics.html) bei der Überwachung des Anwendungsstatus. 
+Services fehlschlagen. Sie spielen ferner eine unterstützende Rolle für [App-Metriken](/docs/swift/cloudnative/appmetrics.html) bei der Überwachung des Anwendungsstatus.
 
 Prozesse in Cloudumgebungen sind naturgemäß transient, weshalb erfasste Protokolle an
 eine andere Position gesendet werden müssen, bei der es sich in der Regel um
@@ -25,8 +26,8 @@ Protokollierung in Cloudumgebungen besteht darin, Protokolleinträge an
 Standardausgabe und Fehlerdatenströme zu senden und die weitere Verarbeitung
 der Infrastruktur zu überlassen.
 
-
 ## Protokollierung zu einer Swift-App hinzufügen
+{: #logging-add}
 
 [HeliumLogger](https://github.com/IBM-Swift/HeliumLogger)
 ist ein gängiges einfaches Protokollierungsframework für Swift und bietet von
@@ -39,7 +40,7 @@ Protokollierungsschnittstelle für verschiedene Arten von Protokollfunktionen in
 Swift bereitstellt. Kitura verwendet `LoggerAPI`
 während seiner Implementierung.
 
-Um `HeliumLogger` zu verwenden, fügen Sie den folgenden Code für alle entsprechenden Ziele zum Abschnitt **dependencies:** in `Package.swift` hinzu: 
+Um `HeliumLogger` zu verwenden, fügen Sie den folgenden Code für alle entsprechenden Ziele zum Abschnitt **dependencies:** in `Package.swift` hinzu:
 ```swift
 .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1")
 ```
@@ -69,7 +70,7 @@ der offiziellen Referenzdokumentation zur API
 [HeliumLogger](http://ibm-swift.github.io/HeliumLogger/).
 
 ## Protokollierung mit Starter-Kits
-{: #monitoring}
+{: #logging-starterkits}
 
 Swift-Apps, die mit dem App-Service von
 {{site.data.keyword.cloud_notm}} erstellt werden, enthalten
@@ -87,7 +88,7 @@ für
 und
 [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/)-Bereitstellungen,
 auf die mit dem Befehl `ibmcloud app logs --recent <APP_NAME>`
-bzw. `kubectl logs <deployment name>` zugegriffen wird.
+bzw. `kubectl logs <deployment name>`.
 
 In der Datei `/Sources/AppName/main.swift` ist der
 folgende Code enthalten:
@@ -102,18 +103,17 @@ protokolliert werden.
 {: tip}
 
 ## Nächste Schritte
-{: #next_steps}
+{: #next-logging}
 
 Die folgenden Quellen enthalten weitere Informationen zum Anzeigen der
 Protokolle in den einzelnen Bereitstellungsumgebungen:
 * [Kubernetes-Protokolle](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/)
 * [Cloud
-Foundry-Protokolle](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
-* [Protokolle
-und Überwachung von {{site.data.keyword.openwhisk}}](https://console.bluemix.net/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
+Foundry-Protokolle](/docs/cli/reference/ibmcloud/bx_cli.html)
+* [Cloud Foundry Enterprise Environment - Prüfung und Protokollierung](docs/cloud-foundry/auditing-logging.html)
+* [Protokolle und Überwachung von {{site.data.keyword.openwhisk}}](/docs/openwhisk/openwhisk_logs.html)
 
 Hier erfahren Sie, wie Sie einen Protokollaggregator implementieren und verwenden:
-* [Protokollanalyse
-in {{site.data.keyword.cloud_notm}}](https://console.bluemix.net/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
+* [Protokollanalyse in {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis/log_analysis_ov.html)
 * [Privater
 ELK-Stack von {{site.data.keyword.cloud_notm}}](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

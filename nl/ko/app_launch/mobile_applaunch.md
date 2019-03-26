@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2018-11-12"
 
 ![코그너티브 참여 개요](images/process_app_launch.png) 그림 1. {{site.data.keyword.engage_short}} 서비스 라이프사이클의 개요
 
-다음 {{site.data.keyword.engage_short}} 서비스 기능을 참조하십시오. 
+다음 {{site.data.keyword.engage_short}} 서비스 기능을 참조하십시오.
 
  - **기능 배치 가속화**
 
@@ -46,6 +46,7 @@ lastupdated: "2018-11-12"
 
 
 ## 시작하기 전에
+{: #prereqs-applaunch}
 
 먼저, 시작하기 전에 다음 필수 소프트웨어를 갖추었는지 확인하십시오.
 
@@ -63,16 +64,16 @@ lastupdated: "2018-11-12"
 4. 탐색 분할창에서 **연결**을 클릭하여 앱을 선택하고 서비스에 바인드하십시오. 작성 중에 서비스 인스턴스를 바인드되지 않은 상태로 둔 경우 나중에 서비스 인스턴스를 앱에 바인드할 수 있습니다.
 
 ## 2단계. 앱 초기화
-{: #step2}
+{: #initialize-applaunch}
 
-서비스는 플랫폼별 SDK를 제공하여 애플리케이션 개발을 간소화합니다. {{site.data.keyword.cloud_notm}} Mobile Services Swift SDK는 CocoaPods 또는 Carthage로 설치할 수 있습니다. 
+서비스는 플랫폼별 SDK를 제공하여 애플리케이션 개발을 간소화합니다. {{site.data.keyword.cloud_notm}} Mobile Services Swift SDK는 CocoaPods 또는 Carthage로 설치할 수 있습니다.
 
 1. **설정**을 클릭하십시오.
-2. [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch)를 설치하십시오. 자세한 정보는 설치 단계 및 기술 개념이 포함된 `README` 파일을 참조하십시오. 
+2. [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch)를 설치하십시오. 자세한 정보는 설치 단계 및 기술 개념이 포함된 `README` 파일을 참조하십시오.
 3. 구성 키를 복사하여 앱을 초기화하십시오. 앱 시크릿, 앱 GUID 및 클라이언트 시크릿을 사용하여 앱을 구성하고 참여를 작성하십시오.
 
 ## 3단계. 기능 작성
-{: #step3}
+{: #create-feature-applaunch}
 
 {{site.data.keyword.engage_short}} 서비스는 기능에 대한 응답을 작성하고 테스트합니다.
 
@@ -82,7 +83,7 @@ lastupdated: "2018-11-12"
 1. 탐색 분할창에서 **기능** > **새 기능 작성**을 클릭하십시오.
 2. 기능 이름 및 설명이 포함된 새 기능 및 메트릭 작성 양식을 업데이트하십시오. 또한 기능 특성을 정의하고 메트릭을 추가하여 참여가 미치는 영향을 측정할 수 있습니다. JSON을 편집하여 여러 특성을 추가하려면 **대량 편집**을 클릭하십시오.
 3. **작성**을 클릭하십시오. 이제 새 기능이 기능 패널에 표시됩니다.
-4. 기능이 개발되고 나면 이를 사용으로 설정하십시오. 
+4. 기능이 개발되고 나면 이를 사용으로 설정하십시오.
 5. 참여로 사용할 기능을 사용으로 설정하려면 작성한 기능을 클릭하십시오.
 6. 기능 세부사항 창에서 기능의 업데이트 상태를 **준비**로 선택하십시오.
 7. **업데이트 상태**를 클릭하십시오.
@@ -92,13 +93,14 @@ lastupdated: "2018-11-12"
 기능 세부사항 창에서는 클라이언트 애플리케이션에서 기본값을 로드하는 데 사용할 수 있는 JSON 파일로 기능을 내보낼 수 있습니다.
 
 ## 4단계. 잠재고객 작성
-{: #step4}
+{: #audience-applaunch}
 
 ![잠재고객 작성](images/create_audience_animated.gif){: gif}
 
 잠재고객(audience)을 작성하려면 다음 단계를 완료하십시오.
 
 ### **잠재고객 속성** 작성:
+{: #audience-attrib-applaunch}
 
 1. **잠재고객** > **속성 작성**을 클릭하십시오.
 2. 다음 값을 제공하십시오.
@@ -110,6 +112,7 @@ lastupdated: "2018-11-12"
   다음 이미지에 나열된 대로 사용자의 요구사항에 따라 둘 이상의 잠재고객 속성을 작성하도록 선택할 수 있습니다.
 
 ### **잠재고객** 작성:
+{: #audience-create-applaunch}
 
 1. **잠재고객 작성**을 클릭하십시오.
 2. 새 잠재고객 창에 적절한 이름 및 설명을 제공하십시오.
@@ -120,10 +123,12 @@ lastupdated: "2018-11-12"
 이제 참여를 작성할 수 있습니다.
 
 ## 5단계. 참여 작성
+{: #engagement-applaunch}
 
 참여(engagement)는 초기화된 특성이 포함된 기능을 인스턴스화하고 사전 정의된 잠재고객 중 한 명을 연결하는 것입니다. **기능 제어** 또는 **인 앱 메시징**을 사용하여 참여를 작성할 수 있습니다.
 
 ### 기능 제어(Feature Control) 기능 사용
+{: #feature-control-applaunch}
 
 이 참여를 통해 앱 소유자는 런타임 시 기능의 가시성을 사용 또는 사용 안함으로 설정하여 이를 제어할 수 있습니다. 기능은 모든 애플리케이션 사용자 또는 특정 세트의 사용자 및 디바이스에 대해 사용 또는 사용 안함으로 설정할 수 있습니다.
 
@@ -155,14 +160,15 @@ lastupdated: "2018-11-12"
 이제 참여의 [성능](/docs/services/app-launch/app_measure_performance.html#applaunch_type)을 측정할 수 있습니다.
 
 ### 인 앱 메시징(In-App Messaging) 기능 사용
+{: #app-message-applaunch}
 
-이 참여를 통해 앱 사용자가 애플리케이션을 능동적으로 사용하는 동안 앱 소유자는 알림을 앱 사용자에게 전송할 수 있습니다. 
+이 참여를 통해 앱 사용자가 애플리케이션을 능동적으로 사용하는 동안 앱 소유자는 알림을 앱 사용자에게 전송할 수 있습니다.
 
 메시지는 모든 애플리케이션 사용자 또는 특정 세트의 사용자 및 디바이스를 대상으로 할 수 있습니다. 서비스에 제출할 수 있는 모든 메시지에 대해 의도된 잠재고객이 알림을 수신합니다.
 
-시작 또는 종료 날짜 및 시간을 정의하여 인 앱 메시지를 스케줄할 수 있습니다. 또한 이벤트를 기반으로도 스케줄할 수 있습니다. 이러한 메시지는 사용자의 선택사항, 상호작용, 디바이스, 애플리케이션 로그 등에 대한 분석 인사이트를 기반으로 하므로 좀 더 사용자 정의됩니다. 
+시작 또는 종료 날짜 및 시간을 정의하여 인 앱 메시지를 스케줄할 수 있습니다. 또한 이벤트를 기반으로도 스케줄할 수 있습니다. 이러한 메시지는 사용자의 선택사항, 상호작용, 디바이스, 애플리케이션 로그 등에 대한 분석 인사이트를 기반으로 하므로 좀 더 사용자 정의됩니다.
 
-다음 인 앱 메시지 예제를 참조하십시오. 
+다음 인 앱 메시지 예제를 참조하십시오.
 
 - 사용자 정의된 메시지를 전송합니다.
 - 푸시 알림을 끄도록 사용자에게 메시지를 전송합니다.
@@ -201,10 +207,10 @@ lastupdated: "2018-11-12"
 이제 참여의 [성능](/docs/services/app-launch/app_measure_performance.html#applaunch_type)을 측정할 수 있습니다.
 
 ## 빠른 링크
-{: #links notoc}
+{: #links-applaunch notoc}
 
 다음 링크를 확인하여 인사이트를 얻고 {{site.data.keyword.engage_short}}의 기능을 이해하십시오.
 
- - [앱 실행 서비스](https://console.bluemix.net/catalog/services/app-launch) 사용
+ - [앱 실행 서비스](https://cloud.ibm.com/catalog/services/app-launch) 사용
  - [블로그 및 비디오](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - 자세한 정보는 [App 실행 - 튜토리얼 시작하기](/docs/services/app-launch/index.html#gettingstartedtemplate) 문서를 참조하십시오.
+ - 자세한 정보는 [App 실행 - 튜토리얼 시작하기](/docs/services/app-launch/index.html) 문서를 참조하십시오.

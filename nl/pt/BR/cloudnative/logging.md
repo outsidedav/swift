@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -15,12 +16,12 @@ lastupdated: "2018-11-08"
 # Efetuando Login no Swift
 {: #logging_swift}
 
-Mensagens de log são sequências com informações contextuais sobre o estado e a atividade do microsserviço no momento em que a entrada de log é feita. Os logs são necessários para diagnosticar como e por que os serviços falham e desempenha uma função de suporte para as [métricas de app](appmetrics.html) no monitoramento do funcionamento do aplicativo.
+Mensagens de log são sequências com informações contextuais sobre o estado e a atividade do microsserviço no momento em que a entrada de log é feita. Os logs são necessários para diagnosticar como e por que os serviços falham e desempenha uma função de suporte para as [métricas de app](/docs/swift/cloudnative/appmetrics.html) no monitoramento do funcionamento do aplicativo.
 
 Dada a natureza transitória de processos em ambientes de nuvem, os logs devem ser coletados e enviados em outros lugares, geralmente em um local centralizado para análise. A maneira mais consistente de efetuar login nos ambientes de nuvem é enviar entradas de log para fluxos de saída padrão e de erro, o que deixa a infraestrutura para manipular o resto.
 
-
 ## Incluindo Criação de Log no app Swift
+{: #logging-add}
 
 [HeliumLogger](https://github.com/IBM-Swift/HeliumLogger) é uma estrutura de criação de log leve e popular para Swift, além de fornecer muitos benefícios nativos, como a criação de log para saída padrão e diferentes níveis de log.
 
@@ -49,7 +50,7 @@ No exemplo fornecido, o [nível de log](http://ibm-swift.github.io/HeliumLogger/
 Para obter mais informações sobre como customizar as mensagens de log, consulte a [documentação de referência oficial da API do HeliumLogger](http://ibm-swift.github.io/HeliumLogger/).
 
 ## Criação de Log com kits do iniciador
-{: #monitoring}
+{: #logging-starterkits}
 
 Os apps Swift criados usando o {{site.data.keyword.cloud_notm}} App Service vêm com o `HeliumLogger`, por padrão. Executar o app nativamente ou em um ambiente de nuvem produz a seguinte saída:
 ```
@@ -69,13 +70,14 @@ O nível de log é explicitamente configurado como `.info` para registrar as men
 {: tip}
 
 ## Próximas Etapas
-{: #next_steps}
+{: #next-logging}
 
 Saiba mais sobre como visualizar os logs em cada um dos nossos ambientes de implementação:
 * [ Logs de Kubernetes ](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/)
-* [ Logs do Cloud Foundry ](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
-* [ {{site.data.keyword.openwhisk}}  Logs & Monitoring ](https://console.bluemix.net/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
+* [ Logs do Cloud Foundry ](/docs/cli/reference/ibmcloud/bx_cli.html)
+* [Cloud Foundry Enterprise Environment - Auditoria e criação de log](docs/cloud-foundry/auditing-logging.html)
+* [ {{site.data.keyword.openwhisk}}  Logs & Monitoring ](/docs/openwhisk/openwhisk_logs.html)
 
 Aprenda como implementar e usar um agregador de log:
-* [ {{site.data.keyword.cloud_notm}}  Análise do Log ](https://console.bluemix.net/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
+* [ {{site.data.keyword.cloud_notm}}  Análise do Log ](/docs/services/CloudLogAnalysis/log_analysis_ov.html)
 * [ {{site.data.keyword.cloud_notm}}  Pilha ELK privada ](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

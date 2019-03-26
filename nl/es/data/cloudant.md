@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2017-2018
-lastupdated: "2018-11-08"
+  years: 2017, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -23,6 +24,7 @@ indexación de texto completo e indexación geoespacial. Las capacidades de rép
 Para ver todas las formas en las que puede utilizar {{site.data.keyword.cloudant_short_notm}}, consulte [Aspectos básicos de {{site.data.keyword.cloudant_short_notm}}](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics).
 
 ## Antes de empezar
+{: #prereqs-cloudant}
 
 Primero, asegúrese de cumplir los siguientes requisitos previos:
  * CocoaPods (versión 1.1.0 o posterior)
@@ -34,12 +36,16 @@ El [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![Icono de enlace ext
 {: tip}
 
 ## Paso 1. Creación de una instancia de {{site.data.keyword.cloudant_short_notm}}
+{: #create-instance-cloudant}
 
-Consulte la guía de aprendizaje [Creación de una instancia de base de datos NoSQL de Cloudant en IBM Cloud ![Icono de enlace externo](../images/launch-glyph.svg "Icono de enlace externo")](https://console.bluemix.net/docs/services/Cloudant/tutorials/create_service.html#creating-a-cloudant-nosql-db-instance-on-ibm-cloud){:new_window} para crear una instancia del servicio.
+Consulte la guía de aprendizaje [Guía de aprendizaje para la Creación de una instancia de IBM Cloudant en
+IBM Cloud ![Icono de enlace externo](../images/launch-glyph.svg "Icono de enlace externo")](/docs/services/Cloudant/tutorials/create_service.html){:new_window} para crear una instancia del servicio.
 
 ## Paso 2. Instalación del SDK
+{: #install-sdk-cloudant}
 
 ### Instalación del SDK de Swift de iOS
+{: #install-swift-sdk-cloudant}
 
 Utilice el SDK de Cloudant de Swift para ayudarle a facilitar la codificación de la app. El SDK debe estar instalado en el código de la app.
 
@@ -60,6 +66,7 @@ Utilice el SDK de Cloudant de Swift para ayudarle a facilitar la codificación d
     {: codeblock}
 
 ### Instalación del SDK de Swift de lado del servidor
+{: #install-serverside-cloudant}
 
 Para utilizarlo con el Gestor de paquetes de Swift para el desarrollo de ladro del servidor, añada la línea siguiente a las dependencias de `Package.swift`:
 ```swift
@@ -68,11 +75,12 @@ Para utilizarlo con el Gestor de paquetes de Swift para el desarrollo de ladro d
 {: codeblock}
 
 ## Paso 3. Inicialización del SDK
+{: #initialize-cloudant}
 
-Después de inicializar el SDK en la app, puede empezar por utilizar {{site.data.keyword.cloudant_short_notm}} para almacenar datos. 
+Después de inicializar el SDK en la app, puede empezar por utilizar {{site.data.keyword.cloudant_short_notm}} para almacenar datos.
 
 1.  Añada la importación siguiente al archivo `AppDelegate.swift` o al archivo swift de lado del servidor.
-    ```
+    ```swift
     import SwiftCloudant
     ```
     {: codeblock}
@@ -86,6 +94,8 @@ Después de inicializar el SDK en la app, puede empezar por utilizar {{site.data
     {: codeblock}
 
 ### Operaciones básicas
+{: #basic-operations-cloudant}
+
 Estas operaciones básicas muestran las acciones fundamentales para crear, leer y suprimir sus documentos utilizando el cliente inicializado.
 
 #### Crear un documento
@@ -146,5 +156,5 @@ client.add(operation: delete)
 ¡Buen trabajo! Ha añadido un nivel de persistencia segura a la app. Mantenga el ritmo probando una de las opciones siguientes:
 
 * Visualice el código fuente de [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/cloudant/swift-cloudant).
-* Los kits de inicio son una de las formas más rápidas de utilizar las prestaciones de {{site.data.keyword.cloud_notm}}. El kit de iniciación **Infinite Scrolling with Cloudant NoSQL for iOS** muestra cómo ampliar un `ViewController` para visualizar los datos utilizando la paginación. Este patrón de app es común para los desarrolladores de iOS, y es un buen ejemplo para ilustrar las prestaciones de {{site.data.keyword.cloudant_short_notm}}. Vea los kits de iniciación disponibles en el [panel de control de desarrollador de Mobile](https://console.bluemix.net/developer/mobile/dashboard). Descargue el código. Ejecute la app.
+* Los kits de inicio son una de las formas más rápidas de utilizar las prestaciones de {{site.data.keyword.cloud_notm}}. El kit de inicio **Infinite Scrolling with Cloudant NoSQL for iOS** muestra cómo ampliar un `ViewController` para visualizar los datos utilizando la paginación. Este patrón de app es común para los desarrolladores de iOS, y es un buen ejemplo para ilustrar las prestaciones de {{site.data.keyword.cloudant_short_notm}}. Vea los kits de inicio disponibles en el [panel de control de desarrollador de Mobile](https://cloud.ibm.com/developer/mobile/dashboard). Descargue el código. Ejecute la app.
 * Obtenga más información y aproveche todas las características que {{site.data.keyword.cloudant_short_notm}} ofrece: [consulte la documentación](/docs/services/Cloudant/index.html).

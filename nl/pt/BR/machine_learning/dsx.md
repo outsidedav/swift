@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-06-04"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -13,19 +14,22 @@ lastupdated: "2018-06-04"
 {:tip: .tip}
 
 # Analisando conjuntos de dados com modelos gerados customizados
+{: #dsx-overview}
 
 O Watson Studio fornece o ambiente e as ferramentas para resolver seus problemas de negócios, analisando dados de forma colaborativa. É possível escolher as ferramentas que você precisa para analisar, purificar e organizar dados. Aprenda a alimentar dados de fluxo ou a criar, treinar e implementar modelos de aprendizado de máquina. O Watson Studio integra-se a uma ampla variedade de serviços do {{site.data.keyword.cloud}} e ao Watson Knowledge Catalog, que fornece gerenciamento de política para controlar ativos e catálogos para indexação para localizá-los. Saiba mais em https://dataplatform.ibm.com/.
 
 O Watson Studio é estruturado em torno de uma arquitetura baseada em projeto, que organiza seus recursos para resolver um problema de negócios. Os recursos incluem conexões com armazenamentos de dados na nuvem e no local, arquivos de dados, colaboradores e recursos analíticos como modelos. Saiba mais em https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics.
 
 ## Aprendizado de máquina para o {{site.data.keyword.DSX}}
-{: #dsx}
+{: #dsx-learning}
 
 Ao usar o {{site.data.keyword.DSX}}, é possível treinar modelos e implementá-los e, em seguida, consumir os resultados usando APIs. Essas APIs podem, então, ser usadas nos aplicativos iOS ou Swift.
 
 Com o IBM Watson Machine Learning, depois de configurar seu ambiente, é possível criar modelos, implementá-los na nuvem e treiná-los. Para obter mais informações, consulte [Criar, implementar e treinar modelos com o {{site.data.keyword.pm_full}} e o {{site.data.keyword.DSX}}](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics).
 
 ### Tutoriais
+{: #dsx-tutorials}
+
 - [ Construir um Modelo de Regressão Logística com o  {{site.data.keyword.pm_short}} ](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics)
 - [ Construa um modelo ingênus-Bayes com o  {{site.data.keyword.pm_short}} ](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics)
 
@@ -41,15 +45,15 @@ Com o IBM Watson Machine Learning, depois de configurar seu ambiente, é possív
   * Para um projeto iOS, bastando incluir o recurso {{site.data.keyword.pm_short}} no projeto iOS, as credenciais são injetadas instantaneamente no app.
     Para acessar as credenciais por meio do aplicativo, copie e cole o fragmento de código a seguir. Além disso, certifique-se de incluir o terminal de pontuação no app, que pode ser localizado na guia `implementation` de implementação do modelo.
 
-    ```Swift
-    // The url to your model's scoring endpoint
+    ```swift
+    /* The url to your model's scoring endpoint */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
 
-    // Your credentials
+    /* Your credentials */
     var machineLearningUsername: String!
     var machineLearningPassword: Cadeia!
 
-    // Machine Learning initialization
+    /* Machine Learning initialization */
     if let contents = Bundle.main.path(forResource:"BMSCredentials", ofType: "plist"),
        let dictionary = NSDictionary(contentsOfFile: contents),
        let username = dictionary["machinelearningUsername"] as? String,
@@ -64,19 +68,19 @@ Com o IBM Watson Machine Learning, depois de configurar seu ambiente, é possív
 
   * Para o aplicativo do lado do servidor, inclua manualmente seu nome de usuário e senha no aplicativo, bem como o terminal de pontuação, que pode ser localizado na guia `implementation` de implementação do modelo.
 
-    ```Swift
-    // Your Machine Learning Credentials
+    ```swift
+    /* Your Machine Learning Credentials */
     let machineLearningUsername: String = "<your-ml-service-username>"
     let machineLearningPassword: String = "<your-ml-service-password>"
 
-    // The url to your model's scoring endpoint
+    /* The url to your model's scoring endpoint */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
     ```
     {: codeblock}
 
 4. Recupere os tokens de acesso e execute a análise preditiva em conjuntos de dados de seu aplicativo com um SDK simples do cliente.
 
-  ```Swift
+  ```swift
   public class MachineLearning {
 
       private let username: String
@@ -175,7 +179,7 @@ Com o IBM Watson Machine Learning, depois de configurar seu ambiente, é possív
   {: codeblock}
 
 ### Exemplo
-{: #example}
+{: #dsx-example}
 
 **Nome do cenário:** Predição da linha de produto
 
@@ -184,7 +188,7 @@ implementado.
 
 Depois que o modelo é implementado, é possível executar a análise preditiva usando o terminal de pontuação.
 
-```Swift
+```swift
 // The data you want to have analyzed
 let examplePayload: [String: Any] = [
     "fields": ["GENDER", "AGE", "MARITAL_STATUS", "PROFESSION"],
@@ -216,6 +220,8 @@ client.retrieveToken { token in
 Ótimo trabalho! Agora é possível analisar conjuntos de dados usando modelos de aprendizado de máquina gerados customizados. Mantenha o ritmo aprendendo mais sobre os recursos que o {{site.data.keyword.pm_short}} tem para oferecer em [Ciência de dados e aprendizado de máquina](https://www.ibm.com/analytics/data-science/machine-learning).
 
 ### Links Relacionados
+{: #dsx-related}
+
 * [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling/index.html#using-machine-learning-with-data-science-experience)
 * [{{site.data.keyword.DSX}}](https://datascience.ibm.com/)
 * [ {{site.data.keyword.DSX}}  documentação ](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics)

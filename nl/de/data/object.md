@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -12,7 +13,7 @@ lastupdated: "2018-11-08"
 {:pre: .pre}
 
 # Object Storage für statischen Inhalt verwenden
-{: #object}
+{: #object-storage}
 
 Object Storage ist eine der Basiskomponenten für das Cloud-Computing und
 stellt leistungsfähige Funktionen für Apple-Entwickler und deren Anwendungen
@@ -51,18 +52,17 @@ Grundlage Ihrer Auswahl werden Ihre Daten verteilt und an mehreren Standorten
 gespeichert.
 
 ## API
+{: #api-cos}
 
 Die {{site.data.keyword.cos_full}}-API ist eine REST-basierte API
 für das Lesen und Schreiben von Objekten. Sie unterstützt eine Untergruppe der
 S3-API für die einfache Migration von Anwendungen auf
 {{site.data.keyword.cloud_notm}}. Zur Nutzung von
 {{site.data.keyword.cos_full}} kann jedes beliebige S3-SDK verwendet
-werden. Weitere Informationen enthält die umfassende
-[API-Referenz
-für {{site.data.keyword.cos_short}}](docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api)
+werden. Weitere Informationen enthält die umfassende [API-Referenz für {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api).
 
 ## Sicherheit
-{: #security}
+{: #security-cos}
 
 {{site.data.keyword.cos_full_notm}} ist äußerst sicher. Anfangs
 haben nur die Bucket- und Objekteigner Zugriff auf den
@@ -85,15 +85,16 @@ Zum Schutz Ihrer Daten in
 Zugriffssteuerungsmechanismen verwenden.
 
 **Richtlinien von Identity and Access Management (IAM)**
-IAM ermöglicht es Unternehmen mit mehreren Mitarbeitern, unter einem
-einzigen Konto mehrere Benutzer zu erstellen und zu verwalten. Mit
+{: #iam-cos}
+
+IAM ermöglicht es Unternehmen mit mehreren Mitarbeitern, unter einem einzigen Konto mehrere Benutzer zu erstellen und zu verwalten. Mit
 IAM-Richtlinien können Unternehmen den IAM-Benutzern die Steuerung ihrer
 {{site.data.keyword.cos_short}}-Buckets gewähren.
 
-**Zugriffssteuerungslisten (Access Control Lists,
-ACLs)**
-Mithilfe von ACLs können Sie bestimmten Benutzern für ein einzelnes Bucket
-spezielle Berechtigungen (z. B. READ oder WRITE) erteilen.
+**Zugriffssteuerungslisten (Access Control Lists, ACLs)**
+{: #acls-cos}
+
+Mithilfe von ACLs können Sie bestimmten Benutzern für ein einzelnes Bucket spezielle Berechtigungen (z. B. READ oder WRITE) erteilen.
 
 Ruhende Daten werden auf Providerseite automatisch mit der
 256-Bit-Verschlüsselung gemäß Advanced
@@ -103,10 +104,12 @@ Netzbetreiberstufe TLS (Transport Layer Security), SSL (Secure Sockets Layer)
 oder SNMPv3 mit AES-Verschlüsselung geschützt.
 
 ### Verschlüsselung
+{: #encryption-cos}
 
 Ruhende Daten werden auf Providerseite automatisch mit der
-256-Bit-Verschlüsselung gemäß Advanced Encryption Standard (AES) und 256-Hash
-gemäß Secure Hash Algorithm (SHA) verschlüsselt. Bewegte Daten werden durch die
+256-Bit-Verschlüsselung gemäß Advanced
+Encryption Standard (AES) und 256-Hash gemäß Secure Hash Algorithm
+(SHA) verschlüsselt. Bewegte Daten werden durch die
 Verwendung der integrierten Netzbetreiberstufe TLS/SSL (Transport Layer
 Security/Secure Sockets Layer) oder SNMPv3 mit
 AES-Verschlüsselung geschützt.
@@ -123,6 +126,7 @@ Bereitstellung des Schlüssels zum Speichern und Abrufen der Daten liegt jedoch
 in Ihrer Verantwortung.
 
 ## Ausfallsicherheit
+{: #resiliency-cos}
 
 Beim Erstellen eines Buckets müssen Sie eine Ebene für die
 Ausfallsicherheit auswählen (regionsübergreifend oder regional). Auf der
@@ -135,6 +139,7 @@ bei Ihrer Entscheidung für eine der beiden Optionen nach Ihren
 Anwendungsanforderungen.
 
 ### Ländergruppen
+{: #geographies-cos}
 
 {{site.data.keyword.cos_full_notm}} kann überall auf der Welt
 genutzt werden. Bei der Bucketerstellung können Sie auswählen, wo Ihre Daten
@@ -154,6 +159,7 @@ Betrieb befindet.
 * Berücksichtigen Sie die Preismodelle.
 
 ## Anwendungsfälle und Speicherklassen
+{: #usecases-cos}
 
 Abhängig von Ihrem Anwendungsfall können Sie Kosten reduzieren, indem
 Sie einen Serviceplan auswählen, der Ihren Anforderungen entspricht. Archivierungsoperationen,
@@ -163,13 +169,14 @@ zugegriffen wird. Diese Unterscheidung schlägt sich in der
 Speicherklassenunterstützung
 und dem Preistarif für Ihre Anwendungen nieder. Speicherklassen werden auf
 Bucketebene definiert, so dass Sie eine Kombination aus Plänen verwenden
-können, die Ihren Anforderungen entspricht. Erstellen Sie einen Bucket, der für die Speicherklasse definiert ist, die Sie verwenden möchten. 
+können, die Ihren Anforderungen entspricht. Erstellen Sie einen Bucket, der für die Speicherklasse definiert ist, die Sie verwenden möchten.
 
 Weitere Informationen zur Preisstruktur enthält die Dokumentation für die
 [Speicherklassen
 von {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/help/billing.html#ibm-cos-pricing).
 
 ### Beispiele für Speicherklassen
+{: #samples-cos}
 
 **Standard**
 Dieser Service ist für unstrukturierte Daten gedacht, auf die häufig
@@ -189,4 +196,4 @@ die langfristige Sicherung.
 **Flex** Diese Bereitstellung ist auf variable
 Datenzugriffsanforderungen abgestimmt und schützt Ihr Budget vor unerwarteten
 Kostenschwankungen.
-Speicherklassen werden auf Bucketebene definiert. Erstellen Sie einen Bucket, der für die Speicherklasse definiert ist, die Sie verwenden möchten. 
+Speicherklassen werden auf Bucketebene definiert. Erstellen Sie einen Bucket, der für die Speicherklasse definiert ist, die Sie verwenden möchten.

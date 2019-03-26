@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -46,6 +46,7 @@ lastupdated: "2018-11-12"
 
 
 ## 开始之前
+{: #prereqs-applaunch}
 
 首先，请确保您已准备好以下必备软件：
 
@@ -63,7 +64,7 @@ lastupdated: "2018-11-12"
 4. 在导航窗格中，单击**连接**以选择应用程序并将其绑定到服务。如果在创建期间未绑定服务实例，那么可以日后将其绑定到应用程序。
 
 ## 步骤 2. 初始化应用程序
-{: #step2}
+{: #initialize-applaunch}
 
 服务提供了特定于平台的 SDK 来简化应用程序开发。{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK 可通过 CocoaPods 或 Carthage 来进行安装。
 
@@ -72,7 +73,7 @@ lastupdated: "2018-11-12"
 3. 复制配置密钥以初始化应用程序。使用应用程序密钥、应用程序 GUID 和客户端密钥来配置应用程序并创建参与。
 
 ## 步骤 3. 创建功能部件
-{: #step3}
+{: #create-feature-applaunch}
 
 {{site.data.keyword.engage_short}} 服务可创建功能部件并测试对功能部件的响应。
 
@@ -92,13 +93,14 @@ lastupdated: "2018-11-12"
 通过“功能部件详细信息”窗口，可以将功能部件导出为 JSON 文件，该文件可以在客户端应用程序中用于装入缺省值。
 
 ## 步骤 4. 创建受众
-{: #step4}
+{: #audience-applaunch}
 
 ![创建受众](images/create_audience_animated.gif){: gif}
 
 要创建受众，请完成下列步骤：
 
 ### 创建**受众属性**：
+{: #audience-attrib-applaunch}
 
 1. 单击**受众** > **创建属性**。
 2. 提供以下值：
@@ -110,6 +112,7 @@ lastupdated: "2018-11-12"
   您可以根据需求选择创建多个受众属性，如下图中所示。
 
 ### 创建**受众**：
+{: #audience-create-applaunch}
 
 1. 单击**创建受众**。
 2. 在“新建受众”窗口中提供相应的名称和描述。
@@ -120,10 +123,12 @@ lastupdated: "2018-11-12"
 现在，您可以创建参与。
 
 ## 步骤 5. 创建参与
+{: #engagement-applaunch}
 
 参与是功能部件的实例化，其中属性已初始化，并连接了其中一个预定义的受众。可以使用**功能部件控制**或**应用程序内消息传递**来创建参与。
 
 ### 启用功能部件控制功能
+{: #feature-control-applaunch}
 
 通过此参与，应用程序所有者可以通过在运行时启用或禁用功能部件来控制该功能部件的可视性。可以对所有应用程序用户或者对一组特定用户和设备启用或禁用功能部件。
 
@@ -155,6 +160,7 @@ lastupdated: "2018-11-12"
 现在您可以测量参与的[性能](/docs/services/app-launch/app_measure_performance.html#applaunch_type)了。
 
 ### 启用应用程序内消息传递功能
+{: #app-message-applaunch}
 
 通过此参与，应用程序所有者可以在应用程序用户活跃地使用应用程序时向其发送通知。
 
@@ -201,10 +207,10 @@ lastupdated: "2018-11-12"
 现在您可以测量参与的[性能](/docs/services/app-launch/app_measure_performance.html#applaunch_type)了。
 
 ## 快速链接
-{: #links notoc}
+{: #links-applaunch notoc}
 
-查看以下链接以获取洞察，并了解 {{site.data.keyword.engage_short}} 的功能部件：
+查看以下链接以获得洞察，并了解 {{site.data.keyword.engage_short}} 的功能部件：
 
- - 试用 [App Launch 服务](https://console.bluemix.net/catalog/services/app-launch)。
+ - 试用 [App Launch 服务](https://cloud.ibm.com/catalog/services/app-launch)。
  - [博客和视频](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - 有关更多信息，请参阅 [App Launch - 入门教程](/docs/services/app-launch/index.html#gettingstartedtemplate)。
+ - 有关更多信息，请参阅 [App Launch - 入门教程](/docs/services/app-launch/index.html)。

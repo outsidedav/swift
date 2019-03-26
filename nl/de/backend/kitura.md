@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-03-07"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -25,7 +26,7 @@ aufgerufen werden können.
 
 Kitura kann bei allen Services und Funktionen, die von
 {{site.data.keyword.cloud}} bereitgestellt werden (inklusive
-{{site.data.keyword. appid_short}},
+{{site.data.keyword.appid_short}},
 {{site.data.keyword.mobilepushshort}} und
 {{site.data.keyword.mobileanalytics_short}}) sowie in Datenbanken, das
 maschinelle Lernen und andere Services integriert werden. Kitura kann dann
@@ -33,10 +34,7 @@ unter Verwendung einer der beiden Cloud Foundry- oder Docker-Plattformen
 (Kubernetes-basiert) in {{site.data.keyword.cloud}} bereitgestellt und
 automatisch skaliert werden.
 
-Kitura stellt eine
-[Befehlszeilenschnittstelle
-(CLI)](http://www.kitura.io/en/starter/gettingstarted.html) namens kitura zur Verfügung, die das Erstellen,
-Testen und Bereitstellen von Kitura-Anwendungen vereinfacht. Anwendungen, die
+Kitura stellt eine [Befehlszeilenschnittstelle (CLI)](https://www.kitura.io/guides/kituracli/gettingstarted.html) namens `kitura` zur Verfügung, die das Erstellen, Testen und Bereitstellen von Kitura-Anwendungen vereinfacht. Anwendungen, die
 mithilfe der Kitura-CLI erstellt werden, besitzen eine vollständige
 Unterstützung für die Bereitstellung in jeder beliebigen Cloud, die Cloud
 Foundry-, Docker- und Kubernetes-Technologien unterstützt. Falls Sie die
@@ -48,6 +46,7 @@ Projekt und eine Bereitstellungspipeline und stellen die von Ihrer Anwendung
 benötigten Services bereit.
 
 ## Vorbereitende Schritte
+{: #prereqs-kitura}
 
 Stellen Sie zunächst sicher, dass die folgenden Voraussetzungen gegeben
 sind:  
@@ -63,7 +62,8 @@ sind:
 1. Navigieren Sie in der Entwicklerkonsole für Apple zum Abschnitt
 mit den Starter-Kits. Wählen Sie ein vordefiniertes Starter-Kit wie z. B. "Swift for
 Backend for Frontend API" aus oder erstellen Sie nach Auswahl der Kachel
-**Projekt erstellen** ein angepasstes Projekt. Klicken Sie auf **Projekt erstellen**.
+**Projekt erstellen** ein angepasstes Projekt. Klicken Sie
+auf **Projekt erstellen**.
 
 2. Geben Sie Ihrem Projekt einen Namen und wählen Sie die Position aus,
 an der Ihr Projekt bereitgestellt werden soll. Wenn Sie sich hinsichtlich der
@@ -83,7 +83,8 @@ Handlerfunktionen in Kitura enthält. Wenn Sie nicht über eine Open
 API-Definition verfügen, stellt dies kein Problem dar, denn mit den Router-APIs
 von Kitura können Sie ohne großen Aufwand REST-APIs manuell erstellen.
 
-5. Klicken Sie auf **Projekt erstellen**.
+5. Klicken Sie
+auf **Projekt erstellen**.
 
 Jetzt wird ein Projekt erstellt, das jedoch noch keine zusätzlichen
 Services nutzt. Sie können Services hinzufügen, indem Sie auf die
@@ -93,7 +94,7 @@ abzurufen. Services können ohne Weiteres auch zu einem vorhandenen Projekt
 hinzugefügt werden.
 
 ## Schritt 2. Services hinzufügen
-{: #add_services}
+{: #add_services-kitura}
 
 1. Klicken Sie auf die Schaltfläche **Ressource hinzufügen**, um Services hinzuzufügen. Servicekategorien werden angezeigt. Wählen Sie beispielsweise
 **Daten** aus, um die verfügbaren Datenbanken anzuzeigen,
@@ -110,13 +111,13 @@ richtige Verbindung zum Service enthalten ist. Jetzt können Sie weitere Service
 hinzufügen,
 indem Sie die Schaltfläche **Ressource hinzufügen**
 auswählen oder auf **Code herunterladen**
-klicken, um den Code für das Projekt abzurufen. 
+klicken, um den Code für das Projekt abzurufen.
 
 Nachdem Sie Ihr Projekt heruntergeladen haben, können Sie mit der Arbeit
 an Ihrer App beginnen.
 
 ## Schritt 3. Anwendung mit Xcode entwickeln
-{: #develop_xcode}
+{: #develop_xcode-kitura}
 
 Nachdem Sie Ihr Projekt heruntergeladen haben, können Sie es mit Hilfe
 von Xcode ändern und entwickeln und anschließend Ihre geänderte Anwendung zur
@@ -143,7 +144,7 @@ in der Symbolleiste auf den Abschnitt
 **projektname** auswählen. Überprüfen Sie, ob als Zielgerät
 **Mein Mac** festgelegt ist.
 
-3. Führen Sie den Kitura-Server lokal aus.
+3. Führen Sie den Kitura-Server lokal aus. 
   Klicken Sie auf **Ausführen** oder verwenden Sie die Tastenkombination `⌘+R`, um den Kitura-Server zu starten. Nachdem der Server
 gestartet wurde, können Sie überprüfen, ob die folgenden Standard-URLs für
 Kitura aktiv sind:
@@ -153,7 +154,7 @@ Kitura aktiv sind:
 [http://localhost:8080/health]()
 
 ## Schritt 5. REST-APIs hinzufügen
-{: #add_restapi}
+{: #add_restapi-kitura}
 
 Das Gerüst eines Kitura-Servers wird erstellt, das jedoch keine
 REST-APIs bereitstellt, die durch eine iOS-Anwendung genutzt werden können. Sie
@@ -189,14 +190,13 @@ von
 `/meals` zur Datei
 `Sources/Application/Application.swift` hinzu, indem Sie den
 folgenden Code in der Funktion `postInit()` hinzufügen:  
-
   ```swift
   router.get("/meals", handler: loadHandler)
   ```
   {: codeblock}
 
 4. Implementieren Sie die Funktion "loadHandler" in der Datei `Sources/Application/Application.swift`, indem Sie den folgenden Code
-als weitere Funktion in der Klasse `App` hinzufügen:  
+als weitere Funktion in der Klasse `App` hinzufügen:
   ```swift
   func loadHandler(completion: ([Meal]?, RequestError?) -> Void ) {
       let meals: [Meal] = self.mealStore.map({ $0.value })
@@ -211,14 +211,14 @@ von
 `Meals` oder einem Fehler antwortet.
 
 5. Führen Sie das Projekt aus.  
- Klicken Sie auf **Ausführen** oder verwenden Sie die Tastenkombination `⌘+R`. Wählen Sie bei entsprechender
+  Klicken Sie auf **Ausführen** oder verwenden Sie die Tastenkombination `⌘+R`. Wählen Sie bei entsprechender
 Aufforderung die Option **Eingehende Netzverbindungen zulassen**
 aus.
 
-6. Testen Sie die REST-API mithilfe der Anforderung `GET`, die abgleicht, wie Web-Browser Daten von einem Server anfordern.  
+6. Testen Sie die REST-API mithilfe der Anforderung `GET`, die abgleicht, wie Web-Browser Daten von einem Server anfordern. 
 
-  Sie können die REST-API mit der folgenden URL testen:   
-  ```
+  Sie können die REST-API mit der folgenden URL testen:  
+  ```swift
   * `GET /meals`:	[http://localhost:8080/meals]()
   ```
   {: codeblock}
@@ -234,7 +234,7 @@ Speichern der Daten in einer Datenbank).
 {: tip}
 
 ## Schritt 6. KituraKit in Ihrer iOS-Anwendung installieren
-{: #kiturakit}
+{: #install-kiturakit}
 
 Die REST-APIs, die mithilfe des Kitura-Servers erstellt wurden, sind
 Standard-Web-APIs, die unabhängig von der verwendeten Clientbibliothek oder
@@ -264,20 +264,20 @@ wenn dort noch keine vorhanden ist:
 
 2. Bearbeiten Sie die Poddatei und legen Sie die globale Plattform iOS
 11 für Ihr Projekt fest, indem Sie die folgende Zeile ersetzen:
-  ```
+  ```pod
   # platform :ios, '9.0'
   ```
   {: codeblock}
 
   Geben Sie stattdessen den folgenden Code an:
-	```
+	```pod
   platform :ios, '11.0'
   ```
   {: codeblock}
 
 3. Fügen Sie KituraKit zur Poddatei hinzu, indem Sie Folgendes unter "# Pods
 for <application name>" hinzufügen:
-  ```
+  ```pod
   pod 'KituraKit', :git => 'https://github.com/IBM-Swift/KituraKit.git', :branch => 'pod'
   ```
   {: codeblock}
@@ -306,20 +306,20 @@ hergestellt wird:
   ```swift
   import KituraKit
   
-  // Connect to the Kitura server on http://localhost:8080
+  /* Connect to the Kitura server on http://localhost:8080 */
   guard let client = KituraKit(baseURL: "http://localhost:8080") else {
       print("Error creating KituraKit client")
       return
   }
   
-  // Make a request to `GET /meals`, expecting a [Meal] or a RequestError
+  /* Make a request to `GET /meals`, expecting a [Meal] or a RequestError */
   client.get("/meals") { (meals: [Meal]?, error: RequestError?) in
-      // Check for an error
+      /* Check for an error */
       guard error == nil else {
           print("Error saving meal to Kitura: \(error!)")
           return
       }
-      // Check for meals
+      /* Check for meals */
       guard let meals = meals else {
           print("Received Meals!")
           return
@@ -341,10 +341,6 @@ Daten in einer Datenbank).
 {: tip}
 
 ## Nächste Schritte
-{: #next notoc}
+{: #next-kitura notoc}
 
-Nachdem Sie einen Kitura-Server erstellt haben, von dem die REST-API
-bereitgestellt wird, die durch Ihre iOS-Anwendung aufgerufen wird, können Sie
-nun Ihren Server in {{site.data.keyword.cloud_notm}} bereitstellen. Für
-Bereitstellungen können Sie Container mit Kubernetes, sichere Container oder
-Cloud Foundry verwenden.
+Nachdem Sie einen Kitura-Server erstellt haben, von dem eine REST-API bereitgestellt wird, die durch Ihre iOS-Anwendung aufgerufen wird, können Sie nun Ihren Server in {{site.data.keyword.cloud_notm}} bereitstellen. Für Bereitstellungen [Deployments](/docs/swift/deploying_apps.html) können Sie Container mit Kubernetes, sichere Container, Cloud Foundry, Cloud Foundry Enterprise Environment oder virtuelle Instanzen verwenden.

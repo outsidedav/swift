@@ -1,23 +1,25 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-07"
+  years: 2018, 2019
+lastupdated: "2019-01-31"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:tip: .tip}
 
 # {{site.data.keyword.visualrecognitionshort}}
 {: #recognition}
 
-通过 {{site.data.keyword.visualrecognitionfull}} 服务，应用程序可以使用机器学习来快速、准确地对可视内容进行标记、分类和培训。该服务可以帮助您对几乎任何可视内容进行分类，在几分钟内培训自己的定制模型，并检测人脸。
+通过 {{site.data.keyword.visualrecognitionfull}} 服务，应用程序可以使用机器学习来快速、准确地对可视内容进行标记、分类和训练。该服务可以帮助您对几乎任何可视内容进行分类，在几分钟内训练自己的定制模型，并检测人脸。
 
 ## 工作原理
-{: ##how-it-works}
+{: #how-it-works-recognition}
 
 1. 应用程序选择要分析的图像。
 2. 应用程序使用 Watson Swift SDK 将图像发送到 {{site.data.keyword.visualrecognitionshort}} 服务。
@@ -25,111 +27,108 @@ lastupdated: "2018-08-07"
 4. 该服务的分析结果由 Watson Swift SDK 返回给应用程序。
 
 ## 开始之前
-{: ###before-you-begin}
+{: #prereqs-recognition}
 
-首先，请确保您已准备好以下必备软件：
-<ul>
-  <li>iOS 8.0+</li>
-  <li>Xcode 9.0+</li>
-  <li>Swift 3.2+ 或 Swift 4.0+</li>
-  <li>Carthage</li>
-</ul>
+确保满足以下先决条件：
 
-建议使用 [Carthage](https://github.com/Carthage/Carthage) 来管理依赖项，并为应用程序构建 Watson Swift SDK。如果您不熟悉 Carthage，可以使用 [Homebrew](http://brew.sh/) 来安装 Carthage：
+* iOS 10.0+
+* Xcode 9.3+
+* Swift 4.1+
+* CocoaPods、Carthage 或 Swift Package Manager
 
-```bash
-$ brew update
-$ brew install carthage
+您可以使用 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods)、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage) 或
+[Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager) 安装 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk)。通过使用 CocoaPods(https://cocoapods.org/) 管理依赖关系，您仅获得所需框架，而不是整个 Watson Swift SDK。如果您未使用过 CocoaPods，您可以轻松进行安装：
+
+```console
+sudo gem install cocoapods
 ```
+{: codeblock}
 
 ## 步骤 1. 创建 Visual Recognition 实例
-{: ###create-and-configure-an-instance-of-visual-recognition}
+{: #create-instance-recognition}
 
 供应 {{site.data.keyword.visualrecognitionshort}} 服务的实例：
 
 1. 在 {{site.data.keyword.cloud_notm}} 目录中，选择 **{{site.data.keyword.visualrecognitionshort}}**。这将打开服务配置屏幕。
 2. 为服务实例提供名称或使用预设名称。
 3. 如果要将实例绑定到应用程序，请从**连接**菜单中选择应用程序。
-4. 选择定价套餐，然后单击**创建**。
+4. 选择价格套餐，然后单击**创建**。
 5. 选择**凭证**选项卡，以查看服务凭证。这些值用于从应用程序连接到服务。
 
 ## 步骤 2. 下载并构建依赖项
-{: ###download-and-build-dependencies}
+{: #download-depend-recognition}
 
-使用您最喜欢的文本编辑器，在项目的根目录（`.xcodeproj` 文件所在的位置）中创建名为 `Cartfile` 的文件。然后，添加一行以将 Watson Swift SDK 指定为依赖项：
+使用您最喜欢的文本编辑器，通过运行 `pod init`，在项目的根目录（`.xcodeproj` 文件所在的位置）中创建新的 `Podfile`。然后，添加行以将 Watson Swift SDK 的 {{site.data.keyword.visualrecognitionshort}} 框架指定为依赖项：
+
+```pod
+use_frameworks!target 'MyApp' do
+    pod 'IBMWatsonVisualRecognitionV3'
 ```
-github "watson-developer-cloud/swift-sdk"
+{: codeblock}
+
+对于生产应用程序，您可能还要指定特定的[版本需求](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions)，以避免 Watson Swift SDK 新发行版中的意外更改。
+
+`Podfile` 已就位，现在可以下载依赖项。使用终端导航至项目的根目录，然后运行 CocoaPods：
+
+```console
+pod install
 ```
-{: pre}
+{: codeblock}
 
-对于生产应用程序，可以指定特定的[版本需求](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement)，以避免 Watson Swift SDK 新发行版中的意外更改。
+Cocoapods 下载 {{site.data.keyword.visualrecognitionshort}} 框架，并在项目的 `Pods/` 文件夹中进行构建。
 
-`Cartfile` 已就位，现在可以下载并构建依赖项。使用终端浏览至项目的根目录，然后运行 Carthage：
+要防止 Pod 构建失败，在 Xcode 中打开项目时，请打开以 `.xcworkspace` 而不是 `.xcodeproj` 结尾的文件。
+{: tip}
 
-```bash
-carthage update --platform iOS
-```
-{: pre}
+## 步骤 3. 分析应用程序中的图像
+{: #analyze-images-recognition}
 
-Carthage 会下载 Watson Swift SDK，并在项目的 `Carthage/Build/iOS` 文件夹中构建其框架。
-
-## 步骤 3. 向应用程序添加框架
-{: ###add-frameworks-to-your-app}
-
-### 链接 Visual Recognition 步骤：
-
-现在，Watson Swift SDK 框架已由 Carthage 构建，您必须将 Visual Recognition 框架与应用程序相链接。
-
-1. 在 Xcode 中打开应用程序，然后选择项目以打开其设置。
-2. 选择应用程序目标，然后打开**常规**选项卡。
-3. 向下滚动到“链接的框架和库”部分，然后单击 `+` 图标。
-4. 在显示的窗口中，选择**添加其他项...**，然后浏览至 `Carthage/Build/iOS` 目录。选择 **VisualRecognitionV3.framework** 以将其与应用程序相链接。
-
-### 复制 Visual Recognition 步骤：
-
-除了_链接_ Visual Recognition 框架外，还必须将其_复制_到应用程序中，以使其在运行时可访问。Xcode 有多种不同的方法可复制或嵌入框架，但您可以使用 Carthage 脚本来避免特定的 [App Store 提交错误](http://www.openradar.me/radar?id=6409498411401216)。
-
-1. 在 Xcode 中打开应用程序目标的设置后，浏览至**构建阶段**选项卡。
-2. 单击 `+` 图标，然后选择**新建运行脚本阶段**。
-3. 将以下命令添加到运行脚本阶段：`/usr/local/bin/carthage copy-frameworks`。
-4. 将 Visual Recognition 框架添加到**输入文件**列表中：`$(SRCROOT)/Carthage/Build/iOS/VisualRecognitionV3.framework`。
-
-现在，您已准备就绪，可以开始在应用程序中使用 Watson Swift SDK！
-
-## 步骤 4. 分析应用程序中的图像
-{: #analyze-images-in-your-app}
-
-1. 在 Xcode 中打开 `ViewController.swift` 文件。
+以下样本帮助您将 {{site.data.keyword.visualrecognitionshort}} 功能添加到应用程序，通常在 `ViewController.swift` 中。使用以下示例，您可以扩展用例的 Visual Recognition 调用。
 
 1. 添加用于 Visual Recognition 的 import 语句：
-    ```swift
-    import VisualRecognitionV3
-    ```
-    {: pre}
+    
+  ```swift
+  import VisualRecognition
+  ```
+  {: codeblock}
 
-1. 传递 API 密钥和版本（可以使用当天的日期）来初始化 SDK：
-    ```swift
-    let visualRecognition = VisualRecognition(apiKey: "your-api-key", version: "yyyy-mm-dd")
-    ```
-    {: pre}
+2. 传递 API 密钥和版本（可以使用当天的日期）来初始化 SDK：
+    
+  ```swift
+  let visualRecognition = VisualRecognition(version: "yyyy-mm-dd", apiKey: "your-api-key")
+  ```
+  {: codeblock}
 
-1. 添加以下代码来对图像进行分类：
-    ```swift
-    let url = "your-image-url"
-    let failure = { (error: Error) in print(error) }
-    visualRecognition.classify(url: url, failure: failure) { classifiedImages in
-        print(classifiedImages)
+  您可以查看[版本参数文档](https://cloud.ibm.com/apidocs/visual-recognition#versioning)或者使用创建 {site.data.keyword.conversationshort}} 服务的日期。{: tip}
+
+3. 添加以下代码来对图像进行分类：
+    
+  ```swift
+  let url = "your-image-url"
+  visualRecognition.classify(url: url) { response, error in
+      if let error = error {
+          print(error)
     }
-    ```
-    {: pre}
+
+    guard let classifiedImages = response?.result else {
+          print("Failed to classify the image")
+          return
+      }
+      print(classifiedImages)
+  }
+  ```
+  {: codeblock}
+
+Visual Recognition 框架支持多个分类方法。查看 Watson SDK [Visual Recognition 文档](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html)以找到最适合应用程序的方法。
+{: tip}
 
 ## 使用入门模板工具包
 {: #recognition_starterkits}
 
-[入门模板工具包](https://console.bluemix.net/developer/appledevelopment/starter-kits)是利用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。您可以通过选择 **Visual Recognition for iOS with Watson** 入门模板工具包来使用 {{site.data.keyword.visualrecognitionshort}} 服务。此服务可对图像进行评估和分类。从移动设备上传新图像或现有图像，然后 Visual Recognition 应用程序会对图像内容快速标记和分类。
+[初学者工具包](https://cloud.ibm.com/developer/appledevelopment/starter-kits)是使用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。您可以通过选择 **Visual Recognition for iOS with Watson** 入门模板工具包来使用 {{site.data.keyword.visualrecognitionshort}} 服务。此服务可对图像进行评估和分类。从移动设备上传新图像或现有图像，然后 Visual Recognition 应用程序会对图像内容快速标记和分类。
 
 要开始使用，请执行以下操作：
-1. 选择在[此处](https://console.bluemix.net/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson)找到的入门模板工具包。
+1. 选择在[此处](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson)找到的入门模板工具包。
 2. 使用缺省服务创建项目。
 3. 通过单击**下载代码**来下载项目。服务凭证会注入到 `BMSCredentials.plist` 文件中的相应密钥字段中。
 
@@ -137,6 +136,5 @@ Carthage 会下载 Watson Swift SDK，并在项目的 `Carthage/Build/iOS` 文�
 {: #recognition_next}
 
 太棒了！现在，Visual Recognition 可用于应用程序。请一鼓作气，尝试下列其中一个选项：
-* 查看 [GitHub 上的 Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk)。
+* 查看 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window}，并且探索其他受支持的 Watson 服务。
 * 有关更多信息，请参阅 [IBM Watson {{site.data.keyword.visualrecognitionshort}}](https://www.ibm.com/watson/services/visual-recognition/)。
-

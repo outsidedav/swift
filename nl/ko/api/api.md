@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -19,8 +19,9 @@ lastupdated: "2018-11-12"
 API가 {{site.data.keyword.cloud_notm}}의 외부에서 유지보수되는지 여부에 관계없이 사용자는 API Connect를 사용하여 {{site.data.keyword.cloud}}에서 API를 관리할 수 있습니다. 사용을 제어하고, 채택률을 높이며, 통계를 추적할 수 있도록 API를 관리하는 방법에 대해 알아보십시오.
 
 ## API Connect의 인스턴스 작성
+{: #create-apiconnect}
 
-[카탈로그](https://console.bluemix.net/catalog/)로 이동하고 API Connect의 인스턴스를 작성하여 API를 관리하십시오.
+[카탈로그](https://cloud.ibm.com/catalog/)로 이동하고 API Connect의 인스턴스를 작성하여 API를 관리하십시오.
 
 `Menu->APIs`를 사용하여 API Connect Management 콘솔에 액세스하십시오.
 
@@ -35,6 +36,7 @@ API를 정의하면 여러 가지 도구로 Open API 스펙(Swagger)을 정의�
 - [Loopback](https://loopback.io/)
 
 ## 관리 API 정의
+{: #define-apiconnect}
 
 클라이언트 애플리케이션 및 백엔드 로직 간의 API 게이트웨이를 관리하는 API 프록시를 정의할 수 있습니다. Open API 스펙(Swagger 문서) YAML 또는 JSON을 사용하여 프록시를 작성하려면 다음 단계를 수행하십시오. 
 
@@ -46,6 +48,7 @@ API를 정의하면 여러 가지 도구로 Open API 스펙(Swagger)을 정의�
 백엔드 로직 애플리케이션에 연결되는 URL을 가리키도록 외부 엔드포인트를 구성해야 합니다. 
 
 ## Swift 백엔드 작성
+{: #create-backend-apiconnect}
 
 이 API를 기반으로 백엔드 Swift 앱을 작성할 수 있습니다. 
 
@@ -113,6 +116,7 @@ func initializePet_Routes(app: App) {
 {{site.data.keyword.openwhisk_short}} 또는 전체 스택 Swift 런타임을 사용하여 API를 작성하고 API Connect 정의가 작성되면 iOS 앱에서 API를 이용할 수 있습니다.
 
 ## iOS 앱 모바일 앱에서 API 이용
+{: #consume-apiconnect}
 
 iOS 앱에서 백엔드 API를 이용하려면 Apple 콘솔을 사용하여 모바일 스타터 킷을 작성하십시오. 스타터 킷 보기를 사용하여 원하는 유형의 iOS Swift 스타터 킷을 작성하십시오.
 
@@ -135,10 +139,12 @@ iOS 앱에는 API를 위해 생성된 SDK 바인딩이 포함된 폴더가 있�
 `PLIST` 파일을 열고 SDK가 {{site.data.keyword.cloud_notm}}로 API를 호출할 수 있도록 API 라우트에서 복사한 값으로 호스트 값을 대체하십시오.
 
 ## 문서
+{: #docs-apiconnect}
 
-SDK가 iOS 앱 프로젝트에 포함된 경우 `Docs` 폴더에서 *README.html* 파일을 사용할 수 있습니다. 외부 브라우저에서 `Docs` 폴더를 열고 프로젝트 사용 방법에 대한 지시사항을 읽어 보십시오. 
+SDK가 iOS 앱 프로젝트에 포함된 경우 `Docs` 폴더에서 *README.html* 파일을 사용할 수 있습니다. 외부 브라우저에서 `Docs` 폴더를 열고 프로젝트 사용 방법에 대한 지시사항을 읽어 보십시오.
 
 ## API 변경 후 SDK 재작성
+{: #change-apiconnect}
 
 API가 변경되거나 새 기능을 사용할 수 있게 되고 {{site.data.keyword.openwhisk}}가 추가된 경우 `ibmcloud sdk` 명령을 사용하여 클라이언트 SDK를 재작성할 수 있습니다. 자세한 정보, 예제 및 구문 도움말은 [SDK 생성기](/docs/cli/sdk/index.html) 문서를 확인하십시오.
 
@@ -158,13 +164,16 @@ SDK를 작성할 수 있도록 하려면 Open API 스펙(Swagger) YAML 또는 JS
     ```
     {: codeblock}
 
-    iOS 앱 프로젝트 디렉토리에 SDK가 재작성되어 API에 대한 작업을 계속 수행할 수 있습니다. 
+    iOS 앱 프로젝트 디렉토리에 SDK가 재작성되어 API에 대한 작업을 계속 수행할 수 있습니다.
 
 ## 참조
+{: #reference-apiconnect}
 
 다음 SDK 예제는 스타터 킷에서 {{site.data.keyword.openwhisk_short}}에 대해 작성됩니다. iOS 앱에 포함할 수 있는 각각의 조치 및 코드의 Swift 스니펫을 볼 수 있습니다.
 
 ### 기본 API 메소드
+{: #default-methods-apiconnect}
+
  * [`getCreate`](#getCreate)
  * [`getDelete`](#getDelete)
  * [`getDeleteall`](#getDeleteall)
@@ -173,6 +182,8 @@ SDK를 작성할 수 있도록 하려면 Open API 스펙(Swagger) YAML 또는 JS
  * [`getUpdate`](#getUpdate)
 
 ### `getCreate` 사용
+{: #getcreate-apiconnect}
+
 {: #getCreate}
 
 ```swift
@@ -186,10 +197,13 @@ public static func getCreate(completionHandler: @escaping (_ response: Response?
     - 클로저(closure)는 `Response?` 및 `Error?`를 인수로 취합니다.
 
 ### `getCreate`로 인증
+{: #auth-getcreate}
 
 인증이 필요하지 않음
 
 ### `getCreate`를 사용하는 예제
+{: #example-getcreate}
+
 ```swift
 DefaultAPI.getCreate() { (response, error) in
     guard error == nil else {
@@ -209,7 +223,7 @@ DefaultAPI.getCreate() { (response, error) in
 {: codeblock}
 
 ### `getDelete` 사용
-{: #getDelete}
+{: #getdelete}
 
 ```swift
 public static func getDelete(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -222,10 +236,13 @@ public static func getDelete(completionHandler: @escaping (_ response: Response?
     - 클로저(closure)는 `Response?` 및 `Error?`를 인수로 취합니다.
 
 ### `getDelete`로 인증
+{: #auth-getdelete}
 
 인증이 필요하지 않음
 
 ### `getDelete`를 사용하는 예제
+{: #example-getdelete}
+
 ```swift
 DefaultAPI.getDelete() { (response, error) in
     guard error == nil else {
@@ -245,7 +262,7 @@ DefaultAPI.getDelete() { (response, error) in
 {: codeblock}
 
 ### `getDeleteall` 사용
-{: #getDeleteall}
+{: #getdeleteall}
 
 ```swift
 public static func getDeleteall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -258,10 +275,12 @@ public static func getDeleteall(completionHandler: @escaping (_ response: Respon
     - 클로저(closure)는 `Response?` 및 `Error?`를 인수로 취합니다.
 
 ### `getDeleteall`로 인증
+{: #auth-getdeleteall}
 
 인증이 필요하지 않음
 
 ### `getDeleteall`을 사용하는 예제
+{: #example-getdeleteall}
 
 ```swift
 DefaultAPI.getDeleteall() { (response, error) in
@@ -282,7 +301,7 @@ DefaultAPI.getDeleteall() { (response, error) in
 {: codeblock}
 
 ### `getRead` 사용
-{: #getRead}
+{: #getread}
 
 ```swift
 public static func getRead(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -295,10 +314,13 @@ public static func getRead(completionHandler: @escaping (_ response: Response?, 
     - 클로저(closure)는 `Response?` 및 `Error?`를 인수로 취합니다.
 
 ### `getRead`로 인증
+{: #auth-getread}
 
 인증이 필요하지 않음
 
 ### `getRead`를 사용하는 예제
+{: #example-getread}
+
 ```swift
 DefaultAPI.getRead() { (response, error) in
     guard error == nil else {
@@ -318,7 +340,7 @@ DefaultAPI.getRead() { (response, error) in
 {: codeblock}
 
 ### `getReadall` 사용
-{: #getReadall}
+{: #getreadall}
 
 ```swift
 public static func getReadall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -331,10 +353,13 @@ public static func getReadall(completionHandler: @escaping (_ response: Response
     - 클로저(closure)는 `Response?` 및 `Error?`를 인수로 취합니다.
 
 ### `getReadall`로 인증
+{: #auth-getreadall}
 
 인증이 필요하지 않음
 
 ### `getReadall`을 사용하는 예제
+{: #example-getreadall}
+
 ```swift
 DefaultAPI.getReadall() { (response, error) in
     guard error == nil else {
@@ -354,7 +379,7 @@ DefaultAPI.getReadall() { (response, error) in
 {: codeblock}
 
 ### `getUpdate` 사용
-{: #getUpdate}
+{: #getupdate}
 
 ```swift
 public static func getUpdate(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -367,10 +392,13 @@ public static func getUpdate(completionHandler: @escaping (_ response: Response?
     - 클로저(closure)는 `Response?` 및 `Error?`를 인수로 취합니다.
 
 ### `getUpdate`로 인증
+{: #auth-getupdate}
 
 인증이 필요하지 않음
 
 ### `getUpdate`를 사용하는 예제
+{: #example-getupdate}
+
 ```swift
 DefaultAPI.getUpdate() { (response, error) in
     guard error == nil else {

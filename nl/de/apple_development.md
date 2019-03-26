@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-27"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -35,7 +36,7 @@ Ausführung und Verwaltung Ihrer Apps. Bei der erwähnten kognitiven App sind
 beispielsweise die folgenden {{site.data.keyword.cloud_notm}}-Funktionen interessant:
 
 * [**{{site.data.keyword.cloud_notm}}
-Developer Experience](https://console.bluemix.net/docs/overview/dev-journey.html#dev-journey) ist kein Service, sondern vielmehr eine
+Developer Experience](/docs/overview/dev-journey.html) ist kein Service, sondern vielmehr eine
 Zusammenstellung von Funktionen in {{site.data.keyword.cloud_notm}},
 die Entwickler für den digitalen und den cloud-nativen Bereich beim Einstieg in
 die Erstellung von einsatzfähigen Apps unterstützen. Die automatische
@@ -49,18 +50,18 @@ visualisieren, Erkenntnisse zu erzielen und Modelle zur Verwendung in Ihrer
 eigenen kognitiven App zu erstellen.
 
 * [**IBM
-Streaming Analytics](../services/StreamingAnalytics/index.html#gettingstarted) fördert die Beschaffung und Analyse von
+Streaming Analytics](/docs/services/StreamingAnalytics/index.html) fördert die Beschaffung und Analyse von
 Datenströmen. Mithilfe dieser innovativen Analyseplattform können Sie
 Informationen direkt bei ihrem Eintreffen aus verschiedensten Typen von
 Datenquellen in Echtzeit einpflegen, analysieren und korrelieren.
 
 * Der [**{{site.data.keyword.cloud_notm}}
-Continuous Delivery-Service](../services/ContinuousDelivery/index.html#cd_getting_started) richtet eine DevOps-Toolchain
+Continuous Delivery-Service](/docs/services/ContinuousDelivery/index.html) richtet eine DevOps-Toolchain
 ein, um die kontinuierliche Bereitstellung Ihrer App zu automatisieren. Diese
 Toolchain können Sie ohne großen Aufwand erweitern und Managementfunktionen wie
 Überwachung, Protokollierung, Aufzeichnung und Alertausgabe einbeziehen. Mithilfe
 des [DevOps
-Insights-Service](../services/DevOpsInsights/index.html#gettingstarted) können Sie sogar erweitertes maschinelles Lernen auf
+Insights-Service](/docs/services/DevOpsInsights/index.html) können Sie sogar erweitertes maschinelles Lernen auf
 Ihre Toolchain anwenden.
 
 Die {{site.data.keyword.cloud_notm}}-Plattform bietet viele
@@ -83,7 +84,7 @@ Starter-Apps in verschiedenen Sprachen und Architekturmustern erstellen
 * Automatische Bereitstellung von Services
 * Verwaltung von App-Komponenten mittels einer portierbaren App-Struktur
 * Erstellung
-einer[Devops-Toolchain](../services/ContinuousDelivery/index.html#cd_getting_started) per Mausklick
+einer[Devops-Toolchain](/docs/services/ContinuousDelivery/index.html) per Mausklick
 
 Die folgenden Informationen erläutern detaillierter, wie
 {{site.data.keyword.cloud_notm}}
@@ -100,7 +101,7 @@ gesamten {{site.data.keyword.cloud_notm}}-Plattform. Jede Konsole deckt
 ein Interessengebiet (z. B. Watson, Sicherheit oder Finanzwesen) bzw. einen
 digitalen Kanal (wie mobile Apps oder Web-Apps) ab. Die
 [{{site.data.keyword.cloud_notm}}-Entwicklerkonsole
-für Apple](https://console.bluemix.net/developer/appledevelopment/dashboard) wurde konzipiert, damit Apple-Entwickler
+für Apple](https://cloud.ibm.com/developer/appledevelopment/dashboard) wurde konzipiert, damit Apple-Entwickler
 durch die {{site.data.keyword.cloud_notm}}-Plattform unterstützt
 schnell mit Anwendungen und Services experimentieren können. Zum Zugriff auf
 diese Konsolen klicken Sie in der
@@ -108,15 +109,15 @@ diese Konsolen klicken Sie in der
 sind beispielsweise die folgenden Entwicklerkonsolen:
 
 * [Entwicklerkonsole
-für Watson](https://console.bluemix.net/developer/watson/dashboard)
+für Watson](https://cloud.ibm.com/developer/watson/dashboard)
 * [Entwicklerkonsole
-für Mobilgeräte](https://console.bluemix.net/developer/mobile/dashboard)
+für Mobilgeräte](https://cloud.ibm.com/developer/mobile/dashboard)
 * [Entwicklerkonsole
-für Web-Apps](https://console.bluemix.net/developer/appservice/dashboard)
+für Web-Apps](https://cloud.ibm.com/developer/appservice/dashboard)
 * [Entwicklerkonsole
-für Sicherheit](https://console.bluemix.net/developer/security/dashboard)
+für Sicherheit](https://cloud.ibm.com/developer/security/dashboard)
 * [Entwicklerkonsole
-für Finanzwesen](https://console.bluemix.net/developer/finance/dashboard)
+für Finanzwesen](https://cloud.ibm.com/developer/finance/dashboard)
 
 <!--Cloud native development is the process of developing apps that are optimized to leverage capabilities engendered from running on the cloud.  Flexibility, portability, scaling, rapid development, continuous delivery, and a close coupling development and operations ("devops) are characteristics of cloud applications. The {{site.data.keyword.cloud}} Developer Experience quickly gets you started building cloud native applications that are ready for team development and bound for production use.-->
 
@@ -128,9 +129,9 @@ Konsole sowie einen konsistenten und intuitiven Workflow bei der
 minutenschnellen Erstellung einer funktionsfähigen und einsatzbereiten App.
 
 ## Apps mit Starter-Kits erstellen
-{: #apps}
+{: #starterkit-apps}
 
 Mithilfe von
-[Starter-Kits](starter_kit/starter_kits.html) können Sie
+[Starter-Kits](/docs/swift/starter_kit/starter_kits.html) können Sie
 Swift-Anwendungen erstellen, in denen Code, Daten, Services und Toolchains
 zusammengestellt sind und zusammen Ihre App bilden.

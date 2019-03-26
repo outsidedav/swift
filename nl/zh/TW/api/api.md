@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -19,8 +19,9 @@ lastupdated: "2018-11-12"
 您可以使用 API Connect 來管理 {{site.data.keyword.cloud}} 中的 API，無論 API 是否在 {{site.data.keyword.cloud_notm}} 中進行維護。學習管理您的 API，以控制用量、提高採用率及追蹤統計資料。
 
 ## 建立 API Connect 實例
+{: #create-apiconnect}
 
-移至[型錄](https://console.bluemix.net/catalog/)，然後建立 API Connect 實例，以管理您的 API。
+移至[型錄](https://cloud.ibm.com/catalog/)，然後建立 API Connect 實例，以管理您的 API。
 
 使用 `Menu->APIs` 來存取「API Connect 管理」主控台。
 
@@ -35,6 +36,7 @@ lastupdated: "2018-11-12"
 - [Loopback](https://loopback.io/)
 
 ## 定義受管理 API
+{: #define-apiconnect}
 
 您可以定義 API Proxy，以管理用戶端應用程式與後端邏輯之間的 API 閘道。使用下列步驟，利用您的 Open API Specification（Swagger 文件）YAML 或 JSON 來建立 Proxy。 
 
@@ -46,6 +48,7 @@ lastupdated: "2018-11-12"
 您需要配置「外部端點」，以指向鏈結至後端邏輯應用程式的 URL。 
 
 ## 建立 Swift 後端
+{: #create-backend-apiconnect}
 
 您可以根據此 API 來建立後端 Swift 應用程式。 
 
@@ -113,6 +116,7 @@ func initializePet_Routes(app: App) {
 在使用 {{site.data.keyword.openwhisk_short}} 或完整堆疊 Swift 運行環境來定義 API，並建立 API Connect 定義之後，即可取用 iOS 應用程式中的 API。
 
 ## 取用 iOS 應用程式行動應用程式中的 API
+{: #consume-apiconnect}
 
 若要取用 iOS 應用程式中的後端 API，請使用 Apple Console 來建立「行動」入門範本套件。使用「入門範本套件」視圖，建立任何類型的 iOS Swift 入門範本套件。
 
@@ -135,10 +139,12 @@ iOS 應用程式包括一個資料夾，其中包含 API 的已產生 SDK 連結
 開啟 `PLIST` 檔案，將主機值取代為從 API 路徑中複製的值，讓 SDK 可以將 API 呼叫至 {{site.data.keyword.cloud_notm}}。
 
 ## 文件
+{: #docs-apiconnect}
 
 當 SDK 內含在您的 iOS 應用程式專案中時，`Docs** 資料夾中會有一個 *README.html* 檔案。以外部瀏覽器開啟 `Docs` 資料夾，並閱讀如何使用專案的相關指示。
 
 ## API 變更之後重建 SDK
+{: #change-apiconnect}
 
 如果 API 變更或有新的特性可用，且已新增 {{site.data.keyword.openwhisk}}，您可以使用 `ibmcloud sdk` 指令來重建 Client SDK。如需相關資訊、範例及語法說明，請參閱 [SDK 產生器](/docs/cli/sdk/index.html)文件。
 
@@ -161,10 +167,13 @@ iOS 應用程式包括一個資料夾，其中包含 API 的已產生 SDK 連結
     SDK 已重建至您的 iOS 應用程式專案目錄，因此您可以繼續使用 API。
 
 ## 參考資料
+{: #reference-apiconnect}
 
 下列範例 SDK 是針對 {{site.data.keyword.openwhisk_short}} 從「入門範本套件」建立的。您可以看到可包括在 iOS 應用程式中的每個「動作」以及程式碼的 Swift Snippet。
 
 ### 預設 API 方法
+{: #default-methods-apiconnect}
+
  * [`getCreate`](#getCreate)
  * [`getDelete`](#getDelete)
  * [`getDeleteall`](#getDeleteall)
@@ -173,6 +182,8 @@ iOS 應用程式包括一個資料夾，其中包含 API 的已產生 SDK 連結
  * [`getUpdate`](#getUpdate)
 
 ### 使用 `getCreate`
+{: #getcreate-apiconnect}
+
 {: #getCreate}
 
 ```swift
@@ -186,10 +197,13 @@ public static func getCreate(completionHandler: @escaping (_ response: Response?
     - 以引數結尾：`Response?` 及 `Error?`。
 
 ### 以 `getCreate` 進行鑑別
+{: #auth-getcreate}
 
 不需要鑑別
 
 ### `getCreate` 的使用範例
+{: #example-getcreate}
+
 ```swift
 DefaultAPI.getCreate() { (response, error) in
     guard error == nil else {
@@ -209,7 +223,7 @@ DefaultAPI.getCreate() { (response, error) in
 {: codeblock}
 
 ### 使用 `getDelete`
-{: #getDelete}
+{: #getdelete}
 
 ```swift
 public static func getDelete(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -222,10 +236,13 @@ public static func getDelete(completionHandler: @escaping (_ response: Response?
     - 以引數結尾：`Response?` 及 `Error?`。
 
 ### 以 `getDelete` 進行鑑別
+{: #auth-getdelete}
 
 不需要鑑別
 
 ### `getDelete` 的使用範例
+{: #example-getdelete}
+
 ```swift
 DefaultAPI.getDelete() { (response, error) in
     guard error == nil else {
@@ -245,7 +262,7 @@ DefaultAPI.getDelete() { (response, error) in
 {: codeblock}
 
 ### 使用 `getDeleteall`
-{: #getDeleteall}
+{: #getdeleteall}
 
 ```swift
 public static func getDeleteall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -258,10 +275,12 @@ public static func getDeleteall(completionHandler: @escaping (_ response: Respon
     - 以引數結尾：`Response?` 及 `Error?`。
 
 ### 以 `getDeleteall` 進行鑑別
+{: #auth-getdeleteall}
 
 不需要鑑別
 
 ### `getDeleteall` 的使用範例
+{: #example-getdeleteall}
 
 ```swift
 DefaultAPI.getDeleteall() { (response, error) in
@@ -282,7 +301,7 @@ DefaultAPI.getDeleteall() { (response, error) in
 {: codeblock}
 
 ### 使用 `getRead`
-{: #getRead}
+{: #getread}
 
 ```swift
 public static func getRead(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -295,10 +314,13 @@ public static func getRead(completionHandler: @escaping (_ response: Response?, 
     - 以引數結尾：`Response?` 及 `Error?`。
 
 ### 以 `getRead` 進行鑑別
+{: #auth-getread}
 
 不需要鑑別
 
 ### `getRead` 的使用範例
+{: #example-getread}
+
 ```swift
 DefaultAPI.getRead() { (response, error) in
     guard error == nil else {
@@ -318,7 +340,7 @@ DefaultAPI.getRead() { (response, error) in
 {: codeblock}
 
 ### 使用 `getReadall`
-{: #getReadall}
+{: #getreadall}
 
 ```swift
 public static func getReadall(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -331,10 +353,13 @@ public static func getReadall(completionHandler: @escaping (_ response: Response
     - 以引數結尾：`Response?` 及 `Error?`。
 
 ### 以 `getReadall` 進行鑑別
+{: #auth-getreadall}
 
 不需要鑑別
 
 ### `getReadall` 的使用範例
+{: #example-getreadall}
+
 ```swift
 DefaultAPI.getReadall() { (response, error) in
     guard error == nil else {
@@ -354,7 +379,7 @@ DefaultAPI.getReadall() { (response, error) in
 {: codeblock}
 
 ### 使用 `getUpdate`
-{: #getUpdate}
+{: #getupdate}
 
 ```swift
 public static func getUpdate(completionHandler: @escaping (_ response: Response?, _ error: Error?) -> Void) -> Void
@@ -367,10 +392,13 @@ public static func getUpdate(completionHandler: @escaping (_ response: Response?
     - 以引數結尾：`Response?` 及 `Error?`。
 
 ### 以 `getUpdate` 進行鑑別
+{: #auth-getupdate}
 
 不需要鑑別
 
 ### `getUpdate` 的使用範例
+{: #example-getupdate}
+
 ```swift
 DefaultAPI.getUpdate() { (response, error) in
     guard error == nil else {

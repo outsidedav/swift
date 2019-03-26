@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -29,6 +30,7 @@ verwenden. Weitere Informationen finden Sie unter [Einführung in {{site.data.ke
 
 ## {{site.data.keyword.cloud_notm}}
 {{site.data.keyword.hscrypto}} verwenden
+{: #security-swift}
 
 {{site.data.keyword.hscrypto}} ist ein experimenteller Service,
 der eine Verschlüsselung Ihrer Schlüssel und Daten auf dem höchsten
@@ -53,6 +55,7 @@ Koprozessoren von IBM ermöglicht.
 Weitere Informationen zu {{site.data.keyword.hscrypto}} finden Sie unter [Einführung in {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/services/hs-crypto/index.html){:new_window}.
 
 ## {{site.data.keyword.cloud_notm}} {{site.data.keyword.keymanagementserviceshort}} verwenden
+{: #swift-key-management}
 
 {{site.data.keyword.keymanagementserviceshort}} hilft Ihnen bei
 der Erstellung verschlüsselter Schlüssel für Apps für
@@ -83,6 +86,7 @@ Logik von
 MongoDB-Datenbanken in Ihren Datenbankclustern und greift darauf zu.
 
 ### Daten und Vertraulichkeit schützen
+{: #swift-securing-data}
 
 {{site.data.keyword.IBM_notm}} hostet Ihre Datenbanken in einer
 hoch verfügbaren und sicheren Umgebung:
@@ -96,15 +100,18 @@ Daten zugreifen kann.
 
 ### Logik von {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS
 zu eigener Anwendung hinzufügen
+{: #swift-hyperprotect}
 
-Informationen zur Verwendung einer MongoDB-Datenbank in Ihrer Anwendung finden Sie unter [Einführung in die Verwendung einer Datenbank](../hypersecure_dbaas/database-cluster.html).  
+Informationen zur Verwendung einer MongoDB-Datenbank in Ihrer Anwendung finden Sie unter [Einführung in die Verwendung einer Datenbank](/docs/hypersecure_dbaas/database-cluster.html).  
 
 ### Weitere Informationen zu {{site.data.keyword.cloud_notm}} Hyper
 Protect DBaaS
+{: #swift-learnmore}
 
 Mehr über {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS erfahren Sie unter [Einführung in IBM Cloud Hyper Protect DBaaS](/docs/services/hyper-protect-dbaas/index.html).
 
 ## {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscontainers}} verwenden
+{: #swift-hscontainers}
 
 {{site.data.keyword.hscontainers}} bietet durch die Kombination
 der Docker- und Kubernetes-Technologie leistungsfähige Tools, eine intuitive
@@ -118,4 +125,4 @@ Sicherheitsfunktionen erwarten, registrieren Sie sich als Sponsorbenutzer bei [I
 {: tip}
 
 Solange Sie kein Sponsorbenutzer sind, können Sie Ihre Anwendung mit {{site.data.keyword.containershort_notm}} schützen. Weitere
-Informationen finden Sie unter [Einführung in {{site.data.keyword.containershort_notm}}](/docs/containers/container_index.html#container_index).
+Informationen finden Sie unter [Einführung in {{site.data.keyword.containershort_notm}}](/docs/containers/container_index.html).

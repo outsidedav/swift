@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -24,13 +25,15 @@ Puede seguir directrices sencillas para ayudarle a escribir aplicaciones portát
 ## Adición de {{site.data.keyword.cloud_notm}} a aplicaciones Swift existentes
 {: #addcloud-env}
 
-La vía de acceso para obtener los valores de entorno puede diferir de un entorno de nube a otro. La biblioteca [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) abstrae la configuración del entorno y las credenciales de varios proveedores de nube para que la app Swift pueda acceder a la información de forma coherente ejecutándose localmente o en Cloud Foundry, Kubernetes o {{site.data.keyword.openwhisk}}. La abstracción de credenciales la proporciona la biblioteca `CloudEnvironment`, que utiliza internamente [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) para la configuración de Cloud Foundry y [Configuración](https://github.com/IBM-Swift/Configuration) como gestor de configuración.
+La vía de acceso para obtener los valores de entorno puede diferir de un entorno de nube a otro. La biblioteca [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) abstrae la configuración del entorno y las credenciales de varios proveedores de nube para que la app Swift pueda acceder a la información de forma coherente ejecutándose localmente o en Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} o instancias virtuales. La abstracción de credenciales la proporciona la biblioteca `CloudEnvironment`, que utiliza internamente [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) para la configuración de Cloud Foundry y [Configuración](https://github.com/IBM-Swift/Configuration) como gestor de configuración.
 
 Con `CloudEnvironment`, puede abstraer detalles de nivel bajo del código de origen de la aplicación definiendo una clave de búsqueda que la aplicación Swift puede utilizar para buscar su valor correspondiente.
 
 La biblioteca `CloudEnvironment` proporciona una clave de búsqueda coherente que se puede utilizar en el código fuente. A continuación, la biblioteca busca en una matriz de patrones de búsqueda para encontrar un objeto JSON con los atributos de configuración o las credenciales de servicio. 
 
 ### Adición del paquete de CloudEnvironment a la aplicación Swift
+{: #add-cloudenv}
+
 Para utilizar el paquete `CloudEnvironment` en la aplicación Swift, especifíquelo en la sección **dependencies:** del archivo `Package.swift`:
 ```swift
 .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", from: "8.0.0"),
@@ -46,6 +49,8 @@ let cloudEnv = CloudEnv()
 {: codeblock}
 
 ### Acceso a credenciales
+{: #access-credentials}
+
 Ahora que se inicializa la biblioteca `CloudEnvironment`, puede acceder a las credenciales tal como se muestra en los ejemplos siguientes:
 ```swift
 let cloudantCredentials = cloudEnv.getCloudantCredentials(name: "cloudant-credentials")
@@ -68,7 +73,9 @@ En este ejemplo se proporciona acceso a los conjuntos de credenciales para servi
 {: #service_creds}
 
 La biblioteca `CloudEnvironment` utiliza un archivo denominado `mappings.json`, que se encuentra en el directorio `config`, para comunicar dónde se almacenan las credenciales para cada servicio. El archivo `mappings.json` da soporte a la búsqueda de valores que utilizan los tres tipos de patrón de búsqueda siguientes:
-- **`cloudfoundry`**: Un tipo de patrón que se utiliza para buscar un valor en la variable de entorno de servicios de Cloud Foundry (`VCAP_SERVICES`).
+- **`cloudfoundry`**: Un tipo de patrón que se utiliza para buscar un valor en la variable de entorno de servicios de Cloud Foundry (`VCAP_SERVICES`). Para obtener más información sobre
+Cloud Foundry Enterprise Edition, consulte la
+[Guía de aprendizaje de inicio](docs/cloud-foundry/getting-started.html#getting-started).
 - **`env`**: Un tipo de patrón utilizado para buscar un valor que se correlaciona con una variable de entorno, como en Kubernetes o Functions.
 - **`file`**: Un tipo de patrón que se utiliza para buscar un valor en un archivo JSON. La vía de acceso debe ser relativa a la carpeta raíz de la aplicación Swift.
 
@@ -108,12 +115,13 @@ Por motivos de seguridad, los archivos de credenciales no residen en repositorio
 
 Para obtener más información sobre el archivo `mappings.json`, consulte la sección [Comprensión de la credencial de servicio](configuration.html#service_creds).
 
-## Utilización del gestor de configuración de Swift desde apps del Kit de iniciación
+## Utilización del gestor de configuración de Swift desde apps del Kit de inicio
+{: #configmanager-swift}
 
-Las apps Swift creadas con [Kits de iniciación](https://console.bluemix.net/developer/appledevelopment/starter-kits/) se proporcionan automáticamente con las credenciales y la configuración necesarias para ejecutar localmente, y también en muchos entornos de despliegue de Cloud (CF, K8s, VSI y Functions). La creación básica del gestor de configuración se puede encontrar en `Sources/Application/Application.swift`. Cuando crea una app de Kit de inicio basada en Swift con servicios, se crea automáticamente una carpeta `config` y un archivo `mappings.json`. Si descarga la app, la carpeta `config` incluye un archivo `localdev-config.json` que tiene todas las credenciales para los servicios y está presente en el archivo `.gitignore`.
+Las apps Swift creadas con [Kits de inicio](https://cloud.ibm.com/developer/appledevelopment/starter-kits/) se proporcionan automáticamente con las credenciales y la configuración necesarias para ejecutar localmente, y también en muchos entornos de despliegue de Cloud (CF, K8s, VSI y Functions). La creación básica del gestor de configuración se puede encontrar en `Sources/Application/Application.swift`. Cuando crea una app de Kit de inicio basada en Swift con servicios, se crea automáticamente una carpeta `config` y un archivo `mappings.json`. Si descarga la app, la carpeta `config` incluye un archivo `localdev-config.json` que tiene todas las credenciales para los servicios y está presente en el archivo `.gitignore`.
 
 ## Pasos siguientes
-{: #next notoc}
+{: #next-configß notoc}
 
 Consulte nuestras tres bibliotecas para que sus aplicaciones se abstraigan de sus entornos:
 

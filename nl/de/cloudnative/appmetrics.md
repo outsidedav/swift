@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-20"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -17,15 +17,15 @@ lastupdated: "2018-09-20"
 {: #metrics}
 
 Anwendungsmetriken sind wichtig, um die Leistung Ihrer Anwendung zu
-überwachen. Eine Live-Ansicht von Metriken wie CPU-, Speicher-, Latenzzeit- und HTTP-Metriken ist notwendig, um sicherzustellen, dass Ihre Anwendung jederzeit effektiv ausgeführt wird. Kubernetes und Cloud Foundry-Services wie [autoscaling](/docs/services/Auto-Scaling/index.html) basieren auf Metriken, um zu ermitteln, wann Instanzen aufgrund der Arbeitslast dynamisch hinzugefügt oder entfernt werden sollen, und bereinigen Instanzen, die nicht mehr benötigt werden, um Kosten zu sparen. 
+überwachen. Eine Live-Ansicht von Metriken wie CPU-, Speicher-, Latenzzeit- und HTTP-Metriken ist notwendig, um sicherzustellen, dass Ihre Anwendung jederzeit effektiv ausgeführt wird. Kubernetes und Cloud Foundry-Services wie [autoscaling](/docs/services/Auto-Scaling/index.html) basieren auf Metriken, um zu ermitteln, wann Instanzen aufgrund der Arbeitslast dynamisch hinzugefügt oder entfernt werden sollen, und bereinigen Instanzen, die nicht mehr benötigt werden, um Kosten zu sparen.
 
 Anwendungsmetriken werden als Zeitreihendaten erfasst. Das Zusammenfassen und Visualisieren von erfassten Metriken kann Sie bei der Erkennung allgemeiner
-Leistungsprobleme unterstützen. Beispiele: 
+Leistungsprobleme unterstützen. Beispiele:
 
 * Lange HTTP-Antwortzeiten bei einigen oder allen Routen
 * Schlechter Durchsatz in der Anwendung
 * Leistungsminderung infolge von Nachfragespitzen
-* CPU-Auslastung in unerwarteter Höhe 
+* CPU-Auslastung in unerwarteter Höhe
 * Hohe oder zunehmende Hauptspeicherbelegung (potenzieller
 Speicherverlust)
 
@@ -90,6 +90,7 @@ Anwendungsmetriken inklusive HTTP-Anforderungen und Ereignisschleifenlatenz
 angezeigt.
 
 ## Anwendungsmetriken in Starter-Kits verwenden
+{: #appmetrics-starterkits}
 
 Die serverseitigen Swift-Anwendungen, die ausgehend von Starter-Kits
 erstellt werden, beinhalten den Code für `SwiftMetrics`,

@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -12,12 +13,14 @@ lastupdated: "2018-11-12"
 {:pre: .pre}
 
 # Desarrollo de forma local
+{: #develop-locally}
 
 Al desarrollar localmente, puede crear, ejecutar y probar fácilmente las apps de Swift. Utilice el {{site.data.keyword.dev_cli_short}} para realizar estas acciones mediante los mandatos estándares. 
 
 Puede utilizar el {{site.data.keyword.dev_cli_short}} para gestionar las aplicaciones del lado del servidor con más de doce mandatos. Obtenga más información sobre los distintos mandatos en los [mandatos de IBM Cloud Developer Tools CLI `ibmcloud dev`](/docs/cli/idt/commands.html).
 
 ## Antes de empezar
+{: #prereqs-local}
 
 Para desarrollar localmente, debe instalar el {{site.data.keyword.dev_cli_notm}}. Ejecute el mandato siguiente para ejecutar el script de instalación:
 ```
@@ -28,6 +31,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 Consulte [Configuración de la CLI de IBM Cloud Developer Tools](/docs/cli/idt/setting_up_idt.html) para obtener más información sobre la configuración y el uso de la {{site.data.keyword.dev_cli_notm}}.
 
 ## Recuperación de las credenciales de servicio
+{: #credentials-local}
 
 Después de clonar la aplicación desde Git, debe recuperar las credenciales para los servicios que están enlazados a la aplicación, ya que no están almacenados en el repositorio Git para la aplicación. La recuperación de las credenciales permite el uso de servicios enlazados. Puede descargar fácilmente las credenciales ejecutando el mandato siguiente en la raíz del directorio de la aplicación:
 ```
@@ -36,6 +40,7 @@ ibmcloud dev get-credentials
 {: codeblock}
 
 ## Creación, ejecución y despliegue de la aplicación
+{: #build-deploy-local}
 
 1. **Crear**: Ahora puede crear la aplicación, que es un requisito previo para ejecutar la aplicación.
   Utilice el mandato siguiente en la raíz del directorio de la aplicación para crear la app:

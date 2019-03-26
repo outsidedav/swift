@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -22,6 +23,7 @@ Os desenvolvedores de Swift podem usar facilmente serviços de segurança avanç
 Como uma abordagem fácil, é possível usar diretamente o {{site.data.keyword.cloud_notm}} HyperSecure Platform Services para todos os serviços de segurança avançada no {{site.data.keyword.cloud}}. Para obter mais informações, consulte [Introdução ao {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform/index.html){:new_window}.
 
 ## Usando o  {{site.data.keyword.cloud_notm}}  {{site.data.keyword.hscrypto}}
+{: #security-swift}
 
 O {{site.data.keyword.hscrypto}} é um serviço experimental que oferece criptografia em suas chaves e dados com o nível de segurança mais alto da indústria. Ele traz a segurança e a integridade da IBM Z para a nuvem. A mesma tecnologia criptográfica dos bancos e dos serviços financeiros agora é oferecida aos usuários de nuvem por meio do {{site.data.keyword.cloud_notm}}.
 
@@ -32,6 +34,7 @@ O {{site.data.keyword.hscrypto}} também é o keystore para o serviço {{site.da
 Para obter mais informações sobre o {{site.data.keyword.hscrypto}}, consulte [Introdução ao {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/services/hs-crypto/index.html){:new_window}.
 
 ## Usando o {{site.data.keyword.cloud_notm}} {{site.data.keyword.keymanagementserviceshort}}
+{: #swift-key-management}
 
 O {{site.data.keyword.keymanagementserviceshort}} ajuda a criar chaves criptografadas para aplicativos entre os serviços do {{site.data.keyword.cloud_notm}}. Conforme você gerencia o ciclo de vida de suas chaves, é possível se beneficiar de saber que as suas chaves estão protegidas pelos módulos de segurança de hardware (HSMs) baseados em nuvem que protegem contra roubo de informações. Junto ao {{site.data.keyword.hscrypto}}, suas chaves são protegidas no nível de segurança mais alto do certificado FIPS 140-2 Nível 4.
 
@@ -45,6 +48,7 @@ O {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS é um serviço experiment
 Com esse serviço, é possível criar clusters de banco de dados no {{site.data.keyword.cloud_notm}}. Cada cluster de banco de dados que você cria tem uma instância de banco de dados principal e duas instâncias de banco de dados secundárias que servem como réplicas para o primário. A lógica do {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS cria e acessa bancos de dados MongoDB nos clusters de banco de dados.
 
 ### Protegendo dados e privacidade
+{: #swift-securing-data}
 
 A {{site.data.keyword.IBM_notm}} hospeda seus bancos de dados em um ambiente altamente disponível e seguro:
  * Os dados são criptografados em repouso e em andamento.
@@ -52,15 +56,18 @@ A {{site.data.keyword.IBM_notm}} hospeda seus bancos de dados em um ambiente alt
  * As tecnologias subjacentes evitam que a {{site.data.keyword.IBM_notm}} ou um terceiro possa acessar seus dados.
 
 ### Incluindo a lógica do {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS em seu aplicativo
+{: #swift-hyperprotect}
 
 Para usar um banco de dados MongoDB em seu aplicativo, consulte
-[Introdução ao uso de um banco de dados](../hypersecure_dbaas/database-cluster.html).  
+[Introdução ao uso de um banco de dados](/docs/hypersecure_dbaas/database-cluster.html).  
 
 ### Aprendendo mais sobre o  {{site.data.keyword.cloud_notm}}  Hyper Protect DBaaS
+{: #swift-learnmore}
 
 Para saber mais sobre o {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS, consulte [Introdução ao IBM Cloud Hyper Protect DBaaS](/docs/services/hyper-protect-dbaas/index.html).
 
 ## Usando o {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscontainers}}
+{: #swift-hscontainers}
 
 O {{site.data.keyword.hscontainers}} fornece ferramentas poderosas, combinando s tecnologias Docker e Kubernetes, uma experiência intuitiva do usuário e a segurança e o isolamento integrados para automatizar a implementação, a operação, o ajuste de escala e o monitoramento de apps conteinerizados em um cluster de hosts de cálculo.
 
@@ -68,4 +75,4 @@ Os {{site.data.keyword.hscontainers}} estão disponíveis apenas para usuários 
 {: tip}
 
 Antes de se tornar um usuário patrocinado, é possível usar o {{site.data.keyword.containershort_notm}} para proteger seu aplicativo. Para obter mais informações, consulte
-[Introdução ao {{site.data.keyword.containershort_notm}}](/docs/containers/container_index.html#container_index).
+[Introdução ao {{site.data.keyword.containershort_notm}}](/docs/containers/container_index.html).

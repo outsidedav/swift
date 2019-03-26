@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-20"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -23,7 +23,7 @@ Le metriche dell'applicazione sono acquisite come dati delle serie temporali. L'
 * Dei tempi di risposta HTTP lenti su qualcuno degli instradamenti o su tutti
 * Una scarsa velocità effettiva nell'applicazione
 * Dei picchi di richiesta che causano un rallentamento
-* Un utilizzo della CPU più elevato del previsto 
+* Un utilizzo della CPU più elevato del previsto
 * Un utilizzo della memoria elevato o crescente (potenziale perdita di memoria)
 
 ## Aggiunta di metriche dell'applicazione all'applicazione Swift esistente
@@ -63,6 +63,7 @@ let smd = try SwiftMetricsDash(swiftMetricsInstance : metrics)
 Per impostazione predefinita, `SwiftMetricsDash` avvia il proprio server Kitura e fornisce la pagina in `http://<hostname>:<port>/swiftmetrics-dash`. Accedi al dashboard per visualizzare le nuove metriche dell'applicazione, incluse le richieste HTTP, e la latenza del loop di eventi.
 
 ## Utilizzo delle metriche dell'applicazione nei kit starter
+{: #appmetrics-starterkits}
 
 Le applicazioni Swift lato server create dai kit starter includono `SwiftMetrics`, `SwiftMetricsDash` e `SwiftMetricsPrometheus`, quindi sono pronte per l'utilizzo in ambienti Kubernetes che utilizzano gli endpoint Prometheus per raccogliere le metriche.
 

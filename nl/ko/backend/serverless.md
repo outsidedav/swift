@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
 
@@ -15,16 +15,16 @@ lastupdated: "2018-11-12"
 {:tip: .tip}
 
 # 서버리스 개발
-{: #serverless}
+{: #serverless-dev-swift}
 
-서버리스(serverless)란 무엇입니까? 서버리스 개발 패턴은 서버 측 로직이 Stateless 컨테이너에서 실행되는 애플리케이션 개발을 말합니다. 컨테이너는 이벤트로 트리거되고, 일시적이며(한 번의 실행으로 지속됨), 서드파티에 의해 완전히 관리됩니다. FaaS(Functions as a Service)로도 알려져 있는 이 패러다임에서는 개발자가 명시적으로 서버를 작성하거나 관리하지 않은 상태에서 트리거되고 실행될 수 있는 Stateless 기능을 제공합니다. 
+서버리스(serverless)란 무엇입니까? 서버리스 개발 패턴은 서버 측 로직이 Stateless 컨테이너에서 실행되는 애플리케이션 개발을 말합니다. 컨테이너는 이벤트로 트리거되고, 일시적이며(한 번의 실행으로 지속됨), 서드파티에 의해 완전히 관리됩니다. FaaS(Functions as a Service)로도 알려져 있는 이 패러다임에서는 개발자가 명시적으로 서버를 작성하거나 관리하지 않은 상태에서 트리거되고 실행될 수 있는 Stateless 기능을 제공합니다.
 
-서버 측 개발에 필요한 인프라 및 프레임워크를 추상화하여, 서버리스 아키텍처를 통해 개발자는 반응적으로 실행하여 데이터를 변경하는 코드를 작성하는 데 중점을 둘 수 있습니다. 
+서버 측 개발에 필요한 인프라 및 프레임워크를 추상화하여, 서버리스 아키텍처를 통해 개발자는 반응적으로 실행하여 데이터를 변경하는 코드를 작성하는 데 중점을 둘 수 있습니다.
 
-IBM의 FaaS 오퍼링인 [{{site.data.keyword.openwhisk}}](https://console.bluemix.net/openwhisk/)는 서버 측 전문 지식을 필요로 하지 않으면서 단순한 서버 측 개발 경험을 제공하는 데 주력합니다. 서버리스 기술을 통해 사용자는 확장 가능한 백엔드 솔루션을 빠르게 개발하여 미리 리소스를 프로비저닝할 필요 없이 실질적으로 워크로드 요구를 충족시킬 수 있습니다. 예측 불가능한 로드 패턴 또는 높은 서버 작동 중지 시간이 있는 애플리케이션의 경우 {{site.data.keyword.openwhisk_short}}는 향상된 성능을 갖춘 뛰어난 클라우드 솔루션이 될 수 있으며 "종량과금제" 시스템을 통해 비용을 줄일 수 있습니다. 
+IBM의 FaaS 오퍼링인 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/)는 서버 측 전문 지식을 필요로 하지 않으면서 단순한 서버 측 개발 경험을 제공하는 데 주력합니다. 서버리스 기술을 통해 사용자는 확장 가능한 백엔드 솔루션을 빠르게 개발하여 미리 리소스를 프로비저닝할 필요 없이 실질적으로 워크로드 요구를 충족시킬 수 있습니다. 예측 불가능한 로드 패턴 또는 높은 서버 작동 중지 시간이 있는 애플리케이션의 경우 {{site.data.keyword.openwhisk_short}}는 향상된 성능을 갖춘 뛰어난 클라우드 솔루션이 될 수 있으며 "종량과금제" 시스템을 통해 비용을 줄일 수 있습니다.
 
 ## 아키텍처 변경
-{: #comparison}
+{: #comparison-serverless}
 
 사용자가 FaaS로 전환하여 얻을 수 있는 아키텍처 이점을 이해하는 데 도움이 되도록 데이터베이스에 연결된 단순 iOS 애플리케이션을 사용하여 일반적인 FaaS 아키텍처를 비교합니다.
 
@@ -51,52 +51,59 @@ Schematic을 보면 다음 사항을 확인할 수 있습니다.
 서비리스 아키텍처가 항상 이상적이지는 않지만, 적절한 팀과 사용 조건 하에서는 큰 이점을 제공할 수 있습니다. 가장 일반적인 [유스 케이스](#use_cases) 몇 가지에 대해 자세히 알아보려면 몇 가지 구체적인 예제를 확인하십시오.
 
 ## 서버리스의 이점
-{: #benefits}
+{: #benefits-serverless}
 
 ### 비용 절감
+{: #reduced-cost-serverless}
 
-시스템 관리와 연관된 시간 및 비용을 아웃소싱하면 일반적인 백엔드 서버와 연관된 전체 비용을 줄일 수 있습니다. 또한 코드가 요청을 충족시키는 데 걸린 시간에 대해서만 가장 근접한 100ms로 반올림하여 비용을 지불하면 되므로 {{site.data.keyword.openwhisk_short}}는 기존의 일반적인 컴퓨팅 기술과는 다릅니다. 100% 사용될 가능성이 없지만 클라우드 제공자의 시스템에서 메모리를 차지하는 다른 기술(예: VM 및 컨테이너)과 비교하면 비용을 크게 절감할 수 있습니다. 
+시스템 관리와 연관된 시간 및 비용을 아웃소싱하면 일반적인 백엔드 서버와 연관된 전체 비용을 줄일 수 있습니다. 또한 코드가 요청을 충족시키는 데 걸린 시간에 대해서만 가장 근접한 100ms로 반올림하여 비용을 지불하면 되므로 {{site.data.keyword.openwhisk_short}}는 기존의 일반적인 컴퓨팅 기술과는 다릅니다. 100% 사용될 가능성이 없지만 클라우드 제공자의 시스템에서 메모리를 차지하는 다른 기술(예: VM 및 컨테이너)과 비교하면 비용을 크게 절감할 수 있습니다.
 
 ### 고가용성 및 확장성
+{: #ha-serverless}
 
 서버리스 아키텍처는 거의 지속적인 가용성과 함께 즉각적인 확장성을 제공합니다.
 
 ### 속도 및 개발 간소화
+{: #speed-serverless}
 
 시스템을 관리할 필요 없이 개발을 위한 단순 인터페이스를 제공하여, 서버리스 패러다임은 애플리케이션 개발을 가속화합니다. 개발자는 이벤트 중심 환경에 응답하여 실행되는 조치 시퀀스로 앱을 빠르게 빌드할 수 있습니다.
 
 ## 유스 케이스 예제
-{: #use_cases}
+{: #use-cases-serverless}
 
 ### 모바일 백엔드
+{: #mobile-backend-serverless}
 ![](./images/cloud-functions-rest-api-trigger.png)
 
 모바일 개발자는 쉽게 서버 측 로직에 액세스하고 컴퓨팅 집중 태스크를 클라우드 플랫폼으로 아웃소싱할 수 있습니다. Swift와 같은 언어로 기능을 구현하고 필요한 서버 측 경험 없이 iOS SDK를 사용하여 서버 측 기능을 쉽게 이용할 수 있습니다.
 
 ### 데이터 처리
+{: #data-processing-serverless}
 
 ![](./images/cloud-functions-cloudant-trigger.png)
 
 내장 트리거를 통해 데이터가 데이터 저장소에서 업데이트될 때마다 코드를 실행할 수 있습니다. 오디오 표준화, 이미지 회전, 선명 효과, 소음 감소, 썸네일 생성 또는 비디오 트랜스코딩과 같은 프로세스를 쉽게 자동화할 수 있습니다.
 
 ### 코그너티브 데이터 처리
+{: #cognitive-serverless}
 
 데이터를 사용할 수 있게 되면 분석할 수 있습니다. 기능은 IBM Watson과 같이 강력한 코그너티브 서비스를 활용하여 이미지 또는 비디오에서 오브젝트 또는 사용자를 감지할 수 있습니다.
 
 ### 스케줄된 태스크
+{: #tasks-serverless}
 
 주기적으로 기능을 실행하고, Cron 형식의 구문을 따르는 스케줄을 정의하여 조치가 실행될 때를 지정할 수 있습니다.
 
 ## API 참조
-{: #openwhisk_start_api notoc}
+{: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [REST API](https://console.{DomainName}/apidocs/98)
+* [REST API](https://cloud.ibm.com/apidocs)
 
 ## 관련 링크
-{: #general notoc}
+{: #related-serverless notoc}
 
-* [검색 {{site.data.keyword.openwhisk_short}}](http://www.ibm.com/cloud-computing/bluemix/openwhisk/)
+* [검색 {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions)
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
 * [Apache OpenWhisk 프로젝트 웹 사이트](http://openwhisk.org)
 * [서버리스에 대해 알아보기](https://martinfowler.com/articles/serverless.html)

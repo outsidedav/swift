@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-12"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -12,12 +13,12 @@ lastupdated: "2018-11-12"
 {:pre: .pre}
 
 # Installazione di SDK nelle applicazioni client
-{: #installing}
+{: #install-sdks}
 
 Gli SDK iOS {{site.data.keyword.cloud}} supportano diversi gestori dipendenze molto diffusi, consentendoti di installare facilmente e utilizzare i servizi {{site.data.keyword.cloud_notm}} nelle tue applicazioni.
 
 ## Installazione con CocoaPods
-{: #installing_with_cocoapods}
+{: #install_cocoapods}
 
 Per installare un SDK utilizzando CocoaPods, aggiungilo al tuo `Podfile`. Se il tuo progetto non dispone ancora di un `Podfile`, utilizza il comando `pod init`.
 ```ruby
@@ -34,7 +35,7 @@ Esegui `pod install` e apri il file `.xcworkspace` generato.
 Per ulteriori informazioni, consulta le [guide di CocoaPods](https://guides.cocoapods.org/using/index.html).
 
 ## Installazione con Carthage
-{: #installing_with_carthage}
+{: #install_carthage}
 
 Per installare un SDK con Carthage, aggiungi questa riga al tuo `Cartfile`:
 ```
@@ -47,10 +48,10 @@ Esegui `carthage update` per avviare il processo di creazione. Una volta termina
 Per ulteriori informazioni, vedi la documentazione di [introduzione a Carthage](https://github.com/Carthage/Carthage#getting-started).
 
 ## Installazione con il gestore pacchetti Swift
-{: #installing_with_swift_package_manager}
+{: #install_swift_package}
 
 Per installare un SDK utilizzando il gestore pacchetti Swift, aggiungi la seguente riga alle tue dipendenze nel tuo `Package.swift`:
-```
+```swift
 .Package(url: "<SDK git url>")
 ```
 {: codeblock}
@@ -60,6 +61,6 @@ Esegui `swift build` per avviare il processo di creazione.
 Per ulteriori informazioni, vedi la [panoramica relativa al gestore pacchetti Swift](https://swift.org/package-manager/).
 
 ## Installazione manuale
-{: #installing_manually}
+{: #install_manually}
 
 Per installare un SDK manualmente, scarica l'SDK e aggiungi manualmente i file di origine nel tuo progetto.

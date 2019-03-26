@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-07"
+  years: 2018, 2019
+lastupdated: "2019-01-31"
 
 ---
+
 {:tip: .tip}
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -19,152 +20,165 @@ lastupdated: "2018-08-07"
 
 以下列表概述了该集成的工作流程：
 
-  1. 用户与应用程序中实现的界面进行交互。
-  2. 应用程序使用 {{site.data.keyword.watson}} Swift SDK 将用户输入发送到 {{site.data.keyword.conversationshort}}。
-  3. {{site.data.keyword.watson}} Swift SDK 连接到工作空间，此工作空间是用于对话流和培训数据的容器。
-  4. 工作空间解读用户输入并定向对话流，以向应用程序发送响应。
-  5. 应用程序为用户显示响应。
+1. 用户与应用程序中实现的界面进行交互。
+2. 应用程序使用 {{site.data.keyword.watson}} Swift SDK 将用户输入发送到 {{site.data.keyword.conversationshort}}。
+3. {{site.data.keyword.watson}} Swift SDK 连接到工作空间，此工作空间是用于对话流和训练数据的容器。
+4. 工作空间解读用户输入并定向对话流，以向应用程序发送响应。
+5. 应用程序为用户显示响应。
 
 ## 开始之前
-{: #before-you-begin}
+{: #prereqs-chatbot}
 
 确保满足以下先决条件：
 
-  * [{{site.data.keyword.conversationshort}} 服务](/docs/services/conversation/getting-started.html)的实例
-  * iOS 8.0+
-  * Xcode 9.0+
-  * Swift 3.2+ 或 Swift 4.0+
-  * Carthage
+* [{{site.data.keyword.conversationshort}} 服务](/docs/services/conversation/getting-started.html)的实例
+* iOS 10.0+
+* Xcode 9.3+
+* Swift 4.1+
+* CocoaPods、Carthage 或 Swift Package Manager
 
-使用 [Carthage](https://github.com/Carthage/Carthage){:new_window} 来管理依赖项，并为应用程序构建 {{site.data.keyword.watson}} Swift SDK。如果您不熟悉 Carthage，可以使用 [Homebrew](http://brew.sh/){:new_window} 来安装 Carthage：
+您可以使用 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods)、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage) 或
+[Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager) 安装 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk)。通过使用 CocoaPods(https://cocoapods.org/) 管理依赖关系，您仅获得所需框架，而不是整个 Watson Swift SDK。如果您未使用过 CocoaPods，您可以轻松进行安装：
 
-```bash
-$ brew update
-$ brew install carthage
-```
-
-## 下载并构建依赖项
-{: #download-and-build-dependencies}
-
-1. 使用您最喜欢的文本编辑器，在项目的根目录（`.xcodeproj` 文件所在的位置）中创建名为 `Cartfile` 的新文件。
-
-2. 添加一行以将 Watson Swift SDK 指定为依赖项：
-  ```
-  github "watson-developer-cloud/swift-sdk"
-  ```
-  {: codeblock}
-
-  对于生产应用程序，可指定[版本需求](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#version-requirement){:new_window}，以避免 {{site.data.keyword.watson}} Swift SDK 新发行版中的意外更改。
-  {: tip}
-
-3. 使用终端浏览至项目的根目录，然后运行 Carthage：
-  ```bash
-  carthage update --platform iOS
-  ```
-  {: codeblock}
-
-  随后会下载 {{site.data.keyword.watson}} Swift SDK，并在项目的 `Carthage/Build/iOS` 文件夹中构建其框架。
-
-## 向应用程序添加框架
-{: #add-frameworks-to-your-app}
-
-现在，{{site.data.keyword.watson}} Swift SDK 框架已构建，您必须将 {{site.data.keyword.conversationshort}} 框架链接并复制到应用程序中。
-
-1. 在 Xcode 中打开应用程序，然后在导航器中选择项目以打开其设置。
-2. 选择应用程序目标，然后打开**常规**选项卡。
-3. 滚动到“链接的框架和库”部分，然后单击 `+` 图标。
-4. 在显示的新窗口中，选择**添加其他项**，然后浏览至 `Carthage/Build/iOS` 目录。
-5. 选择 `AssistantV1.framework` 以将其与应用程序相链接。
-
-除了链接 {{site.data.keyword.conversationshort}} 框架外，还必须将其复制到应用程序中，以使其在运行时可访问。然后，使用 Carthage 脚本来避免特定 [App Store 提交错误](http://www.openradar.me/radar?id=6409498411401216){:new_window}。
-
-1. 在 Xcode 中打开应用程序目标的设置后，浏览至**构建阶段**选项卡。
-2. 单击 `+` 图标，然后选择**新建运行脚本阶段**。
-3. 将 `/usr/local/bin/carthage copy-frameworks` 命令添加到运行脚本阶段。
-4. 将 {{site.data.keyword.conversationshort}} 框架添加到**输入文件**列表中：
-  ```
-  $(SRCROOT)/Carthage/Build/iOS/AssistantV1.framework
-  ```
-  {: codeblock}
-
-## 向应用程序添加虚拟助手
-{: #add-a-virtual-assistant-to-your-app}
-
-1. 在 Xcode 中打开 `ViewController.swift`。
-2. 添加用于 {{site.data.keyword.conversationshort}} 的 import 语句，例如 `import AssistantV1`。
-3. 创建名为 `assistantExample` 的空函数，然后通过 `viewDidLoad` 调用该函数。
-4. 为 `assistantExample` 函数添加以下代码。确保更新用户名、密码和工作空间标识。
-
-```swift
-//
-//  ViewController.swift
-//  WatsonAssistantExample
-//
-//  Created by Glenn R. Fisher on 3/1/18.
-//  Copyright © 2018 Glenn R. Fisher. All rights reserved.
-//
-
-import UIKit
-import AssistantV1
-
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        assistantExample()
-    }
-
-    func assistantExample() {
-        // Assistant 凭证
-        let username = "your-username-here"
-        let password = "your-password-here"
-        let workspace = "your-workspace-id-here"
-
-        // 实例化服务
-        let assistant = Assistant(username: username, password: password, version: "2018-03-01")
-
-        // 开始对话
-        assistant.message(workspaceID: workspace) { response in
-            print("Conversation ID: \(response.context.conversationID!)")
-            print("Response: \(response.output.text.joined())")
-
-            // 继续执行 assistant
-            print("Request: turn the radio on")
-            let input = InputData(text: "turn the radio on")
-            let request = MessageRequest(input: input, context: response.context)
-            assistant.message(workspaceID: workspace, request: request) { response in
-                print("Response: \(response.output.text.joined())")
-            }
-        }
-    }
-}
+```console
+sudo gem install cocoapods
 ```
 {: codeblock}
 
-运行应用程序时，在控制台中会看到以下消息：
+## 步骤 1. 创建 Watson Assistant 的实例 
+{: #instance-watson-chatbot}
+
+供应 {{site.data.keyword.conversationshort}} 服务的实例：
+
+1. 在 {{site.data.keyword.cloud_notm}} 目录中，选择 **{{site.data.keyword.conversationshort}}**。这将打开服务配置屏幕。
+2. 为服务实例提供名称或使用预设名称。
+3. 如果要将实例绑定到应用程序，请从**连接**菜单中选择应用程序。
+4. 选择价格套餐，然后单击**创建**。
+5. 选择**凭证**选项卡，以查看服务凭证。这些值用于从应用程序连接到服务。
+6. 单击**启动工具**以构建聊天机器人助手。遵循登录页面上的指示信息来构建您自己的聊天机器人，或者转至**技能**选项卡，并选择**新建**。在**添加对话技能**页面上，选择**使用技能样本**选项卡，并选择**客户关怀技能样本**以快速启动。您可以继续优化此技能，或者创建其他技能供应用程序以后使用。
+7. 单击新技能上的菜单，并选择**查看 API 详细信息**。除了服务凭证外，您现在可以看到您需要的`工作空间标识`。
+
+## 步骤 2. 下载并构建依赖项
+{: #download-depend-chatbot}
+
+以下示例使用 AssistantV1。有关 AssistantV2 框架的更多信息，请参阅 [Watson SDK AssistantV2 文档](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV2/index.html)。
+
+使用您最喜欢的文本编辑器，通过运行 `pod init`，在项目的根目录（`.xcodeproj` 文件所在的位置）中创建新的 `Podfile`。然后，添加行以将 Watson Swift SDK 的 {{site.data.keyword.conversationshort}} 框架指定为依赖项：
+
+```pod
+use_frameworks!target 'MyApp' do
+    pod 'IBMWatsonAssistantV1'
+```
+{: codeblock}
+
+对于生产应用程序，您可能还要指定特定的[版本需求](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions)，以避免 Watson Swift SDK 新发行版中的意外更改。
+
+`Podfile` 已就位，现在可以下载依赖项。使用终端浏览至项目的根目录，然后运行 CocoaPods：
+
+```console
+pod install
+```
+{: codeblock}
+
+Cocoapods 下载 {{site.data.keyword.conversationshort}} 框架，在项目的 `Pods/` 文件夹中进行构建。
+
+要防止 Pod 构建失败，在 Xcode 中打开项目时，打开以 `.xcworkspace` 而不是 `.xcodeproj` 结尾的文件。
+{: tip}
+
+## 步骤 3. 向应用程序添加虚拟助手
+{: #virtual-assist-chatbot}
+
+以下示例协助您将 {{site.data.keyword.conversationshort}} 功能添加到应用程序，通常在 `ViewController.swift` 中。使用以下示例，您可以扩展用例的 Assistant 调用。
+
+1. 添加用于 {{site.data.keyword.conversationshort}} 的 import 语句，例如 `import Assistant`。
+  ```swift
+  import Assistant
+  ```
+  {: codeblock}
+
+2. 初始化 {{site.data.keyword.conversationshort}} 服务：
+  ```swift
+  let assistant = Assistant(version: "yyyy-mm-dd", apikey: "your-api-key-here")
+
+  // save context to state to continue the conversation later
+  var context: Context?
+  ```
+  {: codeblock}
+
+  **提示**：此示例将上下文保存到状态。为了更好地了解此对象，以及如何修改对象以适应您的用例，请参阅[上下文变量文档](/docs/services/assistant/dialog-runtime.html#context-variables)。查看[版本参数文档](https://cloud.ibm.com/apidocs/assistant#versioning)或者使用创建 {site.data.keyword.conversationshort}} 服务的日期。
+
+3. 初始化对话。根据助手的配置方式，可以向用户提供初始响应：
+  ```swift
+  // Start a conversation
+  assistant.message(workspaceID: "your-workspace-ID-here) { response, error in
+      if let error = error {
+         print(error)
+    }
+
+    guard let message = response?.result else {
+          print("Failed to get the message.")
+          return
+      }
+
+      print("Conversation ID: \(message.context.conversationID!)")
+      print("Response: \(message.output.text.joined())")
+
+      // Set the context to state
+      self.context = message.context
+  }
+  ```
+  {: codeblock}
+
+4. 将消息和上下文发送到助手：
+  ```swift
+  print("Request: When are you open?")
+  let input = InputData(text: "When are you open?")
+
+  assistant.message(workspaceID: workspace, input: input, context: self.context) { response, error in
+      if let error = error {
+         print(error)
+    }
+
+    guard let message = response?.result else {
+          print("Failed to get the message.")
+          return
+      }
+
+      print("Conversation ID: \(message.context.conversationID!)")
+      print("Response: \(message.output.text.joined())")
+
+      // Update the context
+      self.context = message.context
+  }
+  ```
+  {: codeblock}
+
+使用缺省助手的这些示例运行应用程序时，在控制台中会看到以下消息：
 ```
 Conversation ID: cbb18524-1e78-4bb5-a6ea-ceb9311da391
-Response: Hi. It looks like a nice drive today. What would you like me to do?
-Request: turn the radio on
-Response: Sure thing! Which genre would you prefer? Jazz is my personal favorite..
+Response: Hello, I’m a demo customer care virtual assistant to show you the basics.  I can help with directions to my store, hours of operation and booking an in-store appointment.
+Request: When are you open?
+Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11am to 6pm.
 ```
 {: screen}
 
+5. 查看 Watson SDK [Assistant 文档](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV1/index.html)以构建您的应用程序的功能。
+
 ## 使用入门模板工具包
-{: #conversation_starterkits}
+{: #starterkits-chatbot}
 
-通过入门模板工具包，可以快速、轻松地利用 {{site.data.keyword.cloud_notm}} 的功能。可以使用入门模板工具包将 {{site.data.keyword.conversationshort}} 添加到任何服务器端后端。Chatbot for iOS with Watson 入门模板工具包说明了如何通过将自然语言界面添加到应用程序来使用 {{site.data.keyword.conversationshort}} 的深度学习功能，以自动与最终用户进行交互。
+通过入门模板工具包，可以快速、轻松地利用 {{site.data.keyword.cloud_notm}} 的功能。可以使用入门模板工具包将 {{site.data.keyword.conversationshort}} 添加到任何服务器端后端。Chatbot for iOS with Watson 入门模板工具包说明了如何通过将自动与用户进行交互的自然语言界面添加到应用程序来使用 {{site.data.keyword.conversationshort}} 的深度学习功能。
 
-1. 选择要使用的[入门模板工具包](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window}。
+1. 选择要使用的[入门模板工具包](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window}。
 2. 使用缺省服务创建项目。
 3. 单击**添加资源 > Watson > {{site.data.keyword.conversationshort}}**。
 4. 通过单击**下载代码**来下载项目。可以在 `config/local-dev.json` 文件中找到服务凭证。
 
 ## 后续步骤
-{: #assistant_next}
+{: #next-chatbot}
 
 太棒了！您已将 AI 助手添加到应用程序。请一鼓作气，尝试下列其中一个选项：
 
-* 查看 [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window}。
-* 利用 [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html) 可以提供的所有功能。
+* 查看 [{{site.data.keyword.watson}}Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window}，并且探索其他受支持的 Watson 服务。
+* 利用 [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html) 提供的所有功能。
 * 查看 [Simple Chat 样本应用程序](https://github.com/watson-developer-cloud/simple-chat-swift){:new_window}的源代码，并在 GitHub 上演示 {{site.data.keyword.watson}} Swift SDK。

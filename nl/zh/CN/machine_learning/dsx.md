@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-06-04"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -13,19 +14,22 @@ lastupdated: "2018-06-04"
 {:tip: .tip}
 
 # 使用定制生成的模型分析数据集
+{: #dsx-overview}
 
-Watson Studio 提供了环境和多种工具，用于通过以协作方式分析数据来解决业务问题。您可以选择分析、清理和组织数据所需的工具。了解如何获取流式数据，或者创建、培训和部署机器学习模型。Watson Studio 可与各种不同的 {{site.data.keyword.cloud}} 服务以及 Watson Knowledge Catalog 集成，提供策略管理来控制资产，并提供目录来建立索引以查找这些资产。请在 https://dataplatform.ibm.com/ 上了解更多信息。
+Watson Studio 提供了环境和多种工具，用于通过以协作方式分析数据来解决业务问题。您可以选择分析、清理和组织数据所需的工具。了解如何摄入流式数据，或者创建、训练和部署机器学习模型。Watson Studio 可与各种不同的 {{site.data.keyword.cloud}} 服务以及 Watson Knowledge Catalog 集成，提供策略管理来控制资产，并提供目录来建立索引以查找这些资产。请在 https://dataplatform.ibm.com/ 上了解更多信息。
 
 Watson Studio 围绕基于项目的体系结构进行构建，可对资源进行组织以解决业务问题。资源包括与云和内部部署数据存储的连接、数据文件、合作者和分析资产（如模型）。请在 https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics 上了解更多信息。
 
 ## {{site.data.keyword.DSX}} 的机器学习
-{: #dsx}
+{: #dsx-learning}
 
-通过使用 {{site.data.keyword.DSX}}，可以对模型进行培训并部署这些模型，然后通过 API 来使用结果。随后，可以在 iOS 或 Swift 应用程序中使用这些 API。
+通过使用 {{site.data.keyword.DSX}}，可以对模型进行训练并部署这些模型，然后通过 API 来使用结果。随后，可以在 iOS 或 Swift 应用程序中使用这些 API。
 
-通过 IBM Watson Machine Learning，在设置环境之后，可以创建模型，将其部署到云，并对其进行培训。有关更多信息，请参阅[使用 {{site.data.keyword.pm_full}} 和 {{site.data.keyword.DSX}} 创建、部署和培训模型](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics)。
+通过 IBM Watson Machine Learning，在设置环境之后，可以创建模型，将其部署到云，并对其进行训练。有关更多信息，请参阅[使用 {{site.data.keyword.pm_full}} 和 {{site.data.keyword.DSX}} 创建、部署和训练模型](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics)。
 
 ### 教程
+{: #dsx-tutorials}
+
 - [使用 {{site.data.keyword.pm_short}} 构建 Logistic 回归模型](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics)
 - [使用 {{site.data.keyword.pm_short}} 构建朴素贝叶斯模型](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics)
 
@@ -41,15 +45,15 @@ Watson Studio 围绕基于项目的体系结构进行构建，可对资源进行
   * 对于 iOS 项目，只需将 {{site.data.keyword.pm_short}} 资源添加到 iOS 项目，就会立即将凭证注入到应用程序中。
     要通过应用程序访问凭证，请复制并粘贴以下代码片段。此外，请确保将评分端点添加到应用程序，可以在模型的部署`实现`选项卡中找到该端点。
 
-    ```Swift
-    // 模型评分端点的 URL
+    ```swift
+    /* The url to your model's scoring endpoint */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
 
-    // 您的凭证
+    /* Your credentials */
     var machineLearningUsername: String!
     var machineLearningPassword: String!
 
-    // Machine Learning 初始化
+    /* Machine Learning initialization */
     if let contents = Bundle.main.path(forResource:"BMSCredentials", ofType: "plist"),
        let dictionary = NSDictionary(contentsOfFile: contents),
        let username = dictionary["machinelearningUsername"] as? String,
@@ -65,19 +69,19 @@ Watson Studio 围绕基于项目的体系结构进行构建，可对资源进行
 
   * 对于服务器端应用程序，手动将您的用户名和密码添加到应用程序，同时添加评分端点，可以在模型的部署`实现`选项卡中找到该端点。
 
-    ```Swift
-    // 您的 Machine Learning 凭证
+    ```swift
+    /* Your Machine Learning Credentials */
     let machineLearningUsername: String = "<your-ml-service-username>"
     let machineLearningPassword: String = "<your-ml-service-password>"
 
-    // 模型评分端点的 URL
+    /* The url to your model's scoring endpoint */
     let modelScoringURL: String = "<your-ml-model-scoringUrl>"
     ```
     {: codeblock}
 
 4. 检索访问令牌，并使用简单客户端 SDK 通过应用程序对数据集执行预测分析。
 
-  ```Swift
+  ```swift
   public class MachineLearning {
 
       private let username: String
@@ -176,7 +180,7 @@ Watson Studio 围绕基于项目的体系结构进行构建，可对资源进行
   {: codeblock}
 
 ### 示例
-{: #example}
+{: #dsx-example}
 
 **方案名称：**产品系列预测
 
@@ -184,7 +188,7 @@ Watson Studio 围绕基于项目的体系结构进行构建，可对资源进行
 
 部署模型后，可以使用评分端点来执行预测分析。
 
-```Swift
+```swift
 // 要分析的数据
 let examplePayload: [String: Any] = [
     "fields": ["GENDER", "AGE", "MARITAL_STATUS", "PROFESSION"],
@@ -216,6 +220,8 @@ client.retrieveToken { token in
 太棒了！现在，您可以使用定制生成的机器学习模型来分析数据集。请一鼓作气，在 [Data science and machine learning](https://www.ibm.com/analytics/data-science/machine-learning) 中了解 {{site.data.keyword.pm_short}} 可以提供的功能的更多信息。
 
 ### 相关链接
+{: #dsx-related}
+
 * [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling/index.html#using-machine-learning-with-data-science-experience)
 * [{{site.data.keyword.DSX}}](https://datascience.ibm.com/)
 * [{{site.data.keyword.DSX}} 文档](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics)

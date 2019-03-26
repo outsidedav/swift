@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-12"
+  years: 2017, 2019
+lastupdated: "2019-01-15"
 
 ---
 {:new_window: target="_blank"}
@@ -26,6 +26,7 @@ Puoi scegliere di utilizzare il servizio {{site.data.keyword.mobilepushshort}} c
 ![Panoramica di Push](images/push_notification_lifecycle.jpg) Figura 1. Panoramica del ciclo di vita del servizio {{site.data.keyword.mobilepushshort}}
 
 ## Prima di cominciare
+{: #prereqs-push}
 
 Assicurati innanzitutto di disporre dei seguenti prerequisiti pronti a essere utilizzati:
 
@@ -39,18 +40,18 @@ Assicurati innanzitutto di disporre dei seguenti prerequisiti pronti a essere ut
 
 1. Nel catalogo {{site.data.keyword.cloud_notm}}, fai clic su **Mobile** > **{{site.data.keyword.mobilepushshort}}**. Viene visualizzata la schermata di configurazione del servizio.
 2. Assegna un nome alla tua istanza del servizio oppure utilizza il nome preimpostato.
-3. Fai clic su **Crea**.
+3. Fai clic su **Create**.
 4. Nel riquadro di navigazione, fai clic su **Connessioni** per selezionare un'applicazione ed eseguirne il bind al tuo servizio. Puoi eseguire il bind dell'istanza del servizio alla tua applicazione in un secondo momento, se la lasci senza bind durante la creazione.
 
 
 ## Passo 2. Ottieni le tue credenziali del provider di notifiche
-{: #get_creds}
+{: #get_creds-push}
 
-Per configurare il servizio Push Notifications, devi ottenere le credenziali richieste dall'APNs (Apple Push Notification Service). Attieniti alla procedura qui indicata per [ottenere e configurare le tue credenziali APNs ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://console.bluemix.net/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}.
+Per configurare il servizio Push Notifications, devi ottenere le credenziali richieste dall'APNs (Apple Push Notification Service). Attieniti alla procedura qui indicata per [ottenere e configurare le tue credenziali APNs ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}.
 
 
 ## Passo 3. Configura un'istanza del servizio
-{: #enable-push-ios-notifications}
+{: #config-resource-push}
 
 Per utilizzare il servizio {{site.data.keyword.mobilepushshort}} per inviare notifiche, carica il keystore `.p12` che hai creato, che dispone della chiave privata e dei certificati SSL necessari per creare e pubblicare la tua applicazione. Puoi inoltre utilizzare l'API REST per caricare un certificato APNs.
 
@@ -80,13 +81,14 @@ Per configurare APNs sulla console dei servizi Push Notifications, completa la s
 	![{{site.data.keyword.mobilepushshort}} - console](images/push_configure_safari.jpg)
 
 ## Passo 4. Configura l'SDK client del servizio
+{: #service-client-push}
 
 Per abilitare le applicazioni iOS a ricevere le notifiche di push ai tuoi dispositivi, devi configurare l'SDK iOS per il servizio {{site.data.keyword.mobilepushshort}}.
 
 Gli SDK Swift {{site.data.keyword.cloud_notm}} Mobile Services possono essere installati con Cocoapods o Carthage. Per ulteriori informazioni, vedi [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application).
 
-
 ## Passo 5. Invio di una notifica
+{: #send-notify-push}
 
 Dopo che hai sviluppato la tua applicazione, puoi inviare delle notifiche di push di base.
 
@@ -108,7 +110,7 @@ La seguente acquisizione di schermo mostra una notifica di push in background.
 	![Notifica di push in background su Android](images/background.png)
 
 ### Impostazioni facoltative
-{: #push_step_4_ios}
+{: #optional-push}
 
 Puoi personalizzare le impostazioni {{site.data.keyword.mobilepushshort}} per l'invio di notifiche ai dispositivi iOS. Sono supportate le seguenti opzioni di personalizzazione facoltative.
 
@@ -119,16 +121,17 @@ Puoi personalizzare le impostazioni {{site.data.keyword.mobilepushshort}} per l'
 Puoi anche scegliere di abilitare le [notifiche interattive](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#interactive-notifications) e le [notifiche rich media](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enabling-rich-media-notifications).
 
 ## Passo 6. Monitoraggio per le notifiche recapitate
-{: #push_step_4_monitor}
+{: #monitor-push}
 
 Il servizio {{site.data.keyword.mobilepushshort}} fornisce un programma di utilità di monitoraggio per aiutarti a controllare lo stato dei messaggi inviati. Per configurare il tuo programma di utilità di monitoraggio, vedi il documento relativo all'[abilitazione del monitoraggio per le applicazioni iOS](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring).
 
 ## Passi successivi
+{: #next-push}
 
  - Per ulteriori informazioni sul servizio e per avvalerti di tutte le funzioni, leggi attentamente la nostra [documentazione](/docs/services/mobilepush/c_overview_push.html#overview-push).
 
  - Per un'introduzione alla gestione dei servizi mobili e di {{site.data.keyword.cloud_notm}}, vedi [Introduzione alle applicazioni mobili su {{site.data.keyword.cloud_notm}}](/docs/services/mobile/index.html).
 
- - I kit starter sono uno dei modi più rapidi per utilizzare le funzioni di {{site.data.keyword.cloud_notm}}. Visualizza i nostri kit starter disponibili nel [dashboard degli sviluppatori di applicazioni mobili](https://console.bluemix.net/developer/mobile/dashboard). Scarica il codice. Esegui l'applicazione!
+ - I kit starter sono uno dei modi più rapidi per utilizzare le funzioni di {{site.data.keyword.cloud_notm}}. Visualizza i nostri kit starter disponibili nel [dashboard degli sviluppatori di applicazioni mobili](https://cloud.ibm.com/developer/mobile/dashboard). Scarica il codice. Esegui l'applicazione!
 
  - Puoi utilizzare l'[IU Swagger](https://mobile.ng.bluemix.net/imfpush/) per esaminare rapidamente la documentazione dell'API REST.

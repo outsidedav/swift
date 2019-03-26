@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -12,7 +13,7 @@ lastupdated: "2018-11-08"
 {:pre: .pre}
 
 # 将 Object Storage 用于静态内容
-{: #object}
+{: #object-storage}
 
 Object Storage 是云计算的基础组件，用于为 Apple 开发者及其应用程序提供强大的功能。与在文件层次结构（例如，Block Storage 或 File Storage）中存储信息不同，Object Storage 仅包含文件及其元数据，这些内容存储在称为存储区的集合中。根据定义，这些对象是不可变的，因此是用于图像、视频和其他静态文档等数据的完美存储器。对于经常更改的数据或关系数据，可以使用 [NoSQL](/docs/swift/data/nosql.html)、[Cloudant](/docs/swift/data/cloudant.html) 和 [SQL](/docs/swift/data/sql.html) 数据库服务。
 
@@ -29,25 +30,31 @@ Object Storage 是云计算的基础组件，用于为 Apple 开发者及其应�
 创建存储区时，必须选择弹性级别（跨区域或区域性）。根据您的选择，数据可跨多个地理位置分散存储。
 
 ## API
+{: #api-cos}
 
-{{site.data.keyword.cos_full}} API 是基于 REST 的 API，用于读取和写入对象。此 API 支持 S3 API 的子集，可轻松地将应用程序迁移到 {{site.data.keyword.cloud_notm}}。在使用 {{site.data.keyword.cos_full}} 时，可以使用任何 S3 SDK。有关更多信息，请参阅完整的 [{{site.data.keyword.cos_short}} API 参考](docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api)
+{{site.data.keyword.cos_full}} API 是基于 REST 的 API，用于读取和写入对象。此 API 支持 S3 API 的子集，可轻松地将应用程序迁移到 {{site.data.keyword.cloud_notm}}。在使用 {{site.data.keyword.cos_full}} 时，可以使用任何 S3 SDK。有关更多信息，请参阅完整的 [{{site.data.keyword.cos_short}} API 参考](/docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api)
 
 ## 安全性
-{: #security}
+{: #security-cos}
 
 {{site.data.keyword.cos_full_notm}} 安全性非常高。首先，只有存储区和对象所有者才有权访问自己创建的 {{site.data.keyword.cos_full_notm}} 服务。此外，还支持通过用户认证来访问数据。使用访问控制机制（如存储区策略）可有选择地向用户和应用程序授予许可权。可以使用 HTTPS 协议通过 SSL 端点将数据安全地传输到 {{site.data.keyword.cos_short}}。如果需要额外的安全性，可以使用“服务器端加密”(SSE) 选项或“使用客户提供的密钥的服务器端加密”(SSE-C) 选项来加密静态存储的数据。{{site.data.keyword.cos_full_notm}} 提供了用于 SSE 和 SSE-C 的加密技术。或者，您可以先使用自己的加密库来加密数据，然后再将其存储在 Cloud Object Storage 中。
 
 可以使用以下访问控制机制来保护 {{site.data.keyword.cos_full_notm}} 中的数据。
 
 **Identity and Access Management (IAM) 策略**
-通过 IAM，具有多名员工的组织可以在单个帐户下创建和管理多个用户。借助 IAM 策略，公司可以授予 IAM 用户对其 {{site.data.keyword.cos_short}} 存储区的控制权。
+{: #iam-cos}
+
+通过 IAM，拥有多名员工的组织可以在单个帐户下创建和管理多个用户。借助 IAM 策略，公司可以授予 IAM 用户对其 {{site.data.keyword.cos_short}} 存储区的控制权。
 
 **访问控制表 (ACL)**
+{: #acls-cos}
+
 通过 ACL，可以授予特定用户对单个存储区的特定许可权（例如，读许可权、写许可权）。
 
 静态数据使用自动提供者端高级加密标准 (AES) 256 位加密和安全散列算法 (SHA)-256 散列进行加密。动态数据使用内置运营商级别传输层安全性 (TLS)、安全套接字层 (SSL) 或采用 AES 加密的 SNMPv3 进行保护。
 
 ### 加密
+{: #encryption-cos}
 
 静态数据使用自动提供者端高级加密标准 (AES) 256 位加密和安全散列算法 (SHA)-256 散列进行加密。动态数据使用内置运营商级别传输层安全性/安全套接字层 (TLS/SSL) 或采用 AES 加密的 SNMPv3 进行保护。
 
@@ -56,12 +63,14 @@ Object Storage 是云计算的基础组件，用于为 Apple 开发者及其应�
 您可以提供自己的密钥进行加密，因为 {{site.data.keyword.cos_full_notm}} 中支持 SSE-C。但是，管理和提供用于存储和检索数据的密钥是您的责任。
 
 ## 弹性
+{: #resiliency-cos}
 
 创建存储区时，必须选择弹性级别（跨区域或区域性）。根据您的选择，数据可跨多个地理位置分散存储。
 
 区域性弹性适用于等待时间短的情况，并且数据会分布在单个区域内的三个中心。由于您的数据存储在 3 个或更多个不同区域中，所以请使用跨区域弹性来实现关键可用性。跨区域能够提供地理位置弹性，可跨多个端点使用。请考虑您的应用程序需求来决定使用哪种弹性。
 
 ### 地理位置
+{: #geographies-cos}
 
 可以在世界任何地方使用 {{site.data.keyword.cos_full_notm}}。您可以在创建存储区时选择存储数据的位置。IBM COS 中存储的信息是经过加密的，通过 IBM Object Storage System 提供的分布式存储技术，分散存储在多个地理位置中。 
 
@@ -74,12 +83,14 @@ Object Storage 是云计算的基础组件，用于为 Apple 开发者及其应�
 * 考虑定价模型。
 
 ## 用例和存储类
+{: #usecases-cos}
 
-根据您的用例，可以通过选择满足您需求的服务套餐来降低成本。涉及对对象存储最低访问权的归档操作无需频繁访问的对象的速度和耐久性，此区别会反映在应用程序的存储类支持和定价套餐中。存储类在存储区级别进行定义，因此可以使用套餐组合来满足您的需求。创建一个存储区，将其设置为您要使用的存储类。
+根据您的用例，可以通过选择满足您需求的服务套餐来降低成本。涉及对对象存储最低访问权的归档操作无需频繁访问的对象的速度和耐久性，此区别会反映在应用程序的存储类支持和价格套餐中。存储类在存储区级别进行定义，因此可以使用套餐组合来满足您的需求。创建一个存储区，将其设置为您要使用的存储类。
 
 [{{site.data.keyword.cos_short}} 存储类](/docs/services/cloud-object-storage/help/billing.html#ibm-cos-pricing)文档中提供了有关定价的更多信息。
 
 ### 样本存储类
+{: #samples-cos}
 
 **标准**
 此服务适用于需要频繁访问的非结构化数据，例如 DevOps、协作和操作内容存储库。

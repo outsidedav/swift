@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-08-29"
+  years: 2018, 2019
+lastupdated: "2019-01-15"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -13,15 +14,15 @@ lastupdated: "2018-08-29"
 {:tip: .tip}
 
 # Criando apps Swift com Kits Starter
-{: #intro}
+{: #starterkits-intro}
 
 O {{site.data.keyword.cloud_notm}} Developer Console for Apple permite que os desenvolvedores da Apple criem apps por meio de vários kits do iniciador, provisionem e conectem serviços essenciais otimizados pelo {{site.data.keyword.cloud_notm}} e, em seguida, façam download rapidamente do código de trabalho ou configurem para entrega contínua. Os usuários são capazes de criar, visualizar, configurar e gerenciar o seu app, bem como fazer download do código do seu app. O uso de kits do iniciador ajuda a avaliar e testar rapidamente os serviços do {{site.data.keyword.cloud_notm}} com um aplicativo totalmente novo.
 
-Pronto para saltar? Visite o [{{site.data.keyword.cloud_notm}} Console do desenvolvedor para Apple](https://console.bluemix.net/developer/appledevelopment/starter-kits) agora, para iniciar.
+Pronto para saltar? Visite o [{{site.data.keyword.cloud_notm}} Console do desenvolvedor para Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) agora, para iniciar.
 {: tip}
 
 ## O que é um Kit Iniciador?
-{: #starter_kits}
+{: #starterkits-what}
 
 Com o {{site.data.keyword.cloud_notm}} Developer Experience, é possível escolher entre vários kits de iniciador. Os kits do iniciador instruem o {{site.data.keyword.cloud_notm}} a montar dinamicamente um app de produção de estrutura básica, na linguagem de sua escolha, pronto para implementação na nuvem. Cada kit do iniciador incorpora uma linguagem, uma estrutura e um padrão para um caso de uso específico do mundo real que permite reutilizar código, em vez de reinventá-lo.
 
@@ -30,7 +31,7 @@ Os kits do iniciador estão prontos para produção e concentram-se em demonstra
 Os kits do iniciador contêm instruções que permitem que o {{site.data.keyword.cloud_notm}} produza automaticamente apps scaffold com código móvel e especifique os recursos a serem provisionados automaticamente ao criar um app do kit do iniciador.
 
 ## Usando o  {{site.data.keyword.cloud_notm}}  Developer Console para Apple
-{: #journey}
+{: #starterkits-journey}
 
 O {{site.data.keyword.cloud_notm}} Developer Console for Apple fornece um caminho sem interrupção para construir um app iniciador do Swift para seu caso de uso específico. Vamos examinar as etapas que podem ser executadas em sua jornada.
 
@@ -77,5 +78,5 @@ Ao usar a visualização Detalhes do app, é possível incluir serviços novos o
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple - Visualização Lista de apps](images/project_list_screen.png "Visualização Lista de apps") <br> *Visualização Lista de apps do {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
-Para obter mais informações, visite os [Recursos para aprendizado do {{site.data.keyword.cloud_notm}} Developer Console for Apple](https://console.bluemix.net/developer/appledevelopment/learning-resources).
+Para obter mais informações, visite os [Recursos de aprendizado do {{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/learning-resources).
 {: tip}

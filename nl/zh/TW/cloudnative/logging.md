@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -15,12 +16,12 @@ lastupdated: "2018-11-08"
 # 在 Swift 中記載
 {: #logging_swift}
 
-日誌訊息是字串，具有在製作日誌項目時有關微服務狀態及活動的環境定義資訊。需要有日誌，才能診斷服務失敗的程度和原因，日誌對於監視應用程式性能時的[應用程式度量值](appmetrics.html)扮演了支援角色。
+日誌訊息是字串，具有在製作日誌項目時有關微服務狀態及活動的環境定義資訊。需要有日誌，才能診斷服務失敗的程度和原因，日誌對於監視應用程式性能時的[應用程式度量值](/docs/swift/cloudnative/appmetrics.html)扮演了支援角色。
 
 因為在雲端環境中，處理程序都是暫時的，因此必須收集日誌並傳送至其他地方，通常會傳送到一個集中位置，以進行分析。在雲端環境中進行日誌記載最一致的方法是，將日誌項目傳送至標準輸出及錯誤串流，然後讓基礎架構處理剩下的事宜。
 
-
 ## 將記載新增至 Swift 應用程式
+{: #logging-add}
 
 [HeliumLogger](https://github.com/IBM-Swift/HeliumLogger) 是適用於 Swift 的熱門輕量型記載架構，提供許多好處，例如，記載成標準輸出以及不同的記載層次。
 
@@ -49,7 +50,7 @@ Log.info("This is an informational log message.")
 如需自訂日誌訊息的相關資訊，請參閱官方的 [HeliumLogger API 參考資料文件](http://ibm-swift.github.io/HeliumLogger/)。
 
 ## 使用入門範本套件記載
-{: #monitoring}
+{: #logging-starterkits}
 
 依預設，使用 {{site.data.keyword.cloud_notm}} App Service 所建立的 Swift 應用程式，會隨附 `HeliumLogger`。在本機或在雲端環境中執行應用程式，會產生下列輸出：
 ```
@@ -69,13 +70,14 @@ HeliumLogger.use(LoggerMessageType.info)
 {: tip}
 
 ## 後續步驟
-{: #next_steps}
+{: #next-logging}
 
 進一步瞭解在每一個部署環境中檢視日誌：
 * [Kubernetes 日誌](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/)
-* [Cloud Foundry 日誌](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
-* [{{site.data.keyword.openwhisk}} 日誌 & 監視](https://console.bluemix.net/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
+* [Cloud Foundry 日誌](/docs/cli/reference/ibmcloud/bx_cli.html)
+* [Cloud Foundry Enterprise Environment - 審核及記載](docs/cloud-foundry/auditing-logging.html)
+* [{{site.data.keyword.openwhisk}} 日誌及監視](/docs/openwhisk/openwhisk_logs.html)
 
 了解如何實作及使用日誌聚集器：
-* [{{site.data.keyword.cloud_notm}} Log Analysis](https://console.bluemix.net/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
+* [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis/log_analysis_ov.html)
 * [{{site.data.keyword.cloud_notm}} 專用 ELK 堆疊](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-08"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -15,12 +16,12 @@ lastupdated: "2018-11-08"
 # Swift でのロギング
 {: #logging_swift}
 
-ログ・メッセージは、ログ・エントリーが作成された時点のマイクロサービスの状態およびアクティビティーに関するコンテキスト情報を含むストリングです。 ログは、サービスで障害が発生した状況や理由を診断するために必要です。またログは、アプリケーション正常性のモニタリングにおいて[アプリケーション・メトリック](appmetrics.html)を補助する役割を果たします。
+ログ・メッセージは、ログ・エントリーが作成された時点のマイクロサービスの状態およびアクティビティーに関するコンテキスト情報を含むストリングです。 ログは、サービスで障害が発生した状況や理由を診断するために必要です。またログは、アプリケーション正常性のモニタリングにおいて[アプリケーション・メトリック](/docs/swift/cloudnative/appmetrics.html)を補助する役割を果たします。
 
-クラウド環境のプロセスには過渡的な性質があるため、ログは、収集して他の場所に送信する必要があります。通常は分析用の一元的な場所に送信します。句クラウド環境でのロギング方法として最も一貫した方法は、ログ・エントリーを標準出力とエラー・ストリームに送信し、後の処理はインフラストラクチャーに任せるという方法です。
-
+クラウド環境のプロセスには過渡的な性質があるため、ログは、収集して他の場所に送信する必要があります。通常は分析用の一元的な場所に送信します。 句クラウド環境でのロギング方法として最も一貫した方法は、ログ・エントリーを標準出力とエラー・ストリームに送信し、後の処理はインフラストラクチャーに任せるという方法です。
 
 ## Swift アプリへのロギングの追加
+{: #logging-add}
 
 [HeliumLogger](https://github.com/IBM-Swift/HeliumLogger) は、Swift 用の一般的な軽量ロギング・フレームワークであり、標準出力へのロギングやさまざまなログ・レベルなど、ネイティブの利点を多数提供しています。
 
@@ -49,7 +50,7 @@ Log.info("This is an informational log message.")
 ログ・メッセージのカスタマイズについて詳しくは、公式の [HeliumLogger API 参照の資料](http://ibm-swift.github.io/HeliumLogger/)を参照してください。
 
 ## スターター・キットを使用したロギング
-{: #monitoring}
+{: #logging-starterkits}
 
 {{site.data.keyword.cloud_notm}} App Service を使用して作成された Swift アプリは、デフォルトで `HeliumLogger` が付属しています。 アプリをネイティブまたはクラウド環境で実行すると、次の出力が生成されます。
 ```
@@ -69,13 +70,14 @@ HeliumLogger.use(LoggerMessageType.info)
 {: tip}
 
 ## 次のステップ
-{: #next_steps}
+{: #next-logging}
 
 各デプロイメント環境でのログの表示について詳しくは、次の各ページを参照してください。
 * [Kubernetes のログ](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/)
-* [Cloud Foundry のログ](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
-* [{{site.data.keyword.openwhisk}} のログおよびモニタリング](https://console.bluemix.net/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
+* [Cloud Foundry のログ](/docs/cli/reference/ibmcloud/bx_cli.html)
+* [Cloud Foundry エンタープライズ環境 - 監査とロギング](docs/cloud-foundry/auditing-logging.html)
+* [{{site.data.keyword.openwhisk}} のログおよびモニタリング](/docs/openwhisk/openwhisk_logs.html)
 
 ログ統合機能を実装して使用する方法について、次の各ページを参照してください。
-* [{{site.data.keyword.cloud_notm}} Log Analysis](https://console.bluemix.net/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
+* [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis/log_analysis_ov.html)
 * [{{site.data.keyword.cloud_notm}} Private ELK スタック](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)
