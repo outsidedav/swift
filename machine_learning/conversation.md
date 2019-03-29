@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-03-28"
 
-keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2, watson sdk swift, add chatbot, add assistant
+keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
 
 subcollection: swift
 

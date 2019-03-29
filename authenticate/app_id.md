@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-03-28"
 
-keywords: add authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
+keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
 
 subcollection: swift
 

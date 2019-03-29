@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-03-28"
 
-keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption
+keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
 subcollection: swift
 
