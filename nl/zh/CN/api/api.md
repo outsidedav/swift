@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swift api connect, swagger swift, open api swift, api designer, loopback swift api, create swift backend, swift api parameters, swift api reference
+
+subcollection: swift
 
 ---
 
@@ -21,19 +25,19 @@ lastupdated: "2019-01-15"
 ## 创建 API Connect 的实例
 {: #create-apiconnect}
 
-转至[目录](https://cloud.ibm.com/catalog/)，然后创建 API Connect 的实例来管理 API。
+转至[目录](https://cloud.ibm.com/catalog/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")，然后创建 API Connect 的实例来管理 API。
 
 使用`菜单 -> API` 来访问 API Connect 管理控制台。
 
 ![API Connect](images/apiconnect.png)
 
-如果要在开始后端和前端开发之前定义自己的 API 合同，请使用 API Connect 工具来快速完成此过程。您可以与数字开发团队合作，在 iOS 应用程序和后端逻辑之间构建并定义 API 合同。此逻辑可以利用 Kubernetes 或 [Cloud Foundry](/docs/cloud-foundry/index.html) 通过 [{{site.data.keyword.openwhisk}}](/docs/openwhisk/index.html) 或 [Swift 运行时](/docs/runtimes/swift/index.html)进行传递。
+如果要在开始后端和前端开发之前定义自己的 API 合同，请使用 API Connect 工具来快速完成此过程。您可以与数字开发团队合作，在 iOS 应用程序和后端逻辑之间构建并定义 API 合同。此逻辑可以利用 Kubernetes 或 [Cloud Foundry](/docs/cloud-foundry?topic=cloud-foundry-about#about) 通过 [{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-index#index) 或 [Swift 运行时](/docs/runtimes/swift?topic=Swift-swift_runtime#swift_runtime)进行传递。
 
 定义 API 后，即可以在多个不同工具中定义“Open API 规范”(Swagger)：
 
-- [Swagger Editor](http://editor.swagger.io/)
-- [API Designer](https://www.ibm.com/support/knowledgecenter/en/SSFS6T/com.ibm.apic.toolkit.doc/task_apionprem_composing_apis.html)
-- [Loopback](https://loopback.io/)
+- [Swagger 编辑器](http://editor.swagger.io/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
+- [API Designer](https://www.ibm.com/support/knowledgecenter/en/SSFS6T/com.ibm.apic.toolkit.doc/task_apionprem_composing_apis.html){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
+- [Loopback](https://loopback.io/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
 
 ## 定义受管 API
 {: #define-apiconnect}
@@ -52,7 +56,7 @@ lastupdated: "2019-01-15"
 
 您可以基于此 API 创建后端 Swift 应用程序。 
 
-在 Apple Development Console 中，执行以下步骤：
+在 [Apple Development Console](https://cloud.ibm.com/developer/appledevelopment/dashboard){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 中，执行以下步骤：
 
 1. 选择**入门模板工具包**。
 2. 单击**创建应用程序**。
@@ -60,7 +64,7 @@ lastupdated: "2019-01-15"
 
 选择 YAML 和 JSON 文件，然后单击**创建**。这将创建后端 Swift 应用程序。
 
-然后，可以**下载**代码或**部署到云**，并将 GIT 存储库克隆到本地计算机。您可以遵循“理论指导”中的指示信息在 Xcode 中打开服务器端应用程序。
+然后，可以**下载**代码或**部署**，并将 GIT 存储库克隆到本地计算机。您可以遵循“理论指导”中的指示信息在 Xcode 中打开服务器端应用程序。
 
 在 **Source** 文件夹中，可以看到一个路径，用于定义创建了映射到 API 的 REST 端点的 Swift 文件。 
 
@@ -120,7 +124,7 @@ func initializePet_Routes(app: App) {
 
 要在 iOS 应用程序中使用后端 API，请使用 Apple 控制台来创建移动入门模板工具包。使用“入门模板工具包”视图，创建任何类型的 iOS Swift 入门模板工具包。
 
-单击**添加资源**，然后选择 API。 
+单击**添加服务**，然后选择 API。 
 
 ![API 对话框](../images/apidialog.png)
 
@@ -146,7 +150,7 @@ iOS 应用程序包含一个文件夹，其中含有针对 API 生成的 SDK 绑
 ## 在 API 更改后重新创建 SDK
 {: #change-apiconnect}
 
-如果有 API 更改或新的功能可用，并且新增了 {{site.data.keyword.openwhisk}}，那么可以使用 `ibmcloud sdk` 命令来重新创建客户端 SDK。有关更多信息、示例和语法帮助，请查看 [SDK Generator](/docs/cli/sdk/index.html) 文档。
+如果有 API 更改或新的功能可用，并且新增了 {{site.data.keyword.openwhisk}}，那么可以使用 `ibmcloud sdk` 命令来重新创建客户端 SDK。有关更多信息、示例和语法帮助，请查看 [SDK Generator](/docs/cli/sdk?topic=cloud-cli-sdk-cli#sdk-cli) 文档。
 
 要支持创建 SDK，请使用“Open API 规范”(Swagger) YAML 或 JSON 文件。可以使用 {{site.data.keyword.cloud_notm}} 中的 API Management 工具来检索此文件。 
 

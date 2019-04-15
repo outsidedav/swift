@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: watson studio swift, machine learning swift, custom model swift, data set swift, predictive swift, watson api swift, generated model swift, dataset swift
+
+subcollection: swift
 
 ---
 
@@ -18,20 +22,20 @@ lastupdated: "2019-01-15"
 
 Watson Studio には、データ分析で協力することによりビジネス上の問題を解決するための環境やツールが用意されています。 データを分析、クレンジング、および編成するために必要なツールを選択できます。 ストリーミング・データの取り込み、または機械学習モデルの作成、トレーニング、およびデプロイについて説明します。 Watson Studio は、さまざまな {{site.data.keyword.cloud}} サービスおよび Watson ナレッジ・カタログに統合されています。それは、資産を制御するためのポリシー管理機能を提供し、カタログすることによりそれらを検索するためのインデックスを作成します。 詳しくは、https://dataplatform.ibm.com/ を参照してください。
 
-Watson Studio は、プロジェクト・ベースのアーキテクチャーを基に構造化されています。それにより、ビジネス上の問題を解決するようにリソースが編成されます。 リソースには、クラウドおよびオンプレミスのデータ・ストアへの接続、データ・ファイル、コラボレーター、およびモデルのなどの分析アセットが含まれます。 詳しくは、https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics を参照してください。
+Watson Studio は、プロジェクト・ベースのアーキテクチャーを基に構造化されています。それにより、ビジネス上の問題を解決するようにリソースが編成されます。 リソースには、クラウドおよびオンプレミスのデータ・ストアへの接続、データ・ファイル、コラボレーター、およびモデルのなどの分析アセットが含まれます。 詳しくは、[Watson Studio の概要](https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。
 
 ## {{site.data.keyword.DSX}} の機械学習
 {: #dsx-learning}
 
 {{site.data.keyword.DSX}} を使用することにより、モデルをトレーニングし、それらをデプロイしてから、API を使用して結果を利用することができます。 それらの API は、iOS または Swift のアプリケーションで使用できます。
 
-IBM Watson Machine Learning を使用すると、自分の環境をセットアップした後、モデルを作成し、それらをクラウドにデプロイし、それらをトレーニングすることができます。 詳しくは、「[{{site.data.keyword.pm_full}} および {{site.data.keyword.DSX}} によるモデルの作成、デプロイ、およびトレーニング](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics)」を参照してください。
+IBM Watson Machine Learning を使用すると、自分の環境をセットアップした後、モデルを作成し、それらをクラウドにデプロイし、それらをトレーニングすることができます。 詳しくは、「[{{site.data.keyword.pm_full}} および {{site.data.keyword.DSX}} によるモデルの作成、デプロイ、およびトレーニング](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")」を参照してください。
 
 ### チュートリアル
 {: #dsx-tutorials}
 
-- [{{site.data.keyword.pm_short}} によるロジスティック回帰モデルの作成](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics)
-- [{{site.data.keyword.pm_short}} によるナイーブ・ベイズ・モデルの作成](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics)
+- [{{site.data.keyword.pm_short}} によるロジスティック回帰モデルのビルド](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
+- [{{site.data.keyword.pm_short}} による単純ベイズ・モデルのビルド](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
 
 ## iOS および Swift による {{site.data.keyword.DSX}} のセットアップ
 {: #dsx_ios}
@@ -42,7 +46,7 @@ IBM Watson Machine Learning を使用すると、自分の環境をセットア�
 
 2. アプリ・コードをダウンロードします。
 3. 初期化
-  * iOS プロジェクトでは、{{site.data.keyword.pm_short}} リソースを iOS プロジェクトに追加するだけで、資格情報がすぐにアプリに挿入されます。
+  * iOS プロジェクトでは、{{site.data.keyword.pm_short}} サービスを iOS プロジェクトに追加するだけで、資格情報がすぐにアプリに挿入されます。
     アプリケーションから資格情報にアクセスするには、次のコード・スニペットをコピーし、貼り付けます。 また、スコアリング・エンドポイントをアプリに必ず追加するようにします。それは、モデルのデプロイメントの`「実装」`タブ内にあります。
 
     ```swift
@@ -214,13 +218,13 @@ client.retrieveToken { token in
 {: codeblock}
 
 ## 次のステップ
-{: #dsx_next}
+{: #dsx_next notoc}
 
-お疲れさまでした。 これで、カスタム生成の機械学習モデルを使用してデータ・セットを分析できるようになりました。 この調子で {{site.data.keyword.pm_short}} が提供する機能について、[Data science and machine learning](https://www.ibm.com/analytics/data-science/machine-learning) でさらに学習してください。
+お疲れさまでした。 これで、カスタム生成の機械学習モデルを使用してデータ・セットを分析できるようになりました。 この調子で {{site.data.keyword.pm_short}} が提供する機能について、[Data science and machine learning](https://www.ibm.com/analytics/data-science/machine-learning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") でさらに学習してください。
 
 ### 関連リンク
 {: #dsx-related}
 
-* [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling/index.html#using-machine-learning-with-data-science-experience)
-* [{{site.data.keyword.DSX}}](https://datascience.ibm.com/)
-* [{{site.data.keyword.DSX}} のドキュメンテーション](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics)
+* [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling?topic=services/PredictiveModeling-WMLgettingstarted#using-machine-learning-with-data-science-experience)
+* [{{site.data.keyword.DSX}}](https://datascience.ibm.com/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
+* [{{site.data.keyword.DSX}} の資料 ](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")

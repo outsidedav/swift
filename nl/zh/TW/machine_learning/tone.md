@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-03-24"
+
+keywords: watson swift, tone anaylzer swift, cocoapods swift, swift sdk install, starter kit watson
+
+subcollection: swift
 
 ---
 
@@ -15,7 +19,7 @@ lastupdated: "2019-01-31"
 # {{site.data.keyword.toneanalyzershort}}
 {: #tone}
 
-IBM Watson Tone Analyzer 服務可讓您的應用程式瞭解文字形式的情緒及語氣。您可以使用此服務更充分的瞭解您使用者的對話，或者協助使用者瞭解他人是如何理解其書面通訊的。
+{{site.data.keyword.ibmwatson}} {{site.data.keyword.toneanalyzershort}} 服務可讓您的應用程式瞭解文字形式的情緒及語氣。您可以使用此服務更充分的瞭解您使用者的對話，或者協助使用者瞭解他人是如何理解其書面通訊的。
 
 ## 如何運作
 {: #how-it-works-tone}
@@ -35,7 +39,7 @@ IBM Watson Tone Analyzer 服務可讓您的應用程式瞭解文字形式的情�
 * Swift 4.1+
 * CocoaPods、Carthage 或 Swift Package Manager
 
-您可以使用 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods)、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage) 或 [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager) 來安裝 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk)。藉由使用 [CocoaPods](https://cocoapods.org/) 來管理相依關係，您只會得到您需要的架構，而不是整個 Watson Swift SDK。如果您是 CocoaPods 新手，可以輕鬆地安裝它：
+您可以使用 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 或 [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，來安裝 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。藉由使用 CocoaPods 來管理相依關係，您只會得到您需要的架構，而不是整個 Watson Swift SDK。如果您是 CocoaPods 新手，可以輕鬆地安裝它：
 
 ```bash
 $ sudo gem install cocoapods
@@ -66,7 +70,7 @@ target 'MyApp' do
 ```
 {: codeblock}
 
-若為正式作業應用程式，您也可能想要指定特定的[版本需求](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions)，以避免新版本 Watson Swift SDK 有非預期的變更。
+若為正式作業應用程式，您也可能想要指定特定的[版本需求](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以避免新版本 Watson Swift SDK 有非預期的變更。
 
 `Podfile` 就緒後，現在您可以下載相依關係。使用終端機來導覽至您專案的根目錄，然後執行 CocoaPods：
 
@@ -98,7 +102,7 @@ Cocoapods 會下載 {{site.data.keyword.toneanalyzershort}} 架構，並且會�
   ```
   {: codeblock}
 
-  參閱[版本參數文件](https://cloud.ibm.com/apidocs/tone-analyzer#versioning)，或使用建立 {{site.data.keyword.conversationshort}} 服務的日期。
+  參閱[版本參數文件](https://cloud.ibm.com/apidocs/tone-analyzer#versioning){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，或使用建立 {{site.data.keyword.conversationshort}} 服務的日期。
   {: tip}
 
 3. 提供分析用的文字，然後處理結果：
@@ -141,23 +145,23 @@ Cocoapods 會下載 {{site.data.keyword.toneanalyzershort}} 架構，並且會�
   ```
   {: screen}
 
-4. 探索 Watson SDK [Tone Analyzer 文件](https://watson-developer-cloud.github.io/swift-sdk/services/ToneAnalyzerV3/index.html)，以建置完備應用程式的功能。
+4. 探索 Watson SDK [Tone Analyzer 文件](https://watson-developer-cloud.github.io/swift-sdk/services/ToneAnalyzerV3/index.html){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以建置完備應用程式的功能。
 
 ## 使用入門範本套件
 {: #tone_starterkits}
 
-[入門範本套件](https://cloud.ibm.com/developer/appledevelopment/starter-kits)是使用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。選取 **Tone Analyzer for iOS with Watson** 入門範本套件，即可使用 {{site.data.keyword.toneanalyzershort}} 服務。此服務利用深度學習功能來評估文字通道。Tone Analyzer 應用程式會識別說話者的語氣（快樂、悲傷、自信等等），因為它與許多種類有關。
+[入門範本套件](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 是使用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。選取 **Tone Analyzer for iOS with Watson** 入門範本套件，即可使用 {{site.data.keyword.toneanalyzershort}} 服務。此服務利用深度學習功能來評估文字通道。Tone Analyzer 應用程式會識別說話者的語氣（快樂、悲傷、自信等等），因為它與許多種類有關。
 
 若要開始使用此入門範本套件，請執行下列動作：
 
-1. 選取在[這裡](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson)找到的入門範本套件。
+1. 選取[這裡](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 找到的入門範本套件。
 2. 建立含有預設服務的專案。
 3. 按一下**下載程式碼**，以下載專案。服務認證會注入對應金鑰欄位的 `BMSCredentials.plist` 檔案中。
 
 ## 後續步驟
-{: #tone_next}
+{: #tone_next notoc}
 
 做得好！現在，{{site.data.keyword.toneanalyzershort}} 已新增至您的應用程式。嘗試下列其中一個選項，以保持動力：
 
-* 檢視 [Watson Swift SDK on GitHub](https://github.com/watson-developer-cloud/swift-sdk) 並探索其他受支援的 Watson 服務。
-* 如需相關資訊，請參閱 [IBM Watson {{site.data.keyword.toneanalyzershort}}](https://www.ibm.com/watson/services/tone-analyzer/)。
+* 檢視 [Watson Swift SDK on GitHub](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 並探索其他受支援的 Watson 服務。
+* 如需相關資訊，請參閱 [IBM Watson {{site.data.keyword.toneanalyzershort}}](https://www.ibm.com/watson/services/tone-analyzer/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。

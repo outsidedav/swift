@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-03-28"
+
+keywords: coreml swift, core ml swift, watson swift core, create model swift, image classification swift, version parameter swift, swift coreml watson
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-31"
 # 搭配使用 Core ML 和 Watson
 {: #swift-coreml}
 
-通过 [Core ML](https://developer.apple.com/documentation/coreml){:new_window}，可以将各种机器学习模型类型集成到应用程序中。Core ML 除了支持丰富的 30 多种层类型的深度学习外，还支持标准模型，例如树整体、SVM 和广义线性模型。Core ML 并不是远程发送数据进行分析，而是通过低级别技术（例如，Metal 和 Accelerate）无缝地利用 CPU 和 GPU 来提供最大性能和效率。
+通过 [Core ML](https://developer.apple.com/documentation/coreml){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")，可以将各种机器学习模型类型集成到应用程序中。Core ML 除了支持丰富的 30 多种层类型的深度学习外，还支持标准模型，例如树整体、SVM 和广义线性模型。Core ML 并不是远程发送数据进行分析，而是通过低级别技术（例如，Metal 和 Accelerate）无缝地利用 CPU 和 GPU 来提供最大性能和效率。
 
 您可以通过使用以下步骤训练和创建模型、下载和构建依赖项以及添加图像分类，从而将 Core ML 和 Watson Visual Recognition 添加到 Swift 应用程序。
 {: shortdesc}
@@ -31,8 +35,7 @@ lastupdated: "2019-01-31"
 * Swift 4.1+
 * CocoaPods、Carthage 或 Swift Package Manager
 
-您可以使用 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods)、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage) 或
-[Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager) 安装 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk)。通过使用 CocoaPods(https://cocoapods.org/) 管理依赖关系，您仅获得所需框架，而不是整个 Watson Swift SDK。如果您未使用过 CocoaPods，您可以轻松进行安装：
+您可以使用 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")，[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 或 [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 安装 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。通过使用 CocoaPods 管理依赖关系，您仅获得所需框架，而不是整个 Watson Swift SDK。如果您未使用过 CocoaPods，您可以轻松进行安装：
 
 ```console
 sudo gem install cocoapods
@@ -55,7 +58,8 @@ sudo gem install cocoapods
 3. 对项目命名，然后单击**创建**。
   
   
-  如果未定义任何存储器，请单击“刷新”。{: tip}
+  如果未定义任何存储器，请单击“刷新”。
+  {: tip}
 
 ### 将服务绑定到项目
 {: #bind-service-coreml}
@@ -77,12 +81,12 @@ sudo gem install cocoapods
 
 3. 选择**训练模型**，然后等待模型完成训练。
 
-一切准备就绪！现在，您已准备就绪，可下载 Core ML 模型，并使用 [Watson Developer Cloud Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window} 将其集成到应用程序中。
+一切准备就绪！现在，您已准备就绪，可下载 Core ML 模型，并使用 [Watson Developer Cloud Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 将其集成到应用程序中。
 
 ## 步骤 2. 下载并构建依赖项
 {: #install-depend-coreml}
 
-使用您最喜欢的文本编辑器，通过运行 `pod init` 在项目的根目录（`.xcodeproj` 文件所在的位置）中创建新的 `Podfile`。然后，添加行以将 Watson Swift SDK 的
+使用您最喜欢的文本编辑器，通过运行 `pod init`，在项目的根目录（`.xcodeproj` 文件所在的位置）中创建新的 `Podfile`。然后，添加行以将 Watson Swift SDK 的
 {{site.data.keyword.visualrecognitionshort}} 框架指定为依赖项：
 
 ```pod
@@ -91,18 +95,18 @@ use_frameworks!target 'MyApp' do
 ```
 {: codeblock}
 
-对于生产应用程序，您可能还要指定特定的[版本需求](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions)，以避免 Watson Swift SDK 新发行版中的意外更改。
+对于生产应用程序，您可能还要指定特定[版本需求](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")，以避免 Watson Swift SDK 新发行版中的意外更改。
 
-`Podfile` 已就位，现在可以下载依赖项。使用终端浏览至项目的根目录，然后运行 CocoaPods：
+`Podfile` 已就位，现在可以下载依赖项。使用终端导航至项目的根目录，然后运行 CocoaPods：
 
 ```console
 pod install
 ```
 {: codeblock}
 
-Cocoapods 下载 {{site.data.keyword.visualrecognitionshort}} 框架，在项目的 `Pods/` 文件夹中进行构建。
+Cocoapods 下载 {{site.data.keyword.visualrecognitionshort}} 框架，并在项目的 `Pods/` 文件夹中进行构建。
 
-要防止 Pod 构建失败，在 Xcode 中打开项目时，打开以 `.xcworkspace` 而不是 `.xcodeproj` 结尾的文件。
+要防止 Pod 构建失败，在 Xcode 中打开项目时，请打开以 `.xcworkspace` 而不是 `.xcodeproj` 结尾的文件。
 {: tip}
 
 ## 步骤 3. 向应用程序添加图像分类
@@ -124,7 +128,8 @@ Cocoapods 下载 {{site.data.keyword.visualrecognitionshort}} 框架，在项目
   ```
   {: codeblock}
 
-  查看[版本参数文档](https://cloud.ibm.com/apidocs/visual-recognition#versioning)或者使用创建 {site.data.keyword.visualrecognitionshort}} 服务的日期。{: tip}
+  查看[版本参数文档](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 或者使用创建 {site.data.keyword.visualrecognitionshort}} 服务的日期。
+  {: tip}
 
 3. 添加以下代码以下载本地 Core ML 模型或者使用 Watson 分类器更新该模型：
   ```swift
@@ -166,7 +171,7 @@ Cocoapods 下载 {{site.data.keyword.visualrecognitionshort}} 框架，在项目
   ```
   {: codeblock}
 
-5. 探索 Watson SDK 支持的其他 [Core ML 分类功能](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html)。
+5. 探索 Watson SDK 支持的其他 [Core ML 分类功能](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
 
 ## 步骤 4. 使用入门模板工具包
 {: #coreml_starterkits}
@@ -175,9 +180,9 @@ Cocoapods 下载 {{site.data.keyword.visualrecognitionshort}} 框架，在项目
 
 要将 {{site.data.keyword.visualrecognitionshort}} 添加到入门模板工具包，请完成以下步骤：
 
-1. 选择要使用的[入门模板工具包](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window}。
-2. 使用缺省服务创建项目。
-3. 单击**添加资源 > Watson > {{site.data.keyword.visualrecognitionshort}}**。
+1. 选择要使用的[入门模板工具包](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
+2. 使用缺省服务创建应用程序。
+3. 单击**添加服务 > Watson > {{site.data.keyword.visualrecognitionshort}}**。
 4. 通过单击**下载代码**来下载项目。对于 iOS 项目，凭证会插入到 `BMSCredentials.plist` 文件中的相应密钥字段中。对于服务器端 Swift 项目，可以在 `config/local-dev.json` 文件中找到这些凭证。
 
 ## 后续步骤
@@ -185,6 +190,6 @@ Cocoapods 下载 {{site.data.keyword.visualrecognitionshort}} 框架，在项目
 
 现在，可以使用您自己定制生成的 Core ML 模型来分析图像。请一鼓作气，尝试下列其中一个选项：
 
-* 查看 [{{site.data.keyword.watson}}Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window}，并且探索其他受支持的 Watson 服务。
-* 添加云逻辑。首先[开发无服务器应用程序](/docs/swift/backend/functions.html)。
-* 利用 {{site.data.keyword.visualrecognitionshort}} 提供的所有功能。有关更多详细信息，请参阅[文档](/docs/services/visual-recognition/index.html)。
+* 查看 [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")，并探索其他受支持的 Watson 服务。
+* 添加云逻辑。首先[开发无服务器应用程序](/docs/swift/backend?topic=swift-serverless-dev-swift#serverless-dev-swift)。
+* 利用 {{site.data.keyword.visualrecognitionshort}} 提供的所有功能。有关更多详细信息，请参阅[文档](/docs/services/visual-recognition?topic=visual-recognition-index#index)。

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: generated sdk swift, devops pipeline swift, sdk plug-in swift, open api swift, sdkgen swift, ibmcloud sdk swift, swift backend service
+
+subcollection: swift
 
 ---
 
@@ -15,7 +19,7 @@ lastupdated: "2019-01-15"
 # 生成済み SDK を使用してバックエンド・サービスをアプリに統合する
 {: #sdkgen-cli}
 
-{{site.data.keyword.IBM}} SDK ジェネレーター・プラグインを [{{site.data.keyword.cloud_notm}} CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](/docs/cli/index.html){: new_window}にインストールできます。
+{{site.data.keyword.IBM}} SDK ジェネレーター・プラグインを [{{site.data.keyword.cloud}} CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli){: new_window}にインストールできます。
 
 この {{site.data.keyword.IBM_notm}} SDK ジェネレーター・プラグインは、生成された SDK を使用して、バックエンド・サービスをアプリに統合します。 REST API が変更された場合は、SDK を再生成し、古い SDK を置き換えることで、SDK を容易にアップグレードできます。 また、CLI を DevOps パイプラインに統合することによって、アプリをビルドするたびに、SDK が API スペックに常に整合していることを確認することができます。
 
@@ -26,20 +30,22 @@ REST API 定義は有効でなければならず、かつ稼働中のサーバ�
 
 以下のものが存在することを確認します。
 
-* [{{site.data.keyword.Bluemix_notm}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://cloud.ibm.com){: new_window} アカウント
-* [Open API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.openapis.org/){: new_window} 仕様に準拠した有効な API 定義
+* [{{site.data.keyword.cloud_notm}}](http://cloud.ibm.com){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") アカウント
+* [Open API ](https://www.openapis.org/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") 仕様に準拠した有効な API 定義
 
 ## SDK プラグインのインストール
 {: #install-sdkgen}
 
-1. [{{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/get_started.html) をインストールします。
+1. [{{site.data.keyword.cloud_notm}} CLI をインストールします](/docs/cli?topic=cloud-cli-install-ibmcloud-cli#install-ibmcloud-cli)。
 
-2. [プラグイン ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](/docs/cli/index.html#install_plug-in){: new_window} をインストールします。
-
+2. `sdk-gen` プラグインをインストールします。
   ```
   ibmcloud plugin install sdk-gen
   ```
   {: codeblock}
+
+基本 {{site.data.keyword.cloud_notm}} CLI と、その他便利なローカル・ツールと一緒に `sdk-gen` プラグインが含まれる [{{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#install_plug-in) をインストールできます。
+{: tip}
 
 ## SDK の生成
 {: #commands-sdkgen}
@@ -63,7 +69,7 @@ REST API 定義は有効でなければならず、かつ稼働中のサーバ�
 * `LOCATION` (必須) - `OPENAPI_DOC_LOCATION` のタイプを指定します
    * `-r` - リモート URL
    * `-f` - ファイル
-   * `-a` - {{site.data.keyword.Bluemix_notm}} 上で稼働するアプリ
+   * `-a` - {{site.data.keyword.cloud_notm}} 上で稼働するアプリ
    * `-l` - ローカル・ホスト URL
 * `--output "YOUR_RELATIVE_PATH"` (オプション) - 生成された SDK を、`YOUR_RELATIVE_PATH` で指定されたディレクトリーに置きます (既存の SDK は上書きされます)。
 * `--unzip` (オプション) - 生成された SDK を解凍します (既存の SDK は上書きされます)。
@@ -71,7 +77,7 @@ REST API 定義は有効でなければならず、かつ稼働中のサーバ�
 ### 使用法
 {: #gen-usage-sdkgen}
 
-{{site.data.keyword.Bluemix_notm}} で稼働中の Cloud Foundry アプリから SDK を生成するには、アプリの名前を CLI のパラメーターに使用できます。 以下のコマンドでは、アプリの名前を `SDK_Name` に使用します。
+{{site.data.keyword.cloud_notm}} で稼働中の Cloud Foundry アプリから SDK を生成するには、アプリの名前を CLI のパラメーターに使用します。 以下のコマンドでは、アプリの名前を `SDK_Name` に使用します。
 
 ```
 ibmcloud sdk generate [APP_NAME] [LOCATION] [PLATFORM]
@@ -103,7 +109,7 @@ ibmcloud sdk validate [引数]
 ### 使用法
 {: #val-usage-sdkgen}
 
-{{site.data.keyword.Bluemix_notm}} で稼働中の Cloud Foundry アプリの API スペックを検証するには、アプリの名前を CLI のパラメーターとして使用します。
+{{site.data.keyword.cloud_notm}} で稼働中の Cloud Foundry アプリの API スペックを検証するには、アプリの名前を CLI のパラメーターに使用します。
 ```
 ibmcloud sdk validate [APP_NAME] [LOCATION]
 ```

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-03-15"
+
+keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
+
+subcollection: swift
 
 ---
 
@@ -20,11 +24,11 @@ lastupdated: "2019-02-01"
 
 現時点で、{{site.data.keyword.ihsdbaas_full}} を使用する際にサポートされるプログラミング言語は、MongoKitten SDK 4.0.0 での Swift 4.0 です。
 
+
 ## ステップ 1. データベース・クラスターの作成
 {: #create_dbcluster}
 
-1. 次の URL で {{site.data.keyword.ihsdbaas_full}} サービス画面にアクセスします。
-https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
+1. [{{site.data.keyword.ihsdbaas_full}} サービス構成](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") 画面にアクセスします。
 
 2. 以下の情報を指定します。
 
@@ -81,7 +85,7 @@ https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
 
 このスターター・キットから作成された既存のプロジェクトを使用するか、または新規プロジェクトを作成します。
 
-1. {{site.data.keyword.cloud_notm}} App Service ダッシュボード (https://cloud.ibm.com/developer/appservice/dashboard) を開きます。
+1. [{{site.data.keyword.cloud_notm}}「アプリ・サービス」ダッシュボード](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を開きます。
 
 2. **「スターター・キット」**タブを選択します。
 
@@ -98,9 +102,7 @@ https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
 ## ステップ 3. データベースへの接続
 {: #connect_db}
 
-セキュアなデータ転送を行えるように、
-https://api.hypersecuredbaas.ibm.com/cert.pem から認証局 (CA) ファイルをダウンロードし、
-プロジェクト・ディレクトリーにコピーします。
+セキュアなデータ転送を行えるように、https://api.hypersecuredbaas.ibm.com/cert.pem から認証局 (CA) ファイルをダウンロードし、プロジェクト・ディレクトリーにコピーします。
 
 1. ダウンロードした解凍済みのコード・ファイルがある、プロジェクト・ディレクトリーに変更します。
 
@@ -229,8 +231,7 @@ https://api.hypersecuredbaas.ibm.com/cert.pem から認証局 (CA) ファイル�
 	```
 	{: codeblock}
 
-[ステップ 6](#use-step6) でアプリケーションをデプロイした後、データベースへの接続に成功すると、
-次のメッセージが表示されます。
+[ステップ 6](#use-step6) でアプリケーションをデプロイした後、データベースへの接続に成功すると、次のメッセージが表示されます。
 
 ```
 ...
@@ -243,14 +244,14 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ## ステップ 5. アプリケーション・コードの組み込み
 {: #embed_appcode}
 
-ここで、独自のアプリケーション・コードをプロジェクトに追加できます。 MongoKitten API の使用について詳しくは、http://beta.openkitten.org/tutorials/ を参照してください。
+ここで、独自のアプリケーション・コードをプロジェクトに追加できます。 詳しくは、[MongoKitten API](http://beta.openkitten.org/tutorials/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") 資料を参照してください。
 
 ## ステップ 6. アプリケーションのデプロイ
 {: #deploy-dbcluster}
 
-アプリケーションは、必要なビルド・ツールを使用して[ローカルで](/docs/swift/create_app_cli.html#swift-install-tools)実行するか、または {{site.data.keyword.cloud_notm}} にデプロイすることができます。
+アプリケーションは、必要なビルド・ツールを使用して[ローカルで](/docs/swift?topic=swift-swift_cli#swift-install-tools)実行するか、または {{site.data.keyword.cloud_notm}} にデプロイすることができます。
 
-ダッシュボードでデプロイメント・ツールチェーンを作成するには、**「Cloud にデプロイ (Deploy to Cloud)」**をクリックします。選択した方式の説明に従って、デプロイメント方式をセットアップします。
-  * **[Kubernetes](/docs/apps/deploying/containers.html#containers) にデプロイ**します。 このオプションは、高可用性のアプリケーション・コンテナーをデプロイして管理するためのワーカー・ノードというホスト・クラスターを作成します。 クラスターを作成したり、既存のクラスターにデプロイしたりすることができます。
-  * **Cloud Foundry にデプロイ**します。 このオプションはクラウド・ネイティブなアプリをデプロイします。ユーザーが基礎にあるインフラストラクチャーを管理する必要はありません。 ご使用のアカウントに {{site.data.keyword.cfee_full_notm}} へのアクセス権限がある場合、デプロイヤー・タイプとして、**[パブリック・クラウド](/docs/cloud-foundry-public/about-cf.html#about-cf)**または**[エンタープライズ環境](/docs/cloud-foundry-public/cfee.html#cfee)**のいずれかを選択できます。エンタープライズ環境を使用すると、自社専用に Cloud Foundry アプリケーションをホスティングする隔離された環境を作成して管理できます。
-  * **[仮想サーバー](/docs/apps/vsi-deploy.html#vsi-deploy)にデプロイします**。 このオプションによって、仮想サーバー・インスタンスがプロビジョンされ、アプリを含むイメージがロードされ、DevOps ツールチェーンが作成され、最初のデプロイメント・サイクルが開始されます。
+ダッシュボードでデプロイメント・ツールチェーンを作成するには、**「デプロイ」**をクリックします。選択した方式の説明に従って、デプロイメント・ターゲットをセットアップします。
+  * **[{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**にデプロイします。このオプションは、高可用性のアプリケーション・コンテナーをデプロイして管理するためのワーカー・ノードというホスト・クラスターを作成します。 クラスターを作成したり、既存のクラスターにデプロイしたりすることができます。
+  * **Cloud Foundry にデプロイ**します。 このオプションはクラウド・ネイティブなアプリをデプロイします。ユーザーが基礎にあるインフラストラクチャーを管理する必要はありません。 ご使用のアカウントに {{site.data.keyword.cfee_full_notm}} へのアクセス権限がある場合、デプロイヤー・タイプとして、**[パブリック・クラウド](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)**または**[エンタープライズ環境](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**のいずれかを選択できます。エンタープライズ環境を使用すると、自社専用に Cloud Foundry アプリケーションをホスティングする隔離された環境を作成して管理できます。
+  * **[仮想サーバー](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**にデプロイします。このオプションによって、仮想サーバー・インスタンスがプロビジョンされ、アプリを含むイメージがロードされ、DevOps ツールチェーンが作成され、最初のデプロイメント・サイクルが開始されます。

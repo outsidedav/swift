@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # 앱 기능 릴리스 관리
 {: #mobile_applaunch}
 
-{{site.data.keyword.engage_full}}를 통해 개발자는 측정 가능한 메트릭을 제공할 수 있는 앱 기능의 접근 및 롤아웃을 제어하여 참여 앱(engaging app)을 빌드할 수 있습니다. 서비스는 개발자가 현재 앱 기능 롤아웃과 프로덕션에 대한 앱 업데이트 간에 존재하는 결합을 제거하는 데 도움을 줍니다. 이제 기능을 프로덕션에 노출하지 않고 게시하여 제어된 방식으로 앱의 새 버전을 점진적으로 릴리스할 수 있습니다. {{site.data.keyword.engage_short}} 서비스를 사용하여 앱 소유자는 대상으로 지정된 세그먼트에 대한 기능 롤아웃을 전적으로 제어할 수 있습니다.
+{{site.data.keyword.engage_full}}를 통해 개발자는 측정 가능한 메트릭을 제공할 수 있는 앱 기능의 접근 및 롤아웃을 제어하여 참여 앱(engaging app)을 빌드할 수 있습니다. 서비스는 개발자가 앱 기능 롤아웃과 프로덕션으로의 앱 업데이트 간에 현재 존재하는 결합을 제거하는 데 도움을 줍니다. 이제 기능을 프로덕션에 노출하지 않고 게시하여 제어된 방식으로 앱의 새 버전을 점진적으로 릴리스할 수 있습니다. {{site.data.keyword.engage_short}} 서비스를 사용하여 앱 소유자는 대상으로 지정된 세그먼트에 대한 기능 롤아웃을 전적으로 제어할 수 있습니다.
 
 {{site.data.keyword.engage_short}} 서비스는 기능을 정의하고, 디바이스 플랫폼을 기반으로 잠재고객(audience)을 작성하며(사용자 정의 잠재고객 속성 포함), 최종적으로 기능의 타이밍 및 배치를 구성하는 참여(engagement)를 정의합니다. SDK가 사용된 후 애플리케이션에 포함된 기능 및 메트릭 속성과 함께 서비스는 잠재고객의 경험 측정을 시작합니다. 이제 이 정보를 기반으로 앱을 사용하여 앱 사용자의 여러 카테고리 전체에서 사용자 정의된 고객 참여를 작성할 수 있습니다.
 
@@ -157,7 +161,7 @@ lastupdated: "2019-01-15"
 
   이제 새 참여가 참여 세부사항 창에 표시됩니다.
 
-이제 참여의 [성능](/docs/services/app-launch/app_measure_performance.html#applaunch_type)을 측정할 수 있습니다.
+이제 참여의 [성능](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type)을 측정할 수 있습니다.
 
 ### 인 앱 메시징(In-App Messaging) 기능 사용
 {: #app-message-applaunch}
@@ -204,13 +208,13 @@ lastupdated: "2019-01-15"
 
   이제 새 참여가 참여 세부사항 창에 표시됩니다.
 
-이제 참여의 [성능](/docs/services/app-launch/app_measure_performance.html#applaunch_type)을 측정할 수 있습니다.
+이제 참여의 [성능](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type)을 측정할 수 있습니다.
 
 ## 빠른 링크
 {: #links-applaunch notoc}
 
 다음 링크를 확인하여 인사이트를 얻고 {{site.data.keyword.engage_short}}의 기능을 이해하십시오.
 
- - [앱 실행 서비스](https://cloud.ibm.com/catalog/services/app-launch) 사용
- - [블로그 및 비디오](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - 자세한 정보는 [App 실행 - 튜토리얼 시작하기](/docs/services/app-launch/index.html) 문서를 참조하십시오.
+ - [앱 실행 서비스](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 사용해 보기
+ - [블로그 및 비디오](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
+ - 자세한 정보는 [App 실행 - 튜토리얼 시작하기](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate) 문서를 참조하십시오.

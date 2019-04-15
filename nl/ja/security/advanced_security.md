@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: swift security, add security swift, crypto swift, hyper protect swift, ios hyper protect, dbaas swift, swift key management, swift advanced security
+
+subcollection: swift
 
 ---
 
@@ -20,7 +24,7 @@ lastupdated: "2019-01-15"
 Swift 開発者は、{{site.data.keyword.cloud}} が提供する高度なセキュリティー・サービスを簡単に使用し、保存中、使用中、または転送中の鍵とデータを、業界で最高のセキュリティー・レベルで保護できます。
 {: shortdesc}
 
-簡単なアプローチとして、 {{site.data.keyword.cloud_notm}} HyperSecure プラットフォーム・サービスを {{site.data.keyword.cloud}} のすべての高度なセキュリティー・サービスで直接利用できます。 詳しくは、『[{{site.data.keyword.cloud_notm}}HyperSecure Platform Services の開始](/docs/services/hypersecure-platform/index.html){:new_window}』を参照してください。
+簡単なアプローチとして、 {{site.data.keyword.cloud_notm}} HyperSecure プラットフォーム・サービスを {{site.data.keyword.cloud}} のすべての高度なセキュリティー・サービスで直接利用できます。 詳しくは、『[{{site.data.keyword.cloud_notm}}HyperSecure Platform Services の開始](/docs/services/hypersecure-platform/index.html#getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits)』を参照してください。
 
 ## {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} の使用
 {: #security-swift}
@@ -31,14 +35,14 @@ Swift 開発者は、{{site.data.keyword.cloud}} が提供する高度なセキ�
 
 {{site.data.keyword.hscrypto}} は {{site.data.keyword.keymanagementserviceshort}} サービスの鍵ストアでもあります。
 
-{{site.data.keyword.hscrypto}} について詳しくは、『[{{site.data.keyword.cloud_notm}}{{site.data.keyword.hscrypto}} の開始](/docs/services/hs-crypto/index.html){:new_window}』を参照してください。
+{{site.data.keyword.hscrypto}} について詳しくは、『[{{site.data.keyword.cloud_notm}}{{site.data.keyword.hscrypto}} の開始](/docs/services/hs-crypto?topic=hs-crypto-get-started#get-started)』を参照してください。
 
 ## {{site.data.keyword.cloud_notm}} {{site.data.keyword.keymanagementserviceshort}} の使用
 {: #swift-key-management}
 
 {{site.data.keyword.keymanagementserviceshort}} は、{{site.data.keyword.cloud_notm}} サービス上のアプリの暗号鍵を作成するときに役立ちます。 鍵のライフサイクルを管理する際に、情報の盗難を防止するクラウド・ベースのハードウェア・セキュリティー・モジュール (HSM) によって鍵が保護されていることを理解していると役立ちます。 {{site.data.keyword.hscrypto}} と共に、鍵は FIPS 140-2 レベル 4 証明書の最高のセキュリティー・レベルで保護されます。
 
-{{site.data.keyword.keymanagementserviceshort}} について詳しくは、『[{{site.data.keyword.keymanagementserviceshort}}の開始](/docs/services/keymgmt/index.html){:new_window}』を参照してください。
+{{site.data.keyword.keymanagementserviceshort}} について詳しくは、『[{{site.data.keyword.keymanagementserviceshort}}の開始](/docs/services/key-protect?topic=key-protect-getting-started-tutorial#getting-started-tutorial)』を参照してください。
 
 ## {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS の使用
 {: #hypersecure-dbaas}
@@ -58,19 +62,19 @@ Swift 開発者は、{{site.data.keyword.cloud}} が提供する高度なセキ�
 ### アプリケーションへの {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS ロジックの追加
 {: #swift-hyperprotect}
 
-アプリケーションで MongoDB データベースを使用するには、『[データベースの使用を開始する](/docs/hypersecure_dbaas/database-cluster.html)』を参照してください。  
+アプリケーションで MongoDB データベースを使用するには、『[データベースの使用を開始する](/docs/swift/hypersecure_dbaas?topic=swift-create-database-cluster#creating-a-highly-available-and-secure-database)』を参照してください。  
 
 ### {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS の詳細
 {: #swift-learnmore}
 
-{{site.data.keyword.cloud_notm}} Hyper Protect DBaaS について詳しくは、『[IBM Cloud Hyper Protect DBaaS の開始](/docs/services/hyper-protect-dbaas/index.html)』を参照してください。
+{{site.data.keyword.cloud_notm}} Hyper Protect DBaaS について詳しくは、『[IBM Cloud Hyper Protect DBaaS の開始](/docs/services/hyper-protect-dbaas?topic=hyper-protect-dbaas-gettingstarted#gettingstarted)』を参照してください。
 
 ## {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscontainers}} の使用
 {: #swift-hscontainers}
 
 {{site.data.keyword.hscontainers}} は、Docker と Kubernetes テクノロジーを結合させた強力なツール、直観的なユーザー・エクスペリエンス、標準装備のセキュリティーと分離機能を提供します。これらの機能を使用することで、コンピュート・ホストから成るクラスター内でコンテナー化アプリのデプロイメント、操作、スケーリング、モニタリングを自動化することができます。
 
-{{site.data.keyword.hscontainers}} は、スポンサー・ユーザーのみが使用できます。 専用セキュリティー・サポートが必要な場合は、[IBM Z クライアント・フィードバック・プログラム](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml)を使用してスポンサー・ユーザーとして登録し、アプリケーションを {{site.data.keyword.hscontainers}} クラスターにデプロイします。
+{{site.data.keyword.hscontainers}} は、スポンサー・ユーザーのみが使用できます。 専用セキュリティー・サポートが必要な場合は、[IBM Z クライアント・フィードバック・プログラム](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用してスポンサー・ユーザーとして登録し、アプリケーションを {{site.data.keyword.hscontainers}} クラスターにデプロイします。
 {: tip}
 
-スポンサー・ユーザーになる前に、{{site.data.keyword.containershort_notm}} を使用してアプリケーションを保護することができます。 詳しくは、『[{{site.data.keyword.containershort_notm}} の概要](/docs/containers/container_index.html)』を参照してください。
+スポンサー・ユーザーになる前に、{{site.data.keyword.containershort_notm}} を使用してアプリケーションを保護することができます。 詳しくは、『[{{site.data.keyword.containershort_notm}} の概要](/docs/containers?topic=containers-container_index#container_index)』を参照してください。

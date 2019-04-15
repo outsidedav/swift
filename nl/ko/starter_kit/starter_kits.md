@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
+
+subcollection: swift
 
 ---
 
@@ -13,12 +17,12 @@ lastupdated: "2019-01-15"
 {:pre: .pre}
 {:tip: .tip}
 
-# 스타터 킷을 사용하여 Swift 앱 작성
+# 스타터 킷으로 Swift 앱 작성
 {: #starterkits-intro}
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple을 통해 개발자는 여러 스타터 킷에서 앱을 작성하고, 키 {{site.data.keyword.cloud_notm}} 최적화 서비스를 프로비저닝하고 연결할 수 있습니다. 사용자는 앱을 작성, 보기, 구성 및 관리하고 앱의 코드를 다운로드할 수 있습니다. 스타터 킷을 사용하면 신속하게 평가하고 새 앱으로 {{site.data.keyword.cloud_notm}} 서비스를 평가하고 테스트할 수 있습니다.
 
-시작하시겠습니까? [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits)에 방문하여 시작하십시오.
+시작하시겠습니까? [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")에 방문하여 시작하십시오.
 {: tip}
 
 ## 스타터 킷의 개념
@@ -28,7 +32,7 @@ lastupdated: "2019-01-15"
 
 스타터 킷은 프로덕션에 바로 사용할 수 있으며 런타임(예: Swift)을 사용하여 핵심 패턴 구현을 시연하는 데 중점을 둡니다. 일부 경우 스타터 킷은 서비스의 통합을 강조표시하는 단순 사용자 경험을 제공합니다. 다른 경우 스타터 킷은 정교한 유스 케이스의 사용자 정의할 수 있는 구현을 나타냅니다.
 
-스타터 킷에는 {{site.data.keyword.cloud_notm}}가 포터블 코드를 사용하여 자동으로 스캐폴드된 앱을 생성할 수 있고 스타터 킷에서 앱을 생성할 때 자동 프로비저닝될 리소스를 지정할 수 있는 지시사항이 있습니다.
+스타터 킷에는 {{site.data.keyword.cloud_notm}}가 포터블 코드를 사용하여 자동으로 스캐폴딩된(scaffolded) 앱을 생성할 수 있고 스타터 킷에서 앱을 생성할 때 자동 프로비저닝될 서비스를 지정할 수 있는 지시사항이 있습니다.
 
 ## {{site.data.keyword.cloud_notm}} Developer Console for Apple 사용
 {: #starterkits-journey}
@@ -63,20 +67,20 @@ lastupdated: "2019-01-15"
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 앱 세부사항 보기](images/project_details_screen.png "앱 세부사항 보기") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 앱 세부사항 보기*
 
-앱 세부사항 보기를 사용하여 이전 스타터 킷에 포함되지 않은 앱에 신규 또는 기존 서비스를 추가할 수 있습니다. 서비스를 추가하려면 서비스 목록 상자에서 **리소스 추가** 링크를 클릭하십시오. 사용 가능한 서비스는 앱의 유형과 지역에서 사용할 수 있는 서비스에 따라 달라지므로 모든 앱과 연관되도록 모든 서비스를 사용할 수 있는 것은 아닙니다.
+**앱 세부사항** 페이지를 사용하여 원래의 스타터 킷에 포함되지 않은 신규 또는 기존 서비스를 앱에 추가할 수 있습니다. **서비스 추가**를 클릭하여 서비스를 추가하십시오. 사용 가능한 서비스는 앱의 유형과 지역에서 사용할 수 있는 서비스에 따라 달라지므로 모든 앱과 연관되도록 모든 서비스를 사용할 수 있는 것은 아닙니다.
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 리소스 추가 대화 상자](images/add_resource_screen.png "리소스 추가 대화 상자") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 리소스 추가 대화 상자*
 
 ### 코드 다운로드
 
-* 앱 세부사항 보기에서 생성할 **코드 다운로드**를 선택하여 코드에 액세스하고 앱에 맞는 코드를 다운로드할 수 있습니다.
+* _앱 세부사항_ 페이지에서 생성할 **코드 다운로드**를 선택하여 코드에 액세스하고 앱에 맞는 코드를 다운로드할 수 있습니다.
 
 ### 앱 목록 보기
 {: #app_list_view}
 
-앱 목록 보기에서 작성된 모든 앱을 나열할 수 있습니다. 여기서 앱의 이름을 바꾸거나 앱을 삭제할 수 있습니다. 앱 세부사항 보기로 돌아가려면 앱 이름 행을 클릭하십시오.
+_앱 목록_ 보기에서 작성된 모든 앱을 나열할 수 있습니다. 여기서 앱의 이름을 바꾸거나 앱을 삭제할 수 있습니다. 앱 세부사항 보기로 돌아가려면 앱 이름 행을 클릭하십시오.
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 앱 목록 보기](images/project_list_screen.png "앱 목록 보기") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 앱 목록 보기*
 
-자세한 정보는 [{{site.data.keyword.cloud_notm}} Developer Console for Apple 학습 리소스](https://cloud.ibm.com/developer/appledevelopment/learning-resources)를 참조하십시오.
+자세한 정보는 [{{site.data.keyword.cloud_notm}} Developer Console for Apple 학습 리소스](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")참조하십시오.
 {: tip}

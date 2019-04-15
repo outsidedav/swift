@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
+
+subcollection: swift
 
 ---
 
@@ -15,7 +19,7 @@ lastupdated: "2019-01-15"
 # 對於靜態內容使用 Object Storage
 {: #object-storage}
 
-Object Storage 是雲端運算的基本元件，提供強大的特性給 Apple 開發人員及其應用程式。不像在檔案階層（例如「區塊」或「檔案儲存空間」）中儲存資訊，物件儲存庫只包含檔案及其 meta 資料，儲存在稱為儲存區的集合之中。依據定義，這些物件都是不可變的，因此非常適用於影像、視訊及其他靜態文件等資料。對於經常變更或有關聯性的資料，您可以使用 [NoSQL](/docs/swift/data/nosql.html)、[Cloudant](/docs/swift/data/cloudant.html) 及 [SQL](/docs/swift/data/sql.html) Database 服務。
+Object Storage 是雲端運算的基本元件，提供強大的特性給 Apple 開發人員及其應用程式。不像在檔案階層（例如「區塊」或「檔案儲存空間」）中儲存資訊，物件儲存庫只包含檔案及其 meta 資料，儲存在稱為儲存區的集合之中。依據定義，這些物件都是不可變的，因此非常適用於影像、視訊及其他靜態文件等資料。對於經常變更或有關聯性的資料，您可以使用 [Cloudant](/docs/swift/data?topic=swift-cloudant#cloudant) 及 [SQL](/docs/swift/data?topic=swift-sql_data#sql_data) 資料庫服務。
 
 {{site.data.keyword.cos_full_notm}} (COS) 是一個儲存空間系統，可用來儲存有彈性、具成本效益且可擴充的非結構化資料。該資料可透過 SDK 存取，或使用 IBM 使用者介面進行存取。您可以使用 {{site.data.keyword.cos_full_notm}}，透過 RESTful API 及 SDK 支援的自助式入口網站，來存取您的非結構化資料。 
 
@@ -32,7 +36,7 @@ Object Storage 是雲端運算的基本元件，提供強大的特性給 Apple �
 ## API
 {: #api-cos}
 
-{{site.data.keyword.cos_full}} API 是一個 REST 型 API，用來讀寫物件。其支援一個 S3 API 子集，用來輕鬆地將應用程式移轉至 {{site.data.keyword.cloud_notm}}。任何 S3 SDK 都可以用來運用 {{site.data.keyword.cos_full}}。如需相關資訊，請參閱完整的 [{{site.data.keyword.cos_short}} API 參考資料](/docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api)
+{{site.data.keyword.cos_full}} API 是一個 REST 型 API，用來讀寫物件。其支援一個 S3 API 子集，用來輕鬆地將應用程式移轉至 {{site.data.keyword.cloud_notm}}。任何 S3 SDK 都可以用來運用 {{site.data.keyword.cos_full}}。如需相關資訊，請參閱完整的 [{{site.data.keyword.cos_short}} API 參考資料](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)
 
 ## 安全
 {: #security-cos}
@@ -87,7 +91,7 @@ IAM 可讓擁有眾多員工的組織，在單一帳戶下建立及管理多位�
 
 視使用案例而定，您可以選取符合所需的服務方案來降低成本。只需最低存取物件儲存庫的保存作業，不需要經常存取之物件所需的存取速度和延續性，這樣的差別會反映在您應用程式的「儲存空間類別」支援以及定價方案。儲存空間類別定義在儲存區層次，因此您可以使用方案組合來符合您的需求。建立一個儲存區，然後設為您要使用的儲存空間類別。
 
-您可以在 [{{site.data.keyword.cos_short}} 儲存空間類別](/docs/services/cloud-object-storage/help/billing.html#ibm-cos-pricing)文件中，找到定價的相關資訊。
+您可以在 [{{site.data.keyword.cos_short}} 儲存空間類別](/docs/services/cloud-object-storage/help?topic=cloud-object-storage-billing#ibm-cos-pricing)文件中，找到定價的相關資訊。
 
 ### 儲存空間類別範例
 {: #samples-cos}

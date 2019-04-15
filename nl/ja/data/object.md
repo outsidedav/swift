@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
+
+subcollection: swift
 
 ---
 
@@ -15,7 +19,7 @@ lastupdated: "2019-01-15"
 # 静的コンテンツ用に Object Storage を使用する
 {: #object-storage}
 
-Object Storage は、クラウド・コンピューティングにおける基本的なコンポーネントであり、Apple の開発者とアプリケーションに強力な機能を提供します。 ファイル階層に情報を保管する場合 (例: ブロック・ストレージやファイル・ストレージ) とは異なり、オブジェクト・ストアは、バケットというコレクションに保管される、ファイルとそれらのメタデータのみで構成されます。 定義上、それらのオブジェクトは変更不可能なため、イメージ、ビデオ、他の静的文書などのデータにとって最適です。 頻繁に変更されるデータやリレーショナル・データの場合は、[NoSQL](/docs/swift/data/nosql.html)、[Cloudant](/docs/swift/data/cloudant.html)、[SQL](/docs/swift/data/sql.html) データベース・サービスを使用することができます。
+Object Storage は、クラウド・コンピューティングにおける基本的なコンポーネントであり、Apple の開発者とアプリケーションに強力な機能を提供します。 ファイル階層に情報を保管する場合 (例: ブロック・ストレージやファイル・ストレージ) とは異なり、オブジェクト・ストアは、バケットというコレクションに保管される、ファイルとそれらのメタデータのみで構成されます。 定義上、それらのオブジェクトは変更不可能なため、イメージ、ビデオ、他の静的文書などのデータにとって最適です。 頻繁に変更されるデータやリレーショナル・データの場合は、[Cloudant](/docs/swift/data?topic=swift-cloudant#cloudant) データベース・サービスや [SQL](/docs/swift/data?topic=swift-sql_data#sql_data) データベース・サービスを使用することができます。
 
 {{site.data.keyword.cos_full_notm}} (COS) は、非構造化データの保管のために利用できる、柔軟でコスト効率が高く、スケーラブルなストレージ・システムです。 データには、SDK または IBM ユーザー・インターフェースを使用してアクセスできます。 {{site.data.keyword.cos_full_notm}} を使用して、RESTful API および SDK に基づいたセルフサービス・ポータルを介して非構造化データにアクセスできます。 
 
@@ -32,7 +36,7 @@ Object Storage は、クラウド・コンピューティングにおける基�
 ## API
 {: #api-cos}
 
-{{site.data.keyword.cos_full}} API は、オブジェクトを読み書きするための REST ベースの API です。 この API は、アプリケーションを {{site.data.keyword.cloud_notm}} に簡単にマイグレーションできるように、S3 API のサブセットをサポートしています。 {{site.data.keyword.cos_full}} を使用するために、任意の S3 SDK を利用できます。 詳しくは、[{{site.data.keyword.cos_short}} API リファレンス](/docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api)を参照してください。
+{{site.data.keyword.cos_full}} API は、オブジェクトを読み書きするための REST ベースの API です。 この API は、アプリケーションを {{site.data.keyword.cloud_notm}} に簡単にマイグレーションできるように、S3 API のサブセットをサポートしています。 {{site.data.keyword.cos_full}} を使用するために、任意の S3 SDK を利用できます。 詳しくは、[{{site.data.keyword.cos_short}} API リファレンス](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)を参照してください。
 
 ## セキュリティー
 {: #security-cos}
@@ -44,7 +48,7 @@ Object Storage は、クラウド・コンピューティングにおける基�
 **Identity and Access Management (IAM) ポリシー**
 {: #iam-cos}
 
-多数の社員がいる組織では、IAM を利用すると、1 つのアカウントで複数のユーザーを作成および管理できます。企業は IAM ポリシーを使用することで、IAM ユーザーに、{{site.data.keyword.cos_short}} バケットを制御する権限を付与することができます。
+多数の社員がいる組織では、IAM を利用すると、1 つのアカウントで複数のユーザーを作成および管理できます。 企業は IAM ポリシーを使用することで、IAM ユーザーに、{{site.data.keyword.cos_short}} バケットを制御する権限を付与することができます。
 
 **アクセス制御リスト (ACL)**
 {: #acls-cos}
@@ -87,7 +91,7 @@ regional または cross-region のどちらのオプションにするかを決
 
 ユース・ケースに応じて、ニーズに合ったサービス・プランを選択することでコストを削減できます。 オブジェクト・ストアへのアクセスが極めて少ないアーカイブ操作の場合は、頻繁にオブジェクトにアクセスする場合のような速度や耐久性は必要ありません。お客様のアプリケーションに対応するため、そうした相違点がストレージ・クラスのサポートおよび価格設定プランに反映されています。 ストレージ・クラスはバケット・レベルで定義されるため、ニーズに合わせて異なるプランを組み合わせることもできます。 使用するストレージ・クラスに設定された、バケットを作成します。
 
-価格設定について詳しくは、[{{site.data.keyword.cos_short}} Storage Class](/docs/services/cloud-object-storage/help/billing.html#ibm-cos-pricing) 資料を参照してください。
+価格設定について詳しくは、[{{site.data.keyword.cos_short}} Storage Class](/docs/services/cloud-object-storage/help?topic=cloud-object-storage-billing#ibm-cos-pricing) 資料を参照してください。
 
 ### サンプル・ストレージ・クラス
 {: #samples-cos}

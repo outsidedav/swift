@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: cloudant swift, store data swift, dbaas swift, cloudant instance swift, initialize sdk swift, create document swift, read document swift, delete document swift
+
+subcollection: swift
 
 ---
 
@@ -19,7 +23,7 @@ lastupdated: "2019-01-15"
 {{site.data.keyword.cloudantfull}}는 문서 기반 DBaaS(DataBase as a Service)입니다. 데이터를 JSON 형식의 문서로 저장합니다. 확장성, 고가용성 및 내구성을 염두에 두고 빌드되었으며 Swift 애플리케이션에서 사용하도록 쉽게 구성할 수 있습니다. MapReduce, {{site.data.keyword.cloudant_short_notm}} 조회, 전체 텍스트 색인 작성 및 지리 공간 색인 작성이 포함된 광범위한 색인 작성 옵션이 함께 제공됩니다. 복제 기능을 사용하면 데이터베이스 클러스터, 데스크탑 PC 및 모바일 디바이스 간에 데이터 동기화를 쉽게 유지할 수 있습니다. 
 {: shortdesc}
 
-{{site.data.keyword.cloudant_short_notm}}를 사용할 수 있는 모든 방법은 [{{site.data.keyword.cloudant_short_notm}} 기본](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics)을 참조하십시오.
+{{site.data.keyword.cloudant_short_notm}}를 사용할 수 있는 모든 방법은 [{{site.data.keyword.cloudant_short_notm}} 기본](/docs/services/Cloudant/basics?topic=cloudant-ibm-cloudant-basics#cloudant-nosql-db-basics)을 참조하십시오.
 
 ## 시작하기 전에
 {: #prereqs-cloudant}
@@ -30,13 +34,13 @@ lastupdated: "2019-01-15"
  * MacOS(버전 10.11.5 이상)
  * Xcode(버전 9.0.1 이상)
 
-[Swift용 {{site.data.keyword.cloudant_short_notm}} SDK![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/cloudant/swift-cloudant)는 Swift 3.2로 빌드됩니다. Kitura를 사용하여 {{site.data.keyword.cloudant_short_notm}}를 사용할 계획인 경우 Swift 4.0으로 빌드된 [Kitura-CouchDB 라이브러리 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/IBM-Swift/Kitura-CouchDB)를 참조하십시오.
+[Swift용 {{site.data.keyword.cloudant_short_notm}} SDK](https://github.com/cloudant/swift-cloudant){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")는 Swift 3.2로 빌드됩니다. Kitura를 사용하여 {{site.data.keyword.cloudant_short_notm}}를 사용할 계획인 경우 Swift 4.0으로 빌드된 [Kitura-CouchDB 라이브러리 ](https://github.com/IBM-Swift/Kitura-CouchDB){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 참조하십시오.
 {: tip}
 
 ## 1단계. {{site.data.keyword.cloudant_short_notm}}의 인스턴스 작성
 {: #create-instance-cloudant}
 
-[IBM Cloud에서 IBM Cloudant 인스턴스 작성 튜토리얼![외부 링크 아이콘](../images/launch-glyph.svg "외부 링크 아이콘")](/docs/services/Cloudant/tutorials/create_service.html){:new_window}을 참조하여 서비스의 인스턴스를 작성하십시오. 
+[{{site.data.keyword.cloud_notm}}에서 IBM Cloudant 인스턴스 작성 튜토리얼](/docs/services/Cloudant/tutorials?topic=cloudant-creating-an-ibm-cloudant-instance-on-ibm-cloud#creating-an-ibm-cloudant-instance-on-ibm-cloud){:new_window}을 참조하여 서비스의 인스턴스를 작성하십시오. 
 
 ## 2단계. SDK 설치
 {: #install-sdk-cloudant}
@@ -65,7 +69,7 @@ Swift Cloudant SDK를 사용하면 앱을 보다 쉽게 코딩할 수 있습니�
 ### 서버 측 Swift SDK 설치
 {: #install-serverside-cloudant}
 
-서버 측 개발을 위해 Swift 패키지 관리자로 사용하려면 다음 행을 `Package.swift`의 종속성에 추가하십시오.
+서버 측 개발을 위해 Swift Package Manager로 사용하려면 다음 행을 `Package.swift`의 종속성에 추가하십시오.
 ```swift
 .Package(url: "https://github.com/cloudant/swift-cloudant.git")
 ```
@@ -145,13 +149,13 @@ client.add(operation: delete)
 2. 웹 브라우저에서 이전에 작성한 {{site.data.keyword.cloudant_short_notm}} 서비스 인스턴스로 돌아가서 서비스 대시보드를 여십시오.
 3. 사용되는 데이터베이스를 선택하고 대시보드에서 문서를 확인할 수 있습니다.
 
-문제가 있습니까? [{{site.data.keyword.cloudant_short_notm}} API 참조](/docs/services/Cloudant/api/index.html#api-reference-overview)를 확인하십시오.
+문제가 있습니까? [{{site.data.keyword.cloudant_short_notm}} API 참조](/docs/services/Cloudant/api?topic=cloudant-ibm-cloudant-basics#api-reference-overview)를 확인하십시오.
 
 ## 다음 단계
 {: #cloudant_next notoc}
 
 잘 하셨습니다! 앱에 보안 지속성 레벨을 추가했습니다. 다음 옵션 중 하나를 사용하여 계속 진행하십시오.
 
-* [Swift용 {{site.data.keyword.cloudant_short_notm}} SDK ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/cloudant/swift-cloudant) 소스 코드를 보십시오.
-* 스타터 킷은 {{site.data.keyword.cloud_notm}}의 기능을 사용할 수 있는 가장 빠른 방법 중 하나입니다. **Infinite Scrolling with Cloudant NoSQL for iOS** 스타터 킷은 페이지 번호 매기기를 사용하여 데이터를 표시하기 위해 `ViewController`를 확장하는 방법을 보여줍니다. 이 앱 패턴은 iOS 개발자에게 일반적이며 {{site.data.keyword.cloudant_short_notm}}의 기능을 설명하기 위한 좋은 예입니다. [모바일 개발자 대시보드](https://cloud.ibm.com/developer/mobile/dashboard)에서 사용 가능한 스타터 킷을 보십시오. 코드를 다운로드하십시오. 앱을 실행하십시오!
-* {{site.data.keyword.cloudant_short_notm}}에서 제공하는 모든 기능을 자세히 알아보고 활용하십시오. [이 문서를 확인하십시오](/docs/services/Cloudant/index.html).
+* [Swift용 {{site.data.keyword.cloudant_short_notm}} SDK](https://github.com/cloudant/swift-cloudant){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 소스 코드를 보십시오. 
+* 스타터 킷은 {{site.data.keyword.cloud_notm}}의 기능을 사용할 수 있는 가장 빠른 방법 중 하나입니다. **Infinite Scrolling with Cloudant NoSQL for iOS** 스타터 킷은 페이지 번호 매기기를 사용하여 데이터를 표시하기 위해 `ViewController`를 확장하는 방법을 보여줍니다. 이 앱 패턴은 iOS 개발자에게 일반적이며 {{site.data.keyword.cloudant_short_notm}}의 기능을 설명하기 위한 좋은 예입니다. [모바일 개발자 대시보드](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")에서 사용 가능한 스타터 킷을 보십시오. 코드를 다운로드하십시오. 앱을 실행하십시오!
+* {{site.data.keyword.cloudant_short_notm}}에서 제공하는 모든 기능을 자세히 알아보고 활용하십시오. [이 문서를 확인하십시오](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics#ibm-cloudant-basics).

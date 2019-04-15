@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-14"
+
+keywords: swift-cfenv, service bindings swift, environment swift, swift configuration, cloudenvironment swift, VCAP_SERVICES swift, swift credentials
+
+subcollection: swift
 
 ---
 
@@ -25,7 +29,7 @@ lastupdated: "2019-02-04"
 ## 向现有 Swift 应用程序添加 {{site.data.keyword.cloud_notm}}
 {: #addcloud-env}
 
-抽象出环境值的路径可能因云环境而异。[CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) 库从各种云提供者中抽象出环境配置和凭证，以便 Swift 应用程序可以通过在本地或者在 Cloud Foundry、Cloud Foundry Enterprise Environment、Kubernetes、{{site.data.keyword.openwhisk}} 或虚拟实例中运行，从而以一致的方式访问信息。凭证抽象由 `CloudEnvironment` 库提供，此库在内部将 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) 用于 Cloud Foundry 配置，将 [Configuration](https://github.com/IBM-Swift/Configuration) 用作配置管理器。
+抽象出环境值的路径可能因云环境而异。[CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 库从各种云提供者中抽象出环境配置和凭证，以便 Swift 应用程序可以通过在本地运行或者在 Cloud Foundry、Cloud Foundry Enterprise Environment、Kubernetes、{{site.data.keyword.openwhisk}} 或虚拟实例中运行，从而以一致的方式访问信息。凭证抽象由 `CloudEnvironment` 库提供，此库在内部将 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 用于 Cloud Foundry 配置，将 [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 用作配置管理器。
 
 使用 `CloudEnvironment` 时，可通过定义查询键，让 Swift 应用程序使用该键来搜索其对应的值，从而从应用程序的源代码中对低级别详细信息进行抽象化处理。
 
@@ -67,13 +71,13 @@ let url = cloudEnv.url
 ```
 {: codeblock}
 
-此示例提供对服务的凭证集的访问权，这些凭证集现在可用于初始化与这些[支持的服务或通用字典](https://github.com/IBM-Swift/CloudEnvironment#supported-services)的连接。请查看用于特定于 Cloud Foundry 的配置的 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api)，以及有关装入配置数据的 [Configuration 详细信息](https://github.com/IBM-Swift/Configuration)。
+此示例提供对服务的凭证集的访问权，这些凭证集现在可用于初始化与这些[支持的服务或通用字典](https://github.com/IBM-Swift/CloudEnvironment#supported-services){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 的连接。请查看用于特定于 Cloud Foundry 配置的 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")，以及有关装入配置数据的 [Configuration 详细信息](https://github.com/IBM-Swift/Configuration){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
 
 ## 了解服务凭证
 {: #service_creds}
 
 `CloudEnvironment` 库将名为 `mappings.json` 的文件（位于 `config` 目录中）用于表达每个服务的凭证存储位置。`mappings.json` 文件支持搜索使用以下三种搜索模式类型的值：
-- **`cloudfoundry`** - 此模式类型用于在 Cloud Foundry 的服务环境变量 (`VCAP_SERVICES`) 中搜索值。对于 Cloud Foundry 企业版，请参阅此[入门教程](docs/cloud-foundry/getting-started.html#getting-started)以获取更多信息。
+- **`cloudfoundry`** - 此模式类型用于在 Cloud Foundry 的服务环境变量 (`VCAP_SERVICES`) 中搜索值。对于 Cloud Foundry 企业版，请参阅此[入门教程](/docs/cloud-foundry?topic=cloud-foundry-getting-started#getting-started)以获取更多信息。
 - **`env`** - 此模式类型用于搜索映射到环境变量的值，如在 Kubernetes 或 Functions 中。
 - **`file`** - 此模式类型用于在 JSON 文件中搜索值。路径必须相对于 Swift 应用程序的根文件夹。
 
@@ -110,18 +114,18 @@ let url = cloudEnv.url
 
 出于安全原因，凭证文件不属于存储库。在上一个示例中，`localdev` 文件夹用于存储本地凭证，因此您必须将此文件夹添加到 `.gitignore` 文件以避免意外落实。如果使用的是入门模板工具包应用程序，那么会创建此文件夹，并将其包含在 `.gitignore` 文件中。
 
-有关 `mappings.json` 文件的更多信息，请查看[了解服务凭证](configuration.html#service_creds)部分。
+有关 `mappings.json` 文件的更多信息，请查看[了解服务凭证](#service_creds)部分。
 
 ## 通过入门模板工具包应用程序使用 Swift 配置管理器
 {: #configmanager-swift}
 
-使用[入门模板工具包](https://cloud.ibm.com/developer/appledevelopment/starter-kits/)创建的 Swift 应用程序会自动随附在本地运行所需的凭证和配置，以及在许多 Cloud 部署环境（CF、K8s、VSI 和 Functions）中运行所需的凭证和配置。配置管理器的基本创建可以在 `Sources/Application/Application.swift` 中找到。使用服务创建基于 Swift 的入门模板工具包应用程序时，会创建 `config` 文件夹和 `mappings.json` 文件。如果下载应用程序，那么 `config` 文件夹会包含 `localdev-config.json` 文件（其中含有服务的所有凭证），并存在于 `.gitignore` 文件中。
+使用[入门模板工具包](https://cloud.ibm.com/developer/appledevelopment/starter-kits/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 创建的 Swift 应用程序会自动随附在本地运行以及在许多 Cloud 部署环境（如 Cloud Foundry、Kubernetes、VSI 和 Functions）中运行所需的凭证和配置。配置管理器的基本创建可以在 `Sources/Application/Application.swift` 中找到。使用服务创建基于 Swift 的入门模板工具包应用程序时，会创建 `config` 文件夹和 `mappings.json` 文件。如果下载应用程序，那么 `config` 文件夹会包含 `localdev-config.json` 文件（其中含有服务的所有凭证），并存在于 `.gitignore` 文件中。
 
 ## 后续步骤
 {: #next-configß notoc}
 
 请查看下面三个库，以帮助应用程序从自己的环境中抽象自身：
 
-* [CloudEnvironment](https://github.com/ibm-developer/ibm-cloud-env)
-* [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv)
-* [Configuration](https://github.com/IBM-Swift/Configuration)
+* [CloudEnvironment](https://github.com/ibm-developer/ibm-cloud-env){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
+* [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
+* [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")

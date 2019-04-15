@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: generated sdk swift, devops pipeline swift, sdk plug-in swift, open api swift, sdkgen swift, ibmcloud sdk swift, swift backend service
+
+subcollection: swift
 
 ---
 
@@ -15,7 +19,7 @@ lastupdated: "2019-01-15"
 # 使用生成的 SDK 将后端服务集成到应用程序
 {: #sdkgen-cli}
 
-可以在 [{{site.data.keyword.cloud_notm}} CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](/docs/cli/index.html){: new_window} 中安装 {{site.data.keyword.IBM}} SDK Generator 插件。
+可以在 [{{site.data.keyword.cloud}} CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli){: new_window} 中安装 {{site.data.keyword.IBM}} SDK Generator 插件。
 
 此 {{site.data.keyword.IBM_notm}} SDK Generator 插件使用生成的 SDK 将后端服务集成到应用程序。对 REST API 进行更改后，您可以重新生成 SDK，并替换旧 SDK 以轻松升级 SDK。还可以将 CLI 集成到 DevOps 管道中，并确保每次构建应用程序时 SDK 都与 API 规范一致。
 
@@ -26,20 +30,22 @@ REST API 定义必须有效，并且在实时服务器端点上或在系统上�
 
 确保您具有：
 
-* [{{site.data.keyword.Bluemix_notm}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://cloud.ibm.com){: new_window} 帐户
-* 符合 [Open API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.openapis.org/){: new_window} 规范的有效 API 定义
+* [{{site.data.keyword.cloud_notm}}](http://cloud.ibm.com){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 帐户
+* 符合 [Open API ](https://www.openapis.org/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 规范的有效 API 定义
 
 ## 安装 SDK 插件
 {: #install-sdkgen}
 
-1. [安装 {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/get_started.html)。
+1. [安装 {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-install-ibmcloud-cli#install-ibmcloud-cli)。
 
-2. [安装插件 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](/docs/cli/index.html#install_plug-in){: new_window}。
-
+2. 安装 `sdk-gen` 插件：
   ```
 ibmcloud plugin install sdk-gen
 	```
   {: codeblock}
+
+您可以安装 [{{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#install_plug-in)，其中包括基本的 {{site.data.keyword.cloud_notm}} CLI，也包括 `sdk-gen` 插件以及其他有用的本地工具。
+{: tip}
 
 ## 生成 SDK
 {: #commands-sdkgen}
@@ -63,7 +69,7 @@ ibmcloud plugin install sdk-gen
 * `LOCATION`（必需）- 为 `OPENAPI_DOC_LOCATION` 指定类型
    * `-r` - 远程 URL
    * `-f` - 文件
-   * `-a` - 在 {{site.data.keyword.Bluemix_notm}} 上运行的应用程序
+   * `-a` - 在 {{site.data.keyword.cloud_notm}} 上运行的应用程序
    * `-l` - 本地主机 URL
 * `--output "YOUR_RELATIVE_PATH"`（可选）- 将生成的 SDK 放在 `YOUR_RELATIVE_PATH` 指定的目录中（现有 SDK 将会被覆盖）。
 * `--unzip`（可选）- 解压缩生成的 SDK（现有 SDK 将会被覆盖）。
@@ -71,7 +77,7 @@ ibmcloud plugin install sdk-gen
 ### 用法
 {: #gen-usage-sdkgen}
 
-要从在 {{site.data.keyword.Bluemix_notm}} 中运行的 Cloud Foundry 应用程序生成 SDK，可以将应用程序的名称用作 CLI 的参数。以下命令使用应用程序名称作为 `SDK_Name`。
+要从在 {{site.data.keyword.cloud_notm}} 中运行的 Cloud Foundry 应用程序生成 SDK，可以将应用程序的名称用作 CLI 的参数。以下命令使用应用程序名称作为 `SDK_Name`。
 
 ```
 ibmcloud sdk generate [APP_NAME] [LOCATION] [PLATFORM]
@@ -103,7 +109,7 @@ ibmcloud sdk validate [argument]
 ### 用法
 {: #val-usage-sdkgen}
 
-要验证在 {{site.data.keyword.Bluemix_notm}} 中运行的 Cloud Foundry 应用程序的 API 规范，可以将应用程序的名称用作 CLI 的参数。
+要验证在 {{site.data.keyword.cloud_notm}} 中运行的 Cloud Foundry 应用程序的 API 规范，可以将应用程序的名称用作 CLI 的参数。
 ```
 ibmcloud sdk validate [APP_NAME] [LOCATION]
 ```

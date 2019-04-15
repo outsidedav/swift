@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-03-15"
+
+keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
+
+subcollection: swift
 
 ---
 
@@ -23,8 +27,7 @@ lastupdated: "2019-02-01"
 ## 步骤 1. 创建数据库集群
 {: #create_dbcluster}
 
-1. 访问 {{site.data.keyword.ihsdbaas_full}} 服务配置屏幕：
-https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
+1. 访问[{{site.data.keyword.ihsdbaas_full}}服务配置](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 屏幕。
 
 2. 提供以下信息：
 
@@ -81,7 +84,7 @@ https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
 
 使用通过此入门模板工具包创建的现有项目，或者创建新项目。
 
-1. 打开 {{site.data.keyword.cloud_notm}} App Service 仪表板：https://cloud.ibm.com/developer/appservice/dashboard。
+1. 打开 [{{site.data.keyword.cloud_notm}} App Service 仪表板](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
 
 2. 选择**入门模板工具包**选项卡。
 
@@ -240,15 +243,14 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ## 步骤 5. 嵌入应用程序代码
 {: #embed_appcode}
 
-现在，您可以将自己的应用程序代码添加到项目。有关使用 MongoKitten API 的更多信息，请参阅 http://beta.openkitten.org/tutorials/。
+现在，您可以将自己的应用程序代码添加到项目。有关更多信息，请参阅 [MongoKitten API](http://beta.openkitten.org/tutorials/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 文档。
 
 ## 步骤 6. 部署应用程序
 {: #deploy-dbcluster}
 
-您可以使用必要的构建工具[在本地](/docs/swift/create_app_cli.html#swift-install-tools)运行应用程序，也可以将其部署到 {{site.data.keyword.cloud_notm}}。
+您可以使用必要的构建工具[在本地](/docs/swift?topic=swift-swift_cli#swift-install-tools)运行应用程序，也可以将其部署到 {{site.data.keyword.cloud_notm}}。
 
-要在仪表板中创建部署工具链，请单击**部署到云**。根据您所选方法的指示信息来设置部署方法：
-  * **部署到 [Kubernetes](/docs/apps/deploying/containers.html#containers)**。此选项创建称为工作程序节点的主机集群，以部署和管理高可用性应用程序容器。您可以创建一个集群，也可以部署到现有集群。
-  * **部署到 Cloud Foundry**。借助此选项，您无需管理底层的基础架构就可以部署云本机应用程序。如果您的帐户可以访问 {{site.data.keyword.cfee_full_notm}}，那么您可以选择部署程序类型**[公共云
-](/docs/cloud-foundry-public/about-cf.html#about-cf)或者[企业环境](/docs/cloud-foundry-public/cfee.html#cfee)，您可以将其用于创建和管理隔离环境，专门托管针对企业的 Cloud Foundry 应用程序。
-  * **部署到[虚拟服务器](/docs/apps/vsi-deploy.html#vsi-deploy)**。此选项为您供应虚拟服务器实例，装入包含应用程序的映像，创建 DevOps 工具链，并启动第一个部署周期。
+要在仪表板中创建部署工具链，请单击**部署**。根据您所选方法的指示信息来设置部署目标：
+  * **部署到 [{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**。此选项创建称为工作程序节点的主机集群，以部署和管理高可用性应用程序容器。您可以创建一个集群，也可以部署到现有集群。
+  * **部署到 Cloud Foundry**。借助此选项，您无需管理底层的基础架构就可以部署云本机应用程序。如果您的帐户可以访问 {{site.data.keyword.cfee_full_notm}}，那么您可以选择部署程序类型**[公共云](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)**或者**[企业环境](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**，您可以将其用于创建和管理隔离环境，专门托管针对企业的 Cloud Foundry 应用程序。
+  * **部署到[虚拟服务器](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**。此选项为您供应虚拟服务器实例，装入包含应用程序的映像，创建 DevOps 工具链，并启动第一个部署周期。

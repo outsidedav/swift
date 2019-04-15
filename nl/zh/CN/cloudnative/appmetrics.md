@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swiftmetrics-dash, swiftmetrics, prometheus swift, application metrics swift, swift performance, slow swift, swift dashboard, metris swift
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # 将 Application Metrics 与 Swift 应用程序配合使用
 {: #metrics}
 
-Application Metrics 对于监视应用程序的性能非常重要。实时查看度量值（如 CPU、内存、等待时间和 HTTP 度量值）对于确保应用程序能够长期有效地运行至关重要。Kubernetes 和 Cloud Foundry 服务（如[自动缩放](/docs/services/Auto-Scaling/index.html)）依赖于度量值来确定何时根据负载动态添加或除去实例，以及清除不再需要的实例来降低成本。
+Application Metrics 对于监视应用程序的性能非常重要。实时查看度量值（如 CPU、内存、等待时间和 HTTP 度量值）对于确保应用程序能够长期有效地运行至关重要。Kubernetes 和 Cloud Foundry 服务（如[自动缩放](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started)）依赖于度量值来确定何时根据负载动态添加或除去实例，以及清除不再需要的实例来降低成本。
 
 应用程序度量值将作为时间序列数据来进行捕获。汇总和直观查看捕获的度量值有助于识别常见的性能问题，例如：
 
@@ -26,12 +30,12 @@ Application Metrics 对于监视应用程序的性能非常重要。实时查看
 * 高于预期 CPU 使用率
 * 内存使用量高或不断增长（潜在内存泄漏）
 
-## 向现有 Swift 应用程序添加 Application Metrics
+## 向现有 Swift 应用程序添加应用程序度量值
 {: #add-appmetrics-existing}
 
-使用 [Application Metrics for Swift](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/) 将性能监视添加到 Swift 应用程序。Application Metrics for Swift 由两个库组成：`SwiftMetrics` 和 `SwiftMetricsDash`。
+使用 [Application Metrics for Swift](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 将性能监视添加到 Swift 应用程序。Application Metrics for Swift 由两个库组成：`SwiftMetrics` 和 `SwiftMetricsDash`。
 
-* `SwiftMetrics` 库是一个综合检测库，用于收集和聚集应用程序的度量值。此库有多个扩展，包括用于 HTTP 度量值的 Kitura 模块、[Prometheus 支持](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support)和独立[发射器](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent)。
+* `SwiftMetrics` 库是一个综合检测库，用于收集和聚集应用程序的度量值。此库有多个扩展，包括用于 HTTP 度量值的 Kitura 模块、[Prometheus 支持](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 和独立[发射器](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
 
 * `SwiftMetricsDash` 库使用 `SwiftMetrics` 生成的度量值，并为可视化提供内置仪表板。
 
@@ -97,4 +101,4 @@ func initializeMetrics(router: Router) {
 
 应用程序开始运行后，可以使用 `/swiftmetrics-dash` 端点来访问仪表板。
 
-缺省情况下，`SwiftMetricsPrometheus` 会在 `http://<hostname>:<port>/metrics` 下提供 [Prometheus 端点](https://prometheus.io/)。
+缺省情况下，`SwiftMetricsPrometheus` 会在 `http://<hostname>:<port>/metrics` 下提供 [Prometheus 端点](https://prometheus.io/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。

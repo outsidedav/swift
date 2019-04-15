@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-14"
+
+keywords: swift sdk plug-in, sdk generator swift, generated sdk swift, devops pipeline swift, open api swift, sdkgen swift, ibmcloud sdk swift
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-02-28"
 # 生成された SDK を使用したアプリへのバックエンド・サービスの追加
 {: #sdk-cli}
 
-{{site.data.keyword.IBM}} SDK Generator プラグインは、[{{site.data.keyword.cloud_notm}} CLI](/docs/cli/index.html) にインストールできます。
+{{site.data.keyword.IBM}} SDK Generator プラグインは、[{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) にインストールできます。
 
 {{site.data.keyword.IBM_notm}} SDK Generator プラグインを使用すると、生成された SDK によって、バックエンド・サービスをアプリに統合できます。 REST API が変更された場合は、SDK を再生成し、古い SDK を置き換えることで、SDK を容易にアップグレードできます。 そして、CLI を DevOps パイプライン内に追加することによって、アプリをビルドするたびに、SDK と API 仕様との整合性を常に維持することができます。
 
@@ -27,19 +31,22 @@ REST API 定義は有効でなければならず、かつ稼働中のサーバ�
 
 以下の前提条件を満たしていることを確認してください。
 
-* [{{site.data.keyword.cloud_notm}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://cloud.ibm.com){: new_window} アカウント。
-* [Open API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.openapis.org/){: new_window} 仕様に準拠した有効な API 定義。
+* [{{site.data.keyword.cloud_notm}}](http://cloud.ibm.com){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") アカウント。
+* [Open API ](https://www.openapis.org/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") 仕様に準拠した有効な API 定義。
 
 ## SDK プラグインのインストール
 {: #install-sdk-cli}
 
-1. [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/index.html) をインストールします。
+1. [{{site.data.keyword.cloud_notm}} CLI をインストールします](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。
 
-2. [SDK プラグインをインストール](/docs/cli/sdk/index.html)します。
+2. SDK プラグインをインストールします。
   ```
   ibmcloud plugin install sdk-gen
   ```
   {: codeblock}
+
+基本 {{site.data.keyword.cloud_notm}} CLI と、その他便利なローカル・ツールと一緒に `sdk-gen` プラグインが含まれる [{{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#install_plug-in) をインストールできます。
+{: tip}
 
 ## SDK の生成
 {: #commands-sdk-cli}

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-21"
+
+keywords: foodtrackerbackend, kitura swift, urlsession sdk, alamofire, restkit, kiturakit, kitura, xcode kitura, meals swift, rest api kitura, rest api swift
+
+subcollection: swift
 
 ---
 
@@ -16,11 +20,11 @@ lastupdated: "2019-03-07"
 # Kitura を使用したアプリケーションの作成
 {: #kitura}
 
-[Kitura](http://www.kitura.io) は、iOS バックエンドおよび Web アプリケーションを作成するためのサーバー・サイド Swift フレームワークです。 このフレームワークは、Alamofire、RestKit、または Kitura 自体によって提供される [KituraKit](https://github.com/ibm-swift/kiturakit) SDK などの URLSession SDK を使用して、iOS アプリケーションから起動できる REST API を作成します。
+[Kitura](http://www.kitura.io){: new_window}![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") は、iOS バックエンドおよび Web アプリケーションを作成するためのサーバー・サイド Swift フレームワークです。このフレームワークは、Alamofire、RestKit、または Kitura 自体によって提供される [KituraKit](https://github.com/ibm-swift/kiturakit){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") SDK などの URLSession SDK を使用して、iOS アプリケーションから起動できる REST API を作成します。
 
 Kitura は、{{site.data.keyword.cloud}} によって提供されるすべてのサービスおよび機能と統合できます。これには、{{site.data.keyword.appid_short}}、{{site.data.keyword.mobilepushshort}}、{{site.data.keyword.mobileanalytics_short}} の他、データベース、機械学習、およびその他のサービスが含まれます。 その後、{{site.data.keyword.cloud}} で Cloud Foundry または Docker (Kubernetes ベース) のいずれかのプラットフォームを使用して、Kitura をデプロイし、自動的にスケーリングできます。
 
-Kitura には、Kitura アプリケーションの作成、ビルド、テスト、およびデプロイを簡素化する `kitura` [コマンド・ライン・インターフェース (CLI)](https://www.kitura.io/guides/kituracli/gettingstarted.html) があります。 Kitura CLI を使用して作成されたアプリケーションには、Cloud Foundry、Docker、および Kubernetes テクノロジーをサポートするあらゆるクラウドにデプロイするための完全なサポートが組み込まれています。 ただし、{{site.data.keyword.cloud_notm}} 用に特別に作成している場合は、ブラウザーで IBM Apple Development Console を使用するか、{{site.data.keyword.dev_cli_notm}} を使用することをお勧めします。 また、この両方の方法では基礎となるテクノロジーが共有されていると同時に、Apple Development Console および IBM Developer Tools は、ホストされたプロジェクトとデプロイメント・パイプラインを自動的に作成するとともに、アプリケーションで必要なサービスをプロビジョニングします。
+Kitura には、Kitura アプリケーションの作成、ビルド、テスト、およびデプロイを簡素化する `kitura` [コマンド・ライン・インターフェース (CLI)](https://www.kitura.io/guides/kituracli/gettingstarted.html){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") があります。Kitura CLI を使用して作成されたアプリケーションには、Cloud Foundry、Docker、および Kubernetes テクノロジーをサポートするあらゆるクラウドにデプロイするための完全なサポートが組み込まれています。 ただし、{{site.data.keyword.cloud_notm}} 用に特別に作成している場合は、ブラウザーで IBM Apple Development Console を使用するか、{{site.data.keyword.dev_cli_notm}} を使用することをお勧めします。 また、この両方の方法では基礎となるテクノロジーが共有されていると同時に、Apple Development Console および IBM Developer Tools は、ホストされたアプリとデプロイメント・パイプラインを自動的に作成するとともに、アプリケーションで必要なサービスをプロビジョニングします。
 
 ## 始める前に
 {: #prereqs-kitura}
@@ -32,35 +36,35 @@ Kitura には、Kitura アプリケーションの作成、ビルド、テスト
 * Swift 4.0 以上  
 * CocoaPods  
 
-## ステップ 1. ブラウザーを使用した Kitura プロジェクトの作成
+## ステップ 1. ブラウザーを使用した Kitura アプリの作成
 {: #create_kitura}
 
-1. Apple Development Console の「スターター・キット (Starter Kits)」セクションに移動します。 定義済みのスターター (「Swift for Backend for Frontend API」など) を選択するか、 **「プロジェクトの作成 (Create Project)」**タイルを使用してカスタム・プロジェクトを作成します。 **「プロジェクトの作成 (Create Project)」**をクリックします。
+1. Apple Development Console の「スターター・キット (Starter Kits)」セクションに移動します。 定義済みのスターター (「Swift for Backend for Frontend API」など) を選択するか、 **「アプリの作成」**タイルを使用してカスタム・アプリを作成します。**「アプリの作成」**をクリックします。
 
-2. プロジェクトに名前を付けて、プロジェクトをデプロイする場所を選択します。 アプリケーションをデプロイする場所が不確かな場合は、デフォルト値を使用します。この値は後で変更できます。
+2. アプリに名前を付けて、アプリをデプロイする場所を選択します。アプリケーションをデプロイする場所が不確かな場合は、デフォルト値を使用します。この値は後で変更できます。
 
-3. Swift 言語を選択します。 サーバー・サイド Swift プロジェクトが作成されます。 また、アプリケーションの URL を形成する「ホストおよびドメインのオプション (Host and Domain options)」も表示されます。 値が分からない場合は、デフォルト値を使用し、アプリケーションを常駐させるドメイン・プロバイダーからの独自のカスタム・ドメインを提供することもできます。
+3. Swift 言語を選択します。 サーバー・サイド Swift アプリが作成されます。また、アプリケーションの URL を形成する「ホストおよびドメインのオプション (Host and Domain options)」も表示されます。 値が分からない場合は、デフォルト値を使用し、アプリケーションを常駐させるドメイン・プロバイダーからの独自のカスタム・ドメインを提供することもできます。
 
 4. 作成する REST API の OpenAPI (Swagger とも呼ばれる) 定義を指定できます。 このような定義がある場合は、対応するハンドラー関数を含む REST API が Kitura 内に作成されます。 OpenAPI 定義がない場合でも、Kitura では、ルーター API を使用して手動で REST API を容易に作成できます。
 
-5. **「プロジェクトの作成 (Create Project)」**をクリックします。
+5. **「アプリの作成」**をクリックします。
 
-プロジェクトが作成されますが、そのプロジェクトでは追加のサービスはまだ使用されていません。 **「リソースの追加」**ボタンをクリックするか、**「コードのダウンロード (Download Code)」**ボタンをクリックしてプロジェクトのコードを取得することによって、サービスを追加できます。 既存のプロジェクトにサービスを簡単に追加することもできます。
+アプリが作成されますが、そのアプリでは追加のサービスはまだ使用されていません。**「サービスの追加」**ボタンか**「コードのダウンロード (Download code)」**ボタンをクリックしてアプリのコードを取得することによって、サービスを追加できます。既存のアプリにサービスを簡単に追加することもできます。
 
 ## ステップ 2. サービスの追加
 {: #add_services-kitura}
 
-1. **「リソースの追加 (Add Resource)」**ボタンをクリックして、サービスを追加します。 サービス・カテゴリーが表示されます。 例えば、使用可能なデータベースを参照するには、**「データ (Data)」**を選択してから、**「Cloudant NoSQL DB」**を選択します。
+1. **「サービスの追加」**をクリックして、サービスを追加します。サービス・カテゴリーが表示されます。 例えば、使用可能なデータベースを参照するには、**「データ (Data)」**を選択してから、**「Cloudant NoSQL DB」**を選択します。
 2. サービスの価格プラン (例えば、Lite) を選択し、**「作成」**をクリックします。
 
-アプリケーションの資格情報を提供し、場合によってはサービスへの適切な接続を含めるために必要なコードをプロジェクトに追加する、サービスのインスタンスが作成されます。 **「リソースの追加」**ボタンを使用するか、**「コードのダウンロード (Downl oad Code)」**をクリックしてプロジェクトのコードを取得することにより、さらにサービスを追加できます。
+アプリケーションの資格情報を提供し、場合によってはサービスへの適切な接続を含めるために必要なコードをアプリに追加する、サービスのインスタンスが作成されます。**「サービスの追加」**ボタンを使用するか、**「コードのダウンロード (Download code)」**をクリックしてアプリのコードを取得することにより、さらにサービスを追加できます。
 
-プロジェクトをダウンロードすると、アプリで作業を開始できます。
+アプリをダウンロードすると、そのアプリで作業を開始できます。
 
 ## ステップ 3. Xcode を使用したアプリケーションの開発
 {: #develop_xcode-kitura}
 
-プロジェクトをダウンロードしたら、Xcode を使用してそのプロジェクトを変更および開発し、変更したアプリケーションをアップロードしてクラウドにデプロイすることができます。
+アプリのコードをダウンロードしたら、Xcode を使用してそのアプリを変更および開発し、変更したアプリケーションをアップロードしてクラウドにデプロイすることができます。
 
 1. Xcode プロジェクトを作成します。  
   Xcode でプロジェクトを使用するには、Swift Package Manager コマンドを使用して Xcode プロジェクト・ファイルを作成しておく必要があります。 ダウンロードしたプロジェクトのルート・ディレクトリー (`Package.swift` ファイルがある場所) から次のコマンドを実行します。
@@ -79,7 +83,7 @@ Kitura には、Kitura アプリケーションの作成、ビルド、テスト
   * Kitura モニタリング: [http://localhost:8080/swiftmetrics-dash/]()
   * Kitura ヘルス・チェック: [http://localhost:8080/health]()
 
-## ステップ 5. REST API の追加
+## ステップ 4. REST API の追加
 {: #add_restapi-kitura}
 
 スケルトン Kitura サーバーが作成されますが、iOS アプリケーションで使用できる REST API は提供されません。 最小限のコーディングによって Kitura に REST API を追加します。 以下のステップに従って、`/meals` に対する `GET` 要求の REST API を追加します。これは、Kitura サーバーによって保管されている、`Meal` オブジェクトを返すように設計されています。
@@ -131,10 +135,10 @@ Kitura には、Kitura アプリケーションの作成、ビルド、テスト
 
   空の配列 `[]` が返されます。これは、`Meal` オブジェクトが現在 `mealStore` に保管されていないためです。 
 
-[FoodTracker Backend](https://github.com/IBM/FoodTrackerBackend) のチュートリアルを参照することをお勧めします。このチュートリアルは、データベースへのデータの保管を含め、iOS アプリケーションから `Meal` オブジェクトを保管、取り出し、および削除するための一連の REST API を作成する際に役立ちます。
+[FoodTracker Backend](https://github.com/IBM/FoodTrackerBackend){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") のチュートリアルを参照することをお勧めします。このチュートリアルは、データベースへのデータの保管を含め、iOS アプリケーションから `Meal` オブジェクトを保管、取り出し、および削除するための一連の REST API を作成する際に役立ちます。
 {: tip}
 
-## ステップ 6. iOS アプリケーションへの KituraKit のインストール
+## ステップ 5. iOS アプリケーションへの KituraKit のインストール
 {: #install-kiturakit}
 
 Kitura サーバーを使用して作成された REST API は、標準の Web API であり、使用しているクライアント・ライブラリーやクライアントの作成に使用する言語に関係なく、任意のアプリケーションから使用できます。 このことは、Alamofire、RestKit、または URLSession を使用してサーバーに接続できることを意味します。 Kitura はまた、iOS からの REST API の呼び出しを単純化するために、最適化されたカスタムのクライアント・コネクターを KituraKit の形式で提供します。 
@@ -161,7 +165,7 @@ KituraKit には、Kitura で使用されるルーター・ハンドラー API �
   ```
   {: codeblock}
 
-3. 次のコードを「# Pods for <application name>」の下に追加して、KituraKit を Podfile に追加します。
+3. 次のコードを　「# Pods for <application name>」の下に追加して、KituraKit を Podfile に追加します。
   ```pod
   pod 'KituraKit', :git => 'https://github.com/IBM-Swift/KituraKit.git', :branch => 'pod'
   ```
@@ -173,7 +177,7 @@ KituraKit には、Kitura で使用されるルーター・ハンドラー API �
   ```
   {: codeblock}
 
-5. ワークスペース (プロジェクトではなく) を開くことによって、Xcode でアプリケーションを再オープンします。 これで、Kitura サーバーで使用されているものと同じ「Meal」定義を iOS アプリケーションに追加できます。
+5. ワークスペース (プロジェクトではなく) を開くことによって、Xcode でアプリケーションを再オープンします。 これで、Kitura サーバーで使用されているものと同じ`Meal` 定義を iOS アプリケーションに追加できます。
   ```swift
   struct Meal: Codable {    
       var name: String
@@ -212,10 +216,10 @@ KituraKit には、Kitura で使用されるルーター・ハンドラー API �
 
 Kitura サーバーが、Kitura の完了ハンドラーのパラメーターと一致するコールバックで「client.get("/meals")」を使用して呼び出されます。
 
-[FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) チュートリアルを参照することをお勧めします。このチュートリアルは、データベースへのデータの保管を含め、iOS アプリケーションから `Meal` オブジェクトを保管、取り出し、および削除するための一連の REST API を作成する際に役立ちます。
+[FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") チュートリアルを参照することをお勧めします。このチュートリアルは、データベースへのデータの保管を含め、iOS アプリケーションから `Meal` オブジェクトを保管、取り出し、および削除するための一連の REST API を作成する際に役立ちます。
 {: tip}
 
 ## 次のステップ
 {: #next-kitura notoc}
 
-iOS アプリケーションで呼び出すことができる REST API を Kitura サーバーで提供できるようになったため、Kitura サーバーを {{site.data.keyword.cloud_notm}} にデプロイする準備ができました。[Deployments](/docs/swift/deploying_apps.html) は、Kubernetes、セキュア・コンテナー、Cloud Foundry、Cloud Foundry エンタープライズ環境、または仮想インスタンスでコンテナーを使用して実行できます。
+iOS アプリケーションで呼び出すことができる REST API を Kitura サーバーで提供できるようになったため、Kitura サーバーを {{site.data.keyword.cloud_notm}} にデプロイする準備ができました。 [Deployments](/docs/swift?topic=swift-deploy_apps-swift#deploy_apps-swift) は、Kubernetes、セキュア・コンテナー、Cloud Foundry、Cloud Foundry エンタープライズ環境、または仮想インスタンスでコンテナーを使用して実行できます。

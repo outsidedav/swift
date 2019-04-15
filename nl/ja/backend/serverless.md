@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ lastupdated: "2019-01-15"
 
 サーバーレス・アーキテクチャーでは、サーバー・サイドの開発に必要なインフラストラクチャーとフレームワークを除外することにより、変更データに応じて実行されるコードを作成することに開発者が集中できるようになります。
 
-IBM の FaaS オファリングである [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/) は、専門的なサーバー・サイドの知識を必要としない、シンプルなサーバー・サイドの開発エクスペリエンスを提供するように努めています。 サーバーレス・テクノロジーを利用すると、前もってリソースを作成しなくても、事実上どんなワークロード要求にも対応できる、拡張可能なバックエンド・ソリューションを迅速に開発できます。 負荷のパターンが予測できなかったり、サーバーのダウン時間が長かったりするアプリケーションの場合、{{site.data.keyword.openwhisk_short}} は、パフォーマンスを向上させる優れたクラウド・ソリューションとなります。また、使用した分だけ支払うシステムなので、コストの削減にも役立ちます。
+IBM の FaaS オファリングである [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") は、専門的なサーバー・サイドの知識を必要としない、シンプルなサーバー・サイドの開発エクスペリエンスを提供するように努めています。サーバーレス・テクノロジーを利用すると、前もってリソースを作成しなくても、事実上どんなワークロード要求にも対応できる、拡張可能なバックエンド・ソリューションを迅速に開発できます。 負荷のパターンが予測できなかったり、サーバーのダウン時間が長かったりするアプリケーションの場合、{{site.data.keyword.openwhisk_short}} は、パフォーマンスを向上させる優れたクラウド・ソリューションとなります。また、使用した分だけ支払うシステムなので、コストの削減にも役立ちます。
 
 ## アーキテクチャーの変更点
 {: #comparison-serverless}
@@ -75,7 +79,7 @@ FaaS に切り替えた場合のアーキテクチャー上の利点を理解す
 {: #mobile-backend-serverless}
 ![](./images/cloud-functions-rest-api-trigger.png)
 
-モバイル開発者は、サーバー・サイドのロジックに簡単にアクセスし、計算主体の作業をクラウド・プラットフォームに外部委託することができます。 サーバー・サイドの経験がなくても、iOS SDK を使用して、Swift などの言語で機能を実装し、簡単にサーバー・サイド機能を利用できます。
+モバイル開発者は、サーバー・サイドのロジックに簡単にアクセスし、計算主体の作業をクラウド・プラットフォームに外部委託することができます。サーバー・サイドの経験がなくても、iOS SDK を使用して、Swift などの言語で機能を実装し、簡単にサーバー・サイド機能を利用できます。
 
 ### データ処理
 {: #data-processing-serverless}
@@ -98,12 +102,12 @@ FaaS に切り替えた場合のアーキテクチャー上の利点を理解す
 {: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [REST API](https://cloud.ibm.com/apidocs)
+* [REST API](https://cloud.ibm.com/apidocs){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
 
 ## 関連リンク
 {: #related-serverless notoc}
 
-* [{{site.data.keyword.openwhisk_short}} について](https://www.ibm.com/cloud/functions)
+* [ディスカバー {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
-* [Apache OpenWhisk プロジェクト Web サイト](http://openwhisk.org)
-* [サーバーレスに関する詳細情報](https://martinfowler.com/articles/serverless.html)
+* [Apache OpenWhisk プロジェクトの Web サイト](http://openwhisk.org){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
+* [サーバーレスに関する詳細](https://martinfowler.com/articles/serverless.html){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")

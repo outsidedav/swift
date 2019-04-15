@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-03-14"
+
+keywords: swift visual recognition, train swift, cocoapods swift, swift sdk install, starter kit watson swift, image swift classify, machine learning swift
+
+subcollection: swift
 
 ---
 
@@ -36,8 +40,8 @@ lastupdated: "2019-01-31"
 * Swift 4.1 以上
 * CocoaPods、Carthage、または Swift Package Manager
 
-[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk) をインストールするには、[CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods)、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage)、または[Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager) を使用できます。CocoaPods (https://cocoapods.org/) を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得します。CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
-
+[CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、または [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
+を使用することにより、[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") をインストールできます。CocoaPods (https://cocoapods.org/) を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得します。 CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
 ```console
 sudo gem install cocoapods
 ```
@@ -57,7 +61,7 @@ sudo gem install cocoapods
 ## ステップ 2. 依存関係のダウンロードと作成
 {: #download-depend-recognition}
 
-任意のテキスト・エディターを使用して、`pod init` を実行してプロジェクトのルート・ディレクトリー (`.xcodeproj` ファイルがある場所) に新しい `Podfile` を作成します。次に、依存関係として Watson Swift SDK の {{site.data.keyword.visualrecognitionshort}} フレームワークを指定する行を追加します。
+任意のテキスト・エディターを使用して、`pod init` を実行してプロジェクトのルート・ディレクトリー (`.xcodeproj` ファイルがある場所) に新しい `Podfile` を作成します。 次に、依存関係として Watson Swift SDK の {{site.data.keyword.visualrecognitionshort}} フレームワークを指定する行を追加します。
 
 ```pod
 use_frameworks!
@@ -67,9 +71,9 @@ target 'MyApp' do
 ```
 {: codeblock}
 
-実動アプリの場合は、特定の[バージョン要件](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions)を指定することにより、Watson Swift SDK の新リリースでの予期しない変更を回避することができます。
+実動アプリの場合は、特定の[バージョン要件](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を指定することにより、Watson Swift SDK の新リリースでの予期しない変更を回避することができます。
 
-`Podfile` が作成され、依存関係をダウンロードできるようになりました。端末を使用してプロジェクトのルート・ディレクトリーにナビゲートし、次のように CocoaPods を実行します。
+`Podfile` が作成され、依存関係をダウンロードできるようになりました。 端末を使用してプロジェクトのルート・ディレクトリーにナビゲートし、次のように CocoaPods を実行します。
 
 ```console
 pod install
@@ -84,27 +88,24 @@ Pod build が失敗しないようにするため、プロジェクトを Xcode 
 ## ステップ 3. アプリでの画像の分析
 {: #analyze-images-recognition}
 
-以下の例は、(特に `ViewController.swift` で) アプリケーションに {{site.data.keyword.visualrecognitionshort}} の機能を追加する際に役立ちます。以下の例を使用すると、ユース・ケースに合わせて Visual Recognition 呼び出しを拡張できます。
+以下の例は、(特に `ViewController.swift` で) アプリケーションに {{site.data.keyword.visualrecognitionshort}} の機能を追加する際に役立ちます。 以下の例を使用すると、ユース・ケースに合わせて Visual Recognition 呼び出しを拡張できます。
 
 1. Visual Recognition の import ステートメントを追加します。
-    
   ```swift
   import VisualRecognition
   ```
   {: codeblock}
 
 2. API 鍵とバージョン (今日の日付を使用) を渡して、SDK を初期化します。
-    
   ```swift
   let visualRecognition = VisualRecognition(version: "yyyy-mm-dd", apiKey: "your-api-key")
   ```
   {: codeblock}
 
-  [バージョン・パラメーターの資料](https://cloud.ibm.com/apidocs/visual-recognition#versioning)を確認するか、{site.data.keyword.conversationshort}} サービスが作成された日付を使用できます。
+  [バージョン・パラメーターの資料](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認するか、{site.data.keyword.conversationshort}} サービスが作成された日付を使用できます。
   {: tip}
 
 3. 画像を分類するため、次のコードを追加します。
-    
   ```swift
   let url = "your-image-url"
   visualRecognition.classify(url: url) { response, error in
@@ -120,22 +121,22 @@ Pod build が失敗しないようにするため、プロジェクトを Xcode 
   ```
   {: codeblock}
 
-Visual Recognition フレームワークでは複数の分類方法がサポートされています。Watson SDK [Visual Recognition の資料](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html)を参照して、各自のアプリケーションに最適な方法を確認してください。
+Visual Recognition フレームワークでは複数の分類方法がサポートされています。 Watson SDK [Visual Recognition の資料](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照して、各自のアプリケーションに最適な方法を確認してください。
 {: tip}
 
 ## スターター・キットの使用
 {: #recognition_starterkits}
 
-[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits)は、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。**Visual Recognition for iOS with Watson** スターター・キットを選択することにより、{{site.data.keyword.visualrecognitionshort}} サービスを使用できます。 このサービスは、画像を評価して分類します。 モバイル・デバイスから新しい画像や既存の画像をアップロードすると、Visual Recognition アプリがその画像コンテンツを素早くタグ付けし、分類します。
+[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")は、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。**Visual Recognition for iOS with Watson** スターター・キットを選択することにより、{{site.data.keyword.visualrecognitionshort}} サービスを使用できます。 このサービスは、画像を評価して分類します。 モバイル・デバイスから新しい画像や既存の画像をアップロードすると、Visual Recognition アプリがその画像コンテンツを素早くタグ付けし、分類します。
 
 開始するには、以下のようにします。
-1. [ここ](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson)にあるスターター・キットを選択します。
+1. [ここ](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") にあるスターター・キットを選択します。
 2. デフォルト・サービスを使用してプロジェクトを作成します。
 3. **「コードのダウンロード (Download Code)」**をクリックしてプロジェクトをダウンロードします。 サービスの資格情報が、対応するキー・フィールドの `BMSCredentials.plist` ファイルに注入されます。
 
 ## 次のステップ
-{: #recognition_next}
+{: #recognition_next notoc}
 
 お疲れさまでした。 これで Visual Recognition がアプリから利用可能になりました。 この調子で、以下のいずれかのオプションを試してみてください。
-* [Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window} を参照し、サポートされているその他の Watson サービスについて確認する。
-* 詳しくは、[IBM Watson{{site.data.keyword.visualrecognitionshort}}](https://www.ibm.com/watson/services/visual-recognition/) を参照してください。
+* [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照し、サポートされているその他の Watson サービスについて確認する。
+* 詳細については、[IBM Watson {{site.data.keyword.visualrecognitionshort}}](https://www.ibm.com/watson/services/visual-recognition/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。

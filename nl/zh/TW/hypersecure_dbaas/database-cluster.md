@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-03-15"
+
+keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
+
+subcollection: swift
 
 ---
 
@@ -23,8 +27,7 @@ lastupdated: "2019-02-01"
 ## 步驟 1. 建立資料庫叢集
 {: #create_dbcluster}
 
-1. 存取 {{site.data.keyword.ihsdbaas_full}} 服務配置畫面，其位於
-https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
+1. 存取 [{{site.data.keyword.ihsdbaas_full}} 服務配置](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 畫面。
 
 2. 提供下列資訊：
 
@@ -81,7 +84,7 @@ https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
 
 使用從這個入門範本套件建立而成的現有專案，或建立一個新專案。
 
-1. 開啟 {{site.data.keyword.cloud_notm}} App Service 儀表板，網址為 `https://cloud.ibm.com/developer/appservice/dashboard`。
+1. 開啟 [{{site.data.keyword.cloud_notm}} 應用程式服務儀表板](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
 2. 選取**入門範本套件**標籤。
 
@@ -236,14 +239,14 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ## 步驟 5. 內含應用程式碼
 {: #embed_appcode}
 
-您現在可以將自己的應用程式碼新增至專案。如需使用 MongoKitten API 的相關資訊，請參閱 http://beta.openkitten.org/tutorials/
+您現在可以將自己的應用程式碼新增至專案。如需相關資訊，請參閱 [MongoKitten API](http://beta.openkitten.org/tutorials/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 文件。
 
 ## 步驟 6. 部署應用程式
 {: #deploy-dbcluster}
 
-您可以使用必要的建置工具，在[本端](/docs/swift/create_app_cli.html#swift-install-tools)執行應用程式，或部署至 {{site.data.keyword.cloud_notm}}。
+您可以使用必要的建置工具，在[本端](/docs/swift?topic=swift-swift_cli#swift-install-tools)執行應用程式，或部署至 {{site.data.keyword.cloud_notm}}。
 
-若要在儀表板中建立部署工具鏈，請按一下**部署至雲端**。根據所選擇方法的指示，設定部署方法：
-  * **部署至 [Kubernetes](/docs/apps/deploying/containers.html#containers)**。此選項可建立主機（稱為工作者節點）的叢集，以部署及管理高可用性應用程式容器。您可以建立叢集或部署至現有的叢集。
-  * **部署至 Cloud Foundry**。此選項可部署雲端原生應用程式，您不需要管理基礎架構。如果您的帳戶有權存取 {{site.data.keyword.cfee_full_notm}}，則可以選取**[公用雲端](/docs/cloud-foundry-public/about-cf.html#about-cf)**或**[企業環境](/docs/cloud-foundry-public/cfee.html#cfee)**的部署者類型，您能夠使用此類型來建立及管理隔離環境，專供您的企業用來管理 Cloud Foundry 應用程式。
-  * **部署至[虛擬伺服器](/docs/apps/vsi-deploy.html#vsi-deploy)**。此選項可佈建虛擬伺服器實例、載入包含應用程式的映像檔、建立 DevOps 工具鏈，以及為您起始第一個部署週期。
+若要在儀表板中建立部署工具鏈，請按一下**部署**。根據所選擇方法的指示，設定部署目標：
+  * **部署至 [{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**。此選項可建立主機（稱為工作者節點）的叢集，以部署及管理高可用性應用程式容器。您可以建立叢集或部署至現有的叢集。
+  * **部署至 Cloud Foundry**。此選項可部署雲端原生應用程式，您不需要管理基礎架構。如果您的帳戶有權存取 {{site.data.keyword.cfee_full_notm}}，則可以選取**[公用雲端](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)**或**[企業環境](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**的部署者類型，您能夠使用此類型來建立及管理隔離環境，專供您的企業用來管理 Cloud Foundry 應用程式。
+  * **部署至[虛擬伺服器](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**。此選項可佈建虛擬伺服器實例、載入包含應用程式的映像檔、建立 DevOps 工具鏈，以及為您起始第一個部署週期。

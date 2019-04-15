@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: generated sdk swift, devops pipeline swift, sdk plug-in swift, open api swift, sdkgen swift, ibmcloud sdk swift, swift backend service
+
+subcollection: swift
 
 ---
 
@@ -15,7 +19,7 @@ lastupdated: "2019-01-15"
 # 생성된 SDK를 사용하여 앱에 백엔드 서비스 통합
 {: #sdkgen-cli}
 
-{{site.data.keyword.IBM}} SDK Generator 플러그인을 [{{site.data.keyword.cloud_notm}} CLI ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](/docs/cli/index.html){: new_window}에 설치할 수 있습니다.
+{{site.data.keyword.IBM}} SDK Generator 플러그인을 [{{site.data.keyword.cloud}} CLI ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli){: new_window}에 설치할 수 있습니다.
 
 이 {{site.data.keyword.IBM_notm}} SDK Generator 플러그인은 생성된 서비스를 사용하여 앱에 백엔드 서비스를 통합합니다. REST API가 변경되면 SDK를 다시 생성하고 SDK를 쉽게 업그레이드하기 위해 이전 SDK를 대체할 수 있습니다. 또한 CLI를 DevOps 파이프라인과 통합하고, 앱이 빌드될 때마다 SDK가 항상 API 스펙과 일치하는지 확인할 수 있습니다.
 
@@ -26,20 +30,22 @@ REST API 정의는 유효해야 하며 라이브 서버 엔드포인트에서 �
 
 다음 항목이 필요합니다.
 
-* [{{site.data.keyword.Bluemix_notm}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://cloud.ibm.com){: new_window} 계정
-* [Open API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.openapis.org/){: new_window} 스펙을 준수하는 유효한 API 정의
+* [{{site.data.keyword.cloud_notm}}](http://cloud.ibm.com){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 계정
+* [Open API ](https://www.openapis.org/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 스펙을 준수하는 유효한 API 정의
 
 ## SDK 플러그인 설치
 {: #install-sdkgen}
 
-1. [{{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/get_started.html)를 설치하십시오.
+1. [{{site.data.keyword.cloud_notm}} CLI를 설치](/docs/cli?topic=cloud-cli-install-ibmcloud-cli#install-ibmcloud-cli)하십시오.
 
-2. [플러그인을 설치![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](/docs/cli/index.html#install_plug-in){: new_window}하십시오.
-
+2. `sdk-gen` 플러그인을 설치하십시오. 
   ```
   ibmcloud plugin install sdk-gen
   ```
   {: codeblock}
+
+[{{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#install_plug-in)을 설치할 수 있습니다. 여기에는 기본 {{site.data.keyword.cloud_notm}} CLI가 포함되어 있으며, 기타 유용한 로컬 도구와 함께 `sdk-gen` 플러그인도 포함되어 있습니다.
+{: tip}
 
 ## SDK 생성
 {: #commands-sdkgen}
@@ -63,7 +69,7 @@ REST API 정의는 유효해야 하며 라이브 서버 엔드포인트에서 �
 * `LOCATION`(필수) - `OPENAPI_DOC_LOCATION`의 유형 지정
    * `-r` - 원격 URL
    * `-f` - 파일
-   * `-a` - {{site.data.keyword.Bluemix_notm}}에서 실행되는 앱
+   * `-a` - {{site.data.keyword.cloud_notm}}에서 실행되는 앱
    * `-l` - localhost URL
 * `--output "YOUR_RELATIVE_PATH"`(선택사항) - `YOUR_RELATIVE_PATH`로 지정되는 디렉토리에 생성된 SDK를 배치합니다(기존 SDK를 겹쳐씀).
 * `--unzip`(선택사항) - 생성된 SDK를 추출합니다(기존 SDK를 겹쳐씀).
@@ -71,7 +77,7 @@ REST API 정의는 유효해야 하며 라이브 서버 엔드포인트에서 �
 ### 사용법
 {: #gen-usage-sdkgen}
 
-{{site.data.keyword.Bluemix_notm}}에서 실행되는 Cloud Foundry에서 SDK를 생성하기 위해 CLI에 대한 매개변수로 앱의 이름을 사용할 수 있습니다. 다음 명령은 `SDK_Name`으로 앱의 이름을 사용합니다.
+{{site.data.keyword.cloud_notm}}에서 실행되는 Cloud Foundry에서 SDK를 생성하기 위해 CLI에 대한 매개변수로 앱의 이름을 사용할 수 있습니다. 다음 명령은 `SDK_Name`으로 앱의 이름을 사용합니다.
 
 ```
 ibmcloud sdk generate [APP_NAME] [LOCATION] [PLATFORM]
@@ -103,7 +109,7 @@ ibmcloud sdk validate [argument]
 ### 사용법
 {: #val-usage-sdkgen}
 
-{{site.data.keyword.Bluemix_notm}}에서 실행되는 Cloud Foundry 앱의 API 스펙을 유효성 검증하기 위해 CLI에 대한 매개변수로 앱의 이름을 사용할 수 있습니다.
+{{site.data.keyword.cloud_notm}}에서 실행되는 Cloud Foundry 앱의 API 스펙을 유효성 검증하기 위해 CLI에 대한 매개변수로 앱의 이름을 사용할 수 있습니다.
 ```
 ibmcloud sdk validate [APP_NAME] [LOCATION]
 ```

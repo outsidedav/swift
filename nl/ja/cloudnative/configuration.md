@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-14"
+
+keywords: swift-cfenv, service bindings swift, environment swift, swift configuration, cloudenvironment swift, VCAP_SERVICES swift, swift credentials
+
+subcollection: swift
 
 ---
 
@@ -25,7 +29,7 @@ lastupdated: "2019-02-04"
 ## 既存の Swift アプリケーションへの {{site.data.keyword.cloud_notm}} の追加
 {: #addcloud-env}
 
-クラウド環境が異なると、環境値を抽象化するためのパスも異なる可能性があります。 [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) ライブラリーは各種クラウド・プロバイダーからの環境構成や資格情報を抽象化するので、Swift アプリをローカルで実行しても、Cloud Foundry、Cloud Foundry エンタープライズ環境、Kubernetes、{{site.data.keyword.openwhisk}}、または仮想環境で実行しても、アプリから情報に一貫してアクセスできます。資格情報を抽象化するには `CloudEnvironment` ライブラリーを使用します。このライブラリーは、Cloud Foundry 構成には [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) を内部使用し、構成マネージャーとしては [Configuration](https://github.com/IBM-Swift/Configuration) を内部使用します。
+クラウド環境が異なると、環境値を抽象化するためのパスも異なる可能性があります。 [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")ライブラリーは各種クラウド・プロバイダーからの環境構成や資格情報を抽象化するので、Swift アプリをローカルで実行しても、Cloud Foundry、Cloud Foundry エンタープライズ環境、Kubernetes、{{site.data.keyword.openwhisk}}、または仮想インスタンスで実行しても、アプリから情報に一貫してアクセスできます。資格情報を抽象化するには `CloudEnvironment` ライブラリーを使用します。このライブラリーは、Cloud Foundry 構成には [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を内部使用し、構成マネージャーとしては [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を内部使用します。
 
 `CloudEnvironment` を使用すると、Swift アプリケーションが対応する値の検索に使用できるルックアップ・キーを定義して、アプリケーションのソース・コードから低水準の詳細情報を抽象化できます。
 
@@ -67,13 +71,13 @@ let url = cloudEnv.url
 ```
 {: codeblock}
 
-この例では、サービスに関する資格情報セットにアクセスできるようになります。この時点でこれらの資格情報を使用して、これらの[サポートされているサービスまたは汎用ディクショナリー](https://github.com/IBM-Swift/CloudEnvironment#supported-services)への接続を初期化できます。 Cloud Foundry 固有の構成については [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api) を確認し、構成データのロードについては[構成の詳細](https://github.com/IBM-Swift/Configuration)を確認してください。
+この例では、サービスに関する資格情報セットにアクセスできるようになります。この時点でこれらの資格情報を使用して、これらの[サポートされているサービスまたは汎用ディクショナリー](https://github.com/IBM-Swift/CloudEnvironment#supported-services){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") への接続を初期化できます。Cloud Foundry 固有の構成については、[Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認してください。構成データのロードについては、[構成の詳細](https://github.com/IBM-Swift/Configuration){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。
 
 ## サービス資格情報について
 {: #service_creds}
 
 `CloudEnvironment` ライブラリーは、`config` ディレクトリー内にある `mappings.json` という名前のファイルを使用して、各サービスの資格情報が保管される場所を伝えます。 `mappings.json` ファイルは、以下の 3 つの検索パターン・タイプを使用する、値の検索をサポートしています。
-- **`cloudfoundry`** - Cloud Foundry のサービス環境変数 (`VCAP_SERVICES`) 内での値の検索に使用されるパターン・タイプ。Cloud Foundry Enrprise Edition の場合、詳細については、[入門チュートリアル](docs/cloud-foundry/getting-started.html#getting-started)を参照してください。
+- **`cloudfoundry`** - Cloud Foundry のサービス環境変数 (`VCAP_SERVICES`) 内での値の検索に使用されるパターン・タイプ。 Cloud Foundry Enrprise Edition の場合、詳細については、[入門チュートリアル](/docs/cloud-foundry?topic=cloud-foundry-getting-started#getting-started)を参照してください。
 - **`env`** - Kubernetes や Functions のように、環境変数にマップされている値の検索に使用されるパターン・タイプ。
 - **`file`** - JSON ファイル内の値の検索に使用されるパターン・タイプ。 パスは、Swift アプリケーションのルート・フォルダーに対する相対パスでなければなりません。
 
@@ -110,18 +114,18 @@ let url = cloudEnv.url
 
 セキュリティー上の理由により、資格情報ファイルをリポジトリーに配置するのは適切ではありません。 前の例では、`localdev` フォルダーを使用してローカルの資格情報が保管されるので、誤ってコミットされないようにするには、このフォルダーを `.gitignore` ファイルに追加しなければなりません。 スターター・キット・アプリを使用している場合は、このフォルダーは自動的に作成され、`.gitignore` ファイルに追加されます。
 
-`mappings.json` ファイルの詳細については、[サービス資格情報の概要](configuration.html#service_creds)のセクションを確認してください。
+`mappings.json` ファイルの詳細については、[サービス資格情報の概要](#service_creds)のセクションを確認してください。
 
 ## スターター・キット・アプリからの Swift 構成マネージャーの使用
 {: #configmanager-swift}
 
-[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits/)で作成された Swift アプリケーションには、資格情報と構成が自動的に付属していますが、この構成は、ローカルに実行するか、多くの Cloud デプロイメント環境 (CF、K8s、VSI、Functions) 内で実行する必要があります。 構成マネージャーの基本的な作成内容は、`Sources/Application/Application.swift` にあります。 サービスを使用して Swift ベースのスターター・キット・アプリを作成すると、`config` フォルダーと `mappings.json` ファイルが作成されます。 アプリをダウンロードすると、サービスに関するすべての資格情報がある `localdev-config.json` ファイルが `config` フォルダーに含まれ、このフォルダーは `.gitignore` ファイル内に存在します。
+[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で作成された Swift アプリには、ローカルでの実行や、多くの Cloud デプロイメント・ターゲット (Cloud Foundry、Kubernetes、VSI、および Functions) 内での実行に必要な資格情報と構成が自動的に付属しています。構成マネージャーの基本的な作成内容は、`Sources/Application/Application.swift` にあります。 サービスを使用して Swift ベースのスターター・キット・アプリを作成すると、`config` フォルダーと `mappings.json` ファイルが作成されます。 アプリをダウンロードすると、サービスに関するすべての資格情報がある `localdev-config.json` ファイルが `config` フォルダーに含まれ、このフォルダーは `.gitignore` ファイル内に存在します。
 
 ## 次のステップ
 {: #next-configß notoc}
 
 アプリケーションがそれぞれの環境から自己抽象化するのに役立つ以下の 3 つのライブラリーを確認します。
 
-* [CloudEnvironment](https://github.com/ibm-developer/ibm-cloud-env)
-* [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv)
-* [Configuration](https://github.com/IBM-Swift/Configuration)
+* [CloudEnvironment](https://github.com/ibm-developer/ibm-cloud-env){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
+* [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
+* [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")

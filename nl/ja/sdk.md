@@ -2,9 +2,14 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-14"
+
+keywords: swift client sdk, swift sdk, add sdk swift, swift sdk service, server sdk swift, swift bms, clientsdk swift, client storage swifts
+
+subcollection: swift
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -24,19 +29,19 @@ lastupdated: "2019-02-28"
 ### Client SDK サービスの追加
 {: #add-client-sdk}
 
-- [Core SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-core)
-- [{{site.data.keyword.appid_short}} SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-cloud-security/appid-clientsdk-swift)
-- [{{site.data.keyword.mobileanalytics_short}} SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)
-- [{{site.data.keyword.mobilepushshort}} SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push)
-- [BMSSecurity![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security)
-- [{{site.data.keyword.engage_short}} SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch)
-- [BMSGoogleAuthentication SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security-googleauthentication)
-- [Watson Swift SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/watson-developer-cloud/swift-sdk)
+- [Core SDK ](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-core){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [{{site.data.keyword.appid_short}} SDK ](https://github.com/ibm-cloud-security/appid-clientsdk-swift){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [{{site.data.keyword.mobileanalytics_short}} SDK ](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [{{site.data.keyword.mobilepushshort}} SDK ](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [BMSSecurity](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [{{site.data.keyword.engage_short}} SDK ](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [BMSGoogleAuthentication SDK{: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security-googleauthentication)
+- [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
 
 ### クライアント・ストレージの追加
 {: #add-storage}
 
-- [Cloudant ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/cloudant/swift-cloudant)
+- [Cloudant](https://github.com/cloudant/swift-cloudant){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
 
 ## サーバー・サイド SDK の追加
 {: #server_sdk}
@@ -46,18 +51,18 @@ Swift サーバー・アプリケーションがある場合は、以下の SDK 
 ### サーバー・サイド・サービスの使用
 {: #use-serverside}
 
-- [{{site.data.keyword.appid_short}}Swift サーバー SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-cloud-security/appid-serversdk-swift)
-- [{{site.data.keyword.openwhisk_short}} for iOS ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/openwhisk/learn/ios-sdk)
-- [KituraKit ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/IBM-Swift/KituraKit)
-- [{{site.data.keyword.mobilepushshort}}Swift サーバー SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-bluemix-mobile-services/bms-pushnotifications-serversdk-swift)
-- [Watson Swift SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/watson-developer-cloud/swift-sdk)
+- [{{site.data.keyword.appid_short}} Swift Server SDK ](https://github.com/ibm-cloud-security/appid-serversdk-swift){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [{{site.data.keyword.openwhisk_short}} for iOS](https://cloud.ibm.com/openwhisk/learn/ios-sdk){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [KituraKit](https://github.com/IBM-Swift/KituraKit){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [{{site.data.keyword.mobilepushshort}} Swift Server SDK ](https://github.com/ibm-bluemix-mobile-services/bms-pushnotifications-serversdk-swift){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [Watson Swift SDK ](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
 
 ### サーバー・サイド・ストレージの追加
 {: #add-serverside}
 
-- [Redis ![外部リンク・アイコン](../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Swift/Kitura-redis)
-- [CouchDB ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/IBM-Swift/Kitura-CouchDB)
-- [MongoDB ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/OpenKitten/MongoKitten)
-- [PostgreSQL ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL)
-- [SQLite ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/IBM-Swift/Swift-Kuery-SQLite)
-- [オブジェクト・ストレージ ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/ibm-bluemix-mobile-services/bluemix-objectstorage-serversdk-swift)
+- [Redis](https://github.com/IBM-Swift/Kitura-redis){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "External link icon")
+- [CouchDB](https://github.com/IBM-Swift/Kitura-CouchDB){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [MongoDB](https://github.com/OpenKitten/MongoKitten){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [PostgreSQL](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [SQLite](https://github.com/IBM-Swift/Swift-Kuery-SQLite){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+- [オブジェクト・ストレージ](https://github.com/ibm-bluemix-mobile-services/bluemix-objectstorage-serversdk-swift){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")

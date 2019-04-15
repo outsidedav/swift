@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swiftmetrics-dash, swiftmetrics, prometheus swift, application metrics swift, swift performance, slow swift, swift dashboard, metris swift
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # Swift 앱으로 애플리케이션 메트릭 사용
 {: #metrics}
 
-애플리케이션 메트릭은 애플리케이션의 성능을 모니터하는 데 중요합니다. CPU, 메모리, 대기 시간 및 HTTP 메트릭과 같은 메트릭의 라이브 보기가 있는 경우 시간 경과에 따라 효율적으로 실행 중인지 확인하는 것은 필수입니다. [Auto-Scaling](/docs/services/Auto-Scaling/index.html)과 같은 Kubernetes 및 Cloud Foundry 서비스는 메트릭에 의존하여 로드에 따라 인스턴스를 동적으로 추가하거나 제거하고 비용 절감을 위해 더 이상 필요하지 않은 인스턴스를 정리하는 시기를 결정할 수 있습니다.
+애플리케이션 메트릭은 애플리케이션의 성능을 모니터하는 데 중요합니다. CPU, 메모리, 대기 시간 및 HTTP 메트릭과 같은 메트릭의 라이브 보기가 있는 경우 시간 경과에 따라 효율적으로 실행 중인지 확인하는 것은 필수입니다. [Auto-Scaling](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started)과 같은 Kubernetes 및 Cloud Foundry 서비스는 메트릭에 의존하여 로드에 따라 인스턴스를 동적으로 추가하거나 제거하고 비용 절감을 위해 더 이상 필요하지 않은 인스턴스를 정리하는 시기를 결정할 수 있습니다.
 
 애플리케이션 메트릭은 시계열 데이터로 캡처됩니다. 캡처된 메트릭의 집계 및 시각화는 다음과 같은 일반적인 성능 문제점을 식별하는 데 도움이 될 수 있습니다.
 
@@ -29,9 +33,9 @@ lastupdated: "2019-01-15"
 ## 기존 Swift 애플리케이션에 애플리케이션 메트릭 추가
 {: #add-appmetrics-existing}
 
-[Swift용 애플리케이션 메트릭](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/)을 사용하여 성능 모니터링을 Swift 애플리케이션에 추가하십시오. Swift용 애플리케이션 메트릭은 두 가지 라이브러리 즉, `SwiftMetrics` 및 `SwiftMetricsDash`로 구성되어 있습니다.
+[Swift용 애플리케이션 메트릭](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 사용하여 성능 모니터링을 Swift 애플리케이션에 추가하십시오. Swift용 애플리케이션 메트릭은 두 가지 라이브러리 즉, `SwiftMetrics` 및 `SwiftMetricsDash`로 구성되어 있습니다.
 
-* `SwiftMetrics` 라이브러리는 애플리케이션을 위한 메트릭을 수집하고 집계하는 종합 인스트루먼테이션 라이브러리입니다. 여기에는 HTTP 메트릭을 위한 Kitura 모듈, [Prometheus 지원](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support) 및 독립형 [이미터](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent)와 같은 확장기능이 포함됩니다.
+* `SwiftMetrics` 라이브러리는 애플리케이션을 위한 메트릭을 수집하고 집계하는 종합 인스트루먼테이션 라이브러리입니다. 여기에는 HTTP 메트릭을 위한 Kitura 모듈, [Prometheus 지원](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 및 독립형 [이미터](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")와 같은 확장기능이 포함됩니다.
 
 * `SwiftMetricsDash` 라이브러리는 `SwiftMetrics`로 생성되는 메트릭을 이용하고 시각화를 위한 내장 대시보드를 제공합니다.
 
@@ -98,4 +102,4 @@ func initializeMetrics(router: Router) {
 
 애플리케이션이 실행되면 `/swiftmetrics-dash` 엔드포인트를 사용하여 대시보드에 액세스할 수 있습니다.
 
-기본적으로 `SwiftMetricsPrometheus`는 `http://<hostname>:<port>/metrics` 아래에 [Prometheus 엔드포인트](https://prometheus.io/)를 제공합니다.
+기본적으로 `SwiftMetricsPrometheus`는 `http://<hostname>:<port>/metrics` 아래에 [Prometheus 엔드포인트](https://prometheus.io/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 제공합니다. 

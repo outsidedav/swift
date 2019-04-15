@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: install sdk swift, sdk client swift, carthage, cocoapods, swift package manager, ios sdk
+
+subcollection: swift
 
 ---
 
@@ -32,7 +36,7 @@ end
 
 `pod install` を実行し、生成された `.xcworkspace` ファイルを開きます。
 
-詳しくは、[CocoaPods Guides](https://guides.cocoapods.org/using/index.html) を参照してください。
+詳しくは、[CocoaPods Guides ](https://guides.cocoapods.org/using/index.html){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。
 
 ## Carthage によるインストール
 {: #install_carthage}
@@ -45,7 +49,7 @@ github "<github org name>/<github project name>"
 
 `carthage update` を実行して、ビルド・プロセスを開始します。 ビルドが完了したら、生成されたフレームワークをプロジェクトに追加します。 
 
-詳しくは、[Carthage の『Getting started』](https://github.com/Carthage/Carthage#getting-started)資料を参照してください。
+詳しくは、[Carthage の『Getting started』](https://github.com/Carthage/Carthage#getting-started){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") 資料を参照してください。
 
 ## Swift Package Manager によるインストール
 {: #install_swift_package}
@@ -58,7 +62,7 @@ Swift Package Manager を使用して SDK をインストールするには、`P
 
 `swift build` を実行して、ビルド・プロセスを開始します。
 
-詳しくは、[Swift Package Manager Overview](https://swift.org/package-manager/) を参照してください。
+詳しくは、[Swift Package Manager Overview](https://swift.org/package-manager/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。
 
 ## 手動でのインストール
 {: #install_manually}

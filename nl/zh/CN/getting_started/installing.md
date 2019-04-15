@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: install sdk swift, sdk client swift, carthage, cocoapods, swift package manager, ios sdk
+
+subcollection: swift
 
 ---
 
@@ -30,7 +34,7 @@ end
 
 运行 `pod install`，然后打开生成的 `.xcworkspace` 文件。
 
-有关更多信息，请参阅 [CocoaPods 指南](https://guides.cocoapods.org/using/index.html)。
+有关更多信息，请参阅 [CocoaPods 指南](https://guides.cocoapods.org/using/index.html){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
 
 ## 使用 Carthage 进行安装
 {: #install_carthage}
@@ -43,7 +47,7 @@ github "<github org name>/<github project name>"
 
 运行 `carthage update` 以启动构建过程。构建完成后，将生成的框架添加到项目。 
 
-有关更多信息，请参阅 [Carthage 入门](https://github.com/Carthage/Carthage#getting-started)文档。
+有关更多信息，请参阅 [Carthage 入门](https://github.com/Carthage/Carthage#getting-started){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 文档。
 
 ## 使用 Swift Package Manager 进行安装
 {: #install_swift_package}
@@ -56,7 +60,7 @@ github "<github org name>/<github project name>"
 
 运行 `swift build` 以启动构建过程。
 
-有关更多信息，请参阅 [Swift Package Manager 概述](https://swift.org/package-manager/)。
+有关更多信息，请参阅 [Swift Package Manager 概述](https://swift.org/package-manager/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
 
 ## 手动安装
 {: #install_manually}

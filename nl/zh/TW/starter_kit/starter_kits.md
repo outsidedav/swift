@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
+
+subcollection: swift
 
 ---
 
@@ -18,7 +22,7 @@ lastupdated: "2019-01-15"
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple 可讓 Apple 開發人員透過各種入門範本套件建立應用程式、佈建及連接重要的 {{site.data.keyword.cloud_notm}} 最佳化服務，然後快速下載工作中的程式碼，或針對持續交付進行設定。使用者可以建立、檢視、配置及管理您的應用程式，以及下載您應用程式的程式碼。使用入門範本套件可協助您快速評估，並以全新的應用程式來測試 {{site.data.keyword.cloud_notm}} 服務。
 
-準備好了嗎？請立即造訪 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits)，以開始使用。
+準備好了嗎？請立即造訪 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以開始使用。
 {: tip}
 
 ## 何謂入門範本套件？
@@ -28,7 +32,7 @@ lastupdated: "2019-01-15"
 
 入門範本套件已備妥正式作業，且主要討論利用運行環境（例如，Swift）來示範重要的型樣實作。在某些情況下，入門範本套件提供簡單的使用者體驗，以突顯服務的整合。在其他情況下，入門範本套件代表更準確使用案例的可自訂實作。
 
-入門範本套件包含的指示容許 {{site.data.keyword.cloud_notm}} 使用可攜式程式碼來自動產生有支架的應用程式，並指定在您從入門範本套件建立應用程式時，要自動佈建的資源。
+入門範本套件包含的指示容許 {{site.data.keyword.cloud_notm}} 使用可攜式程式碼來自動產生有支架的應用程式，並指定在您從入門範本套件建立應用程式時，要自動佈建的服務。
 
 ## 使用 {{site.data.keyword.cloud_notm}} Developer Console for Apple
 {: #starterkits-journey}
@@ -45,7 +49,7 @@ lastupdated: "2019-01-15"
 ### 入門範本套件視圖
 {: #starter_kits_view}
 
-「入門範本套件」視圖顯示某使用案例區域所特定的入門範本套件集合。您可以按一下入門範本套件卡上的各種鏈結，以查看展示及相關資訊。選取入門範本套件，以移至「建立應用程式」視圖。
+入門範本套件視圖顯示某使用案例區域所特定的入門範本套件集合。您可以按一下入門範本套件卡上的各種鏈結，以查看展示及相關資訊。選取入門範本套件，以移至「建立應用程式」視圖。
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 入門範本套件視圖](images/starter_kits_screen.png "入門範本套件視圖") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 入門範本套件視圖*
 
@@ -63,20 +67,20 @@ lastupdated: "2019-01-15"
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式詳細資料視圖](images/project_details_screen.png "應用程式詳細資料視圖") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式詳細資料視圖*
 
-使用「應用程式詳細資料」視圖，您可以將不屬於原始「入門範本套件」的新服務或現有服務新增至您的應用程式。按一下服務清單框中的**新增資源**鏈結，即可新增服務。可用的服務視應用程式的類型以及地區中可用的服務而定，因此並非所有服務都可與所有應用程式相關聯。
+使用**應用程式詳細資料**視圖，您可以將不屬於原始「入門範本套件」的新服務或現有服務新增至您的應用程式。按一下**新增服務**，以新增服務。可用的服務視應用程式的類型以及地區中可用的服務而定，因此並非所有服務都可與所有應用程式相關聯。
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 新增資源對話](images/add_resource_screen.png "新增資源對話") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 新增資源對話*
 
 ### 下載程式碼
 
-* 在「應用程式詳細資料」視圖上，您可以選取**下載程式碼**，以產生並下載應用程式的程式碼。
+* 在_應用程式詳細資料_ 頁面上，您可以選取**下載程式碼**，以產生並下載應用程式的程式碼。
 
 ### 應用程式清單視圖
 {: #app_list_view}
 
-從「應用程式清單」視圖中，您可以列出您建立的所有應用程式。您可以從這裡重新命名或刪除應用程式。按一下應用程式名稱列，即可回到「應用程式詳細資料」視圖。
+從_應用程式清單_ 視圖中，您可以列出您建立的所有應用程式。您可以從這裡重新命名或刪除應用程式。按一下應用程式名稱列，即可回到「應用程式詳細資料」視圖。
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式清單視圖](images/project_list_screen.png "應用程式清單視圖") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式清單視圖*
 
-如需相關資訊，請造訪[{{site.data.keyword.cloud_notm}} Developer Console for Apple 學習資源](https://cloud.ibm.com/developer/appledevelopment/learning-resources)。
+如需相關資訊，請造訪[{{site.data.keyword.cloud_notm}} Developer Console for Apple 學習資源](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 {: tip}

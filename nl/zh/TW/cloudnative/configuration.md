@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-14"
+
+keywords: swift-cfenv, service bindings swift, environment swift, swift configuration, cloudenvironment swift, VCAP_SERVICES swift, swift credentials
+
+subcollection: swift
 
 ---
 
@@ -25,7 +29,7 @@ lastupdated: "2019-02-04"
 ## 新增 {{site.data.keyword.cloud_notm}} 至現有 Swift 應用程式
 {: #addcloud-env}
 
-抽取環境值的路徑，可能會因雲端環境不同而有異。[CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) 程式庫摘要了各種雲端提供者的環境配置與認證，讓您的 Swift 應用程式在本端執行，或是在 Cloud Foundry、Cloud Foundry Enterprise Environment、Kubernetes、{{site.data.keyword.openwhisk}} 或虛擬實例中執行時，都可以一致存取資訊。認證摘要由 `CloudEnvironment` 程式庫提供，其在內部使用 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) 來進行 Cloud Foundry 配置，並且使用 [Configuration](https://github.com/IBM-Swift/Configuration) 作為配置管理程式。
+抽取環境值的路徑，可能會因雲端環境不同而有異。[CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 程式庫摘要了各種雲端提供者的環境配置與認證，讓您的 Swift 應用程式在本端執行，或是在 Cloud Foundry、Cloud Foundry Enterprise Environment、Kubernetes、{{site.data.keyword.openwhisk}} 或虛擬實例中執行時，都可以一致存取資訊。認證摘要由 `CloudEnvironment` 程式庫提供，其在內部使用 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 來進行 Cloud Foundry 配置，並且使用 [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 作為配置管理程式。
 
 使用 `CloudEnvironment`，您可以藉由定義 Swift 應用程式可用來搜尋其對應值的查閱索引鏈，從您應用程式的原始碼中摘要低層次的詳細資料。
 
@@ -67,13 +71,13 @@ let url = cloudEnv.url
 ```
 {: codeblock}
 
-此範例提供服務的認證集存取權，現在可用來起始設定與這些[受支援服務或一般字典](https://github.com/IBM-Swift/CloudEnvironment#supported-services)的連線。請參閱 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api) 的 Cloud Foundry 特定配置，以及有關載入配置資料的[配置詳細資料](https://github.com/IBM-Swift/Configuration)。
+此範例提供服務的認證集存取權，現在可用來起始設定與這些[受支援服務或一般字典](https://github.com/IBM-Swift/CloudEnvironment#supported-services){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 的連線。請參閱 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 以了解 Cloud Foundry 特定的配置，及參閱[配置詳細資料](https://github.com/IBM-Swift/Configuration){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 以了解載入配置資料。
 
 ## 瞭解服務認證
 {: #service_creds}
 
 `CloudEnvironment` 程式庫使用名為 `mappings.json` 的檔案（位於 `config` 目錄中），來傳達每個服務的認證的儲存位置。`mappings.json` 檔案支援搜尋使用下列 3 個搜尋型樣類型的值：
-- **`cloudfoundry`** - 此為型樣類型，用來在 Cloud Foundry 的服務環境變數 (`VCAP_SERVICES`) 中搜尋值。若為 Cloud Foundry Enrprise Edition，如需相關資訊，請參閱此[入門指導教學](docs/cloud-foundry/getting-started.html#getting-started)。
+- **`cloudfoundry`** - 此為型樣類型，用來在 Cloud Foundry 的服務環境變數 (`VCAP_SERVICES`) 中搜尋值。若為 Cloud Foundry Enrprise Edition，如需相關資訊，請參閱此[入門指導教學](/docs/cloud-foundry?topic=cloud-foundry-getting-started#getting-started)。
 - **`env`** - 此為型樣類型，用來搜尋對映至環境變數的值，如在 Kubernetes 或 Functions 中。
 - **`file`** - 此為型樣類型，用來在 JSON 檔案中搜尋值。路徑必須相對於 Swift 應用程式的根資料夾。
 
@@ -110,18 +114,18 @@ let url = cloudEnv.url
 
 基於安全考量，認證檔並不適合儲存庫。在前一個範例中，`localdev` 資料夾用來儲存本端認證，因此您必須將此資料夾新增至 `.gitignore` 檔案，以避免意外確定。如果您使用「入門範本套件」應用程式，則會為您建立此資料夾，並出現在 `.gitignore` 檔案中。
 
-如需 `mappings.json` 檔案的相關資訊，請參閱[瞭解服務認證](configuration.html#service_creds)小節。
+如需 `mappings.json` 檔案的相關資訊，請參閱[瞭解服務認證](#service_creds)小節。
 
 ## 透過入門範本套件應用程式使用 Swift 配置管理程式
 {: #configmanager-swift}
 
-使用[入門範本套件](https://cloud.ibm.com/developer/appledevelopment/starter-kits/)建立的 Swift 應用程式會自動隨附認證及配置，該配置需要在本端執行，也需要在許多 Cloud 部署環境（CF、K8s、VSI 及 Functions）中執行。配置管理程式的基本建立作業位於 `Sources/Application/Application.swift`。當您建立含有服務的 Swift 型入門範本套件應用程式時，會為您建立 `config` 資料夾和 `mappings.json` 檔案。如果您已下載應用程式，`config` 資料夾會包含 `localdev-config.json` 檔案，其中具有您服務的所有認證，且會出現在 `.gitignore` 檔案中。
+使用[入門範本套件](https://cloud.ibm.com/developer/appledevelopment/starter-kits/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 建立的 Swift 應用程式會自動隨附認證及配置，該配置需要在本端執行，也需要在許多 Cloud 部署目標中執行，例如 Cloud Foundry、Kubernetes、VSI 及 Functions。配置管理程式的基本建立作業位於 `Sources/Application/Application.swift`。當您建立含有服務的 Swift 型入門範本套件應用程式時，會為您建立 `config` 資料夾和 `mappings.json` 檔案。如果您已下載應用程式，`config` 資料夾會包含 `localdev-config.json` 檔案，其中具有您服務的所有認證，且會出現在 `.gitignore` 檔案中。
 
 ## 後續步驟
 {: #next-configß notoc}
 
 請參閱以下 3 個程式庫，以協助您的應用程式從其環境中自行摘要：
 
-* [CloudEnvironment](https://github.com/ibm-developer/ibm-cloud-env)
-* [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv)
-* [Configuration](https://github.com/IBM-Swift/Configuration)
+* [CloudEnvironment ](https://github.com/ibm-developer/ibm-cloud-env){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")
+* [Swift-cfenv ](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")
+* [Configuration ](https://github.com/IBM-Swift/Configuration){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")

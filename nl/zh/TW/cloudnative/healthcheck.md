@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift, swift health check
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # 在 Swift 應用程式中使用性能檢查
 {: #healthcheck}
 
-性能檢查提供一種簡單機制，可判定伺服器端應用程式是否適當地運作。雲端環境（例如 [Kubernetes](https://www.ibm.com/cloud/container-service) 及 [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry)）可以配置為定期輪詢性能端點，以判斷服務實例是否準備好接受資料流量。
+性能檢查提供一種簡單機制，可判定伺服器端應用程式是否適當地運作。雲端環境，例如 [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 及 [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 可以配置為定期輪詢性能端點，以判斷您的服務實例是否準備好接受資料流量。
 {: shortdesc}
 
 ## 性能檢查概觀
@@ -50,7 +54,7 @@ Kubernetes 具有細緻入微的處理程序性能記號。它定義兩個探測
 ## 將性能檢查新增至現有 Swift 應用程式
 {: #existing-app}
 
-[性能](https://github.com/IBM-Swift/Health)程式庫可輕鬆地將性能檢查新增至您的 Swift 應用程式。性能檢查是可延伸的。如需[快取](https://github.com/IBM-Swift/Health#caching)以防止 DoS 攻擊或新增[自訂檢查](https://github.com/IBM-Swift/Health#implementing-a-health-check)的相關資訊，請參閱[效能](https://github.com/IBM-Swift/Health)程式庫。
+[性能](https://github.com/IBM-Swift/Health){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 程式庫可輕鬆地將性能檢查新增至您的 Swift 應用程式。性能檢查是可延伸的。如需[快取](https://github.com/IBM-Swift/Health#caching){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 以避免 DoS 攻擊或新增[自訂檢查](https://github.com/IBM-Swift/Health#implementing-a-health-check){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 的相關資訊，請參閱[性能](https://github.com/IBM-Swift/Health){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 程式庫。
 
 若要將「性能」檔案庫新增至現有的 Swift 應用程式，請參閱下列步驟：
 
@@ -90,7 +94,7 @@ Kubernetes 具有細緻入微的處理程序性能記號。它定義兩個探測
 ## 檢查伺服器端 Swift 入門範本套件應用程式的性能
 {: #healthcheck-starterkit}
 
-當您使用「入門範本套件」產生 Kitura 型 Swift 應用程式時，依預設會包括基本性能檢查端點 `/health`。此端點使用 Swift 4 中可用的 Codable 通訊協定，如[性能](https://github.com/IBM-Swift/Health)程式庫所支援。
+當您使用入門範本套件產生以 Kitura 為基礎的 Swift 應用程式時，依預設會包括基本性能檢查端點 `/health`。此端點使用 Swift 4 中可用的 Codable 通訊協定，如[性能](https://github.com/IBM-Swift/Health){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 程式庫所支援。
 
 基本起始設定碼（例如，起始設定「性能」物件）發生在 `Sources/Application.swift` 中。性能檢查端點本身由 `/Sources/Application/Routes/HealthRoutes.swift` 檔案提供，並使用下列程式碼：
 
@@ -113,7 +117,12 @@ func initializeHealthRoutes(app: App) {
 ```
 {: codeblock}
 
-此範例使用標準字典，當您存取 `/health` 端點時，該字典會產生有效負載，例如 `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}`。
+範例使用標準字典，這會在您存取 `/health` 端點時產生如下的有效負載：
+```
+{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}
+```
+
+ 
 
 ## readiness 及 liveness 探測的建議
 {: #recommend-probes}
@@ -125,7 +134,7 @@ func initializeHealthRoutes(app: App) {
 ### 新增 Kubernetes 就緒及存活的支援給 Swift 應用程式
 {: #kube-readiness-swift}
 
-若為替代的實作，例如，使用 **Codable** 或標準字典，請參閱[性能程式庫範例](https://github.com/IBM-Swift/Health#usage)。這些實作中有一部分能簡化可延伸性能檢查的建立，因為它們能支援快取針對支援服務所執行的檢查。在此情境中，建議您區分簡單的存活測試，與較強大而詳細的就緒檢查。
+若為替代的實作，例如，使用 **Codable** 或標準字典，請參閱[性能程式庫範例](https://github.com/IBM-Swift/Health#usage){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。這些實作中有一部分能簡化可延伸性能檢查的建立，因為它們能支援快取針對支援服務所執行的檢查。在此情境中，建議您區分簡單的存活測試，與較強大而詳細的就緒檢查。
 
 ## 在 Kubernetes 中配置 readiness 和 liveness 探測
 {: #config-kube-readiness}
@@ -167,4 +176,4 @@ spec:
       failureThreshold: 10
 ```
 
-如需相關資訊，請參閱如何 [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)。
+如需相關資訊，請參閱如何 [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。

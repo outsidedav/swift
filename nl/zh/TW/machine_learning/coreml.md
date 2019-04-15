@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-03-28"
+
+keywords: coreml swift, core ml swift, watson swift core, create model swift, image classification swift, version parameter swift, swift coreml watson
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-31"
 # 搭配使用 Core ML 與 Watson
 {: #swift-coreml}
 
-使用 [Core ML](https://developer.apple.com/documentation/coreml){:new_window}，您可以將各式各樣的機器學習模型類型整合至您的應用程式。除了支援超過 30 種層次類型的廣泛深度學習之外，還支援標準模型，例如，樹狀結構組合、SVM 及一般線性模型。Core ML 利用低階技術（例如 Metal 及 Accelerate），無縫充分運用 CPU 及 GPU 來提供最高效能與效率，而非遠端傳送資料以進行分析。
+使用 [Core ML](https://developer.apple.com/documentation/coreml){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，您可以將各式各樣的機器學習模型類型整合至您的應用程式。除了支援超過 30 種層次類型的廣泛深度學習之外，還支援標準模型，例如，樹狀結構組合、SVM 及一般線性模型。Core ML 利用低階技術（例如 Metal 及 Accelerate），無縫充分運用 CPU 及 GPU 來提供最高效能與效率，而非遠端傳送資料以進行分析。
 
 您可以藉由使用下列步驟來訓練及建立模型、下載及建置相依關係，以及新增映像檔分類，將 Core ML 和 Watson Visual Recognition 新增至 Swift 應用程式。
 {: shortdesc}
@@ -31,11 +35,11 @@ lastupdated: "2019-01-31"
 * Swift 4.1+
 * CocoaPods、Carthage 或 Swift Package Manager
 
-您可以使用 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods)、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage) 或 [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager) 來安裝 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk)。藉由使用 [CocoaPods](https://cocoapods.org/) 來管理相依關係，您只會得到您需要的架構，而不是整個 Watson Swift SDK。如果您是 CocoaPods 新手，可以輕鬆地安裝它：
+您可以使用 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 或 [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，來安裝 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。藉由使用 CocoaPods 來管理相依關係，您只會得到您需要的架構，而不是整個 Watson Swift SDK。如果您是 CocoaPods 新手，可以輕鬆地安裝它：
 
 ```console
-  sudo gem install cocoapods
-  ```
+sudo gem install cocoapods
+```
 {: codeblock}
 
 ## 步驟 1. 使用 {{site.data.keyword.watson}} {{site.data.keyword.visualrecognitionshort}} 訓練模型
@@ -77,7 +81,7 @@ lastupdated: "2019-01-31"
 
 3. 選取**訓練模型**，然後等待模型完成訓練。
 
-都完成了！現在，您已準備好可以下載 Core ML 模型，然後使用 [Watson Developer Cloud Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window} 將其整合至您的應用程式。
+都完成了！現在，您已準備好可以下載 Core ML 模型，然後使用 [Watson Developer Cloud Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 將其整合至您的應用程式。
 
 ## 步驟 2. 下載及建置相依關係
 {: #install-depend-coreml}
@@ -92,7 +96,7 @@ target 'MyApp' do
 ```
 {: codeblock}
 
-若為正式作業應用程式，您也可能想要指定特定的[版本需求](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions)，以避免新版本 Watson Swift SDK 有非預期的變更。
+若為正式作業應用程式，您也可能想要指定特定的[版本需求](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以避免新版本 Watson Swift SDK 有非預期的變更。
 
 `Podfile` 就緒後，現在您可以下載相依關係。使用終端機來導覽至您專案的根目錄，然後執行 CocoaPods：
 
@@ -123,7 +127,7 @@ Cocoapods 會下載 {{site.data.keyword.visualrecognitionshort}} 架構，並且
   ```
   {: codeblock}
 
-  參閱[版本參數文件](https://cloud.ibm.com/apidocs/visual-recognition#versioning)，或使用建立 {{site.data.keyword.visualrecognitionshort}} 服務的日期。
+  參閱[版本參數文件](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") ，或使用建立 {{site.data.keyword.visualrecognitionshort}} 服務的日期。
   {: tip}
 
 3. 新增下列程式碼，以用 Watson 分類器下載或更新本端 Core ML 模型：
@@ -165,7 +169,7 @@ Cocoapods 會下載 {{site.data.keyword.visualrecognitionshort}} 架構，並且
   ```
   {: codeblock}
 
-5. 探索 Watson SDK 支援的其他 [Core ML 分類功能](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html)。
+5. 探索 Watson SDK 支援的其他 [Core ML 分類功能](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
 ## 步驟 4. 使用入門範本套件
 {: #coreml_starterkits}
@@ -174,9 +178,9 @@ Cocoapods 會下載 {{site.data.keyword.visualrecognitionshort}} 架構，並且
 
 若要將 {{site.data.keyword.visualrecognitionshort}} 新增至入門範本套件，請完成下列步驟：
 
-1. 選取您要使用的[入門範本套件](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window}。
-2. 建立含有預設服務的專案。
-3. 按一下**新增資源 > Watson > {{site.data.keyword.visualrecognitionshort}}**。
+1. 選取您要使用的[入門範本套件](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
+2. 建立含有預設服務的應用程式。
+3. 按一下**新增服務 > Watson > {{site.data.keyword.visualrecognitionshort}}**。
 4. 按一下**下載程式碼**，以下載專案。若為 iOS 專案，認證會插入對應金鑰欄位的 `BMSCredentials.plist` 檔案中。若為伺服器端 Swift 專案，您可以在 `config/local-dev.json` 檔案中找到這些認證。
 
 ## 後續步驟
@@ -184,6 +188,6 @@ Cocoapods 會下載 {{site.data.keyword.visualrecognitionshort}} 架構，並且
 
 現在，您可以使用自訂產生的 Core ML 模型來分析影像。嘗試下列其中一個選項，以保持動力：
 
-* 參閱 [{{site.data.keyword.watson}}Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window} 並探索其他受支援的 Watson 服務。
-* 新增雲端邏輯。開始於[開發無伺服器應用程式](/docs/swift/backend/functions.html)。
-* 充分運用 {{site.data.keyword.visualrecognitionshort}} 提供的所有特性。如需詳細資料，請參閱[文件](/docs/services/visual-recognition/index.html)。
+* 參閱 [{{site.data.keyword.watson}}Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 並探索其他受支援的 Watson 服務。
+* 新增雲端邏輯。開始於[開發無伺服器應用程式](/docs/swift/backend?topic=swift-serverless-dev-swift#serverless-dev-swift)。
+* 充分運用 {{site.data.keyword.visualrecognitionshort}} 提供的所有特性。如需詳細資料，請參閱[文件](/docs/services/visual-recognition?topic=visual-recognition-index#index)。

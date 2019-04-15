@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-03-15"
+
+keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
+
+subcollection: swift
 
 ---
 
@@ -24,8 +28,7 @@ MongoKitten SDK 4.0.0이 포함된 Swift 4.0입니다.
 ## 1단계. 데이터베이스 클러스터 작성
 {: #create_dbcluster}
 
-1. 다음 웹 사이트에서 {{site.data.keyword.ihsdbaas_full}} 서비스 구성 화면에 액세스하십시오.
-https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
+1. [{{site.data.keyword.ihsdbaas_full}} 서비스 구성](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 화면에 액세스하십시오. 
 
 2. 다음 정보를 제공하십시오.
 
@@ -82,7 +85,7 @@ https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
 
 스타터 킷에서 작성된 기존 프로젝트를 사용하거나 새 프로젝트를 작성하십시오.
 
-1. https://cloud.ibm.com/developer/appservice/dashboard에서 {{site.data.keyword.cloud_notm}} 앱 서비스 대시보드를 여십시오.
+1. [{{site.data.keyword.cloud_notm}} 앱 서비스 대시보드](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 여십시오.
 
 2. **스타터 킷** 탭을 선택하십시오.
 
@@ -100,7 +103,7 @@ https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
 {: #connect_db}
 
 안전한 데이터 전송을 위해 다음 웹 사이트에서 인증 기관(CA) 파일을 다운로드하고 프로젝트 디렉토리에 이를 복사하십시오.
-https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project directory.
+https://api.hypersecuredbaas.ibm.com/cert.pem
 
 1. 압축을 푼 다운로드된 코드 파일이 있는 프로젝트 디렉토리로 변경하십시오.
 
@@ -243,14 +246,14 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ## 5단계. 애플리케이션 코드 임베드
 {: #embed_appcode}
 
-이제 고유한 애플리케이션 코드를 프로젝트에 추가할 수 있습니다. MongoKitten API 작업에 대한 자세한 정보는 http://beta.openkitten.org/tutorials/ 를 참조하십시오.
+이제 고유한 애플리케이션 코드를 프로젝트에 추가할 수 있습니다. 자세한 정보는 [MongoKitten API](http://beta.openkitten.org/tutorials/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 문서를 참조하십시오.
 
 ## 6단계. 애플리케이션 배치
 {: #deploy-dbcluster}
 
-필요한 빌드 도구를 사용하여 [로컬로](/docs/swift/create_app_cli.html#swift-install-tools) 애플리케이션을 실행하거나 {{site.data.keyword.cloud_notm}}에 배치할 수 있습니다.
+필요한 빌드 도구를 사용하여 [로컬로](/docs/swift?topic=swift-swift_cli#swift-install-tools) 애플리케이션을 실행하거나 {{site.data.keyword.cloud_notm}}에 배치할 수 있습니다.
 
-대시보드에서 배치 도구 체인을 작성하려면 **클라우드에 배치**를 클릭하십시오. 선택하는 방법의 지시사항에 따라 배치 방법을 설정하십시오. 
-  * **[Kubernetes](/docs/apps/deploying/containers.html#containers)에 배치**. 이 옵션으로 고가용성 애플리케이션 컨테이너를 배치하고 관리하도록 작업자 노드라고 하는 호스트의 클러스터가 작성됩니다. 사용자는 클러스터를 작성하거나 기존 클러스터에 배치할 수 있습니다.
-  * **Cloud Foundry에 배치**. 이 옵션으로 기본 인프라를 관리하지 않아도 클라우드 기반 앱이 배치됩니다. 계정에 {{site.data.keyword.cfee_full_notm}}에 대한 액세스 권한이 있는 경우 **[퍼블릭 클라우드](/docs/cloud-foundry-public/about-cf.html#about-cf)** 또는 **[엔터프라이즈 환경](/docs/cloud-foundry-public/cfee.html#cfee)** 중에서 배치자 유형을 선택하여 사용자 엔터프라이즈 전용의 Cloud Foundry 애플리케이션을 호스팅하기 위한 격리된 환경을 작성하고 관리할 수 있습니다. 
-  * **[가상 서버](/docs/apps/vsi-deploy.html#vsi-deploy)에 배치**. 이 옵션으로 가상 서버 인스턴스가 프로비저닝되고, 앱을 포함한 이미지가 로드되고, 사용자를 위한 첫 번째 배치 주기가 시작됩니다. 
+대시보드에서 배치 도구 체인을 작성하려면 **배치**를 클릭하십시오. 선택하는 방법의 지시사항에 따라 배치 대상을 설정하십시오. 
+  * **[{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)에 배치**. 이 옵션으로 고가용성 애플리케이션 컨테이너를 배치하고 관리하도록 작업자 노드라고 하는 호스트의 클러스터가 작성됩니다. 사용자는 클러스터를 작성하거나 기존 클러스터에 배치할 수 있습니다.
+  * **Cloud Foundry에 배치**. 이 옵션으로 기본 인프라를 관리하지 않아도 클라우드 기반 앱이 배치됩니다. 계정에 {{site.data.keyword.cfee_full_notm}}에 대한 액세스 권한이 있는 경우 **[퍼블릭 클라우드](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** 또는 **[엔터프라이즈 환경](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)** 중에서 배치자 유형을 선택하여 사용자 엔터프라이즈 전용의 Cloud Foundry 애플리케이션을 호스팅하기 위한 격리된 환경을 작성하고 관리할 수 있습니다.
+  * **[가상 서버](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)에 배치**. 이 옵션으로 가상 서버 인스턴스가 프로비저닝되고, 앱을 포함한 이미지가 로드되고, 사용자를 위한 첫 번째 배치 주기가 시작됩니다.

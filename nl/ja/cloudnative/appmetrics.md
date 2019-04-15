@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swiftmetrics-dash, swiftmetrics, prometheus swift, application metrics swift, swift performance, slow swift, swift dashboard, metris swift
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # Swift アプリでのアプリケーション・メトリックの使用
 {: #metrics}
 
-アプリケーション・メトリックは、アプリケーションのパフォーマンスをモニターするのに重要です。 時間が経ってもアプリケーションが効果的に実行されていることを確認するには、CPU、メモリー、待ち時間、HTTP などのメトリックのライブ・ビューが不可欠です。 [Auto-Scaling](/docs/services/Auto-Scaling/index.html) などの Kubernetes や Cloud Foundry のサービスは、負荷に応じてインスタンスを動的に追加/削除するタイミングや、コストを抑えるために不要になったインスタンスをクリーンアップするタイミングを見極めるために、メトリックに依存しています。
+アプリケーション・メトリックは、アプリケーションのパフォーマンスをモニターするのに重要です。 時間が経ってもアプリケーションが効果的に実行されていることを確認するには、CPU、メモリー、待ち時間、HTTP などのメトリックのライブ・ビューが不可欠です。 [Auto-Scaling](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started) などの Kubernetes や Cloud Foundry のサービスは、負荷に応じてインスタンスを動的に追加/削除するタイミングや、コストを抑えるために不要になったインスタンスをクリーンアップするタイミングを見極めるために、メトリックに依存しています。
 
 アプリケーション・メトリックは、時系列データとしてキャプチャーされます。 キャプチャーされたメトリックを集約して視覚化すると、次のような一般的なパフォーマンス上の問題を検出できます。
 
@@ -29,9 +33,9 @@ lastupdated: "2019-01-15"
 ## 既存の Swift アプリケーションへのアプリケーション・メトリックの追加
 {: #add-appmetrics-existing}
 
-Swift アプリケーションにパフォーマンス・モニターを追加するには、[Application Metrics for Swift](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/) を使用します。 Application Metrics for Swift は、`SwiftMetrics` と `SwiftMetricsDash` の 2 つのライブラリーで構成されます。
+Swift アプリケーションにパフォーマンス・モニターを追加するには、[Application Metrics for Swift](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用します。Application Metrics for Swift は、`SwiftMetrics` と `SwiftMetricsDash` の 2 つのライブラリーで構成されます。
 
-* `SwiftMetrics` ライブラリーは、アプリケーションに関するメトリックを収集して集約する包括的な計測ライブラリーです。 HTTP メトリック用の Kitura モジュール、[Prometheus サポート](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support)、スタンドアロンの[エミッター](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent)などのいくつかの拡張機能があります。
+* `SwiftMetrics` ライブラリーは、アプリケーションに関するメトリックを収集して集約する包括的な計測ライブラリーです。 ここには、HTTP メトリック用の Kitura モジュール、[Prometheus サポート](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、スタンドアロンの[エミッター](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") などのいくつかの拡張機能があります。
 
 * `SwiftMetricsDash` ライブラリーは、`SwiftMetrics` で作成されるメトリックを利用し、視覚化用の組み込みのダッシュボードを提供します。
 
@@ -65,7 +69,7 @@ let smd = try SwiftMetricsDash(swiftMetricsInstance : metrics)
 ## スターター・キットでのアプリケーション・メトリックの使用
 {: #appmetrics-starterkits}
 
-スターター・キットから作成されるサーバー・サイドの Swift アプリケーションには `SwiftMetrics`、`SwiftMetricsDash`、`SwiftMetricsPrometheus` が含まれており、Prometheus エンドポイントを使用する Kubernetes 環境でメトリックの収集に使用する準備ができています。
+スターター・キットから作成されるサーバー・サイドの Swift アプリケーションには `SwiftMetrics`、`SwiftMetricsDash`、`SwiftMetricsPrometheus` が含まれており、これらは Prometheus エンドポイントを使用する Kubernetes 環境でメトリックの収集にそのまま使用できます。
 
 `SwiftMetrics` コードは、`/Sources/Application/Metrics.swift` にあります。
 ```swift
@@ -98,4 +102,4 @@ func initializeMetrics(router: Router) {
 
 アプリケーションが稼働中になると、`/swiftmetrics-dash` エンドポイントを使用してダッシュボードにアクセスできます。
 
-デフォルトでは、`SwiftMetricsPrometheus` は `http://<hostname>:<port>/metrics` で [Prometheus エンドポイント](https://prometheus.io/)を提供します。
+デフォルトでは、`SwiftMetricsPrometheus` は `http://<hostname>:<port>/metrics` で [Prometheus エンドポイント](https://prometheus.io/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を提供します。

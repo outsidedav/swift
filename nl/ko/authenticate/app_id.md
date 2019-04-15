@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ lastupdated: "2019-01-15"
 
 사용자가 로그인하도록 요청하여 앱 환경 설정과 같은 사용자 데이터(또는 공용 소셜 프로파일의 정보)를 저장할 수 있고, 이후에 해당 데이터를 사용하여 앱 내에서 각 사용자 경험을 사용자 정의할 수 있습니다. {{site.data.keyword.appid_short_notm}}는 사용자를 위한 로그인 프레임워크를 제공하지만 클라우드 디렉토리에 사용할 브랜딩된 고유한 로그인 화면을 가져올 수도 있습니다.
 
-{{site.data.keyword.appid_short_notm}} 및 아키텍처 정보를 사용할 수 있는 모든 방법은 [{{site.data.keyword.appid_short_notm}} 정보](/docs/services/appid/about.html)를 참조하십시오.
+{{site.data.keyword.appid_short_notm}} 및 아키텍처 정보를 사용할 수 있는 모든 방법은 [{{site.data.keyword.appid_short_notm}} 정보](/docs/services/appid?topic=appid-about#about)를 참조하십시오.
 
 ## 시작하기 전에
 {: #prereqs-appid}
@@ -37,7 +41,7 @@ lastupdated: "2019-01-15"
 
 {{site.data.keyword.appid_short_notm}} 서비스의 인스턴스를 작성하십시오.
 
-1. [{{site.data.keyword.cloud_notm}} 카탈로그](https://cloud.ibm.com/catalog/)에서 {{site.data.keyword.appid_short_notm}}를 선택하십시오. 서비스 구성 화면이 열립니다.
+1. [{{site.data.keyword.cloud_notm}} 카탈로그](https://cloud.ibm.com/catalog/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")에서 {{site.data.keyword.appid_short_notm}}를 선택하십시오. 서비스 구성 화면이 열립니다.
 2. 서비스 인스턴스에 이름을 지정하거나 사전 설정된 이름을 사용하십시오.
 3. 가격 플랜을 선택하고 **작성**을 클릭하십시오.
 
@@ -129,7 +133,7 @@ ID 제공자는 사용자에게 권한을 부여할 수 있도록 사용자에 �
 
 1. **ID 제공자 > 관리**를 위해 {{site.data.keyword.appid_short_notm}} 대시보드를 여십시오.
 2. 사용할 ID 제공자를 **설정**으로 설정하십시오. ID 제공자의 모든 조합을 사용할 수 있으나 사용자 정의된 사인온 화면을 가져오려면 클라우드 디렉토리만 사용으로 설정해야 합니다.
-3. [기본 구성](/docs/services/appid/identity-providers.html)을 고유한 인증 정보로 업데이트하십시오. {{site.data.keyword.appid_short_notm}}는 서비스를 실행해 보는 데 사용할 수 있는 IBM 인증 정보를 제공하지만 앱을 공개하기 전에 구성을 업데이트해야 합니다.
+3. [기본 구성](/docs/services/appid?topic=appid-social#social)을 고유한 인증 정보로 업데이트하십시오. {{site.data.keyword.appid_short_notm}}는 서비스를 실행해 보는 데 사용할 수 있는 IBM 인증 정보를 제공하지만 앱을 공개하기 전에 구성을 업데이트해야 합니다.
 4. 원하는 이미지와 색상을 표시하려면 로그인 화면을 사용자 정의하십시오.
 5. 앱을 사용하여 로그인 위젯을 호출하려면 다음 명령을 코드에 추가하십시오.
     ```swift
@@ -272,12 +276,12 @@ ID 제공자는 사용자에게 권한을 부여할 수 있도록 사용자에 �
 3. {{site.data.keyword.appid_short_notm}} 대시보드에서 ID 제공자 또는 로그인 위젯 화면을 업데이트하십시오.
 4. 1단계와 2단계를 반복하여 변경사항이 즉시 구현되는지 확인하십시오. 앱 코드에 대한 업데이트는 필요하지 않습니다.
 
-문제가 있습니까? [{{site.data.keyword.appid_short_notm}} 문제점 해결](/docs/services/appid/ts_index.html)을 확인하십시오.
+문제가 있습니까? [{{site.data.keyword.appid_short_notm}} 문제점 해결](/docs/services/appid?topic=appid-troubleshooting#troubleshooting)을 확인하십시오.
 
 ## 다음 단계
-{: #next-appid}
+{: #next-appid notoc}
 
 잘 하셨습니다! 앱에 보안 레벨을 추가했습니다. 다음 옵션 중 하나를 사용하여 계속 진행하십시오.
 
-* {{site.data.keyword.appid_short_notm}}에서 제공하는 모든 기능을 자세히 알아보고 활용하십시오. [이 문서를 확인하십시오](/docs/services/appid/index.html).
-* 스타터 킷은 {{site.data.keyword.cloud_notm}}의 기능을 사용할 수 있는 가장 빠른 방법 중 하나입니다. [모바일 개발자 대시보드](https://cloud.ibm.com/developer/mobile/dashboard)에서 사용 가능한 스타터 킷을 보십시오. 코드를 다운로드하십시오. 앱을 실행하십시오!
+* {{site.data.keyword.appid_short_notm}}에서 제공하는 모든 기능을 자세히 알아보고 활용하십시오. [이 문서를 확인하십시오](/docs/services/appid?topic=appid-getting-started#getting-started).
+* 스타터 킷은 {{site.data.keyword.cloud_notm}}의 기능을 사용할 수 있는 가장 빠른 방법 중 하나입니다. [모바일 개발자 대시보드](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")에서 사용 가능한 스타터 킷을 보십시오. 코드를 다운로드하십시오. 앱을 실행하십시오!

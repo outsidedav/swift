@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
+
+subcollection: swift
 
 ---
 
@@ -157,7 +161,7 @@ lastupdated: "2019-01-15"
 
   新的參與現在出現在「參與詳細資料」視窗中。
 
-您現在可以測量參與的[效能](/docs/services/app-launch/app_measure_performance.html#applaunch_type)。
+您現在可以測量參與的[效能](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type)。
 
 ### 啟用應用程式內傳訊功能
 {: #app-message-applaunch}
@@ -204,13 +208,13 @@ lastupdated: "2019-01-15"
 
   新的參與現在出現在「參與詳細資料」視窗中。
 
-您現在可以測量參與的[效能](/docs/services/app-launch/app_measure_performance.html#applaunch_type)。
+您現在可以測量參與的[效能](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type)。
 
 ## 快速鏈結
 {: #links-applaunch notoc}
 
 請查看下列鏈結以取得見解，並瞭解 {{site.data.keyword.engage_short}} 的特性：
 
- - 試用 [App Launch 服務](https://cloud.ibm.com/catalog/services/app-launch)。
- - [部落格及視訊](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - 如需相關資訊，請參閱 [App Launch - 入門指導教學](/docs/services/app-launch/index.html)。
+ - 試試 [App Launch 服務](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
+ - [部落格及視訊](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
+ - 如需相關資訊，請參閱 [App Launch - 入門指導教學](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate)。

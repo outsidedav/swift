@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ lastupdated: "2019-01-15"
 
 无服务器体系结构通过抽象出服务器端开发所需的基础架构和框架，使开发者能够专注于编写代码，让代码以反应性方式运行来更改数据。
 
-IBM 的 FaaS 产品 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/) 致力于提供简单的服务器端开发体验，无需任何服务器端专业知识。通过使用无服务器技术，您可以快速开发可扩展的后端解决方案，以满足几乎所有工作负载需求，而不必提前创建资源。对于负载模式不可预测或服务器停机时间长的应用程序，{{site.data.keyword.openwhisk_short}} 会是一个出色的云解决方案，其性能已经过改进，而且其“按使用内容付费”机制还有助于降低成本。
+IBM 的 FaaS 产品 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 致力于提供简单的服务器端开发体验，无需任何服务器端专业知识。通过使用无服务器技术，您可以快速开发可扩展的后端解决方案，以满足几乎所有工作负载需求，而不必提前创建资源。对于负载模式不可预测或服务器停机时间长的应用程序，{{site.data.keyword.openwhisk_short}} 会是一个出色的云解决方案，其性能已经过改进，而且其“按使用内容付费”机制还有助于降低成本。
 
 ## 体系结构更改
 {: #comparison-serverless}
@@ -98,12 +102,12 @@ Mobile 开发者可以轻松地访问服务器端逻辑，还可以将计算密�
 {: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [REST API](https://cloud.ibm.com/apidocs)
+* [REST API](https://cloud.ibm.com/apidocs){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
 
 ## 相关链接
 {: #related-serverless notoc}
 
-* [发现 {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions)
+* [Discover {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
-* [Apache OpenWhisk 项目 Web 站点](http://openwhisk.org)
-* [关于无服务器的更多信息](https://martinfowler.com/articles/serverless.html)
+* [Apache OpenWhisk 项目 Web 站点](http://openwhisk.org){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
+* [关于无服务器的更多信息](https://martinfowler.com/articles/serverless.html){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")

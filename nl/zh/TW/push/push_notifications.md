@@ -2,9 +2,14 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-24"
+
+keywords: push swift, swift notifications, push notifications swift, sending push swift, configure service instance swift, provider credentials swift
+
+subcollection: swift
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -21,7 +26,7 @@ lastupdated: "2019-01-15"
  - 客戶可以選擇訂閱要接收通知的特定標籤或主題。
  - 可讓應用程式擁有者分析已登錄要接收通知的裝置數量，以及傳送的通知數量。
 
-您可以選擇將 {{site.data.keyword.mobilepushshort}} 服務當作 MobileFirst Services Starter Boilerplate 的一部分使用，或者當作 {{site.data.keyword.cloud_notm}} [專用服務](/docs/dedicated/index.html) 使用。您也可以使用 SDK（軟體開發套件）及 [REST API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobile.{DomainName}/imfpush/){: new_window}，以進一步開發用戶端應用程式。
+您可以選擇將 {{site.data.keyword.mobilepushshort}} 服務當作 MobileFirst Services Starter Boilerplate 的一部分使用，或者當作 {{site.data.keyword.cloud_notm}} [專用服務](/docs/dedicated?topic=dedicated-dedicated#dedicated) 使用。您也可以使用 SDK（軟體開發套件）及 [REST API ](https://mobile.{DomainName}/imfpush/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以進一步開發用戶端應用程式。
 
 ![推送概觀](images/push_notification_lifecycle.jpg) 圖 1. {{site.data.keyword.mobilepushshort}} 服務生命週期的概觀
 
@@ -57,7 +62,7 @@ lastupdated: "2019-01-15"
 
 當 `.cer` 檔案位於您的金鑰鏈存取中之後，將其匯出至您的電腦，以建立 `.p12` 憑證。
 
-如需有關使用 APNs 的相關資訊，請參閱 [iOS Developer Library: Local and Push Notification Programming Guide ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window}。
+如需有關使用 APNs 的相關資訊，請參閱 [iOS Developer Library: Local and Push Notification Programming Guide ](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
 若要在 Push Notification 服務主控台上設定 APNs，請完成以下步驟：
 
@@ -86,7 +91,7 @@ lastupdated: "2019-01-15"
 
 若要讓 iOS 應用程式接收推送通知到您的裝置，您需要為 {{site.data.keyword.mobilepushshort}} 服務配置 iOS SDK。
 
-{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK 可與 Cocoapods 或 Carthage 一同安裝。如需相關資訊，請參閱 [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application)。
+{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK 可與 Cocoapods 或 Carthage 一同安裝。如需相關資訊，請參閱 [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
 ## 步驟 5. 傳送通知
 {: #send-notify-push}
@@ -118,20 +123,20 @@ lastupdated: "2019-01-15"
 - **音效**：指出要在收到通知時播放的音效短片。支援預設，或是在應用程式中組合的音效資源名稱。
 - **其他有效負載**：指定通知的自訂有效負載值。
 
-您也可以選擇啟用[互動式通知](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#interactive-notifications)及[複合式多媒體通知](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enabling-rich-media-notifications)。
+您也可以選擇啟用[互動式通知](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#interactive-notifications){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 及[複合式多媒體通知](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enabling-rich-media-notifications){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
 ## 步驟 6. 監視已分送的通知
 {: #monitor-push}
 
-{{site.data.keyword.mobilepushshort}} 服務提供監視公用程式，以協助您檢查已傳送訊息的狀態。若要配置您的監視公用程式，請參閱[啟用 iOS 應用程式的監視功能](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring)。
+{{site.data.keyword.mobilepushshort}} 服務提供監視公用程式，以協助您檢查已傳送訊息的狀態。若要配置您的監視公用程式，請參閱[啟用 iOS 應用程式的監視功能](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
 ## 後續步驟
-{: #next-push}
+{: #next-push notoc}
 
  - 若要進一步瞭解服務並充分運用所有特性，請閱讀我們的[文件](/docs/services/mobilepush/c_overview_push.html#overview-push)。
 
  - 如需使用「行動」服務及 {{site.data.keyword.cloud_notm}} 的簡介，請參閱[開始使用 {{site.data.keyword.cloud_notm}} 上的行動應用程式](/docs/services/mobile/index.html)。
 
- - 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://cloud.ibm.com/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
+ - 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中的可用入門範本套件。下載程式碼。執行應用程式！
 
- - 您可以使用 [Swagger 使用者介面](https://mobile.ng.bluemix.net/imfpush/)，來快速檢閱 REST API 文件。
+ - 您可以使用 [Swagger 使用者介面](https://mobile.ng.bluemix.net/imfpush/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，來快速檢閱 REST API 文件。

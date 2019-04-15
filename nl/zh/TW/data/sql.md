@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: sql swift, database swift, persistence swift, data swift, orm swift, kuery swift, kitura swift
+
+subcollection: swift
 
 ---
 
@@ -17,6 +21,8 @@ lastupdated: "2019-01-15"
 {: #sql_data}
 
 「結構化查詢語言 (SQL)」是一種網域特定的語言，用來管理關聯式資料庫中的資料。資料持續性建議用於您的伺服器在使用時關閉的情況。若要新增資料持續性，您可以直接從 Swift 使用 SQL Database。
+ 
+
 Swift 最重要的特性之一就是其類型安全。搭配使用 SQL Database 與 Swift 是合乎邏輯的選擇，因為這兩者都支援類型安全。
 
 ## 搭配使用 ORM 與 SQL Database
@@ -27,9 +33,9 @@ Swift 最重要的特性之一就是其類型安全。搭配使用 SQL Database 
 ## 步驟 1. 開始使用 ORM
 {: #start-orm}
 
-搭配使用 [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM) 與 SQL 外掛程式，例如 [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) 或 [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL)。
+請使用 [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 搭配 SQL 外掛程式，例如 [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 或 [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
-此範例使用 [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) 外掛程式。請遵循[這裡](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation)的指示，來安裝外掛程式。
+此範例使用 [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 外掛程式。請遵循指示以[安裝外掛程式](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
 ## 步驟 2. 將 ORM 匯入應用程式
 {: #import-orm}
@@ -159,9 +165,9 @@ Grade.delete(id: 1) { error in
 ## 搭配使用 ORM 與 Kitura
 {: #kitura-orm}
 
-為了更容易試用 ORM，[FoodTrackerBackend 指導教學](https://github.com/IBM/FoodTrackerBackend)可以從 iOS 應用程式中儲存並提取 Meal 物件，並直接放進 PostgreSQL 資料庫中。即使您已完成指導教學，也值得您再試一次，以瞭解 Swift-Kuery-ORM 的強大功能，以及它如何簡化您的 Kitura 程式碼。
+為了更容易試用 ORM，[FoodTrackerBackend 指導教學](https://github.com/IBM/FoodTrackerBackend){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 可以從 iOS 應用程式中儲存並提取 Meal 物件，並直接放進 PostgreSQL 資料庫中。即使您已完成指導教學，也值得您再試一次，以瞭解 Swift-Kuery-ORM 的強大功能，以及它如何簡化您的 Kitura 程式碼。
 
 ## 直接使用 Swift-Kuery
 {: #swift-kuery}
 
-如果因為您需要對資料庫有更多的控制權，而受到 ORM 的限制，您可以使用 SQL 抽象層 [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery)，在其中您可以建立 SQL 查詢。
+如果因為您需要對資料庫有更多的控制權，而受到 ORM 的限制，您可以使用 SQL 抽象層 [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，在其中您可以建立 SQL 查詢。

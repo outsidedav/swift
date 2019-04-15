@@ -2,9 +2,14 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-24"
+
+keywords: push swift, swift notifications, push notifications swift, sending push swift, configure service instance swift, provider credentials swift
+
+subcollection: swift
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -21,7 +26,7 @@ lastupdated: "2019-01-15"
  - 고객은 알림에 대한 특정 태그 또는 주제를 등록하도록 선택할 수 있습니다.
  - 앱 소유자는 알림을 수신하도록 등록된 디바이스 수와 전송된 알림 수를 분석할 수 있습니다.
 
-MobileFirst Services Starter 표준 유형의 일부 또는 {{site.data.keyword.cloud_notm}} [전용 서비스](/docs/dedicated/index.html) 중 하나로 {{site.data.keyword.mobilepushshort}} 서비스를 사용하도록 선택할 수 있습니다. SDK(Software Development Kit) 및 [REST API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobile.{DomainName}/imfpush/){: new_window}를 사용하여 클라이언트 애플리케이션을 추가로 개발할 수 있습니다.
+MobileFirst Services Starter 표준 유형의 일부 또는 {{site.data.keyword.cloud_notm}} [전용 서비스](/docs/dedicated?topic=dedicated-dedicated#dedicated) 중 하나로 {{site.data.keyword.mobilepushshort}} 서비스를 사용하도록 선택할 수 있습니다. SDK(Software Development Kit) 및 [REST API ](https://mobile.{DomainName}/imfpush/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 사용하여 클라이언트 애플리케이션을 추가로 개발할 수 있습니다.
 
 ![푸시 개요](images/push_notification_lifecycle.jpg) 그림 1. {{site.data.keyword.mobilepushshort}} 서비스 라이프사이클의 개요
 
@@ -57,7 +62,7 @@ MobileFirst Services Starter 표준 유형의 일부 또는 {{site.data.keyword.
 
 `.cer` 파일이 키 체인 액세스에 있으면 이 파일을 컴퓨터로 내보내서 `.p12` 인증서를 작성하십시오.
 
-APN 사용에 대한 자세한 정보는 [iOS Developer Library: 로컬 및 푸시 알림 프로그래밍 안내서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window}를 참조하십시오.
+APN 사용에 대한 자세한 정보는 [iOS Developer Library: 로컬 및 푸시 알림 프로그래밍 안내서 ](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 참조하십시오.
 
 Push Notifications 서비스 콘솔에서 APN을 설정하려면 다음 단계를 완료하십시오.
 
@@ -69,7 +74,7 @@ Push Notifications 서비스 콘솔에서 APN을 설정하려면 다음 단계�
 		  ![{{site.data.keyword.mobilepushshort}} 콘솔 설정](images/wizard.jpg)
 
 		2. **비밀번호** 필드에서 `.p12` 인증서 파일과 연관된 비밀번호를 입력한 후 **저장**을 클릭하십시오.
- 	- **웹** 옵션의 경우
+	- **웹** 옵션의 경우
 		- Safari 푸시 섹션에서 필수 정보로 양식을 업데이트하십시오.
 		- **웹 사이트 이름**: 알림 센터에서 제공된 웹 사이트 이름입니다.
 		- **웹 사이트 푸시 ID**: 웹 사이트 푸시 ID에 대한 역 도메인 문자열로 업데이트하십시오. 예를 들면, web.com.acmebanks.www입니다.
@@ -85,7 +90,7 @@ Push Notifications 서비스 콘솔에서 APN을 설정하려면 다음 단계�
 
 iOS 애플리케이션이 디바이스에 대한 푸시 알림을 받을 수 있으려면 {{site.data.keyword.mobilepushshort}} 서비스에 대한 iOS SDK를 구성해야 합니다.
 
-{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK는 Cocoapods 또는 Carthage로 설치할 수 있습니다. 자세한 정보는 [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application)을 참조하십시오.
+{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK는 Cocoapods 또는 Carthage로 설치할 수 있습니다. 자세한 정보는 [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 참조하십시오.
 
 ## 5단계. 알림 전송
 {: #send-notify-push}
@@ -118,20 +123,20 @@ iOS 디바이스에 알림을 전송하기 위해 {{site.data.keyword.mobilepush
 - **사운드**: 알림을 수신할 때 재생되는 사운드 클립을 표시합니다. 기본값 또는 앱에서 번들된 사운드 리소스의 이름을 지원합니다.
 - **추가 페이로드**: 알림에 대한 사용자 정의 페이로드 값을 지정합니다.
 
-[대화식 알림](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#interactive-notifications) 및 [리치 미디어 알림](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enabling-rich-media-notifications)을 사용으로 설정하도록 선택할 수도 있습니다.
+[대화식 알림](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#interactive-notifications){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 및 [리치 미디어 알림](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enabling-rich-media-notifications){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 사용으로 설정하도록 선택할 수도 있습니다. 
 
 ## 6단계. 전달된 알림 모니터링
 {: #monitor-push}
 
-{{site.data.keyword.mobilepushshort}} 서비스는 전송된 메시지의 상태를 확인하는 데 도움이 되는 모니터링 유틸리티를 제공합니다. 모니터링 유틸리티를 구성하려면 [iOS 애플리케이션용 모니터링 사용](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring)을 참조하십시오.
+{{site.data.keyword.mobilepushshort}} 서비스는 전송된 메시지의 상태를 확인하는 데 도움이 되는 모니터링 유틸리티를 제공합니다. 모니터링 유틸리티를 구성하려면 [iOS 애플리케이션용 모니터링 사용](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 참조하십시오.
 
 ## 다음 단계
-{: #next-push}
+{: #next-push notoc}
 
  - 서비스에 대해 자세히 알아보고 모든 기능을 활용하려면 [문서](/docs/services/mobilepush/c_overview_push.html#overview-push)를 검토하십시오.
 
  - 모바일 서비스 및 {{site.data.keyword.cloud_notm}}에 대한 작업의 소개는 [{{site.data.keyword.cloud_notm}}에서 모바일 앱 시작하기](/docs/services/mobile/index.html)를 참조하십시오.
 
- - 스타터 킷은 {{site.data.keyword.cloud_notm}}의 기능을 사용할 수 있는 가장 빠른 방법 중 하나입니다. [모바일 개발자 대시보드](https://cloud.ibm.com/developer/mobile/dashboard)에서 사용 가능한 스타터 킷을 보십시오. 코드를 다운로드하십시오. 앱을 실행하십시오!
+ - 스타터 킷은 {{site.data.keyword.cloud_notm}}의 기능을 사용할 수 있는 가장 빠른 방법 중 하나입니다. [모바일 개발자 대시보드](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")에서 사용 가능한 스타터 킷을 보십시오. 코드를 다운로드하십시오. 앱을 실행하십시오!
 
- - [Swagger UI](https://mobile.ng.bluemix.net/imfpush/)를 사용하여 REST API 문서를 빠르게 검토할 수 있습니다.
+ - [Swagger UI](https://mobile.ng.bluemix.net/imfpush/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 사용하여 REST API 문서를 빠르게 검토할 수 있습니다.

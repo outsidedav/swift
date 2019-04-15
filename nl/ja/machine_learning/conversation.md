@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-03-28"
+
+keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
+
+subcollection: swift
 
 ---
 
@@ -31,13 +35,13 @@ lastupdated: "2019-01-31"
 
 以下の前提条件を満たしていることを確認してください。
 
-* [{{site.data.keyword.conversationshort}} サービスのインスタンス](/docs/services/conversation/getting-started.html)
+* [{{site.data.keyword.conversationshort}} サービスのインスタンス](/docs/services/assistant?topic=assistant-getting-started#getting-started)
 * iOS 10.0 以上
 * Xcode 9.3 以上
 * Swift 4.1 以上
 * CocoaPods、Carthage、または Swift Package Manager
 
-[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk) をインストールするには、[CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods)、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage)、または[Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager) を使用できます。CocoaPods (https://cocoapods.org/) を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得します。CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
+[CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、または [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用することにより、[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") をインストールできます。CocoaPods を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得することになります。CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
 
 ```console
 sudo gem install cocoapods
@@ -54,15 +58,15 @@ sudo gem install cocoapods
 3. インスタンスをアプリにバインドする場合は、**「接続」**メニューからアプリを選択します。
 4. 料金プランを選択し、**「作成」**をクリックします。
 5. **「資格情報」**タブを選択して、サービスの資格情報を表示します。 アプリからサービスに接続するために、これらの値が使用されます。
-6. **「ツールの起動 (Launch tool)」**をクリックしてチャットボット・アシスタントを作成します。ランディング・ページに表示される指示に従ってチャットボットを作成するか、**「スキル (Skills)」**タブに移動して**「新規作成」**をクリックします。作業をすぐに開始するには、**「ダイアログ・スキルの追加 (Add Dialog Skill)」**ページで**「サンプル・スキルを使用 (Use sample skill)」**タブを選択し、**「カスタマー・ケア・サンプル・スキル (Customer Care Sample Skill)」**を選択します。引き続きこのスキルを調整するか、後でアプリで使用する他のスキルを作成できます。
-7. 新しいスキルのメニューをクリックし、**「API 詳細の表示 (View API Details)」**を選択します。サービス資格情報の他に、必要な`ワークスペース ID` が表示されます。
+6. **「ツールの起動 (Launch tool)」**をクリックしてチャットボット・アシスタントを作成します。 ランディング・ページに表示される指示に従ってチャットボットを作成するか、**「スキル (Skills)」**タブに移動して**「新規作成」**をクリックします。 作業をすぐに開始するには、**「ダイアログ・スキルの追加 (Add Dialog Skill)」**ページで**「サンプル・スキルを使用 (Use sample skill)」**タブを選択し、**「カスタマー・ケア・サンプル・スキル (Customer Care Sample Skill)」**を選択します。 引き続きこのスキルを調整するか、後でアプリで使用する他のスキルを作成できます。
+7. 新しいスキルのメニューをクリックし、**「API 詳細の表示 (View API Details)」**を選択します。 サービス資格情報の他に、必要な`ワークスペース ID` が表示されます。
 
 ## ステップ 2. 依存関係のダウンロードと作成
 {: #download-depend-chatbot}
 
-以下の例では AssistantV1 を使用しています。AssistantV2 フレームワークについて詳しくは、[Watson SDK AssistantV2 の資料](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV2/index.html)を参照してください。
+以下の例では AssistantV1 を使用しています。 AssistantV2 フレームワークについて詳しくは、[Watson SDK AssistantV2 の資料](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV2/index.html){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。
 
-任意のテキスト・エディターを使用して、`pod init` を実行してプロジェクトのルート・ディレクトリー (`.xcodeproj` ファイルがある場所) に新しい `Podfile` を作成します。次に、依存関係として Watson Swift SDK の {{site.data.keyword.conversationshort}} フレームワークを指定する行を追加します。
+任意のテキスト・エディターを使用して、`pod init` を実行してプロジェクトのルート・ディレクトリー (`.xcodeproj` ファイルがある場所) に新しい `Podfile` を作成します。 次に、依存関係として Watson Swift SDK の {{site.data.keyword.conversationshort}} フレームワークを指定する行を追加します。
 
 ```pod
 use_frameworks!
@@ -72,9 +76,9 @@ target 'MyApp' do
 ```
 {: codeblock}
 
-実動アプリの場合は、特定の[バージョン要件](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions)を指定することにより、Watson Swift SDK の新リリースでの予期しない変更を回避することができます。
+実動アプリの場合は、特定の[バージョン要件](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を指定することにより、Watson Swift SDK の新リリースでの予期しない変更を回避することができます。
 
-`Podfile` が作成され、依存関係をダウンロードできるようになりました。端末を使用してプロジェクトのルート・ディレクトリーにナビゲートし、次のように CocoaPods を実行します。
+`Podfile` が作成され、依存関係をダウンロードできるようになりました。 端末を使用してプロジェクトのルート・ディレクトリーにナビゲートし、次のように CocoaPods を実行します。
 
 ```console
 pod install
@@ -89,7 +93,7 @@ Pod build が失敗しないようにするため、プロジェクトを Xcode 
 ## ステップ 3. アプリへの仮想アシスタントの追加
 {: #virtual-assist-chatbot}
 
-以下の例は、(特に `ViewController.swift` で) アプリケーションに {{site.data.keyword.conversationshort}} の機能を追加する際に役立ちます。以下の例を使用すると、ユース・ケースに合わせてアシスタント呼び出しを拡張できます。
+以下の例は、(特に `ViewController.swift` で) アプリケーションに {{site.data.keyword.conversationshort}} の機能を追加する際に役立ちます。 以下の例を使用すると、ユース・ケースに合わせてアシスタント呼び出しを拡張できます。
 
 1. {{site.data.keyword.conversationshort}} の import ステートメント (例: `import Assistant`) を追加します。
   ```swift
@@ -106,9 +110,9 @@ Pod build が失敗しないようにするため、プロジェクトを Xcode 
   ```
   {: codeblock}
 
-  **ヒント**: この例では、後から会話を続行するためのコンテキストが保存されます。このオブジェクトについて、またユース・ケースにこのオブジェクトを適応させる方法について詳しくは、[コンテキスト変数の資料](/docs/services/assistant/dialog-runtime.html#context-variables)を参照してください。[バージョン・パラメーターの資料](https://cloud.ibm.com/apidocs/assistant#versioning)を確認するか、{site.data.keyword.conversationshort}} サービスが作成された日付を使用してください。
+  **ヒント**: この例では、後から会話を続行するためのコンテキストが保存されます。 このオブジェクトについて、またユース・ケースにこのオブジェクトを適応させる方法について詳しくは、[コンテキスト変数の資料](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables)を参照してください。 [バージョン・パラメーターの資料](https://cloud.ibm.com/apidocs/assistant#versioning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認するか、{site.data.keyword.conversationshort}} サービスが作成された日付を使用してください。
 
-3. 会話を初期化します。アシスタントの構成方法によっては、ユーザーに対する最初の応答を提供できます。
+3. 会話を初期化します。 アシスタントの構成方法によっては、ユーザーに対する最初の応答を提供できます。
   ```swift
   // Start a conversation
   assistant.message(workspaceID: "your-workspace-ID-here) { response, error in
@@ -163,23 +167,23 @@ Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11a
 ```
 {: screen}
 
-5. Watson SDK [アシスタントの資料](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV1/index.html)を参照して、アプリケーションの機能を作成します。
+5. Watson SDK [Assistant の資料](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV1/index.html){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照して、アプリケーションの機能を作成します。
 
 ## スターター・キットの使用
 {: #starterkits-chatbot}
 
-スターター・キットを使用すると、{{site.data.keyword.cloud_notm}} の機能を素早く簡単に利用できます。スターター・キットを使用して、{{site.data.keyword.conversationshort}} を任意のサーバー・サイドのバックエンドに追加できます。 Chatbot for iOS with Watson Starter Kit は、ユーザーとの対話を自動化するアプリケーションに自然言語インターフェースを追加することによって {{site.data.keyword.conversationshort}} のディープ・ラーニング機能を使用する方法について説明しています。
+スターター・キットを使用すると、{{site.data.keyword.cloud_notm}} の機能を素早く簡単に利用できます。 スターター・キットを使用して、{{site.data.keyword.conversationshort}} を任意のサーバー・サイドのバックエンドに追加できます。 Chatbot for iOS with Watson Starter Kit は、ユーザーとの対話を自動化するアプリケーションに自然言語インターフェースを追加することによって {{site.data.keyword.conversationshort}} のディープ・ラーニング機能を使用する方法について説明しています。
 
-1. 使用する[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window}を選択します。
-2. デフォルト・サービスを使用してプロジェクトを作成します。
-3. **「リソースの追加」>「Watson」>「{{site.data.keyword.conversationshort}}」**をクリックします。
-4. **「コードのダウンロード (Download Code)」**をクリックしてプロジェクトをダウンロードします。 サービス資格情報は、`config/local-dev.json` ファイルにあります。
+1. 使用する[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を選択します。
+2. デフォルト・サービスを使用してアプリを作成します。
+3. **「サービスの追加」>「Watson」>「{{site.data.keyword.conversationshort}}」**をクリックします。
+4. **「コードのダウンロード (Download code)」**をクリックしてプロジェクトをダウンロードします。サービス資格情報は、`config/local-dev.json` ファイルにあります。
 
 ## 次のステップ
-{: #next-chatbot}
+{: #next-chatbot notoc}
 
 お疲れさまでした。 AI アシスタントがアプリに追加されました。 この調子で、以下のいずれかのオプションを試してみてください。
 
-* [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window} を参照し、サポートされているその他の Watson サービスについて確認する。
-* [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html) が提供するすべての機能を利用する。
-* [Simple Chat サンプル・アプリ](https://github.com/watson-developer-cloud/simple-chat-swift){:new_window}のソース・コードを表示し、GitHub 上で {{site.data.keyword.watson}} Swift SDK を実演する。
+* [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照し、サポートされているその他の Watson サービスについて確認する。
+* [{{site.data.keyword.conversationshort}}](/docs/services/assistant?topic=assistant-index#index) が提供するすべての機能を利用する。
+* [Simple Chat サンプル・アプリ](https://github.com/watson-developer-cloud/simple-chat-swift){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") のソース・コードを表示し、GitHub 上で {{site.data.keyword.watson}} Swift SDK を実演する。

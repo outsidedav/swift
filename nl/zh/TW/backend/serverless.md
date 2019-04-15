@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ lastupdated: "2019-01-15"
 
 藉由摘要伺服器端開發所需的基礎架構及架構，無伺服器架構容許開發人員專注於撰寫程式碼，並反應性地執行以變更資料。
 
-IBM 的 FaaS 供應項目 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/)，力求提供簡單的伺服器端開發經驗，而不需要任何特殊的伺服器端知識。使用無伺服器技術，您可以快速開發可延伸的後端解決方案，以符合幾乎所有工作量需求，而不需要提前建立資源。對於具有無法預期之負載型樣或伺服器關閉時間過長的應用程式，{{site.data.keyword.openwhisk_short}} 可以是出色的雲端解決方案，其效能已獲得改進，且其「使用者付費」系統可協助降低成本。
+IBM 的 FaaS 供應項目 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，力求提供簡單的伺服器端開發經驗，而不需要任何特殊的伺服器端知識。使用無伺服器技術，您可以快速開發可延伸的後端解決方案，以符合幾乎所有工作量需求，而不需要提前建立資源。對於具有無法預期之負載型樣或伺服器關閉時間過長的應用程式，{{site.data.keyword.openwhisk_short}} 可以是出色的雲端解決方案，其效能已獲得改進，且其「使用者付費」系統可協助降低成本。
 
 ## 架構變更
 {: #comparison-serverless}
@@ -98,12 +102,12 @@ IBM 的 FaaS 供應項目 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.co
 {: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [REST API](https://cloud.ibm.com/apidocs)
+* [REST API](https://cloud.ibm.com/apidocs){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")
 
 ## 相關鏈結
 {: #related-serverless notoc}
 
-* [探索 {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions)
+* [Discover {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
-* [Apache OpenWhisk 專案網站](http://openwhisk.org)
-* [無伺服器相關資訊](https://martinfowler.com/articles/serverless.html)
+* [Apache OpenWhisk 專案網站](http://openwhisk.org){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")
+* [More on Serverless](https://martinfowler.com/articles/serverless.html){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")

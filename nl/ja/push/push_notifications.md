@@ -2,9 +2,14 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-24"
+
+keywords: push swift, swift notifications, push notifications swift, sending push swift, configure service instance swift, provider credentials swift
+
+subcollection: swift
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -21,7 +26,7 @@ lastupdated: "2019-01-15"
  - お客様は、通知の対象として特定のタグまたはトピックへのサブスクライブを選択できます。
  - アプリ所有者が、通知を受信するように登録されているデバイスの数や、送信された通知の数を分析することを可能にします。
 
-{{site.data.keyword.mobilepushshort}} サービスは、MobileFirst Services のスターター・ボイラープレートの一部として、または {{site.data.keyword.cloud_notm}} [専用サービス](/docs/dedicated/index.html)として、使用することができます。 また、SDK (Software Development Kit) と [REST API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobile.{DomainName}/imfpush/){: new_window}を使用して、クライアント・アプリケーションをさらに開発することもできます。
+{{site.data.keyword.mobilepushshort}} サービスは、MobileFirst Services のスターター・ボイラープレートの一部として、または {{site.data.keyword.cloud_notm}} [専用サービス](/docs/dedicated?topic=dedicated-dedicated#dedicated)として、使用することができます。 また、SDK (Software Development Kit) と [REST API ](https://mobile.{DomainName}/imfpush/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用して、クライアント・アプリケーションをさらに開発することもできます。
 
 ![プッシュの概説](images/push_notification_lifecycle.jpg) 図 1. {{site.data.keyword.mobilepushshort}} サービスのライフサイクルの概要
 
@@ -57,7 +62,7 @@ Push Notification サービスをセットアップするには、Apple Push Not
 
 `.cer` ファイルがキー・チェーン・アクセスに配置された後に、それをコンピューターにエクスポートして`.p12` 証明書を作成します。
 
-APN の使用について詳しくは、[iOS Developer Library: Local and Push Notification Programming Guide ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window}を参照してください。
+APN の使用について詳しくは、[iOS Developer Library: Local and Push Notification Programming Guide ](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")を参照してください。
 
 Push Notification サービス・コンソールで APN をセットアップするには、以下のステップを実行します。
 
@@ -85,7 +90,7 @@ Push Notification サービス・コンソールで APN をセットアップす
 
 iOS アプリケーションがデバイスへのプッシュ通知を受信できるようにするには、{{site.data.keyword.mobilepushshort}} サービス用の iOS SDK を構成する必要があります。
 
-{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK は、Cocoapods と Carthage のどちらにもインストールできます。 詳しくは、[https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application) を参照してください。
+{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK は、Cocoapods と Carthage のどちらにもインストールできます。 詳しくは、[https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。
 
 ## ステップ 5. 通知の送信
 {: #send-notify-push}
@@ -118,20 +123,20 @@ iOS デバイスに通知を送信するための {{site.data.keyword.mobilepush
 - **音 (Sound)**: 通知の受信時に音声クリップを再生するかどうかを示します。 デフォルト、またはアプリにバンドルされているサウンド・リソースの名前がサポートされています。
 - **追加のペイロード (Additional payload)**: 通知用のカスタム・ペイロードの値を指定します。
 
-[対話式通知](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#interactive-notifications)および[リッチ・メディア通知](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enabling-rich-media-notifications)を有効にすることを選択することもできます。
+[対話式通知](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#interactive-notifications){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")および[リッチ・メディア通知](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enabling-rich-media-notifications){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を有効にすることを選択することもできます。
 
 ## ステップ 6. 配信された通知のモニター
 {: #monitor-push}
 
-{{site.data.keyword.mobilepushshort}} サービスは、送信されるメッセージの状況の検査に役立つモニタリング・ユーティリティーを提供します。 モニタリング・ユーティリティーを構成するには、[iOS アプリケーションのモニタリングの有効化](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring)を参照してください。
+{{site.data.keyword.mobilepushshort}} サービスは、送信されるメッセージの状況の検査に役立つモニタリング・ユーティリティーを提供します。 モニタリング・ユーティリティーを構成するには、[iOS アプリケーションのモニタリングの有効化](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。
 
 ## 次のステップ
-{: #next-push}
+{: #next-push notoc}
 
  - サービスについての詳細情報を参照し、すべての機能を活用するには、[ドキュメンテーション](/docs/services/mobilepush/c_overview_push.html#overview-push)を参照してください。
 
  - モバイル・サービスと {{site.data.keyword.cloud_notm}} の作業の概要については、[Getting started with Mobile apps on {{site.data.keyword.cloud_notm}}](/docs/services/mobile/index.html) を参照してください。
 
- - スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 [モバイル開発者ダッシュボード](https://cloud.ibm.com/developer/mobile/dashboard)にある使用可能なスターター・キットをご覧ください。 コードをダウンロードし、 アプリを実行します。
+ - スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 [モバイル開発者ダッシュボード](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、使用可能なスターター・キットを確認できます。コードをダウンロードし、アプリを実行します。
 
- - [Swagger UI](https://mobile.ng.bluemix.net/imfpush/) を使用することにより、REST API ドキュメンテーションを素早く確認することができます。
+ - [Swagger UI](https://mobile.ng.bluemix.net/imfpush/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用すると、REST API 資料を迅速に確認できます。

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
+
+subcollection: swift
 
 ---
 
@@ -18,7 +22,7 @@ lastupdated: "2019-01-15"
 
 通过 {{site.data.keyword.cloud_notm}} Developer Console for Apple，Apple 开发者可利用各种入门模板工具包来创建应用程序，供应和连接 {{site.data.keyword.cloud_notm}} 优化的关键服务，然后快速下载可正常运作的代码或设置为持续交付。用户可以创建、查看、配置和管理应用程序，以及下载应用程序的代码。使用入门模板工具包可帮助您使用全新的应用程序快速评估和测试 {{site.data.keyword.cloud_notm}} 服务。
 
-准备好开始了吗？请立即访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) 以开始。
+准备好开始了吗？请立即访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 以开始。
 {: tip}
 
 ## 什么是入门模板工具包？
@@ -28,7 +32,7 @@ lastupdated: "2019-01-15"
 
 入门模板工具包是生产就绪型工具包，专注于使用运行时（例如 Swift）来演示关键模式实现。在某些情况下，初学者工具包会提供简单的用户体验来着重强调服务的集成。在另一些情况下，入门模板工具包是复杂用例的可定制实现。
 
-入门模板工具包中包含的指示信息允许 {{site.data.keyword.cloud_notm}} 使用可移植代码来自动生成搭建有脚手架的应用程序，并可指定在通过入门模板工具包创建应用程序时要自动供应的资源。
+入门模板工具包中包含的指示信息允许 {{site.data.keyword.cloud_notm}} 使用可移植代码来自动生成搭建有脚手架的应用程序，并可指定在通过入门模板工具包创建应用程序时要自动供应的服务。
 
 ## 使用 {{site.data.keyword.cloud_notm}} Developer Console for Apple
 {: #starterkits-journey}
@@ -63,20 +67,20 @@ lastupdated: "2019-01-15"
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序详细信息”视图](images/project_details_screen.png "“应用程序详细信息”视图")<br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序详细信息”视图*
 
-通过使用“应用程序详细信息”视图，可以将不属于原始入门模板工具包的新服务或现有服务添加到应用程序。单击服务列表框中的**添加资源**链接来添加服务。可用的服务取决于应用程序的类型以及区域中可用的服务，因此并非所有服务都可用于与所有应用程序相关联。
+通过使用**应用程序详细信息**页面，可以将不属于原始入门模板工具包的新服务或现有服务添加到应用程序。单击**添加服务**以添加服务。可用的服务取决于应用程序的类型以及区域中可用的服务，因此并非所有服务都可用于与所有应用程序相关联。
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“添加资源”对话框](images/add_resource_screen.png "“添加资源”对话框")<br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“添加资源”对话框*
 
 ### 下载代码
 
-* 要访问您的代码，可以在“应用程序详细信息”视图上选择**下载代码**来生成和下载应用程序的代码。
+* 要访问您的代码，可以在_应用程序详细信息_页面上选择**下载代码**来生成和下载应用程序的代码。
 
 ### 应用程序列表视图
 {: #app_list_view}
 
-您可以在“应用程序列表”视图中列出所有已创建的应用程序。可以在此处重命名或删除应用程序。单击应用程序名称行可返回到“应用程序详细信息”视图。
+您可以在_应用程序列表_视图中列出所有已创建的应用程序。可以在此处重命名或删除应用程序。单击应用程序名称行可返回到“应用程序详细信息”视图。
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序列表”视图](images/project_list_screen.png "“应用程序列表”视图")<br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序列表”视图*
 
-有关更多信息，请访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple 学习资源](https://cloud.ibm.com/developer/appledevelopment/learning-resources)。
+有关更多信息，请访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple 学习资源](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
 {: tip}

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-14"
+
+keywords: swift-cfenv, service bindings swift, environment swift, swift configuration, cloudenvironment swift, VCAP_SERVICES swift, swift credentials
+
+subcollection: swift
 
 ---
 
@@ -25,7 +29,7 @@ lastupdated: "2019-02-04"
 ## 기존 Swift 애플리케이션에 {{site.data.keyword.cloud_notm}} 추가
 {: #addcloud-env}
 
-특정 환경 값을 추상화하기 위한 경로는 하나의 클라우드 환경과 다른 클라우드 환경 간에 다를 수 있습니다. [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) 라이브러리는 여러 클라우드 제공자에서 환경 구성 및 인증 정보를 추상화하므로 Swift 앱은 로컬로 또는 Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} 또는 가상 인스턴스에서 지속적으로 정보에 액세스할 수 있습니다. 인증 정보 추상화는 `CloudEnvironment` 라이브러리에서 제공되며, 이는 내부적으로 Cloud Foundry 구성을 위해 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv)를 사용하고 구성 관리자로 [Configuration](https://github.com/IBM-Swift/Configuration)을 사용합니다.
+특정 환경 값을 추상화하기 위한 경로는 하나의 클라우드 환경과 다른 클라우드 환경 간에 다를 수 있습니다. [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 라이브러리는 여러 클라우드 제공자에서 환경 구성 및 인증 정보를 추상화하므로 Swift 앱은 로컬로 또는 Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} 또는 가상 인스턴스에서 지속적으로 정보에 액세스할 수 있습니다. 인증 정보 추상화는 `CloudEnvironment` 라이브러리에서 제공하며, 이는 내부적으로 Cloud Foundry 구성을 위해 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 사용하고 구성 관리자로 [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 사용합니다. 
 
 `CloudEnvironment`를 통해 Swift 애플리케이션이 해당 값을 검색하기 위해 사용할 수 있는 검색 키를 정의하여 애플리케이션의 소스 코드에서 하위 레벨 세부사항을 추상화할 수 있습니다.
 
@@ -67,13 +71,13 @@ let url = cloudEnv.url
 ```
 {: codeblock}
 
-이 예는 서비스에 맞게 인증 정보 세트에 대한 액세스를 제공하며, [지원되는 서비스 또는 일반 사전](https://github.com/IBM-Swift/CloudEnvironment#supported-services)에 대한 연결을 초기화하는 데 사용할 수 있습니다. [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api) for Cloud Foundry 스펙 구성을 확인하고 구성 데이터 로드 시 [구성 세부사항](https://github.com/IBM-Swift/Configuration)을 확인하십시오.
+이 예는 서비스에 맞는 인증 정보 세트에 대한 액세스를 제공하며, 이제 이러한 [지원되는 서비스 또는 일반 사전](https://github.com/IBM-Swift/CloudEnvironment#supported-services){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")에 대한 연결을 초기화하는 데 사용할 수 있습니다. Cloud Foundry 특정 구성을 위한 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하고 구성 데이터 로드 시 [구성 세부사항](https://github.com/IBM-Swift/Configuration){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 확인하십시오.
 
 ## 서비스 인증 정보 이해
 {: #service_creds}
 
 `CloudEnvironment` 라이브러리는 `config` 디렉토리에 있는 `mappings.json`이라는 파일을 사용하여 인증 정보가 각 서비스마다 저장되는 위치를 전달합니다. `mappings.json` 파일은 다음 세 가지 검색 패턴 유형을 사용하는 값의 검색을 지원합니다.
-- **`cloudfoundry`** - Cloud Foundry의 서비스 환경 변수에서 값을 검색하는 데 사용되는 패턴 유형(`VCAP_SERVICES`) Cloud Foundry Enrprise Edition의 경우 자세한 정보는 이 [시작하기 튜토리얼](docs/cloud-foundry/getting-started.html#getting-started)을 참조하십시오.
+- **`cloudfoundry`** - Cloud Foundry의 서비스 환경 변수에서 값을 검색하는 데 사용되는 패턴 유형(`VCAP_SERVICES`) Cloud Foundry Enrprise Edition의 경우 자세한 정보는 이 [시작하기 튜토리얼](/docs/cloud-foundry?topic=cloud-foundry-getting-started#getting-started)을 참조하십시오.
 - **`env`** - Kubernetes 또는 Functions로 환경 변수에 맵핑되는 값을 검색하는 데 사용되는 패턴 유형
 - **`file`** - JSON 파일에서 값을 검색하는 데 사용되는 패턴 유형. 경로는 Swift 애플리케이션의 루트 폴더에 상대적이어야 합니다.
 
@@ -110,18 +114,18 @@ let url = cloudEnv.url
 
 보안상의 이유로 인증 정보 파일은 저장소에 속하지 않습니다. 이전 예에서 `localdev` 폴더는 로컬 인증 정보를 저장하는 데 사용되므로 실수로 커미트하는 것을 방지하려면 이 폴더를 `.gitignore` 파일에 추가해야 합니다. 스타터 킷 앱을 사용하는 경우 이 폴더가 사용자를 위해 작성되며 `.gitignore` 파일에 있습니다.
 
-`mappings.json` 파일에 대한 자세한 정보는 [서비스 인증 정보 이해](configuration.html#service_creds) 절을 확인하십시오.
+`mappings.json` 파일에 대한 자세한 정보는 [서비스 인증 정보 이해](#service_creds) 절을 확인하십시오.
 
-## 스타터 킷에서 Swift 구성 관리자 사용
+## 스타터 킷 앱에서 Swift 구성 관리자 사용
 {: #configmanager-swift}
 
-[스타터 킷](https://cloud.ibm.com/developer/appledevelopment/starter-kits/)으로 작성되는 Swift 앱은 로컬로, 그리고 여러 Cloud 배치 환경(CF, K8, VSI 및 Functions)에서도 실행하는 데 필요한 인증 정보 및 구성과 함께 제공됩니다. 구성 관리자의 기본 작성은 `Sources/Application/Application.swift`에서 찾을 수 있습니다. 서비스가 포함된 Swift 기반 스타터 킷을 작성하는 경우 `config` 폴더 및 `mappings.json` 파일이 사용자를 위해 작성됩니다. 앱을 다운로드하는 경우 `config` 폴더는 사용자의 서비스를 위한 모든 인증 정보가 있는 `localdev-config.json` 파일을 포함하며 `.gitignore` 파일에 있습니다.
+[스타터 킷](https://cloud.ibm.com/developer/appledevelopment/starter-kits/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")으로 작성된 Swift 앱은 로컬로, 그리고 여러 Cloud 배치 대상(CF, K8, VSI 및 Functions)에서도 실행하는 데 필요한 인증 정보 및 구성과 함께 자동으로 제공됩니다. 구성 관리자의 기본 작성은 `Sources/Application/Application.swift`에서 찾을 수 있습니다. 서비스가 포함된 Swift 기반 스타터 킷을 작성하는 경우 `config` 폴더 및 `mappings.json` 파일이 사용자를 위해 작성됩니다. 앱을 다운로드하는 경우 `config` 폴더는 사용자의 서비스를 위한 모든 인증 정보가 있는 `localdev-config.json` 파일을 포함하며 `.gitignore` 파일에 있습니다.
 
 ## 다음 단계
 {: #next-configß notoc}
 
 애플리케이션이 환경에서 자체적으로 추상화하는 데 도움이 되는 다음 세 가지 라이브러리를 확인하십시오.
 
-* [CloudEnvironment](https://github.com/ibm-developer/ibm-cloud-env)
-* [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv)
-* [Configuration](https://github.com/IBM-Swift/Configuration)
+* [CloudEnvironment](https://github.com/ibm-developer/ibm-cloud-env){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")
+* [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")
+* [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")

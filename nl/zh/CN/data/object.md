@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
+
+subcollection: swift
 
 ---
 
@@ -15,7 +19,7 @@ lastupdated: "2019-01-15"
 # 将 Object Storage 用于静态内容
 {: #object-storage}
 
-Object Storage 是云计算的基础组件，用于为 Apple 开发者及其应用程序提供强大的功能。与在文件层次结构（例如，Block Storage 或 File Storage）中存储信息不同，Object Storage 仅包含文件及其元数据，这些内容存储在称为存储区的集合中。根据定义，这些对象是不可变的，因此是用于图像、视频和其他静态文档等数据的完美存储器。对于经常更改的数据或关系数据，可以使用 [NoSQL](/docs/swift/data/nosql.html)、[Cloudant](/docs/swift/data/cloudant.html) 和 [SQL](/docs/swift/data/sql.html) 数据库服务。
+Object Storage 是云计算的基础组件，用于为 Apple 开发者及其应用程序提供强大的功能。与在文件层次结构（例如，Block Storage 或 File Storage）中存储信息不同，Object Storage 仅包含文件及其元数据，这些内容存储在称为存储区的集合中。根据定义，这些对象是不可变的，因此是用于图像、视频和其他静态文档等数据的完美存储器。对于经常更改的数据或关系数据，可以使用 [Cloudant](/docs/swift/data?topic=swift-cloudant#cloudant) 和 [SQL](/docs/swift/data?topic=swift-sql_data#sql_data) 数据库服务。
 
 {{site.data.keyword.cos_full_notm}} (COS) 是一种存储系统，可用于存储非结构化数据，使用灵活，具有成本效益，可进行扩展。数据可通过 SDK 或使用 IBM 用户界面进行访问。您可以使用 {{site.data.keyword.cos_full_notm}} 通过 RESTful API 和 SDK 支持的自助服务门户网站来访问非结构化数据。 
 
@@ -32,7 +36,7 @@ Object Storage 是云计算的基础组件，用于为 Apple 开发者及其应�
 ## API
 {: #api-cos}
 
-{{site.data.keyword.cos_full}} API 是基于 REST 的 API，用于读取和写入对象。此 API 支持 S3 API 的子集，可轻松地将应用程序迁移到 {{site.data.keyword.cloud_notm}}。在使用 {{site.data.keyword.cos_full}} 时，可以使用任何 S3 SDK。有关更多信息，请参阅完整的 [{{site.data.keyword.cos_short}} API 参考](/docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api)
+{{site.data.keyword.cos_full}} API 是基于 REST 的 API，用于读取和写入对象。此 API 支持 S3 API 的子集，可轻松地将应用程序迁移到 {{site.data.keyword.cloud_notm}}。在使用 {{site.data.keyword.cos_full}} 时，可以使用任何 S3 SDK。有关更多信息，请参阅完整的 [{{site.data.keyword.cos_short}} API 参考](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)
 
 ## 安全性
 {: #security-cos}
@@ -87,7 +91,7 @@ Object Storage 是云计算的基础组件，用于为 Apple 开发者及其应�
 
 根据您的用例，可以通过选择满足您需求的服务套餐来降低成本。涉及对对象存储最低访问权的归档操作无需频繁访问的对象的速度和耐久性，此区别会反映在应用程序的存储类支持和价格套餐中。存储类在存储区级别进行定义，因此可以使用套餐组合来满足您的需求。创建一个存储区，将其设置为您要使用的存储类。
 
-[{{site.data.keyword.cos_short}} 存储类](/docs/services/cloud-object-storage/help/billing.html#ibm-cos-pricing)文档中提供了有关定价的更多信息。
+[{{site.data.keyword.cos_short}} 存储类](/docs/services/cloud-object-storage/help?topic=cloud-object-storage-billing#ibm-cos-pricing)文档中提供了有关定价的更多信息。
 
 ### 样本存储类
 {: #samples-cos}

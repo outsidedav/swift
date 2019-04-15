@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-03-14"
+
+keywords: swift visual recognition, train swift, cocoapods swift, swift sdk install, starter kit watson swift, image swift classify, machine learning swift
+
+subcollection: swift
 
 ---
 
@@ -36,11 +40,10 @@ lastupdated: "2019-01-31"
 * Swift 4.1+
 * CocoaPods、Carthage 或 Swift Package Manager
 
-您可以使用 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods)、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage) 或 [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager) 來安裝 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk)。藉由使用 [CocoaPods](https://cocoapods.org/) 來管理相依關係，您只會得到您需要的架構，而不是整個 Watson Swift SDK。如果您是 CocoaPods 新手，可以輕鬆地安裝它：
-
+您可以使用 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 或 [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，來安裝 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。藉由使用 [CocoaPods](https://cocoapods.org/) 來管理相依關係，您只會得到您需要的架構，而不是整個 Watson Swift SDK。如果您是 CocoaPods 新手，可以輕鬆地安裝它：
 ```console
-  sudo gem install cocoapods
-  ```
+sudo gem install cocoapods
+```
 {: codeblock}
 
 ## 步驟 1. 建立 Visual Recognition 的實例
@@ -67,7 +70,7 @@ target 'MyApp' do
 ```
 {: codeblock}
 
-若為正式作業應用程式，您也可能想要指定特定的[版本需求](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions)，以避免新版本 Watson Swift SDK 有非預期的變更。
+若為正式作業應用程式，您也可能想要指定特定的[版本需求](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以避免新版本 Watson Swift SDK 有非預期的變更。
 
 `Podfile` 就緒後，現在您可以下載相依關係。使用終端機來導覽至您專案的根目錄，然後執行 CocoaPods：
 
@@ -98,7 +101,7 @@ Cocoapods 會下載 {{site.data.keyword.visualrecognitionshort}} 架構，並且
   ```
   {: codeblock}
 
-  您可以參閱[版本參數文件](https://cloud.ibm.com/apidocs/visual-recognition#versioning)，或使用建立 {{site.data.keyword.conversationshort}} 服務的日期。
+  您可以參閱[版本參數文件](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，或使用建立 {{site.data.keyword.conversationshort}} 服務的日期。
   {: tip}
 
 3. 新增下列程式碼，以分類影像：
@@ -117,22 +120,22 @@ Cocoapods 會下載 {{site.data.keyword.visualrecognitionshort}} 架構，並且
   ```
   {: codeblock}
 
-Visual Recognition 架構支援多個分類方法。請探索 Watson SDK [Visual Recognition 文件](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html)，以找出何者最適合您的應用程式。
+Visual Recognition 架構支援多個分類方法。請探索 Watson SDK [Visual Recognition 文件](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以找出何者最適合您的應用程式。
 {: tip}
 
 ## 使用入門範本套件
 {: #recognition_starterkits}
 
-[入門範本套件](https://cloud.ibm.com/developer/appledevelopment/starter-kits)是使用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。選取 **Visual Recognition for iOS with Watson** 入門範本套件，即可使用 {{site.data.keyword.visualrecognitionshort}} 服務。此服務會評估並分類您的影像。從您的行動裝置上傳新的或現有影像，然後 Visual Recognition 應用程式即會快速標記並分類影像內容。
+[入門範本套件](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 是使用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。選取 **Visual Recognition for iOS with Watson** 入門範本套件，即可使用 {{site.data.keyword.visualrecognitionshort}} 服務。此服務會評估並分類您的影像。從您的行動裝置上傳新的或現有影像，然後 Visual Recognition 應用程式即會快速標記並分類影像內容。
 
 若要開始使用，請執行下列動作：
-1. 選取在[這裡](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson)找到的入門範本套件。
+1. 選取[這裡](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 找到的入門範本套件。
 2. 建立含有預設服務的專案。
 3. 按一下**下載程式碼**，以下載專案。服務認證會注入對應金鑰欄位的 `BMSCredentials.plist` 檔案中。
 
 ## 後續步驟
-{: #recognition_next}
+{: #recognition_next notoc}
 
 做得好！現在，您的應用程式可以使用 Visual Recognition。嘗試下列其中一個選項，以保持動力：
-* 參閱 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window} 並探索其他受支援的 Watson 服務。
-* 如需相關資訊，請參閱 [IBM Watson {{site.data.keyword.visualrecognitionshort}}](https://www.ibm.com/watson/services/visual-recognition/)。
+* 參閱 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 並探索其他受支援的 Watson 服務。
+* 如需相關資訊，請參閱 [IBM Watson {{site.data.keyword.visualrecognitionshort}}](https://www.ibm.com/watson/services/visual-recognition/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。

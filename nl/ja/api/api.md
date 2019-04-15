@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swift api connect, swagger swift, open api swift, api designer, loopback swift api, create swift backend, swift api parameters, swift api reference
+
+subcollection: swift
 
 ---
 
@@ -21,19 +25,19 @@ API Connect を使用すると、{{site.data.keyword.cloud_notm}} で維持さ�
 ## API Connect インスタンスの作成
 {: #create-apiconnect}
 
-「[カタログ](https://cloud.ibm.com/catalog/)」に移動し、API を管理する API Connect インスタンスを作成します。
+「[カタログ](https://cloud.ibm.com/catalog/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")」に移動し、API を管理する API Connect インスタンスを作成します。
 
 `「メニュー」->「API」`を使用して、API Connect 管理コンソールにアクセスします。
 
 ![API Connect](images/apiconnect.png)
 
-バックエンドとフロントエンドの開発を開始する前に独自の API 契約を定義している場合、API Connect ツールを使用してこのプロセスを加速させます。 デジタル開発チームと連携して、iOS アプリとバックエンド・ロジック間での API 契約を作成および定義します。 このロジックは、[{{site.data.keyword.openwhisk}}](/docs/openwhisk/index.html)、[Swift ランタイム](/docs/runtimes/swift/index.html) (Kubernetes を使用)、[Cloud Foundry](/docs/cloud-foundry/index.html) のいずれかを使用して配信できます。
+バックエンドとフロントエンドの開発を開始する前に独自の API 契約を定義している場合、API Connect ツールを使用してこのプロセスを加速させます。 デジタル開発チームと連携して、iOS アプリとバックエンド・ロジック間での API 契約を作成および定義します。 このロジックは、[{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-index#index)、[Swift ランタイム](/docs/runtimes/swift?topic=Swift-swift_runtime#swift_runtime) (Kubernetes を使用)、[Cloud Foundry](/docs/cloud-foundry?topic=cloud-foundry-about#about) のいずれかを使用して配信できます。
 
 API を定義すると、次のような様々なツールで Open API 仕様 (Swagger) を定義できます。
 
-- [Swagger Editor](http://editor.swagger.io/)
-- [API Designer](https://www.ibm.com/support/knowledgecenter/en/SSFS6T/com.ibm.apic.toolkit.doc/task_apionprem_composing_apis.html)
-- [Loopback](https://loopback.io/)
+- [Swagger Editor](http://editor.swagger.io/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
+- [API Designer](https://www.ibm.com/support/knowledgecenter/en/SSFS6T/com.ibm.apic.toolkit.doc/task_apionprem_composing_apis.html){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
+- [Loopback](https://loopback.io/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
 
 ## 管理 API の定義
 {: #define-apiconnect}
@@ -52,7 +56,7 @@ API を定義すると、次のような様々なツールで Open API 仕様 (S
 
 この API に基づいてバックエンド Swift アプリを作成することができます。 
 
-「Apple 開発」コンソールで、以下のステップを実行します。
+[「Apple 開発」コンソール](https://cloud.ibm.com/developer/appledevelopment/dashboard){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")で、以下のステップを実行します。
 
 1. **「スターター・キット」**を選択します。
 2. **「アプリの作成」**をクリックします。
@@ -60,7 +64,7 @@ API を定義すると、次のような様々なツールで Open API 仕様 (S
 
 YAML ファイルと JSON ファイルを選択し、**「作成」**をクリックします。 バックエンド Swift アプリが作成されます。
 
-次に、コードを**ダウンロード**するか、**Cloud にデプロイ**し、GIT リポジトリーをローカル・マシンに複製できます。 Knowledge Guide の指示に従って、Xcode でサーバー・サイド・アプリを開きます。
+次に、コードを**ダウンロード**するか、**デプロイ**し、GIT リポジトリーをローカル・マシンに複製できます。 Knowledge Guide の指示に従って、Xcode でサーバー・サイド・アプリを開きます。
 
 **Source** フォルダーで、API にマップする REST エンドポイントを作成した Swift ファイルを定義する経路を確認できます。 
 
@@ -120,7 +124,7 @@ func initializePet_Routes(app: App) {
 
 iOS アプリでバックエンド API を使用するには、Apple コンソールを使用してモバイル・スターター・キットを作成します。 「スターター・キット (Starter Kit)」ビューを使用して、任意のタイプの iOS Swift スターター・キットを作成します。
 
-**「リソースの追加」**をクリックし、API を選択します。 
+**「サービスの追加」**をクリックし、API を選択します。 
 
 ![「API」ダイアログ](../images/apidialog.png)
 
@@ -136,8 +140,7 @@ iOS アプリには、API 用に生成された SDK バインディングが含�
 
 ![API 経路](../images/apiroute.png)  
 
-`PLIST` ファイルを開き、ホスト値を、API 経路からコピーした値に置き換えます。
-この値によって、SDK は {{site.data.keyword.cloud_notm}} へ API を呼び出せるようになります。
+`PLIST` ファイルを開き、ホスト値を、API 経路からコピーした値に置き換えます。この値によって、SDK は {{site.data.keyword.cloud_notm}} へ API を呼び出せるようになります。
 
 ## 文書
 {: #docs-apiconnect}
@@ -147,7 +150,7 @@ SDK が iOS アプリ・プロジェクトに含まれると、*README.html* フ
 ## API 変更後の SDK の再作成
 {: #change-apiconnect}
 
-API 変更または新しいフィーチャーが利用できるようになる場合、{{site.data.keyword.openwhisk}} が追加されると、`ibmcloud sdk` コマンドを使用してクライアント SDK を再作成できます。 詳細情報、例、構文に関するヘルプについては、[SDK Generator](/docs/cli/sdk/index.html) の資料を確認してください。
+API 変更または新しいフィーチャーが利用できるようになる場合、{{site.data.keyword.openwhisk}} が追加されると、`ibmcloud sdk` コマンドを使用してクライアント SDK を再作成できます。 詳細情報、例、構文に関するヘルプについては、[SDK Generator](/docs/cli/sdk?topic=cloud-cli-sdk-cli#sdk-cli) の資料を確認してください。
 
 SDK を作成できるようにするには、Open API 仕様 (Swagger) の YAML ファイルまたは JSON ファイルを使用します。 このファイルは、{{site.data.keyword.cloud_notm}} の API 管理機能を使用して取得できます。 
 

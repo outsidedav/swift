@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swiftmetrics-dash, swiftmetrics, prometheus swift, application metrics swift, swift performance, slow swift, swift dashboard, metris swift
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # 搭配使用應用程式度量值與 Swift 應用程式
 {: #metrics}
 
-應用程式度量值對於監視應用程式的效能而言，非常重要。具有 CPU、記憶體、延遲及 HTTP 這類度量值的度量值即時視圖非常重要，可確保應用程式有效地執行一段時間。[自動調整](/docs/services/Auto-Scaling/index.html)這類 Kubernetes 及 Cloud Foundry 服務會根據度量值來判斷何時根據負載動態新增或移除實例，以及清除不再需要的實例以保留低成本。
+應用程式度量值對於監視應用程式的效能而言，非常重要。具有 CPU、記憶體、延遲及 HTTP 這類度量值的度量值即時視圖非常重要，可確保應用程式有效地執行一段時間。[自動調整](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started)這類 Kubernetes 及 Cloud Foundry 服務會根據度量值來判斷何時根據負載動態新增或移除實例，以及清除不再需要的實例以保留低成本。
 
 應用程式度量值會擷取為時間序列資料。聚集及視覺化擷取的度量值有助於識別一般效能問題，例如：
 
@@ -29,9 +33,9 @@ lastupdated: "2019-01-15"
 ## 將應用程式度量值新增至現有 Swift 應用程式
 {: #add-appmetrics-existing}
 
-使用 [ApplicationMetrics for Swift](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/)，將效能監視新增至您的 Swift 應用程式。Application Metrics for Swift 包含 2 個程式庫：`SwiftMetrics` 及 `SwiftMetricsDash`。
+使用 [Application Metrics for Swift](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，將效能監視新增至您的 Swift 應用程式。Application Metrics for Swift 包含 2 個程式庫：`SwiftMetrics` 及 `SwiftMetricsDash`。
 
-* `SwiftMetrics` 程式庫是綜合性的檢測程式庫，會收集並聚集應用程式的度量值。它有數個延伸規格，包括適用於 HTTP 度量值的 Kitura 模組、[Prometheus 支援](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support)，以及獨立式[發出器](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent)。
+* `SwiftMetrics` 程式庫是綜合性的檢測程式庫，會收集並聚集應用程式的度量值。它有數個延伸規格，包括適用於 HTTP 度量值的 Kitura 模組、[Prometheus 支援](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以及獨立式[發出器](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
 * `SwiftMetricsDash` 程式庫會取用 `SwiftMetrics` 所產生的度量值，並提供內建儀表板以供視覺化顯示。
 
@@ -62,10 +66,10 @@ let smd = try SwiftMetricsDash(swiftMetricsInstance : metrics)
 
 依預設，`SwiftMetricsDash` 會啟動自己的 Kitura 伺服器，並在 `http://<hostname>:<port>/swiftmetrics-dash` 下提供頁面。存取儀表板，以查看新的應用程式度量值，包括 HTTP 要求及事件迴圈延遲。
 
-## 使用入門範本套件中的應用程式度量值
+## 在入門範本套件中使用應用程式度量值
 {: #appmetrics-starterkits}
 
-從「入門範本套件」建立的伺服器端 Swift 應用程式包括 `SwiftMetrics`、`SwiftMetricsDash` 及 `SwiftMetricsPrometheus`，因此，它們已經備妥，用來在使用 Prometheus 端點的 Kubernetes 環境中收集度量值。
+從入門範本套件建立的伺服器端 Swift 應用程式包括 `SwiftMetrics`、`SwiftMetricsDash` 及 `SwiftMetricsPrometheus`，因此，它們已經備妥，用來在使用 Prometheus 端點的 Kubernetes 環境中收集度量值。
 
 `SwiftMetrics` 程式碼位於 `/Sources/Application/Metrics.swift`：
 ```swift
@@ -98,4 +102,4 @@ func initializeMetrics(router: Router) {
 
 應用程式在執行之後，您即可使用 `/swiftmetrics-dash` 端點來存取儀表板。
 
-依預設，`SwiftMetricsPrometheus` 會在 `http://<hostname>:<port>/metrics` 下提供 [Prometheus 端點](https://prometheus.io/)。
+依預設，`SwiftMetricsPrometheus` 會在 `http://<hostname>:<port>/metrics` 下提供 [Prometheus 端點](https://prometheus.io/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。

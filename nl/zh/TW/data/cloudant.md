@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: cloudant swift, store data swift, dbaas swift, cloudant instance swift, initialize sdk swift, create document swift, read document swift, delete document swift
+
+subcollection: swift
 
 ---
 
@@ -19,7 +23,7 @@ lastupdated: "2019-01-15"
 {{site.data.keyword.cloudantfull}} 是文件導向的「資料庫即服務 (DBaaS)」。它會將資料儲存為 JSON 格式的文件。其建置在可調整性、高可用性以及延續性上，可輕鬆地配置成在 Swift 應用程式中使用。並且具有各種檢索選項，包括 MapReduce、{{site.data.keyword.cloudant_short_notm}} 查詢、全文檢索及地理空間檢索。抄寫功能讓您能輕鬆保持資料庫叢集、桌上型電腦和行動裝置之間的資料同步。
 {: shortdesc}
 
-如需可以使用 {{site.data.keyword.cloudant_short_notm}} 的所有方式，請參閱 [{{site.data.keyword.cloudant_short_notm}} 基本概念](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics)。
+如需可以使用 {{site.data.keyword.cloudant_short_notm}} 的所有方式，請參閱 [{{site.data.keyword.cloudant_short_notm}} 基本概念](/docs/services/Cloudant/basics?topic=cloudant-ibm-cloudant-basics#cloudant-nosql-db-basics)。
 
 ## 開始之前
 {: #prereqs-cloudant}
@@ -30,13 +34,13 @@ lastupdated: "2019-01-15"
  * MacOS（10.11.5 版或更新版本）
  * Xcode（9.0.1 版或更新版本）
 
-[{{site.data.keyword.cloudant_short_notm}} SDK for Swift ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/cloudant/swift-cloudant) 使用 Swift 3.2 建置。如果您計劃搭配使用 {{site.data.keyword.cloudant_short_notm}} 與 Kitura，請查看使用 Swift 4.0 建置的 [Kitura-CouchDB Library ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/IBM-Swift/Kitura-CouchDB)。
+[{{site.data.keyword.cloudant_short_notm}} SDK for Swift ](https://github.com/cloudant/swift-cloudant){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 使用 Swift 3.2 建置。如果您計劃搭配使用 {{site.data.keyword.cloudant_short_notm}} 與 Kitura，請查看使用 Swift 4.0 建置的 [Kitura-CouchDB Library ](https://github.com/IBM-Swift/Kitura-CouchDB){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 {: tip}
 
 ## 步驟 1. 建立 {{site.data.keyword.cloudant_short_notm}} 實例
 {: #create-instance-cloudant}
 
-請參閱[在 IBM Cloud 上建立 IBM Cloudant 實例指導教學 ![外部鏈結圖示](../images/launch-glyph.svg "外部鏈結圖示")](/docs/services/Cloudant/tutorials/create_service.html){:new_window}，以建立服務的實例。
+請參閱[在 {{site.data.keyword.cloud_notm}} 上建立 IBM Cloudant 實例指導教學](/docs/services/Cloudant/tutorials?topic=cloudant-creating-an-ibm-cloudant-instance-on-ibm-cloud#creating-an-ibm-cloudant-instance-on-ibm-cloud){:new_window}，以建立服務的實例。
 
 ## 步驟 2. 安裝 SDK
 {: #install-sdk-cloudant}
@@ -145,13 +149,13 @@ client.add(operation: delete)
 2. 回到先前在 Web 瀏覽器中建立的 {{site.data.keyword.cloudant_short_notm}} 服務實例，然後開啟服務儀表板。
 3. 選取使用的資料庫，您可在儀表板中查看文件。
 
-有困難嗎？請參閱 [{{site.data.keyword.cloudant_short_notm}} API 參考資料](/docs/services/Cloudant/api/index.html#api-reference-overview)。
+有困難嗎？請參閱 [{{site.data.keyword.cloudant_short_notm}} API 參考資料](/docs/services/Cloudant/api?topic=cloudant-ibm-cloudant-basics#api-reference-overview)。
 
 ## 後續步驟
 {: #cloudant_next notoc}
 
 做得好！您已為應用程式新增一個安全持續性等級。嘗試下列其中一個選項，以保持動力：
 
-* 檢視 [{{site.data.keyword.cloudant_short_notm}} SDK for Swift ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/cloudant/swift-cloudant) 原始碼。
-* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。**Infinite Scrolling with Cloudant NoSQL for iOS** 入門範本套件說明如何延伸 `ViewController`，以使用分頁來顯示資料。iOS 開發人員經常使用這個應用程式型樣，這個型樣是說明 {{site.data.keyword.cloudant_short_notm}} 的功能時的良好範例。請檢視[行動開發人員儀表板](https://cloud.ibm.com/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
-* 進一步瞭解並充分運用 {{site.data.keyword.cloudant_short_notm}} 提供的所有特性，[請參閱文件](/docs/services/Cloudant/index.html)！
+* 檢視 [{{site.data.keyword.cloudant_short_notm}} SDK for Swift ](https://github.com/cloudant/swift-cloudant){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 原始碼。
+* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。**Infinite Scrolling with Cloudant NoSQL for iOS** 入門範本套件說明如何延伸 `ViewController`，以使用分頁來顯示資料。iOS 開發人員經常使用這個應用程式型樣，這個型樣是說明 {{site.data.keyword.cloudant_short_notm}} 的功能時的良好範例。請檢視[行動開發人員儀表板](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中的可用入門範本套件。下載程式碼。執行應用程式！
+* 進一步瞭解並充分運用 {{site.data.keyword.cloudant_short_notm}} 提供的所有特性，[請參閱文件](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics#ibm-cloudant-basics)！

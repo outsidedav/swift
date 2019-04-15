@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-03-24"
+
+keywords: watson swift, tone anaylzer swift, cocoapods swift, swift sdk install, starter kit watson
+
+subcollection: swift
 
 ---
 
@@ -15,7 +19,7 @@ lastupdated: "2019-01-31"
 # {{site.data.keyword.toneanalyzershort}}
 {: #tone}
 
-IBM Watson Tone Analyzer サービスは、アプリがテキスト内の感情やトーンを理解できるようにします。 このサービスを使用すれば、ユーザーの会話をより良く理解したり、ユーザーが自分が書き込んだ内容がどのように受け取られているかを理解できるよう支援したりすることができます。
+{{site.data.keyword.ibmwatson}} {{site.data.keyword.toneanalyzershort}} サービスは、テキスト内の感情やトーンをアプリが理解できるようにします。このサービスを使用すれば、ユーザーの会話をより良く理解したり、ユーザーが自分が書き込んだ内容がどのように受け取られているかを理解できるよう支援したりすることができます。
 
 ## 動作の仕組み
 {: #how-it-works-tone}
@@ -35,7 +39,8 @@ IBM Watson Tone Analyzer サービスは、アプリがテキスト内の感情�
 * Swift 4.1 以上
 * CocoaPods、Carthage、または Swift Package Manager
 
-[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk) をインストールするには、[CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods)、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage)、または[Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager) を使用できます。CocoaPods (https://cocoapods.org/) を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得します。CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
+[CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、または [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
+を使用することにより、[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") をインストールできます。CocoaPods を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得することになります。CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
 
 ```bash
 $ sudo gem install cocoapods
@@ -56,7 +61,7 @@ $ sudo gem install cocoapods
 ## ステップ 2. 依存関係のダウンロードと作成
 {: #download-depend-tone}
 
-任意のテキスト・エディターを使用して、`pod init` を実行してプロジェクトのルート・ディレクトリー (`.xcodeproj` ファイルがある場所) に新しい `Podfile` を作成します。次に、依存関係として Watson Swift SDK の {{site.data.keyword.conversationshort}} フレームワークを指定する行を追加します。
+任意のテキスト・エディターを使用して、`pod init` を実行してプロジェクトのルート・ディレクトリー (`.xcodeproj` ファイルがある場所) に新しい `Podfile` を作成します。 次に、依存関係として Watson Swift SDK の {{site.data.keyword.conversationshort}} フレームワークを指定する行を追加します。
 
 ```pod
 use_frameworks!
@@ -66,9 +71,9 @@ target 'MyApp' do
 ```
 {: codeblock}
 
-実動アプリの場合は、特定の[バージョン要件](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions)を指定することにより、Watson Swift SDK の新リリースでの予期しない変更を回避することができます。
+実動アプリの場合は、特定の[バージョン要件](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を指定することにより、Watson Swift SDK の新リリースでの予期しない変更を回避することができます。
 
-`Podfile` が作成され、依存関係をダウンロードできるようになりました。端末を使用してプロジェクトのルート・ディレクトリーにナビゲートし、次のように CocoaPods を実行します。
+`Podfile` が作成され、依存関係をダウンロードできるようになりました。 端末を使用してプロジェクトのルート・ディレクトリーにナビゲートし、次のように CocoaPods を実行します。
 
 ```console
 pod install
@@ -83,10 +88,9 @@ Pod build が失敗しないようにするため、プロジェクトを Xcode 
 ## ステップ 3. アプリでのテキストの分析
 {: #analyze-text-tone}
 
-以下の例は、(特に `ViewController.swift` で) アプリケーションに {{site.data.keyword.toneanalyzershort}} の機能を追加する際に役立ちます。以下の例を使用すると、ユース・ケースに合わせて Tone Analyzer 呼び出しを拡張できます。
+以下の例は、(特に `ViewController.swift` で) アプリケーションに {{site.data.keyword.toneanalyzershort}} の機能を追加する際に役立ちます。 以下の例を使用すると、ユース・ケースに合わせて Tone Analyzer 呼び出しを拡張できます。
 
 1. Tone Analyzer の import ステートメントを追加します。
-    
   ```swift
   import ToneAnalyzer
   ```
@@ -98,7 +102,7 @@ Pod build が失敗しないようにするため、プロジェクトを Xcode 
   ```
   {: codeblock}
 
-  [バージョン・パラメーターの資料](https://cloud.ibm.com/apidocs/tone-analyzer#versioning)を確認するか、{site.data.keyword.conversationshort}} サービスが作成された日付を使用してください。{: tip}
+  [バージョン・パラメーターの資料](https://cloud.ibm.com/apidocs/tone-analyzer#versioning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認するか、{site.data.keyword.conversationshort}} サービスが作成された日付を使用してください。{: tip}
 
 3. 分析するテキストを指定し、分析結果を処理します。
   ```swift
@@ -140,23 +144,23 @@ Pod build が失敗しないようにするため、プロジェクトを Xcode 
   ```
   {: screen}
 
-4. Watson SDK [Tone Analyzer の資料](https://watson-developer-cloud.github.io/swift-sdk/services/ToneAnalyzerV3/index.html)を参照して、アプリケーションの機能を作成します。
+4. Watson SDK [Tone Analyzer の資料](https://watson-developer-cloud.github.io/swift-sdk/services/ToneAnalyzerV3/index.html){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照して、アプリケーションの機能を作成します。
 
 ## スターター・キットの使用
 {: #tone_starterkits}
 
-[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits)は、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。**Tone Analyzer for iOS with Watson** スターター・キットを選択することにより、{{site.data.keyword.toneanalyzershort}} サービスを使用できます。 このサービスは、ディープ・ラーニングの機能を利用して、一まとまりのテキストを評価します。 Tone Analyzer アプリケーションは、いくつかのカテゴリーに関連付けて、話者のトーン (幸福、悲しい、自信がある、など) を識別します。
+[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")は、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。**Tone Analyzer for iOS with Watson** スターター・キットを選択することにより、{{site.data.keyword.toneanalyzershort}} サービスを使用できます。 このサービスは、ディープ・ラーニングの機能を利用して、一まとまりのテキストを評価します。 Tone Analyzer アプリケーションは、いくつかのカテゴリーに関連付けて、話者のトーン (幸福、悲しい、自信がある、など) を識別します。
 
 このスターター・キットを開始するには、次のようにします。
 
-1. [ここ](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson)にあるスターター・キットを選択します。
+1. [ここ](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") にあるスターター・キットを選択します。
 2. デフォルト・サービスを使用してプロジェクトを作成します。
 3. **「コードのダウンロード (Download Code)」**をクリックしてプロジェクトをダウンロードします。 サービスの資格情報が、対応するキー・フィールドの `BMSCredentials.plist` ファイルに注入されます。
 
 ## 次のステップ
-{: #tone_next}
+{: #tone_next notoc}
 
-お疲れさまでした。 これで {{site.data.keyword.toneanalyzershort}} がアプリに追加されました。この調子で、以下のいずれかのオプションを試してみてください。
+お疲れさまでした。 これで {{site.data.keyword.toneanalyzershort}} がアプリに追加されました。 この調子で、以下のいずれかのオプションを試してみてください。
 
-* [GitHub にある Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk) を参照し、サポートされているその他の Watson サービスについて確認する。
-* 詳しくは、[IBM Watson{{site.data.keyword.toneanalyzershort}}](https://www.ibm.com/watson/services/tone-analyzer/) を参照してください。
+* [GitHub にある Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照し、サポートされているその他の Watson サービスについて確認する。
+* 詳細については、[IBM Watson {{site.data.keyword.toneanalyzershort}}](https://www.ibm.com/watson/services/tone-analyzer/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。

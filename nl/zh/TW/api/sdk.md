@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-14"
+
+keywords: swift sdk plug-in, sdk generator swift, generated sdk swift, devops pipeline swift, open api swift, sdkgen swift, ibmcloud sdk swift
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-02-28"
 # 使用產生的 SDK 將後端服務新增至您的應用程式
 {: #sdk-cli}
 
-「{{site.data.keyword.IBM}} SDK 產生器」外掛程式可以安裝在 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/index.html)。
+「{{site.data.keyword.IBM}} SDK 產生器」外掛程式可以安裝在 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。
 
 使用「{{site.data.keyword.IBM_notm}} SDK 產生器」外掛程式，您可以使用產生的 SDK，將後端服務整合至您的應用程式。當 REST API 發生變更時，您可以重新產生 SDK 並取代舊的 SDK，以輕鬆升級 SDK。接著，您便可以將 CLI 新增至 DevOps 管線，並確定每次建置應用程式時，SDK 一律與 API 規格一致。
 
@@ -27,19 +31,22 @@ REST API 定義必須有效，且在即時伺服器端點上或您系統的本�
 
 請確定您具備下列必要條件：
 
-* [{{site.data.keyword.cloud_notm}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://cloud.ibm.com){: new_window} 帳戶。
-* 符合[開放式 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.openapis.org/){: new_window} 規格的有效 API 定義。
+* [{{site.data.keyword.cloud_notm}}](http://cloud.ibm.com){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 帳戶。
+* 符合[開放式 API ](https://www.openapis.org/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 規格的有效 API 定義。
 
 ## 安裝 SDK 外掛程式
 {: #install-sdk-cli}
 
-1. [安裝 {{site.data.keyword.cloud_notm}} CLI](/docs/cli/index.html)。
+1. [安裝 {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。
 
-2. [安裝 SDK 外掛程式](/docs/cli/sdk/index.html)。
+2. 安裝 SDK 外掛程式：
   ```
   ibmcloud plugin install sdk-gen
   ```
   {: codeblock}
+
+您可以安裝 [{{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#install_plug-in)，它包含基礎 {{site.data.keyword.cloud_notm}} CLI 以及 `sdk-gen` 外掛程式和其他實用的本端工具。
+{: tip}
 
 ## 產生 SDK
 {: #commands-sdk-cli}

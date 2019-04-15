@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift, swift health check
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # Swift アプリでのヘルス・チェックの使用
 {: #healthcheck}
 
-ヘルス・チェックは、サーバー・サイド・アプリケーションが正常に動作しているかどうかを調べるための単純なメカニズムです。 [Kubernetes](https://www.ibm.com/cloud/container-service) や [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) などのクラウド環境は、サービスのインスタンスがトラフィックを受け入れる準備ができているかどうかを判別するために、ヘルス・エンドポイントを定期的にポーリングするように構成できます。
+ヘルス・チェックは、サーバー・サイド・アプリケーションが正常に動作しているかどうかを調べるための単純なメカニズムです。 定期的に health エンドポイントをポーリングして、サービスのインスタンスがトラフィックを受け入れる準備ができているかどうかを判断するよう、[Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") や [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") などのクラウド環境を構成することができます。
 {: shortdesc}
 
 ## ヘルス・チェックの概要
@@ -50,7 +54,7 @@ Kubernetes には、プロセスの正常性を詳細に示す概念がありま
 ## 既存の Swift アプリへのヘルス・チェックの追加
 {: #existing-app}
 
-[Health](https://github.com/IBM-Swift/Health) ライブラリーを利用すれば、Swift アプリケーションにヘルス・チェックを簡単に追加できます。 ヘルス・チェックは拡張できます。 DoS 攻撃を防止するための[キャッシング](https://github.com/IBM-Swift/Health#caching)、または[カスタム・チェック](https://github.com/IBM-Swift/Health#implementing-a-health-check)の追加について詳しくは、[Health](https://github.com/IBM-Swift/Health) ライブラリーを参照してください。
+[Health](https://github.com/IBM-Swift/Health){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") ライブラリーを利用すれば、Swift アプリケーションにヘルス・チェックを簡単に追加できます。ヘルス・チェックは拡張できます。 DoS 攻撃を回避するための [キャッシング](https://github.com/IBM-Swift/Health#caching){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") や、[カスタム・チェック](https://github.com/IBM-Swift/Health#implementing-a-health-check){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") の追加について詳しくは、[Health](https://github.com/IBM-Swift/Health){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") ライブラリーを参照してください。
 
 Health ライブラリーを既存の Swift アプリに追加するには、以下の手順を参照してください。
 
@@ -90,7 +94,7 @@ Health ライブラリーを既存の Swift アプリに追加するには、以
 ## サーバー・サイド Swift スターター・キット・アプリのヘルス・チェック
 {: #healthcheck-starterkit}
 
-Starter Kit を使用して Kitura ベースの Swift アプリを生成する場合、基本のヘルス・チェック・エンドポイントの `/health` がデフォルトで組み込まれます。 このエンドポイントでは、Swift 4 で使用できる Codable プロトコルを利用します。このプロトコルは、[Health](https://github.com/IBM-Swift/Health) ライブラリーでサポートされています。
+スターター・キットを使用して Kitura ベースの Swift アプリを生成する場合、基本のヘルス・チェック・エンドポイントの `/health` がデフォルトで組み込まれます。このエンドポイントでは、Swift 4 で使用できる Codable プロトコルを利用します。このプロトコルは、[Health](https://github.com/IBM-Swift/Health){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") ライブラリーでサポートされています。
 
 基本の初期化コード (Health オブジェクトの初期化など) は、`Sources/Application.swift` で実行されます。 ヘルス・チェック・エンドポイント自体は、`/Sources/Application/Routes/HealthRoutes.swift` ファイルによって提供され、次のコードを使用します。
 
@@ -113,7 +117,12 @@ func initializeHealthRoutes(app: App) {
 ```
 {: codeblock}
 
-この例では標準の辞書を使用します。この辞書は、`/health` エンドポイントにアクセスすると、`{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}` などのペイロードを生成します。
+この例では標準の辞書を使用しています。この辞書は次のようなペイロードを生成します。
+```
+{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}
+```
+
+`/health` エンドポイントにアクセスすると、こうしたペイロードが生成されます。
 
 ## readiness プローブと liveness プローブに関する推奨事項
 {: #recommend-probes}
@@ -125,7 +134,7 @@ Readiness チェックの結果には、ダウンストリームのサービス�
 ### Kubernetes の Readiness および Liveness のサポートを Swift アプリに追加する
 {: #kube-readiness-swift}
 
-**Codable** や標準の辞書の使用などの代替実装については、[Health ライブラリーの例](https://github.com/IBM-Swift/Health#usage)を参照してください。 これらの実装の中には、バッキング・サービスに対して実行されるチェックをキャッシングするためのサポートによって、拡張可能なヘルス・チェックの作成を簡略化できるものがあります。 このシナリオでは、単純な liveness テストを、より堅固で詳細な readiness チェックから分離することができます。
+**Codable** や標準の辞書の使用などの代替実装については、[Health ライブラリーの例](https://github.com/IBM-Swift/Health#usage){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。これらの実装の中には、バッキング・サービスに対して実行されるチェックをキャッシングするためのサポートによって、拡張可能なヘルス・チェックの作成を簡略化できるものがあります。 このシナリオでは、単純な liveness テストを、より堅固で詳細な readiness チェックから分離することができます。
 
 ## Kubernetes での readiness および liveness プローブの構成
 {: #config-kube-readiness}
@@ -167,4 +176,4 @@ spec:
       failureThreshold: 10
 ```
 
-詳しくは、[Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) を参照してください。
+詳しくは、[Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")を参照してください。

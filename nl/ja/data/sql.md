@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: sql swift, database swift, persistence swift, data swift, orm swift, kuery swift, kitura swift
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,8 @@ lastupdated: "2019-01-15"
 # データの永続性のために SQL データベースを使用する
 {: #sql_data}
 
-構造化照会言語 (SQL) は、リレーショナル・データベースでデータを管理するために使用されるドメイン固有言語です。 データの使用中にサーバーがシャットダウンする場合に備えて、データを永続化することをお勧めします。 データに永続性を付与するには、SQL データベースを Swift から直接使用します。
+構造化照会言語 (SQL) は、リレーショナル・データベースでデータを管理するために使用されるドメイン固有言語です。 データの使用中にサーバーがシャットダウンする場合に備えて、データを永続化することをお勧めします。 データに永続性を付与するには、SQL データベースを Swift から直接使用します。 
+
 Swift の最も重要な特長の 1 つに、型の安全性があります。 Swift と共に SQL データベースを使用することは論理的な選択です。両方で、型の安全性がサポートされるためです。
 
 ## SQL データベースでの ORM の使用
@@ -27,9 +32,9 @@ Swift の最も重要な特長の 1 つに、型の安全性があります。 S
 ## ステップ 1. ORM の使用を開始する
 {: #start-orm}
 
-[PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) や [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL) などの SQL プラグインで、[Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM) を使用します。
+[Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を、[PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") や [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") などの SQL プラグインとともに使用します。
 
-この例では、[PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) プラグインを使用します。 このプラグインをインストールするには、[ここ](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation)に示された手順に従ってください。
+この例では、[PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") プラグインを使用します。[プラグインをインストールする、](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") 手順に従ってください。
 
 ## ステップ 2. ORM をアプリケーションにインポートする
 {: #import-orm}
@@ -159,9 +164,9 @@ Grade.delete(id: 1) { error in
 ## Kitura での ORM の使用
 {: #kitura-orm}
 
-ORM を簡単に試用できるように、[FoodTrackerBackend チュートリアル](https://github.com/IBM/FoodTrackerBackend)では、iOS アプリから PostgreSQL データベースに直接、Meal オブジェクトを保存およびフェッチすることができます。 チュートリアルを完了しても、再度実行して、Swift-Kuery-ORM の利点や、Kitura コードをどのように簡略化できるのかを確認するのは有益です。
+ORM を簡単に試用できるように、[FoodTrackerBackend チュートリアル](https://github.com/IBM/FoodTrackerBackend){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") では、iOS アプリから PostgreSQL データベースに直接、Meal オブジェクトを保存およびフェッチすることができます。チュートリアルを完了しても、再度実行して、Swift-Kuery-ORM の利点や、Kitura コードをどのように簡略化できるのかを確認するのは有益です。
 
 ## Swift-Kuery を直接使用
 {: #swift-kuery}
 
-データベースをより詳細に制御する必要があり、ORM では制約が多い場合は、SQL 抽象化層 [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery) を使用して、そこで SQL 照会を作成することができます。
+データベースに対する詳細な制御が必要とされるために ORM の使用が制約される場合は、SQL 抽象化層 [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用して、そこで SQL 照会を作成することができます。

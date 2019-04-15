@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ lastupdated: "2019-01-15"
 
 서버 측 개발에 필요한 인프라 및 프레임워크를 추상화하여, 서버리스 아키텍처를 통해 개발자는 반응적으로 실행하여 데이터를 변경하는 코드를 작성하는 데 중점을 둘 수 있습니다.
 
-IBM의 FaaS 오퍼링인 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/)는 서버 측 전문 지식을 필요로 하지 않으면서 단순한 서버 측 개발 경험을 제공하는 데 주력합니다. 서버리스 기술을 통해 사용자는 확장 가능한 백엔드 솔루션을 빠르게 개발하여 미리 리소스를 프로비저닝할 필요 없이 실질적으로 워크로드 요구를 충족시킬 수 있습니다. 예측 불가능한 로드 패턴 또는 높은 서버 작동 중지 시간이 있는 애플리케이션의 경우 {{site.data.keyword.openwhisk_short}}는 향상된 성능을 갖춘 뛰어난 클라우드 솔루션이 될 수 있으며 "종량과금제" 시스템을 통해 비용을 줄일 수 있습니다.
+IBM의 FaaS 오퍼링인 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")는 서버 측 전문 지식을 필요로 하지 않으면서 단순한 서버 측 개발 경험을 제공하는 데 주력합니다. 서버리스 기술을 통해 사용자는 확장 가능한 백엔드 솔루션을 빠르게 개발하여 미리 리소스를 프로비저닝할 필요 없이 실질적으로 워크로드 요구를 충족시킬 수 있습니다. 예측 불가능한 로드 패턴 또는 높은 서버 작동 중지 시간이 있는 애플리케이션의 경우 {{site.data.keyword.openwhisk_short}}는 향상된 성능을 갖춘 뛰어난 클라우드 솔루션이 될 수 있으며 "종량과금제" 시스템을 통해 비용을 줄일 수 있습니다.
 
 ## 아키텍처 변경
 {: #comparison-serverless}
@@ -75,7 +79,7 @@ Schematic을 보면 다음 사항을 확인할 수 있습니다.
 {: #mobile-backend-serverless}
 ![](./images/cloud-functions-rest-api-trigger.png)
 
-모바일 개발자는 쉽게 서버 측 로직에 액세스하고 컴퓨팅 집중 태스크를 클라우드 플랫폼으로 아웃소싱할 수 있습니다. Swift와 같은 언어로 기능을 구현하고 필요한 서버 측 경험 없이 iOS SDK를 사용하여 서버 측 기능을 쉽게 이용할 수 있습니다.
+모바일 개발자는 쉽게 서버 측 로직에 액세스하고 컴퓨팅 집약적 태스크를 클라우드 플랫폼으로 아웃소싱할 수 있습니다. Swift와 같은 언어로 기능을 구현하고 필요한 서버 측 경험 없이 iOS SDK를 사용하여 서버 측 기능을 쉽게 이용할 수 있습니다.
 
 ### 데이터 처리
 {: #data-processing-serverless}
@@ -98,12 +102,12 @@ Schematic을 보면 다음 사항을 확인할 수 있습니다.
 {: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [REST API](https://cloud.ibm.com/apidocs)
+* [REST API](https://cloud.ibm.com/apidocs){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")
 
 ## 관련 링크
 {: #related-serverless notoc}
 
-* [검색 {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions)
+* [검색 {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
-* [Apache OpenWhisk 프로젝트 웹 사이트](http://openwhisk.org)
-* [서버리스에 대해 알아보기](https://martinfowler.com/articles/serverless.html)
+* [Apache OpenWhisk 프로젝트 웹 사이트](http://openwhisk.org){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")
+* [서버리스에 대해 알아보기](https://martinfowler.com/articles/serverless.html){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")

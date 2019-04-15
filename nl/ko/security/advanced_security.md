@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: swift security, add security swift, crypto swift, hyper protect swift, ios hyper protect, dbaas swift, swift key management, swift advanced security
+
+subcollection: swift
 
 ---
 
@@ -20,7 +24,7 @@ lastupdated: "2019-01-15"
 Swift 개발자는 {{site.data.keyword.cloud}}가 업계에서 가장 강력한 보안 레벨로 저장 상태이거나 사용 중이거나 전송 중인 키 및 데이터를 보호하기 위해 제공하는 고급 보안 서비스를 쉽게 사용할 수 있습니다.
 {: shortdesc}
 
-쉬운 접근 방법으로 {{site.data.keyword.cloud}}의 모든 고급 보안 서비스에 대해 {{site.data.keyword.cloud_notm}} HyperSecure Platform Services를 직접 사용할 수 있습니다. 자세한 정보는 [{{site.data.keyword.cloud_notm}} HyperSecure Platform Services 시작하기](/docs/services/hypersecure-platform/index.html){:new_window}를 참조하십시오.
+쉬운 접근 방법으로 {{site.data.keyword.cloud}}의 모든 고급 보안 서비스에 대해 {{site.data.keyword.cloud_notm}} HyperSecure Platform Services를 직접 사용할 수 있습니다. 자세한 정보는 [{{site.data.keyword.cloud_notm}} HyperSecure Platform Services 시작하기](/docs/services/hypersecure-platform/index.html#getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits)를 참조하십시오. 
 
 ## {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} 사용
 {: #security-swift}
@@ -31,14 +35,14 @@ Swift 개발자는 {{site.data.keyword.cloud}}가 업계에서 가장 강력한 
 
 {{site.data.keyword.hscrypto}}는 {{site.data.keyword.keymanagementserviceshort}} 서비스에 대한 키 저장소입니다.
 
-{{site.data.keyword.hscrypto}}에 대한 자세한 정보는 [{{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} 시작하기](/docs/services/hs-crypto/index.html){:new_window}를 참조하십시오.
+{{site.data.keyword.hscrypto}}에 대한 자세한 정보는 [{{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} 시작하기](/docs/services/hs-crypto?topic=hs-crypto-get-started#get-started)를 참조하십시오.
 
 ## {{site.data.keyword.cloud_notm}} {{site.data.keyword.keymanagementserviceshort}} 사용
 {: #swift-key-management}
 
 {{site.data.keyword.keymanagementserviceshort}}는 사용자가 {{site.data.keyword.cloud_notm}} 서비스 전체에서 앱을 위한 암호화된 키를 작성할 수 있도록 지원합니다. 키의 라이프사이클을 관리하면서 정보 도용을 방지하는 클라우드 기반 HSM(Hardware Security Module)으로 키가 보호되는 이점을 누릴 수 있습니다. {{site.data.keyword.hscrypto}}와 함께 사용하면 사용자의 키가 가장 강력한 보안 레벨의 FIPS 140-2 Level 4 인증서로 보호됩니다.
 
-{{site.data.keyword.keymanagementserviceshort}}에 대한 자세한 정보는 [{{site.data.keyword.keymanagementserviceshort}} 시작하기](/docs/services/keymgmt/index.html){:new_window}를 참조하십시오.
+{{site.data.keyword.keymanagementserviceshort}}에 대한 자세한 정보는 [{{site.data.keyword.keymanagementserviceshort}} 시작하기](/docs/services/key-protect?topic=key-protect-getting-started-tutorial#getting-started-tutorial)를 참조하십시오.
 
 ## {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS 사용
 {: #hypersecure-dbaas}
@@ -59,19 +63,19 @@ Swift 개발자는 {{site.data.keyword.cloud}}가 업계에서 가장 강력한 
 {: #swift-hyperprotect}
 
 애플리케이션에서 MongoDB 데이터베이스를 사용하려면
-[데이터베이스 사용 시작하기](/docs/hypersecure_dbaas/database-cluster.html)를 참조하십시오.  
+[데이터베이스 사용 시작하기](/docs/swift/hypersecure_dbaas?topic=swift-create-database-cluster#creating-a-highly-available-and-secure-database)를 참조하십시오.  
 
 ### {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS에 대해 자세히 알아보기
 {: #swift-learnmore}
 
-{{site.data.keyword.cloud_notm}} Hyper Protect DBaaS에 대해 자세히 알아보려면 [IBM Cloud Hyper Protect DBaaS 시작하기](/docs/services/hyper-protect-dbaas/index.html)를 참조하십시오.
+{{site.data.keyword.cloud_notm}} Hyper Protect DBaaS에 대해 자세히 알아보려면 [IBM Cloud Hyper Protect DBaaS 시작하기](/docs/services/hyper-protect-dbaas?topic=hyper-protect-dbaas-gettingstarted#gettingstarted)를 참조하십시오.
 
 ## {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscontainers}} 사용
 {: #swift-hscontainers}
 
 {{site.data.keyword.hscontainers}}는 Docker 및 Kubernetes 기술, 직관적인 사용자 경험, 기본 내장된 보안 및 격리를 결합하여 컴퓨팅 호스트의 클러스터에서 컨테이너화된 앱의 배치, 오퍼레이션, 스케일링 및 모니터링을 자동화하는 강력한 도구를 제공합니다.
 
-{{site.data.keyword.hscontainers}}는 스폰서 유저(sponsor user)만 사용할 수 있습니다. 전용 보안 지원을 원하는 경우 [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml)에서 스폰서 유저로 등록하여 애플리케이션을 {{site.data.keyword.hscontainers}} 클러스터에 배치하십시오.
+{{site.data.keyword.hscontainers}}는 스폰서 유저(sponsor user)만 사용할 수 있습니다. 전용 보안 지원을 원하는 경우 [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")에서 스폰서 유저로 등록하여 애플리케이션을 {{site.data.keyword.hscontainers}} 클러스터에 배치하십시오.
 {: tip}
 
-스폰서 유저가 되기 전에 {{site.data.keyword.containershort_notm}}를 사용하여 애플리케이션을 보호할 수 있습니다. 자세한 정보는 [{{site.data.keyword.containershort_notm}} 시작하기](/docs/containers/container_index.html)를 참조하십시오.
+스폰서 유저가 되기 전에 {{site.data.keyword.containershort_notm}}를 사용하여 애플리케이션을 보호할 수 있습니다. 자세한 정보는 [{{site.data.keyword.containershort_notm}} 시작하기](/docs/containers?topic=containers-container_index#container_index)를 참조하십시오.

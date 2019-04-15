@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: bluepic swift, ios bluepic, bff swift image, sample swift, swift example bff
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # iOS 및 클라우드 로직 유스 케이스
 {: #sample_cloud}
 
-[BluePic 이미지 공유 샘플 애플리케이션](https://github.com/IBM/BluePic)을 통해 BFF(Backend For Frontend)를 사용하는 iOS 애플리케이션의 예를 볼 수 있습니다. BluePic 앱은 다음 기술을 사용합니다.
+[BluePic 이미지 공유 샘플 애플리케이션](https://github.com/IBM/BluePic){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 통해 BFF(Backend For Frontend)를 사용하는 iOS 애플리케이션의 예를 볼 수 있습니다. BluePic 앱은 다음 기술을 사용합니다.
 
 * 이미지 데이터를 저장할 Object Storage 및 Cloudant
 * 추가 정보를 이미지에 추가할 Watson Visual Recognition 및 IBM Weather Company 서비스

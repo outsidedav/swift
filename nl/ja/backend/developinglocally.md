@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: develop swift, swift local, service credentials swift, developer tools swift, swift cli, ibmcloud build swift, ibmcloud swift
+
+subcollection: swift
 
 ---
 
@@ -17,7 +21,7 @@ lastupdated: "2019-01-15"
 
 ローカルに開発すると、Swift アプリのビルド、実行、テストが簡単になります。 標準的なコマンドを使用してこれらのアクションを実行するには、{{site.data.keyword.dev_cli_short}} を使用します。 
 
-{{site.data.keyword.dev_cli_short}} を使用すると、10 以上のコマンドを使用してサーバー・サイドのアプリケーションを管理できます。 各種コマンドについて詳しくは、[IBM Cloud Developer Tools CLI プラグイン (`ibmcloud dev`) コマンド](/docs/cli/idt/commands.html)を参照してください。
+{{site.data.keyword.dev_cli_short}} を使用すると、10 以上のコマンドを使用してサーバー・サイドのアプリケーションを管理できます。 各種コマンドについて詳しくは、[{{site.data.keyword.dev_cli_notm}}CLI プラグイン (`ibmcloud dev`) コマンド](/docs/cli/idt?topic=cloud-cli-idt-cli#idt-cli)を参照してください。
 
 ## 始める前に
 {: #prereqs-local}
@@ -28,7 +32,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 ```
 {: codeblock}
 
-{{site.data.keyword.dev_cli_notm}} の構成と使用法の詳細については、[IBM Cloud Developer Tools CLI のセットアップ](/docs/cli/idt/setting_up_idt.html)を参照してください。
+{{site.data.keyword.dev_cli_notm}} の構成と使用法の詳細については、[{{site.data.keyword.dev_cli_notm}} CLI のセットアップ](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)を参照してください。
 
 ## サービス資格情報の取得
 {: #credentials-local}
@@ -57,7 +61,7 @@ ibmcloud dev get-credentials
 
   コマンドが正常に実行されると、アプリケーションのランディング・ページを表示するためのローカル・ホストとポートが表示されます。
 
-3. **デプロイ** -  `deploy` コマンドを使用して、アプリケーションを {{site.data.keyword.Bluemix_notm}} にデプロイします。
+3. **デプロイ** -  `deploy` コマンドを使用して、アプリケーションを {{site.data.keyword.cloud_notm}} にデプロイします。
   ```
   ibmcloud dev deploy
   ```

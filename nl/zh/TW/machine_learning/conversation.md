@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-03-28"
+
+keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
+
+subcollection: swift
 
 ---
 
@@ -31,13 +35,13 @@ lastupdated: "2019-01-31"
 
 請確定您具備下列必要條件：
 
-* [{{site.data.keyword.conversationshort}} 服務的實例](/docs/services/conversation/getting-started.html)
+* [{{site.data.keyword.conversationshort}} 服務的實例](/docs/services/assistant?topic=assistant-getting-started#getting-started)
 * iOS 10.0+
 * Xcode 9.3+
 * Swift 4.1+
 * CocoaPods、Carthage 或 Swift Package Manager
 
-您可以使用 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods)、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage) 或 [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager) 來安裝 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk)。藉由使用 [CocoaPods](https://cocoapods.org/) 來管理相依關係，您只會得到您需要的架構，而不是整個 Watson Swift SDK。如果您是 CocoaPods 新手，可以輕鬆地安裝它：
+您可以使用 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 或 [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，來安裝 [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。藉由使用 CocoaPods 來管理相依關係，您只會得到您需要的架構，而不是整個 Watson Swift SDK。如果您是 CocoaPods 新手，可以輕鬆地安裝它：
 
 ```console
   sudo gem install cocoapods
@@ -60,7 +64,7 @@ lastupdated: "2019-01-31"
 ## 步驟 2. 下載及建置相依關係
 {: #download-depend-chatbot}
 
-下列範例使用 AssistantV1。如需 AssistantV2 架構的相關資訊，請參閱 [Watson SDK AssistantV2 文件](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV2/index.html)。
+下列範例使用 AssistantV1。如需 AssistantV2 架構的相關資訊，請參閱 [Watson SDK AssistantV2 文件](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV2/index.html){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
 使用您最愛的文字編輯器，在您專案的根目錄（`.xcodeproj` 檔案所在之處）中，執行 `pod init` 建立一個新的 `Podfile`。然後，新增一行，指定 Watson Swift SDK 的 {{site.data.keyword.conversationshort}} 架構作為相依關係：
 
@@ -72,7 +76,7 @@ target 'MyApp' do
 ```
 {: codeblock}
 
-若為正式作業應用程式，您也可能想要指定特定的[版本需求](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions)，以避免新版本 Watson Swift SDK 有非預期的變更。
+若為正式作業應用程式，您也可能想要指定特定的[版本需求](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以避免新版本 Watson Swift SDK 有非預期的變更。
 
 `Podfile` 就緒後，現在您可以下載相依關係。使用終端機來導覽至您專案的根目錄，然後執行 CocoaPods：
 
@@ -106,7 +110,7 @@ Cocoapods 會下載 {{site.data.keyword.conversationshort}} 架構，並且會�
   ```
   {: codeblock}
 
-  **提示**：此範例會將環境定義儲存至狀態。為了更加瞭解此目標，以及如何為您的使用案例調整它，請參閱[環境定義變數文件](/docs/services/assistant/dialog-runtime.html#context-variables)。參閱[版本參數文件](https://cloud.ibm.com/apidocs/assistant#versioning)，或使用建立 {{site.data.keyword.conversationshort}} 服務的日期。
+  **提示**：此範例會將環境定義儲存至狀態。為了更加瞭解此目標，以及如何為您的使用案例調整它，請參閱[環境定義變數文件](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables)。參閱[版本參數文件](https://cloud.ibm.com/apidocs/assistant#versioning){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，或使用建立 {{site.data.keyword.conversationshort}} 服務的日期。
   
 
 3. 起始設定交談。視您的助理配置情形而定，它可以提供起始回應給使用者：
@@ -164,23 +168,23 @@ Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11a
 ```
 {: screen}
 
-5. 探索 Watson SDK [Assistant 文件](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV1/index.html)，以建置完備應用程式的功能。
+5. 探索 Watson SDK [Assistant 文件](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV1/index.html){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以建置完備應用程式的功能。
 
 ## 使用入門範本套件
 {: #starterkits-chatbot}
 
 使用入門範本套件，您可以快速且輕鬆地運用 {{site.data.keyword.cloud_notm}} 的功能。您可以使用入門範本套件，將 {{site.data.keyword.conversationshort}} 新增至任何伺服器端後端。Chatbot for iOS with Watson Starter Kit 說明如何藉由將自動與使用者互動的自然語言介面新增至您的應用程式，來使用 {{site.data.keyword.conversationshort}} 的深度學習功能。
 
-1. 選取您要使用的[入門範本套件](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window}。
-2. 建立含有預設服務的專案。
-3. 按一下**新增資源 > Watson > {{site.data.keyword.conversationshort}}**。
+1. 選取您要使用的[入門範本套件](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
+2. 建立含有預設服務的應用程式。
+3. 按一下**新增服務 > Watson > {{site.data.keyword.conversationshort}}**。
 4. 按一下**下載程式碼**，以下載專案。您可以在 `config/local-dev.json` 檔案中找到服務認證。
 
 ## 後續步驟
-{: #next-chatbot}
+{: #next-chatbot notoc}
 
 做得好！您已將 AI 助理新增至您的應用程式。嘗試下列其中一個選項，以保持動力：
 
-* 參閱 [{{site.data.keyword.watson}}Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){:new_window} 並探索其他受支援的 Watson 服務。
-* 充分運用 [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html) 提供的所有特性。
-* 檢視 [Simple Chat 範例應用程式](https://github.com/watson-developer-cloud/simple-chat-swift){:new_window}的原始碼，其示範 {{site.data.keyword.watson}} Swift SDK on GitHub。
+* 參閱 [{{site.data.keyword.watson}}Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 並探索其他受支援的 Watson 服務。
+* 充分運用 [{{site.data.keyword.conversationshort}}](/docs/services/assistant?topic=assistant-index#index) 提供的所有特性。
+* 檢視 [Simple Chat 範例應用程式](https://github.com/watson-developer-cloud/simple-chat-swift){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 的原始碼，其示範 {{site.data.keyword.watson}} Swift SDK on GitHub。

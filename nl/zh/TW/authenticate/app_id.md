@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ lastupdated: "2019-01-15"
 
 要求使用者登入，即可儲存使用者資料，例如，應用程式喜好設定（或公用社交設定檔中的資訊），然後使用該資料來自訂應用程式內的每個使用者經驗。{{site.data.keyword.appid_short_notm}} 為您提供一個登入架構，但是您也可以帶入自創品牌的登入畫面，以與雲端目錄搭配使用。
 
-如需可以使用 {{site.data.keyword.appid_short_notm}} 的所有方式以及架構資訊，請參閱[關於 {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html)。
+如需可以使用 {{site.data.keyword.appid_short_notm}} 的所有方式以及架構資訊，請參閱[關於 {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-about#about)。
 
 ## 開始之前
 {: #prereqs-appid}
@@ -37,7 +41,7 @@ lastupdated: "2019-01-15"
 
 建立 {{site.data.keyword.appid_short_notm}} 服務的實例：
 
-1. 在 [{{site.data.keyword.cloud_notm}} 型錄](https://cloud.ibm.com/catalog/)中，選取 {{site.data.keyword.appid_short_notm}}。即會開啟服務配置畫面。
+1. 在 [{{site.data.keyword.cloud_notm}} 型錄](https://cloud.ibm.com/catalog/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中，選取 {{site.data.keyword.appid_short_notm}}。即會開啟服務配置畫面。
 2. 提供服務實例的名稱，或使用預設名稱。
 3. 選取定價方案，然後按一下**建立**。
 
@@ -131,7 +135,7 @@ lastupdated: "2019-01-15"
 
 1. 開啟 {{site.data.keyword.appid_short_notm}} 儀表板的**身分提供者 > 管理**。
 2. 將您要使用的身分提供者設為**開啟**。您可以使用任何組合的身分提供者，但是如果您要帶入自訂的登入畫面，則需要僅啟用「雲端目錄」。
-3. 將[預設配置](/docs/services/appid/identity-providers.html)更新為您自己的認證。{{site.data.keyword.appid_short_notm}} 提供 IBM 認證，您可以用來試用服務，但在發佈您的應用程式之前，需要更新配置。
+3. 將[預設配置](/docs/services/appid?topic=appid-social#social)更新為您自己的認證。{{site.data.keyword.appid_short_notm}} 提供 IBM 認證，您可以用來試用服務，但在發佈您的應用程式之前，需要更新配置。
 4. 自訂登入畫面，以顯示您選擇的影像及顏色。
 5. 若要使用您的應用程式來呼叫登入小組件，請將下列指令新增至您的程式碼。
     ```swift
@@ -274,12 +278,12 @@ lastupdated: "2019-01-15"
 3. 更新 {{site.data.keyword.appid_short_notm}} 儀表板中的身分提供者或登入小組件畫面。
 4. 重複步驟 1 和 2，查看變更是否立即實作。不需要更新應用程式程式碼。
 
-有困難嗎？請參閱[疑難排解 {{site.data.keyword.appid_short_notm}}](/docs/services/appid/ts_index.html)。
+有困難嗎？請參閱[疑難排解 {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-troubleshooting#troubleshooting)。
 
 ## 後續步驟
-{: #next-appid}
+{: #next-appid notoc}
 
 做得好！您已為應用程式新增一個安全等級。嘗試下列其中一個選項，以保持動力：
 
-* 進一步瞭解並充分運用 {{site.data.keyword.appid_short_notm}} 提供的所有特性，[請參閱文件](/docs/services/appid/index.html)！
-* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://cloud.ibm.com/developer/mobile/dashboard)中的可用入門範本套件。下載程式碼。執行應用程式！
+* 進一步瞭解並充分運用 {{site.data.keyword.appid_short_notm}} 提供的所有特性，[請參閱文件](/docs/services/appid?topic=appid-getting-started#getting-started)！
+* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中的可用入門範本套件。下載程式碼。執行應用程式！

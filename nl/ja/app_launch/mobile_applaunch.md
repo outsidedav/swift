@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # アプリ・フィーチャー・リリースの管理
 {: #mobile_applaunch}
 
-{{site.data.keyword.engage_full}} を使用すると、開発者はリーチを制御して魅力あるアプリを構築したり、測定可能なメトリックを提供できるアプリ・フィーチャーをロールアウトしたりできます。 このサービスは、アプリ・フィーチャーのロールアウトと、実働環境へのアプリ更新間に現存する結び付きを開発者が取り去るのに役立ちます。 フィーチャーを実働環境にさらさずに、制御された方法でアプリの新バージョンを段階的にリリースするように、フィーチャーを公開できるようになります。 {{site.data.keyword.engage_short}} サービスを使用することによって、アプリ所有者は、ターゲット・セグメントのフィーチャー・ロールアウトを完全に制御できます。
+{{site.data.keyword.engage_full}} を使用すると、開発者はリーチを制御して魅力あるアプリを構築したり、測定可能なメトリックを提供できるアプリ・フィーチャーをロールアウトしたりできます。このサービスは、アプリ・フィーチャーのロールアウトと、実働環境へのアプリ更新間に現存する結び付きを開発者が取り去るのに役立ちます。フィーチャーを実働環境にさらさずに、制御された方法でアプリの新バージョンを段階的にリリースするように、フィーチャーを公開できるようになります。 {{site.data.keyword.engage_short}} サービスを使用することによって、アプリ所有者は、ターゲット・セグメントのフィーチャー・ロールアウトを完全に制御できます。
 
 {{site.data.keyword.engage_short}} サービスは、フィーチャーを定義し、デバイス・プラットフォームに基づいてオーディエンス (カスタム・オーディエンス属性を含む) を作成し、最後にフィーチャーのタイミングと配置を定めるエンゲージメントを定義します。 アプリケーションに組み込まれているフィーチャーおよびメトリック属性と共に SDK を使用すると、当サービスはオーディエンス経験の測定を始めます。 この情報に基づいてアプリを使用して、アプリ・ユーザーのさまざまなカテゴリーにわたって、カスタマイズされたカスタマー・エンゲージメントを作成することができます。
 
@@ -90,8 +94,7 @@ lastupdated: "2019-01-15"
 8. 新たに作成した属性とフィーチャー・コードが iOS アプリに含まれるようにアプリを更新します。
 9. これで、フィーチャーを使用する準備が整いました。
 
-「フィーチャーの詳細 (Feature Details)」ウィンドウでは、JSON ファイルとしてフィーチャーをエクスポートできます。
-そのフィーチャーをクライアント・アプリケーションで使用して、デフォルト値をロードできます。
+「フィーチャーの詳細 (Feature Details)」ウィンドウでは、JSON ファイルとしてフィーチャーをエクスポートできます。そのフィーチャーをクライアント・アプリケーションで使用して、デフォルト値をロードできます。
 
 ## ステップ 4. オーディエンスの作成
 {: #audience-applaunch}
@@ -158,7 +161,7 @@ Feature Control を使用してエンゲージメントを作成するには、�
 
   「エンゲージメントの詳細 (Engagement Details)」ウィンドウに、新しいエンゲージメントが表示されます。
 
-これで、エンゲージメントの[パフォーマンス](/docs/services/app-launch/app_measure_performance.html#applaunch_type)を測定できます。
+これで、エンゲージメントの[パフォーマンス](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type)を測定できます。
 
 ### In-App メッセージング機能の有効化
 {: #app-message-applaunch}
@@ -205,13 +208,13 @@ In-app メッセージの例を以下に示します。
 
   「エンゲージメントの詳細 (Engagement Details)」ウィンドウに、新しいエンゲージメントが表示されます。
 
-これで、エンゲージメントの[パフォーマンス](/docs/services/app-launch/app_measure_performance.html#applaunch_type)を測定できます。
+これで、エンゲージメントの[パフォーマンス](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type)を測定できます。
 
 ## クイック・リンク
 {: #links-applaunch notoc}
 
 以下のリンクを確認して、{{site.data.keyword.engage_short}} のフィーチャーに関する洞察や理解を得てください。
 
- - [App Launch サービス](https://cloud.ibm.com/catalog/services/app-launch)を試行する。
- - [ブログとビデオ](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - 詳しくは、[App Launch - 入門チュートリアル](/docs/services/app-launch/index.html)を参照してください。
+ - [アプリ起動サービス](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")をお試しください。
+ - [ブログとビデオ](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
+ - 詳しくは、[App Launch - 入門チュートリアル](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate)を参照してください。

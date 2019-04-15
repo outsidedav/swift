@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift, swift health check
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # 在 Swift 应用程序中使用运行状况检查
 {: #healthcheck}
 
-运行状况检查提供了一种用于确定服务器端应用程序是否运行正常的简单机制。您可以将云环境（如 [Kubernetes](https://www.ibm.com/cloud/container-service) 和 [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry)）配置为定期轮询运行状况端点，以确定您的服务实例是否已准备好接受流量。
+运行状况检查提供了一种用于确定服务器端应用程序是否运行正常的简单机制。您可以将云环境（如 [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 和 [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")）配置为定期轮询运行状况端点，以确定您的服务实例是否已准备好接受流量。
 {: shortdesc}
 
 ## 运行状况检查概述
@@ -50,7 +54,7 @@ Kubernetes 提供了细致入微的进程运行状况检查。它定义了两个
 ## 向现有 Swift 应用程序添加运行状况检查
 {: #existing-app}
 
-通过 [Health](https://github.com/IBM-Swift/Health) 库，可以轻松地将运行状况检查添加到 Swift 应用程序。运行状况检查可扩展。有关[高速缓存](https://github.com/IBM-Swift/Health#caching)以防止 DoS 攻击或添加[定制检查](https://github.com/IBM-Swift/Health#implementing-a-health-check)的更多信息，请参阅 [Health](https://github.com/IBM-Swift/Health) 库。
+通过 [Health](https://github.com/IBM-Swift/Health){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 库，可以轻松地将运行状况检查添加到 Swift 应用程序。运行状况检查可扩展。有关[高速缓存](https://github.com/IBM-Swift/Health#caching){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 以防止 DoS 攻击或有关添加[定制检查](https://github.com/IBM-Swift/Health#implementing-a-health-check){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 的更多信息，请参阅 [Health](https://github.com/IBM-Swift/Health){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 库。
 
 要将 Health 库添加到现有 Swift 应用程序中，请参阅以下步骤：
 
@@ -92,7 +96,7 @@ import Health
 ## 检查服务器端 Swift 入门模板工具包应用程序的运行状况
 {: #healthcheck-starterkit}
 
-使用入门模板工具包生成基于 Kitura 的 Swift 应用程序时，缺省情况下会包含基本运行状况检查端点 `/health`。该端点使用 Swift 4 中提供的 Codable 协议，而 [Health](https://github.com/IBM-Swift/Health) 库支持此协议。
+使用入门模板工具包生成基于 Kitura 的 Swift 应用程序时，缺省情况下会包含基本运行状况检查端点 `/health`。该端点使用 Swift 4 中提供的 Codable 协议，而 [Health](https://github.com/IBM-Swift/Health){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 库支持此协议。
 
 基本初始化代码（例如，初始化 Health 对象）在 `Sources/Application.swift` 中执行。运行状况检查端点本身由 `/Sources/Application/Routes/HealthRoutes.swift` 文件提供，其中包含以下代码：
 
@@ -115,7 +119,12 @@ func initializeHealthRoutes(app: App) {
 ```
 {: codeblock}
 
-该示例使用标准字典，在访问 `/health` 端点时，会生成有效内容，例如 `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}`。
+该示例使用标准字典，这会在您访问 `/health` 端点时生成如下有效内容：
+```
+{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}
+```
+
+
 
 ## 针对就绪情况和活跃度探测器的建议
 {: #recommend-probes}
@@ -127,7 +136,7 @@ func initializeHealthRoutes(app: App) {
 ### 向 Swift 应用程序添加对 Kubernees 就绪情况和活跃度的支持
 {: #kube-readiness-swift}
 
-有关备用实施方案（例如，使用 **Codable** 或标准字典）的信息，请参阅 [Health 库示例](https://github.com/IBM-Swift/Health#usage)。某些备用实施方案简化了对可扩展运行状况检查的创建，并且支持高速缓存对后备服务执行的检查。在此场景中，您需要将简单的活跃度测试与更稳健的详细就绪情况检查分隔开。
+有关备用实施（例如使用 **Codable** 或标准字典），请参阅 [Health 库示例](https://github.com/IBM-Swift/Health#usage){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。某些备用实施方案简化了对可扩展运行状况检查的创建，并且支持高速缓存对后备服务执行的检查。在此场景中，您需要将简单的活跃度测试与更稳健的详细就绪情况检查分隔开。
 
 ## 在 Kubernees 中配置就绪情况和活跃度探测器
 {: #config-kube-readiness}
@@ -169,4 +178,4 @@ spec:
       failureThreshold: 10
 ```
 
-有关更多信息，请参阅 [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)。
+有关更多信息，请参阅 [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。

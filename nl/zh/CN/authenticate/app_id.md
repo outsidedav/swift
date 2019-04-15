@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ lastupdated: "2019-01-15"
 
 通过要求用户登录，您可以存储用户数据，例如应用程序首选项（或公共社交个人档案中的信息），然后使用这些数据为每个用户定制应用程序体验。{{site.data.keyword.appid_short_notm}} 提供了一个登录框架，但您也可以使用自己的特色登录屏幕与云目录配合使用。
 
-有关可以使用 {{site.data.keyword.appid_short_notm}} 的所有方法以及体系结构信息，请参阅[关于 {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html)。
+有关可以使用 {{site.data.keyword.appid_short_notm}} 的所有方法以及体系结构信息，请参阅[关于 {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-about#about)。
 
 ## 开始之前
 {: #prereqs-appid}
@@ -37,7 +41,7 @@ lastupdated: "2019-01-15"
 
 创建 {{site.data.keyword.appid_short_notm}} 服务的实例：
 
-1. 在 [{{site.data.keyword.cloud_notm}} 目录](https://cloud.ibm.com/catalog/)中，选择 {{site.data.keyword.appid_short_notm}}。这将打开服务配置屏幕。
+1. 在 [{{site.data.keyword.cloud_notm}} 目录](https://cloud.ibm.com/catalog/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 中，选择 {{site.data.keyword.appid_short_notm}}。这将打开服务配置屏幕。
 2. 为服务实例提供名称或使用预设名称。
 3. 选择价格套餐，然后单击**创建**。
 
@@ -131,7 +135,7 @@ lastupdated: "2019-01-15"
 
 1. 打开 {{site.data.keyword.appid_short_notm}} 仪表板至**身份提供者 > 管理**。
 2. 将要使用的身份提供者设置为**开启**。可以使用身份提供者的任意组合，但如果要显示定制的登录屏幕，那么只需启用“云目录”。
-3. 将[缺省配置](/docs/services/appid/identity-providers.html)更新为您自己的凭证。{{site.data.keyword.appid_short_notm}} 提供了 IBM 凭证，您可以使用这些凭证来试用服务，但在发布应用程序之前，需要更新此配置。
+3. 将[缺省配置](/docs/services/appid?topic=appid-social#social)更新为您自己的凭证。{{site.data.keyword.appid_short_notm}} 提供了 IBM 凭证，您可以使用这些凭证来试用服务，但在发布应用程序之前，需要更新此配置。
 4. 定制登录屏幕以显示您选择的图像和颜色。
 5. 要使用应用程序调用登录窗口小部件，请将以下命令添加到代码中。
     ```swift
@@ -276,12 +280,12 @@ lastupdated: "2019-01-15"
 3. 在 {{site.data.keyword.appid_short_notm}} 仪表板中更新身份提供者或登录窗口小部件屏幕。
 4. 重复步骤 1 和 2，以查看更改是否立即实施。无需更新应用程序代码。
 
-遇到困难？请查看[关于 {{site.data.keyword.appid_short_notm}} 的故障诊断](/docs/services/appid/ts_index.html)。
+遇到困难？请查看 [{{site.data.keyword.appid_short_notm}} 的故障诊断](/docs/services/appid?topic=appid-troubleshooting#troubleshooting)。
 
 ## 后续步骤
-{: #next-appid}
+{: #next-appid notoc}
 
 太棒了！您已将安全级别添加到应用程序。请一鼓作气，尝试下列其中一个选项：
 
-* 要了解有关 {{site.data.keyword.appid_short_notm}} 必须提供的所有功能的更多信息以及如何利用这些功能，请[查看文档](/docs/services/appid/index.html)！
-* 入门模板工具包是使用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。请在 [Mobile 开发者仪表板](https://cloud.ibm.com/developer/mobile/dashboard)中查看可用的入门模板工具包。下载代码。运行应用程序！
+* 要了解有关 {{site.data.keyword.appid_short_notm}} 必须提供的所有功能的更多信息以及如何利用这些功能，请[查看文档](/docs/services/appid?topic=appid-getting-started#getting-started)！
+* 入门模板工具包是使用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。请在[移动开发者仪表板](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 中查看可用的入门模板工具包。下载代码。运行应用程序！

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: cloudant swift, store data swift, dbaas swift, cloudant instance swift, initialize sdk swift, create document swift, read document swift, delete document swift
+
+subcollection: swift
 
 ---
 
@@ -19,7 +23,7 @@ lastupdated: "2019-01-15"
 {{site.data.keyword.cloudantfull}} は、ドキュメント指向の DataBase as a Service (DBaaS) です。 JSON フォーマットのドキュメントとしてデータを保管します。 スケーラビリティー、高可用性、耐久性を考慮に入れて構築されており、Swift アプリケーション用に構成しやすくなっています。 MapReduce、{{site.data.keyword.cloudant_short_notm}} Query、フルテキスト索引付け、地理情報索引付けなどのさまざまな索引付けオプションが用意されています。 複製機能により、データベース・クラスター、デスクトップ PC、モバイル・デバイス間で簡単にデータを同期させておくことができます。 
 {: shortdesc}
 
-{{site.data.keyword.cloudant_short_notm}} を使用するためのすべての方法については、[{{site.data.keyword.cloudant_short_notm}} Basics](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics) を参照してください。
+{{site.data.keyword.cloudant_short_notm}} を使用するためのすべての方法については、[{{site.data.keyword.cloudant_short_notm}} Basics](/docs/services/Cloudant/basics?topic=cloudant-ibm-cloudant-basics#cloudant-nosql-db-basics) を参照してください。
 
 ## 始める前に
 {: #prereqs-cloudant}
@@ -30,13 +34,13 @@ lastupdated: "2019-01-15"
  * MacOS (バージョン 10.11.5 以上)
  * Xcode (バージョン 9.0.1 以上)
 
-[{{site.data.keyword.cloudant_short_notm}} SDK for Swift ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/cloudant/swift-cloudant) は、Swift 3.2 を使用して作成されています。 {{site.data.keyword.cloudant_short_notm}} を Kitura で使用する予定の場合は、Swift 4.0 で作成された [Kitura-CouchDB ライブラリー ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/IBM-Swift/Kitura-CouchDB) を確認してください。
+[{{site.data.keyword.cloudant_short_notm}} SDK for Swift ](https://github.com/cloudant/swift-cloudant){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") は、Swift 3.2 を使用して作成されています。 {{site.data.keyword.cloudant_short_notm}} を Kitura で使用する予定の場合は、Swift 4.0 で作成された [Kitura-CouchDB ライブラリー ](https://github.com/IBM-Swift/Kitura-CouchDB){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認してください。
 {: tip}
 
 ## ステップ 1. {{site.data.keyword.cloudant_short_notm}} インスタンスの作成
 {: #create-instance-cloudant}
 
-[IBM Cloud での IBM Cloudant インスタンスの作成に関するチュートリアル ![外部リンク・アイコン](../images/launch-glyph.svg "外部リンク・アイコン")](/docs/services/Cloudant/tutorials/create_service.html){:new_window} を参照して、サービスのインスタンスを作成してください。
+[{{site.data.keyword.cloud_notm}} での IBM Cloudant インスタンスの作成に関するチュートリアル](/docs/services/Cloudant/tutorials?topic=cloudant-creating-an-ibm-cloudant-instance-on-ibm-cloud#creating-an-ibm-cloudant-instance-on-ibm-cloud){:new_window} を参照して、サービスのインスタンスを作成してください。
 
 ## ステップ 2. SDK のインストール
 {: #install-sdk-cloudant}
@@ -145,13 +149,13 @@ client.add(operation: delete)
 2. Web ブラウザーで既に作成した {{site.data.keyword.cloudant_short_notm}} サービス・インスタンスに戻り、サービス・ダッシュボードを開きます。
 3. 使用されているデータベースを選択すると、ダッシュボードにドキュメントが表示されます。
 
-問題が発生する場合は、 [{{site.data.keyword.cloudant_short_notm}} API リファレンス](/docs/services/Cloudant/api/index.html#api-reference-overview)を確認してください。
+問題が発生する場合は、 [{{site.data.keyword.cloudant_short_notm}} API リファレンス](/docs/services/Cloudant/api?topic=cloudant-ibm-cloudant-basics#api-reference-overview)を確認してください。
 
 ## 次のステップ
 {: #cloudant_next notoc}
 
 お疲れさまでした。 ある程度のセキュア・パーシスタンスをアプリに追加しました。 この調子で、以下のいずれかのオプションを試してみてください。
 
-* [{{site.data.keyword.cloudant_short_notm}} SDK for Swift ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/cloudant/swift-cloudant) のソース・コードを調べる。
-* スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 **Infinite Scrolling with Cloudant NoSQL for iOS** スターター・キットは、`ViewController` を拡張してページ編集を使用してデータを表示する方法を示しています。 このパターンのアプリは iOS 開発者にとって一般的なもので、{{site.data.keyword.cloudant_short_notm}} の機能を示すための良い例です。 [モバイル開発者ダッシュボード](https://cloud.ibm.com/developer/mobile/dashboard)で、使用可能なスターター・キットを確認できます。 コードをダウンロードし、 アプリを実行します。
-* {{site.data.keyword.cloudant_short_notm}} に用意されているすべての機能の詳細を確認して利用するには、[この資料](/docs/services/Cloudant/index.html)を参照してください。
+* [{{site.data.keyword.cloudant_short_notm}} SDK for Swift ](https://github.com/cloudant/swift-cloudant){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") のソース・コードを調べる。
+* スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 **Infinite Scrolling with Cloudant NoSQL for iOS** スターター・キットは、`ViewController` を拡張してページ編集を使用してデータを表示する方法を示しています。 このパターンのアプリは iOS 開発者にとって一般的なもので、{{site.data.keyword.cloudant_short_notm}} の機能を示すための良い例です。 [モバイル開発者ダッシュボード](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、使用可能なスターター・キットを確認できます。コードをダウンロードし、 アプリを実行します。
+* {{site.data.keyword.cloudant_short_notm}} に用意されているすべての機能の詳細を確認して利用するには、[この資料](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics#ibm-cloudant-basics)を参照してください。

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: swift security, add security swift, crypto swift, hyper protect swift, ios hyper protect, dbaas swift, swift key management, swift advanced security
+
+subcollection: swift
 
 ---
 
@@ -20,7 +24,7 @@ lastupdated: "2019-01-15"
 Swift 開發人員可以輕鬆地使用 {{site.data.keyword.cloud}} 提供的進階安全服務，以業界最高的安全層次保護靜態、使用中或傳輸中的金鑰及資料。
 {: shortdesc}
 
-因為方法很簡單，您可以直接對 {{site.data.keyword.cloud}} 中的所有進階安全服務，使用 {{site.data.keyword.cloud_notm}} HyperSecure Platform Services。如需相關資訊，請參閱[開始使用 {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform/index.html){:new_window}。
+因為方法很簡單，您可以直接對 {{site.data.keyword.cloud}} 中的所有進階安全服務，使用 {{site.data.keyword.cloud_notm}} HyperSecure Platform Services。如需相關資訊，請參閱[開始使用 {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform/index.html#getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits)。
 
 ## 使用 {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}
 {: #security-swift}
@@ -31,14 +35,14 @@ Swift 開發人員可以輕鬆地使用 {{site.data.keyword.cloud}} 提供的進
 
 {{site.data.keyword.hscrypto}} 也是 {{site.data.keyword.keymanagementserviceshort}} 服務的金鑰儲存庫。
 
-如需 {{site.data.keyword.hscrypto}} 的相關資訊，請參閱[開始使用 {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/services/hs-crypto/index.html){:new_window}。
+如需 {{site.data.keyword.hscrypto}} 的相關資訊，請參閱[開始使用 {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/services/hs-crypto?topic=hs-crypto-get-started#get-started)。
 
 ## 使用 {{site.data.keyword.cloud_notm}} {{site.data.keyword.keymanagementserviceshort}}
 {: #swift-key-management}
 
 {{site.data.keyword.keymanagementserviceshort}} 可協助您在 {{site.data.keyword.cloud_notm}} 服務之間為應用程式建立加密金鑰。管理金鑰的生命週期時，即可知道您的金鑰是由防止資訊竊取的雲端型硬體安全模組 (HSM) 所保護。搭配使用 {{site.data.keyword.hscrypto}}，您的金鑰即受到最高安全層次「FIPS 140-2 層次 4」憑證的保護。
 
-如需 {{site.data.keyword.keymanagementserviceshort}} 的相關資訊，請參閱[開始使用 {{site.data.keyword.keymanagementserviceshort}}](/docs/services/keymgmt/index.html){:new_window}。
+如需 {{site.data.keyword.keymanagementserviceshort}} 的相關資訊，請參閱[開始使用 {{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-getting-started-tutorial#getting-started-tutorial)。
 
 ## 使用 {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS
 {: #hypersecure-dbaas}
@@ -58,12 +62,12 @@ Swift 開發人員可以輕鬆地使用 {{site.data.keyword.cloud}} 提供的進
 ### 將 {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS 邏輯新增至應用程式
 {: #swift-hyperprotect}
 
-若要在您的應用程式中使用 MongoDB 資料庫，請參閱[開始使用資料庫](/docs/hypersecure_dbaas/database-cluster.html)。  
+若要在您的應用程式中使用 MongoDB 資料庫，請參閱[開始使用資料庫](/docs/swift/hypersecure_dbaas?topic=swift-create-database-cluster#creating-a-highly-available-and-secure-database)。  
 
 ### 進一步瞭解 {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS
 {: #swift-learnmore}
 
-若要進一步瞭解 {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS，請參閱[開始使用 IBM Cloud Hyper Protect DBaaS](/docs/services/hyper-protect-dbaas/index.html)。
+若要進一步瞭解 {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS，請參閱[開始使用 IBM Cloud Hyper Protect DBaaS](/docs/services/hyper-protect-dbaas?topic=hyper-protect-dbaas-gettingstarted#gettingstarted)。
 
 ## 使用 {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscontainers}}
 {: #swift-hscontainers}
@@ -71,7 +75,7 @@ Swift 開發人員可以輕鬆地使用 {{site.data.keyword.cloud}} 提供的進
 {{site.data.keyword.hscontainers}} 藉由結合 Docker 和 Kubernetes 技術、直覺式使用者體驗以及內建安全和隔離來提供功能強大的工具，以在運算主機的叢集中自動部署、操作、擴充及監視容器化應用程式。
 
 
-{{site.data.keyword.hscontainers}} 僅供贊助者使用者使用。如果您預期專用的安全支援，請使用 [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml) 登錄為贊助者使用者，以將您的應用程式部署至 {{site.data.keyword.hscontainers}} 叢集。
+{{site.data.keyword.hscontainers}} 僅供贊助者使用者使用。如果您預期專用的安全支援，請使用 [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 登錄為贊助者使用者，以將您的應用程式部署至 {{site.data.keyword.hscontainers}} 叢集。
 {: tip}
 
-在變成贊助者使用者之前，您可以使用 {{site.data.keyword.containershort_notm}} 來保護您的應用程式。如需相關資訊，請參閱[開始使用 {{site.data.keyword.containershort_notm}}](/docs/containers/container_index.html)。
+在變成贊助者使用者之前，您可以使用 {{site.data.keyword.containershort_notm}} 來保護您的應用程式。如需相關資訊，請參閱[開始使用 {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-container_index#container_index)。

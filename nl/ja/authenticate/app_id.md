@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ lastupdated: "2019-01-15"
 
 ユーザーにサインインを要求することで、アプリ設定などのユーザー・データ (または公開されているソーシャル・プロファイル情報) を保管し、そのデータを使用してアプリ内のエクスペリエンスをユーザーごとにカスタマイズできます。 {{site.data.keyword.appid_short_notm}} により手軽なログイン・フレームワークが提供されていますが、クラウド・ディレクトリーで使用するために、独自のブランド・マークが付いたサインイン画面を表示させることもできます。
 
-{{site.data.keyword.appid_short_notm}} の詳しい使用方法とアーキテクチャー情報については、[{{site.data.keyword.appid_short_notm}} について](/docs/services/appid/about.html)を参照してください。
+{{site.data.keyword.appid_short_notm}} の詳しい使用方法とアーキテクチャー情報については、[{{site.data.keyword.appid_short_notm}} について](/docs/services/appid?topic=appid-about#about)を参照してください。
 
 ## 始める前に
 {: #prereqs-appid}
@@ -37,7 +41,7 @@ lastupdated: "2019-01-15"
 
 {{site.data.keyword.appid_short_notm}} サービスのインスタンスを次のように作成します。
 
-1. [{{site.data.keyword.cloud_notm}} カタログ](https://cloud.ibm.com/catalog/)で、{{site.data.keyword.appid_short_notm}} を選択します。 サービス構成画面が開きます。
+1. [{{site.data.keyword.cloud_notm}} カタログ](https://cloud.ibm.com/catalog/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、{{site.data.keyword.appid_short_notm}} を選択します。サービス構成画面が開きます。
 2. サービス・インスタンスに名前を付けます。または、事前設定された名前を使用します。
 3. 料金プランを選択し、**「作成」**をクリックします。
 
@@ -129,7 +133,7 @@ ID プロバイダーが提供するユーザー認証情報を使用して、�
 
 1. {{site.data.keyword.appid_short_notm}} ダッシュボードを開いて**「ID プロバイダー」>「管理」**に移動します。
 2. 使用する ID プロバイダーを**「オン」**に設定します。 複数の ID プロバイダーを任意に組み合わせることができますが、サインオン画面をカスタマイズするには、クラウド・ディレクトリーのみを有効にする必要があります。
-3. [デフォルト構成](/docs/services/appid/identity-providers.html)を実際の資格情報に更新します。 {{site.data.keyword.appid_short_notm}} にある IBM 資格情報を使ってサービスを試してみることもできますが、アプリを公開する前に構成を更新する必要があります。
+3. [デフォルト構成](/docs/services/appid?topic=appid-social#social)を実際の資格情報に更新します。 {{site.data.keyword.appid_short_notm}} にある IBM 資格情報を使ってサービスを試してみることもできますが、アプリを公開する前に構成を更新する必要があります。
 4. 自分で選択したイメージと色が表示されるように、サインイン画面をカスタマイズします。
 5. アプリでログイン・ウィジェットを呼び出すには、次のコマンドをコードに追加します。
     ```swift
@@ -272,12 +276,12 @@ ID プロバイダーが提供するユーザー認証情報を使用して、�
 3. {{site.data.keyword.appid_short_notm}} ダッシュボードで ID プロバイダーまたはログイン・ウィジェットの画面を更新します。
 4. ステップ 1 と 2 を繰り返して、変更が即時に実装されることを確認します。 アプリ・コードを更新する必要はありません。
 
-問題が発生する場合は、 [{{site.data.keyword.appid_short_notm}} のトラブルシューティング](/docs/services/appid/ts_index.html)を確認してください。
+問題が発生する場合は、 [{{site.data.keyword.appid_short_notm}} のトラブルシューティング](/docs/services/appid?topic=appid-troubleshooting#troubleshooting)を確認してください。
 
 ## 次のステップ
-{: #next-appid}
+{: #next-appid notoc}
 
 お疲れさまでした。 これでアプリに一定のレベルのセキュリティーが追加されました。 この調子で、以下のいずれかのオプションを試してみてください。
 
-* {{site.data.keyword.appid_short_notm}} に備わっているすべての機能を確認して利用するには、[ドキュメント](/docs/services/appid/index.html)をご確認ください。
-* スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 [モバイル開発者ダッシュボード](https://cloud.ibm.com/developer/mobile/dashboard)で、使用可能なスターター・キットを確認できます。 コードをダウンロードし、 アプリを実行します。
+* {{site.data.keyword.appid_short_notm}} に備わっているすべての機能を確認して利用するには、[ドキュメント](/docs/services/appid?topic=appid-getting-started#getting-started)をご確認ください。
+* スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 [モバイル開発者ダッシュボード ](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、使用可能なスターター・キットを確認できます。 コードをダウンロードし、 アプリを実行します。
