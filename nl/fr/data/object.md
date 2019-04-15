@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
+
+subcollection: swift
 
 ---
 
@@ -15,7 +19,7 @@ lastupdated: "2019-01-15"
 # Utilisation d'Object Storage pour le contenu statique
 {: #object-storage}
 
-Object Storage est un composant fondamental du Cloud Computing qui offre de puissantes fonctions aux développeurs Apple et à leurs applications. A la différence du stockage d'informations dans une hiérarchie de fichiers (telle que le Stockage par blocs ou le Stockage de fichiers), un conteneur d'objets se compose uniquement de fichiers et de leurs métadonnées, stockées dans des collections appelées compartiments. Par définition, ces objets sont non modifiables, ce qui les rend parfaits pour les données comme les images, les vidéos et d'autres documents statiques. Pour les données qui changent souvent ou les données relationnelles, vous pouvez utiliser les services de base de données [NoSQL](/docs/swift/data/nosql.html), [Cloudant](/docs/swift/data/cloudant.html) et [SQL](/docs/swift/data/sql.html).
+Object Storage est un composant fondamental du Cloud Computing qui offre de puissantes fonctions aux développeurs Apple et à leurs applications. A la différence du stockage d'informations dans une hiérarchie de fichiers (telle que le Stockage par blocs ou le Stockage de fichiers), un conteneur d'objets se compose uniquement de fichiers et de leurs métadonnées, stockées dans des collections appelées compartiments. Par définition, ces objets sont non modifiables, ce qui les rend parfaits pour les données comme les images, les vidéos et d'autres documents statiques. Pour les données qui changent souvent ou les données relationnelles, vous pouvez utiliser les services de base de données [Cloudant](/docs/swift/data?topic=swift-cloudant#cloudant) et [SQL](/docs/swift/data?topic=swift-sql_data#sql_data).
 
 {{site.data.keyword.cos_full_notm}} (COS) est système de stockage qui peut être utilisé pour le stockage de données non structurées à la fois flexibles, abordables et évolutives. Les données sont accessible via des logiciels SDK ou via l'interface utilisateur IBM. Vous pouvez utiliser {{site.data.keyword.cos_full_notm}} pour accéder aux données non structurées via un portail en libre-service adossé à des API RESTful et des logiciels SDK. 
 
@@ -32,7 +36,7 @@ Lorsque vous créez un compartiment, vous devez sélectionner un niveau de rési
 ## API
 {: #api-cos}
 
-L'API {{site.data.keyword.cos_full}} est un API REST pour la lecture et l'écriture d'objets. Elle prend en charge un sous-ensemble d'API S3 pour une migration facile des applications vers {{site.data.keyword.cloud_notm}}. N'importe quel logiciel SDK S3 peut utiliser {{site.data.keyword.cos_full}}. For more information, consultez la [Référence d'API {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api)
+L'API {{site.data.keyword.cos_full}} est un API REST pour la lecture et l'écriture d'objets. Elle prend en charge un sous-ensemble d'API S3 pour une migration facile des applications vers {{site.data.keyword.cloud_notm}}. N'importe quel logiciel SDK S3 peut utiliser {{site.data.keyword.cos_full}}. Pour plus d'informations, consultez la [Référence d'API {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)
 
 ## Sécurité
 {: #security-cos}
@@ -51,12 +55,12 @@ IAM permet aux organisations comptant de nombreux employés de créer et de gér
 
 Les listes de contrôle d'accès vous permettent d'accorder des droits spécifiques (par exemple des droits d'écriture ou de lecture) à des utilisateurs spécifiques pour un compartiment individuel.
 
-Les données au repos sont chiffrées coté fournisseur à l'aide d'un chiffrement AES (Advanced Encryption Standard) automatique de 256 bits et d'un hachage SHA-256 (Secure Hash Algorithm). Les données dynamiques sont sécurisées à l'aide d'un chiffrement de qualité opérateur intégré TLS (Transport Layer Security), SSL (Secure Sockets Layer) ou SNMPv3 avec AES.
+Les données au repos sont chiffrées côté fournisseur à l'aide d'un chiffrement AES (Advanced Encryption Standard) automatique de 256 bits et d'un hachage SHA-256 (Secure Hash Algorithm). Les données dynamiques sont sécurisées à l'aide d'un chiffrement de qualité opérateur intégré TLS (Transport Layer Security), SSL (Secure Sockets Layer) ou SNMPv3 avec AES.
 
 ### Chiffrement
 {: #encryption-cos}
 
-Les données au repos sont chiffrées coté fournisseur automatique à l'aide d'un chiffrement AES (Advanced Encryption Standard) 256 bits et d'un hachage SHA-256 (Secure Hash Algorithm). Les données dynamiques sont sécurisées à l'aide d'un chiffrement de qualité opérateur intégré TLS/ SSL (Transport Layer Security/Secure Sockets Layer) ou SNMPv3 avec AES.
+Les données au repos sont chiffrées côté fournisseur à l'aide d'un chiffrement AES (Advanced Encryption Standard) automatique de 256 bits et d'un hachage SHA-256 (Secure Hash Algorithm). Les données dynamiques sont sécurisées à l'aide d'un chiffrement de qualité opérateur intégré TLS/ SSL (Transport Layer Security/Secure Sockets Layer) ou SNMPv3 avec AES.
 
 Le chiffrement côté serveur est toujours actif pour les données clients. Comparé au hachage nécessaire à l'authentification et au codage par effacement, le chiffrement ne représente pas une part significative du coût de traitement de Cloud Object Storage.
 
@@ -87,7 +91,7 @@ Tenez compte des facteurs suivants pour choisir l'emplacement géographique de v
 
 En fonction de votre cas d'utilisation, vous pouvez réduire les coûts en sélectionnant un plan de service qui répond à vos besoins. Pour les opérations d'archivage qui impliquent un accès minimal au conteneur d'objets, la vitesse et la durabilité d'un objet fréquemment utilisé ne sont pas nécessaires, et cette distinction est reflétée dans la classe de support de stockage et le plan de tarification de vos applications. Les classes de stockage sont définies au niveau du compartiment, de sorte que vous pouvez utiliser une combinaison de plans qui répond à vos besoins. Créez un compartiment défini sur la classe de stockage que vous voulez utiliser.
 
-D'autres informations sur la tarification sont disponibles dans la [documentation relative à la {{site.data.keyword.cos_short}} classe de stockage](/docs/services/cloud-object-storage/help/billing.html#ibm-cos-pricing).
+D'autres informations sur la tarification sont disponibles dans la documentation relative à la [classe de stockage {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/help?topic=cloud-object-storage-billing#ibm-cos-pricing).
 
 ### Exemple de classe de stockage
 {: #samples-cos}

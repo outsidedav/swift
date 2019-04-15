@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: install sdk swift, sdk client swift, carthage, cocoapods, swift package manager, ios sdk
+
+subcollection: swift
 
 ---
 
@@ -32,7 +36,7 @@ end
 
 Exécutez `pod install` et ouvrez le fichier `.xcworkspace` généré.
 
-Pour plus d'informations, voir les [Guides CocoaPods](https://guides.cocoapods.org/using/index.html).
+Pour plus d'informations, consultez les [guides CocoaPods](https://guides.cocoapods.org/using/index.html){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
 
 ## Installation avec Carthage
 {: #install_carthage}
@@ -45,7 +49,7 @@ github "<github org name>/<github project name>"
 
 Exécutez `carthage update` pour démarrer le processus de génération. Une fois la génération terminée, ajoutez l'infrastructure générée à votre projet. 
 
-Pour plus d'informations, voir la documentation [Initiation à Carthage](https://github.com/Carthage/Carthage#getting-started).
+Pour plus d'informations, voir la documentation sur l'[initiation à Carthage](https://github.com/Carthage/Carthage#getting-started){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
 
 ## Installation avec le gestionnaire de package Swift
 {: #install_swift_package}
@@ -58,7 +62,7 @@ Pour installer un logiciel SDK à l'aide du gestionnaire de package Swift, ajout
 
 Exécutez `swift build` pour démarrer le processus de génération.
 
-Pour plus d'informations, voir a [Présentation du gestionnaire de package Swift](https://swift.org/package-manager/).
+Pour plus d'informations, voir la [présentation du gestionnaire de package Swift](https://swift.org/package-manager/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
 
 ## Installation manuelle
 {: #install_manually}

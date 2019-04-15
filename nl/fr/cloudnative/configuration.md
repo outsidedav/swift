@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-14"
+
+keywords: swift-cfenv, service bindings swift, environment swift, swift configuration, cloudenvironment swift, VCAP_SERVICES swift, swift credentials
+
+subcollection: swift
 
 ---
 
@@ -25,7 +29,7 @@ Vous pouvez suivre de simples instructions qui vous aideront à écrire des appl
 ## Ajout d'{{site.data.keyword.cloud_notm}} à des applications Swift existantes
 {: #addcloud-env}
 
-Le processus qui permet d'extraire les valeurs de l'environnement peut différer d'un environnement cloud à l'autre. La bibliothèque [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) résume la configuration de l'environnement et les informations d'identification de divers fournisseurs de cloud afin que votre application Swift puisse accéder de manière cohérente aux informations en exécutant localement ou dans des instances Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} ou virtuelles. Le masquage des données d'identification est effectué par la bibliothèque `CloudEnvironment`, laquelle utilise en interne [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) pour la configuration Cloud Foundry et [Configuration](https://github.com/IBM-Swift/Configuration) comme gestionnaire de configuration.
+Le processus qui permet d'extraire les valeurs de l'environnement peut différer d'un environnement cloud à l'autre. La bibliothèque [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") isole la configuration de l'environnement et les informations d'identification de divers fournisseurs de cloud afin que votre application Swift puisse accéder de manière cohérente aux informations en exécutant localement ou dans des instances Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} ou virtuelles. Le détournement des données d'identification est effectué par la bibliothèque `CloudEnvironment`, laquelle utilise en interne [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") pour la configuration Cloud Foundry et [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") comme gestionnaire de configuration.
 
 Avec `CloudEnvironment`, vous pouvez extraire les détails de faible niveau du code source de votre application en définissant une clé de recherche que votre application Swift peut utiliser pour la recherche de sa valeur correspondante.
 
@@ -67,13 +71,13 @@ let url = cloudEnv.url
 ```
 {: codeblock}
 
-Cet exemple permet d'accéder aux jeux de données d'identification pour les services, qui peuvent maintenant être utilisés pour initialiser les connexions à ces [services pris en charge ou à un dictionnaire générique ](https://github.com/IBM-Swift/CloudEnvironment#supported-services). Consultez la configuration spécifique à [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api) pour Cloud Foundry, ainsi que les [détails de configuration](https://github.com/IBM-Swift/Configuration) sur le chargement des données de configuration.
+Cet exemple permet d'accéder aux jeux de données d'identification pour les services, qui peuvent maintenant être utilisés pour initialiser les connexions à ces [services pris en charge ou à un dictionnaire générique](https://github.com/IBM-Swift/CloudEnvironment#supported-services){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"). Consultez la configuration spécifique à [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") pour Cloud Foundry, ainsi que les [détails de configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") sur le chargement des données de configuration.
 
 ## Présentation des données d'identification de service
 {: #service_creds}
 
 La bibliothèque `CloudEnvironment` utilise un fichier nommé `mappings.json`, qui se trouve dans le répertoire `config`, pour communiquer l'emplacement de stockage des données d'identification pour chaque service. Le fichier `mappings.json` prend en charge la recherche de valeurs au moyen des trois modèles de recherche suivants :
-- **`cloudfoundry`** - Type de pattern utilisé pour la recherche d'une valeur dans la variable d'environnement des services de Foundry (`VCAP_SERVICES`). Pour Cloud Foundry Enterprise Edition, voir ce [tutoriel d'initiation](docs/cloud-foundry/getting-started.html#getting-started) pour de plus amples informations.
+- **`cloudfoundry`** - Type de pattern utilisé pour la recherche d'une valeur dans la variable d'environnement des services de Foundry (`VCAP_SERVICES`). Pour Cloud Foundry Enterprise Edition, voir ce [tutoriel d'initiation](/docs/cloud-foundry?topic=cloud-foundry-getting-started#getting-started) pour de plus amples informations.
 - **`env`** - Type de pattern utilisé pour la recherche d'une valeur qui est mappée à une variable d'environnement, comme dans Kubernetes ou Functions.
 - **`file`** - Type de pattern utilisé pour la recherche d'une valeur dans un fichier JSON. Le chemin doit être relatif au dossier racine de votre application Swift.
 
@@ -110,18 +114,18 @@ Lorsque l'application s'exécute en local, elle peut utiliser des données d'ide
 
 Pour des raisons de sécurité, les fichiers de données d'identification ne doivent pas se trouver dans des référentiels. Dans l'exemple précédent, un dossier `localdev` est utilisé pour stocker les données d'identification locales, vous devez donc ajouter ce dossier dans le fichier `.gitignore` afin d'éviter toute validation accidentelle. Si vous utilisez une région propriétaire de fichier de kit de démarrage, ce dossier est créé pour vous, et il se trouve dans le fichier `.gitignore`.
 
-Pour plus d'informations sur le fichier `mappings.json`, consultez la section [Présentation des données d'identification de service](configuration.html#service_creds).
+Pour plus d'informations sur le fichier `mappings.json`, consultez la section [Présentation des données d'identification de service](#service_creds).
 
 ## Utilisation du gestionnaire de configuration Swift depuis les applications du kit de démarrage
 {: #configmanager-swift}
 
-Les applications Swift qui sont créées avec les [kits de démarrage](https://cloud.ibm.com/developer/appledevelopment/starter-kits/) sont fournies automatiquement avec les données d'identification et la configuration nécessaire à une exécution en local, ainsi que dans de nombreux environnements de déploiement en cloud (CF, K8s, VSI et Functions). La création de base du gestionnaire de configuration se trouve dans `Sources/Application/Application.swift`. Lorsque vous créez un application du kit de démarrage basée sur Swift avec des services, un dossier `config` et un fichier `mappings.json` sont créés pour vous. Si vous téléchargez l'application, le dossier `config` contient un fichier `localdev-config.json` qui comporte toutes les données d'identification de vos services, et est présent dans le fichier `.gitignore`.
+Les applications Swift qui sont créées avec les [kits de démarrage](https://cloud.ibm.com/developer/appledevelopment/starter-kits/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") sont fournies automatiquement avec les données d'identification et la configuration nécessaire à une exécution en local, ainsi que dans de nombreux environnements de déploiement cloud, tels que Cloud Foundry, Kubernetes, VSI et Functions. La création de base du gestionnaire de configuration se trouve dans `Sources/Application/Application.swift`. Lorsque vous créez un application du kit de démarrage basée sur Swift avec des services, un dossier `config` et un fichier `mappings.json` sont créés pour vous. Si vous téléchargez l'application, le dossier `config` contient un fichier `localdev-config.json` qui comporte toutes les données d'identification de vos services, et est présent dans le fichier `.gitignore`.
 
 ## Etapes suivantes
 {: #next-configß notoc}
 
 Consultez les trois bibliothèques pour permettre le masquage de vos applications dans leurs environnements :
 
-* [CloudEnvironment](https://github.com/ibm-developer/ibm-cloud-env)
-* [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv)
-* [Configuration](https://github.com/IBM-Swift/Configuration)
+* [CloudEnvironment](https://github.com/ibm-developer/ibm-cloud-env){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")
+* [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")
+* [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift, swift health check
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # Utilisation d'un diagnostic d'intégrité dans votre application Swift
 {: #healthcheck}
 
-Les diagnostics d'intégrité fournissent un mécanisme simple pour déterminer si une application côté serveur se comporte de manière appropriée. Les environnements cloud tels que [Kubernetes](https://www.ibm.com/cloud/container-service) et [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) peuvent être configurés pour sonder périodiquement les noeuds finaux d'intégrité afin de déterminer si une instance de votre service est prête à accepter du trafic.
+Les diagnostics d'intégrité fournissent un mécanisme simple pour déterminer si une application côté serveur se comporte de manière appropriée. Les environnements cloud tels que [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") et [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") peuvent être configurés pour sonder périodiquement les noeuds finaux d'intégrité afin de déterminer si une instance de votre service est prête à accepter du trafic.
 {: shortdesc}
 
 ## Présentation du diagnostic d'intégrité
@@ -50,7 +54,7 @@ Le tableau suivant donne des indications sur les réponses que les noeuds finaux
 ## Ajout d'un diagnostic d'intégrité à une application Swift existante
 {: #existing-app}
 
-La bibliothèque [Health](https://github.com/IBM-Swift/Health) simplifie l'ajout d'un diagnostic d'intégrité à votre application Swift. Les diagnostics d'intégrité sont extensibles. Pour plus d'informations sur la [mise en cache](https://github.com/IBM-Swift/Health#caching) pour prévenir les attaques par déni de service ou sur l'ajout de [vérifications personnalisées](https://github.com/IBM-Swift/Health#implementing-a-health-check), consultez la bibliothèque [Health](https://github.com/IBM-Swift/Health).
+La bibliothèque [Health](https://github.com/IBM-Swift/Health){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") simplifie l'ajout d'un diagnostic d'intégrité à votre application Swift. Les diagnostics d'intégrité sont extensibles. Pour plus d'informations sur la [mise en cache](https://github.com/IBM-Swift/Health#caching){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") afin d'éviter les attaques DoS ou l'ajout de [contrôles personnalisés](https://github.com/IBM-Swift/Health#implementing-a-health-check){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"), consultez la bibliothèque [Health](https://github.com/IBM-Swift/Health){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
 
 Pour ajouter la bibliothèque Health à une application Swift existante, procédez somme suit :
 
@@ -90,7 +94,7 @@ Pour ajouter la bibliothèque Health à une application Swift existante, procéd
 ## Vérification de l'intégrité d'une application Swift de kit de démarrage côté serveur
 {: #healthcheck-starterkit}
 
-Lorsque vous générez une application Swift basée sur Kitura à l'aide d'un kit de démarrage, un noeud final de diagnostic d'intégrité de base, `/health`, est inclus par défaut. Le noeud final utilise le protocole Codable disponible dans Swift 4, tel que pris en charge par la bibliothèque [Health](https://github.com/IBM-Swift/Health).
+Lorsque vous générez une application Swift basée sur Kitura à l'aide d'un kit de démarrage, un noeud final de diagnostic d'intégrité de base, `/health`, est inclus par défaut. Le noeud final utilise le protocole Codable disponible dans Swift 4, tel que pris en charge par la bibliothèque [Health](https://github.com/IBM-Swift/Health){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
 
 Le code d'initialisation de base, tel que pour l'initialisation de l'objet Health se trouve dans `Sources/Application.swift`. Le noeud final du diagnostic d'intégrité par lui-même est fourni par le fichier `/Sources/Application/Routes/HealthRoutes.swift` et utilise le code suivant :
 
@@ -113,7 +117,12 @@ func initializeHealthRoutes(app: App) {
 ```
 {: codeblock}
 
-L'exemple utilise le dictionnaire standard, qui génère un contenu tel que `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}` lorsque vous accédez au noeud final `/health`.
+L'exemple utilise le dictionnaire standard, qui génère un contenu tel que : 
+```
+{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}
+```
+
+lorsque vous accédez au noeud final `/health`.
 
 ## Recommandations pour les sondes de préparation et de vivacité
 {: #recommend-probes}
@@ -125,7 +134,7 @@ Une sonde de vivacité, en revanche, peut être utilisée délibérément sur ce
 ### Ajout de la prise en charge de la préparation et de la vivacité Kubernetes à une application Swift
 {: #kube-readiness-swift}
 
-Pour des implémentations alternatives, telles que l'utilisation de **Codable** ou du dictionnaire standard, consultez les [exemples de bibliothèques Health](https://github.com/IBM-Swift/Health#usage). Certaines de ces implémentations simplifient la création de contrôles de santé extensibles avec une prise en charge des contrôles de mise en cache qui sont effectués sur les services de sauvegarde. Dans ce scénario, vous devriez séparer le test de vivacité simple du test d'état de préparation plus robuste et plus détaillé.
+Pour des implémentations alternatives, telles que l'utilisation de **Codable** ou du dictionnaire standard, consultez les [exemples de bibliothèques Health](https://github.com/IBM-Swift/Health#usage){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"). Certaines de ces implémentations simplifient la création de contrôles de santé extensibles avec une prise en charge des contrôles de mise en cache qui sont effectués sur les services de sauvegarde. Dans ce scénario, vous devriez séparer le test de vivacité simple du test d'état de préparation plus robuste et plus détaillé.
 
 ## Configuration des sondes de préparation et de vivacité dans Kubernetes
 {: #config-kube-readiness}
@@ -167,4 +176,4 @@ spec:
       failureThreshold: 10
 ```
 
-Pour plus d'informations, consultez [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
+Pour plus d'informations, consultez [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").

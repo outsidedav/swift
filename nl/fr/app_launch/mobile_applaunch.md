@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # Gestion des versions des fonctions d'application
 {: #mobile_applaunch}
 
-{{site.data.keyword.engage_full}} permet aux développeurs de générer des applications conviviales en contrôlant les accès et en déployant des fonctions d'applications fournissant des métriques mesurables. Le service permet aux développeurs de retirer le couplage qui existe aujourd'hui entre le déploiement de fonctions d'application et les mises à jour d'applications en production. Vous pouvez désormais publier des fonctions sans les exposer en production afin de mettre graduellement en production de nouvelles versions d'une application de manière contrôlée. Avec le service {{site.data.keyword.engage_short}}, les propriétaires d'application ont le contrôle complet sur le déploiement de fonctions d'un segment ciblé.
+{{site.data.keyword.engage_full}} permet aux développeurs de concevoir des applications conviviales en contrôlant les accès et en déployant des fonctions d'applications fournissant des métriques mesurables. Le service permet aux développeurs de retirer le couplage qui existe aujourd'hui entre le déploiement de fonctions d'application et les mises à jour d'applications en production. Vous pouvez désormais publier des fonctions sans les exposer en production afin de mettre graduellement en production de nouvelles versions d'une application de manière contrôlée. Avec le service {{site.data.keyword.engage_short}}, les propriétaires d'application ont le contrôle complet sur le déploiement de fonctions d'un segment ciblé.
 
 Le service {{site.data.keyword.engage_short}} définit une fonction, crée un public sur la base de plateformes d'appareil (y compris les attributs de public personnalisés), et définit finalement une interaction qui orchestre l'heure et l'emplacement de la fonction. Une fois les logiciels SDK utilisés, ainsi que la fonction et les attributs de métrique qui sont incorporés dans l'application, le service commence à mesurer les expériences du public. Vous pouvez maintenant utiliser votre application en fonction de ces informations pour créer des engagements clients personnalisés à travers les différentes catégories d'utilisateurs de votre application.
 
@@ -155,9 +159,9 @@ Procédez comme suit pour créer un engagement à l'aide de la fonction Feature 
 
 5. Définissez un déclencheur en choisissant l'heure et la date ou l'heure de **début** ou l'heure et une date ou une heure de **fin**. Cliquez sur **Sauvegarder**.
 
-  La nouvel engagement apparaît maintenant dans la fenêtre des détails d'engagement.
+  Le nouvel engagement apparaît maintenant dans la fenêtre des détails d'engagement.
 
-Vous pouvez maintenant mesurer les [performances](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de votre engagement.
+Vous pouvez maintenant mesurer les [performances](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) de votre engagement.
 
 ### Activation de la fonction de messagerie dans les applications
 {: #app-message-applaunch}
@@ -202,15 +206,15 @@ Procédez comme suit pour créer un engagement qui utilise l'option de messageri
 
 7. Mappez les éléments aux métriques que vous voulez mesurer. Sélectionnez l'élément et entrez les détails des métriques. Cliquez sur **Sauvegarder**.
 
-  La nouvel engagement apparaît maintenant dans la fenêtre des détails d'engagement.
+  Le nouvel engagement apparaît maintenant dans la fenêtre des détails d'engagement.
 
-Vous pouvez maintenant mesurer les [performances](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de votre engagement.
+Vous pouvez maintenant mesurer les [performances](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) de votre engagement.
 
 ## Onglet Quick Links
 {: #links-applaunch notoc}
 
 Consultez les liens suivants pour évaluer et comprendre les fonctions de {{site.data.keyword.engage_short}} :
 
- - Essayez le [service App Launch](https://cloud.ibm.com/catalog/services/app-launch).
- - [Blogues et Vidéos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - Pour plus d'informations, voir le [tutoriel d'initiation à App Launch](/docs/services/app-launch/index.html).
+ - Essayez le [service App Launch](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
+ - [Blogues et Vidéos](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
+ - Pour plus d'informations, voir le [tutoriel d'initiation à App Launch](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate).

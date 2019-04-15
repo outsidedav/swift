@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-14"
+
+keywords: swift logging, ios logging, debug swift, add logging swift, heliumlogger swift, loggerapi swift, logger swift, starter kit swift logger
+
+subcollection: swift
 
 ---
 
@@ -16,16 +20,16 @@ lastupdated: "2019-02-04"
 # Journalisation dans Swift
 {: #logging_swift}
 
-Les messages de journal sont des chaînes avec des informations contextuelles sur l'état et l'activité du microservice au moment où l'entrée de journal est créée. Les journaux sont nécessaires pour diagnostiquer comment et pourquoi les services échouent, et jouent un rôle de support pour les [métriques d'application](/docs/swift/cloudnative/appmetrics.html) dans la surveillance de la santé des applications.
+Les messages de journal sont des chaînes avec des informations contextuelles sur l'état et l'activité du microservice au moment où l'entrée de journal est créée. Les journaux sont nécessaires pour diagnostiquer comment et pourquoi les services échouent, et jouent un rôle de support pour les [métriques d'application](/docs/swift/cloudnative?topic=swift-metrics#metrics) dans la surveillance de la santé des applications.
 
-Etant donné la nature transitoire des processus dans les environnements de cloud, les journaux peuvent être collectés et envoyés ailleurs, généralement dans un emplacement centralisé à des fins d'analyse. Le moyen le plus cohérent de consigner dans les environnements de cloud est d'envoyer les entrées de journal dans une sortie standard et des flux d'erreurs, ce qui permet à l'infrastructure de traiter le reste.
+Compte tenu de la nature transitoire des processus dans les environnements de cloud, les journaux doivent être collectés et envoyés ailleurs, généralement dans un emplacement centralisé pour analyse. Le moyen le plus cohérent de consigner dans les environnements de cloud est d'envoyer les entrées de journal dans une sortie standard et des flux d'erreurs, ce qui permet à l'infrastructure de traiter le reste.
 
 ## Ajout de la journalisation à votre application Swift
 {: #logging-add}
 
-[HeliumLogger](https://github.com/IBM-Swift/HeliumLogger) est une infrastructure de journalisation légère connue pour Swift ; elle présente de nombreux avantages natifs comme la journalisation dans une sortie standard et différents niveaux de journalisation.
+[HeliumLogger](https://github.com/IBM-Swift/HeliumLogger){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") est une infrastructure de journalisation légère connue pour Swift, qui présente de nombreux avantages natifs comme la journalisation dans une sortie standard et différents niveaux de journalisation.
 
-[LoggerAPI](https://github.com/IBM-Swift/LoggerAPI) est le protocole de journal d'événements qui fournit une interface de journalisation commune pour différents types de journaux d'événements dans Swift. Kitura utilise the `LoggerAPI` dans ses mises en oeuvre.
+[LoggerAPI](https://github.com/IBM-Swift/LoggerAPI){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") est le protocole de journal d'événements qui fournit une interface de journalisation commune pour différents types de journaux d'événements dans Swift. Kitura utilise `LoggerAPI` dans ses mises en oeuvre.
 
 Pour utiliser `HeliumLogger`, ajoutez le code suivant à la section **dependencies:** de `Package.swift` pour toutes les cibles appropriées :
 ```swift
@@ -45,9 +49,9 @@ Log.info("This is an informational log message.")
 ```
 {: codeblock}
 
-Dans l'exemple fourni, le [niveau de journalisation](http://ibm-swift.github.io/HeliumLogger/) a été explicitement défini sur `.verbose`, qui est la valeur par défaut.
+Dans l'exemple fourni, le [niveau de journalisation](http://ibm-swift.github.io/HeliumLogger/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") a été explicitement défini sur `.verbose`, qui est la valeur par défaut.
 
-Pour plus d'informations sur la personnalisation des messages de journal, consultez la [documentation officielle de la référence d'API HeliumLogger](http://ibm-swift.github.io/HeliumLogger/).
+Pour plus d'informations sur la personnalisation des messages de journal, consultez la [documentation de la référence d'API HeliumLogger](http://ibm-swift.github.io/HeliumLogger/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") officielle.
 
 ## Journalisation avec les kits de démarrage
 {: #logging-starterkits}
@@ -58,7 +62,7 @@ Les applications Swift qui sont créées à l'aide du service d'application {{si
 ```
 {: screen}
 
-Ces messages se trouvent localement dans `stdout` ou dans les journaux des déploiements [CloudFoundry](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs) et [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/) qui sont accessibles par `ibmcloud app logs --recent <APP_NAME>` et `kubectl logs <deployment name>`.
+Ces messages sont situés localement dans `stdout`, ou dans les journaux de déploiement [CloudFoundry](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs) et [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"), qui sont accessibles par `ibmcloud app logs --recent <APP_NAME>` et `kubectl logs <deployment name>`.
 
 Dans le fichier `/Sources/AppName/main.swift`, vous pouvez voir le code suivant :
 ```swift
@@ -70,14 +74,14 @@ Le niveau de journalisation est défini de manière explicite sur `.info` afin d
 {: tip}
 
 ## Etapes suivantes
-{: #next-logging}
+{: #next-logging notoc}
 
-En savoir plus sur l'affichage des journaux dans chacun des environnements de déploiement :
-* [Journaux Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/)
-* [Journaux de Cloud Foundry](/docs/cli/reference/ibmcloud/bx_cli.html)
-* [Cloud Foundry Enterprise Environment - Contrôle et journalisation](docs/cloud-foundry/auditing-logging.html)
-* [{{site.data.keyword.openwhisk}} - Journaux & surveillance](/docs/openwhisk/openwhisk_logs.html)
+En savoir plus sur l'affichage des journaux dans chacune de vos cibles de déploiement : 
+* [Journaux de Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")
+* [Journaux de Cloud Foundry](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_cli)
+* [Cloud Foundry Enterprise Environment - Contrôle et journalisation](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
+* [{{site.data.keyword.openwhisk}} - Journaux & surveillance](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
 
 Découvrez comment implémenter et utiliser un regroupeur de journaux :
-* [Analyse des journaux {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis/log_analysis_ov.html)
-* [Pile ELK privée {{site.data.keyword.cloud_notm}} ](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)
+* [Analyse de journal {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)
+* [Pile ELK privée {{site.data.keyword.cloud_notm}}](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")

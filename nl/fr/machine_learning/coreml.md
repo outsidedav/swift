@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-03-28"
+
+keywords: coreml swift, core ml swift, watson swift core, create model swift, image classification swift, version parameter swift, swift coreml watson
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-31"
 # Utilisation de Core ML avec Watson
 {: #swift-coreml}
 
-Avec [Core ML](https://developer.apple.com/documentation/coreml){:new_window}, vous pouvez intégrer de nombreux types de modèle d'apprentissage automatique à votre application. Outre la prise en charge de l'apprentissage en profondeur étendu avec plus de 30 types de couches, cette fonction prend également en charge des modèles standard comme les ensembles d'arborescence, les SVM et les modèles linéaires généralisés. Au lieu d'envoyer les données à distance pour les analyser, Core ML utilise des technologies de bas niveau, telles que Metal et Accelerate, pour tirer parti de l'unité centrale et du GPU de manière transparente et fournir des performances et une efficacité maximales.
+Avec [Core ML](https://developer.apple.com/documentation/coreml){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"), vous pouvez intégrer de nombreux types de modèle d'apprentissage automatique à votre application. Outre la prise en charge de l'apprentissage en profondeur étendu avec plus de 30 types de couches, cette fonction prend également en charge des modèles standard comme les ensembles d'arborescence, les SVM et les modèles linéaires généralisés. Au lieu d'envoyer les données à distance pour les analyser, Core ML utilise des technologies de bas niveau, telles que Metal et Accelerate, pour tirer parti de l'unité centrale et du GPU de manière transparente et fournir des performances et une efficacité maximales.
 
 Les étapes décrites ci-dessous vous indiquent comment ajouter Core ML et Watson Visual Recognition à une application Swift pour entraîner et créer un modèle, télécharger et créer des dépendances, et ajouter une classification d'image.
 {: shortdesc}
@@ -31,7 +35,7 @@ Pour utiliser Core ML et Watson Visual Recognition avec Swift, vous avez besoin 
 * Swift 4.1+
 * CocoaPods, Carthage ou Swift Package Manager
 
-Vous pouvez installer le [SDK Watson Swift](https://github.com/watson-developer-cloud/swift-sdk) à l'aide de [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods), [Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage) ou [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager). Si vous utilisez CocoaPods (https://cocoapods.org/) pour gérer les dépendances, vous obtenez uniquement les infrastructures dont vous avez besoin, par opposition au SDK Watson Swift complet. Si vous ne connaissez pas encore CocoaPods, vous pouvez l'installer facilement :
+Vous pouvez installer le [logiciel SDK Watson Swift](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") avec [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"), [Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"), ou [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"). Si vous utilisez CocoaPods pour gérer les dépendances, vous obtenez uniquement les infrastructures dont vous avez besoin, par opposition au SDK Watson Swift complet. Si vous ne connaissez pas encore CocoaPods, vous pouvez l'installer facilement :
 
 ```console
 sudo gem install cocoapods
@@ -76,7 +80,7 @@ S'il n'existe aucun modèle en cours, le premier modèle détecté à distance o
 
 3. Sélectionnez **Train Model**, puis patientez jusqu'à ce que le modèle soit entièrement entraîné.
 
-Tout est prêt. Vous pouvez maintenant télécharger votre modèle Core ML et l'intégrer dans votre application à l'aide du [logiciel SDK Swift pour Watson Developer Cloud](https://github.com/watson-developer-cloud/swift-sdk){:new_window}.
+Tout est prêt. Vous pouvez maintenant télécharger votre modèle Core ML et l'intégrer dans votre application à l'aide du [logiciel SDK Watson Developer Cloud Swift](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
 
 ## Etape 2. Téléchargement et génération des dépendances
 {: #install-depend-coreml}
@@ -91,7 +95,7 @@ target 'MyApp' do
 ```
 {: codeblock}
 
-Pour une application de production, vous pouvez aussi indiquer qu'une [version particulière est requise](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions) pour éviter les modifications inattendues des nouvelles versions du logiciel SDK Watson Swift.
+Pour une application de production, vous pouvez aussi indiquer qu'une [version particulière est requise](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") pour éviter les modifications inattendues des nouvelles versions du logiciel SDK Watson Swift.
 
 Maintenant que votre fichier `Podfile` est en place, téléchargez les dépendances. Utilisez un terminal pour accéder au répertoire racine de votre projet, puis lancez CocoaPods :
 
@@ -122,7 +126,7 @@ Les exemples suivants vous aident à ajouter les fonctions Core ML de {{site.dat
   ```
   {: codeblock}
 
-  Consultez la [documentation sur les paramètres de version](https://cloud.ibm.com/apidocs/visual-recognition#versioning) ou utilisez la date à laquelle le service {{site.data.keyword.visualrecognitionshort}} a été créé.
+  Consultez la [documentation sur les paramètres de version](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") ou utilisez la date à laquelle le service {site.data.keyword.visualrecognitionshort}} a été créé.
   {: tip}
 
 3. Ajoutez le code suivant pour télécharger et mettre à jour le modèle Core ML local avec votre classifieur Watson :
@@ -164,7 +168,7 @@ Les exemples suivants vous aident à ajouter les fonctions Core ML de {{site.dat
   ```
   {: codeblock}
 
-5. Explorez les autres [fonctionnalités de classification de Core ML](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html) prises en charge par le logiciel SDK Watson.
+5. Explorez les autres [fonctionnalités de classification de Core ML](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") prises en charge par le logiciel SDK Watson.
 
 ## Etape 4. Utilisation des kits de démarrage
 {: #coreml_starterkits}
@@ -173,9 +177,9 @@ Les kits de démarrage constituent un moyen facile et rapide d'utiliser les fonc
 
 Pour ajouter {{site.data.keyword.visualrecognitionshort}} à un kit de démarrage, procédez comme suit :
 
-1. Sélectionnez le [kit de démarrage](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} avec lequel vous souhaitez travailler.
-2. Créez le projet avec les services par défaut.
-3. Cliquez sur **Ajouter des ressources > Watson > {{site.data.keyword.visualrecognitionshort}}**.
+1. Sélectionnez le [kit de démarrage](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") avec lequel vous voulez démarrer.
+2. Créez l'application avec les services par défaut.
+3. Cliquez sur **Ajout d'un service > Watson > {{site.data.keyword.visualrecognitionshort}}**.
 4. Téléchargez le projet en cliquant sur **Télécharger le code**. Pour les projets iOS, les données d'identification sont insérées dans le fichier `BMSCredentials.plist` des zones clés correspondantes. Pour les projets Swift côté serveur, vous trouverez ces données d'identification dans le fichier `config/local-dev.json`.
 
 ## Etapes suivantes
@@ -183,6 +187,6 @@ Pour ajouter {{site.data.keyword.visualrecognitionshort}} à un kit de démarrag
 
 Vous pouvez maintenant analyser des images avec vos propres modèles Core ML personnalisés. Continuez sur votre lancée en essayant l'une des options suivantes :
 
-* Consultez le [logiciel SDK Swift {{site.data.keyword.watson}}](https://github.com/watson-developer-cloud/swift-sdk){:new_window} et explorez les autres services Watson pris en charge.
-* Ajoutez un logique de cloud. Commencez par le [développement d'applications sans serveur](/docs/swift/backend/functions.html).
-* Tirez parti de toutes les fonctions offertes par {{site.data.keyword.visualrecognitionshort}}. Consultez la [documentation](/docs/services/visual-recognition/index.html) pour plus de détails.
+* Consultez le [logiciel SDK {{site.data.keyword.watson}} Swift](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") et explorez les autres services Watson pris en charge.
+* Ajoutez un logique de cloud. Commencez par le [développement d'applications sans serveur](/docs/swift/backend?topic=swift-serverless-dev-swift#serverless-dev-swift).
+* Tirez parti de toutes les fonctions offertes par {{site.data.keyword.visualrecognitionshort}}. Consultez la [documentation](/docs/services/visual-recognition?topic=visual-recognition-index#index) pour plus de détails.

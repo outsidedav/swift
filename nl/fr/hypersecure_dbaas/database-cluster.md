@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-03-15"
+
+keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
+
+subcollection: swift
 
 ---
 
@@ -24,8 +28,7 @@ est Swift 4.0 avec MongoKitten SDK 4.0.0.
 ## Etape 1. Création d'un cluster de base de données
 {: #create_dbcluster}
 
-1. Accédez à l'écran de configuration de service {{site.data.keyword.ihsdbaas_full}} à l'adresse
-https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
+1. Accédez à l'écran de [configuration du service {{site.data.keyword.ihsdbaas_full}}](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
 
 2. Fournissez les informations suivantes :
 
@@ -82,7 +85,7 @@ Vous avez besoin d'un kit qui repose sur l'infrastructure Web Swift côté serve
 
 Utilisez un projet existant qui a été créé à partir de ce kit de démarrage, ou créez-en un nouveau.
 
-1. Ouvrez le tableau de bord App Service d'{{site.data.keyword.cloud_notm}} à l'adresse https://cloud.ibm.com/developer/appservice/dashboard.
+1. Ouvrez le [tableau de bord App Service d'{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
 
 2. Sélectionnez l'onglet **Kits de démarrage**.
 
@@ -210,7 +213,7 @@ du MongoKitten.
 ## Etape 4. Vérification de la connexion de base de données
 {: #verify_database}
 
-1. Vérifiez votre connexion de base de données en éditant le fichier `Sources/Application/Application.swift` afin d'ajouter une commande pour tester ka connexion de base de données, connexion à la base de données.
+1. Vérifiez votre connexion de base de données en éditant le fichier `Sources/Application/Application.swift` afin d'ajouter une commande pour tester la connexion à la base de données.
 Par exemple, ajoutez la commande suivante dans `class ApplicationServices` :
 
 	```swift
@@ -242,14 +245,14 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ## Etape 5. Imbrication de votre code d'application
 {: #embed_appcode}
 
-Vous pouvez maintenant ajouter votre propre code d'application au projet. Pour plus d'informations sur l'utilisation de l'API MongoKitten, consultez l'adresse http://beta.openkitten.org/tutorials/.
+Vous pouvez maintenant ajouter votre propre code d'application au projet. Pour plus d'informations, voir la documentation sur l'[API MongoKitten](http://beta.openkitten.org/tutorials/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
 
 ## Etape 6. Déploiement de votre application
 {: #deploy-dbcluster}
 
-Vous pouvez exécuter l'application [localement](/docs/swift/create_app_cli.html#swift-install-tools) avec les outils de génération requis ou déployer sur {{site.data.keyword.cloud_notm}}.
+Vous pouvez exécuter l'application [localement](/docs/swift?topic=swift-swift_cli#swift-install-tools) avec les outils de génération requis ou déployer sur {{site.data.keyword.cloud_notm}}.
 
-Pour créer une chaîne d'outils de déploiement dans le tableau de bord, cliquez sur **Déployer dans le cloud**. Configurez votre méthode de déploiement en fonction des instructions s'appliquant à la méthode choisie.
-  * **Déployer dans [Kubernetes](/docs/apps/deploying/containers.html#containers)**. Cette option crée un cluster d'hôtes, appelé noeuds worker, afin de déployer et de gérer des conteneurs d'application à haute disponibilité. Vous pouvez créer un cluster ou déployer vers un cluster existant.
-  * **Déployer dans Cloud Foundry**. Cette option déploie votre application cloud native sans qu'il soit nécessaire de gérer l'infrastructure sous-jacente. Si votre compte a accès à {{site.data.keyword.cfee_full_notm}}, vous pouvez sélectionner le type de déployeur **[Public Cloud](/docs/cloud-foundry-public/about-cf.html#about-cf)** ou **[Enterprise Environment](/docs/cloud-foundry-public/cfee.html#cfee)**, que vous pouvez utiliser pour créer et gérer des environnements isolés pour l'hébergement de vos applications Cloud Foundry exclusivement pour votre entreprise.
-  * **Déployer sur un [serveur virtuel](/docs/apps/vsi-deploy.html#vsi-deploy)**. Cette option met à disposition une instance de serveur virtuel, charge une image qui inclut votre application, crée une chaîne d'outils DevOps et initie pour vous le premier cycle de déploiement.
+Pour créer une chaîne d'outils de déploiement dans le tableau de bord, cliquez sur **Déployer**. Configurez votre cible de déploiement en fonction des instructions s'appliquant à la méthode choisie :
+  * **Déployer dans [{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**. Cette option crée un cluster d'hôtes, appelé noeuds worker, afin de déployer et de gérer des conteneurs d'application à haute disponibilité. Vous pouvez créer un cluster ou déployer vers un cluster existant.
+  * **Déployer dans Cloud Foundry**. Cette option déploie votre application cloud native sans qu'il soit nécessaire de gérer l'infrastructure sous-jacente. Si votre compte a accès à {{site.data.keyword.cfee_full_notm}}, vous pouvez sélectionner le type de déployeur **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** ou **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**, que vous pouvez utiliser pour créer et gérer des environnements isolés pour l'hébergement de vos applications Cloud Foundry exclusivement pour votre entreprise.
+  * **Déployer sur un [serveur virtuel](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**. Cette option met à disposition une instance de serveur virtuel, charge une image qui inclut votre application, crée une chaîne d'outils DevOps et initie pour vous le premier cycle de déploiement.
