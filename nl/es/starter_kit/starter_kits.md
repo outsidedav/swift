@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
+
+subcollection: swift
 
 ---
 
@@ -16,9 +20,9 @@ lastupdated: "2019-01-15"
 # Creación de apps de Swift con kits de inicio
 {: #starterkits-intro}
 
-{{site.data.keyword.cloud_notm}} Developer Console for Apple permite a los desarrolladores crear apps a partir de varios kits de inicio, a suministrar y conectar servicios clave optimizados para {{site.data.keyword.cloud_notm}} y a descargar rápidamente código de trabajo o a realizar la configuración para un suministro continuo. Los usuarios pueden crear, ver, configurar y gestionar la app, así como descargar el código de la misma. El uso de kits de inicio le ayuda a evaluar y probar con rapidez los servicios de {{site.data.keyword.cloud_notm}} con una app completamente nueva.
+{{site.data.keyword.cloud_notm}} Developer Console for Apple permite a los desarrolladores crear apps a partir de varios kits de inicio, a suministrar y conectar servicios clave optimizados para {{site.data.keyword.cloud_notm}} y a descargar rápidamente código funcional o a realizar la configuración para un suministro continuo. Los usuarios pueden crear, ver, configurar y gestionar la app, así como descargar el código de la misma. El uso de kits de inicio le ayuda a evaluar y probar con rapidez los servicios de {{site.data.keyword.cloud_notm}} con una app completamente nueva.
 
-¿Listo para lanzarse? Visite la [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) ahora para empezar.
+¿Listo para lanzarse? Visite la [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") ahora para empezar.
 {: tip}
 
 ## ¿Qué es un kit de inicio?
@@ -28,7 +32,7 @@ Con la {{site.data.keyword.cloud_notm}} Developer Experience, puede elegir entre
 
 Los kits de inicio están listos para ser utilizados en producción y se centran en demostrar una implementación de un patrón clave utilizando un tiempo de ejecución (por ejemplo, Swift). En algunos casos, los kits de inicio ofrecen una experiencia de usuario simple para resaltar la integración del servicio. En otros casos, los kits de inicio representan una implementación personalizable de un caso de uso sofisticado.
 
-Los kits de inicio contienen instrucciones que permiten a {{site.data.keyword.cloud_notm}} generar automáticamente apps estructurales con código portátil, y especificar recursos para que se suministren automáticamente al crear una app desde el kit de inicio.
+Los kits de inicio contienen instrucciones que permiten a {{site.data.keyword.cloud_notm}} generar automáticamente apps estructurales con código portátil, y especificar servicios para que se suministren automáticamente al crear una app desde el kit de inicio.
 
 ## Utilización de la {{site.data.keyword.cloud_notm}} Developer Console for Apple
 {: #starterkits-journey}
@@ -38,14 +42,14 @@ Los kits de inicio contienen instrucciones que permiten a {{site.data.keyword.cl
 ### Pantalla de visión general
 {: #overview_screen}
 
-La pantalla Visión general le proporciona contenido que se adapta a un conjunto de casos de uso como Watson, Weather, etc. Desde la pantalla de visión general, puede ver documentación, acceder a los recursos educativos, examinar los servicios, ver kits de inicio destacados o enlazar a una colección más grande de kits de inicio. Pulse `Kits de inicio` en el área de navegación de la izquierda para entrar en la vista Kits de inicio.
+La pantalla Visión general le proporciona contenido que se adapta a un conjunto de casos de uso como Watson, Weather, etc. Desde la pantalla de visión general, puede ver documentación, acceder a los recursos educativos, examinar los servicios, ver kits de inicio destacados o enlazar a una recopilación más grande de kits de inicio. Pulse `Kits de inicio` en el área de navegación de la izquierda para entrar en la vista Kits de inicio.
 
 ![Pantalla Visión general de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/overview_screen.png "Pantalla Visión general") <br> *Pantalla Visión general de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
-### Vista de kits de inicio
+### Vista Kits de inicio
 {: #starter_kits_view}
 
-La vista Kits de inicio muestra la colección de kits de inicio específicos de un área de caso de uso. Puede pulsar varios enlaces en una tarjeta del kit de inicio para ver las demostraciones y más información. Seleccione un kit de inicio para ir a la vista Crear app.
+La vista Kits de inicio muestra la colección de kits de inicio específicos de un área de casos de uso. Puede pulsar varios enlaces en una tarjeta del kit de inicio para ver las demostraciones y más información. Seleccione un kit de inicio para ir a la vista Crear app.
 
 ![Vista Kits de inicio de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/starter_kits_screen.png "Vista Kits de inicio") <br> *Vista Kits de inicio de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
@@ -63,20 +67,20 @@ La vista Detalles de la app muestra una lista de servicios que están configurad
 
 ![Vista Detalles de app de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/project_details_screen.png "Vista Detalles de app") <br> *Vista Detalles de app de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
-Al utilizar la vista Detalles de app, puede añadir servicios nuevos o existentes a la app que no formaban parte del Kit de inicio original. Pulse el enlace **Añadir recurso** en el recuadro de lista de servicios para añadir servicios. Los servicios disponibles dependen del tipo de app y de los servicios que están disponibles en una región, por lo que no todos los servicios están disponibles para asociarse con todas las apps.
+Al utilizar la vista **Detalles de la app**, puede añadir servicios nuevos o existentes a la app que no formaban parte del Kit de inicio original. Pulse **Añadir servicio** para añadir servicios. Los servicios disponibles dependen del tipo de app y de los servicios que están disponibles en una región, por lo que no todos los servicios están disponibles para asociarse con todas las apps.
 
 ![ Diálogo Añadir recurso de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/add_resource_screen.png "Diálogo Añadir recurso") <br> *Diálogo Añadir recurso de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
 ### Descarga del código
 
-* En la vista Detalles de la app, puede acceder a su código seleccionando **Descargar código** para generar y descargar el código de la app.
+* En la página _Detalles de la app_, puede acceder a su código seleccionando **Descargar código** para generar y descargar el código de la app.
 
 ### Vista Lista de apps
 {: #app_list_view}
 
-Puede obtener una lista de todas las apps creadas desde la vista Lista de apps. Puede cambiar el nombre o suprimir las apps desde aquí. Pulse en una fila de nombre de app para volver a la vista Detalles de la app.
+Puede obtener una lista de todas las apps creadas desde la vista _Lista de apps_. Puede cambiar el nombre o suprimir las apps desde aquí. Pulse en una fila de nombre de app para volver a la vista Detalles de la app.
 
 ![Vista Lista de apps de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/project_list_screen.png "Vista Lista de apps") <br> *Vista Lista de apps de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
 
-Para obtener más información, visite [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://cloud.ibm.com/developer/appledevelopment/learning-resources).
+Para obtener más información, visite [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 {: tip}

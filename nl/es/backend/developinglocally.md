@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: develop swift, swift local, service credentials swift, developer tools swift, swift cli, ibmcloud build swift, ibmcloud swift
+
+subcollection: swift
 
 ---
 
@@ -17,7 +21,7 @@ lastupdated: "2019-01-15"
 
 Al desarrollar localmente, puede crear, ejecutar y probar fácilmente las apps de Swift. Utilice el {{site.data.keyword.dev_cli_short}} para realizar estas acciones mediante los mandatos estándares. 
 
-Puede utilizar el {{site.data.keyword.dev_cli_short}} para gestionar las aplicaciones del lado del servidor con más de doce mandatos. Obtenga más información sobre los distintos mandatos en los [mandatos de IBM Cloud Developer Tools CLI `ibmcloud dev`](/docs/cli/idt/commands.html).
+Puede utilizar el {{site.data.keyword.dev_cli_short}} para gestionar las aplicaciones del lado del servidor con más de doce mandatos. Obtenga más información sobre los diversos mandatos en [Mandatos `ibmcloud dev` de la CLI de {{site.data.keyword.dev_cli_notm}}](/docs/cli/idt?topic=cloud-cli-idt-cli#idt-cli).
 
 ## Antes de empezar
 {: #prereqs-local}
@@ -28,7 +32,8 @@ curl -sL https://ibm.biz/idt-installer | bash
 ```
 {: codeblock}
 
-Consulte [Configuración de la CLI de IBM Cloud Developer Tools](/docs/cli/idt/setting_up_idt.html) para obtener más información sobre la configuración y el uso de la {{site.data.keyword.dev_cli_notm}}.
+Consulte [Configuración de la CLI de {{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) para obtener más información sobre la configuración y el uso de
+{{site.data.keyword.dev_cli_notm}}.
 
 ## Recuperación de las credenciales de servicio
 {: #credentials-local}
@@ -57,7 +62,7 @@ ibmcloud dev get-credentials
 
   Se visualiza un host y un puerto locales para ver la página de destino de la aplicación si el mandato se ejecuta correctamente.
 
-3. **Desplegar**: Despliegue la aplicación en el {{site.data.keyword.Bluemix_notm}} con el mandato `deploy`:
+3. **Desplegar**: Despliegue la aplicación en el {{site.data.keyword.cloud_notm}} con el mandato `deploy`:
   ```
   ibmcloud dev deploy
   ```

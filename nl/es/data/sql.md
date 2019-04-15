@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: sql swift, database swift, persistence swift, data swift, orm swift, kuery swift, kitura swift
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,8 @@ lastupdated: "2019-01-15"
 # Utilización de una base de datos SQL para la persistencia de datos
 {: #sql_data}
 
-SQL (Structured Query Language) es un lenguaje específico del dominio que se utiliza para gestionar datos en bases de datos relacionales. Se recomienda utilizar persistencia de datos para cuando el servidor se apague mientras lo esté utilizando. Para añadir persistencia de datos, puede utilizar una base de datos SQL directamente desde Swift.
+SQL (Structured Query Language) es un lenguaje específico del dominio que se utiliza para gestionar datos en bases de datos relacionales. Se recomienda utilizar persistencia de datos para cuando el servidor se apague mientras lo esté utilizando. Para añadir persistencia de datos, puede utilizar una base de datos SQL directamente desde Swift. 
+
 Una de las características más importantes de Swift es su seguridad de tipo. La utilización de una base de datos SQL con Swift es una opción lógica, ya que la seguridad de tipo está soportada por ambos.
 
 ## Utilización de ORM con una base de datos SQL
@@ -27,9 +32,12 @@ Con ORM (Object-Relational Mapping), puede correlacionar objetos con bases de da
 ## Paso 1. Iniciación a ORM
 {: #start-orm}
 
-Utilice el [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM) con un plug-in de SQL como, por ejemplo, [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) o [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL).
+Utilice [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") con un plugin SQL como
+[PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") o
+[MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
-Para este ejemplo, se utiliza el plug-in de [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL). Siga las instrucciones para instalar el plug-in [aquí](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation).
+Para este ejemplo, se utiliza el plugin de [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"). Siga las instrucciones para
+[instalar el plugin](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
 ## Paso 2. Importación de ORM en la aplicación
 {: #import-orm}
@@ -159,9 +167,9 @@ Todas estas llamadas toman un manejador que se llama una vez y que lo ejecuta cu
 ## Utilización de ORM con Kitura
 {: #kitura-orm}
 
-Para facilitar la prueba de ORM, la [guía de aprendizaje de FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend) puede guardar y captar objetos Meal de la app de iOS directamente en una base de datos PostgreSQL. Aunque complete la guía de aprendizaje, vale la pena repasarla de nuevo para ver la potencia de Swift-Kuery-ORM y cómo puede simplificar su código Kitura.
+Para facilitar la prueba de ORM, la [guía de aprendizaje de FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") puede guardar y captar objetos Meal de la app de iOS directamente en una base de datos PostgreSQL. Aunque complete la guía de aprendizaje, vale la pena repasarla de nuevo para ver la potencia de Swift-Kuery-ORM y cómo puede simplificar su código Kitura.
 
 ## Utilización de Swift-Kuery directamente
 {: #swift-kuery}
 
-Si ORM le limita porque necesita un mayor control sobre la base de datos, puede utilizar la capa de abstracción de SQL, [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery), donde puede realizar una consulta SQL.
+Si ORM le limita porque necesita un mayor control sobre la base de datos, puede utilizar la capa de abstracción de SQL, [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"), donde puede realizar una consulta SQL.

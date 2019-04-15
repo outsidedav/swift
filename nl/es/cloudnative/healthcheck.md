@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift, swift health check
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,8 @@ lastupdated: "2019-01-15"
 # Utilización de una comprobación de estado en la app Swift
 {: #healthcheck}
 
-Las comprobaciones de estado proporcionan un mecanismo simple para determinar si una aplicación del lado del servidor se está comportando correctamente. Los entornos de nube, como [Kubernetes](https://www.ibm.com/cloud/container-service) y [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry), se pueden configurar para sondear los puntos finales de estado de forma periódica para determinar si una instancia del servicio está lista para aceptar tráfico.
+Las comprobaciones de estado proporcionan un mecanismo simple para determinar si una aplicación del lado del servidor se está comportando correctamente. Los entornos de nube como [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") y
+[Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") se pueden configurar para que sondeen puntos finales de estado de manera periódica para determinar si una instancia del servicio está preparada para aceptar tráfico.
 {: shortdesc}
 
 ## Visión general de la comprobación de estado
@@ -40,7 +45,7 @@ La tabla siguiente proporciona una orientación sobre las respuestas que los pun
 
 | Estado    | Preparación                   | Actividad                   | Estado                    |
 |----------|-----------------------------|----------------------------|---------------------------|
-|          | No es correcta y no se carga       | No es correcta y provoca un reinicio      | No es correcto y provoca un reinicio     |
+|          | No es correcta y no se carga       | No es correcto y provoca un reinicio      | No es correcto y provoca un reinicio     |
 | Iniciando | 503 - No disponible           | 200 - Bien                   | Utilizar retraso para evitar la prueba   |
 | Activo       | 200 - Bien                    | 200 - Bien                   | 200 - Bien                  |
 | Deteniendo | 503 - No disponible           | 200 - Bien                   | 503 - No disponible         |
@@ -50,7 +55,7 @@ La tabla siguiente proporciona una orientación sobre las respuestas que los pun
 ## Adición de una comprobación de estado a una app de Swift existente
 {: #existing-app}
 
-La biblioteca [Health](https://github.com/IBM-Swift/Health) facilita la adición de una comprobación de estado a la aplicación Swift. Las comprobaciones de estado son ampliables. Para obtener más información sobre el [almacenamiento en memoria caché](https://github.com/IBM-Swift/Health#caching) para evitar ataques de DoS o añadir [comprobaciones personalizadas](https://github.com/IBM-Swift/Health#implementing-a-health-check), consulte la biblioteca [Health](https://github.com/IBM-Swift/Health).
+La biblioteca [Health](https://github.com/IBM-Swift/Health){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") facilita la adición de una comprobación de estado a la aplicación Swift. Las comprobaciones de estado son ampliables. Para obtener más información sobre el [almacenamiento en memoria caché](https://github.com/IBM-Swift/Health#caching){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") para evitar ataques de denegación de servicio (DoS) o añadir [comprobaciones personalizadas](https://github.com/IBM-Swift/Health#implementing-a-health-check){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"), consulte la biblioteca [Health](https://github.com/IBM-Swift/Health){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
 Para añadir la biblioteca de estado a una app Swift existente, consulte los pasos siguientes:
 
@@ -87,10 +92,10 @@ Para añadir la biblioteca de estado a una app Swift existente, consulte los pas
 
 4. Compruebe el estado de la app con un navegador accediendo al punto final `/health`. El código devuelve una carga útil `{"status": "UP"}`, tal como define el diccionario simple.
 
-## Comprobación del estado de una app de Swift Starter Kit del lado del servidor
+## Comprobación del estado de una app Swift de kit de inicio del lado del servidor
 {: #healthcheck-starterkit}
 
-Al generar una app Swift basada en Kitura utilizando un kit de inicio, se incluirá de forma predeterminada un punto final de comprobación de estado básico, `/health`. El punto final utiliza el protocolo Codable disponible en Swift 4, tal como se admite en la biblioteca [Health](https://github.com/IBM-Swift/Health).
+Al generar una app Swift basada en Kitura utilizando un kit de inicio, se incluirá de forma predeterminada un punto final de comprobación de estado básico, `/health`. El punto final utiliza el protocolo Codable disponible en Swift 4, tal como se admite en la biblioteca [Health](https://github.com/IBM-Swift/Health){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
 El código de inicialización básico, como la inicialización del objeto Health, se produce en `Sources/Application.swift`. El propio punto final de comprobación de estado se proporciona mediante el archivo `/Sources/Application/Routes/HealthRoutes.swift`, que utiliza el código siguiente:
 
@@ -113,7 +118,12 @@ func initializeHealthRoutes(app: App) {
 ```
 {: codeblock}
 
-El ejemplo utiliza el diccionario estándar, que genera una carga útil como por ejemplo `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}` al acceder al punto final `/health`.
+El ejemplo utiliza el diccionario estándar, que produce una carga útil como:
+```
+{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}
+```
+
+al acceder al punto final `/health`.
 
 ## Recomendaciones para pruebas de actividad y preparación
 {: #recommend-probes}
@@ -125,7 +135,7 @@ Una prueba de actividad, por el contrario, puede tener en cuenta lo que se compr
 ### Adición de soporte de preparación y actividad de Kubernetes a una app Swift
 {: #kube-readiness-swift}
 
-Para implementaciones alternativas, como por ejemplo utilizar **Codable** o el diccionario estándar, consulte los [ejemplos de la biblioteca Health](https://github.com/IBM-Swift/Health#usage). Algunas de estas implementaciones simplifican la creación de comprobaciones de estado ampliables con soporte para la colocación en memoria caché de comprobaciones que se realizan en los servicios de reserva. En este caso, probablemente desee separar la prueba de actividad simple en el ejemplo de la comprobación de preparación, que es más detallada y potente.
+Para implementaciones alternativas, como por ejemplo utilizar **Codable** o el diccionario estándar, consulte los [ejemplos de la biblioteca Health](https://github.com/IBM-Swift/Health#usage){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"). Algunas de estas implementaciones simplifican la creación de comprobaciones de estado ampliables con soporte para la colocación en memoria caché de comprobaciones que se realizan en los servicios de reserva. En este caso, probablemente desee separar la prueba de actividad simple en el ejemplo de la comprobación de preparación, que es más detallada y potente.
 
 ## Configuración de pruebas de actividad y preparación en Kubernetes
 {: #config-kube-readiness}
@@ -167,4 +177,4 @@ spec:
       failureThreshold: 10
 ```
 
-Para obtener más información, consulte cómo [Configurar pruebas de actividad y comprobación](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
+Para obtener más información, consulte cómo [Configurar pruebas de actividad y comprobación](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").

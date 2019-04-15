@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
+
+subcollection: swift
 
 ---
 
@@ -15,7 +19,8 @@ lastupdated: "2019-01-15"
 # Utilización de Object Storage para el contenido estático
 {: #object-storage}
 
-Object Storage es un componente fundamental del cálculo en la nube y proporciona potentes características a los desarrolladores de Apple y sus aplicaciones. A diferencia del almacenamiento de información en una jerarquía de archivos (por ejemplo, almacenamiento en bloque o archivo), un almacén de objetos consta únicamente de los archivos y sus metadatos, almacenados en colecciones conocidas como receptáculos. Por definición, estos objetos son inmutables, lo que los convierte en perfectos para datos como imágenes, vídeos y otros documentos estáticos. Para los datos que cambian con frecuencia o que son relacionales, puede utilizar los servicios de base de datos [NoSQL](/docs/swift/data/nosql.html), [Cloudant](/docs/swift/data/cloudant.html) y [SQL](/docs/swift/data/sql.html).
+Object Storage es un componente fundamental del cálculo en la nube y proporciona potentes características a los desarrolladores de Apple y sus aplicaciones. A diferencia del almacenamiento de información en una jerarquía de archivos (por ejemplo, almacenamiento en bloque o archivo), un almacén de objetos consta únicamente de los archivos y sus metadatos, almacenados en colecciones conocidas como receptáculos. Por definición, estos objetos son inmutables, lo que los convierte en perfectos para datos como imágenes, vídeos y otros documentos estáticos. Para datos que cambian con frecuencia o que sean relacionales, puede utilizar los servicios de base de datos [Cloudant](/docs/swift/data?topic=swift-cloudant#cloudant) y
+[SQL](/docs/swift/data?topic=swift-sql_data#sql_data).
 
 {{site.data.keyword.cos_full_notm}} (COS) es un sistema de almacenamiento que se puede utilizar para almacenar datos no estructurados que son flexibles, rentables y escalables. Se puede acceder a los datos a través de SDK o mediante la interfaz de usuario de IBM. Puede utilizar {{site.data.keyword.cos_full_notm}} para acceder a los datos no estructurados a través de un portal de autoservicio respaldado por las API y los SDK RESTful. 
 
@@ -32,7 +37,8 @@ Al crear un receptáculo, debe seleccionar un nivel de resiliencia (varias regio
 ## API
 {: #api-cos}
 
-La API de {{site.data.keyword.cos_full}} es una API basada en REST para leer y escribir objetos. Da soporte a un subconjunto de la API de S3 para facilitar la migración de aplicaciones a {{site.data.keyword.cloud_notm}}. Cualquier SDK de S3 se puede utilizar para usar {{site.data.keyword.cos_full}}. Para obtener más información, consulte la [Referencia de la API de {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api) completa
+La API de {{site.data.keyword.cos_full}} es una API basada en REST para leer y escribir objetos. Da soporte a un subconjunto de la API de S3 para facilitar la migración de aplicaciones a {{site.data.keyword.cloud_notm}}. Cualquier SDK de S3 se puede utilizar para usar {{site.data.keyword.cos_full}}. Para obtener más información, consulte la
+[Referencia de la API de {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api) completa
 
 ## Seguridad
 {: #security-cos}
@@ -87,7 +93,7 @@ Tenga en cuenta los factores siguientes para seleccionar la ubicación geográfi
 
 En función del caso de uso, puede reducir los costes seleccionando un plan de servicio que se ajuste a sus necesidades. Las operaciones de archivado que implican un acceso mínimo al almacén de objetos no necesitan la velocidad ni la durabilidad de un objeto al que se accede con frecuencia, y esta distinción se refleja en el soporte de Storage Class y en el plan de precios para las aplicaciones. Las clases de almacenamiento se definen en el nivel de receptáculo, de modo que puede utilizar una combinación de planes para que se ajusten a sus necesidades. Cree un grupo establecido en la clase de almacenamiento que desea utilizar.
 
-Encontrará más información sobre el precio en la documentación de [Clase de almacenamiento de {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/help/billing.html#ibm-cos-pricing).
+Encontrará más información sobre el precio en la documentación de [Clase de almacenamiento de {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/help?topic=cloud-object-storage-billing#ibm-cos-pricing).
 
 ### Clases de almacenamiento de ejemplo
 {: #samples-cos}

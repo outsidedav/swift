@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
+
+subcollection: swift
 
 ---
 
@@ -157,7 +161,7 @@ Efectúe los pasos siguientes para crear una fidelización mediante Control de c
 
   La nueva fidelización aparecerá en la ventana Detalles de fidelización.
 
-Ahora puede medir el [rendimiento](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de su fidelización.
+Ahora puede medir el [rendimiento](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) de su fidelización.
 
 ### Habilitación de la capacidad de mensajería in-app
 {: #app-message-applaunch}
@@ -204,13 +208,13 @@ Efectúe los pasos siguientes para crear una fidelización que utiliza la opció
 
   La nueva fidelización aparecerá en la ventana Detalles de fidelización.
 
-Ahora puede medir el [rendimiento](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de su fidelización.
+Ahora puede medir el [rendimiento](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) de su fidelización.
 
 ## Enlaces rápidos
 {: #links-applaunch notoc}
 
 Consulte los enlaces siguientes para obtener una visión general y conocer las características de {{site.data.keyword.engage_short}}:
 
- - Pruebe el [servicio App Launch](https://cloud.ibm.com/catalog/services/app-launch).
- - [Blogs y vídeos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - Para obtener más información, consulte la [Guía de aprendizaje de iniciación de App Launch](/docs/services/app-launch/index.html).
+ - Pruebe el [Servicio de App Launch](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
+ - [Blogs y vídeos](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
+ - Para obtener más información, consulte la [Guía de aprendizaje de iniciación de App Launch](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate).

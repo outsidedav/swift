@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: cloudant swift, store data swift, dbaas swift, cloudant instance swift, initialize sdk swift, create document swift, read document swift, delete document swift
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ lastupdated: "2019-01-15"
 indexación de texto completo e indexación geoespacial. Las capacidades de réplica permiten mantener fácilmente los datos sincronizados entre los clústeres de bases de datos, los equipos de sobremesa y los dispositivos móviles. 
 {: shortdesc}
 
-Para ver todas las formas en las que puede utilizar {{site.data.keyword.cloudant_short_notm}}, consulte [Aspectos básicos de {{site.data.keyword.cloudant_short_notm}}](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics).
+Para ver todas las formas en las que puede utilizar {{site.data.keyword.cloudant_short_notm}}, consulte [Aspectos básicos de {{site.data.keyword.cloudant_short_notm}}](/docs/services/Cloudant/basics?topic=cloudant-ibm-cloudant-basics#cloudant-nosql-db-basics).
 
 ## Antes de empezar
 {: #prereqs-cloudant}
@@ -32,14 +36,14 @@ Primero, asegúrese de cumplir los siguientes requisitos previos:
  * MacOS (versión 10.11.5 o posterior)
  * Xcode (versión 9.0.1 o posterior)
 
-El [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/cloudant/swift-cloudant) se crea con Swift 3.2. Si está pensando en utilizar {{site.data.keyword.cloudant_short_notm}} con Kitura, consulte [Kitura-CouchDB Library ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/IBM-Swift/Kitura-CouchDB), que se crea con Swift 4.0.
+El [{{site.data.keyword.cloudant_short_notm}} SDK for Swift](https://github.com/cloudant/swift-cloudant){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") se crea con Swift 3.2. Si está pensando en utilizar {{site.data.keyword.cloudant_short_notm}} con Kitura, consulte [Kitura-CouchDB Library ](https://github.com/IBM-Swift/Kitura-CouchDB){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"), que se crea con Swift 4.0.
 {: tip}
 
 ## Paso 1. Creación de una instancia de {{site.data.keyword.cloudant_short_notm}}
 {: #create-instance-cloudant}
 
-Consulte la guía de aprendizaje [Guía de aprendizaje para la Creación de una instancia de IBM Cloudant en
-IBM Cloud ![Icono de enlace externo](../images/launch-glyph.svg "Icono de enlace externo")](/docs/services/Cloudant/tutorials/create_service.html){:new_window} para crear una instancia del servicio.
+Consulte la
+[Guía de aprendizaje para la creación de una instancia de IBM Cloudant en {{site.data.keyword.cloud_notm}}](/docs/services/Cloudant/tutorials?topic=cloudant-creating-an-ibm-cloudant-instance-on-ibm-cloud#creating-an-ibm-cloudant-instance-on-ibm-cloud){:new_window} para crear una instancia del servicio.
 
 ## Paso 2. Instalación del SDK
 {: #install-sdk-cloudant}
@@ -148,13 +152,13 @@ client.add(operation: delete)
 2. Vuelva a la instancia de servicio de {{site.data.keyword.cloudant_short_notm}} creada anteriormente en el navegador web y abra el panel de control del servicio.
 3. Seleccione la base de datos que se utiliza, y podrá ver los documentos en el panel de control.
 
-¿Tiene problemas? Consulte la [Referencia de la API de {{site.data.keyword.cloudant_short_notm}}](/docs/services/Cloudant/api/index.html#api-reference-overview).
+¿Tiene problemas? Consulte la [Referencia de la API de {{site.data.keyword.cloudant_short_notm}}](/docs/services/Cloudant/api?topic=cloudant-ibm-cloudant-basics#api-reference-overview).
 
 ## Pasos siguientes
 {: #cloudant_next notoc}
 
 ¡Buen trabajo! Ha añadido un nivel de persistencia segura a la app. Mantenga el ritmo probando una de las opciones siguientes:
 
-* Visualice el código fuente de [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/cloudant/swift-cloudant).
-* Los kits de inicio son una de las formas más rápidas de utilizar las prestaciones de {{site.data.keyword.cloud_notm}}. El kit de inicio **Infinite Scrolling with Cloudant NoSQL for iOS** muestra cómo ampliar un `ViewController` para visualizar los datos utilizando la paginación. Este patrón de app es común para los desarrolladores de iOS, y es un buen ejemplo para ilustrar las prestaciones de {{site.data.keyword.cloudant_short_notm}}. Vea los kits de inicio disponibles en el [panel de control de desarrollador de Mobile](https://cloud.ibm.com/developer/mobile/dashboard). Descargue el código. Ejecute la app.
-* Obtenga más información y aproveche todas las características que {{site.data.keyword.cloudant_short_notm}} ofrece: [consulte la documentación](/docs/services/Cloudant/index.html).
+* Visualice el código fuente de [{{site.data.keyword.cloudant_short_notm}} SDK for Swift](https://github.com/cloudant/swift-cloudant){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
+* Los kits de inicio son una de las formas más rápidas de utilizar las prestaciones de {{site.data.keyword.cloud_notm}}. El kit de inicio **Infinite Scrolling with Cloudant NoSQL for iOS** muestra cómo ampliar un `ViewController` para visualizar los datos utilizando la paginación. Este patrón de app es común para los desarrolladores de iOS, y es un buen ejemplo para ilustrar las prestaciones de {{site.data.keyword.cloudant_short_notm}}. Vea los kits de inicio disponibles en el [panel de control de desarrollador de Mobile](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"). Descargue el código. Ejecute la app.
+* Obtenga más información y aproveche todas las características que {{site.data.keyword.cloudant_short_notm}} ofrece: [consulte la documentación](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics#ibm-cloudant-basics).

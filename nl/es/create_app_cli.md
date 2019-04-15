@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-03-14"
+
+keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ lastupdated: "2019-02-01"
 
 La siguiente guía está pensada para ayudar a crear, ejecutar localmente y desplegar una app de Swift de lado del servidor. Obtenga información sobre cómo utilizar {{site.data.keyword.dev_cli_long}} para ejecutar estas acciones con mandatos estándares.
 
-Puede utilizar el {{site.data.keyword.dev_cli_short}} para gestionar las aplicaciones del lado del servidor con más de doce mandatos. Obtenga más información sobre los mandatos `ibmcloud dev` en la [CLI de IBM Cloud Developer Tools](/docs/cli/idt/commands.html).
+Puede utilizar el {{site.data.keyword.dev_cli_short}} para gestionar las aplicaciones del lado del servidor con más de doce mandatos. Obtenga más información sobre los mandatos `ibmcloud dev` en la [CLI de {{site.data.keyword.dev_cli_notm}}](/docs/cli/idt?topic=cloud-cli-idt-cli#idt-cli).
 
 ## Paso 1. Requisitos para los desarrolladores
 {: #prereqs-swift-cli}
@@ -31,33 +35,33 @@ Para empezar a utilizar {{site.data.keyword.cloud_notm}}, asegúrese de que cump
 ### Sistema operativo
 {: #swift-cli-os-reqs}
 
-Desarrolle apps de Swift con prácticas recomendadas utilizando el hardware soportado más reciente de MacOS, y pruébelas con los releases más recientes de iOS. Regístrese para una cuenta de [Desarrollador de Apple](https://developer.apple.com/) para habilitar las pruebas en un dispositivo físico.
+Desarrolle apps de Swift con prácticas recomendadas utilizando el hardware soportado más reciente de MacOS, y pruébelas con los releases más recientes de iOS. Regístrese para una cuenta de [Desarrollador de Apple](https://developer.apple.com/){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo") para habilitar las pruebas en un dispositivo físico.
 
 ### iOS y Xcode
 {: #swift-cli-ios_xcode}
 
-- [Instale Xcode 8+ (o superior)](https://developer.apple.com/xcode/)
-- [Despliegue en dispositivos iOS 8 (o superior)](https://support.apple.com/downloads/ios)
-- Antes de enviar a Apple, revise las [Directrices de envío de la App Store](https://developer.apple.com/app-store/guidelines/)
+- [Instale Xcode 8+ (o superior)](https://developer.apple.com/xcode/){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo")
+- [Despliegue en dispositivos iOS 8 (o superior)](https://support.apple.com/downloads/ios){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo")
+- Antes de enviar a Apple, revise las [Directrices de envío de la App Store](https://developer.apple.com/app-store/guidelines/){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo")
 
 ### SDK y gestión de dependencias
 {: #swift-cli-sdk-dependency}
 
 Las herramientas siguientes garantizan que puede instalar los SDK nativos para que funcionen con los distintos {{site.data.keyword.cloud_notm}} Services.
 
-- [Instale CocoaPods para los SDK de IBM Cloud](https://cocoapods.org/)
+- [Instale CocoaPods para los SDK de IBM Cloud](https://cocoapods.org/){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo")
   ```
   sudo gem install cocoapods
   ```
   {: codeblock}
   
-- [Instale Homebrew para ayudar a instalar Carthage](https://brew.sh/)
+- [Instale Homebrew para ayudar a instalar Carthage](https://brew.sh/){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo")
   ```
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   ```
   {: codeblock}
 
-- [Instale Carthage para los SDK de Watson](https://github.com/Carthage/Carthage)
+- [Instale Carthage para los SDK de Watson](https://github.com/Carthage/Carthage){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo")
   ```
   brew install carthage
   ```
@@ -67,7 +71,7 @@ Las herramientas siguientes garantizan que puede instalar los SDK nativos para q
 {: #swift-cli-install-tools}
 
 {{site.data.keyword.cloud}} proporciona herramientas de CLI locales que le ayudan a trabajar con varios aspectos de la {{site.data.keyword.cloud_notm}}. Para obtener más información, consulte
-[Información de {{site.data.keyword.dev_cli_long}}](/docs/cli/index.html). Puede utilizar las herramientas para probar un programa de fondo de Swift en una imagen de Docker local antes del despliegue en la nube.
+[Información de {{site.data.keyword.dev_cli_long}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). Puede utilizar las herramientas para probar un programa de fondo de Swift en una imagen de Docker local antes del despliegue en la nube.
 
 * Para MacOS y Linux, ejecute el mandato siguiente:
   ```
@@ -93,12 +97,12 @@ Las herramientas siguientes garantizan que puede instalar los SDK nativos para q
   ```
   {: codeblock}
 
-  Asegúrese de iniciar sesión con una cuenta de {{site.data.keyword.cloud_notm}} para crear un proyecto. Los nuevos usuarios pueden [registrar ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter) para obtener una cuenta gratuita. Utilice el mandato `ibmcloud login` para iniciar sesión en la línea de mandatos.
+  Asegúrese de iniciar sesión con una cuenta de {{site.data.keyword.cloud_notm}} para crear un proyecto. Los nuevos usuarios pueden [registrar ](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo") para obtener una cuenta gratuita. Utilice el mandato `ibmcloud login` para iniciar sesión en la línea de mandatos.
   {: tip}
 
 2. Cuando se le solicite, seleccione las opciones 1, luego 6 y, por último, 2, tal como se muestra en el ejemplo siguiente:
   ```
-  ? Select a resource type:                  
+  ? Select a service type:
   1. Backend Service / Web App
   2. Mobile Client
   Enter a number> 1
@@ -174,11 +178,11 @@ Ahora puede crear, ejecutar y desplegar la aplicación utilizando el {{site.data
   {: codeblock}
 
 ## Pasos siguientes
-{: #swift-cli-next}
+{: #swift-cli-next notoc}
 
-Aprenda a utilizar la {{site.data.keyword.cloud_notm}} Developer Console for Apple que permite a los desarrolladores crear apps a partir de varios kits de inicio, crear y conectar servicios clave optimizados para {{site.data.keyword.cloud_notm}} y descargar rápidamente código de trabajo o configurarlo para la entrega continua. Los usuarios pueden crear, ver, configurar y gestionar la app, así como descargar el código de la misma. Al utilizar la Developer Console for Apple, puede evaluar rápidamente y probar los servicios de {{site.data.keyword.cloud_notm}} con una app nueva.
+Aprenda a utilizar la {{site.data.keyword.cloud_notm}} Developer Console for Apple que permite a los desarrolladores crear apps a partir de varios kits de inicio, crear y conectar servicios clave optimizados para {{site.data.keyword.cloud_notm}} y descargar rápidamente código funcional o configurarlo para la entrega continua. Los usuarios pueden crear, ver, configurar y gestionar la app, así como descargar el código de la misma. Al utilizar la Developer Console for Apple, puede evaluar rápidamente y probar los servicios de {{site.data.keyword.cloud_notm}} con una app nueva.
 
-¿Listo para lanzarse? Visite la [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) ahora para empezar.
+¿Listo para lanzarse? Visite la [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo") ahora para empezar.
 {: tip}
 
-Para obtener más información, consulte [Desarrollo de apps de Swift con kits de inicio](/docs/swift/starter_kit/starter_kits.html).
+Para obtener más información, consulte [Desarrollo de apps de Swift con kits de inicio](/docs/swift/starter_kit?topic=swift-starterkits-intro#starterkits-intro).

@@ -2,9 +2,14 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-24"
+
+keywords: push swift, swift notifications, push notifications swift, sending push swift, configure service instance swift, provider credentials swift
+
+subcollection: swift
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -21,7 +26,7 @@ Mejore la app Swift utilizando el servicio {{site.data.keyword.mobilepushshort}}
  - Los clientes pueden optar por suscribirse a etiquetas o temas específicos para la notificación.
  - Permite al propietario de la app analizar el número de dispositivos registrados para recibir notificaciones y el número de notificaciones enviadas.
 
-Puede utilizar el servicio {{site.data.keyword.mobilepushshort}} como parte del contenedor modelo de iniciador de servicios MobileFirst o bien como [servicios dedicados](/docs/dedicated/index.html) de {{site.data.keyword.cloud_notm}}. También puede utilizar un SDK (kit de desarrollo de software) y [API REST ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://mobile.{DomainName}/imfpush/){: new_window} para desarrollar más las aplicaciones de cliente.
+Puede utilizar el servicio {{site.data.keyword.mobilepushshort}} como parte del contenedor modelo de iniciador de servicios MobileFirst o bien como [servicios dedicados](/docs/dedicated?topic=dedicated-dedicated#dedicated) de {{site.data.keyword.cloud_notm}}. También puede utilizar un SDK (kit de desarrollo de software) y [API REST ](https://mobile.{DomainName}/imfpush/){: new_window} ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo") para desarrollar más las aplicaciones de cliente.
 
 ![Visión general](images/push_notification_lifecycle.jpg) Figura 1. Visión general del ciclo de vida del servicio {{site.data.keyword.mobilepushshort}}
 
@@ -57,7 +62,7 @@ Para utilizar el servicio {{site.data.keyword.mobilepushshort}} para enviar noti
 
 Después de que el archivo `.cer` se encuentre en el acceso de cadena de claves, expórtelo al sistema para crear un certificado `.p12`.
 
-Para obtener más información sobre cómo utilizar APNs, consulte en la [Biblioteca de desarrolladores de iOS la guía de programación de notificaciones push y locales ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window}.
+Para obtener más información sobre cómo utilizar APN, consulte en la [Biblioteca de desarrolladores de iOS la guía de programación de notificaciones push y locales](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo").
 
 Para configurar APNs en la consola de servicios de notificación push, siga estos pasos:
 
@@ -85,7 +90,7 @@ Para configurar APNs en la consola de servicios de notificación push, siga esto
 
 Para habilitar las aplicaciones de iOS para que reciban notificaciones push en sus dispositivos, debe configurar el SDK de iOS para el servicio {{site.data.keyword.mobilepushshort}}.
 
-Los SDK de Swift de {{site.data.keyword.cloud_notm}} Mobile Services se pueden instalar con Cocoapods o Carthage. Para obtener más información, consulte [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application).
+Los SDK de Swift de {{site.data.keyword.cloud_notm}} Mobile Services se pueden instalar con Cocoapods o Carthage. Para obtener más información, consulte [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
 ## Paso 5. Envío de una notificación
 {: #send-notify-push}
@@ -118,20 +123,20 @@ Puede personalizar los valores de {{site.data.keyword.mobilepushshort}} para el 
 - **Sonido**: indica un fragmento de sonido que se reproducirá al recibir una notificación. Da soporte a la opción predeterminada o al nombre de un recurso de sonido incorporado en la app.
 - **Carga útil adicional**: permite especificar valores personalizados de carga útil para las notificaciones.
 
-También puede decidir habilitar las [notificaciones interactivas](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#interactive-notifications) y las [notificaciones de Rich Media](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enabling-rich-media-notifications).
+También puede optar por habilitar las [notificaciones interactivas](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#interactive-notifications){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") y las [notificaciones de soporte enriquecido](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enabling-rich-media-notifications){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
 ## Paso 6. Supervisión de las notificaciones entregadas
 {: #monitor-push}
 
-El servicio de {{site.data.keyword.mobilepushshort}} proporciona un programa de utilidad de supervisión para ayudarle a comprobar el estado de los mensajes enviados. Para configurar el programa de utilidad de supervisión, consulte [Habilitar supervisión para aplicaciones de iOS](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring).
+El servicio de {{site.data.keyword.mobilepushshort}} proporciona un programa de utilidad de supervisión para ayudarle a comprobar el estado de los mensajes enviados. Para configurar el programa de utilidad de supervisión, consulte [Habilitar supervisión para aplicaciones de iOS](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
 ## Pasos siguientes
-{: #next-push}
+{: #next-push notoc}
 
  - Para obtener más información sobre el servicio y aprovechar todas las características, consulte nuestra [documentación](/docs/services/mobilepush/c_overview_push.html#overview-push).
 
  - Para ver una visión general de los servicios para móviles y {{site.data.keyword.cloud_notm}}, consulte [Iniciación a las apps para móvil en {{site.data.keyword.cloud_notm}}](/docs/services/mobile/index.html).
 
- - Los kits de inicio son una de las formas más rápidas de utilizar las características de {{site.data.keyword.cloud_notm}}. Vea nuestros kits de inicio disponibles en el [panel de control de desarrollador de Mobile](https://cloud.ibm.com/developer/mobile/dashboard). Descargue el código. Ejecute la app.
+ - Los kits de inicio son una de las formas más rápidas de utilizar las características de {{site.data.keyword.cloud_notm}}. Vea nuestros kits de inicio disponibles en el [panel de control de desarrollador de Mobile](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"). Descargue el código. Ejecute la app.
 
- - Puede utilizar la [IU de Swagger](https://mobile.ng.bluemix.net/imfpush/) para consultar de forma rápida la documentación de la API REST.
+ - Puede utilizar la [IU de Swagger](https://mobile.ng.bluemix.net/imfpush/){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") para consultar de forma rápida la documentación de la API REST.

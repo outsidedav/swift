@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-03-15"
+
+keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
+
+subcollection: swift
 
 ---
 
@@ -24,8 +28,7 @@ es Swift 4.0 con MongoKitten SDK 4.0.0.
 ## Paso 1. Creación de un clúster de base de datos
 {: #create_dbcluster}
 
-1. Acceda a la pantalla de configuración del servicio de {{site.data.keyword.ihsdbaas_full}} en
-https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
+1. Acceda a la pantalla [Configuración del servicio {{site.data.keyword.ihsdbaas_full}}](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
 2. Proporcione la siguiente información:
 
@@ -82,8 +85,7 @@ Necesita un kit de inicio que se base en la infraestructura web de Swift del lad
 
 Utilice un proyecto existente creado a partir de este kit de inicio, o cree un proyecto nuevo.
 
-1. Abra el panel de control {{site.data.keyword.cloud_notm}} App Service en
-https://cloud.ibm.com/developer/appservice/dashboard.
+1. Abra el [Panel de control de servicio de app de {{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
 2. Seleccione el separador **Kits de inicio**.
 
@@ -243,14 +245,16 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ## Paso 5. Incorporación del código de la aplicación
 {: #embed_appcode}
 
-Ahora puede añadir su propio código de aplicación al proyecto. Para obtener más información sobre cómo trabajar con la API de MongoKitten, consulte http://beta.openkitten.org/tutorials/.
+Ahora puede añadir su propio código de aplicación al proyecto. Para obtener más información, consulte la documentación de la
+[API de MongoKitten](http://beta.openkitten.org/tutorials/){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
 ## Paso 6. Despliegue de la aplicación
 {: #deploy-dbcluster}
 
-Puede ejecutar la aplicación [en local](/docs/swift/create_app_cli.html#swift-install-tools) con las herramientas de compilación necesarias, o bien desplegar a {{site.data.keyword.cloud_notm}}.
+Puede ejecutar la aplicación [en local](/docs/swift?topic=swift-swift_cli#swift-install-tools) con las herramientas de compilación necesarias, o bien desplegar a {{site.data.keyword.cloud_notm}}.
 
-Para crear una cadena de herramientas de despliegue en el panel de control, pulse **Desplegar en Cloud**. Configure el método de despliegue de acuerdo con las instrucciones correspondientes al método que elija:
-  * **Desplegar en [Kubernetes](/docs/apps/deploying/containers.html#containers)**. Esta opción crea un clúster de hosts, llamado nodos de trabajador, para desplegar y gestionar contenedores de aplicaciones de alta disponibilidad. Puede crear un clúster o desplegar en un clúster existente.
-  * **Desplegar en Cloud Foundry**. Esta opción despliega la app nativa de cloud sin la necesidad de gestionar la infraestructura subyacente. Si su cuenta tiene acceso a {{site.data.keyword.cfee_full_notm}}, puede seleccionar el tipo de desplegador **[Public Cloud](/docs/cloud-foundry-public/about-cf.html#about-cf)** o **[Enterprise Environment](/docs/cloud-foundry-public/cfee.html#cfee)**, que puede utilizar para crear y gestionar entornos aislados para el alojamiento de aplicaciones Cloud Foundry exclusivamente para su empresa.
-  * **Desplegar en un [Servidor virtual](/docs/apps/vsi-deploy.html#vsi-deploy)**. Esta opción proporciona una instancia de servidor virtual, carga una imagen que incluye su app, crea una cadena de herramientas DevOps e inicia el primer ciclo de despliegue automáticamente.
+Para crear una cadena de herramientas de despliegue en el panel de control, pulse **Desplegar**. Configure el destino de despliegue de acuerdo con las instrucciones correspondientes al método que elija:
+  * **Desplegar en
+[{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**. Esta opción crea un clúster de hosts, llamado nodos de trabajador, para desplegar y gestionar contenedores de aplicaciones de alta disponibilidad. Puede crear un clúster o desplegar en un clúster existente.
+  * **Desplegar en Cloud Foundry**. Esta opción despliega la app nativa de cloud sin la necesidad de gestionar la infraestructura subyacente. Si su cuenta tiene acceso a {{site.data.keyword.cfee_full_notm}}, puede seleccionar el tipo de desplegador **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** o **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**, que puede utilizar para crear y gestionar entornos aislados para el alojamiento de aplicaciones Cloud Foundry exclusivamente para su empresa.
+  * **Desplegar en un [Servidor virtual](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**. Esta opción proporciona una instancia de servidor virtual, carga una imagen que incluye su app, crea una cadena de herramientas DevOps e inicia el primer ciclo de despliegue automáticamente.

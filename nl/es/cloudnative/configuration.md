@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-14"
+
+keywords: swift-cfenv, service bindings swift, environment swift, swift configuration, cloudenvironment swift, VCAP_SERVICES swift, swift credentials
+
+subcollection: swift
 
 ---
 
@@ -25,7 +29,8 @@ Puede seguir directrices sencillas para ayudarle a escribir aplicaciones portát
 ## Adición de {{site.data.keyword.cloud_notm}} a aplicaciones Swift existentes
 {: #addcloud-env}
 
-La vía de acceso para obtener los valores de entorno puede diferir de un entorno de nube a otro. La biblioteca [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git) abstrae la configuración del entorno y las credenciales de varios proveedores de nube para que la app Swift pueda acceder a la información de forma coherente ejecutándose localmente o en Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} o instancias virtuales. La abstracción de credenciales la proporciona la biblioteca `CloudEnvironment`, que utiliza internamente [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv) para la configuración de Cloud Foundry y [Configuración](https://github.com/IBM-Swift/Configuration) como gestor de configuración.
+La vía de acceso para obtener los valores de entorno puede diferir de un entorno de nube a otro. La biblioteca [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") abstrae la configuración del entorno y las credenciales de varios proveedores de nube para que la app Swift pueda acceder a la información de forma coherente ejecutándose localmente o en Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} o instancias virtuales. La abstracción de las credenciales se proporciona mediante la biblioteca `CloudEnvironment`, que utiliza internamente
+[Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") para la configuración de Cloud Foundry y [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") como gestor de configuraciones.
 
 Con `CloudEnvironment`, puede abstraer detalles de nivel bajo del código de origen de la aplicación definiendo una clave de búsqueda que la aplicación Swift puede utilizar para buscar su valor correspondiente.
 
@@ -67,7 +72,8 @@ let url = cloudEnv.url
 ```
 {: codeblock}
 
-En este ejemplo se proporciona acceso a los conjuntos de credenciales para servicios, que ahora se pueden utilizar para inicializar conexiones con estos [servicios soportados o un ejemplo genérico](https://github.com/IBM-Swift/CloudEnvironment#supported-services). Consulte [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api) para la configuración específica de Cloud Foundry y [detalles de configuración](https://github.com/IBM-Swift/Configuration) sobre la carga de datos de configuración.
+En este ejemplo se proporciona acceso a los conjuntos de credenciales para servicios, que ahora se pueden utilizar para inicializar conexiones con estos [servicios soportados o un ejemplo genérico](https://github.com/IBM-Swift/CloudEnvironment#supported-services){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"). Consulte
+[Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv#api){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") para ver la configuración específica de Cloud Foundry, y los [detalles de configuración](https://github.com/IBM-Swift/Configuration){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") sobre la carga de datos de configuración.
 
 ## Comprensión de las credenciales de servicio
 {: #service_creds}
@@ -75,7 +81,7 @@ En este ejemplo se proporciona acceso a los conjuntos de credenciales para servi
 La biblioteca `CloudEnvironment` utiliza un archivo denominado `mappings.json`, que se encuentra en el directorio `config`, para comunicar dónde se almacenan las credenciales para cada servicio. El archivo `mappings.json` da soporte a la búsqueda de valores que utilizan los tres tipos de patrón de búsqueda siguientes:
 - **`cloudfoundry`**: Un tipo de patrón que se utiliza para buscar un valor en la variable de entorno de servicios de Cloud Foundry (`VCAP_SERVICES`). Para obtener más información sobre
 Cloud Foundry Enterprise Edition, consulte la
-[Guía de aprendizaje de inicio](docs/cloud-foundry/getting-started.html#getting-started).
+[Guía de aprendizaje de inicio](/docs/cloud-foundry?topic=cloud-foundry-getting-started#getting-started).
 - **`env`**: Un tipo de patrón utilizado para buscar un valor que se correlaciona con una variable de entorno, como en Kubernetes o Functions.
 - **`file`**: Un tipo de patrón que se utiliza para buscar un valor en un archivo JSON. La vía de acceso debe ser relativa a la carpeta raíz de la aplicación Swift.
 
@@ -113,18 +119,18 @@ Cuando la aplicación se ejecuta localmente, puede utilizar las credenciales alm
 
 Por motivos de seguridad, los archivos de credenciales no residen en repositorios. En el ejemplo anterior, se utiliza una carpeta `localdev` para almacenar las credenciales locales, de modo que debe añadir esta carpeta al archivo `.gitignore` para evitar una confirmación accidental. Si utiliza una app de Kit de inicio, esta carpeta se crea para usted y está presente en el archivo `.gitignore`.
 
-Para obtener más información sobre el archivo `mappings.json`, consulte la sección [Comprensión de la credencial de servicio](configuration.html#service_creds).
+Para obtener más información sobre el archivo `mappings.json`, consulte la sección [Comprensión de la credencial de servicio](#service_creds).
 
-## Utilización del gestor de configuración de Swift desde apps del Kit de inicio
+## Utilización del gestor de configuración de Swift desde apps del kit de inicio
 {: #configmanager-swift}
 
-Las apps Swift creadas con [Kits de inicio](https://cloud.ibm.com/developer/appledevelopment/starter-kits/) se proporcionan automáticamente con las credenciales y la configuración necesarias para ejecutar localmente, y también en muchos entornos de despliegue de Cloud (CF, K8s, VSI y Functions). La creación básica del gestor de configuración se puede encontrar en `Sources/Application/Application.swift`. Cuando crea una app de Kit de inicio basada en Swift con servicios, se crea automáticamente una carpeta `config` y un archivo `mappings.json`. Si descarga la app, la carpeta `config` incluye un archivo `localdev-config.json` que tiene todas las credenciales para los servicios y está presente en el archivo `.gitignore`.
+Las apps Swift creadas con los [kits de inicio](https://cloud.ibm.com/developer/appledevelopment/starter-kits/){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") se proporcionan automáticamente con las credenciales y la configuración necesarias para su ejecución en local, así como en muchos destinos de despliegue en la nube, como Cloud Foundry, Kubernetes, VSI y Functions. La creación básica del gestor de configuración se puede encontrar en `Sources/Application/Application.swift`. Cuando crea una app de Kit de inicio basada en Swift con servicios, se crea automáticamente una carpeta `config` y un archivo `mappings.json`. Si descarga la app, la carpeta `config` incluye un archivo `localdev-config.json` que tiene todas las credenciales para los servicios y está presente en el archivo `.gitignore`.
 
 ## Pasos siguientes
 {: #next-configß notoc}
 
 Consulte nuestras tres bibliotecas para que sus aplicaciones se abstraigan de sus entornos:
 
-* [CloudEnvironment](https://github.com/ibm-developer/ibm-cloud-env)
-* [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv)
-* [Configuración](https://github.com/IBM-Swift/Configuration)
+* [CloudEnvironment](https://github.com/ibm-developer/ibm-cloud-env){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")
+* [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")
+* [Configuración](https://github.com/IBM-Swift/Configuration){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")

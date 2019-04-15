@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swiftmetrics-dash, swiftmetrics, prometheus swift, application metrics swift, swift performance, slow swift, swift dashboard, metris swift
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # Utilización de métricas de aplicación con apps Swift
 {: #metrics}
 
-Las métricas de aplicación son importantes para supervisar el rendimiento de la aplicación. Tener una vista en directo de métricas como CPU, memoria, latencia y métricas HTTP es esencial para asegurarse de que la aplicación se ejecuta de forma efectiva a lo largo del tiempo. Los servicios de Kubernetes y Cloud Foundry como [Autoscaling](/docs/services/Auto-Scaling/index.html) se basan en las métricas para determinar cuándo se deben añadir o eliminar instancias de forma dinámica en función de la carga y limpiar las instancias que ya no son necesarias para mantener los costes bajos.
+Las métricas de aplicación son importantes para supervisar el rendimiento de la aplicación. Tener una vista en directo de métricas como CPU, memoria, latencia y métricas HTTP es esencial para asegurarse de que la aplicación se ejecuta de forma efectiva a lo largo del tiempo. Los servicios de Kubernetes y Cloud Foundry como [Autoscaling](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started) se basan en las métricas para determinar cuándo se deben añadir o eliminar instancias de forma dinámica en función de la carga y limpiar las instancias que ya no son necesarias para mantener los costes bajos.
 
 Las métricas de aplicación se capturan como datos de serie temporal. La agregación y visualización de métricas capturadas puede ayudar a identificar problemas de rendimiento comunes como, por ejemplo:
 
@@ -29,9 +33,9 @@ Las métricas de aplicación se capturan como datos de serie temporal. La agrega
 ## Adición de métricas de aplicación a la aplicación Swift existente
 {: #add-appmetrics-existing}
 
-Utilice [Métricas de aplicación para Swift](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/) para añadir supervisión de rendimiento a la aplicación Swift. Las métricas de aplicación para Swift se componen de dos bibliotecas: `SwiftMetrics` y `SwiftMetricsDash`.
+Utilice [Métricas de aplicación para Swift](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") para añadir supervisión de rendimiento a la aplicación Swift. Las métricas de aplicación para Swift se componen de dos bibliotecas: `SwiftMetrics` y `SwiftMetricsDash`.
 
-* La biblioteca `SwiftMetrics` es una biblioteca de instrumentación completa que recopila y agrega métricas para la aplicación. Tiene varias extensiones, entre ellas un módulo Kitura para métricas HTTP, [soporte de Prometheus](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support) y un [emisor](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent) autónomo.
+* La biblioteca `SwiftMetrics` es una biblioteca de instrumentación completa que recopila y agrega métricas para la aplicación. Tiene varias extensiones, entre ellas un módulo Kitura para métricas HTTP, [soporte de Prometheus](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") y un [emisor](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") autónomo.
 
 * La biblioteca `SwiftMetricsDash` consume las métricas producidas por `SwiftMetrics` y proporciona un panel de control incorporado para la visualización.
 
@@ -98,4 +102,4 @@ func initializeMetrics(router: Router) {
 
 Una vez que se esté ejecutando la aplicación, puede acceder al panel de control utilizando el punto final `/swiftmetrics-dash`.
 
-De forma predeterminada, `SwiftMetricsPrometheus` proporciona el [punto final Prometheus](https://prometheus.io/) en `http://<hostname>:<port>/metrics`.
+De forma predeterminada, `SwiftMetricsPrometheus` proporciona el [punto final Prometheus](https://prometheus.io/){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") en `http://<hostname>:<port>/metrics`.
