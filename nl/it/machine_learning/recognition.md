@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-03-14"
+
+keywords: swift visual recognition, train swift, cocoapods swift, swift sdk install, starter kit watson swift, image swift classify, machine learning swift
+
+subcollection: swift
 
 ---
 
@@ -36,8 +40,7 @@ Assicurati di disporre dei seguenti prerequisiti.
 * Swift 4.1+
 * CocoaPods, Carthage o Swift Package Manager
 
-Puoi installare l'[SDK Swift Watson](https://github.com/watson-developer-cloud/swift-sdk) utilizzando [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods), [Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage) o [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager). Utilizzando CocoaPods(https://cocoapods.org/) per gestire le dipendenze, ottieni solo i framework di ci hai bisogno, invece dell'intero SDK Swift Watson. Se non hai dimestichezza con CocoaPods, puoi installarlo facilmente:
-
+Puoi installare l'[SDK Watson Swift](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") utilizzando [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"), [Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") o [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"). Utilizzando CocoaPods(https://cocoapods.org/) per gestire le dipendenze, ottieni solo i framework di cui hai bisogno, invece dell'intero SDK Swift Watson. Se non hai dimestichezza con CocoaPods, puoi installarlo facilmente:
 ```console
 sudo gem install cocoapods
 ```
@@ -67,7 +70,7 @@ target 'MyApp' do
 ```
 {: codeblock}
 
-Per un'applicazione di produzione, potresti voler specificare anche un determinato [requisito della versione](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions) per evitare modifiche impreviste da nuove release dell'SDK Swift Watson.
+Per un'applicazione di produzione, potresti voler specificare anche un determinato [requisito della versione](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") per evitare modifiche impreviste da nuove release dell'SDK Swift Watson.
 
 Con il tuo `Podfile` debitamente collocato, puoi ora scaricare le dipendenze. Utilizza un terminale per passare alla directory root del progetto ed esegui quindi CocoaPods:
 
@@ -98,7 +101,7 @@ I seguenti esempi ti aiutano ad aggiungere le funzionalità di {{site.data.keywo
   ```
   {: codeblock}
 
-  Puoi consultare la [documentazione dei parametri di versione](https://cloud.ibm.com/apidocs/visual-recognition#versioning) o utilizzare la data in cui è stato creato il servizio {site.data.keyword.conversationshort}}.
+  Puoi consultare la [documentazione dei parametri di versione](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") o utilizzare la data in cui è stato creato il servizio {site.data.keyword.conversationshort}}.
   {: tip}
 
 3. Aggiungi il seguente codice per classificare un'immagine:
@@ -117,22 +120,22 @@ I seguenti esempi ti aiutano ad aggiungere le funzionalità di {{site.data.keywo
   ```
   {: codeblock}
 
-Ci sono più metodi di classificazione che sono supportati dal framework Visual Recognition. Esplora la [documentazione di Visual Recognition](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html) dell'SDK Watson per trovare quale si adatta meglio alla tua applicazione.
+Ci sono più metodi di classificazione che sono supportati dal framework Visual Recognition. Esplora la [documentazione di Visual Recognition](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") dell'SDK Watson per trovare quale si adatta meglio alla tua applicazione.
 {: tip}
 
 ## Utilizzo dei kit starter
 {: #recognition_starterkits}
 
-I [kit starter](https://cloud.ibm.com/developer/appledevelopment/starter-kits) sono uno dei modi più rapidi per utilizzare le funzionalità di {{site.data.keyword.cloud_notm}}. Puoi utilizzare il servizio {{site.data.keyword.visualrecognitionshort}} selezionando il kit starter **Visual Recognition for iOS with Watson**. Questo servizio valuta e classifica le tue immagini. Carica le immagini nuove o esistenti dal tuo dispositivo mobile; l'applicazione Visual Recognition contrassegna con tag e classifica rapidamente il contenuto delle immagini.
+I [Kit starter](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") sono uno dei modi più rapidi per utilizzare le funzionalità di {{site.data.keyword.cloud_notm}}. Puoi utilizzare il servizio {{site.data.keyword.visualrecognitionshort}} selezionando il kit starter **Visual Recognition for iOS with Watson**. Questo servizio valuta e classifica le tue immagini. Carica le immagini nuove o esistenti dal tuo dispositivo mobile; l'applicazione Visual Recognition contrassegna con tag e classifica rapidamente il contenuto delle immagini.
 
 Per iniziare:
-1. Seleziona il kit starter che si trova [qui](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson).
+1. Seleziona il kit starter trovato [qui](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 2. Crea il progetto con i servizi predefiniti.
 3. Scarica il progetto facendo clic su **Download Code**. Le credenziali del servizio vengono inserite nel file `BMSCredentials.plist` nei campi chiave corrispondenti.
 
 ## Passi successivi
-{: #recognition_next}
+{: #recognition_next notoc}
 
 Ottimo lavoro. Visual Recognition è ora disponibile per la tua applicazione. Non fermarti ora e continua provando una delle seguenti opzioni:
-* Controlla l'[SDK Swift Watson](https://github.com/watson-developer-cloud/swift-sdk){:new_window} ed esplora gli altri servizi Watson supportati.
-* Per ulteriori informazioni, vedi [IBM Watson {{site.data.keyword.visualrecognitionshort}}](https://www.ibm.com/watson/services/visual-recognition/).
+* Controlla l'[SDK Swift Watson](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") ed esplora gli altri servizi Watson supportati.
+* Per ulteriori informazioni, consulta [IBM Watson {{site.data.keyword.visualrecognitionshort}}](https://www.ibm.com/watson/services/visual-recognition/){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").

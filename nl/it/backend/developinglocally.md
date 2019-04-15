@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: develop swift, swift local, service credentials swift, developer tools swift, swift cli, ibmcloud build swift, ibmcloud swift
+
+subcollection: swift
 
 ---
 
@@ -17,7 +21,7 @@ lastupdated: "2019-01-15"
 
 Eseguendo uno sviluppo in locale, puoi facilmente creare, eseguire e verificare applicazioni Swift. Utilizzi {{site.data.keyword.dev_cli_short}} per eseguire tali azioni servendoti di comandi standard. 
 
-Puoi utilizzare {{site.data.keyword.dev_cli_short}} per gestire le tue applicazioni lato server con più di una dozzina di comandi. Accedi ad ulteriori informazioni sui diversi comandi nel documento relativo ai [comandi `ibmcloud dev` della CLI IBM Cloud Developer Tools](/docs/cli/idt/commands.html).
+Puoi utilizzare {{site.data.keyword.dev_cli_short}} per gestire le tue applicazioni lato server con più di una dozzina di comandi. Accedi ad ulteriori informazioni sui diversi comandi nel documento relativo ai [{{site.data.keyword.dev_cli_notm}}comandi `ibmcloud dev` della CLI](/docs/cli/idt?topic=cloud-cli-idt-cli#idt-cli).
 
 ## Prima di cominciare
 {: #prereqs-local}
@@ -28,7 +32,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 ```
 {: codeblock}
 
-Vedi il documento relativo alla [Configurazione della CLI IBM Cloud Developer Tools](/docs/cli/idt/setting_up_idt.html) per ulteriori informazioni sulla configurazione e l'utilizzo della {{site.data.keyword.dev_cli_notm}}.
+Vedi il documento relativo alla [Configurazione della CLI {{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) per ulteriori informazioni sulla configurazione e l'utilizzo della {{site.data.keyword.dev_cli_notm}}.
 
 ## Richiamo delle credenziali del servizio
 {: #credentials-local}
@@ -57,7 +61,7 @@ ibmcloud dev get-credentials
 
   Se il comando viene eseguito correttamente, vengono visualizzati un host e una porta locali per visualizzare la pagina di destinazione della tua applicazione.
 
-3. **Distribuisci** - distribuisci la tua applicazione a {{site.data.keyword.Bluemix_notm}} con il comando `deploy`:
+3. **Distribuisci** - distribuisci la tua applicazione a {{site.data.keyword.cloud_notm}} con il comando `deploy`:
   ```
   ibmcloud dev deploy
   ```

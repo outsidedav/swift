@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift, swift health check
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # Utilizzo di un controllo di integrità nella tua applicazione Swift
 {: #healthcheck}
 
-I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente. Gli ambienti cloud come [Kubernetes](https://www.ibm.com/cloud/container-service) e [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) possono essere configurati per eseguire periodicamente il polling degli endpoint di integrità per determinare se un'istanza del tuo servizio è pronta ad accettare il traffico.
+I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente. Gli ambienti cloud come [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") e [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") possono essere configurati per eseguire periodicamente il polling degli endpoint di integrità per determinare se un'istanza del tuo servizio è pronta ad accettare traffico.
 {: shortdesc}
 
 ## Panoramica sul controllo di integrità
@@ -50,7 +54,7 @@ La seguente tabella fornisce le indicazioni sulle risposte che possono essere fo
 ## Aggiunta di un controllo di integrità a un'applicazione Swift esistente
 {: #existing-app}
 
-La libreria [Health](https://github.com/IBM-Swift/Health) facilita l'aggiunta di un controllo di integrità alla tua applicazione Swift. I controlli di integrità sono estensibili. Per ulteriori informazioni sulla [memorizzazione in cache](https://github.com/IBM-Swift/Health#caching) per prevenire attacchi di tipo DoS o sull'aggiunta di [controlli personalizzati](https://github.com/IBM-Swift/Health#implementing-a-health-check), vedi la libreria [Health](https://github.com/IBM-Swift/Health).
+La libreria [Health](https://github.com/IBM-Swift/Health){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") facilita l'aggiunta di un controllo di integrità alla tua applicazione Swift. I controlli di integrità sono estensibili. Per ulteriori informazioni su [caching](https://github.com/IBM-Swift/Health#caching){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") per evitare attacchi DoS o aggiungere [custom checks](https://github.com/IBM-Swift/Health#implementing-a-health-check){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"), vedi la libreria [Health](https://github.com/IBM-Swift/Health){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 
 Per aggiungere la libreria Health a un'applicazione Swift esistente, vedi la seguente procedura:
 
@@ -90,7 +94,7 @@ Per aggiungere la libreria Health a un'applicazione Swift esistente, vedi la seg
 ## Controllo dell'integrità di un'applicazione kit starter Swift lato server
 {: #healthcheck-starterkit}
 
-Quando generi un'applicazione Swift basata su Kitura utilizzando un kit starter, un endpoint di controllo di integrità di base `/health`, viene incluso per impostazione predefinita. L'endpoint utilizza il protocollo Codable disponibile in Swift 4, come supportato dalla libreria [Health](https://github.com/IBM-Swift/Health).
+Quando generi un'applicazione Swift basata su Kitura utilizzando un kit starter, un endpoint di controllo di integrità di base `/health`, viene incluso per impostazione predefinita. L'endpoint utilizza il protocollo Codable disponibile in Swift 4, come supportato dalla libreria [Health](https://github.com/IBM-Swift/Health){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 
 Il codice di inizializzazione di base, quale l'inizializzazione dell'oggetto Health, si verifica in `Sources/Application.swift`. L'endpoint del controllo di integrità stesso viene fornito dal file `/Sources/Application/Routes/HealthRoutes.swift` e utilizza il seguente codice:
 
@@ -113,7 +117,12 @@ func initializeHealthRoutes(app: App) {
 ```
 {: codeblock}
 
-L'esempio utilizza il dizionario standard, che produce un payload quale `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}` quando accedi all'endpoint `/health`.
+L'esempio utilizza il dizionario standard, che produce un payload simile al seguente:
+```
+{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}
+```
+
+quando accedi all'endpoint `/health`.
 
 ## Suggerimenti per i probe di disponibilità e di attività
 {: #recommend-probes}
@@ -125,7 +134,7 @@ Un probe di attività, al contrario, può essere cauto su cosa viene controllato
 ### Aggiungi il supporto per la disponibilità e l'attività di Kubernetes a un'applicazione Swift
 {: #kube-readiness-swift}
 
-Per delle implementazioni alternative, quali l'utilizzo di **Codable** o del dizionario standard, vedi gli [esempi della libreria Health](https://github.com/IBM-Swift/Health#usage). Alcune di queste implementazioni semplificano la creazione di controlli di integrità estensibili con il supporto per la memorizzazione nella cache dei controlli eseguiti sui servizi di backup. In questo scenario, vuoi separare il test di attività semplice dal controllo di disponibilità più dettagliato e solido.
+Per delle implementazioni alternative, quali l'utilizzo di **Codable** o del dizionario standard, vedi gli [esempi della libreria Health](https://github.com/IBM-Swift/Health#usage){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"). Alcune di queste implementazioni semplificano la creazione di controlli di integrità estensibili con il supporto per la memorizzazione nella cache dei controlli eseguiti sui servizi di backup. In questo scenario, vuoi separare il test di attività semplice dal controllo di disponibilità più dettagliato e solido.
 
 ## Configurazione dei probe di disponibilità e di attività in Kubernetes
 {: #config-kube-readiness}
@@ -167,4 +176,4 @@ spec:
       failureThreshold: 10
 ```
 
-Per ulteriori informazioni, consulta [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
+Per ulteriori informazioni, consulta [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").

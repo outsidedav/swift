@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
+
+subcollection: swift
 
 ---
 
@@ -157,7 +161,7 @@ Completa la seguente procedura per creare un coinvolgimento utilizzando Feature 
 
   Il nuovo coinvolgimento è ora visualizzato nella finestra Engagement Details.
 
-Puoi ora misurare le [prestazioni](/docs/services/app-launch/app_measure_performance.html#applaunch_type) del tuo coinvolgimento.
+Puoi ora misurare le [prestazioni](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) del tuo coinvolgimento.
 
 ### Abilitazione della funzionalità di messaggistica interna all'applicazione
 {: #app-message-applaunch}
@@ -204,13 +208,13 @@ Completa la seguente procedura per creare un coinvolgimento che utilizza l'opzio
 
   Il nuovo coinvolgimento è ora visualizzato nella finestra Engagement Details.
 
-Puoi ora misurare le [prestazioni](/docs/services/app-launch/app_measure_performance.html#applaunch_type) del tuo coinvolgimento.
+Puoi ora misurare le [prestazioni](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) del tuo coinvolgimento.
 
 ## Link rapidi
 {: #links-applaunch notoc}
 
 Controlla i seguenti link per acquisire informazioni approfondite e comprendere le funzioni di {{site.data.keyword.engage_short}}:
 
- - Prova il [servizio App Launch](https://cloud.ibm.com/catalog/services/app-launch).
- - [Blog e video](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - Per ulteriori informazioni, consulta [App Launch - Esercitazione introduttiva](/docs/services/app-launch/index.html).
+ - Prova il [servizio App Launch](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
+ - [Blog e video](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
+ - Per ulteriori informazioni, consulta [App Launch - Esercitazione introduttiva](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate).

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-03-15"
+
+keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
+
+subcollection: swift
 
 ---
 
@@ -24,8 +28,7 @@ Attualmente, il linguaggio di programmazione supportato per l'utilizzo di {{site
 ## Passo 1. Creazione di un cluster di database
 {: #create_dbcluster}
 
-1. Accedi alla schermata di configurazione del servizio {{site.data.keyword.ihsdbaas_full}} all'indirizzo
-https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
+1. Accesso alla schermata di [configurazione del servizio {{site.data.keyword.ihsdbaas_full}}](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 
 2. Fornisci le seguenti informazioni:
 
@@ -82,7 +85,7 @@ Ti serve un kit starter basato sul framework web Swift lato server Kitura.
 
 Utilizza un progetto esistente che era stato creato da questo kit starter oppure crea un nuovo progetto.
 
-1. Apri il dashboard {{site.data.keyword.cloud_notm}} App Service all'indirizzo https://cloud.ibm.com/developer/appservice/dashboard.
+1. Apri il [dashboard {{site.data.keyword.cloud_notm}} App Service](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 
 2. Seleziona la scheda **Kit starter**.
 
@@ -242,14 +245,14 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ## Passo 5. Integrazione del codice dell'applicazione
 {: #embed_appcode}
 
-Puoi ora aggiungere il tuo codice dell'applicazione al progetto. Per ulteriori informazioni sull'utilizzo dell'API MongoKitten, vedi http://beta.openkitten.org/tutorials/.
+Puoi ora aggiungere il tuo codice dell'applicazione al progetto. Per ulteriori informazioni, vedi la documentazione dell'[API MongoKitten](http://beta.openkitten.org/tutorials/){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 
 ## Passo 6. Distribuzione della tua applicazione
 {: #deploy-dbcluster}
 
-Puoi eseguire l'applicazione [in locale](/docs/swift/create_app_cli.html#swift-install-tools) con gli strumenti di creazione necessari oppure eseguire la distribuzione a {{site.data.keyword.cloud_notm}}.
+Puoi eseguire l'applicazione [in locale](/docs/swift?topic=swift-swift_cli#swift-install-tools) con gli strumenti di creazione necessari oppure eseguire la distribuzione a {{site.data.keyword.cloud_notm}}.
 
-Per creare una toolchain di distribuzione nel dashboard, fai clic su **Distribuisci al cloud**. Configura il tuo metodo di distribuzione in base alle istruzioni per il metodo che scegli:
-  * **Distribuisci a [Kubernetes](/docs/apps/deploying/containers.html#containers)**. Questa opzione crea un cluster di host, denominati nodi di lavoro, per distribuire e gestire contenitori applicazione ad elevata disponibilità. Puoi creare un cluster o eseguire la distribuzione a un cluster esistente.
-  * **Distribuisci a Cloud Foundry**. Questa opzione distribuisce la tua applicazione nativa del cloud senza che tu debba gestire l'infrastruttura sottostante. Se il tuo account ha accesso a {{site.data.keyword.cfee_full_notm}}, puoi selezionare un tipo di deployer **[Cloud pubblico](/docs/cloud-foundry-public/about-cf.html#about-cf)** o **[Ambiente aziendale](/docs/cloud-foundry-public/cfee.html#cfee)**, che puoi utilizzare per creare e gestire ambienti isolati per ospitare applicazioni Cloud Foundry esclusivamente per la tua azienda.
-  * **Distribuisci a un [Virtual Server](/docs/apps/vsi-deploy.html#vsi-deploy)**. Questa opzione esegue il provisioning di un'istanza del server virtuale, carica un'immagine che include la tua applicazione, crea una toolchain DevOps e avvia il primo ciclo di distribuzione per tuo conto.
+Per creare una toolchain di distribuzione nel dashboard, fai clic su **Distribuisci**. Configura la tua destinazione di distribuzione in base alle istruzioni per il metodo che scegli:
+  * **Distribuisci a [{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**. Questa opzione crea un cluster di host, denominati nodi di lavoro, per distribuire e gestire contenitori applicazione ad elevata disponibilità. Puoi creare un cluster o eseguire la distribuzione a un cluster esistente.
+  * **Distribuisci a Cloud Foundry**. Questa opzione distribuisce la tua applicazione nativa del cloud senza che tu debba gestire l'infrastruttura sottostante. Se il tuo account ha accesso a {{site.data.keyword.cfee_full_notm}}, puoi selezionare un tipo di deployer **[Cloud pubblico](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** o **[Ambiente aziendale](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**, che puoi utilizzare per creare e gestire ambienti isolati per ospitare applicazioni Cloud Foundry esclusivamente per la tua azienda.
+  * **Distribuisci a un [Virtual Server](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**. Questa opzione esegue il provisioning di un'istanza del server virtuale, carica un'immagine che include la tua applicazione, crea una toolchain DevOps e avvia il primo ciclo di distribuzione per tuo conto.

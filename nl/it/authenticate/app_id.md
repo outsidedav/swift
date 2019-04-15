@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ La sicurezza delle applicazioni è incredibilmente complicata. Per la maggior pa
 
 Richiedendo agli utenti di eseguire l'accesso, puoi memorizzare i dati utente quali le preferenze dell'applicazione (o le informazioni dai profili social pubblici) e utilizzare quindi tali dati per personalizzare l'esperienza di ciascun utente nell'applicazione. {{site.data.keyword.appid_short_notm}} fornisce un framework di accesso per te ma puoi anche portare le tue schermate di accesso personalizzate da utilizzare con cloud directory.
 
-Per tutti i modi in cui puoi utilizzare {{site.data.keyword.appid_short_notm}} e le informazioni sull'architettura, vedi [Informazioni su {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
+Per tutti i modi in cui puoi utilizzare {{site.data.keyword.appid_short_notm}} e le informazioni sull'architettura, vedi [Informazioni su {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-about#about).
 
 ## Prima di cominciare
 {: #prereqs-appid}
@@ -37,7 +41,7 @@ Assicurati innanzitutto di disporre dei seguenti prerequisiti pronti a essere ut
 
 Crea un'istanza del servizio {{site.data.keyword.appid_short_notm}}:
 
-1. Nel catalogo [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/), seleziona {{site.data.keyword.appid_short_notm}}. Viene visualizzata la schermata di configurazione del servizio.
+1. Nel [catalogo {{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"), seleziona {{site.data.keyword.appid_short_notm}}. Viene visualizzata la schermata di configurazione del servizio.
 2. Assegna un nome alla tua istanza del servizio oppure utilizza il nome preimpostato.
 3. Seleziona il tuo piano dei prezzi e fai clic su **Crea**.
 
@@ -129,7 +133,7 @@ Per configurare i provider di identità social:
 
 1. Apri il dashboard {{site.data.keyword.appid_short_notm}} a **Identity Providers > Manage**.
 2. Imposta i provider di identità che vuoi utilizzare su **On**. Puoi visualizzare qualsiasi combinazione di provider di identità ma, se vuoi portare delle schermate di collegamento personalizzate, devi abilitare solo Cloud Directory.
-3. Aggiorna la [configurazione predefinita](/docs/services/appid/identity-providers.html) alle tue credenziali. {{site.data.keyword.appid_short_notm}} fornisce le credenziali IBM che puoi utilizzare per provare il servizio ma, prima di pubblicare la tua applicazione, devi aggiornare la configurazione.
+3. Aggiorna la [configurazione predefinita](/docs/services/appid?topic=appid-social#social) alle tue credenziali. {{site.data.keyword.appid_short_notm}} fornisce le credenziali IBM che puoi utilizzare per provare il servizio ma, prima di pubblicare la tua applicazione, devi aggiornare la configurazione.
 4. Personalizza la schermata di accesso per visualizzare l'immagine e i colori da te scelti.
 5. Per richiamare il widget di accesso con la tua applicazione, aggiungi il seguente comando al tuo codice.
     ```swift
@@ -272,12 +276,12 @@ Per configurare cloud directory:
 3. Aggiorna i provider di identità oppure la schermata del widget di accesso nel dashboard {{site.data.keyword.appid_short_notm}}.
 4. Ripeti i passi 1 e 2 per appurare che le modifiche vengano implementate immediatamente. Non è richiesto alcun aggiornamento al tuo codice dell'applicazione.
 
-Problemi? Controlla [Risoluzione dei problemi di {{site.data.keyword.appid_short_notm}}](/docs/services/appid/ts_index.html).
+Problemi? Controlla [Risoluzione dei problemi di {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-troubleshooting#troubleshooting).
 
 ## Passi successivi
-{: #next-appid}
+{: #next-appid notoc}
 
 Ottimo lavoro. Hai aggiunto un livello di sicurezza alla tua applicazione. Non fermarti ora e continua provando una delle seguenti opzioni:
 
-* Scopri di più e avvaliti di tutte le funzioni che {{site.data.keyword.appid_short_notm}} ha da offrire, [controlla la documentazione](/docs/services/appid/index.html)!
-* I kit starter sono uno dei modi più rapidi per utilizzare le funzioni di {{site.data.keyword.cloud_notm}}. Visualizza i kit starter disponibili nel [dashboard degli sviluppatori di applicazioni mobili](https://cloud.ibm.com/developer/mobile/dashboard). Scarica il codice. Esegui l'applicazione!
+* Scopri di più e avvaliti di tutte le funzioni che {{site.data.keyword.appid_short_notm}} ha da offrire, [controlla la documentazione](/docs/services/appid?topic=appid-getting-started#getting-started)!
+* I kit starter sono uno dei modi più rapidi per utilizzare le funzioni di {{site.data.keyword.cloud_notm}}. Visualizza i kit starter disponibili nel [Dashboard dello sviluppatore mobile ](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"). Scarica il codice. Esegui l'applicazione!

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
+
+subcollection: swift
 
 ---
 
@@ -15,7 +19,7 @@ lastupdated: "2019-01-15"
 # Utilizzo di Object Storage per il contenuto statico
 {: #object-storage}
 
-Object Storage è un componente fondamentale dell'elaborazione cloud e fornisce delle potenti funzioni agli sviluppatori Apple e alle loro applicazioni. A differenza dell'archiviazione di informazioni in una gerarchia di file (come l'archiviazione blocchi o file), un'archiviazione oggetti consiste solo di file e dei relativi metadati, archiviati in raccolte note come bucket. Per definizione, questi oggetti sono immutabili, il che li rende perfetti per dati quali immagini, video e altri documenti statici. Per i dati che cambiano spesso o che sono relazionali, puoi utilizzare i servizi di database [NoSQL](/docs/swift/data/nosql.html), [Cloudant](/docs/swift/data/cloudant.html) e [SQL](/docs/swift/data/sql.html).
+Object Storage è un componente fondamentale dell'elaborazione cloud e fornisce delle potenti funzioni agli sviluppatori Apple e alle loro applicazioni. A differenza dell'archiviazione di informazioni in una gerarchia di file (come l'archiviazione blocchi o file), un'archiviazione oggetti consiste solo di file e dei relativi metadati, archiviati in raccolte note come bucket. Per definizione, questi oggetti sono immutabili, il che li rende perfetti per dati quali immagini, video e altri documenti statici. Per i dati che cambiano spesso o che sono relazionali, puoi utilizzare i servizi di database [Cloudant](/docs/swift/data?topic=swift-cloudant#cloudant) e [SQL](/docs/swift/data?topic=swift-sql_data#sql_data).
 
 COS ({{site.data.keyword.cos_full_notm}}) è un sistema di archiviazione che può essere utilizzato per archiviare dati non strutturati flessibile, economicamente vantaggioso e scalabile. I dati sono accessibili tramite gli SDK oppure utilizzando l'interfaccia utente IBM. Puoi utilizzare {{site.data.keyword.cos_full_notm}} per accedere ai tuoi dati non strutturati tramite un portale self-service supportato da SDK e API RESTful. 
 
@@ -32,7 +36,7 @@ Quando crei un bucket, devi selezionare un livello di resilienza (interregionale
 ## API
 {: #api-cos}
 
-L'API {{site.data.keyword.cos_full}} è un'API basata su REST per la lettura e la scrittura di oggetti. Supporta un sottoinsieme dell'API S3 per una facile migrazione delle applicazioni a {{site.data.keyword.cloud_notm}}. Può essere utilizzato qualsiasi SDK S3 per utilizzare {{site.data.keyword.cos_full}}. Per ulteriori informazioni, vedi la [Guida di riferimento API {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api)completa
+L'API {{site.data.keyword.cos_full}} è un'API basata su REST per la lettura e la scrittura di oggetti. Supporta un sottoinsieme dell'API S3 per una facile migrazione delle applicazioni a {{site.data.keyword.cloud_notm}}. Può essere utilizzato qualsiasi SDK S3 per utilizzare {{site.data.keyword.cos_full}}. Per ulteriori informazioni, vedi la [Guida di riferimento API {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api) completa
 
 ## Sicurezza
 {: #security-cos}
@@ -87,7 +91,7 @@ Considera i seguenti fattori per selezionare l'ubicazione geografica del tuo arc
 
 A seconda del tuo caso d'uso, puoi ridurre i costi selezionando un piano di servizi che soddisfi le tue esigenze. Le operazioni di archiviazione che comportano un accesso minimo all'archivio oggetti non hanno bisogno della velocità e della durabilità di un oggetto a cui si accede frequentemente e questa distinzione si riflette nel supporto della classe di archiviazione e nel piano dei prezzi per le tue applicazioni. Le classi di archiviazione sono definite a livello di bucket e pertanto puoi utilizzare una combinazione di piani che soddisfi le tue esigenze. Crea un bucket che è impostato sulla classe di archiviazione che vuoi utilizzare.
 
-Ulteriori informazioni sui prezzi sono disponibili dalla [documentazione relativa alla classe di archiviazione {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/help/billing.html#ibm-cos-pricing).
+Ulteriori informazioni sui prezzi sono disponibili dalla [documentazione relativa alla classe di archiviazione {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/help?topic=cloud-object-storage-billing#ibm-cos-pricing).
 
 ### Classi di archiviazione di esempio
 {: #samples-cos}

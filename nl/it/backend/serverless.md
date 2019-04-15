@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ Che cosa si intende per "senza server"? Il modello di sviluppo senza server si r
 
 Estraendo le infrastrutture e i framework necessari per lo sviluppo lato server, l'architettura senza server consente agli sviluppatori di concentrarsi sulla scrittura del codice da eseguire in modo reattivo per modificare i dati.
 
-L'offerta FaaS di IBM, [{{site.data.keyword.openwhisk}} ](https://cloud.ibm.com/openwhisk/), si sforza di fornire un'esperienza di sviluppo lato server semplice, senza che occorra alcuna conoscenza specialistica sul lato server. Utilizzando la tecnologia senza server, puoi sviluppare rapidamente soluzioni di backend estensibili per soddisfare praticamente tutte le richieste di carico di lavoro senza la necessità di creare le risorse in anticipo. Per le applicazioni che hanno dei modelli di carico imprevedibili o un elevato tempo di inattività del server, {{site.data.keyword.openwhisk_short}} può essere un'eccellente soluzione cloud con prestazioni migliorate; inoltre, il suo sistema "paga solo ciò che utilizzi" aiuta a ridurre i costi.
+L'offerta FaaS di IBM, [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"), si sforza di fornire un'esperienza di sviluppo lato server semplice, senza che occorra alcuna conoscenza specialistica sul lato server. Utilizzando la tecnologia senza server, puoi sviluppare rapidamente soluzioni di backend estensibili per soddisfare praticamente tutte le richieste di carico di lavoro senza la necessità di creare le risorse in anticipo. Per le applicazioni che hanno dei modelli di carico imprevedibili o un elevato tempo di inattività del server, {{site.data.keyword.openwhisk_short}} può essere un'eccellente soluzione cloud con prestazioni migliorate; inoltre, il suo sistema "paga solo ciò che utilizzi" aiuta a ridurre i costi.
 
 ## Modifiche dell'architettura
 {: #comparison-serverless}
@@ -98,12 +102,12 @@ Esegui le tue funzioni periodicamente e definisci le pianificazioni che rispetta
 {: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [API REST](https://cloud.ibm.com/apidocs)
+* [API REST ](https://cloud.ibm.com/apidocs){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")
 
 ## Link correlati
 {: #related-serverless notoc}
 
-* [Scopri {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions)
+* [Scopri {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
-* [Sito web del progetto Apache OpenWhisk](http://openwhisk.org)
-* [Ulteriori informazioni sul concetto di "senza server"](https://martinfowler.com/articles/serverless.html)
+* [Sito web del progetto Apache OpenWhisk](http://openwhisk.org){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")
+* [Ulteriori informazioni su Serverless](https://martinfowler.com/articles/serverless.html){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")

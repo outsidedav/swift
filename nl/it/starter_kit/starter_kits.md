@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
+
+subcollection: swift
 
 ---
 
@@ -18,7 +22,7 @@ lastupdated: "2019-01-15"
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple consente agli sviluppatori Apple di creare applicazioni da diversi kit starter, di eseguire il provisioning e la connessione di servizi chiave ottimizzati per {{site.data.keyword.cloud_notm}} e di scaricare quindi rapidamente il codice funzionante o di eseguire la configurazione per una fornitura continua. Gli utenti possono creare, visualizzare, configurare e gestire la tua applicazione, nonché scaricare il codice della tua applicazione. L'utilizzo dei kit starter ti aiuta a valutare e testare rapidamente i servizi {{site.data.keyword.cloud_notm}} con una nuova applicazione.
 
-Pronto a cominciare? Per un'introduzione, visita [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits).
+Pronto a cominciare? Per un'introduzione, visita [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 {: tip}
 
 ## Cos'è un kit starter?
@@ -28,7 +32,7 @@ Con {{site.data.keyword.cloud_notm}} Developer Experience, puoi scegliere tra di
 
 I kit starter sono pronti per la produzione e si focalizzano sulla dimostrazione di un'implementazione del modello chiave utilizzando un runtime (ad esempio Swift). In alcuni casi, i kit starter offrono un'esperienza utente semplice per mettere in evidenza l'integrazione del servizio. In altri casi i kit starter rappresentano un'implementazione personalizzabile di un caso d'uso sofisticato.
 
-I kit starter contengono istruzioni che consentono a {{site.data.keyword.cloud_notm}} di produrre automaticamente applicazioni di scaffolding con codice portatile e di specificare le risorse di cui eseguire il provisioning automatico quando crei un'applicazione dal kit starter.
+I kit starter contengono istruzioni che consentono a {{site.data.keyword.cloud_notm}} di produrre automaticamente applicazioni di scaffolding con codice portatile e di specificare i servizi di cui eseguire il provisioning automatico quando crei un'applicazione dal kit starter.
 
 ## Utilizzo della {{site.data.keyword.cloud_notm}} Developer Console for Apple
 {: #starterkits-journey}
@@ -56,27 +60,27 @@ Dalla vista **Crea applicazione**, puoi denominare la tua applicazione e fornire
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple - vista Create New App](images/create_new_project_screen.png "Vista Create New App") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple - vista Create New App*
 
-## Vista App Details
+## Vista App details
 {: #app_details_view}
 
 La vista App Details visualizza un elenco di servizi configurati per la tua applicazione. Per ciascuna voce nell'elenco, puoi visualizzare il nome del servizio, dei link ad altre informazioni e un pulsante **actions** con tre punti allineati verticalmente. Le opzioni del pulsante **actions** sono la rimozione dei servizi da un'applicazione, l'apertura di un dashboard per il servizio e l'eliminazione del servizio. La rimozione di un'istanza del servizio rimuove l'associazione a questa applicazione e non elimina l'istanza del servizio. Inoltre, le credenziali del servizio sono accorpate in questa vista, per cui non devi visitare ogni singola vista dell'istanza del servizio per ottenerle.
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple - vista App Details](images/project_details_screen.png "Vista App Details") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple - vista App Details*
 
-Utilizzando la vista App Details, puoi aggiungere servizi nuovi o esistenti alla tua applicazione che non facevano parte del kit starter originale. Fai clic sul link **Add Resource** nella casella di elenco dei servizi per aggiungere i servizi. I servizi disponibili dipendono dal tipo di applicazione e dai servizi disponibili in una regione, quindi non tutti i servizi sono disponibili per essere associati a tutte le applicazioni.
+Utilizzando la pagina **App details**, puoi aggiungere servizi nuovi o esistenti alla tua applicazione che non facevano parte del kit starter originale. Fai clic su **Add service** per aggiungere i servizi. I servizi disponibili dipendono dal tipo di applicazione e dai servizi disponibili in una regione, quindi non tutti i servizi sono disponibili per essere associati a tutte le applicazioni.
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple - finestra di dialogo Add Resource](images/add_resource_screen.png "Finestra di dialogo Add Resource") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple - finestra di dialogo Add Resource*
 
 ### Scaricamento del tuo codice
 
-* Nella vista App Details, puoi accedere al tuo codice selezionando **Download Code** per generare e scaricare il codice per la tua applicazione.
+* Nella pagina _App details_, puoi accedere al tuo codice selezionando **Download code** per generare e scaricare il codice per la tua applicazione.
 
 ### Vista App List
 {: #app_list_view}
 
-Puoi elencare tutte le tue applicazioni create dalla vista App List. Puoi rinominare o eliminare le tue applicazioni da qui. Fai clic sulla riga di un nome applicazione per ritornare alla vista App Details.
+Puoi elencare tutte le tue applicazioni create dalla vista _App List_. Puoi rinominare o eliminare le tue applicazioni da qui. Fai clic sulla riga di un nome applicazione per ritornare alla vista App Details.
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple - vista App List](images/project_list_screen.png "Vista App List") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple - vista App List*
 
-Per ulteriori informazioni, visita la pagina delle [risorse didattiche di {{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/learning-resources).
+Per ulteriori informazioni, visita la pagina delle [risorse didattiche di {{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 {: tip}
