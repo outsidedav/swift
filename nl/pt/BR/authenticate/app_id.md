@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
+
+subcollection: swift
 
 ---
 
@@ -21,7 +25,7 @@ A segurança do aplicativo é incrivelmente complicada. Para a maioria dos desen
 
 Ao requerer que os usuários efetuem login, é possível armazenar dados do usuário, como as preferências de app (ou as informações de perfis sociais públicos) e, então, usar esses dados para customizar a experiência de cada usuário dentro do app. O {{site.data.keyword.appid_short_notm}} fornece uma estrutura de login para você, mas também é possível trazer suas próprias telas de conexão de marca para usar com o diretório da nuvem.
 
-Para obter todas as maneiras de uso do {{site.data.keyword.appid_short_notm}} e informações de arquitetura, consulte [Sobre o {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
+Para obter todas as maneiras de uso do {{site.data.keyword.appid_short_notm}} e informações de arquitetura, consulte [Sobre o {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-about#about).
 
 ## Antes de começar
 {: #prereqs-appid}
@@ -37,7 +41,7 @@ Primeiro, verifique se os pré-requisitos a seguir estão prontos para execuçã
 
 Crie uma instância de serviço do {{site.data.keyword.appid_short_notm}}:
 
-1. No  [ {{site.data.keyword.cloud_notm}}  catálogo ](https://cloud.ibm.com/catalog/), selecione  {{site.data.keyword.appid_short_notm}}. A tela de configuração de serviço é aberta.
+1. No [catálogo do {{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"), selecione {{site.data.keyword.appid_short_notm}}. A tela de configuração de serviço é aberta.
 2. Dê um nome à sua instância de serviço ou use o nome de pré-configuração.
 3. Selecione o seu plano de precificação e clique em **Criar**.
 
@@ -129,7 +133,7 @@ Para configurar provedores de identidade social:
 
 1. Abra o painel do {{site.data.keyword.appid_short_notm}} para **Provedores de identidade > Gerenciar**.
 2. Configure os provedores de identidade que você deseja usar como **Ativados**. Será possível usar qualquer combinação de provedores de identidade, mas se quiser trazer telas de conexão customizadas, será necessário ativar apenas o Cloud Directory.
-3. Atualize a [configuração padrão](/docs/services/appid/identity-providers.html) com suas próprias credenciais. O {{site.data.keyword.appid_short_notm}} fornece as credenciais da IBM que podem ser usadas para experimentar o serviço, mas, antes de publicar o app, é necessário atualizar a configuração.
+3. Atualize a [configuração padrão](/docs/services/appid?topic=appid-social#social) com suas próprias credenciais. O {{site.data.keyword.appid_short_notm}} fornece as credenciais da IBM que podem ser usadas para experimentar o serviço, mas, antes de publicar o app, é necessário atualizar a configuração.
 4. Customize a tela de login para exibir a imagem e as cores de sua escolha.
 5. Para chamar o widget de login com seu app, inclua o comando a seguir no código.
     ```swift
@@ -267,12 +271,12 @@ Tudo está configurado corretamente? Você pode testá-lo!
 3. Atualize os provedores de identidade ou a tela do widget de login no painel do {{site.data.keyword.appid_short_notm}}.
 4. Repita as etapas 1 e 2 para ver se as mudanças são implementadas imediatamente. Não são necessárias atualizações para o código do app.
 
-Tendo problemas? Efetue o registro de saída de  [ resolução de problemas  {{site.data.keyword.appid_short_notm}} ](/docs/services/appid/ts_index.html).
+Tendo problemas? Efetue o registro de saída de  [ resolução de problemas  {{site.data.keyword.appid_short_notm}} ](/docs/services/appid?topic=appid-troubleshooting#troubleshooting).
 
 ## Próximas etapas
-{: #next-appid}
+{: #next-appid notoc}
 
 Ótimo trabalho! Você incluiu um nível de segurança no app. Tente uma das opções a seguir para manter o ritmo:
 
-* Obtenha mais informações e aproveite todos os recursos que o {{site.data.keyword.appid_short_notm}} tem a oferecer; [verifique os docs](/docs/services/appid/index.html).
-* Os kits do iniciador são uma das maneiras mais rápidas de usar os recursos do {{site.data.keyword.cloud_notm}}. Visualize os kits do iniciador disponíveis no [Painel do desenvolvedor de dispositivo móvel](https://cloud.ibm.com/developer/mobile/dashboard). Faça download do código. Execute o app.
+* Obtenha mais informações e aproveite todos os recursos que o {{site.data.keyword.appid_short_notm}} tem a oferecer; [verifique os docs](/docs/services/appid?topic=appid-getting-started#getting-started).
+* Os kits do iniciador são uma das maneiras mais rápidas de usar os recursos do {{site.data.keyword.cloud_notm}}. Visualize os kits de iniciador disponíveis no [Painel do Mobile Developer ](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"). Faça download do código. Execute o app.

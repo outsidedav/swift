@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: swift security, add security swift, crypto swift, hyper protect swift, ios hyper protect, dbaas swift, swift key management, swift advanced security
+
+subcollection: swift
 
 ---
 
@@ -20,7 +24,7 @@ lastupdated: "2019-01-15"
 Os desenvolvedores de Swift podem usar facilmente serviços de segurança avançados que o {{site.data.keyword.cloud}} oferece para proteger suas chaves e dados em repouso, em uso ou em trânsito no nível de segurança mais alto da indústria.
 {: shortdesc}
 
-Como uma abordagem fácil, é possível usar diretamente o {{site.data.keyword.cloud_notm}} HyperSecure Platform Services para todos os serviços de segurança avançada no {{site.data.keyword.cloud}}. Para obter mais informações, consulte [Introdução ao {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform/index.html){:new_window}.
+Como uma abordagem fácil, é possível usar diretamente o {{site.data.keyword.cloud_notm}} HyperSecure Platform Services para todos os serviços de segurança avançada no {{site.data.keyword.cloud}}. Para obter mais informações, consulte [Introdução ao {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform/index.html#getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits).
 
 ## Usando o  {{site.data.keyword.cloud_notm}}  {{site.data.keyword.hscrypto}}
 {: #security-swift}
@@ -31,14 +35,14 @@ O {{site.data.keyword.hscrypto}} oferece módulos de segurança de hardware ende
 
 O {{site.data.keyword.hscrypto}} também é o keystore para o serviço {{site.data.keyword.keymanagementserviceshort}}.
 
-Para obter mais informações sobre o {{site.data.keyword.hscrypto}}, consulte [Introdução ao {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/services/hs-crypto/index.html){:new_window}.
+Para obter mais informações sobre o {{site.data.keyword.hscrypto}}, consulte [Introdução ao {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/services/hs-crypto?topic=hs-crypto-get-started#get-started).
 
 ## Usando o {{site.data.keyword.cloud_notm}} {{site.data.keyword.keymanagementserviceshort}}
 {: #swift-key-management}
 
 O {{site.data.keyword.keymanagementserviceshort}} ajuda a criar chaves criptografadas para aplicativos entre os serviços do {{site.data.keyword.cloud_notm}}. Conforme você gerencia o ciclo de vida de suas chaves, é possível se beneficiar de saber que as suas chaves estão protegidas pelos módulos de segurança de hardware (HSMs) baseados em nuvem que protegem contra roubo de informações. Junto ao {{site.data.keyword.hscrypto}}, suas chaves são protegidas no nível de segurança mais alto do certificado FIPS 140-2 Nível 4.
 
-Para obter mais informações sobre o {{site.data.keyword.keymanagementserviceshort}}, consulte [Introdução ao {{site.data.keyword.keymanagementserviceshort}}](/docs/services/keymgmt/index.html){:new_window}.
+Para obter mais informações sobre o {{site.data.keyword.keymanagementserviceshort}}, consulte [Introdução ao {{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-getting-started-tutorial#getting-started-tutorial).
 
 ## Usando o  {{site.data.keyword.cloud_notm}}  Hyper Protect DBaaS
 {: #hypersecure-dbaas}
@@ -59,20 +63,20 @@ A {{site.data.keyword.IBM_notm}} hospeda seus bancos de dados em um ambiente alt
 {: #swift-hyperprotect}
 
 Para usar um banco de dados MongoDB em seu aplicativo, consulte
-[Introdução ao uso de um banco de dados](/docs/hypersecure_dbaas/database-cluster.html).  
+[Introdução ao uso de um banco de dados](/docs/swift/hypersecure_dbaas?topic=swift-create-database-cluster#creating-a-highly-available-and-secure-database).  
 
 ### Aprendendo mais sobre o  {{site.data.keyword.cloud_notm}}  Hyper Protect DBaaS
 {: #swift-learnmore}
 
-Para saber mais sobre o {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS, consulte [Introdução ao IBM Cloud Hyper Protect DBaaS](/docs/services/hyper-protect-dbaas/index.html).
+Para saber mais sobre o {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS, consulte [Introdução ao IBM Cloud Hyper Protect DBaaS](/docs/services/hyper-protect-dbaas?topic=hyper-protect-dbaas-gettingstarted#gettingstarted).
 
 ## Usando o {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscontainers}}
 {: #swift-hscontainers}
 
 O {{site.data.keyword.hscontainers}} fornece ferramentas poderosas, combinando s tecnologias Docker e Kubernetes, uma experiência intuitiva do usuário e a segurança e o isolamento integrados para automatizar a implementação, a operação, o ajuste de escala e o monitoramento de apps conteinerizados em um cluster de hosts de cálculo.
 
-Os {{site.data.keyword.hscontainers}} estão disponíveis apenas para usuários patrocinados. Se você espera suporte de segurança dedicado, registre-se como um usuário patrocinado com o [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml) para implementar seu aplicativo no cluster do {{site.data.keyword.hscontainers}}.
+Os {{site.data.keyword.hscontainers}} estão disponíveis apenas para usuários patrocinados. Se você espera suporte de segurança dedicado, registre-se como um usuário patrocinado com o [Programa de Feedback do IBM Z Client](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") para implementar o seu aplicativo no cluster do {{site.data.keyword.hscontainers}}.
 {: tip}
 
 Antes de se tornar um usuário patrocinado, é possível usar o {{site.data.keyword.containershort_notm}} para proteger seu aplicativo. Para obter mais informações, consulte
-[Introdução ao {{site.data.keyword.containershort_notm}}](/docs/containers/container_index.html).
+[Introdução ao {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-container_index#container_index).

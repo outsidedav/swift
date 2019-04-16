@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-03-28"
+
+keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
+
+subcollection: swift
 
 ---
 
@@ -31,13 +35,13 @@ A lista a seguir descreve o fluxo de como a integração funciona:
 
 Assegure-se de que você tenha os pré-requisitos a seguir:
 
-* Uma instância do  [ {{site.data.keyword.conversationshort}}  serviço ](/docs/services/conversation/getting-started.html)
+* Uma instância do [serviço do {{site.data.keyword.conversationshort}}](/docs/services/assistant?topic=assistant-getting-started#getting-started)
 * iOS 10.0 +
 * Xcode 9.3 +
 * Swift 4.1 +
 * CocoaPods, Carthage, ou Swift Package Manager
 
-É possível instalar o [SDK Watson Swift](https://github.com/watson-developer-cloud/swift-sdk) usando o [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods), o [Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage) ou o [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager). Usando CocoaPods (https://cocoapods.org/) para gerenciar dependências, você obtém somente as estruturas de que precisa, ao invés do SDK Watson Swift inteiro. Se você for novo no CocoaPods, poderá instalá-lo facilmente:
+É possível instalar o [SDK do Watson Swift](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") usando o [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"), o [Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") ou o [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"). Usando o CocoaPods para gerenciar dependências, você obterá apenas as estruturas necessárias, em oposição a todo o SDK do Watson Swift. Se você for novo no CocoaPods, poderá instalá-lo facilmente:
 
 ```console
 sudo gem install cocoapods
@@ -66,8 +70,7 @@ além das credenciais de serviço.
 ## Etapa 2. Fazendo Download e Construindo Dependências
 {: #download-depend-chatbot}
 
-O exemplo a seguir usa o AssistantV1. Para obter mais informações sobre a estrutura do
-AssistantV2, veja a [documentação do AssistantV2 do SDK do Watson](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV2/index.html).
+O exemplo a seguir usa o AssistantV1. Para obter mais informações sobre a estrutura do AssistantV2, consulte a [documentação do Watson SDK AssistantV2](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV2/index.html){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
 
 Usando seu editor de texto favorito, crie um novo `Podfile` no diretório raiz do seu projeto (onde o `.xcodeproj` está localizado) executando `pod init`. Em seguida, inclua uma linha para especificar a estrutura do {{site.data.keyword.conversationshort}} do SDK Watson Swift como uma dependência:
 
@@ -79,7 +82,7 @@ target 'MyApp' do
 ```
 {: codeblock}
 
-Para um app de produção, talvez você também queira especificar um [requisito de versão](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions) específico para evitar mudanças inesperadas de novas liberações do Watson Swift SDK.
+Para um app de produção, você também pode desejar especificar um [requisito de versão](https://guides.cocoapods.org/using/the-podfile.html#specifying-pod-versions){: new_window} específico![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") para evitar mudanças inesperadas de novas liberações do SDK do Watson Swift.
 
 Com seu `Podfile` no local, agora será possível fazer download das dependências. Use um terminal para navegar para o diretório raiz do seu projeto, em seguida, execute o CocoaPods:
 
@@ -117,8 +120,7 @@ por exemplo, `import Assistant`.
   {: codeblock}
 
   **Dica**: esse exemplo salva o contexto no estado. Para um melhor entendimento desse objeto e como adaptá-lo ao seu caso de uso, veja a [documentação da variável
-de contexto](/docs/services/assistant/dialog-runtime.html#context-variables). Confira a [documentação
-do parâmetro de versão](https://cloud.ibm.com/apidocs/assistant#versioning) ou use a data em que o serviço {site.data.keyword.conversationshort}} foi criado.
+de contexto](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables). Verifique a [documentação do parâmetro de versão](https://cloud.ibm.com/apidocs/assistant#versioning){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") ou use a data em que o serviço {site.data.keyword.conversationshort}} foi criado.
 
 3. Inicialize a conversa. Dependendo de como o seu assistente é configurado, ele pode fornecer
 uma resposta inicial para o usuário:
@@ -171,7 +173,7 @@ Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11a
 ```
 {: screen}
 
-5. Explore a [documentação do Assistant](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV1/index.html) do SDK do Watson para construir a funcionalidade do seu aplicativo.
+5. Explore a [documentação do Assistente](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV1/index.html){: new_window} do SDK do Watson ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") para construir a funcionalidade de seu aplicativo.
 
 ## Usando kits iniciadores
 {: #starterkits-chatbot}
@@ -180,16 +182,16 @@ Com kits do iniciador, é possível usar os recursos do {{site.data.keyword.clou
 como usar os recursos de deep learning do {{site.data.keyword.conversationshort}} incluindo uma
 interface de língua natural em seu aplicativo, a qual automatiza interações com seus usuários.
 
-1. Selecione o [kit do iniciador](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} com o qual você deseja trabalhar.
-2. Crie o projeto com os serviços padrão.
-3. Clique em **Incluir recursos > Watson >  {{site.data.keyword.conversationshort}} **.
+1. Selecione o [kit do iniciador](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") com o qual você deseja trabalhar.
+2. Crie o app com os serviços padrão.
+3. Clique em **Incluir serviço > Watson > {{site.data.keyword.conversationshort}}**.
 4. Faça download do projeto clicando em **Fazer download do código**. É possível localizar as credenciais de serviço no arquivo `config/local-dev.json`.
 
 ## Próximas etapas
-{: #next-chatbot}
+{: #next-chatbot notoc}
 
 Ótimo trabalho! Você incluiu um assistente de AI em seu app. Tente uma das opções a seguir para manter o ritmo:
 
-* Confira o [SDK {{site.data.keyword.watson}} Swift](https://github.com/watson-developer-cloud/swift-sdk){:new_window} e explore os outros serviços Watson suportados.
-* Tire proveito de todos os recursos que o [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html) oferece.
-* Visualize o código-fonte do [app de amostra Simple Chat](https://github.com/watson-developer-cloud/simple-chat-swift){:new_window}, demonstrando o {{site.data.keyword.watson}} Swift SDK no GitHub.
+* Verifique o [SDK do Swift do {{site.data.keyword.watson}}](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") e explore os outros serviços suportados do Watson.
+* Tire proveito de todos os recursos que o [{{site.data.keyword.conversationshort}}](/docs/services/assistant?topic=assistant-index#index) oferece.
+* Visualize o código-fonte para o [app de amostra do Simple Chat](https://github.com/watson-developer-cloud/simple-chat-swift){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"), demonstrando o SDK do Swift do {{site.data.keyword.watson}} no GitHub.

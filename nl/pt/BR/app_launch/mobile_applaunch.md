@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # Gerenciando Liberações de Recursos do
 {: #mobile_applaunch}
 
-O {{site.data.keyword.engage_full}} permite que os desenvolvedores construam aplicativos de engajamento controlando o alcance e lancem os recursos de app que podem fornecer métricas mensuráveis. O serviço ajuda os desenvolvedores a remover o acoplamento que existe hoje entre o lançamento do recurso do app e as atualizações do app para produção. Agora é possível publicar recursos sem expô-los à produção para liberar gradualmente novas versões de um app de maneira controlada. Com o serviço {{site.data.keyword.engage_short}}, os proprietários de app têm controle total sobre o lançamento do recurso para um segmento de destino.
+O {{site.data.keyword.engage_full}} permite que os desenvolvedores construam apps envolventes controlando o alcance e a apresentação de recursos de app que podem fornecer métricas mensuráveis. O serviço ajuda os desenvolvedores a remover o acoplamento que existe hoje entre o lançamento do recurso do app e as atualizações do app para a produção. Agora é possível publicar recursos sem expô-los à produção para liberar gradualmente novas versões de um app de maneira controlada. Com o serviço {{site.data.keyword.engage_short}}, os proprietários de app têm controle total sobre o lançamento do recurso para um segmento de destino.
 
 O serviço {{site.data.keyword.engage_short}} define um recurso, cria um público baseado em plataformas de dispositivo (incluindo atributos de público customizados) e, finalmente, define um engajamento que coreografa a sincronização e o posicionamento do recurso. Depois que os SDKs são usados, junto aos atributos de recurso e de métricas incorporados no aplicativo, o serviço começa a medir as experiências do público. Agora é possível usar o app com base nessas informações para criar engajamentos do cliente customizados em várias categorias de usuários do app.
 
@@ -157,7 +161,7 @@ Conclua as etapas a seguir para criar um engajamento usando o Controle de recurs
 
   O novo engajamento agora aparece na janela Detalhes de engajamento.
 
-Agora é possível medir o [desempenho](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de seu engajamento.
+Agora é possível medir o [desempenho](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) de seu engajamento.
 
 ### Ativando o recurso de sistema de mensagens no app
 {: #app-message-applaunch}
@@ -204,13 +208,13 @@ Conclua as etapas a seguir para criar um engajamento que use a opção Sistema d
 
   O novo engajamento agora aparece na janela Detalhes de engajamento.
 
-Agora é possível medir o [desempenho](/docs/services/app-launch/app_measure_performance.html#applaunch_type) de seu engajamento.
+Agora é possível medir o [desempenho](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) de seu engajamento.
 
 ## Links Rápidos
 {: #links-applaunch notoc}
 
 Verifique os links a seguir para obter insight e entender os recursos do {{site.data.keyword.engage_short}}:
 
- - Experimente o [Serviço de ativação de app](https://cloud.ibm.com/catalog/services/app-launch).
- - [Blogs e vídeos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - Para obter mais informações, consulte [Ativação de app: tutorial de introdução](/docs/services/app-launch/index.html).
+ - Experimente o [Serviço de ativação do app](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
+ - [Blogs e vídeos](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
+ - Para obter mais informações, consulte [Ativação de app: tutorial de introdução](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate).

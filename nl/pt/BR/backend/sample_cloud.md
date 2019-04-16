@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: bluepic swift, ios bluepic, bff swift image, sample swift, swift example bff
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # Caso de Uso de Lógica do iOS e da Nuvem
 {: #sample_cloud}
 
-Um exemplo de um aplicativo iOS que usa um Backend For Frontend (BFF) pode ser visto por meio do [aplicativo de amostra de compartilhamento de imagem BluePic](https://github.com/IBM/BluePic). O app BluePic usa as tecnologias a seguir:
+Um exemplo de um aplicativo iOS que usa um Backend For Frontend (BFF) pode ser visto por meio do [aplicativo de amostra de compartilhamento de imagem do BluePic](https://github.com/IBM/BluePic){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"). O app BluePic usa as tecnologias a seguir:
 
 * Object Storage e Cloudant para armazenar os dados de imagem.
 * O Watson Visual Recognition e o serviço IBM Weather Company para incluir informações adicionais nas imagens.

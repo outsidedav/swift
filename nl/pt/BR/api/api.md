@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swift api connect, swagger swift, open api swift, api designer, loopback swift api, create swift backend, swift api parameters, swift api reference
+
+subcollection: swift
 
 ---
 
@@ -21,21 +25,21 @@ lastupdated: "2019-01-15"
 ## Criando uma Instância do API Connect
 {: #create-apiconnect}
 
-Acesse o [Catálogo](https://cloud.ibm.com/catalog/) e crie uma instância do API Connect para gerenciar suas APIs.
+Acesse [Catálogo](https://cloud.ibm.com/catalog/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") e crie uma instância do API Connect para gerenciar as suas APIs.
 
 Use `Menu->APIs` para acessar o console do API Connect Management.
 
 ![API Connect](images/apiconnect.png)
 
-Se você estiver definindo seu próprio contrato de API antes de iniciar o desenvolvimento de back-end e front-end, use as ferramentas do API Connect para acelerar esse processo. É possível trabalhar com a sua equipe de desenvolvimento digital para construir e definir o contrato de API entre o iOS App e a lógica de backend. Essa lógica pode ser entregue usando o [{{site.data.keyword.openwhisk}}](/docs/openwhisk/index.html) ou por meio do [tempo de execução do Swift](/docs/runtimes/swift/index.html) com Kubernetes ou [Cloud Foundry](/docs/cloud-foundry/index.html).
+Se você estiver definindo seu próprio contrato de API antes de iniciar o desenvolvimento de back-end e front-end, use as ferramentas do API Connect para acelerar esse processo. É possível trabalhar com a sua equipe de desenvolvimento digital para construir e definir o contrato de API entre o iOS App e a lógica de backend. Essa lógica pode ser entregue usando o [{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-index#index) ou por meio do [tempo de execução do Swift](/docs/runtimes/swift?topic=Swift-swift_runtime#swift_runtime) com Kubernetes ou [Cloud Foundry](/docs/cloud-foundry?topic=cloud-foundry-about#about).
 
 Depois que sua API é definida, é possível definir as Open API Specifications (Swagger) em várias ferramentas diferentes:
 
-- [ Editor Swagger ](http://editor.swagger.io/)
-- [API Designer](https://www.ibm.com/support/knowledgecenter/en/SSFS6T/com.ibm.apic.toolkit.doc/task_apionprem_composing_apis.html)
-- [ Loopback ](https://loopback.io/)
+- [Editor do Swagger](http://editor.swagger.io/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")
+- [Designer de API](https://www.ibm.com/support/knowledgecenter/en/SSFS6T/com.ibm.apic.toolkit.doc/task_apionprem_composing_apis.html){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")
+- [Loopback](https://loopback.io/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")
 
-## Definindo sua API Gerenciada
+## Definindo a sua API gerenciada
 {: #define-apiconnect}
 
 É possível definir um proxy de API que gerencia o gateway da API entre o aplicativo cliente e a lógica de backend. Use as etapas a seguir para criar um proxy usando YAML ou JSON da Open API Specification (documento Swagger). 
@@ -47,20 +51,20 @@ Depois que sua API é definida, é possível definir as Open API Specifications 
 
 É necessário configurar o Terminal externo para apontar para a URL que se vincula ao aplicativo de lógica de backend. 
 
-## Criando um Backend de Swift
+## Criando um back-end do Swift
 {: #create-backend-apiconnect}
 
 É possível criar seu app Swift de back-end com base nessa API. 
 
-No Apple Development Console, execute as seguintes etapas:
+No [Console do Apple Development](https://cloud.ibm.com/developer/appledevelopment/dashboard){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"), execute as etapas a seguir:
 
-1. Selecione  ** Kits de Inicialização **.
-2. Clique em  ** Criar Aplicativo **.
-3. Selecione  ** Swift **  como o idioma.
+1. Selecione **Kits de Inicialização**.
+2. Clique em **Criar App**.
+3. Selecione **Swift** como o idioma.
 
 Selecione o arquivo YAML e JSON e, em seguida, clique em **Criar**. O app Swift de backend é criado.
 
-Em seguida, é possível **fazer download** do Código ou **Implementar na nuvem** e clonar seu repositório GIT na sua máquina local. É possível seguir as instruções no Guia de conhecimento para abrir o app do lado do servidor no Xcode.
+Em seguida, é possível **fazer download** do Código ou **Implementar** e clonar o seu repositório GIT para a sua máquina local. É possível seguir as instruções no Guia de conhecimento para abrir o app do lado do servidor no Xcode.
 
 Na pasta **Origem**, é possível ver uma rota que define o arquivo Swift que criou os terminais REST que são mapeados para a API. 
 
@@ -112,7 +116,7 @@ Depois que a API for definida usando o {{site.data.keyword.openwhisk_short}} ou 
 
 Para consumir a API de backend no iOS App, crie um kit do iniciador do Mobile usando o Apple Console. Usando a visualização Starter Kit, crie um kit do iniciador do iOS Swift de qualquer tipo.
 
-Clique em **Incluir recurso** e selecione uma API. 
+Clique em **Incluir serviço** e selecione uma API. 
 
 ![Diálogo da API](../images/apidialog.png)
 
@@ -138,7 +142,7 @@ Quando o SDK for incluído em seu projeto do app iOS, um arquivo *README.html* e
 ## Recriando o SDK após a mudança de API
 {: #change-apiconnect}
 
-Se as mudanças de API ou os novos recursos forem disponibilizados e o {{site.data.keyword.openwhisk}} for incluído, será possível recriar o SDK do cliente usando o comando `ibmcloud sdk`. Para obter mais informações, exemplos e ajuda de sintaxe, verifique a documentação do [Gerador de SDK](/docs/cli/sdk/index.html).
+Se as mudanças de API ou os novos recursos forem disponibilizados e o {{site.data.keyword.openwhisk}} for incluído, será possível recriar o SDK do cliente usando o comando `ibmcloud sdk`. Para obter mais informações, exemplos e ajuda de sintaxe, verifique a documentação do [Gerador de SDK](/docs/cli/sdk?topic=cloud-cli-sdk-cli#sdk-cli).
 
 Para ativar a criação de um SDK, use o arquivo YAML ou JSON da Open API Specification (Swagger). É possível recuperar esse arquivo usando os recursos de gerenciamento de API no {{site.data.keyword.cloud_notm}}. 
 

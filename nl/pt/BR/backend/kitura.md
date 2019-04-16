@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-21"
+
+keywords: foodtrackerbackend, kitura swift, urlsession sdk, alamofire, restkit, kiturakit, kitura, xcode kitura, meals swift, rest api kitura, rest api swift
+
+subcollection: swift
 
 ---
 
@@ -16,13 +20,11 @@ lastupdated: "2019-03-07"
 # Criando um app com Kitura
 {: #kitura}
 
-[Kitura](http://www.kitura.io) é uma estrutura Swift do lado do servidor para construir backends do iOS e aplicativos da web. Essa estrutura cria APIs de REST que podem ser chamadas do aplicativo iOS usando URLSession SDKs, como Alamofire, RestKit ou o [KituraKit](https://github.com/ibm-swift/kiturakit) SDK fornecido pelo próprio Kitura.
+[Kitura](http://www.kitura.io){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") é uma estrutura do Swift do lado do servidor para construir back-ends do iOS e aplicativos da web. Essa estrutura cria APIs de REST que podem ser chamadas por meio do aplicativo iOS usando SDKs do URLSession como Alamofire, RestKit ou o SDK do [KituraKit](https://github.com/ibm-swift/kiturakit){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") fornecido pelo próprio Kitura.
 
 O Kitura é capaz de se integrar com todos os serviços e recursos que são fornecidos pelo {{site.data.keyword.cloud}}, incluindo o {{site.data.keyword.appid_short}}, o {{site.data.keyword.mobilepushshort}} e o {{site.data.keyword.mobileanalytics_short}}, bem como os bancos de dados, o aprendizado de máquina e outros serviços. O Kitura pode, então, ser implementado e escalado automaticamente usando as plataformas Cloud Foundry ou Docker (baseadas no Kubernetes) no {{site.data.keyword.cloud}}.
 
-O Kitura fornece uma [interface
-da linha de comandos (CLI)](https://www.kitura.io/guides/kituracli/gettingstarted.html) kitura que simplifica a criação, a construção, o teste
-e a implementação de aplicativos Kitura. Os aplicativos construídos usando a CLI do Kitura incluem suporte completo para implementação em qualquer nuvem que suporte tecnologias Cloud Foundry, Docker e Kubernetes. No entanto, caso você esteja construindo especificamente para o {{site.data.keyword.cloud_notm}}, é recomendável usar o IBM Apple Development Console no navegador ou usar o {{site.data.keyword.dev_cli_notm}}. Além disso, enquanto ambos os métodos compartilham a tecnologia subjacente, o Apple Development Console e o IBM Developer Tools criam um projeto hospedado e um pipeline de implementação para você, bem como provisionam os serviços necessários para o seu aplicativo.
+O Kitura fornece uma [interface da linha de comandos (CLI)](https://www.kitura.io/guides/kituracli/gettingstarted.html){: new_window} do `kitura` ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") que simplifica a criação, a construção, o teste e a implementação de aplicativos do Kitura. Os aplicativos construídos usando a CLI do Kitura incluem suporte completo para implementação em qualquer nuvem que suporte tecnologias Cloud Foundry, Docker e Kubernetes. No entanto, caso você esteja construindo especificamente para o {{site.data.keyword.cloud_notm}}, é recomendável usar o IBM Apple Development Console no navegador ou usar o {{site.data.keyword.dev_cli_notm}}. Além disso, enquanto ambos os métodos compartilham a tecnologia subjacente, o Apple Development Console e o IBM Developer Tools criam um app hospedado e um pipeline de implementação para você, assim como provisiona os serviços dos quais o seu aplicativo precisa.
 
 ## Antes de começar
 {: #prereqs-kitura}
@@ -34,35 +36,35 @@ Primeiro, verifique se os pré-requisitos a seguir estão prontos para execuçã
 * Swift 4.0 +  
 * CocoaPods  
 
-## Etapa 1. Criando um projeto Kitura usando o navegador
+## Etapa 1. Criando um app do Kitura usando o navegador
 {: #create_kitura}
 
-1. Acesse a seção Starter Kits do Apple Development Console. Selecione um iniciador predefinido, como o "Swift for Backend for Frontend API" ou crie um projeto customizado usando o quadro **Criar projeto**. Clique em **Criar projeto**.
+1. Acesse a seção Starter Kits do Apple Development Console. Selecione um iniciador predefinido, como o "Swift for Backend for Frontend API" ou crie um app customizado usando o bloco **Criar app**. Clique em **Criar app**.
 
-2. Forneça um nome ao seu projeto e selecione onde deseja implementá-lo. Se você não estiver seguro de onde o aplicativo será implementado, use os valores padrão, pois eles poderão ser mudados posteriormente.
+2. Forneça um nome ao seu app e selecione em que local você deseja que o seu app seja implementado. Se você não estiver seguro de onde o aplicativo será implementado, use os valores padrão, pois eles poderão ser mudados posteriormente.
 
-3. Selecione o idioma Swift. Um projeto Swift do lado do servidor é criado. Também são exibidas as opções de Host e Domínio, que formam a URL para o aplicativo. Se você não estiver seguro, use os padrões. Também é possível fornecer o seu próprio domínio customizado por meio de um provedor de domínio no qual o aplicativo deve residir.
+3. Selecione o idioma Swift. Um app do Swift do lado do servidor é criado. Também são exibidas as opções de Host e Domínio, que formam a URL para o aplicativo. Se você não estiver seguro, use os padrões. Também é possível fornecer o seu próprio domínio customizado por meio de um provedor de domínio no qual o aplicativo deve residir.
 
 4. É possível fornecer uma definição OpenAPI (também conhecida como Swagger) para a API REST que você deseja construir. Se você tiver essa definição, será criada uma API de REST que inclui as funções de manipulador correspondentes no Kitura. Se não tiver uma definição de OpenAPI, não se preocupe, pois o Kitura facilita a criação manual das APIs de REST usando suas APIs do Roteador.
 
-5. Clique em **Criar projeto**.
+5. Clique em **Criar app**.
 
-Um projeto é criado, mas um que ainda não usa nenhum serviço adicional. É possível incluir serviços clicando no botão **Incluir recurso** ou clicando no botão **Fazer download do código** para obter o código para o projeto. Também é possível incluir serviços facilmente em um projeto existente.
+Um app é criado, mas um que ainda não usa nenhum serviço adicional. É possível incluir serviços clicando no botão **Incluir serviço** ou **Fazer download do código** para obter o código para o app. Também é possível incluir serviços facilmente em um app existente.
 
 ## Etapa 2. Incluindo Serviços
 {: #add_services-kitura}
 
-1. Clique no botão **Incluir recurso** para incluir serviços. As categorias de serviço são exibidas. Por exemplo, selecione **Dados** para examinar os bancos de dados disponíveis e selecione **Cloudant NoSQL DB**.
+1. Clique em **Incluir serviço** para incluir serviços. As categorias de serviço são exibidas. Por exemplo, selecione **Dados** para examinar os bancos de dados disponíveis e selecione **Cloudant NoSQL DB**.
 2. Selecione um plano de precificação para o serviço, por exemplo, Lite, e clique em **Criar**.
 
-Uma instância do serviço é criada e ela fornece as credenciais para o aplicativo e, em alguns casos, inclui o código necessário em seu projeto para incluir a conexão correta com o serviço. Agora é possível incluir mais serviços usando o botão **Incluir recurso** ou clicando em **Fazer download do código** para obter o código para o projeto.
+Uma instância do serviço é criada que fornece credenciais para o aplicativo e, em alguns casos, inclui o código necessário em seu app para incluir a conexão correta com o serviço. Agora é possível incluir mais serviços usando o botão **Incluir serviço** ou clicando em **Fazer download do código** para obter o código para o app.
 
-Depois de fazer download de seu projeto, é possível começar a trabalhar com seu app.
+Após fazer download de seu app, será possível começar a trabalhar com ele.
 
 ## Etapa 3. Desenvolvendo o aplicativo com o Xcode
 {: #develop_xcode-kitura}
 
-Depois de fazer download do projeto, será possível modificar e desenvolvê-lo usando Xcode e, em seguida, fazer upload do aplicativo modificado para implementação na nuvem.
+Após fazer download de seu código do app, será possível modificá-lo e desenvolvê-lo usando o Xcode e, em seguida, fazer upload de seu aplicativo modificado para implementação na nuvem.
 
 1. Crie um projeto Xcode.  
   Antes que possa usar seu projeto no Xcode, deve-se criar um arquivo de projeto Xcode usando o comando do Swift Package Manager. Execute o comando a seguir por meio do diretório raiz de seu projeto transferido por download, em que o arquivo `Package.swift` reside:
@@ -81,7 +83,7 @@ Depois de fazer download do projeto, será possível modificar e desenvolvê-lo 
   * Monitoramento de Kitura:  [ http://localhost: 8080/swiftmetrics-dash/ ]()
   * Verificação de Funcionamento Kitura:  [ http://localhost: 8080/health ]()
 
-## Etapa 5. Incluindo APIs REST
+## Etapa 4. Incluindo APIs de REST
 {: #add_restapi-kitura}
 
 Um servidor Kitura de estrutura básica é criado, mas ele não fornece nenhuma API de REST que pode ser usada por um aplicativo iOS. Inclua APIs de REST no Kitura com a codificação mínima. Use as etapas a seguir para incluir uma API de REST para as solicitações `GET` em `/meals`, que foi projetada para retornar os objetos `Meal` que são armazenados pelo servidor Kitura.
@@ -133,10 +135,10 @@ Agora você tem uma API de REST para solicitações `GET` em `/meals` que respon
 
   Uma matriz vazia é retornada `[]` porque nenhum objeto `Meal` está armazenado atualmente no `mealStore`. 
 
-É possível usar o tutorial do [FoodTracker Backend](https://github.com/IBM/FoodTrackerBackend), que ajuda a construir um conjunto de APIs de REST para armazenar, buscar e excluir objetos `Meal` por meio de um aplicativo iOS, incluindo o armazenamento de dados em um banco de dados.
+É possível usar o tutorial [FoodTracker Backend](https://github.com/IBM/FoodTrackerBackend){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"), que o ajuda a construir um conjunto de APIs de REST para armazenamento, busca e exclusão de objetos `Meal` de um aplicativo iOS, incluindo o armazenamento dos dados em um banco de dados.
 {: tip}
 
-## Etapa 6. Instalando o KituraKit em seu aplicativo iOS
+## Etapa 5. Instalando o KituraKit em seu aplicativo iOS
 {: #install-kiturakit}
 
 As APIs de REST construídas usando o servidor Kitura são APIs padrão da web, utilizáveis por meio de qualquer aplicativo, independentemente da biblioteca de cliente usada ou da linguagem em que o cliente é gravado. Isso significa que é possível usar Alamofire, RestKit ou URLSession para fazer conexões com o servidor. O Kitura também fornece um conector de cliente otimizado sob medida para simplificar a chamada de suas APIs de REST do iOS, na forma de KituraKit. 
@@ -186,7 +188,7 @@ As etapas a seguir mostram como instalar o KituraKit no aplicativo iOS e utiliz�
   {: codeblock}
 
   And use the following code to make a connection to the Kitura server:
-
+  
   ```swift
   import KituraKit
   
@@ -214,12 +216,11 @@ As etapas a seguir mostram como instalar o KituraKit no aplicativo iOS e utiliz�
 
 O servidor Kitura é chamado usando `client.get("/meals")` com um retorno de chamada que corresponde aos parâmetros do manipulador de conclusão do Kitura.
 
-É possível usar o tutorial [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend), que ajuda a construir um conjunto de APIs de REST para armazenar, buscar e excluir objetos `Meal` de um aplicativo iOS, incluindo o armazenamento de dados em um banco de dados.
+É possível usar o tutorial [FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"), que o ajuda a construir um conjunto de APIs de REST para armazenamento, busca e exclusão de objetos `Meal` de um aplicativo iOS, incluindo o armazenamento dos dados em um banco de dados.
 {: tip}
 
 ## Próximas etapas
 {: #next-kitura notoc}
 
 Agora que você tem um servidor Kitura que fornece uma API de REST que pode ser chamada pelo seu
-aplicativo iOS, está pronto para implementar seu servidor no {{site.data.keyword.cloud_notm}}. 
-[Implementações](/docs/swift/deploying_apps.html) podem ser feitas usando contêineres com o Kubernetes, os contêineres seguros, o Cloud Foundry, o Cloud Foundry Enterprise Environment ou as instâncias virtuais.
+aplicativo iOS, está pronto para implementar seu servidor no {{site.data.keyword.cloud_notm}}. [Implementações](/docs/swift?topic=swift-deploy_apps-swift#deploy_apps-swift) podem ser feitas usando contêineres com Kubernetes, contêineres seguros, o Cloud Foundry, o Cloud Foundry Enterprise Environment ou instâncias virtuais.

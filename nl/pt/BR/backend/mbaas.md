@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: mobile backend swift, mbaas swift, mbaas swift sdk, swift features, swift framework sdk
+
+subcollection: swift
 
 ---
 
@@ -13,7 +17,7 @@ lastupdated: "2019-01-15"
 {:pre: .pre}
 {:note: .deprecated}
 
-# Recursos do back-end móvel como serviço
+# Back end móvel como recursos de serviço
 {: #mbaas}
 
 O aplicativo pode usar recursos externos por meio de uma de duas abordagens:

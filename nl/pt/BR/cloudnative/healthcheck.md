@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift, swift health check
+
+subcollection: swift
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-15"
 # Usando uma verificação de funcionamento no app Swift
 {: #healthcheck}
 
-As verificações de funcionamento fornecem um mecanismo simples para determinar se um aplicativo do lado do servidor está se comportando adequadamente. Ambientes em nuvem como o [Kubernetes](https://www.ibm.com/cloud/container-service) e o [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) podem ser configurados para sondar terminais de funcionamento periodicamente para determinar se uma instância de seu serviço está pronta para aceitar o tráfego.
+As verificações de funcionamento fornecem um mecanismo simples para determinar se um aplicativo do lado do servidor está se comportando adequadamente. Ambientes em nuvem, como [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") e [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") podem ser configurados para pesquisar terminais de funcionamento periodicamente para determinar se uma instância de seu serviço está pronta para aceitar o tráfego.
 {: shortdesc}
 
 ## Visão geral da verificação de
@@ -50,7 +54,7 @@ A seguinte tabela fornece diretrizes sobre as respostas que os terminais de pron
 ## Incluindo uma verificação de funcionamento em um app Swift existente
 {: #existing-app}
 
-A biblioteca [Health](https://github.com/IBM-Swift/Health) facilita a inclusão de uma verificação de funcionamento no aplicativo Swift. As verificações de funcionamento são extensíveis. Para obter mais informações sobre o [armazenamento em cache](https://github.com/IBM-Swift/Health#caching) para evitar ataques DoS ou a inclusão de [verificações customizadas](https://github.com/IBM-Swift/Health#implementing-a-health-check), consulte a biblioteca [Health](https://github.com/IBM-Swift/Health).
+A biblioteca de [Funcionamento](https://github.com/IBM-Swift/Health){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") torna mais fácil incluir uma verificação de funcionamento em seu aplicativo do Swift. As verificações de funcionamento são extensíveis. Para obter mais informações sobre o [armazenamento em cache](https://github.com/IBM-Swift/Health#caching){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") para evitar ataques do DoS ou incluir [verificações customizadas](https://github.com/IBM-Swift/Health#implementing-a-health-check){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"), consulte a biblioteca de [Funcionamento](https://github.com/IBM-Swift/Health){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
 
 Para incluir a biblioteca de funcionamento em um app Swift existente, consulte as etapas a seguir:
 
@@ -90,7 +94,7 @@ Para incluir a biblioteca de funcionamento em um app Swift existente, consulte a
 ## Verificando o funcionamento de um app do kit do iniciador do Swift do lado do servidor
 {: #healthcheck-starterkit}
 
-Ao gerar um app Swift baseado no Kitura usando um Starter Kit, um terminal de verificação de funcionamento básico, `/health`, é incluído por padrão. O terminal usa o protocolo Codable disponível no Swift 4, conforme suportado pela biblioteca de [Health](https://github.com/IBM-Swift/Health).
+Quando você gerar um app do Swift baseado em Kitura usando um kit do iniciador, um terminal de verificação de funcionamento básico, `/health`, será incluído por padrão. O terminal usa o protocolo Codable disponível no Swift 4, conforme suportado pela biblioteca de [Funcionamento](https://github.com/IBM-Swift/Health){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
 
 O código de inicialização básico, tal como a inicialização do objeto Health, ocorre em `Sources/Application.swift`. O próprio terminal de verificação de funcionamento é fornecido pelo arquivo `/Sources/Application/Routes/HealthRoutes.swift` e usa o código a seguir:
 
@@ -111,7 +115,12 @@ func initializeHealthRoutes (app: App) {
 ```
 {: codeblock}
 
-O exemplo usa o dicionário padrão, que produz uma carga útil, como `{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}` quando você acessa o terminal `/health`.
+O exemplo usa o dicionário padrão, que produz uma carga útil, como:
+```
+{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}
+```
+
+quando você acessa o terminal `/health`.
 
 ## Recomendações para as análises de prontidão e de vivacidade
 {: #recommend-probes}
@@ -123,7 +132,7 @@ Uma análise de vivacidade, por contraste, pode ser deliberada sobre o que é ve
 ### Inclua suporte para prontidão e vivacidade do Kubernetes em um app Swift
 {: #kube-readiness-swift}
 
-Para implementações alternativas, como o uso de **Codable** ou o dicionário padrão, consulte [Exemplos de biblioteca de funcionamento](https://github.com/IBM-Swift/Health#usage). Algumas dessas implementações simplificam a criação de verificações de funcionamento extensíveis com suporte para verificações de armazenamento em cache que são executadas com relação aos serviços auxiliares. Nesse cenário, você gostaria de separar o teste de vivacidade simples da verificação de prontidão detalhada e mais robusta.
+Para implementações alternativas, como usar **Codable** ou o dicionário padrão, consulte [Exemplos de biblioteca de funcionamento](https://github.com/IBM-Swift/Health#usage){: new_window}![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"). Algumas dessas implementações simplificam a criação de verificações de funcionamento extensíveis com suporte para verificações de armazenamento em cache que são executadas com relação aos serviços auxiliares. Nesse cenário, você gostaria de separar o teste de vivacidade simples da verificação de prontidão detalhada e mais robusta.
 
 ## Configurando as análises de prontidão e vivacidade no Kubernetes
 {: #config-kube-readiness}
@@ -165,4 +174,4 @@ spec:
       failureThreshold: 10
 ```
 
-Para obter mais informações, consulte como [Configurar análises de vivacidade e prontidão](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
+Para obter mais informações, consulte como [Configurar análises de vida e disponibilidade](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").

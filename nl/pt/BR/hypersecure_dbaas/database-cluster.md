@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-03-15"
+
+keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
+
+subcollection: swift
 
 ---
 
@@ -24,8 +28,7 @@ Atualmente, a linguagem de programação suportada para usar o {{site.data.keywo
 ## Etapa 1. Criando um Cluster de Banco de Dados
 {: #create_dbcluster}
 
-1. Acesse a tela de configuração de serviço do  {{site.data.keyword.ihsdbaas_full}}  em
-https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
+1. Acesse a tela de [configuração de serviço do {{site.data.keyword.ihsdbaas_full}}](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
 
 2. Forneça as seguintes informações:
 
@@ -82,7 +85,7 @@ https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
 
 Use um projeto existente que tenha sido criado por meio desse kit do iniciador ou crie um novo projeto.
 
-1. Abra o painel do {{site.data.keyword.cloud_notm}} App Service em https://cloud.ibm.com/developer/appservice/dashboard.
+1. Abra o [painel do {{site.data.keyword.cloud_notm}} App Service](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
 
 2. Selecione a guia  ** Kits de Inicialização ** .
 
@@ -242,16 +245,15 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ## Etapa 5. Incorporando seu Código do Aplicativo
 {: #embed_appcode}
 
-Agora é possível incluir seu próprio código do aplicativo no projeto. Para obter mais informações sobre como trabalhar com a API de MongoKitten, consulte http://beta.openkitten.org/tutorials/.
+Agora é possível incluir seu próprio código do aplicativo no projeto. Para obter mais informações, consulte a documentação da [API do MongoKitten](http://beta.openkitten.org/tutorials/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
 
 ## Etapa 6. Implementando seu aplicativo
 {: #deploy-dbcluster}
 
-É possível executar o aplicativo [localmente](/docs/swift/create_app_cli.html#swift-install-tools) com as ferramentas
+É possível executar o aplicativo [localmente](/docs/swift?topic=swift-swift_cli#swift-install-tools) com as ferramentas
 de construção necessárias ou implementar no {{site.data.keyword.cloud_notm}}.
 
-Para criar uma cadeia de ferramentas de implementação no painel, clique em **Implementar
-na nuvem**. Configure o método de implementação de acordo com as instruções para o método escolhido:
-  * **Implemente no [Kubernetes](/docs/apps/deploying/containers.html#containers)**. Essa opção cria um cluster de hosts, chamados de nós do trabalhador, para implementar e gerenciar contêineres de aplicativo altamente disponíveis. É possível criar um cluster ou implementar em um cluster existente.
-  * **Implemente no Cloud Foundry**. Essa opção implementa o seu app nativo de nuvem sem você precisar gerenciar a infraestrutura subjacente. Se a sua conta tiver acesso ao {{site.data.keyword.cfee_full_notm}}, será possível selecionar um tipo de implementador do **[Public Cloud](/docs/cloud-foundry-public/about-cf.html#about-cf)** ou do **[Enterprise Environment](/docs/cloud-foundry-public/cfee.html#cfee)**, que é possível usar para criar e gerenciar ambientes isolados para hospedar aplicativos do Cloud Foundry exclusivamente para a sua empresa.
-  * **Implemente em um [Servidor virtual](/docs/apps/vsi-deploy.html#vsi-deploy)**. Essa opção provisiona uma instância de servidor virtual, carrega uma imagem que inclui o seu app, cria uma cadeia de ferramentas do DevOps e inicia o primeiro ciclo de implementação para você.
+Para criar uma cadeia de ferramentas de implementação no painel, clique em **Implementar**. Configure o destino de implementação de acordo com as instruções para o método escolhido:
+  * **Implemente no [{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**. Essa opção cria um cluster de hosts, chamados de nós do trabalhador, para implementar e gerenciar contêineres de aplicativo altamente disponíveis. É possível criar um cluster ou implementar em um cluster existente.
+  * **Implemente no Cloud Foundry**. Essa opção implementa o seu app nativo de nuvem sem você precisar gerenciar a infraestrutura subjacente. Se a sua conta tiver acesso ao {{site.data.keyword.cfee_full_notm}}, será possível selecionar um tipo de implementador do **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** ou do **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**, que é possível usar para criar e gerenciar ambientes isolados para hospedar aplicativos do Cloud Foundry exclusivamente para a sua empresa.
+  * **Implemente em um [Servidor virtual](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**. Essa opção provisiona uma instância de servidor virtual, carrega uma imagem que inclui o seu app, cria uma cadeia de ferramentas do DevOps e inicia o primeiro ciclo de implementação para você.

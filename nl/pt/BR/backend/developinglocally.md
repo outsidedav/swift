@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: develop swift, swift local, service credentials swift, developer tools swift, swift cli, ibmcloud build swift, ibmcloud swift
+
+subcollection: swift
 
 ---
 
@@ -12,12 +16,12 @@ lastupdated: "2019-01-15"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Desenvolvendo Localmente
+# Desenvolvendo localmente
 {: #develop-locally}
 
 Ao desenvolver localmente, é possível construir, executar e testar facilmente os apps Swift. Use o {{site.data.keyword.dev_cli_short}} para executar essas ações usando comandos padrão. 
 
-É possível usar o {{site.data.keyword.dev_cli_short}} para gerenciar os seus aplicativos do lado do servidor com mais de uma dúzia de comandos. Saiba mais sobre os vários comandos em [Comandos `ibmcloud dev` da CLI do IBM Cloud Developer Tools](/docs/cli/idt/commands.html).
+É possível usar o {{site.data.keyword.dev_cli_short}} para gerenciar os seus aplicativos do lado do servidor com mais de uma dúzia de comandos. Saiba mais sobre os vários comandos nos comandos `ibmcloud dev` da CLI do [{{site.data.keyword.dev_cli_notm}}](/docs/cli/idt?topic=cloud-cli-idt-cli#idt-cli).
 
 ## Antes de começar
 {: #prereqs-local}
@@ -28,7 +32,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 ```
 {: codeblock}
 
-Consulte [Configurando a CLI do IBM Cloud Developer Tools](/docs/cli/idt/setting_up_idt.html) para saber mais sobre a configuração e o uso do {{site.data.keyword.dev_cli_notm}}.
+Consulte [Configurando a CLI do {{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) para saber mais sobre a configuração e o uso do {{site.data.keyword.dev_cli_notm}}.
 
 ## Recuperando as Credenciais de Serviço
 {: #credentials-local}
@@ -57,7 +61,7 @@ ibmcloud dev get-credentials
 
   Um host e uma porta locais para visualizar a página de entrada do seu aplicativo serão exibidos se o comando for executado com êxito.
 
-3. **Implementar** - Implemente o aplicativo no {{site.data.keyword.Bluemix_notm}} com o comando `deploy`:
+3. **Implementar** - Implemente o aplicativo no {{site.data.keyword.cloud_notm}} com o comando `deploy`:
   ```
   ibmcloud dev deploy
   ```
