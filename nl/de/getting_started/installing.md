@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: install sdk swift, sdk client swift, carthage, cocoapods, swift package manager, ios sdk
+
+subcollection: swift
 
 ---
 
@@ -40,8 +44,7 @@ Führen Sie den Befehl `pod install` aus und öffnen Sie
 die generierte Datei
 `.xcworkspace`.
 
-Weitere Informationen finden Sie in den
-[Handbüchern zu CocoaPods](https://guides.cocoapods.org/using/index.html).
+Weitere Informationen finden Sie in den [Handbüchern zu CocoaPods](https://guides.cocoapods.org/using/index.html){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 ## Installation mit Carthage
 {: #install_carthage}
@@ -58,7 +61,7 @@ Führen Sie den Befehl `carthage update` aus, um den
 Buildprozess zu starten. Fügen Sie nach Abschluss des Builds die generierten
 Frameworks zu Ihrem Projekt hinzu. 
 
-Weitere Informationen enthält die einführende Dokumentation [Carthage Getting Started](https://github.com/Carthage/Carthage#getting-started).
+Weitere Informationen finden Sie in der [einführenden Dokumentation zu Carthage](https://github.com/Carthage/Carthage#getting-started){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 ## Installation mit dem Swift-Paketmanager
 {: #install_swift_package}
@@ -74,9 +77,7 @@ in der Datei `Package.swift` hinzu:
 Führen Sie den Befehl `swift build` aus, um den
 Buildprozess zu starten.
 
-Weitere Informationen finden Sie auf der Seite mit der
-[Übersicht über den
-Swift-Paketmanager](https://swift.org/package-manager/).
+Weitere Informationen finden Sie in der [Übersicht über den Swift-Paketmanager](https://swift.org/package-manager/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 ## Manuelle Installation
 {: #install_manually}

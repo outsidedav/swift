@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: cloudant swift, store data swift, dbaas swift, cloudant instance swift, initialize sdk swift, create document swift, read document swift, delete document swift
+
+subcollection: swift
 
 ---
 
@@ -27,8 +31,7 @@ Replikationsfunktionen ist es denkbar einfach, Daten zwischen
 Datenbankclustern, Desktop-PCs und Mobilgeräten synchron zu halten. 
 {: shortdesc}
 
-Informationen zu allen Möglichkeiten für die Nutzung von
-{{site.data.keyword.cloudant_short_notm}} finden Sie unter [Basisinformationen zu {{site.data.keyword.cloudant_short_notm}}](/docs/services/Cloudant/basics/index.html#cloudant-nosql-db-basics).
+Informationen zu allen Möglichkeiten für die Verwendung von {{site.data.keyword.cloudant_short_notm}} finden Sie in den [{{site.data.keyword.cloudant_short_notm}}-Basisinformationen](/docs/services/Cloudant/basics?topic=cloudant-ibm-cloudant-basics#cloudant-nosql-db-basics).
 
 ## Vorbereitende Schritte
 {: #prereqs-cloudant}
@@ -40,16 +43,16 @@ sind:
  * MacOS (Version 10.11.5 oder höher)
  * Xcode (Version 9.0.1 oder höher)
 
-Das [{{site.data.keyword.cloudant_short_notm}}-SDK für Swift![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/cloudant/swift-cloudant) wurde mit Swift 3.2 erstellt. Falls Sie den Einsatz von
+Das [{{site.data.keyword.cloudant_short_notm}}-SDK für Swift](https://github.com/cloudant/swift-cloudant){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") wurde mit Swift 3.2 erstellt. Falls Sie den Einsatz von
 {{site.data.keyword.cloudant_short_notm}} mit Kitura planen, prüfen Sie
-die [Bibliothek Kitura-CouchDB ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/IBM-Swift/Kitura-CouchDB), die mit Swift 4.0 erstellt wurde.
+die [Bibliothek Kitura-CouchDB ](https://github.com/IBM-Swift/Kitura-CouchDB){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link"), die mit Swift 4.0 erstellt wurde.
 {: tip}
 
 ## Schritt 1. Instanz von
 {{site.data.keyword.cloudant_short_notm}} erstellen
 {: #create-instance-cloudant}
 
-Informationen zum Erstellen einer Instanz des Service finden Sie im Lernprogramm [IBM Cloudant-Instanz in IBM Cloud erstellen ![Symbol für externen Link](../images/launch-glyph.svg "Symbol für externen Link")](/docs/services/Cloudant/tutorials/create_service.html){:new_window}.
+Informationen zum Erstellen einer Instanz des Service finden Sie im [Lernprogramm 'IBM Cloudant-Instanz in {{site.data.keyword.cloud_notm}} erstellen'](/docs/services/Cloudant/tutorials?topic=cloudant-creating-an-ibm-cloudant-instance-on-ibm-cloud#creating-an-ibm-cloudant-instance-on-ibm-cloud){:new_window}.
 
 ## Schritt 2. SDK installieren
 {: #install-sdk-cloudant}
@@ -174,7 +177,7 @@ Dokuments) gestartet werden.
 3. Wählen Sie die verwendete Datenbank aus. Daraufhin werden die
 Dokumente im Dashboard angezeigt.
 
-Falls Probleme auftreten, finden Sie in der [API-Referenz von {{site.data.keyword.cloudant_short_notm}}](/docs/services/Cloudant/api/index.html#api-reference-overview) weitere Informationen.
+Gibt es Probleme? Ziehen Sie die [API-Referenz von {{site.data.keyword.cloudant_short_notm}}](/docs/services/Cloudant/api?topic=cloudant-ibm-cloudant-basics#api-reference-overview) zu Rate.
 
 ## Nächste Schritte
 {: #cloudant_next notoc}
@@ -183,9 +186,9 @@ Hervorragend! Sie haben Ihre App mit einer Ebene für die sichere
 Datenspeicherung ausgestattet. Nutzen Sie diesen Schwung und probieren
 Sie gleich eine der folgenden Optionen aus:
 
-* Sehen Sie sich den Quellcode von [{{site.data.keyword.cloudant_short_notm}} SDK for Swift![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/cloudant/swift-cloudant) an.
+* Sehen Sie sich den Quellcode von [{{site.data.keyword.cloudant_short_notm}} SDK for Swift](https://github.com/cloudant/swift-cloudant){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") an.
 * Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des
 Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Das Starter Kit **Infinite Scrolling with Cloudant NoSQL for iOS** veranschaulicht, wie Sie einen `ViewController` so erweitern, dass Daten mit Seitenaufteilung angezeigt
 werden. Dieses Muster einer App ist für iOS-Entwickler geläufig und ein sehr
-gutes Beispiel für die Darstellung des Leistungsspektrums von {{site.data.keyword.cloudant_short_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://cloud.ibm.com/developer/mobile/dashboard) werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.
-* Lesen Sie weitere Informationen zu {{site.data.keyword.cloudant_short_notm}} in der [Dokumentation](/docs/services/Cloudant/index.html). Dort erfahren Sie auch, wie Sie alle gebotenen Funktionen nutzen können.
+gutes Beispiel für die Darstellung des Leistungsspektrums von {{site.data.keyword.cloudant_short_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.
+* Lesen Sie weitere Informationen zu {{site.data.keyword.cloudant_short_notm}} in der [Dokumentation](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics#ibm-cloudant-basics). Dort erfahren Sie auch, wie Sie alle gebotenen Funktionen nutzen können.

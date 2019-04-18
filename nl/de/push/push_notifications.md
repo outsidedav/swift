@@ -2,9 +2,14 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-24"
+
+keywords: push swift, swift notifications, push notifications swift, sending push swift, configure service instance swift, provider credentials swift
+
+subcollection: swift
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -25,13 +30,10 @@ und Webanwendungen senden.
  - Kunden können bestimmte Tags oder Topics für Benachrichtigungen abonnieren.
  - Der App-Eigner kann die Anzahl der Geräte, die für den Empfang von Benachrichtigungen registriert sind, sowie die Anzahl der gesendeten Benachrichtigungen analysieren.
 
-Der {{site.data.keyword.mobilepushshort}}-Service kann entweder
-im Rahmen einer Starter-Boilerplate für MobileFirst-Services oder als
-[dedizierter Service](/docs/dedicated/index.html) von
-{{site.data.keyword.cloud_notm}} genutzt werden. Des Weiteren können
+Der {{site.data.keyword.mobilepushshort}}-Service kann entweder im Rahmen einer Starter-Boilerplate für MobileFirst-Services oder als [dedizierter Service](/docs/dedicated?topic=dedicated-dedicated#dedicated) von {{site.data.keyword.cloud_notm}} verwendet werden. Des Weiteren können
 Sie Ihre Clientanwendungen mithilfe eines
 SDK (Software-Development-Kit) und der
-[REST-APIs ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobile.{DomainName}/imfpush/){: new_window}
+[REST-APIs ](https://mobile.{DomainName}/imfpush/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
 weiterentwickeln.
 
 ![Push-Operation im Überblick](images/push_notification_lifecycle.jpg) Abbildung 1. Lebenszyklus des {{site.data.keyword.mobilepushshort}}-Service
@@ -85,7 +87,7 @@ Sobald die Datei `.cer` Bestandteil Ihres
 Schlüsselkettenzugriffs ist, exportieren Sie sie auf Ihren Computer, um ein
 Zertifikat des Typs `.p12` zu erstellen.
 
-Weitere Informationen zur Verwendung der APNs finden Sie auf der Seite [iOS Developer Library: Local and Push Notification Programming Guide ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window}.
+Weitere Informationen zur Verwendung der APNs finden Sie auf der Seite [iOS Developer Library: Local and Push Notification Programming Guide ](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 Gehen Sie folgendermaßen vor, um APNs in der Konsole des Push Notification-Service zu konfigurieren:
 
@@ -135,8 +137,7 @@ Zertifikat des Typs `.p12` hoch und geben Sie das Kennwort an.
 Damit iOS-Anwendungen Push-Benachrichtigungen für Ihre Geräte erhalten
 können, müssen Sie das iOS-SDK für den {{site.data.keyword.mobilepushshort}}-Service konfigurieren.
 
-Die {{site.data.keyword.cloud_notm}}-Swift-SDKs für Mobile-Services können entweder mit Cocoapods oder Carthage installiert werden. Weitere Informationen finden Sie unter der Adresse
-[https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application).
+Die {{site.data.keyword.cloud_notm}}-Swift-SDKs für Mobile-Services können entweder mit Cocoapods oder Carthage installiert werden. Weitere Informationen finden Sie unter [https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#setup-client-application){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 ## Schritt 5. Benachrichtigung senden
 {: #send-notify-push}
@@ -187,24 +188,22 @@ enthalten ist.
 - **Zusätzliche Nutzdaten**: Gibt die angepassten
 Nutzdatenwerte für Ihre Benachrichtigungen an.
 
-Sie haben außerdem die Möglichkeit,
-[interaktive Benachrichtigungen](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#interactive-notifications) und [Rich-Media-Benachrichtigungen](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enabling-rich-media-notifications) zu aktivieren.
+Sie können auch [interaktive Benachrichtigungen](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#interactive-notifications){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") und [Rich Media-Benachrichtigungen](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enabling-rich-media-notifications){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") auswählen.
 
 ## Schritt 6. Zustellung der Benachrichtigungen überwachen
 {: #monitor-push}
 
 Der {{site.data.keyword.mobilepushshort}}-Service bietet ein
 Überwachungsdienstprogramm, mit dem Sie den Status der gesendeten Nachrichten
-überprüfen können. Informationen zum Konfigurieren Ihres
-Überwachungsdienstprogramms finden Sie im Abschnitt [Überwachung für iOS-Anwendungen aktivieren](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring).
+überprüfen können. Informationen zum Konfigurieren Ihres Überwachungsdienstprogramms finden Sie in [Überwachung für iOS-Anwendungen aktivieren](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push/tree/Doc#enable-monitoring){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 ## Nächste Schritte
-{: #next-push}
+{: #next-push notoc}
 
  - Weitere Informationen zum Service enthält die zugehörige [Dokumentation](/docs/services/mobilepush/c_overview_push.html#overview-push), in der Sie außerdem erfahren, wie Sie alle Funktionen nutzen können.
 
  - Eine Einführung in die Arbeit mit Mobile-Services und {{site.data.keyword.cloud_notm}} finden Sie im Abschnitt [Einführung für mobile Apps in {{site.data.keyword.cloud_notm}}](/docs/services/mobile/index.html).
 
- - Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://cloud.ibm.com/developer/mobile/dashboard) werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.
+ - Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.
 
- - Mithilfe der [Swagger-Benutzerschnittstelle](https://mobile.ng.bluemix.net/imfpush/) können Sie die REST-API-Dokumentation schnell überprüfen.
+ - Mithilfe der [Swagger-Benutzerschnittstelle](https://mobile.ng.bluemix.net/imfpush/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") können Sie die REST-API-Dokumentation schnell prüfen.

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: mobile backend swift, mbaas swift, mbaas swift sdk, swift features, swift framework sdk
+
+subcollection: swift
 
 ---
 
@@ -16,8 +20,7 @@ lastupdated: "2019-01-15"
 # Funktionen von Mobile Backend as a Service
 {: #mbaas}
 
-Ihre Anwendung kann zur Nutzung von externer Funktionen eines von
-zwei Verfahren verwenden:
+Ihre Anwendung kann zur Nutzung von externer Funktionen eines von zwei Verfahren verwenden:
 * Direkte Nutzung aus der Anwendung heraus für ihre Services, die
 üblicherweise im Rahmen einer Plattform des Typs "Mobile Backend as a
 Service"

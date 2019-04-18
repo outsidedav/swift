@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: swift security, add security swift, crypto swift, hyper protect swift, ios hyper protect, dbaas swift, swift key management, swift advanced security
+
+subcollection: swift
 
 ---
 
@@ -26,7 +30,7 @@ dem höchsten branchenüblichen Sicherheitsniveau zu schützen.
 Als einfache Strategie können Sie
 {{site.data.keyword.cloud_notm}} HyperSecure Platform Services direkt für
 alle erweiterten Sicherheitsservices in {{site.data.keyword.cloud}}
-verwenden. Weitere Informationen finden Sie unter [Einführung in {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform/index.html){:new_window}.
+verwenden. Weitere Informationen finden Sie unter [Einführung in {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform/index.html#getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits).
 
 ## {{site.data.keyword.cloud_notm}}
 {{site.data.keyword.hscrypto}} verwenden
@@ -52,7 +56,7 @@ Koprozessoren von IBM ermöglicht.
 {{site.data.keyword.hscrypto}} ist auch der Keystore für den
 {{site.data.keyword.keymanagementserviceshort}}-Service.
 
-Weitere Informationen zu {{site.data.keyword.hscrypto}} finden Sie unter [Einführung in {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/services/hs-crypto/index.html){:new_window}.
+Weitere Informationen zu {{site.data.keyword.hscrypto}} finden Sie unter [Einführung in {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/services/hs-crypto?topic=hs-crypto-get-started#get-started).
 
 ## {{site.data.keyword.cloud_notm}} {{site.data.keyword.keymanagementserviceshort}} verwenden
 {: #swift-key-management}
@@ -66,7 +70,7 @@ Datendiebstahl geschützt werden. Zusammen mit
 {{site.data.keyword.hscrypto}} erreichen Sie für Ihre Schlüssel das
 höchste Sicherheitsniveau des Zertifikats für Ebene 4 von FIPS 140-2.
 
-Weitere Informationen zu {{site.data.keyword.keymanagementserviceshort}} finden Sie unter [Einführung in {{site.data.keyword.keymanagementserviceshort}}](/docs/services/keymgmt/index.html){:new_window}.
+Weitere Informationen zu {{site.data.keyword.keymanagementserviceshort}} finden Sie unter [Einführung in {{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-getting-started-tutorial#getting-started-tutorial).
 
 ## {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS verwenden
 {: #hypersecure-dbaas}
@@ -102,13 +106,13 @@ Daten zugreifen kann.
 zu eigener Anwendung hinzufügen
 {: #swift-hyperprotect}
 
-Informationen zur Verwendung einer MongoDB-Datenbank in Ihrer Anwendung finden Sie unter [Einführung in die Verwendung einer Datenbank](/docs/hypersecure_dbaas/database-cluster.html).  
+Informationen zur Verwendung einer MongoDB-Datenbank in Ihrer Anwendung finden Sie unter [Einführung in die Verwendung einer Datenbank](/docs/swift/hypersecure_dbaas?topic=swift-create-database-cluster#creating-a-highly-available-and-secure-database).  
 
 ### Weitere Informationen zu {{site.data.keyword.cloud_notm}} Hyper
 Protect DBaaS
 {: #swift-learnmore}
 
-Mehr über {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS erfahren Sie unter [Einführung in IBM Cloud Hyper Protect DBaaS](/docs/services/hyper-protect-dbaas/index.html).
+Mehr über {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS erfahren Sie unter [Einführung in IBM Cloud Hyper Protect DBaaS](/docs/services/hyper-protect-dbaas?topic=hyper-protect-dbaas-gettingstarted#gettingstarted).
 
 ## {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscontainers}} verwenden
 {: #swift-hscontainers}
@@ -120,9 +124,8 @@ Isolation, um die Bereitstellung, den Betrieb, die Skalierung und die
 Überwachung von containerbasierten Apps in einem Cluster von Berechnungshosts
 zu automatisieren.
 
-{{site.data.keyword.hscontainers}} sind nur für Sponsorbenutzer verfügbar. Falls Sie eine dedizierte Unterstützung von
-Sicherheitsfunktionen erwarten, registrieren Sie sich als Sponsorbenutzer bei [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml), um Ihre Anwendung im {{site.data.keyword.hscontainers}}-Cluster bereitstellen zu können.
+{{site.data.keyword.hscontainers}} sind nur für Sponsorbenutzer verfügbar. Falls Sie eine dedizierte Unterstützung von Sicherheitsfunktionen erwarten, müssen Sie sich bei [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") als Sponsorbenutzer registrieren, um Ihre Anwendung im {{site.data.keyword.hscontainers}}-Cluster bereitstellen zu können.
 {: tip}
 
 Solange Sie kein Sponsorbenutzer sind, können Sie Ihre Anwendung mit {{site.data.keyword.containershort_notm}} schützen. Weitere
-Informationen finden Sie unter [Einführung in {{site.data.keyword.containershort_notm}}](/docs/containers/container_index.html).
+Informationen finden Sie unter [Einführung in {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-container_index#container_index).

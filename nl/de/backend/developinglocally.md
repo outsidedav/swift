@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: develop swift, swift local, service credentials swift, developer tools swift, swift cli, ibmcloud build swift, ibmcloud swift
+
+subcollection: swift
 
 ---
 
@@ -22,10 +26,7 @@ führen Sie über {{site.data.keyword.dev_cli_short}}
 mithilfe von Standardbefehlen aus. 
 
 Mit {{site.data.keyword.dev_cli_short}} können Sie über ein
-Dutzend Befehle für die Verwaltung Ihrer serverseitigen Anwendungen nutzen. Weitere
-Informationen zu den verschiedenen Befehlen enthält der Abschnitt
-[Befehle `ibmcloud
-dev der Befehlszeilenschnittstelle von IBM Cloud Developer Tools](/docs/cli/idt/commands.html).
+Dutzend Befehle für die Verwaltung Ihrer serverseitigen Anwendungen nutzen. Weitere Informationen zu den verschiedenen Befehlen enthält der Abschnitt [`ibmcloud dev`-Befehle der {{site.data.keyword.dev_cli_notm}}-Befehlszeilenschnittstelle](/docs/cli/idt?topic=cloud-cli-idt-cli#idt-cli).
 
 ## Vorbereitende Schritte
 {: #prereqs-local}
@@ -38,7 +39,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 ```
 {: codeblock}
 
-Weitere Informationen zum Konfigurieren und zur Verwendung der {{site.data.keyword.dev_cli_notm}} finden Sie unter [IBM Cloud Developer Tools-Befehlszeilenschnittstelle einrichten](/docs/cli/idt/setting_up_idt.html).
+Weitere Informationen zum Konfigurieren und zur Verwendung der {{site.data.keyword.dev_cli_notm}} finden Sie unter [{{site.data.keyword.dev_cli_notm}}-Befehlszeilenschnittstelle einrichten](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
 ## Serviceberechtigungsnachweise abrufen
 {: #credentials-local}
@@ -77,7 +78,7 @@ folgenden Befehl in einem lokalen Container ausführen:
   Wenn der Befehl erfolgreich ausgeführt wird, werden ein lokaler Host
 und ein lokaler Port zum Anzeigen der Landing-Page Ihrer Anwendung angezeigt.
 
-3. **Bereitstellung** - Stellen Sie Ihre Anwendung in {{site.data.keyword.Bluemix_notm}}
+3. **Bereitstellung** - Stellen Sie Ihre Anwendung in {{site.data.keyword.cloud_notm}}
 mit dem Befehl `deploy` bereit:
   ```
   ibmcloud dev deploy

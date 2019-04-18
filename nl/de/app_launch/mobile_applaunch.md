@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
+
+subcollection: swift
 
 ---
 
@@ -16,12 +20,7 @@ lastupdated: "2019-01-15"
 # Releases von App-Features verwalten
 {: #mobile_applaunch}
 
-Mithilfe von {{site.data.keyword.engage_full}} können Entwickler
-attraktive Apps erstellen, indem sie die Reichweite und das Rollout von
-App-Features steuern, die messbare Metriken bereitstellen können. Der Service
-unterstützt Entwickler dabei, die heutzutage bestehende Kopplung zwischen dem
-Rollout eines App-Features und den App-Aktualisierungen für die Produktion
-aufzuheben. Jetzt können Sie Features veröffentlichen, ohne sie der Produktion
+Mithilfe von {{site.data.keyword.engage_full}} können Entwickler attraktive Apps erstellen, indem sie die Reichweite und das Rollout von App-Features steuern, die messbare Metriken bereitstellen können. Der Service unterstützt Entwickler dabei, die heutzutage bestehende Kopplung zwischen dem Rollout eines App-Features und den App-Aktualisierungen für die Produktion aufzuheben. Jetzt können Sie Features veröffentlichen, ohne sie der Produktion
 zugänglich zu machen, und auf diese Weise neue Versionen einer App nach und
 nach kontrolliert freigeben. Mit dem
 {{site.data.keyword.engage_short}}-Service haben App-Eigner die
@@ -244,7 +243,7 @@ Uhrzeit für das **Ende** auswählen. Klicken Sie auf **Speichern**.
 angezeigt.
 
 Jetzt können Sie die
-[Leistung](/docs/services/app-launch/app_measure_performance.html#applaunch_type)
+[Leistung](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type)
 Ihres Kundenprojekts messen.
 
 ### Funktion "App-internes Messaging" aktivieren
@@ -315,7 +314,7 @@ Sie ein Element aus und geben Sie die Metrikdetails ein. Klicken Sie auf **Speic
 angezeigt.
 
 Jetzt können Sie die
-[Leistung](/docs/services/app-launch/app_measure_performance.html#applaunch_type)
+[Leistung](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type)
 Ihres Kundenprojekts messen.
 
 ## Quick Links
@@ -324,7 +323,7 @@ Ihres Kundenprojekts messen.
 Die folgenden Links vermitteln Ihnen Einblicke und Kenntnisse über die
 Features von {{site.data.keyword.engage_short}}:
 
- - Probieren Sie den [App Launch-Service](https://cloud.ibm.com/catalog/services/app-launch) aus.
+ - Testen Sie den [Service 'App Launch'](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
  - [Blogs
-und Videos](/docs/services/app-launch/relatedlinks.html#blogs-and-videos)
- - Weitere Informationen finden Sie unter [App Launch - Lernprogramm 'Einführung'](/docs/services/app-launch/index.html).
+und Videos](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
+ - Weitere Informationen finden Sie unter [App Launch - Lernprogramm 'Einführung'](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate).

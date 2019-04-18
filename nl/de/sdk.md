@@ -2,9 +2,14 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-14"
+
+keywords: swift client sdk, swift sdk, add sdk swift, swift sdk service, server sdk swift, swift bms, clientsdk swift, client storage swifts
+
+subcollection: swift
 
 ---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -28,19 +33,19 @@ das jeweilige Leistungsspektrum nutzen.
 ### Client-SDK-Services hinzufügen
 {: #add-client-sdk}
 
-- [Core SDK ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-core)
-- [{{site.data.keyword.appid_short}} SDK ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/ibm-cloud-security/appid-clientsdk-swift)
-- [{{site.data.keyword.mobileanalytics_short}} SDK ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)
-- [{{site.data.keyword.mobilepushshort}} SDK ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push)
-- [BMSSecurity ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security)
-- [{{site.data.keyword.engage_short}} SDK ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch)
-- [BMSGoogleAuthentication SDK ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security-googleauthentication)
-- [Watson Swift SDK ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/watson-developer-cloud/swift-sdk)
+- [Core SDK ](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-core){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [{{site.data.keyword.appid_short}} SDK ](https://github.com/ibm-cloud-security/appid-clientsdk-swift){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [{{site.data.keyword.mobileanalytics_short}} SDK ](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [{{site.data.keyword.mobilepushshort}} SDK ](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-push){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [BMSSecurity ](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [{{site.data.keyword.engage_short}} SDK ](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [BMSGoogleAuthentication SDK{: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-security-googleauthentication)
+- [Watson Swift SDK ](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
 
 ### Clientspeicher hinzufügen
 {: #add-storage}
 
-- [Cloudant ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/cloudant/swift-cloudant)
+- [Cloudant ](https://github.com/cloudant/swift-cloudant){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
 
 ## Serverseitige SDKs hinzufügen
 {: #server_sdk}
@@ -50,18 +55,18 @@ Wenn Sie eine Swift-Serveranwendung einsetzen, können Sie die folgenden SDKs ve
 ### Serverseitige Services verwenden
 {: #use-serverside}
 
-- [{{site.data.keyword.appid_short}} Swift Server SDK ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/ibm-cloud-security/appid-serversdk-swift)
-- [{{site.data.keyword.openwhisk_short}} for iOS ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/openwhisk/learn/ios-sdk)
-- [KituraKit ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/IBM-Swift/KituraKit)
-- [{{site.data.keyword.mobilepushshort}} Swift Server SDK ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/ibm-bluemix-mobile-services/bms-pushnotifications-serversdk-swift)
-- [Watson Swift SDK ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/watson-developer-cloud/swift-sdk)
+- [{{site.data.keyword.appid_short}} Swift Server SDK ](https://github.com/ibm-cloud-security/appid-serversdk-swift){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [{{site.data.keyword.openwhisk_short}} for iOS ](https://cloud.ibm.com/openwhisk/learn/ios-sdk){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [KituraKit ](https://github.com/IBM-Swift/KituraKit){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [{{site.data.keyword.mobilepushshort}} Swift Server SDK ](https://github.com/ibm-bluemix-mobile-services/bms-pushnotifications-serversdk-swift){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [Watson Swift SDK ](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
 
 ### Serverseitigen Speicher hinzufügen
 {: #add-serverside}
 
-- [Redis ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/IBM-Swift/Kitura-redis)
-- [CouchDB ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/IBM-Swift/Kitura-CouchDB)
-- [MongoDB ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/OpenKitten/MongoKitten)
-- [PostgreSQL ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL)
-- [SQLite ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/IBM-Swift/Swift-Kuery-SQLite)
-- [Object Storage ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/ibm-bluemix-mobile-services/bluemix-objectstorage-serversdk-swift)
+- [Redis ](https://github.com/IBM-Swift/Kitura-redis){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [CouchDB ](https://github.com/IBM-Swift/Kitura-CouchDB){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [MongoDB ](https://github.com/OpenKitten/MongoKitten){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [PostgreSQL ](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [SQLite ](https://github.com/IBM-Swift/Swift-Kuery-SQLite){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [Object Storage ](https://github.com/ibm-bluemix-mobile-services/bluemix-objectstorage-serversdk-swift){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")

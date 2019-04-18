@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
+
+subcollection: swift
 
 ---
 
@@ -23,11 +27,7 @@ aus den Dateien und ihren Metadaten, die in als "Buckets"
 bezeichneten Objektgruppen gespeichert sind. Diese Objekte sind
 definitionsgemäß nicht veränderbar, wodurch sie für Daten wie
 Bilder,
-Videos und andere statische Dokumente perfekt geeignet sind. Für sich häufig
-ändernde oder relationale Daten können Sie
-[NoSQL](/docs/swift/data/nosql.html)-,
-[Cloudant](/docs/swift/data/cloudant.html)- und
-[SQL](/docs/swift/data/sql.html)-Datenbankservices verwenden.
+Videos und andere statische Dokumente perfekt geeignet sind. Für sich häufig ändernde oder relationale Daten können Sie [Cloudant](/docs/swift/data?topic=swift-cloudant#cloudant)- und [SQL](/docs/swift/data?topic=swift-sql_data#sql_data)-Datenbankservices verwenden.
 
 {{site.data.keyword.cos_full_notm}} (COS) ist ein
 flexibles, kosteneffizientes und skalierbares Speichersystem für
@@ -59,7 +59,7 @@ für das Lesen und Schreiben von Objekten. Sie unterstützt eine Untergruppe der
 S3-API für die einfache Migration von Anwendungen auf
 {{site.data.keyword.cloud_notm}}. Zur Nutzung von
 {{site.data.keyword.cos_full}} kann jedes beliebige S3-SDK verwendet
-werden. Weitere Informationen enthält die umfassende [API-Referenz für {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference/about-compatibility-api.html#about-the-ibm-cloud-object-storage-api).
+werden. Weitere Informationen finden Sie in der umfassenden [API-Referenz zu {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api).
 
 ## Sicherheit
 {: #security-cos}
@@ -171,9 +171,7 @@ und dem Preistarif für Ihre Anwendungen nieder. Speicherklassen werden auf
 Bucketebene definiert, so dass Sie eine Kombination aus Plänen verwenden
 können, die Ihren Anforderungen entspricht. Erstellen Sie einen Bucket, der für die Speicherklasse definiert ist, die Sie verwenden möchten.
 
-Weitere Informationen zur Preisstruktur enthält die Dokumentation für die
-[Speicherklassen
-von {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/help/billing.html#ibm-cos-pricing).
+Weitere Informationen zur Preisstruktur finden Sie in der Dokumentation [Speicherklassen von {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/help?topic=cloud-object-storage-billing#ibm-cos-pricing).
 
 ### Beispiele für Speicherklassen
 {: #samples-cos}

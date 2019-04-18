@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
+
+subcollection: swift
 
 ---
 
@@ -33,7 +37,7 @@ markenspezifischen Anmeldeanzeigen zur Verwendung beim Cloudverzeichnis einbinde
 
 Informationen zu allen Möglichkeiten für die Nutzung von
 {{site.data.keyword.appid_short_notm}} sowie Angaben über die
-Architektur finden Sie unter [Informationen zu {{site.data.keyword.appid_short_notm}}](/docs/services/appid/about.html).
+Architektur finden Sie unter [Informationen zu {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-about#about).
 
 ## Vorbereitende Schritte
 {: #prereqs-appid}
@@ -51,9 +55,7 @@ erstellen
 
 Stellen Sie eine Instanz des {{site.data.keyword.appid_short_notm}}-Service bereit:
 
-1. Wählen Sie im
-[{{site.data.keyword.cloud_notm}}-Katalog](https://cloud.ibm.com/catalog/)
-den Eintrag für {{site.data.keyword.appid_short_notm}} aus. Die Anzeige für die Servicekonfiguration wird geöffnet.
+1. Wählen Sie {{site.data.keyword.appid_short_notm}} im [{{site.data.keyword.cloud_notm}}-Katalog](https://cloud.ibm.com/catalog/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") aus. Die Anzeige für die Servicekonfiguration wird geöffnet.
 2. Vergeben Sie für die Serviceinstanz einen Namen oder verwenden Sie den voreingestellten Namen.
 3. Wählen Sie Ihren Preistarif aus und
 klicken Sie auf **Erstellen**.
@@ -181,7 +183,7 @@ Kombination von Identitätsprovidern verwenden. Wenn Sie jedoch angepasste
 Anmeldebildschirme verwenden möchten, müssen Sie lediglich die Option
 "Cloudverzeichnis" aktivieren.
 3. Aktualisieren Sie die
-[Standardkonfiguration](/docs/services/appid/identity-providers.html)
+[Standardkonfiguration](/docs/services/appid?topic=appid-social#social)
 mit Ihren eigenen Berechtigungsnachweisen. {{site.data.keyword.appid_short_notm}}
 stellt IBM Berechtigungsnachweise bereit, mit deren Hilfe Sie den Service
 ausprobieren können. Bevor Sie Ihre App veröffentlichen, müssen Sie jedoch die
@@ -343,16 +345,16 @@ Anmeldewidget im {{site.data.keyword.appid_short_notm}}-Dashboard.
 4. Wiederholen Sie die Schritte 1 und 2, um die sofort implementierten
 Änderungen anzuzeigen. Aktualisierungen des App-Codes sind nicht erforderlich.
 
-Falls Probleme auftreten, finden Sie im Abschnitt [Fehlerbehebung bei {{site.data.keyword.appid_short_notm}}](/docs/services/appid/ts_index.html) weitere Informationen.
+Falls Probleme auftreten, finden Sie im Abschnitt [Fehlerbehebung bei {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-troubleshooting#troubleshooting) weitere Informationen.
 
 ## Nächste Schritte
-{: #next-appid}
+{: #next-appid notoc}
 
 Hervorragend! Sie haben Ihre App mit einer Sicherheitsstufe ausgestattet. Nutzen Sie diesen Schwung und probieren
 Sie gleich eine der folgenden Optionen aus:
 
 * Lesen Sie weitere Informationen zu
 {{site.data.keyword.appid_short_notm}} in der
-[Dokumentation](/docs/services/appid/index.html). Dort
+[Dokumentation](/docs/services/appid?topic=appid-getting-started#getting-started). Dort
 erfahren Sie auch, wie Sie alle gebotenen Funktionen nutzen können.
-* Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://cloud.ibm.com/developer/mobile/dashboard) werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.
+* Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.

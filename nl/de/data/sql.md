@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: sql swift, database swift, persistence swift, data swift, orm swift, kuery swift, kitura swift
+
+subcollection: swift
 
 ---
 
@@ -20,7 +24,8 @@ Structured Query Language (SQL) ist eine fachspezifische Sprache, die zur
 Verwaltung von Daten in relationalen Datenbanken verwendet wird. Für den Fall,
 dass Ihr Server beendet wird, während Sie ihn gerade nutzen, empfiehlt es sich,
 Daten persistent zu speichern. Zur Gewährleistung der Datenpersistenz können
-Sie direkt aus Swift heraus eine SQL-Datenbank verwenden.
+Sie direkt aus Swift heraus eine SQL-Datenbank verwenden. 
+
 Eines der wichtigsten
 Merkmale von Swift ist seine Typsicherheit. Die Verwendung einer SQL-Datenbank
 mit Swift ist eine logische Option, da die Typsicherheit von beiden unterstützt
@@ -38,16 +43,9 @@ Syntaxanalyse und Serialisierung kümmern zu müssen.
 ## Schritt 1. Einführung in ORM
 {: #start-orm}
 
-Verwenden Sie
-[Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM)
-mit einem SQL-Plug-in wie beispielsweise
-[PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL)
-oder [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL).
+Verwenden Sie [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") zusammen mit einem SQL-Plug-in wie beispielsweise [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") oder [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
-In diesem Beispiel wird das Plug-in [ PostgreSQL
-](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL) verwendet. Befolgen Sie die
-[hier](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation)
-verfügbaren Anweisungen, um das Plug-in zu installieren.
+In diesem Beispiel wird das Plug-in [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") verwendet. Folgen Sie den Anweisungen in [Plug-in installieren](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 ## Schritt 2. ORM in Ihre Anwendung importieren
 {: #import-orm}
@@ -188,9 +186,7 @@ nach Abschluss des Datenbankaufrufs ausgeführt wird.
 ## ORM mit Kitura verwenden
 {: #kitura-orm}
 
-Um das Ausprobieren von ORM zu vereinfachen, kann das Lernprogramm
-[FoodTrackerBackend](https://github.com/IBM/FoodTrackerBackend)
-die Objekte "Meal" aus der iOS-App direkt in eine PostgreSQL-Datenbank abrufen. Auch wenn Sie das Lernprogramm bereits abgeschlossen haben,
+Um das Ausprobieren von ORM zu vereinfachen, kann das [Lernprogramm 'FoodTrackerBackend'](https://github.com/IBM/FoodTrackerBackend){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") die Meal-Objekte aus der iOS-App speichern und direkt und in eine PostgreSQL-Datenbank abrufen. Auch wenn Sie das Lernprogramm bereits abgeschlossen haben,
 ist es sinnvoll, es noch einmal durchzuarbeiten, denn es demonstriert die
 Leistungsstärke von Swift-Kuery-ORM und zeigt, wie Ihr Kitura-Code hiermit
 vereinfacht werden kann.
@@ -198,7 +194,4 @@ vereinfacht werden kann.
 ## Swift-Kuery direkt verwenden
 {: #swift-kuery}
 
-Wenn Sie durch ORM eingeschränkt werden, weil Sie eine größere Steuerung
-für Ihre Datenbank benötigen, können Sie die SQL-Abstraktionsebene
-[Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery)
-verwenden, auf der Sie eine SQL-Abfrage ausgeben können.
+Wenn Sie durch ORM eingeschränkt werden, weil Sie eine größere Steuerung für Ihre Datenbank benötigen, können Sie die SQL-Abstraktionsebene [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") verwenden, auf der Sie eine SQL-Abfrage ausgeben können.

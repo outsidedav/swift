@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-28"
+
+keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift, swift health check
+
+subcollection: swift
 
 ---
 
@@ -18,9 +22,7 @@ lastupdated: "2019-01-15"
 
 Statusprüfungen stellen einen einfachen Mechanismus zur Verfügung, mit
 dem festgestellt werden kann, ob eine serverseitige Anwendung ordnungsgemäß
-funktioniert. Cloudumgebungen wie [Kubernetes](https://www.ibm.com/cloud/container-service) und [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) können so konfiguriert werden, dass durch eine regelmäßige Abfrage der
-Statusendpunkte ermittelt wird, ob eine Instanz Ihres Service
-Datenverkehr akzeptieren kann oder nicht.
+funktioniert. Cloud-Umgebungen wie [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") und [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") können so konfiguriert werden, dass sie in regelmäßigen Abständen Statusendpunkte abfragen, um zu ermitteln, ob eine Instanz Ihres Service für die Annahme von Datenverkehr bereit ist.
 {: shortdesc}
 
 ## Übersicht über die Statusprüfung
@@ -59,15 +61,8 @@ Die folgende Tabelle enthält Informationen zu den Reaktionen der Prüfung von B
 ## Statusprüfung zu einer vorhandenen Swift-App hinzufügen
 {: #existing-app}
 
-Die
-Bibliothek [Health](https://github.com/IBM-Swift/Health)
-macht das Hinzufügen einer Statusprüfung zu einer Swift-Anwendung ganz einfach. Statusprüfungen
-können erweitert werden. Zusätzliche Angaben über das
-[Caching](https://github.com/IBM-Swift/Health#caching) zur
-Verhinderung von Denial-of-Service-Attacken oder das Hinzufügen von
-[angepassten
-Prüfungen](https://github.com/IBM-Swift/Health#implementing-a-health-check) können Sie der Bibliothek
-[Health](https://github.com/IBM-Swift/Health) entnehmen.
+Die Bibliothek [Health](https://github.com/IBM-Swift/Health){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") macht das Hinzufügen einer Statusprüfung zu einer Swift-Anwendung einfach. Statusprüfungen
+können erweitert werden. Weitere Informationen zum [Caching](https://github.com/IBM-Swift/Health#caching){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") zur Verhinderung von DoS-Attacken oder zur Hinzufügung von [benutzerdefinierten Überprüfungen](https://github.com/IBM-Swift/Health#implementing-a-health-check){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") finden Sie in der Bibliothek [Health](https://github.com/IBM-Swift/Health){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 Führen Sie folgende Schritte aus, um die Bibliothek 'Health' einer vorhandenen Swift-App hinzuzufügen:
 
@@ -108,12 +103,10 @@ Endpunkt
 `{"status": "UP"}` wie durch das einfache Wörterverzeichnis
 definiert zurück.
 
-## Überprüfen Sie den Status einer serverseitigen Swift Starter Kit-App
+## Status einer serverseitigen Swift-Starter-Kit-App prüfen
 {: #healthcheck-starterkit}
 
-Wenn Sie eine Kitura-basierte Swift-App mithilfe eines Starter-Kits
-generieren, ist standardmäßig ein Basisendpunkt für die Statusprüfung namens
-`/health` enthalten. Der Endpunkt verwendet das in Swift 4 verfügbare Codable-Protokoll, so wie es von der Bibliothek [Health](https://github.com/IBM-Swift/Health) unterstützt wird.
+Wenn Sie eine Kitura-basierte Swift-App mithilfe eines Starter-Kits generieren, ist standardmäßig ein Basisendpunkt für die Statusprüfung namens `/health` enthalten. Der Endpunkt verwendet das in Swift 4 verfügbare Codable-Protokoll, so wie es von der Bibliothek [Health](https://github.com/IBM-Swift/Health){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") unterstützt wird.
 
 Der Basisinitialisierungscode, wie zum Beispiel die Initialisierung des Zustandsobjekts erscheint in `Sources/Application.swift`. Der Endpunkt der Statusprüfung selbst wird von der Datei `/Sources/Application/Routes/HealthRoutes.swift` bereitgestellt und verwenden den folgenden Code:
 
@@ -136,11 +129,12 @@ func initializeHealthRoutes(app: App) {
 ```
 {: codeblock}
 
-Das Beispiel verwendet das Standardwörterverzeichnis, das Nutzdaten wie
-beispielsweise
-`{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}`
-zurückgibt, wenn Sie auf den Endpunkt `/health`
-zugreifen.
+Im Beispiel wird das Standardwörterverzeichnis verwendet, das Nutzdaten wie die folgenden zurückgibt:
+```
+{"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}
+```
+
+Dies tritt auf, wenn Sie auf den Endpunkt `/health` zugreifen.
 
 ## Empfehlungen für die Bereitschafts- und Aktivitätsprüfungen
 {: #recommend-probes}
@@ -152,7 +146,7 @@ Bei einer Aktivitätsprüfung dagegen kann darüber nachgedacht werden, was gepr
 ### Unterstützung für Kubernetes-Bereitschafts- und Aktivitätsprüfung zu einer Swift-App hinzufügen
 {: #kube-readiness-swift}
 
-Informationen zu alternativen Implementierungen wie z. B. die Verwendung von **Codable** oder das Standardwörterbuch, finden Sie auf der Seite [Health library examples](https://github.com/IBM-Swift/Health#usage). Einige dieser Implementierungen vereinfachen die Erstellung von erweiterbaren Statusprüfungen mit Unterstützung für Cacheprüfungen, die für Unterstützungsservices ausgeführt werden. In diesem Szenario möchten Sie die einfache Aktivitätsprüfung von der robusteren und detaillierteren Bereitschaftsprüfung trennen.
+Informationen zu alternativen Implementierungen wie z. B. zur Verwendung von **Codable** oder des Standardwörterverzeichnisses finden Sie in den [Beispielen zur Bibliothek 'Health'](https://github.com/IBM-Swift/Health#usage){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link"). Einige dieser Implementierungen vereinfachen die Erstellung von erweiterbaren Statusprüfungen mit Unterstützung für Cacheprüfungen, die für Unterstützungsservices ausgeführt werden. In diesem Szenario möchten Sie die einfache Aktivitätsprüfung von der robusteren und detaillierteren Bereitschaftsprüfung trennen.
 
 ## Konfigurieren Sie Bereitschafts- und Aktivitätsprüfungen in Kubernetes
 {: #config-kube-readiness}
@@ -194,4 +188,4 @@ spec:
       failureThreshold: 10
 ```
 
-Weitere Informationen zum Thema [Aktivitäts- und Bereitschaftsprüfungen konfigurieren](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) finden Sie im entsprechenden Abschnitt.
+Weitere Informationen finden Sie im Abschnitt [Aktivitäts- und Bereitschaftsprüfungen konfigurieren](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").

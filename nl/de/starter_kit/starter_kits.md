@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
+
+subcollection: swift
 
 ---
 
@@ -28,9 +32,7 @@ herunterladen. Die Verwendung der Starter-Kits ermöglicht es Ihnen,
 {{site.data.keyword.cloud_notm}}-Services mit einer brandneuen App
 zügig auszuwerten und zu testen.
 
-Wollen Sie gleich loslegen? In der
-[{{site.data.keyword.cloud_notm}}-Entwicklerkonsole
-für Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits) können Sie sofort anfangen.
+Wollen Sie gleich loslegen? In der [{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") können Sie sofort anfangen.
 {: tip}
 
 ## Was ist ein Starter-Kit?
@@ -51,11 +53,7 @@ Funktionalität für den Benutzer, um die Integration des Service
 hervorzuheben. In anderen Fällen stellen Starter-Kits eine anpassbare
 Implementierung für einen komplexeren Anwendungsfall dar.
 
-Starter-Kits enthalten Anweisungen, anhand derer
-{{site.data.keyword.cloud_notm}} automatisch Apps erstellen kann, die
-mit einem Gerüst und mit portierbarem Code versehen sind, sowie die Ressourcen
-angeben kann, die automatisch bereitgestellt werden müssen, wenn Sie eine App
-aus dem Starter-Kit erstellen.
+Starter-Kits enthalten Anweisungen, anhand derer {{site.data.keyword.cloud_notm}} automatisch Apps erstellen kann, die mit einem Gerüst und mit portierbarem Code versehen sind, sowie die Services angeben kann, die automatisch bereitgestellt werden müssen, wenn Sie eine App aus dem Starter-Kit erstellen.
 
 ## {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple
 verwenden
@@ -79,22 +77,19 @@ auf `Starter-Kits`, um die Ansicht "Starter-Kits" aufzurufen.
 
 ![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Übersichtsanzeige](images/overview_screen.png "Übersichtsanzeige") <br> *Übersichtsanzeige in der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple*
 
-### Ansicht "Starter-Kits"
+### Ansicht 'Starter-Kits'
 {: #starter_kits_view}
 
-Die Ansicht "Starter-Kits" zeigt die Sammlung der Starter-Kits für einen
-bestimmten Anwendungsfallbereich. Über verschiedene Links auf der Karte eines
+Die Ansicht 'Starter-Kits' zeigt die Sammlung der Starter-Kits für einen bestimmten Bereich von Anwendungsfällen an. Über verschiedene Links auf der Karte eines
 Starter-Kits können Sie Demos und weitere Informationen anzeigen. Durch die
 Auswahl eines Starter-Kits können Sie in die Ansicht "App erstellen" wechseln.
 
 ![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'Starter-Kits'](images/starter_kits_screen.png "Ansicht 'Starter-Kits'") <br> *Ansicht "Starter-Kits" in der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple*
 
-### Ansicht "App erstellen"
+### App-Ansicht erstellen
 {: #create_new_app_view}
 
-In der Ansicht **App erstellen** können Sie einen
-Namen für Ihre App vergeben sowie Bereitstellungs- und Routing-Informationen
-angeben. Auf der rechten Seite sind außerdem die Services, die bei der
+In der Ansicht **App erstellen** können Sie einen Namen für Ihre App angeben sowie Bereitstellungs- und Routing-Informationen zur Verfügung stellen. Auf der rechten Seite sind außerdem die Services, die bei der
 Erstellung Ihrer App bereitgestellt werden, zusammen mit den für sie
 geltenden Preistarifen und Bedingungen zu sehen. Klicken Sie auf
 `Erstellen`, um die Ansicht "App-Details" aufzurufen. Falls
@@ -103,10 +98,10 @@ müssen Sie dies jetzt nachholen.
 
 ![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'Neue App erstellen'](images/create_new_project_screen.png "Ansicht 'Neue App erstellen'") <br> *Ansicht "Neue App erstellen" in der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple*
 
-## Ansicht "App-Details"
+## Ansicht 'App-Details'
 {: #app_details_view}
 
-In der Ansicht "App-Details" wird eine Liste der Services angezeigt, die
+In der Ansicht 'App-Details' wird eine Liste der Services angezeigt, die
 für Ihre App konfiguriert sind. Für jeden Listeneintrag können Sie den
 Servicenamen, Links zu weiterführenden Informationen sowie eine Schaltfläche
 **Aktionen** anzeigen, auf der drei vertikal angeordnete
@@ -121,10 +116,7 @@ einzelne Serviceinstanz aufrufen, um sie abzurufen.
 
 ![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'App-Details'](images/project_details_screen.png "Ansicht 'App-Details'") <br> *Ansicht "App-Details" in der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple*
 
-In der Ansicht "App-Details" können Sie neue oder vorhandene Services zu
-Ihrer App hinzufügen, die nicht Bestandteil des ursprünglichen Starter-Kits
-sind. Klicken Sie im Servicelistenfeld auf den Link **Ressource
-hinzufügen**, um Services hinzuzufügen. Welche Services verfügbar
+Mithilfe der Seite **App-Details** können Sie neue oder vorhandene Services zu Ihrer App hinzufügen, die nicht Bestandteil des ursprünglichen Starter-Kits waren. Klicken Sie auf **Service hinzufügen**, um Services hinzuzufügen. Welche Services verfügbar
 sind, richtet sich nach dem Typ der App sowie den Services, die in einer Region
 verfügbar sind. Daher können nicht alle Services allen Apps zugeordnet werden.
 
@@ -132,16 +124,16 @@ verfügbar sind. Daher können nicht alle Services allen Apps zugeordnet werden.
 
 ### Eigenen Code herunterladen
 
-* In der Ansicht "App-Details" können Sie auf Ihren eigenen Code zugreifen, in dem Sie **Code herunterladen** auswählen, um den Code für Ihre App zu generieren und herunterzuladen.
+* Auf der Seite _App-Details_ können Sie auf Ihren Code zugreifen, indem Sie **Code herunterladen** auswählen, um den Code für Ihre App zu generieren und herunterzuladen.
 
-### Ansicht "App-Liste"
+### Ansicht 'App-Liste'
 {: #app_list_view}
 
-In der Ansicht "App-Liste" können Sie alle erstellten Apps auflisten. Ausgehend
+In der Ansicht _App-Liste_ können Sie alle erstellten Apps auflisten. Ausgehend
 von dieser Ansicht können Sie Ihre Apps umbenennen oder löschen. Wenn Sie auf
 einen App-Namen klicken, werden Sie zur Ansicht "App-Details" zurückgeführt.
 
 ![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'App-Liste'](images/project_list_screen.png "Ansicht 'App-Liste'") <br> *Ansicht "App-Liste" in der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple*
 
-Weitere Informationen sind in den [Lernressourcen zur {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://cloud.ibm.com/developer/appledevelopment/learning-resources) verfügbar.
+Weitere Informationen finden Sie in den [Lernressourcen für die {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 {: tip}

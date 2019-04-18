@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
+
+subcollection: swift
 
 ---
 
@@ -26,15 +30,9 @@ as a Service" (FaaS) genannt wird, stellt der Entwickler eine statusunabhängige
 Funktion bereit, die ohne die explizite Erstellung oder Verwaltung eines
 Servers ausgelöst und ausgeführt werden kann.
 
-Durch die Ausgliederung der erforderlichen Infrastruktur und Frameworks
-für die serverseitige Entwicklung können sich Anwendungsentwickler bei der
-serverunabhängigen Architektur ganz darauf konzentrieren, Code zu schreiben, der zur Änderung von Daten reaktiv ausgeführt
-wird.
+Durch die Ausgliederung der für die serverseitige Entwicklung erforderlichen Infrastruktur und Frameworks können sich Anwendungsentwickler bei der serverunabhängigen Architektur ganz darauf konzentrieren, Code zu schreiben, der zur Änderung von Daten reaktiv ausgeführt wird.
 
-[{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/),
-das IBM Produktangebot für FaaS, soll eine einfache serverseitige
-Entwicklungsumgebung bereitstellen, die kein Fachwissen über die Serverseite
-erfordert. Bei Verwendung der serverunabhängigen Technologie können
+[{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link"), das IBM Produktangebot für FaaS, soll eine einfache, serverseitige Entwicklungsumgebung bereitstellen, die kein Fachwissen zur Serverseite erfordert. Bei Verwendung der serverunabhängigen Technologie können
 Sie zeitnah erweiterbare Back-End-Lösungen für praktisch jeden Workloadbedarf
 entwickeln, ohne vorzeitig Ressourcen erstellen zu müssen. Für Anwendungen
 mit unvorhersehbaren Auslastungsmustern oder hohen Serverausfallzeiten
@@ -94,7 +92,7 @@ können Sie sich anhand einiger spezieller Beispiele informieren.
 ## Vorteile der Serverunabhängigkeit
 {: #benefits-serverless}
 
-### Geringere Kosten
+### Verringerte Kosten
 {: #reduced-cost-serverless}
 
 Das Outsourcing von Zeit und Kosten, die mit der Systemadministration
@@ -129,9 +127,7 @@ Realität ausgeführt werden.
 {: #mobile-backend-serverless}
 ![](./images/cloud-functions-rest-api-trigger.png)
 
-Entwickler für Mobilgeräte können leicht auf serverseitige Logik
-zugreifen und rechenintensive Tasks in eine Cloudplattform
-auslagern. Unter Verwendung des iOS-SDK und ohne serverseitige Erfahrungen
+Entwickler für Mobilgeräte können leicht auf serverseitige Logik zugreifen und rechenintensive Tasks auf eine Cloudplattform auslagern. Unter Verwendung des iOS-SDK und ohne serverseitige Erfahrungen
 besitzen zu müssen, können Sie Funktionen in Sprachen
 wie Swift implementieren und problemlos serverseitige Funktionen nutzen.
 
@@ -163,13 +159,12 @@ Cron-ähnlichen Syntax angeben.
 {: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [REST-API](https://cloud.ibm.com/apidocs)
+* [REST-API](https://cloud.ibm.com/apidocs){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
 
 ## Zugehörige Links
 {: #related-serverless notoc}
 
-* [{{site.data.keyword.openwhisk_short}} entdecken](https://www.ibm.com/cloud/functions)
+* [Entdecken Sie {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
-* [Website des OpenWhisk-Projekts von
-Apache](http://openwhisk.org)
-* [Weitere Informationen zu Serverless-Architekturen](https://martinfowler.com/articles/serverless.html)
+* [Apache OpenWhisk-Projektwebsite](http://openwhisk.org){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
+* [Weitere Informationen zur Serverunabhängigkeit](https://martinfowler.com/articles/serverless.html){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")

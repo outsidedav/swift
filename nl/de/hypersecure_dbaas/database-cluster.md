@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-03-15"
+
+keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
+
+subcollection: swift
 
 ---
 
@@ -28,11 +32,7 @@ mit MongoKitten SDK 4.0.0 unterstützt.
 ## Schritt 1. Datenbankcluster erstellen
 {: #create_dbcluster}
 
-1. Greifen Sie auf die
-Konfigurationsanzeige für den
-{{site.data.keyword.ihsdbaas_full}}-Service zu, die Sie unter der
-folgenden Adresse aufrufen:
-https://cloud.ibm.com/catalog/services/hyper-protect-dbaas.
+1. Rufen Sie die Anzeige [{{site.data.keyword.ihsdbaas_full}}-Servicekonfiguration](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") auf.
 
 2. Geben Sie die folgenden Informationen an:
 
@@ -95,7 +95,7 @@ Swift-Web-Framework "Kitura" basiert.
 
 Verwenden Sie ein vorhandenes Projekt, das aus diesem Starter-Kit erstellt wurde, oder erstellen Sie ein neues Projekt.
 
-1. Öffnen Sie das {{site.data.keyword.cloud_notm}}-Dashboard für App-Services unter der Adresse https://cloud.ibm.com/developer/appservice/dashboard.
+1. Öffnen Sie das [{{site.data.keyword.cloud_notm}}-Dashboard für App-Services](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 2. Wählen Sie die Registerkarte **Starter-Kits** aus.
 
@@ -276,15 +276,14 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 ## Schritt 5. Anwendungscode integrieren
 {: #embed_appcode}
 
-Jetzt können Sie Ihren eigenen Anwendungscode zum Projekt hinzufügen. Weitere
-Informationen zum Arbeiten mit der MongoKitten-API finden Sie unter der Adresse "http://beta.openkitten.org/tutorials/".
+Jetzt können Sie Ihren eigenen Anwendungscode zum Projekt hinzufügen. Weitere Informationen finden Sie in der Dokumentation zur [MongoKitten-API](http://beta.openkitten.org/tutorials/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 ## Schritt 6. Anwendung bereitstellen
 {: #deploy-dbcluster}
 
-Sie können die Anwendung mit den erforderlichen Build-Tools [lokal](/docs/swift/create_app_cli.html#swift-install-tools) ausführen oder in {{site.data.keyword.cloud_notm}} bereitstellen.
+Sie können die Anwendung mit den erforderlichen Build-Tools [lokal](/docs/swift?topic=swift-swift_cli#swift-install-tools) ausführen oder in {{site.data.keyword.cloud_notm}} bereitstellen.
 
-Klicken Sie auf **In Cloud bereitstellen**, um eine Bereitstellungstoolchain im Dashboard zu erstellen. Richten Sie Ihre Bereitstellungsmethode gemäß den Anweisungen für die Methode ein, die Sie auswählen:
-  * **In [Kubernetes](/docs/apps/deploying/containers.html#containers) bereitstellen**. Mit dieser Option wird ein Cluster mit Hosts erstellt, die als Workerknoten bezeichnet werden, um hoch verfügbare Anwendungscontainer bereitzustellen und zu verwalten. Sie können einen Cluster erstellen oder die Bereitstellung in einem vorhandenen Cluster vornehmen.
-  * **In Cloud Foundry bereitstellen**. Mit dieser Option wird die cloudnative App bereitgestellt, ohne dass Sie die zugrunde liegende Infrastruktur verwalten müssen. Wenn Ihr Konto über Zugriff auf {{site.data.keyword.cfee_full_notm}} verfügt, können Sie als Bereitstellertyp entweder **[Public Cloud](/docs/cloud-foundry-public/about-cf.html#about-cf)** oder **[Enterprise Environment](/docs/cloud-foundry-public/cfee.html#cfee)** auswählen, das zum Erstellen und Verwalten isolierter Umgebungen für das exklusive Hosting von Cloud Foundry-Anwendungen für Ihr Unternehmen verwendet werden kann.
-  * **In einem [virtuellen Server](/docs/apps/vsi-deploy.html#vsi-deploy)** bereitstellen. Mit dieser Option wird eine Instanz eines virtuellen Servers eingerichtet, ein Image mit Ihrer App geladen, eine DevOps-Toolchain erstellt und der erste Bereitstellungszyklus initiiert.
+Klicken Sie zum Erstellen einer Toolchain für die Bereitstellung auf **Bereitstellen** im Dashboard. Richten Sie Ihr Bereitstellungsziel gemäß den Anweisungen für die von Ihnen gewählte Methode ein:
+  * **In [{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)** bereitstellen. Mit dieser Option wird ein Cluster mit Hosts erstellt, die als Workerknoten bezeichnet werden, um hoch verfügbare Anwendungscontainer bereitzustellen und zu verwalten. Sie können einen Cluster erstellen oder die Bereitstellung in einem vorhandenen Cluster vornehmen.
+  * **In Cloud Foundry bereitstellen**. Mit dieser Option wird die cloudnative App bereitgestellt, ohne dass Sie die zugrunde liegende Infrastruktur verwalten müssen. Wenn Ihr Konto über Zugriff auf {{site.data.keyword.cfee_full_notm}} verfügt, können Sie als Bereitstellertyp entweder **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** oder **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)** auswählen, das zum Erstellen und Verwalten isolierter Umgebungen für das exklusive Hosting von Cloud Foundry-Anwendungen für Ihr Unternehmen verwendet werden kann.
+  * **In einem [virtuellen Server](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)** bereitstellen. Mit dieser Option wird eine Instanz eines virtuellen Servers eingerichtet, ein Image mit Ihrer App geladen, eine DevOps-Toolchain erstellt und der erste Bereitstellungszyklus initiiert.

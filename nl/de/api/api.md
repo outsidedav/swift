@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swift api connect, swagger swift, open api swift, api designer, loopback swift api, create swift backend, swift api parameters, swift api reference
+
+subcollection: swift
 
 ---
 
@@ -16,18 +20,14 @@ lastupdated: "2019-01-15"
 # iOS-Apps mit APIs ausstatten
 {: #api_connect}
 
-Mit API Connect können Sie APIs in
-{{site.data.keyword.cloud}} verwalten. Hierbei ist es ohne Belang, ob
-die Verwaltung innerhalb oder außerhalb von
-{{site.data.keyword.cloud_notm}} erfolgt. Hier erfahren Sie, wie Sie
+Mit API Connect können Sie APIs in {{site.data.keyword.cloud}} verwalten. Hierbei ist es ohne Belang, ob die Verwaltung innerhalb oder außerhalb von {{site.data.keyword.cloud_notm}} erfolgt. Hier erfahren Sie, wie Sie
 Ihre APIs verwalten, damit Sie die Verwendung steuern, die Akzeptanz erhöhen
 und Statistikdaten überwachen können.
 
 ## Instanz von API Connect erstellen
 {: #create-apiconnect}
 
-Rufen Sie den [Katalog](https://cloud.ibm.com/catalog/) auf und erstellen Sie eine Instanz von API
-Connect, um Ihre APIs zu verwalten.
+Rufen Sie den [Katalog](https://cloud.ibm.com/catalog/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") und erstellen Sie eine Instanz von API Connect, um Ihre APIs zu verwalten.
 
 Greifen Sie durch Auswahl der Optionen `Menü > APIs`
 auf die Managementkonsole von API Connect zu.
@@ -37,17 +37,17 @@ auf die Managementkonsole von API Connect zu.
 Wenn Sie Ihren eigenen API-Vertrag definieren, bevor Sie mit der Back-End-und Front-End-Entwicklung beginnen, verwenden Sie die API Connect-Tools, um diesen Prozess zu beschleunigen. Zusammen mit Ihrem Team für die digitale
 Entwicklung können Sie den API-Vertrag zwischen Ihrer iOS-App und Ihrer
 Back-End-Logik aufstellen und definieren. Diese Logik kann mithilfe von
-[{{site.data.keyword.openwhisk}}](/docs/openwhisk/index.html) oder über die
-[Swift-Laufzeitumgebung](/docs/runtimes/swift/index.html)
-mit Kubernetes bzw. [Cloud Foundry](/docs/cloud-foundry/index.html) bereitgestellt werden.
+[{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-index#index) oder über die
+[Swift-Laufzeitumgebung](/docs/runtimes/swift?topic=Swift-swift_runtime#swift_runtime)
+mit Kubernetes bzw. [Cloud Foundry](/docs/cloud-foundry?topic=cloud-foundry-about#about) bereitgestellt werden.
 
 Nachdem Sie Ihre API definiert haben, können Sie eine Reihe von Tools
 verwenden, um die Open API-Spezifikationen
 (Swagger) festzulegen:
 
-- [Swagger-Editor](http://editor.swagger.io/)
-- [API Designer](https://www.ibm.com/support/knowledgecenter/en/SSFS6T/com.ibm.apic.toolkit.doc/task_apionprem_composing_apis.html)
-- [Loopback](https://loopback.io/)
+- [Swagger-Editor](http://editor.swagger.io/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
+- [API Designer](https://www.ibm.com/support/knowledgecenter/en/SSFS6T/com.ibm.apic.toolkit.doc/task_apionprem_composing_apis.html){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
+- [Loopback](https://loopback.io/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
 
 ## Verwaltete API definieren
 {: #define-apiconnect}
@@ -70,9 +70,7 @@ verweist, die Links zu Ihrer Back-End-Logikanwendung enthält.
 
 Sie können Ihre Swift-Back-End-App auf der Basis dieser API erstellen. 
 
-Führen Sie in der Entwicklerkonsole für Apple die folgenden
-Schritte
-aus:
+Führen Sie in der [Entwicklerkonsole für Apple](https://cloud.ibm.com/developer/appledevelopment/dashboard){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") folgende Schritte aus:
 
 1. Wählen Sie **Starter-Kits** aus.
 2. Klicken Sie auf **App erstellen**.
@@ -81,9 +79,7 @@ aus:
 Wählen Sie die YAML- bzw. JSON-Datei aus und klicken Sie dann auf
 **Erstellen**. Die Swift-Back-End-App wird jetzt erstellt.
 
-Nun können Sie den Code **herunterladen** oder
-**in der Cloud bereitstellen** und Ihr GIT-Repository auf
-der lokalen Maschine klonen. Anhand der Anweisungen im Knowledge
+Nun können Sie den Code **herunterladen** oder **bereitstellen** und Ihr Git-Repository auf der lokalen Maschine klonen. Anhand der Anweisungen im Knowledge
 Guide können Sie die serverseitige App in Xcode öffnen.
 
 Im **Quellenordner** sehen Sie eine Route, mit der
@@ -151,7 +147,7 @@ Um die API in Ihrer iOS-App einzusetzen, erstellen Sie unter Verwendung
 der Konsole für Apple ein Starter-Kit für Mobilgeräte. Erstellen Sie in der
 Ansicht des Starter-Kits ein Swift-Starter-Kit für iOS mit einem beliebigen Typ.
 
-Klicken Sie auf **Ressource hinzufügen** und wählen Sie eine API aus. 
+Klicken Sie auf **Service hinzufügen** und wählen Sie eine API aus. 
 
 ![API-Dialog](../images/apidialog.png)
 
@@ -196,7 +192,7 @@ Falls sich die API ändert oder neue Funktionen verfügbar werden und
 Client-SDK mithilfe des Befehls `ibmcloud sdk` erneut
 erstellen. Weitere Informationen sowie Beispiele und Hilfe zur Syntax enthält
 die Dokumentation von
-[SDK Generator](/docs/cli/sdk/index.html).
+[SDK Generator](/docs/cli/sdk?topic=cloud-cli-sdk-cli#sdk-cli).
 
 Um die Erstellung eines SDK zu ermöglichen, verwenden Sie die YAML- oder
 JSON-Datei mit der Open API-Spezifikation (Swagger). Diese Datei können Sie mit

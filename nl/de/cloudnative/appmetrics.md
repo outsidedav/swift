@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-03-14"
+
+keywords: swiftmetrics-dash, swiftmetrics, prometheus swift, application metrics swift, swift performance, slow swift, swift dashboard, metris swift
+
+subcollection: swift
 
 ---
 
@@ -17,7 +21,7 @@ lastupdated: "2019-01-15"
 {: #metrics}
 
 Anwendungsmetriken sind wichtig, um die Leistung Ihrer Anwendung zu
-überwachen. Eine Live-Ansicht von Metriken wie CPU-, Speicher-, Latenzzeit- und HTTP-Metriken ist notwendig, um sicherzustellen, dass Ihre Anwendung jederzeit effektiv ausgeführt wird. Kubernetes und Cloud Foundry-Services wie [autoscaling](/docs/services/Auto-Scaling/index.html) basieren auf Metriken, um zu ermitteln, wann Instanzen aufgrund der Arbeitslast dynamisch hinzugefügt oder entfernt werden sollen, und bereinigen Instanzen, die nicht mehr benötigt werden, um Kosten zu sparen.
+überwachen. Eine Live-Ansicht von Metriken wie CPU-, Speicher-, Latenzzeit- und HTTP-Metriken ist notwendig, um sicherzustellen, dass Ihre Anwendung jederzeit effektiv ausgeführt wird. Kubernetes und Cloud Foundry-Services wie [autoscaling](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started) basieren auf Metriken, um zu ermitteln, wann Instanzen aufgrund der Arbeitslast dynamisch hinzugefügt oder entfernt werden sollen, und bereinigen Instanzen, die nicht mehr benötigt werden, um Kosten zu sparen.
 
 Anwendungsmetriken werden als Zeitreihendaten erfasst. Das Zusammenfassen und Visualisieren von erfassten Metriken kann Sie bei der Erkennung allgemeiner
 Leistungsprobleme unterstützen. Beispiele:
@@ -32,20 +36,12 @@ Speicherverlust)
 ## Anwendungsmetriken zu einer vorhandenen Swift-Anwendung hinzufügen
 {: #add-appmetrics-existing}
 
-Mit
-[Application
-Metrics for Swift](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/) können Sie die Leistungsüberwachung zu Ihrer
-Swift-Anwendung hinzufügen. Application Metrics for Swift besteht aus zwei
+Mit [Application Metrics for Swift](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") können Sie die Leistungsüberwachung zu Ihrer Swift-Anwendung hinzufügen. Application Metrics for Swift besteht aus zwei
 Bibliotheken namens `SwiftMetrics` und `SwiftMetricsDash`.
 
 * Die Bibliothek `SwiftMetrics` ist eine umfassende
 Instrumentierungsbibliothek, in der Metriken für Ihre Anwendung
-zusammengestellt und aggregiert werden. Sie besitzt mehrere Erweiterungen,
-unter anderem ein
-Kitura-Modul für HTTP-Metriken,
-eine [Prometheus-Unterstützung](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support)
-und einen eigenständigen
-[Emitter](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent).
+zusammengestellt und aggregiert werden. Sie hat mehrere Erweiterungen, unter anderem ein Kitura-Modul für HTTP-Metriken, [Prometheus-Unterstützung](https://github.com/RuntimeTools/SwiftMetrics#prometheus-support){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") und einen eigenständigen [Emitter](https://github.com/RuntimeTools/SwiftMetrics#application-metrics-for-swift-agent){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 * Die Bibliothek `SwiftMetricsDash` verarbeitet die von
 `SwiftMetrics` erzeugten Metriken und bietet ein integriertes
@@ -92,12 +88,7 @@ angezeigt.
 ## Anwendungsmetriken in Starter-Kits verwenden
 {: #appmetrics-starterkits}
 
-Die serverseitigen Swift-Anwendungen, die ausgehend von Starter-Kits
-erstellt werden, beinhalten den Code für `SwiftMetrics`,
-`SwiftMetricsDash` und
-`SwiftMetricsPrometheus` und können daher sofort in
-Kubernetes-Umgebungen eingesetzt werden, die Prometheus-Endpunkte zur Erfassung
-von Metriken verwenden.
+Die serverseitigen Swift-Anwendungen, die ausgehend von Starter-Kits erstellt werden, beinhalten den Code für `SwiftMetrics`, `SwiftMetricsDash` und `SwiftMetricsPrometheus` und können daher sofort in Kubernetes-Umgebungen eingesetzt werden, die Prometheus-Endpunkte zur Erfassung von Metriken verwenden.
 
 Der Code für `SwiftMetrics` ist in der Datei
 `/Sources/Application/Metrics.swift` zu finden:
@@ -132,8 +123,4 @@ func initializeMetrics(router: Router) {
 Sobald Ihre Anwendung ausgeführt wird, können Sie über den Endpunkt
 `/swiftmetrics-dash` auf das Dashboard zugreifen.
 
-Der Code für `SwiftMetricsPrometheus` stellt
-standardmäßig den
-[Prometheus-Endpunkt](https://prometheus.io/) unter der
-Adresse
-`http://<hostname>:<port>/metrics` bereit.
+Der Code für `SwiftMetricsPrometheus` stellt standardmäßig den [Prometheus-Endpunkt](https://prometheus.io/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") unter der Adresse `http://<hostname>:<port>/metrics` bereit.
