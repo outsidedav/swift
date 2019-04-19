@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-19"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -96,7 +96,7 @@ The {{site.data.keyword.cloud}} provides local CLI tools that help you work with
   ```
   {: codeblock}
 
-  Be sure to log in with an {{site.data.keyword.cloud_notm}} account to create a project. First-time users can [register](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") for a free account. Use the `ibmcloud login` command to log in on the command line.
+  Be sure to log in with an {{site.data.keyword.cloud_notm}} account to create a project. First-time users can [register](https://cloud.ibm.com/registration){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") for a free account. Use the `ibmcloud login` command to log in on the command line.
   {: tip}
 
 2. When prompted, select options 1, then 6, and lastly 2, as displayed in the following example:
