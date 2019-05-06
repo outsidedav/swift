@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-19"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -96,7 +96,7 @@ ibmcloud dev create
 ```
   {: codeblock}
 
-  确保使用 {{site.data.keyword.cloud_notm}} 帐户登录以创建项目。首次使用的用户可以[注册 ](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 免费帐户。在命令行上使用 `ibmcloud login` 命令登录。
+  确保使用 {{site.data.keyword.cloud_notm}} 帐户登录以创建项目。首次使用的用户可以[注册 ](https://cloud.ibm.com/registration){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 免费帐户。在命令行上使用 `ibmcloud login` 命令登录。
   {: tip}
 
 2. 出现提示时，选择选项 1，然后选择 6，最后选择 2，如以下示例中所示：

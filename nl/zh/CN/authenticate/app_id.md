@@ -52,16 +52,16 @@ subcollection: swift
 
 1. 打开现有 Xcode 项目目录下的 `Podfile`。
 
-2. 在项目目标下，添加 `BluemixAppID` pod 的依赖项。确保 `use_frameworks!` 命令也位于目标下，如以下示例中所示。
+2. 在项目目标下，为 `IBMCloudAppID` pod 添加依赖项。确保 `use_frameworks!` 命令也位于目标下，如以下示例中所示。
     ```swift
     target '<yourTarget>' do
       use_frameworks!
-        pod 'BluemixAppID'
+        pod 'IBMCloudAppID'
     end
     ```
     {: pre}
 
-3. 下载 `BluemixAppID` 依赖项。
+3. 下载 `IBMCloudAppID` 依赖项。
     ```
   pod install --repo-update
   ```
@@ -84,19 +84,19 @@ subcollection: swift
 3. 将以下 import 语句添加到 `AppDelegate.swift` 文件中。
     
   ```swift
-  import BluemixAppID
+  import IBMCloudAppID
   ```
   {: codeblock}
 
 4. 传递`租户标识`和`区域`参数，以初始化 SDK。代码通常会放置在应用程序中 `AppDelegate` 的 `application:didFinishLaunchingWithOptions` 方法中，但这并不是强制性的。
   ```swift
-  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
   ```
   {: codeblock}
   
   <table>
     <thead>
-      <th colspan=2><img src="images/idea.png" alt=""/> 了解命令的组成部分</th>
+      <th colspan=2><img src="images/idea.png" alt=""/> 了解命令的各个组成部分</th>
     </thead>
     <tbody>
       <tr>
@@ -139,7 +139,7 @@ subcollection: swift
 4. 定制登录屏幕以显示您选择的图像和颜色。
 5. 要使用应用程序调用登录窗口小部件，请将以下命令添加到代码中。
     ```swift
-    import BluemixAppID
+    import IBMCloudAppID
     class delegate : AuthorizationDelegate {
         public func onAuthorizationSuccess(accessToken: AccessToken, identityToken: IdentityToken, response:Response?) {
             //User authenticated

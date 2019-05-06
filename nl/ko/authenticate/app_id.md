@@ -52,16 +52,16 @@ subcollection: swift
 
 1. `Podfile`에 대한 기존 Xcode 프로젝트 디렉토리를 여십시오.
 
-2. 프로젝트 대상에서 `BluemixAppID` 팟(Pod)의 종속성을 추가하십시오. 다음 예에서 표시된 대로 `use_frameworks!` 명령도 대상 아래에 있는지 확인하십시오.
+2. 프로젝트 대상에서 `IBMCloudAppID` 팟(Pod)의 종속성을 추가하십시오. 다음 예에서 표시된 대로 `use_frameworks!` 명령도 대상 아래에 있는지 확인하십시오.
     ```swift
     target '<yourTarget>' do
       use_frameworks!
-        pod 'BluemixAppID'
+        pod 'IBMCloudAppID'
     end
     ```
     {: pre}
 
-3. `BluemixAppID` 종속성을 다운로드하십시오.
+3. `IBMCloudAppID` 종속성을 다운로드하십시오.
     ```
     pod install --repo-update
     ```
@@ -82,13 +82,13 @@ subcollection: swift
 
 3. 다음 가져오기를 `AppDelegate.swift` 파일에 추가하십시오.
   ```swift
-  import BluemixAppID
+  import IBMCloudAppID
   ```
   {: codeblock}
 
 4. `tenant ID` 및 `region` 매개변수를 전달하여 SDK를 초기화하십시오. 사용자의 앱에서 공통이지만 필수는 아닌 코드를 배치할 위치는 `AppDelegate`의 `application:didFinishLaunchingWithOptions` 메소드에 있습니다.
   ```swift
-  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
   ```
   {: codeblock}
   
@@ -137,7 +137,7 @@ ID 제공자는 사용자에게 권한을 부여할 수 있도록 사용자에 �
 4. 원하는 이미지와 색상을 표시하려면 로그인 화면을 사용자 정의하십시오.
 5. 앱을 사용하여 로그인 위젯을 호출하려면 다음 명령을 코드에 추가하십시오.
     ```swift
-    import BluemixAppID
+    import IBMCloudAppID
     class delegate : AuthorizationDelegate {
         public func onAuthorizationSuccess(accessToken: AccessToken, identityToken: IdentityToken, response:Response?) {
             //User authenticated

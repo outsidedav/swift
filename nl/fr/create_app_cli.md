@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-19"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -96,7 +96,7 @@ Les outils suivants garantissent que vous pouvez installer les logiciels SDK nat
   ```
   {: codeblock}
 
-  Assurez-vous de vous connecter avec un compte {{site.data.keyword.cloud_notm}} pour créer un projet. Les nouveaux utilisateurs peuvent [s'enregistrer ](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") pour un compte gratuit. Utilisez la commande `ibmcloud login` pour vous connecter en ligne de commande.
+  Assurez-vous de vous connecter avec un compte {{site.data.keyword.cloud_notm}} pour créer un projet. Les nouveaux utilisateurs peuvent [s'enregistrer ](https://cloud.ibm.com/registration){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") pour un compte gratuit. Utilisez la commande `ibmcloud login` pour vous connecter en ligne de commande.
   {: tip}
 
 2. Lorsque vous y êtes invité, sélectionnez l'option 1, puis 6, et enfin 2, comme illustré dans l'exemple suivant :

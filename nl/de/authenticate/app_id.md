@@ -70,20 +70,18 @@ muss in Ihrem App-Code installiert sein.
 1. Öffnen Sie das vorhandene XCode-Projektverzeichnis für die
 `Poddatei`.
 
-2. Fügen Sie unter dem Ziel Ihres Projekts (Abschnitt "target") eine
-Abhängigkeit für den Pod
-`BluemixAppID` hinzu. Stellen Sie sicher, dass der Befehl
+2. Fügen Sie unter dem Ziel Ihres Projekts (Abschnitt "target") eine Abhängigkeit für den Pod `IBMCloudAppID` hinzu. Stellen Sie sicher, dass der Befehl
 `use_frameworks!` ebenfalls wie im
 folgenden Beispiel gezeigt unter Ihrem Ziel angegeben ist.
     ```swift
     target '<yourTarget>' do
       use_frameworks!
-        pod 'BluemixAppID'
+        pod 'IBMCloudAppID'
     end
     ```
     {: pre}
 
-3. Laden Sie die Abhängigkeit `BluemixAppID` herunter.
+3. Laden Sie die Abhängigkeit `IBMCloudAppID` herunter.
     ```
     pod install --repo-update
     ```
@@ -111,14 +109,14 @@ und fügen Sie den folgenden Wert zu beiden Textfeldern
 3. Fügen Sie den folgenden Import zu
 Ihrer Datei `AppDelegate.swift` hinzu.
   ```swift
-  import BluemixAppID
+  import IBMCloudAppID
   ```
   {: codeblock}
 
 4. Übergeben Sie die Parameter `tenant ID` und `region`, um die SDK zu initialisieren. Eine gängige, aber nicht verbindliche Position für den Code ist
 die Methode `application:didFinishLaunchingWithOptions` von `AppDelegate` in Ihrer App.
   ```swift
-  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
   ```
   {: codeblock}
   
@@ -192,7 +190,7 @@ Konfiguration aktualisieren.
 5. Fügen Sie den folgenden Befehl zu Ihrem Code hinzu, um das
 Anmeldewidget mit Ihrer App aufzurufen.
     ```swift
-    import BluemixAppID
+    import IBMCloudAppID
     class delegate : AuthorizationDelegate {
         public func onAuthorizationSuccess(accessToken: AccessToken, identityToken: IdentityToken, response:Response?) {
             //User authenticated

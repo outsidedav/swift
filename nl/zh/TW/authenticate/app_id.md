@@ -52,16 +52,16 @@ subcollection: swift
 
 1. 開啟現有 Xcode 專案目錄的 `Podfile`。
 
-2. 在您的專案目標下，新增 `BluemixAppID` pod 的相依關係。請確定 `use_frameworks!` 指令也在您的目標下，如下列範例所示。
+2. 在您的專案目標下，新增 `IBMCloudAppID` Pod 的相依關係。請確定 `use_frameworks!` 指令也在您的目標下，如下列範例所示。
     ```swift
     target '<yourTarget>' do
       use_frameworks!
-        pod 'BluemixAppID'
+        pod 'IBMCloudAppID'
     end
     ```
     {: pre}
 
-3. 下載 `BluemixAppID` 相依關係。
+3. 下載 `IBMCloudAppID` 相依關係。
     ```
     pod install --repo-update
     ```
@@ -84,13 +84,13 @@ subcollection: swift
 3. 將下列 import 新增至 `AppDelegate.swift` 檔案。
     
   ```swift
-  import BluemixAppID
+  import IBMCloudAppID
   ```
   {: codeblock}
 
 4. 傳遞 `tenantId` 及 `region` 參數，以起始設定 SDK。放置程式碼的一般工作區（但非一定）位於您應用程式中 `AppDelegate` 的 `application:didFinishLaunchingWithOptions` 方法中。
   ```swift
-  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
   ```
   {: codeblock}
   
@@ -139,7 +139,7 @@ subcollection: swift
 4. 自訂登入畫面，以顯示您選擇的影像及顏色。
 5. 若要使用您的應用程式來呼叫登入小組件，請將下列指令新增至您的程式碼。
     ```swift
-    import BluemixAppID
+    import IBMCloudAppID
     class delegate : AuthorizationDelegate {
         public func onAuthorizationSuccess(accessToken: AccessToken, identityToken: IdentityToken, response:Response?) {
             //User authenticated

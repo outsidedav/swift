@@ -52,16 +52,16 @@ Le service fournit un logiciel SDK pour simplifier le codage de votre applicatio
 
 1. Ouvrez votre répertoire projet Xcode existant sur le `Fichier pod`.
 
-2. Sous votre cible projets, ajoutez une dépendance pour le pod `BluemixAppID`. Assurez-vous que la commande `use_frameworks!` figure également sous votre cible, comme illustré dans l'exemple suivant.
+2. Sous votre cible projets, ajoutez une dépendance pour le pod `IBMCloudAppID`. Assurez-vous que la commande `use_frameworks!` figure également sous votre cible, comme illustré dans l'exemple suivant.
     ```swift
     target '<yourTarget>' do
       use_frameworks!
-        pod 'BluemixAppID'
+        pod 'IBMCloudAppID'
     end
     ```
     {: pre}
 
-3. Téléchargez la dépendance `BluemixAppID`.
+3. Téléchargez la dépendance `IBMCloudAppID`.
     ```
     pod install --repo-update
     ```
@@ -82,13 +82,13 @@ Une fois le logiciel SDK initialisé dans votre application, vous pouvez commenc
 
 3. Ajoutez l'importation ci-dessous dans votre fichier `AppDelegate.swift`.
   ```swift
-  import BluemixAppID
+  import IBMCloudAppID
   ```
   {: codeblock}
 
 4. Renseignez les paramètres `tenant ID` et `region` pour initialiser le kit de développement logiciel. Une pratique courante, mais non obligatoire, consiste à placer le code dans la méthode `application:didFinishLaunchingWithOptions` de `AppDelegate` dans votre application.
   ```swift
-  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
   ```
   {: codeblock}
   
@@ -137,7 +137,7 @@ Pour configurer des fournisseurs d'identité de réseaux sociaux :
 4. Personnalisez l'écran de connexion pour afficher l'image et les couleurs de votre choix.
 5. Pour appeler le widget de connexion avec votre application, ajoutez la commande suivante à votre code.
     ```swift
-    import BluemixAppID
+    import IBMCloudAppID
     class delegate : AuthorizationDelegate {
         public func onAuthorizationSuccess(accessToken: AccessToken, identityToken: IdentityToken, response:Response?) {
             //User authenticated

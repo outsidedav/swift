@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-19"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -96,7 +96,7 @@ subcollection: swift
   ```
   {: codeblock}
 
-  프로젝트를 작성하려면 {{site.data.keyword.cloud_notm}} 계정으로 로그인해야 합니다. 처음 사용하는 사용자는 무료 계정으로 [등록 ](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")할 수 있습니다. `ibmcloud login` 명령을 사용하여 명령행에 로그인하십시오.
+  프로젝트를 작성하려면 {{site.data.keyword.cloud_notm}} 계정으로 로그인해야 합니다. 처음 사용하는 사용자는 무료 계정으로 [등록 ](https://cloud.ibm.com/registration){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")할 수 있습니다. `ibmcloud login` 명령을 사용하여 명령행에 로그인하십시오.
   {: tip}
 
 2. 프롬프트되면 다음 예에서 표시된 대로 옵션 1, 옵션 6, 옵션 2를 차례대로 선택하십시오.

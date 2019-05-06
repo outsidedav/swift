@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-19"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -120,7 +120,7 @@ Starter zu generieren.
   {: codeblock}
 
   Achten Sie darauf, sich zum Erstellen eines Projekts mit einem
-{{site.data.keyword.cloud_notm}}-Konto anzumelden. Erstbenutzer können sich für ein gebührenfreies Konto [registrieren](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"). Melden Sie sich mit
+{{site.data.keyword.cloud_notm}}-Konto anzumelden. Erstbenutzer können sich für ein gebührenfreies Konto [registrieren](https://cloud.ibm.com/registration){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"). Melden Sie sich mit
 dem Befehl `ibmcloud login` über die Befehlszeile an.
   {: tip}
 
