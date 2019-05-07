@@ -130,7 +130,7 @@ iOS アプリでバックエンド API を使用するには、Apple コンソ�
 
 API が iOS アプリに追加されます。 アプリのコードを*ダウンロード*すると、API にちなんだ名前のフォルダーが iOS Soruce フォルダーに含まれているのを確認できます。
 
-Knowledge Guide に記載されているステップに従って、従属 SDK に対して iOS アプリへの `pod update` を実行します。 
+Knowledge Guide に記載されているステップに従って、依存 SDK に対して iOS アプリへの `pod update` を実行します。 
 
 iOS アプリには、API 用に生成された SDK バインディングが含まれるフォルダーがあります。 このフォルダーには、`Assets`、`Source`、`Docs` という 3 つのサブフォルダーが含まれます。 
 

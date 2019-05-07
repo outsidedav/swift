@@ -52,16 +52,16 @@ Il servizio fornisce un SDK per semplificare la codifica della tua applicazione.
 
 1. Apri la tua directory del progetto Xcode esistente nel file `Podfile`.
 
-2. Nella destinazione dei tuoi progetti, aggiungi una dipendenza per il pod `BluemixAppID`. Assicurati che anche il comando `use_frameworks!` si trovi nella tua destinazione, come mostrato nel seguente esempio.
+2. Nella destinazione dei tuoi progetti, aggiungi una dipendenza per il pod `IBMCloudAppID`. Assicurati che anche il comando `use_frameworks!` si trovi nella tua destinazione, come mostrato nel seguente esempio.
     ```swift
     target '<yourTarget>' do
       use_frameworks!
-        pod 'BluemixAppID'
+        pod 'IBMCloudAppID'
     end
     ```
     {: pre}
 
-3. Scarica la dipendenza `BluemixAppID`.
+3. Scarica la dipendenza `IBMCloudAppID`.
     ```
     pod install --repo-update
     ```
@@ -82,13 +82,13 @@ Dopo che hai inizializzato l'SDK nella tua applicazione, puoi iniziare a configu
 
 3. Aggiungi la seguente istruzione import al tuo file `AppDelegate.swift`.
   ```swift
-  import BluemixAppID
+  import IBMCloudAppID
   ```
   {: codeblock}
 
 4. Passa i parametri `tenant ID` e `region` per inizializzare l'SDK. Un'ubicazione comune, sebbene non obbligatoria, in cui posizionare il codice è nel metodo `application:didFinishLaunchingWithOptions` di `AppDelegate` nella tua applicazione.
   ```swift
-  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
   ```
   {: codeblock}
   
@@ -137,7 +137,7 @@ Per configurare i provider di identità social:
 4. Personalizza la schermata di accesso per visualizzare l'immagine e i colori da te scelti.
 5. Per richiamare il widget di accesso con la tua applicazione, aggiungi il seguente comando al tuo codice.
     ```swift
-    import BluemixAppID
+    import IBMCloudAppID
     class delegate : AuthorizationDelegate {
         public func onAuthorizationSuccess(accessToken: AccessToken, identityToken: IdentityToken, response:Response?) {
             //User authenticated

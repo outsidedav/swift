@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-19"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -96,7 +96,7 @@ I seguenti strumenti assicurano che tu possa installare gli SDK nativi per lavor
   ```
   {: codeblock}
 
-  Assicurati di eseguire l'accesso con un account {{site.data.keyword.cloud_notm}} per creare un progetto. I nuovi utenti possono eseguire la [registrazione ](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") per un account gratuito. Utilizza il comando `ibmcloud login` per eseguire l'accesso sulla riga di comando.
+  Assicurati di eseguire l'accesso con un account {{site.data.keyword.cloud_notm}} per creare un progetto. I nuovi utenti possono eseguire la [registrazione ](https://cloud.ibm.com/registration){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") per un account gratuito. Utilizza il comando `ibmcloud login` per eseguire l'accesso sulla riga di comando.
   {: tip}
 
 2. Quando richiesto, seleziona le opzioni 1, quindi 6 e infine, 2, come visualizzato nel seguente esempio:

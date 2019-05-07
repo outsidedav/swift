@@ -41,7 +41,7 @@ subcollection: swift
 
 {{site.data.keyword.appid_short_notm}} サービスのインスタンスを次のように作成します。
 
-1. [{{site.data.keyword.cloud_notm}} カタログ](https://cloud.ibm.com/catalog/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、{{site.data.keyword.appid_short_notm}} を選択します。サービス構成画面が開きます。
+1. [{{site.data.keyword.cloud_notm}} カタログ](https://cloud.ibm.com/catalog/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、{{site.data.keyword.appid_short_notm}} を選択します。 サービス構成画面が開きます。
 2. サービス・インスタンスに名前を付けます。または、事前設定された名前を使用します。
 3. 料金プランを選択し、**「作成」**をクリックします。
 
@@ -52,16 +52,16 @@ subcollection: swift
 
 1. 既存の Xcode プロジェクト・ディレクトリーを開き、`Podfile` に移動します。
 
-2. プロジェクト・ターゲットの下で、`BluemixAppID` ポッドの従属関係を追加します。 また、次の例のように `use_frameworks!` コマンドがターゲットの下に存在することも確認してください。
+2. プロジェクト・ターゲットの下に、`IBMCloudAppID` ポッドの依存関係を追加します。 また、次の例のように `use_frameworks!` コマンドがターゲットの下に存在することも確認してください。
     ```swift
     target '<yourTarget>' do
       use_frameworks!
-        pod 'BluemixAppID'
+        pod 'IBMCloudAppID'
     end
     ```
     {: pre}
 
-3. `BluemixAppID` 従属関係をダウンロードします。
+3. `IBMCloudAppID` の依存関係をダウンロードします。
     ```
     pod install --repo-update
     ```
@@ -82,13 +82,13 @@ subcollection: swift
 
 3. `AppDelegate.swift` ファイルに以下のインポートを追加します。
   ```swift
-  import BluemixAppID
+  import IBMCloudAppID
   ```
   {: codeblock}
 
 4. `tenant ID` および `region` パラメーターを渡して、SDK を初期化します。 このコードを入れる一般的な場所 (ただし必須の場所ではありません) は、アプリの `AppDelegate` の `application:didFinishLaunchingWithOptions` メソッド内です。
   ```swift
-  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
   ```
   {: codeblock}
   
@@ -137,7 +137,7 @@ ID プロバイダーが提供するユーザー認証情報を使用して、�
 4. 自分で選択したイメージと色が表示されるように、サインイン画面をカスタマイズします。
 5. アプリでログイン・ウィジェットを呼び出すには、次のコマンドをコードに追加します。
     ```swift
-    import BluemixAppID
+    import IBMCloudAppID
     class delegate : AuthorizationDelegate {
         public func onAuthorizationSuccess(accessToken: AccessToken, identityToken: IdentityToken, response:Response?) {
             //ユーザー認証済み

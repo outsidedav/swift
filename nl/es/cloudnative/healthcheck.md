@@ -46,9 +46,9 @@ La tabla siguiente proporciona una orientación sobre las respuestas que los pun
 | Estado    | Preparación                   | Actividad                   | Estado                    |
 |----------|-----------------------------|----------------------------|---------------------------|
 |          | No es correcta y no se carga       | No es correcto y provoca un reinicio      | No es correcto y provoca un reinicio     |
-| Iniciando | 503 - No disponible           | 200 - Bien                   | Utilizar retraso para evitar la prueba   |
-| Activo       | 200 - Bien                    | 200 - Bien                   | 200 - Bien                  |
-| Deteniendo | 503 - No disponible           | 200 - Bien                   | 503 - No disponible         |
+| Iniciando | 503 - No disponible           | 200 - Correcto                   | Utilizar retraso para evitar la prueba   |
+| Activo       | 200 - Correcto                    | 200 - Correcto                   | 200 - Correcto                  |
+| Deteniendo | 503 - No disponible           | 200 - Correcto                   | 503 - No disponible         |
 | Inactivo     | 503 - No disponible           | 503 - No disponible          | 503 - No disponible         |
 | Con errores  | 500 - Error del servidor          | 500 - Error del servidor         | 500 - Error del servidor        |
 

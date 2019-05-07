@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-19"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -96,7 +96,7 @@ MacOS がサポートする最新のハードウェアを使用し、最新の i
   ```
   {: codeblock}
 
-  プロジェクトを作成するためには、{{site.data.keyword.cloud_notm}} アカウントでログインする必要があります。 初めてのユーザーは、無料アカウントに[登録 ](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") できます。コマンド・ラインでログインするには、`ibmcloud login` コマンドを使用します。
+  プロジェクトを作成するためには、{{site.data.keyword.cloud_notm}} アカウントでログインする必要があります。 初めてのユーザーは、無料アカウントに[登録 ](https://cloud.ibm.com/registration){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") できます。 コマンド・ラインでログインするには、`ibmcloud login` コマンドを使用します。
   {: tip}
 
 2. プロンプトが出されたら、次の例に示すように、オプション 1、次に 6、最後に 2 を選択します。

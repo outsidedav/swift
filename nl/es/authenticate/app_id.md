@@ -53,16 +53,16 @@ El servicio proporciona un SDK para ayudarle a facilitar la codificación de la 
 
 1. Abra el directorio de proyecto Xcode existente en el archivo `Podfile`.
 
-2. En el destino del proyecto, añada una dependencia para el pod de `BluemixAppID`. Asegúrese de que el mandato `use_frameworks!` también esté bajo su destino, tal como se muestra en el siguiente ejemplo.
+2. En el destino del proyecto, añada una dependencia para el pod de `IBMCloudAppID`. Asegúrese de que el mandato `use_frameworks!` también esté bajo su destino, tal como se muestra en el siguiente ejemplo.
     ```swift
   target '<yourTarget>' do
      use_frameworks!
-        pod 'BluemixAppID'
-  end
+        pod 'IBMCloudAppID'
+    end
     ```
     {: pre}
 
-3. Descargue la dependencia de `BluemixAppID`.
+3. Descargue la dependencia de `IBMCloudAppID`.
     ```
     pod install --repo-update
     ```
@@ -83,13 +83,13 @@ Después de inicializar el SDK en la app, puede empezar a configurar las prefere
 
 3. Añada la siguiente importación al archivo `AppDelegate.swift`.
   ```swift
-  import BluemixAppID
+  import IBMCloudAppID
   ```
   {: codeblock}
 
 4. Pase los parámetros `tenantID` y `region` para inicializar el SDK. Un lugar común, aunque no obligatorio, donde poner el código es en el método `application:didFinishLaunchingWithOptions` del `AppDelegate` de la app.
   ```swift
-  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
   ```
   {: codeblock}
   
@@ -138,7 +138,7 @@ Para configurar los proveedores de identidad social:
 4. Personalice la pantalla de inicio de sesión para mostrar la imagen y los colores de su elección.
 5. Para llamar al widget de inicio de sesión con la app, añada el siguiente mandato al código.
     ```swift
-    import BluemixAppID
+    import IBMCloudAppID
     class delegate : AuthorizationDelegate {
         public func onAuthorizationSuccess(accessToken: AccessToken, identityToken: IdentityToken, response:Response?) {
             //Usuario autenticado

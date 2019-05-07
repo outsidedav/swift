@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-19"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -70,7 +70,7 @@ As ferramentas a seguir asseguram que você possa instalar os SDKs nativos para 
 ## Etapa 2. Instalando ferramentas para desenvolvimento local
 {: #swift-cli-install-tools}
 
-O {{site.data.keyword.cloud}} fornece ferramentas locais da CLI que ajudam a trabalhar com vários aspectos do {{site.data.keyword.cloud_notm}}. Para obter mais informações, consulte [Informações do {{site.data.keyword.dev_cli_long}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). É possível usar as ferramentas para testar um back-end Swift em uma imagem do Docker local antes da implementação de nuvem.
+O {{site.data.keyword.cloud}} fornece ferramentas locais da CLI que ajudam a trabalhar com vários aspectos do {{site.data.keyword.cloud_notm}}. Para obter mais informações, consulte [Informações sobre o {{site.data.keyword.dev_cli_long}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). É possível usar as ferramentas para testar um back-end Swift em uma imagem do Docker local antes da implementação de nuvem.
 
 * Para MacOS e Linux, execute o comando a seguir:
   ```
@@ -97,7 +97,7 @@ administrador**.
   ```
   {: codeblock}
 
-  Certifique-se de efetuar login com uma conta do {{site.data.keyword.cloud_notm}} para criar um projeto. Os usuários iniciantes podem [registrar-se ](https://cloud.ibm.com/registration/?cm_sp=dw-bluemix-_-swift-_-devcenter){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo") para uma conta gratuita. Use o comando `ibmcloud login` para efetuar login na linha de comandos.
+  Certifique-se de efetuar login com uma conta do {{site.data.keyword.cloud_notm}} para criar um projeto. Os usuários iniciantes podem [registrar-se ](https://cloud.ibm.com/registration){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo") para uma conta gratuita. Use o comando `ibmcloud login` para efetuar login na linha de comandos.
   {: tip}
 
 2. Quando solicitado, selecione as opções 1, depois 6 e, por último, 2, conforme exibido no exemplo a seguir:

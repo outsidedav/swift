@@ -61,7 +61,7 @@ lastupdated: "2019-01-15"
 
 2. アプリのプロジェクト・フォルダーにある `Info.plist` ファイルにプロパティーを追加して、ロケーション API を有効にします。 例えば、`Privacy - Location Usage Description` と、「アプリではロケーション・サービスを有効にすることが必要です」などのロケーション API を追加する適切な理由を指定します。
 
-{{site.data.keyword.mobileanalytics_short}} SDK は、Cocoa プロジェクトの従属関係マネージャーである [CocoaPods ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cocoapods.org/){: new_window}と [Carthage ![外部リンク・アイコン ](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/Carthage/Carthage#getting-started){: new_window} と共に配布されます。 CocoaPods と Carthage では、アプリケーションで成果物を利用できるようにリポジトリーから自動的に成果物がダウンロードされます。 CocoaPods または Carthage を選択します。
+{{site.data.keyword.mobileanalytics_short}} SDK は、Cocoa プロジェクトの依存関係マネージャーである [CocoaPods ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cocoapods.org/){: new_window}と [Carthage ![外部リンク・アイコン ](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/Carthage/Carthage#getting-started){: new_window} と共に配布されます。 CocoaPods と Carthage では、アプリケーションで成果物を利用できるようにリポジトリーから自動的に成果物がダウンロードされます。 CocoaPods または Carthage を選択します。
 
 ### CocoaPods
 {: #cocoapods-analytics}

@@ -52,16 +52,16 @@ O serviço fornece um SDK para ajudar a facilitar a codificação do app. O SDK 
 
 1. Abra o diretório de projeto do Xcode existente para o `Podfile`.
 
-2. No destino de seus projetos, inclua uma dependência para o pod `BluemixAppID`. Assegure-se de que `use_frameworks!` também está sob o seu destino, conforme mostrado no exemplo a seguir.
+2. No destino de seus projetos, inclua uma dependência para o pod `IBMCloudAppID`. Assegure-se de que `use_frameworks!` também está sob o seu destino, conforme mostrado no exemplo a seguir.
     ```swift
     target '<yourTarget>' do
       use_frameworks!
-        pod 'BluemixAppID'
+        pod 'IBMCloudAppID'
     end
     ```
     {: pre}
 
-3. Faça download da dependência  ` BluemixAppID ` .
+3. Faça download da dependência `IBMCloudAppID`.
     ```
     pod install -- repo-update
     ```
@@ -82,13 +82,13 @@ Depois de inicializar o SDK em seu app, é possível iniciar a configuração de
 
 3. Inclua a importação a seguir em seu arquivo `AppDelegate.swift`.
   ```swift
-  import BluemixAppID
+  import IBMCloudAppID
   ```
   {: codeblock}
 
 4. Passe os parâmetros `tenant ID` e `region` para inicializar o SDK. Um local comum, embora não obrigatório, para colocar o código é no método `application:didFinishLaunchingWithOptions` do `AppDelegate` no app.
   ```swift
-  AppID.sharedInstance.initialize(tenantId: <tenantId>, bluemixRegion: <AppID_region>)
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
   ```
   {: codeblock}
   
@@ -137,7 +137,7 @@ Para configurar provedores de identidade social:
 4. Customize a tela de login para exibir a imagem e as cores de sua escolha.
 5. Para chamar o widget de login com seu app, inclua o comando a seguir no código.
     ```swift
-    import BluemixAppID
+    import IBMCloudAppID
     class delegate : AuthorizationDelegate {
         public func onAuthorizationSuccess(accessToken: AccessToken, identityToken: IdentityToken, response:Response?) {
             //User authenticated
