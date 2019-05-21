@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -28,26 +28,25 @@ The {{site.data.keyword.engage_short}} service defines a feature, creates an aud
 
 See the following features of the {{site.data.keyword.engage_short}} service:
 
- - **Accelerate feature deployment**
+- Accelerate feature deployment
 
-    Accelerate delivery of features to your app through controlled release by mitigating risks. Release features to subset of audience segments and make larger rollout or roll back decisions based on real-time feedback. Separate feature rollouts from regular release cycles.
+  Accelerate delivery of features to your app through controlled release by mitigating risks. Release features to subset of audience segments and make larger rollout or roll back decisions based on real-time feedback. Separate feature rollouts from regular release cycles.
 
- - **Segment Audience**
+- Segment audience
 
-    User segments can be defined based on demographic, contextual, and behavioral attributes. You can also roll out features to certain percentage of the entire user base. Key Performance indicators can be defined for each feature and client-side code to measure the results.
+  User segments can be defined based on demographic, contextual, and behavioral attributes. You can also roll out features to certain percentage of the entire user base. Key Performance indicators can be defined for each feature and client-side code to measure the results.
 
- - **Adapt application based on context**
+- Adapt application based on context
 
-    Application behavior, user interface, and notifications can be customized for specific audience segments. For example, app background can be changed based on user location. This user personalization results in higher engagement of users with the application.
+  Application behavior, user interface, and notifications can be customized for specific audience segments. For example, app background can be changed based on user location. This user personalization results in higher engagement of users with the application.
 
- - **A / B test features**
+- A / B test features
 
-    Gain confidence by experimentation. Two variants of application features can be compared against each other by rolling out both at the same time. Decisions can be made based on hard data.
+  Gain confidence by experimentation. Two variants of application features can be compared against each other by rolling out both at the same time. Decisions can be made based on hard data.
 
- - **Increase Customer Engagement**
+- Increase Customer Engagement**
 
-    Promote user engagement. Notifications can be targeted to all application users or to a specific set of users and devices. A message schedule can be defined. User interaction plays a vital role in customer relationships.
-
+  Promote user engagement. Notifications can be targeted to all application users or to a specific set of users and devices. A message schedule can be defined. User interaction plays a vital role in customer relationships.
 
 ## Before you begin
 {: #prereqs-applaunch}

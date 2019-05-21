@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-05-21"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -150,31 +150,34 @@ The {{site.data.keyword.cloud}} provides local CLI tools that help you work with
 
 You can now build, run, and deploy your application by using the {{site.data.keyword.dev_cli_short}}.
 
-1. **Build**
+### Building your app
+{: #swift-build-cli}
 
-  You can now build your application, which is a prerequisite to running your application. Use the following command in the root of the application directory to build your app:
-  ```
-  ibmcloud dev build
-  ```
-  {: codeblock}
+You can now build your application, which is a prerequisite to running your application. Use the following command in the root of the application directory to build your app:
+```
+ibmcloud dev build
+```
+{: codeblock}
 
-2. **Run**
+### Running your app
+{: #swift-run-cli}
 
-  After a successful build, you can run your application in a local container with the following command:
-  ```
-  ibmcloud dev run
-  ```
-  {: codeblock}
+After a successful build, you can run your application in a local container with the following command:
+```
+ibmcloud dev run
+```
+{: codeblock}
 
-  A local host and port to view your application's landing page is displayed if the command runs successfully.
+A local host and port to view your application's landing page is displayed if the command runs successfully.
 
-3. **Deploy**
+### Deploying your app
+{: #swift-deploy-cli}
 
-  Deploy your application to the {{site.data.keyword.cloud_notm}} with the `deploy` command:
-  ```
-  ibmcloud dev deploy
-  ```
-  {: codeblock}
+Deploy your application to the {{site.data.keyword.cloud_notm}} with the `deploy` command:
+```
+ibmcloud dev deploy
+```
+{: codeblock}
 
 ## Next steps
 {: #swift-cli-next notoc}

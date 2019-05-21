@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -38,19 +38,19 @@ When you create a bucket, you must select a resiliency level (cross-region or re
 
 The {{site.data.keyword.cos_full}} API is a REST-based API for reading and writing objects. It supports a subset of the S3 API for easy migration of applications to {{site.data.keyword.cloud_notm}}. Any S3 SDK can be used to use {{site.data.keyword.cos_full}}. For more information, see the full [{{site.data.keyword.cos_short}} API Reference](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)
 
-## Security
+## Securing object storage
 {: #security-cos}
 
 {{site.data.keyword.cos_full_notm}} is highly secure. Initially, only the bucket and object owners originally have access to {{site.data.keyword.cos_full_notm}} service they create. It also supports user authentication to access to data. Use access control mechanisms such as bucket policies to selectively grant permissions to users, and applications. You can securely transfer your data to {{site.data.keyword.cos_short}} through SSL endpoints by using the HTTPS protocol. If you need extra security, you can use the Server-Side Encryption (SSE) option or the Server-Side Encryption with Customer-Provided Keys (SSE-C) option to encrypt data stored-at-rest. {{site.data.keyword.cos_full_notm}} provides the encryption technology for both SSE and SSE-C. Alternatively, you can use your own encryption libraries to encrypt data before storing it in Cloud Object Storage.
 
 You can use the following access control mechanisms to secure your data in {{site.data.keyword.cos_full_notm}}.
 
-**Identity and Access Management (IAM) policies**
+### Identity and Access Management (IAM) policies
 {: #iam-cos}
 
 IAM enables organizations with multiple employees to create and manage multiple users under a single account. With IAM policies, companies can grant IAM users control to their {{site.data.keyword.cos_short}} buckets.
 
-**Access Control Lists (ACLs)**
+### Access Control Lists (ACLs)
 {: #acls-cos}
 
 With ACLs, you can grant specific permissions (for example, READ, WRITE), to specific users for an individual bucket.
@@ -80,7 +80,7 @@ You can use {{site.data.keyword.cos_full_notm}} from anywhere in the world. You 
 
 Consider the following factors to select the geographic location of your object store when you're deciding between regional and cross-region options.
 
-**Geographic location considerations**:
+Geographic location considerations:
 * A location that is remote from your operations for redundancy.
 * A location to address legal, and regulatory requirements.
 * Reduce data access latencies.
@@ -96,14 +96,20 @@ More information about the pricing is available from the [{{site.data.keyword.co
 ### Sample Storage Classes
 {: #samples-cos}
 
-**Standard**
-This service is for unstructured data that requires frequent access, such as DevOps, collaboration and action content repositories.
+- Standard
+  
+  This service is for unstructured data that requires frequent access, such as DevOps, collaboration and action content repositories.
 
-**Vault**
-This service is for workloads with infrequently accessed data, such as backup, archive, and compliance workloads.
+- Vault
+  
+  This service is for workloads with infrequently accessed data, such as backup, archive, and compliance workloads.
 
-**Cold Vault**
-This deployment option is ideal for minimum access requirements, historical records compliance, and long-term backup.
+- Cold Vault
+  
+  This deployment option is ideal for minimum access requirements, historical records compliance, and long-term backup.
 
-**Flex** Deploy for varying data access requirements and protect your budget from unexpected cost fluctuations.
-Storage classes are defined at the bucket level. Create a bucket that is set to the storage class that you want to use.
+- Flex
+
+  Deploy for varying data access requirements and protect your budget from unexpected cost fluctuations. Storage classes are defined at the bucket level. Create a bucket that is set to the storage class that you want to use.
+
+

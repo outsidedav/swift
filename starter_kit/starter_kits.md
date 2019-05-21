@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-05-21"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -42,45 +42,45 @@ The {{site.data.keyword.cloud_notm}} Developer Console for Apple gives you a sea
 ### Overview screen
 {: #overview_screen}
 
-The Overview screen gives you content that is tailored to a set of use cases like Watson, Weather, and more. From the overview screen, you can see documentation, access educational resources, browse services, see featured starter kits, or link to a larger collection of starter kits. Click `Starter Kits` in the left hand navigation area to step into the Starter Kits view.
+The Overview screen gives you content that is tailored to a set of use cases like Watson, Weather, and more. From the overview screen, you can see documentation, access educational resources, browse services, see featured starter kits, or link to a larger collection of starter kits. Select **Starter Kits** in the navigation area to step into the Starter Kits view.
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple Overview screen](images/overview_screen.png "Overview screen") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple Overview screen*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple Overview screen](images/overview_screen.png "Overview screen"){: caption="Figure 1. {{site.data.keyword.cloud_notm}} Developer Console for Apple Overview screen" caption-side="bottom"}
 
 ### Starter kits view
 {: #starter_kits_view}
 
 The starter kits view shows the collection of starter kits specific to a use case area. You can click various links on a starter kit card to see demos and more information. Select a starter kit to move to the Create App view.
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple Starter Kits view](images/starter_kits_screen.png "Starter Kits view") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple Starter Kits view*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple Starter Kits view](images/starter_kits_screen.png "Starter Kits view"){: caption="Figure 2. {{site.data.keyword.cloud_notm}} Developer Console for Apple Starter Kits view" caption-side="bottom"}
 
 ### Create app view
 {: #create_new_app_view}
 
-From the **Create app** view, you can name your app, as well as provide deployment and routing information. On the right, you can also see the services that automatically provision when you create your app, along with pricing plans, and terms for each. Click `Create` to move to the App Details view. If you are not logged in to {{site.data.keyword.cloud_notm}}, you need to do so now.
+From the **Create app** view, you can name your app, as well as provide deployment and routing information. You can also see the services that automatically provision when you create your app, along with pricing plans, and terms for each. Select **Create** to move to the App Details view. If you are not logged in to {{site.data.keyword.cloud_notm}}, you need to do so now.
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple Create New App view](images/create_new_project_screen.png "Create New App view") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple Create New App view*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple Create New App view](images/create_new_project_screen.png "Create New App view"){: caption="Figure 3. {{site.data.keyword.cloud_notm}} Developer Console for Apple Create New App view" caption-side="bottom"}
 
 ## App details view
 {: #app_details_view}
 
 The App Details view displays a list of services that are configured for your app. For each item in the list, you can see the service name, links to other information, and an **actions** button with three vertically aligned dots. The **actions** button options are to remove services from an app, open dashboard for service, and delete service. Removing a service instance removes the association to this app, and does not delete the service instance. Also, the service credentials are consolidated on this view, so you don't have to visit each individual service instance views to get them.
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple App Details view](images/project_details_screen.png "App Details view") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple App Details view*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple App Details view](images/project_details_screen.png "App Details view"){: caption="Figure 4. {{site.data.keyword.cloud_notm}} Developer Console for Apple App Details view" caption-side="bottom"}
 
 By using the **App details** page, you can add new or existing services to your app that were not part of the original Starter Kit. Click **Add service** to add services. The available services depend on the type of app, and the services that are available in a region, so not all services are available to associate with all apps.
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple Add Resource dialog](images/add_resource_screen.png "Add Resource dialog") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple Add Resource dialog*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple Add Resource dialog](images/add_resource_screen.png "Add Resource dialog"){: caption="Figure 5. {{site.data.keyword.cloud_notm}} Developer Console for Apple Add Resource dialog" caption-side="bottom"}
 
 ### Downloading your code
 
-* On the _App details_ page, you can access your code by selecting **Download code** to generate and download the code for your app.
+On the _App details_ page, you can access your code by selecting **Download code** to generate and download the code for your app.
 
 ### App List view
 {: #app_list_view}
 
 You can list all of your created apps from the _App List_ view. You can rename or delete your apps from here. Click on an app name row to return to the App Details view.
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple App List view](images/project_list_screen.png "App List view") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple App List view*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple App List view](images/project_list_screen.png "App List view"){: caption="Figure 6. {{site.data.keyword.cloud_notm}} Developer Console for Apple App List view" caption-side="bottom"}
 
 For more information, visit the [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 {: tip}
