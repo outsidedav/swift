@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-05-29"
 
-keywords: watson swift, swift developer, apple development, ios oveview, developer consoles swift, apple console
+keywords: watson swift, swift developer, apple development, ios oveview, developer console, swift, apple console
 
 subcollection: swift
 
@@ -28,9 +28,9 @@ subcollection: swift
 
  ![Developer types](images/IBM_Cloud_icon.png "IBM Cloud")
 
-The developer capabilities that are built in to {{site.data.keyword.cloud_notm}} align to various skill sets, and provide one platform to produce, deliver, run, and manage your app. For example, from the cognitive app that is mentioned, the following {{site.data.keyword.cloud_notm}} capabilities are of interest:
+The developer capabilities that are built in to {{site.data.keyword.cloud_notm}} align to various skill sets and provide one platform to produce, deliver, run, and manage your app. For example, from the cognitive app that is mentioned, the following {{site.data.keyword.cloud_notm}} capabilities are of interest:
 
-* The [**{{site.data.keyword.cloud_notm}} Developer Experience**](/docs/overview?topic=overview-dev-journey#dev-journey) is not a service, but rather is a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and Cloud Native developers to start building production-ready apps. It includes automatic provisioning of services, and "one-click" deployment to a DevOps toolchain.
+* The [**{{site.data.keyword.cloud_notm}} developer console**](/docs/apps/tutorials?topic=creating-apps-tutorial-getting-started) includes a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and Cloud Native developers to start building production-ready apps. It includes automatic provisioning of services and "one-click" deployment to a DevOps toolchain.
 
 * [**IBM Watson Data Platform**](https://dataplatform.ibm.com){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") makes it simple to assemble data collections, refine the data, then visualize, discover insights, and build models for use in your cognitive app.
 
@@ -43,7 +43,7 @@ The {{site.data.keyword.cloud_notm}} platform offers many more capabilities and 
 ## Overview of {{site.data.keyword.cloud_notm}} capabilities
 {: #capabilities}
 
-The {{site.data.keyword.cloud_notm}} Developer Experience is not a service, but rather a set of capabilities in the {{site.data.keyword.cloud_notm}} platform that helps you to start building apps the "right" way in minutes. Essential elements of the Developer Experience are:
+The {{site.data.keyword.cloud_notm}} developer console helps you start building apps the "right" way in minutes. Essential elements of the developer console are:
 
 * A set of topic or channel-centric developer consoles found across the {{site.data.keyword.cloud_notm}} platform.
 * Specific use-case starter kits that produce production-ready starter apps in various languages and architectural patterns.
@@ -51,12 +51,12 @@ The {{site.data.keyword.cloud_notm}} Developer Experience is not a service, but 
 * Manage app components by using a portable app structure.
 * One-click creation of a [devops toolchain](/docs/services/DevOpsInsights?topic=DevOpsInsights-getting-started#getting-started).
 
-To understand how the {{site.data.keyword.cloud_notm}} Developer Experience can help you rapidly build high-quality production-ready apps, see the following elements in more detail.
+To understand how the {{site.data.keyword.cloud_notm}} developer console can help you rapidly build high-quality production-ready apps, see the following elements in more detail.
 
 ## Developer consoles
 {: #developer_consoles}
 
-The {{site.data.keyword.cloud_notm}} Developer Experience manifests in various developer consoles across the {{site.data.keyword.cloud_notm}} platform. Each console represents an area of interest (like Watson, Security, or Finance) or a digital channel (like Mobile or Web Apps). The [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") was developed for Apple developers to be able to quickly experiment with applications, and services, backed by the {{site.data.keyword.cloud_notm}} platform. You can access these consoles by clicking the menu icon in the {{site.data.keyword.cloud_notm}} console. For example, see the following developer consoles:
+The {{site.data.keyword.cloud_notm}} developer console includes areas of interest (like Watson, Security, or Finance) or a digital channel (like Mobile or Web Apps). The [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") was developed for Apple developers to be able to quickly experiment with applications, and services, backed by the {{site.data.keyword.cloud_notm}} platform. You can access these consoles by clicking the menu icon in the {{site.data.keyword.cloud_notm}} console. For example, see the following developer consoles:
 
 * [Watson developer console](https://cloud.ibm.com/developer/watson/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
 * [Mobile developer console](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
@@ -64,10 +64,10 @@ The {{site.data.keyword.cloud_notm}} Developer Experience manifests in various d
 * [Security developer console](https://cloud.ibm.com/developer/security/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
 * [Finance developer console](https://cloud.ibm.com/developer/finance/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
 
-<!--Cloud native development is the process of developing apps that are optimized to leverage capabilities engendered from running on the cloud.  Flexibility, portability, scaling, rapid development, continuous delivery, and a close coupling development and operations ("devops) are characteristics of cloud applications. The {{site.data.keyword.cloud}} Developer Experience quickly gets you started building cloud native applications that are ready for team development and bound for production use.-->
+<!--Cloud native development is the process of developing apps that are optimized to leverage capabilities engendered from running on the cloud.  Flexibility, portability, scaling, rapid development, continuous delivery, and a close coupling development and operations ("devops) are characteristics of cloud applications. The {{site.data.keyword.cloud}} developer console quickly gets you started building cloud native applications that are ready for team development and bound for production use.-->
 
 
-<!--![Overview of elements of the {{site.data.keyword.cloud_notm}} Developer Experience](images/elements_of_devex.png "Overview of elements of the {{site.data.keyword.cloud_notm}} Developer Experience") <br> *Overview of elements of the {{site.data.keyword.cloud_notm}} Developer Experience*-->
+<!--![Overview of elements of the {{site.data.keyword.cloud_notm}} developer console](images/elements_of_devex.png "Overview of elements of the {{site.data.keyword.cloud_notm}} developer console") <br> *Overview of elements of the {{site.data.keyword.cloud_notm}} developer console*-->
 
 Each developer console provides Starter Kits relevant to that console's focus area, offering a consistent, intuitive workflow to create a working production-ready app in minutes.
 

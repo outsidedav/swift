@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-05-29"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -28,7 +28,7 @@ Ready to jump in? Visit the [{{site.data.keyword.cloud_notm}} Developer Console 
 ## What is a starter kit?
 {: #starterkits-what}
 
-With the {{site.data.keyword.cloud_notm}} Developer Experience, you can choose from various starter kits. Starter kits instruct {{site.data.keyword.cloud_notm}} to dynamically assemble a skeleton production app, in the language of your choice, ready for cloud deployment. Each starter kit embodies a language, a framework, and a pattern for a specific real-world use case that allows reusing code rather than reinventing it.
+With the {{site.data.keyword.cloud_notm}} developer console, you can choose from various starter kits. Starter kits instruct {{site.data.keyword.cloud_notm}} to dynamically assemble a skeleton production app, in the language of your choice, ready for cloud deployment. Each starter kit embodies a language, a framework, and a pattern for a specific real-world use case that allows reusing code rather than reinventing it.
 
 Starter kits are production-ready, and focus on demonstrating a key pattern implementation by using a runtime (for example Swift). In some cases, starter kits offer a simple user experience to highlight the integration of the service. In other cases, stater kits represent a customizable implementation of a sophisticated use case.
 
