@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-05-21"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -150,31 +150,34 @@ ibmcloud dev create
 
 现在，可以使用 {{site.data.keyword.dev_cli_short}} 来构建、运行和部署应用程序。
 
-1. **构建**
+### 构建应用程序
+{: #swift-build-cli}
 
-  现在可以构建应用程序，这是运行应用程序的先决条件。在应用程序目录的根目录中使用以下命令来构建应用程序：
-  ```
+现在可以构建应用程序，这是运行应用程序的先决条件。在应用程序目录的根目录中使用以下命令来构建应用程序：
+```
   ibmcloud dev build
   ```
-  {: codeblock}
+{: codeblock}
 
-2. **运行**
+### 运行应用程序
+{: #swift-run-cli}
 
-  成功构建后，可以使用以下命令在本地容器中运行应用程序：
-  ```
+成功构建后，可以使用以下命令在本地容器中运行应用程序：
+```
   ibmcloud dev run
   ```
-  {: codeblock}
+{: codeblock}
 
-  如果命令成功运行，将显示用于查看应用程序登录页面的本地主机和端口。
+如果命令成功运行，将显示用于查看应用程序登录页面的本地主机和端口。
 
-3. **部署**
+### 部署应用程序
+{: #swift-deploy-cli}
 
-  使用 `deploy` 命令将应用程序部署到 {{site.data.keyword.cloud_notm}}：
-  ```
+使用 `deploy` 命令将应用程序部署到 {{site.data.keyword.cloud_notm}}：
+```
   ibmcloud dev deploy
   ```
-  {: codeblock}
+{: codeblock}
 
 ## 后续步骤
 {: #swift-cli-next notoc}

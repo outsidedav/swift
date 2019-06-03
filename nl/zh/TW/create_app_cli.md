@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-05-21"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -150,31 +150,34 @@ subcollection: swift
 
 您現在可以使用 {{site.data.keyword.dev_cli_short}} 來建置、執行及部署您的應用程式。
 
-1. **建置**
+### 建置應用程式
+{: #swift-build-cli}
 
-  您現在可以建置您的應用程式，這是執行應用程式的必要條件。在應用程式目錄的根目錄中使用下列指令，以建置您的應用程式：
-  ```
-  ibmcloud dev build
-  ```
-  {: codeblock}
+您現在可以建置您的應用程式，這是執行應用程式的必要條件。在應用程式目錄的根目錄中使用下列指令，以建置您的應用程式：
+```
+ibmcloud dev build
+```
+{: codeblock}
 
-2. **執行**
+### 執行應用程式
+{: #swift-run-cli}
 
-  成功建置之後，您可以使用下列指令，在本端容器中執行您的應用程式：
-  ```
-  ibmcloud dev run
-  ```
-  {: codeblock}
+成功建置之後，您可以使用下列指令，在本端容器中執行您的應用程式：
+```
+ibmcloud dev run
+```
+{: codeblock}
 
-  如果指令執行成功，則會顯示本端主機及埠，以檢視您應用程式的登入頁面。
+如果指令執行成功，則會顯示本端主機及埠，以檢視您應用程式的登入頁面。
 
-3. **部署**
+### 部署應用程式
+{: #swift-deploy-cli}
 
-  使用 `deploy` 指令，將您的應用程式部署至 {{site.data.keyword.cloud_notm}}：
-  ```
-  ibmcloud dev deploy
-  ```
-  {: codeblock}
+使用 `deploy` 指令，將您的應用程式部署至 {{site.data.keyword.cloud_notm}}：
+```
+ibmcloud dev deploy
+```
+{: codeblock}
 
 ## 後續步驟
 {: #swift-cli-next notoc}

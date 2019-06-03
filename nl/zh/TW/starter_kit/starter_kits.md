@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-05-21"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -42,45 +42,45 @@ subcollection: swift
 ### 概觀畫面
 {: #overview_screen}
 
-「概觀」畫面提供針對一組使用案例而自訂的內容，例如，Watson、Weather 等等。從概觀畫面中，您可以看到文件、存取教育資源、瀏覽服務、看到精選入門範本套件，或鏈結到更龐大的入門範本套件集合。按一下左側導覽區中的 `Starter Kits`，即可進入「入門範本套件」視圖。
+「概觀」畫面提供針對一組使用案例而自訂的內容，例如，Watson、Weather 等等。從概觀畫面中，您可以看到文件、存取教育資源、瀏覽服務、看到精選入門範本套件，或鏈結到更龐大的入門範本套件集合。選取導覽區中的 **Starter Kits**，即可進入「入門範本套件」視圖。
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple 概觀畫面](images/overview_screen.png "概觀畫面") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 概觀畫面*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple 概觀畫面](images/overview_screen.png "概觀畫面"){: caption="圖 1. {{site.data.keyword.cloud_notm}} Developer Console for Apple 概觀畫面" caption-side="bottom"}
 
 ### 入門範本套件視圖
 {: #starter_kits_view}
 
 入門範本套件視圖顯示某使用案例區域所特定的入門範本套件集合。您可以按一下入門範本套件卡上的各種鏈結，以查看展示及相關資訊。選取入門範本套件，以移至「建立應用程式」視圖。
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple 入門範本套件視圖](images/starter_kits_screen.png "入門範本套件視圖") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 入門範本套件視圖*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple 入門範本套件視圖](images/starter_kits_screen.png "入門範本套件視圖"){: caption="圖 2. {{site.data.keyword.cloud_notm}} Developer Console for Apple 入門範本套件視圖" caption-side="bottom"}
 
 ### 建立應用程式視圖
 {: #create_new_app_view}
 
-從**建立應用程式**視圖，您可以為應用程式命名，以及提供部署及路徑資訊。在右側，您也可以看到在您建立應用程式時自動佈建的服務，以及定價方案，與各項的條款。按一下`建立`，以移至「應用程式詳細資料」視圖。如果您未登入 {{site.data.keyword.cloud_notm}}，則現在需要進行登入。
+從**建立應用程式**視圖，您可以為應用程式命名，以及提供部署及路徑資訊。您也可以看到在您建立應用程式時自動佈建的服務，以及定價方案，與各項的條款。選取**建立**，以移至「應用程式詳細資料」視圖。如果您未登入 {{site.data.keyword.cloud_notm}}，則現在需要進行登入。
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple 建立新的應用程式視圖](images/create_new_project_screen.png "建立新的應用程式視圖") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 建立新的應用程式視圖*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple 建立新的應用程式視圖](images/create_new_project_screen.png "建立新的應用程式視圖"){: caption="圖 3. {{site.data.keyword.cloud_notm}} Developer Console for Apple 建立新的應用程式視圖" caption-side="bottom"}
 
 ## 應用程式詳細資料視圖
 {: #app_details_view}
 
 「應用程式詳細資料」視圖顯示針對應用程式所配置的服務清單。針對清單中的每個項目，您可以看到服務名稱、連接至其他資訊的鏈結，以及一個**動作**按鈕，該按鈕有三個垂直對齊的點。**動作**按鈕選項包含從應用程式移除服務、開啟服務的儀表板以及刪除服務。移除服務實例會移除與此應用程式的關聯，但不會刪除該服務實例。此外，在此視圖上，服務認證合併在一起，因此您不需要造訪每個個別服務實例視圖來取得認證。
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式詳細資料視圖](images/project_details_screen.png "應用程式詳細資料視圖") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式詳細資料視圖*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式詳細資料視圖](images/project_details_screen.png "應用程式詳細資料視圖"){: caption="圖 4. {{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式詳細資料視圖" caption-side="bottom"}
 
 使用**應用程式詳細資料**視圖，您可以將不屬於原始「入門範本套件」的新服務或現有服務新增至您的應用程式。按一下**新增服務**，以新增服務。可用的服務視應用程式的類型以及地區中可用的服務而定，因此並非所有服務都可與所有應用程式相關聯。
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple 新增資源對話](images/add_resource_screen.png "新增資源對話") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 新增資源對話*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple 新增資源對話框](images/add_resource_screen.png "新增資源對話框"){: caption="圖 5. {{site.data.keyword.cloud_notm}} Developer Console for Apple 新增資源對話框" caption-side="bottom"}
 
 ### 下載程式碼
 
-* 在_應用程式詳細資料_ 頁面上，您可以選取**下載程式碼**，以產生並下載應用程式的程式碼。
+在_應用程式詳細資料_ 頁面上，您可以選取**下載程式碼**，以產生並下載應用程式的程式碼。
 
 ### 應用程式清單視圖
 {: #app_list_view}
 
 從_應用程式清單_ 視圖中，您可以列出您建立的所有應用程式。您可以從這裡重新命名或刪除應用程式。按一下應用程式名稱列，即可回到「應用程式詳細資料」視圖。
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式清單視圖](images/project_list_screen.png "應用程式清單視圖") <br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式清單視圖*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式清單視圖](images/project_list_screen.png "應用程式清單視圖"){: caption="圖 6. {{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式清單視圖" caption-side="bottom"}
 
 如需相關資訊，請造訪[{{site.data.keyword.cloud_notm}} Developer Console for Apple 學習資源](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 {: tip}

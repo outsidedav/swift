@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-05-21"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -150,31 +150,34 @@ MacOS がサポートする最新のハードウェアを使用し、最新の i
 
 {{site.data.keyword.dev_cli_short}} を使用してアプリケーションをビルド、実行、デプロイできるようになりました。
 
-1. **ビルド**
+### アプリのビルド
+{: #swift-build-cli}
 
-  アプリケーションをビルドできるようになりました。これは、アプリケーションを実行するための前提条件です。 アプリをビルドするには、アプリケーション・ディレクトリーのルートで次のコマンドを使用します。
-  ```
-  ibmcloud dev build
-  ```
-  {: codeblock}
+アプリケーションをビルドできるようになりました。これは、アプリケーションを実行するための前提条件です。 アプリをビルドするには、アプリケーション・ディレクトリーのルートで次のコマンドを使用します。
+```
+ibmcloud dev build
+```
+{: codeblock}
 
-2. **実行**
+### アプリの実行
+{: #swift-run-cli}
 
-  ビルドが正常に完了したら、次のコマンドを使用してローカル・コンテナー内でアプリケーションを実行できます。
-  ```
-  ibmcloud dev run
-  ```
-  {: codeblock}
+ビルドが正常に完了したら、次のコマンドを使用してローカル・コンテナー内でアプリケーションを実行できます。
+```
+ibmcloud dev run
+```
+{: codeblock}
 
-  コマンドが正常に実行されると、アプリケーションのランディング・ページを表示するためのローカル・ホストとポートが表示されます。
+コマンドが正常に実行されると、アプリケーションのランディング・ページを表示するためのローカル・ホストとポートが表示されます。
 
-3. **デプロイ**
+### アプリのデプロイ
+{: #swift-deploy-cli}
 
-  `deploy` コマンドを使用して、アプリケーションを {{site.data.keyword.cloud_notm}} にデプロイします。
-  ```
-  ibmcloud dev deploy
-  ```
-  {: codeblock}
+`deploy` コマンドを使用して、アプリケーションを {{site.data.keyword.cloud_notm}} にデプロイします。
+```
+ibmcloud dev deploy
+```
+{: codeblock}
 
 ## 次のステップ
 {: #swift-cli-next notoc}

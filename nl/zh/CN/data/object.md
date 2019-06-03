@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -38,19 +38,19 @@ Object Storage 是云计算的基础组件，用于为 Apple 开发者及其应�
 
 {{site.data.keyword.cos_full}} API 是基于 REST 的 API，用于读取和写入对象。此 API 支持 S3 API 的子集，可轻松地将应用程序迁移到 {{site.data.keyword.cloud_notm}}。在使用 {{site.data.keyword.cos_full}} 时，可以使用任何 S3 SDK。有关更多信息，请参阅完整的 [{{site.data.keyword.cos_short}} API 参考](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)
 
-## 安全性
+## 保护 Object Storage
 {: #security-cos}
 
 {{site.data.keyword.cos_full_notm}} 安全性非常高。首先，只有存储区和对象所有者才有权访问自己创建的 {{site.data.keyword.cos_full_notm}} 服务。此外，还支持通过用户认证来访问数据。使用访问控制机制（如存储区策略）可有选择地向用户和应用程序授予许可权。可以使用 HTTPS 协议通过 SSL 端点将数据安全地传输到 {{site.data.keyword.cos_short}}。如果需要额外的安全性，可以使用“服务器端加密”(SSE) 选项或“使用客户提供的密钥的服务器端加密”(SSE-C) 选项来加密静态存储的数据。{{site.data.keyword.cos_full_notm}} 提供了用于 SSE 和 SSE-C 的加密技术。或者，您可以先使用自己的加密库来加密数据，然后再将其存储在 Cloud Object Storage 中。
 
 可以使用以下访问控制机制来保护 {{site.data.keyword.cos_full_notm}} 中的数据。
 
-**Identity and Access Management (IAM) 策略**
+### Identity and Access Management (IAM) 策略
 {: #iam-cos}
 
 通过 IAM，拥有多名员工的组织可以在单个帐户下创建和管理多个用户。借助 IAM 策略，公司可以授予 IAM 用户对其 {{site.data.keyword.cos_short}} 存储区的控制权。
 
-**访问控制表 (ACL)**
+### 访问控制表 (ACL)
 {: #acls-cos}
 
 通过 ACL，可以授予特定用户对单个存储区的特定许可权（例如，读许可权、写许可权）。
@@ -80,7 +80,7 @@ Object Storage 是云计算的基础组件，用于为 Apple 开发者及其应�
 
 在决定是使用区域性弹性还是跨区域弹性选项时，请考虑以下因素来选择对象存储的地理位置。
 
-**地理位置注意事项**：
+地理位置注意事项：
 * 相对于运营处于远程的位置，以实现冗余性。
 * 满足法律法规需求的位置。
 * 缩短数据访问延迟。
@@ -96,14 +96,20 @@ Object Storage 是云计算的基础组件，用于为 Apple 开发者及其应�
 ### 样本存储类
 {: #samples-cos}
 
-**标准**
-此服务适用于需要频繁访问的非结构化数据，例如 DevOps、协作和操作内容存储库。
+- 标准
+  
+  此服务适用于需要频繁访问的非结构化数据，例如 DevOps、协作和操作内容存储库。
 
-**保险库**
-此服务适用于具有不常访问的数据的工作负载，例如备份、归档和合规性工作负载。
+- 保险库
+  
+  此服务适用于具有不常访问的数据的工作负载，例如备份、归档和合规性工作负载。
 
-**冷保险库**
-此部署选项是最低访问需求、历史记录合规性和长期备份的理想选择。
+- 冷保险库
+  
+  此部署选项是最低访问需求、历史记录合规性和长期备份的理想选择。
 
-**灵活**
-根据各种不同的数据访问需求进行部署，保护预算免受意外成本波动的影响。存储类在存储区级别进行定义。创建一个存储区，将其设置为您要使用的存储类。
+- Flex
+
+  根据各种不同的数据访问需求进行部署，保护预算免受意外成本波动的影响。存储类在存储区级别进行定义。创建一个存储区，将其设置为您要使用的存储类。
+
+

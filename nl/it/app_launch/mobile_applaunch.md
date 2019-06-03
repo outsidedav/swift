@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -28,26 +28,25 @@ Il servizio {{site.data.keyword.engage_short}} definisce una funzione, crea i de
 
 Consulta le seguenti funzioni del servizio {{site.data.keyword.engage_short}}:
 
- - **Accelerare la distribuzione delle funzioni**
+- Accelerare la distribuzione delle funzioni 
 
-    Accelera la distribuzione di funzioni alla tua applicazione mediante un rilascio controllato riducendo i rischi. Rilascia le funzioni a un sottoinsieme di segmenti di destinatari e prendi decisioni di lancio o di ripristino di una versione valida precedente di maggiore entità in base al feedback in tempo reale. Separa i lanci di funzioni dai regolari cicli di rilascio.
+  Accelera la distribuzione di funzioni alla tua applicazione mediante un rilascio controllato riducendo i rischi. Rilascia le funzioni a un sottoinsieme di segmenti di destinatari e prendi decisioni di lancio o di ripristino di una versione valida precedente di maggiore entità in base al feedback in tempo reale. Separa i lanci di funzioni dai regolari cicli di rilascio.
 
- - **Segmentare i destinatari**
+- Segmentare i destinatari 
 
-    I segmenti utente possono essere definiti in base ad attributi demografici, contestuali e comportamentali. Puoi anche distribuire le funzioni a una specifica percentuale dell'intera base utenti. Gli indicatori delle prestazioni chiave possono essere definiti per ogni funzione e codice lato client per misurare i risultati.
+  I segmenti utente possono essere definiti in base ad attributi demografici, contestuali e comportamentali. Puoi anche distribuire le funzioni a una specifica percentuale dell'intera base utenti. Gli indicatori delle prestazioni chiave possono essere definiti per ogni funzione e codice lato client per misurare i risultati.
 
- - **Adattare l'applicazione in base al contesto**
+- Adattare l'applicazione in base al contesto 
 
-    Il comportamento dell'applicazione, l'interfaccia utente e le notifiche possono essere personalizzati per specifici segmenti di destinatari. Ad esempio, lo sfondo dell'applicazione può essere modificato in base all'ubicazione dell'utente. Questa personalizzazione dell'utente comporta un maggiore coinvolgimento degli utenti con l'applicazione.
+  Il comportamento dell'applicazione, l'interfaccia utente e le notifiche possono essere personalizzati per specifici segmenti di destinatari. Ad esempio, lo sfondo dell'applicazione può essere modificato in base all'ubicazione dell'utente. Questa personalizzazione dell'utente comporta un maggiore coinvolgimento degli utenti con l'applicazione.
 
- - **Funzioni di test A / B**
+- Funzioni di test A / B 
 
-    Acquisire sicurezza mediante sperimentazione. Due varianti delle funzioni dell'applicazione possono essere messe a confronto tra loro eseguendo il lancio di entrambe contemporaneamente. È possibile prendere decisioni sulla base di dati concreti.
+  Acquisire sicurezza mediante sperimentazione. Due varianti delle funzioni dell'applicazione possono essere messe a confronto tra loro eseguendo il lancio di entrambe contemporaneamente. È possibile prendere decisioni sulla base di dati concreti.
 
- - **Aumentare il coinvolgimento dei clienti**
+- Aumentare il coinvolgimento dei clienti**
 
-    Promuovi il coinvolgimento degli utenti. Le notifiche possono essere indirizzate a tutti gli utenti dell'applicazione o a una serie specifica di utenti e dispositivi. È possibile definire una pianificazione dei messaggi. L'interazione degli utenti riveste un ruolo vitale nelle relazioni con i clienti.
-
+  Promuovi il coinvolgimento degli utenti. Le notifiche possono essere indirizzate a tutti gli utenti dell'applicazione o a una serie specifica di utenti e dispositivi. È possibile definire una pianificazione dei messaggi. L'interazione degli utenti riveste un ruolo vitale nelle relazioni con i clienti.
 
 ## Prima di cominciare
 {: #prereqs-applaunch}

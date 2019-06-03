@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -28,26 +28,25 @@ Le service {{site.data.keyword.engage_short}} définit une fonction, crée un pu
 
 Les fonctions du service {{site.data.keyword.engage_short}} sont les suivantes :
 
- - **Accélération du déploiement des fonctions**
+- Accélération du déploiement des fonctions
 
-    Accélération de distribution des fonctions pour votre application par une mise en production contrôlée afin de minimiser les risques. Mise en production des fonctions dans un sous-ensemble de segments de public et décisions de déploiements ou d'annulations plus larges sur la base de commentaires en retour en temps réel. Déploiements de fonctions distincts à partir de cycles de mise en production réguliers.
+  Accélération de distribution des fonctions pour votre application par une mise en production contrôlée afin de minimiser les risques. Mise en production des fonctions dans un sous-ensemble de segments de public et décisions de déploiements ou d'annulations plus larges sur la base de commentaires en retour en temps réel. Déploiements de fonctions distincts à partir de cycles de mise en production réguliers.
 
- - **Public de segment**
+- Segmentation des utilisateurs concernés
 
-    Des segments utilisateur peuvent être définis à partir d'attributs démographiques, contextuels et comportementaux. Vous pouvez également déployer des fonctionnalités sur un certain pourcentage de l'ensemble de la base d'utilisateurs. Des indicateurs clés de performance peuvent être définis pour chaque fonction et code côté client pour mesurer les résultats.
+  Des segments utilisateur peuvent être définis à partir d'attributs démographiques, contextuels et comportementaux. Vous pouvez également déployer des fonctionnalités sur un certain pourcentage de l'ensemble de la base d'utilisateurs. Des indicateurs clés de performance peuvent être définis pour chaque fonction et code côté client pour mesurer les résultats.
 
- - **Adaptation de l'application en fonction du contexte**
+- Adaptation de l'application en fonction du contexte
 
-    Il est possible de personnaliser le comportement d'une application, l'interface utilisateur et les notifications pour des segments de public spécifiques. Par exemple, l'arrière-plan d'une app peut être modifié en fonction de l'emplacement de l'utilisateur. Cette personnalisation utilisateur accroît l'engagement des utilisateurs avec l'application.
+  Il est possible de personnaliser le comportement d'une application, l'interface utilisateur et les notifications pour des segments de public spécifiques. Par exemple, l'arrière-plan d'une app peut être modifié en fonction de l'emplacement de l'utilisateur. Cette personnalisation utilisateur accroît l'engagement des utilisateurs avec l'application.
 
- - **Fonctions de test A / B**
+- Fonctions de test A / B
 
-    Gagnez en confiance par l'expérimentation. Deux variantes des fonctions d'application peuvent être comparées en déployant chacune d'elles en même temps. Il est ainsi possible de prendre des décisions sur la base de données factuelles.
+  Gagnez en confiance par l'expérimentation. Deux variantes des fonctions d'application peuvent être comparées en déployant chacune d'elles en même temps. Il est ainsi possible de prendre des décisions sur la base de données factuelles.
 
- - **Accroissement de l'interaction avec les clients**
+- Accroissement de l'interaction avec les clients
 
-    Encouragez l'interaction avec les clients. Des notifications peuvent être ciblées pour tous les utilisateurs d'une application ou pour un ensemble spécifique d'utilisateurs et d'appareils. Il est aussi possible de définir un planning de messages. L'interaction utilisateur joue un rôle essentiel dans les relations client.
-
+  Encouragez l'interaction avec les clients. Des notifications peuvent être ciblées pour tous les utilisateurs d'une application ou pour un ensemble spécifique d'utilisateurs et d'appareils. Il est aussi possible de définir un planning de messages. L'interaction utilisateur joue un rôle essentiel dans les relations client.
 
 ## Avant de commencer
 {: #prereqs-applaunch}

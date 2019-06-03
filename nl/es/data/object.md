@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -40,19 +40,19 @@ Al crear un grupo, debe seleccionar un nivel de resiliencia (varias regiones o r
 La API de {{site.data.keyword.cos_full}} es una API basada en REST para leer y escribir objetos. Da soporte a un subconjunto de la API de S3 para facilitar la migración de aplicaciones a {{site.data.keyword.cloud_notm}}. Cualquier SDK de S3 se puede utilizar para usar {{site.data.keyword.cos_full}}. Para obtener más información, consulte la
 [Referencia de la API de {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api) completa
 
-## Seguridad
+## Protección del almacenamiento de objetos
 {: #security-cos}
 
 {{site.data.keyword.cos_full_notm}} es muy seguro. Inicialmente, solo el grupo y los propietarios de los objetos tienen acceso originalmente al servicio {{site.data.keyword.cos_full_notm}} que crean. También da soporte a la autenticación de usuarios para acceder a los datos. Utilice mecanismos de control de acceso como, por ejemplo, políticas de grupos para otorgar permisos de forma selectiva a usuarios y aplicaciones. Puede transferir de forma segura los datos a {{site.data.keyword.cos_short}} a través de puntos finales SSL utilizando el protocolo HTTPS. Si necesita seguridad adicional, puede utilizar la opción Cifrado del lado del servidor (SSE) o el Cifrado del lado del servidor con la opción Claves proporcionadas por el cliente (SSE-C) para cifrar los datos almacenados en reposo. {{site.data.keyword.cos_full_notm}} proporciona la tecnología de cifrado para SSE y SSE-C. De forma alternativa, puede utilizar sus propias bibliotecas de cifrado para cifrar datos antes de almacenarlos en el Cloud Object Storage.
 
 Puede utilizar los mecanismos de control de acceso siguientes para proteger los datos en {{site.data.keyword.cos_full_notm}}.
 
-**Políticas de Identity and Access Management (IAM)**
+### Políticas de Identity and Access Management (IAM)
 {: #iam-cos}
 
 IAM permite a las organizaciones con varios empleados crear y gestionar varios usuarios bajo una sola cuenta. Con las políticas de IAM, las empresas pueden otorgar a los usuarios de IAM el control a sus grupos de {{site.data.keyword.cos_short}}.
 
-**Listas de control de acceso (ACL)**
+### Listas de control de acceso (ACL)
 {: #acls-cos}
 
 Con las ACL, puede otorgar permisos específicos (por ejemplo, READ, WRITE), a usuarios específicos para un grupo individual.
@@ -82,7 +82,7 @@ Puede utilizar {{site.data.keyword.cos_full_notm}} desde cualquier lugar del mun
 
 Tenga en cuenta los factores siguientes para seleccionar la ubicación geográfica de su almacén de objetos cuando decida entre opciones regionales y de varias regiones.
 
-**Consideraciones sobre la ubicación geográfica**:
+Consideraciones sobre la ubicación geográfica:
 * Una ubicación que es remota de sus operaciones para redundancia.
 * Una ubicación para hacer frente a los requisitos legales y normativos.
 * Reducir las latencias de acceso a datos.
@@ -98,14 +98,20 @@ Encontrará más información sobre el precio en la documentación de [Clase de 
 ### Clases de almacenamiento de ejemplo
 {: #samples-cos}
 
-**Estándar**
-Este servicio es para datos no estructurados que requieren acceso frecuente, como por ejemplo, DevOps, colaboración y repositorios de contenido de acciones.
+- Estándar
+  
+  Este servicio es para datos no estructurados que requieren acceso frecuente, como por ejemplo, DevOps, colaboración y repositorios de contenido de acciones.
 
-**Caja fuerte**
-Este servicio es para las cargas de trabajo con datos a los que se accede con poca frecuencia, como por ejemplo cargas de trabajo de copia de seguridad, archivado y conformidad.
+- Caja fuerte
+  
+  Este servicio es para las cargas de trabajo con datos a los que se accede con poca frecuencia, como por ejemplo cargas de trabajo de copia de seguridad, archivado y conformidad.
 
-**Caja fuerte fría**
-Esta opción de despliegue es ideal para los requisitos de acceso mínimos, la conformidad de registros históricos y la copia de seguridad a largo plazo.
+- Caja fuerte fría
+  
+  Esta opción de despliegue es ideal para los requisitos de acceso mínimos, la conformidad de registros históricos y la copia de seguridad a largo plazo.
 
-**Flexible** Despliegue para distintos requisitos de acceso a datos y para proteger su presupuesto de fluctuaciones de costes inesperadas.
-Las clases de almacenamiento se definen en el nivel de grupo. Cree un grupo establecido en la clase de almacenamiento que desea utilizar.
+- Flexible
+
+  Despliegue para distintos requisitos de acceso a datos y para proteger su presupuesto de fluctuaciones de costes inesperadas. Las clases de almacenamiento se definen en el nivel de grupo. Cree un grupo establecido en la clase de almacenamiento que desea utilizar.
+
+

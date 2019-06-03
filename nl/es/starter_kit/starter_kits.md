@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-05-21"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -42,45 +42,45 @@ Los kits de inicio contienen instrucciones que permiten a {{site.data.keyword.cl
 ### Pantalla de visión general
 {: #overview_screen}
 
-La pantalla Visión general le proporciona contenido que se adapta a un conjunto de casos de uso como Watson, Weather, etc. Desde la pantalla de visión general, puede ver documentación, acceder a los recursos educativos, examinar los servicios, ver kits de inicio destacados o enlazar a una recopilación más grande de kits de inicio. Pulse `Kits de inicio` en el área de navegación de la izquierda para entrar en la vista Kits de inicio.
+La pantalla Visión general le proporciona contenido que se adapta a un conjunto de casos de uso como Watson, Weather, etc. Desde la pantalla de visión general, puede ver documentación, acceder a los recursos educativos, examinar los servicios, ver kits de inicio destacados o enlazar a una recopilación más grande de kits de inicio. Seleccione **Kits de inicio** en el área de navegación para entrar en la vista Kits de inicio.
 
-![Pantalla Visión general de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/overview_screen.png "Pantalla Visión general") <br> *Pantalla Visión general de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
+![Pantalla Visión general de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/overview_screen.png "Pantalla Visión general")
 
 ### Vista Kits de inicio
 {: #starter_kits_view}
 
 La vista Kits de inicio muestra la colección de kits de inicio específicos de un área de casos de uso. Puede pulsar varios enlaces en una tarjeta del kit de inicio para ver las demostraciones y más información. Seleccione un kit de inicio para ir a la vista Crear app.
 
-![Vista Kits de inicio de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/starter_kits_screen.png "Vista Kits de inicio") <br> *Vista Kits de inicio de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
+![Vista Kits de inicio de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/starter_kits_screen.png "Vista Kits de inicio")
 
 ### Crear vista de app
 {: #create_new_app_view}
 
-Desde la vista **Crear app**, puede dar un nombre a la app, así como proporcionar información de despliegue y de direccionamiento. A la derecha, también puede ver los servicios que se suministran automáticamente cuando se crea la app, junto con los planes de precios y los términos para cada app. Pulse `Crear` para ir a la vista Detalles de la app. Si no ha iniciado sesión en {{site.data.keyword.cloud_notm}}, tiene que hacerlo ahora.
+Desde la vista **Crear app**, puede dar un nombre a la app, así como proporcionar información de despliegue y de direccionamiento. También puede ver los servicios que se suministran automáticamente cuando se crea la app, junto con los planes de precios y los términos para cada app. Seleccione **Crear** para ir a la vista Detalles de la app. Si no ha iniciado sesión en {{site.data.keyword.cloud_notm}}, tiene que hacerlo ahora.
 
-![Vista Crear nueva app de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/create_new_project_screen.png "Vista Crear nueva app") <br> *Vista Crear nueva app de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
+![Vista Crear nueva app de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/create_new_project_screen.png "Vista Crear nueva app")
 
 ## Vista Detalles de la app
 {: #app_details_view}
 
 La vista Detalles de la app muestra una lista de servicios que están configurados para la app. Para cada elemento de la lista, puede ver el nombre de servicio, los enlaces a otra información y un botón **acciones** con tres puntos alineados verticalmente. Las opciones del botón **acciones** son eliminar los servicios de una app, abrir el panel de control para el servicio y suprimir el servicio. Cuando se elimina una instancia de servicio se elimina la asociación a esa app, y no suprime la instancia de servicio. Además, las credenciales de servicio se consolidan en esta vista, de modo que no tiene que visitar cada vista de instancia de servicio individual para obtenerlas.
 
-![Vista Detalles de app de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/project_details_screen.png "Vista Detalles de app") <br> *Vista Detalles de app de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
+![Vista Detalles de app de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/project_details_screen.png "Vista Detalles de app")
 
 Al utilizar la vista **Detalles de la app**, puede añadir servicios nuevos o existentes a la app que no formaban parte del Kit de inicio original. Pulse **Añadir servicio** para añadir servicios. Los servicios disponibles dependen del tipo de app y de los servicios que están disponibles en una región, por lo que no todos los servicios están disponibles para asociarse con todas las apps.
 
-![ Diálogo Añadir recurso de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/add_resource_screen.png "Diálogo Añadir recurso") <br> *Diálogo Añadir recurso de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
+![Diálogo Añadir recurso de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/add_resource_screen.png "Diálogo Añadir recurso")
 
 ### Descarga del código
 
-* En la página _Detalles de la app_, puede acceder a su código seleccionando **Descargar código** para generar y descargar el código de la app.
+En la página _Detalles de la app_, puede acceder a su código seleccionando **Descargar código** para generar y descargar el código de la app.
 
 ### Vista Lista de apps
 {: #app_list_view}
 
 Puede obtener una lista de todas las apps creadas desde la vista _Lista de apps_. Puede cambiar el nombre o suprimir las apps desde aquí. Pulse en una fila de nombre de app para volver a la vista Detalles de la app.
 
-![Vista Lista de apps de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/project_list_screen.png "Vista Lista de apps") <br> *Vista Lista de apps de {{site.data.keyword.cloud_notm}} Developer Console for Apple*
+![Vista Lista de apps de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/project_list_screen.png "Vista Lista de apps")
 
 Para obtener más información, visite [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 {: tip}

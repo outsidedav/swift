@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-05-21"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -150,31 +150,34 @@ I seguenti strumenti assicurano che tu possa installare gli SDK nativi per lavor
 
 Puoi ora creare, eseguire e distribuire la tua applicazione utilizzando {{site.data.keyword.dev_cli_short}}.
 
-1. **Crea**
+### Creazione della tua applicazione 
+{: #swift-build-cli}
 
-  Puoi ora creare la tua applicazione, che è un prerequisito per eseguire la tua applicazione. Utilizza questo comando nella root della directory dell'applicazione per creare la tua applicazione:
-  ```
-  ibmcloud dev build
-  ```
-  {: codeblock}
+Puoi ora creare la tua applicazione, che è un prerequisito per eseguire la tua applicazione. Utilizza questo comando nella root della directory dell'applicazione per creare la tua applicazione:
+```
+ibmcloud dev build
+```
+{: codeblock}
 
-2. **Esegui**
+### Esecuzione della tua applicazione 
+{: #swift-run-cli}
 
-  Dopo una creazione eseguita con esito positivo, puoi eseguire la tua applicazione in un contenitore locale con il seguente comando:
-  ```
-  ibmcloud dev run
-  ```
-  {: codeblock}
+Dopo una creazione eseguita con esito positivo, puoi eseguire la tua applicazione in un contenitore locale con il seguente comando:
+```
+ibmcloud dev run
+```
+{: codeblock}
 
-  Se il comando viene eseguito correttamente, vengono visualizzati un host e una porta locali per visualizzare la pagina di destinazione della tua applicazione.
+Se il comando viene eseguito correttamente, vengono visualizzati un host e una porta locali per visualizzare la pagina di destinazione della tua applicazione.
 
-3. **Distribuisci**
+### Distribuzione della tua applicazione 
+{: #swift-deploy-cli}
 
-  Distribuisci la tua applicazione a {{site.data.keyword.cloud_notm}} con il comando `deploy`:
-  ```
-  ibmcloud dev deploy
-  ```
-  {: codeblock}
+Distribuisci la tua applicazione a {{site.data.keyword.cloud_notm}} con il comando `deploy`:
+```
+ibmcloud dev deploy
+```
+{: codeblock}
 
 ## Passi successivi
 {: #swift-cli-next notoc}

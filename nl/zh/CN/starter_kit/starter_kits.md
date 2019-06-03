@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-05-21"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -42,45 +42,43 @@ subcollection: swift
 ### “概述”屏幕
 {: #overview_screen}
 
-“概述”屏幕提供针对一组用例（如 Watson、Weather 等）定制的内容。在“概述”屏幕中，可以查看文档，访问教育资源，浏览服务，查看特色入门模板工具包或链接到更大的入门模板工具包集合。单击左侧导航区域中的`入门模板工具包`可进入“入门模板工具包”视图。
+“概述”屏幕提供针对一组用例（如 Watson、Weather 等）定制的内容。在“概述”屏幕中，可以查看文档，访问教育资源，浏览服务，查看特色入门模板工具包或链接到更大的入门模板工具包集合。选择导航区域中的**入门模板工具包**可进入“入门模板工具包”视图。
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“概述”屏幕](images/overview_screen.png "“概述”屏幕")<br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“概述”屏幕*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“概述”屏幕](images/overview_screen.png "“概述”屏幕")
 
 ### “入门模板工具包”视图
 {: #starter_kits_view}
 
 “入门模板工具包”视图显示特定于用例区域的入门模板工具包的集合。可以单击“入门模板工具包”卡上的各种链接来查看演示和更多信息。选择一个入门模板工具包以移至“创建应用程序”视图。
 
-![{{site.data.keyword.cloud_notm}} Developer Consolefor Apple 的“入门模板工具包”视图](images/starter_kits_screen.png "“入门模板工具包”视图")<br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“入门模板工具包”视图*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“入门模板工具包”视图](images/starter_kits_screen.png "“入门模板工具包”视图")
 
 ### “创建应用程序”视图
 {: #create_new_app_view}
 
-在**创建应用程序**视图中，可以对应用程序命名以及提供部署和路由信息。在右侧，还可以查看在创建应用程序时自动供应的服务，以及价格套餐和每个服务的条款。单击`创建`可移至“应用程序详细信息”视图。如果您未登录到 {{site.data.keyword.cloud_notm}}，那么现在需要登录。
+在**创建应用程序**视图中，可以对应用程序命名以及提供部署和路由信息。您还可以查看在创建应用程序时自动供应的服务，以及价格套餐和每个服务的条款。选择**创建**可移至“应用程序详细信息”视图。如果您未登录到 {{site.data.keyword.cloud_notm}}，那么现在需要登录。
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“创建新应用程序”视图](images/create_new_project_screen.png "“创建新应用程序”视图")<br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“创建新应用程序”视图*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“创建新应用程序”视图](images/create_new_project_screen.png "“创建新应用程序”视图")
 
 ## “应用程序详细信息”视图
 {: #app_details_view}
 
 “应用程序详细信息”视图显示已配置用于应用程序的服务的列表。对于列表中的每个项，都可以看到服务名称、其他信息的链接以及具有三个垂直排列的点的**操作**按钮。**操作**按钮选项用于从应用程序中除去服务，打开服务的仪表板以及删除服务。除去服务实例会除去与此应用程序的关联，但不会删除服务实例。此外，服务凭证会在此视图上进行合并，因此不必访问每个单独的服务实例视图来分别获取服务凭证。
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序详细信息”视图](images/project_details_screen.png "“应用程序详细信息”视图")<br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序详细信息”视图*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序详细信息”视图](images/project_details_screen.png "“应用程序详细信息”视图")
 
 通过使用**应用程序详细信息**页面，可以将不属于原始入门模板工具包的新服务或现有服务添加到应用程序。单击**添加服务**以添加服务。可用的服务取决于应用程序的类型以及区域中可用的服务，因此并非所有服务都可用于与所有应用程序相关联。
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“添加资源”对话框](images/add_resource_screen.png "“添加资源”对话框")<br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“添加资源”对话框*
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“添加资源”对话框](images/add_resource_screen.png "“添加资源”对话框")
 
 ### 下载代码
 
-* 要访问您的代码，可以在_应用程序详细信息_页面上选择**下载代码**来生成和下载应用程序的代码。
+要访问您的代码，可以在_应用程序详细信息_页面上选择**下载代码**来生成和下载应用程序的代码。
 
 ### 应用程序列表视图
 {: #app_list_view}
 
 您可以在_应用程序列表_视图中列出所有已创建的应用程序。可以在此处重命名或删除应用程序。单击应用程序名称行可返回到“应用程序详细信息”视图。
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序列表”视图](images/project_list_screen.png "“应用程序列表”视图")<br> *{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序列表”视图*
-
-有关更多信息，请访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple 学习资源](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序列表”视图](images/project_list_screen.png "“应用程序列表”视图")有关更多信息，请访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple 学习资源](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
 {: tip}

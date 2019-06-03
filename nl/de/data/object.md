@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -61,7 +61,7 @@ S3-API für die einfache Migration von Anwendungen auf
 {{site.data.keyword.cos_full}} kann jedes beliebige S3-SDK verwendet
 werden. Weitere Informationen finden Sie in der umfassenden [API-Referenz zu {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api).
 
-## Sicherheit
+## Objektspeicher sichern
 {: #security-cos}
 
 {{site.data.keyword.cos_full_notm}} ist äußerst sicher. Anfangs
@@ -84,14 +84,14 @@ Zum Schutz Ihrer Daten in
 {{site.data.keyword.cos_full_notm}} können Sie die folgenden
 Zugriffssteuerungsmechanismen verwenden.
 
-**Richtlinien von Identity and Access Management (IAM)**
+### IAM-Richtlinien (IAM = Identity and Access Management)
 {: #iam-cos}
 
 IAM ermöglicht es Unternehmen mit mehreren Mitarbeitern, unter einem einzigen Konto mehrere Benutzer zu erstellen und zu verwalten. Mit
 IAM-Richtlinien können Unternehmen den IAM-Benutzern die Steuerung ihrer
 {{site.data.keyword.cos_short}}-Buckets gewähren.
 
-**Zugriffssteuerungslisten (Access Control Lists, ACLs)**
+### Zugriffssteuerungslisten (Access Control Lists, ACLs)
 {: #acls-cos}
 
 Mithilfe von ACLs können Sie bestimmten Benutzern für ein einzelnes Bucket spezielle Berechtigungen (z. B. READ oder WRITE) erteilen.
@@ -151,7 +151,7 @@ Berücksichtigen Sie bei der Entscheidung zwischen der regionalen und
 der regionsübergreifenden Option bei der Auswahl des Standortes für Ihren
 Objektspeicher die folgenden Faktoren.
 
-**Hinweise zum geografischen Standort**:
+Hinweise zum geografischen Standort
 * Nutzen Sie zur Redundanz einen Standort, der sich fern von Ihrem
 Betrieb befindet.
 * Nutzen Sie einen Standort für rechtliche und gesetzliche Bestimmungen.
@@ -176,22 +176,20 @@ Weitere Informationen zur Preisstruktur finden Sie in der Dokumentation [Speiche
 ### Beispiele für Speicherklassen
 {: #samples-cos}
 
-**Standard**
-Dieser Service ist für unstrukturierte Daten gedacht, auf die häufig
-zugegriffen werden muss, beispielsweise DevOps-Daten sowie Repositorys für
-die Onlinezusammenarbeit und für Aktionsinhalt.
+- Standard
+  
+  Dieser Service ist für unstrukturierte Daten konzipiert, auf die häufig zugegriffen werden muss, beispielsweise DevOps-Daten sowie Repositorys für die Onlinezusammenarbeit und für Aktionsinhalt. 
 
-**Vault**
-Dieser Service ist für Workloads mit Daten konzipiert, auf die selten
-zugegriffen wird, beispielsweise zur Sicherung, Archivierung und Einhaltung von
-Vorschriften.
+- Vault
+  
+  Dieser Service ist für Workloads mit Daten konzipiert, auf die selten zugegriffen wird, beispielsweise zur Sicherung, Archivierung und Einhaltung von Vorschriften. 
 
-**Cold Vault**
-Diese Bereitstellungsoption eignet sich hervorragend für
-Mindestzugriffsanforderungen, die Einhaltung der Protokollaufzeichnung und
-die langfristige Sicherung.
+- Cold Vault
+  
+  Diese Bereitstellungsoption eignet sich hervorragend für Mindestzugriffsanforderungen, die Einhaltung der Protokollaufzeichnung und die langfristige Sicherung. 
 
-**Flex** Diese Bereitstellung ist auf variable
-Datenzugriffsanforderungen abgestimmt und schützt Ihr Budget vor unerwarteten
-Kostenschwankungen.
-Speicherklassen werden auf Bucketebene definiert. Erstellen Sie einen Bucket, der für die Speicherklasse definiert ist, die Sie verwenden möchten.
+- Flex
+
+  Diese Bereitstellung ist auf variable Datenzugriffsanforderungen abgestimmt und schützt Ihr Budget vor unerwarteten Kostenschwankungen. Speicherklassen werden auf Bucketebene definiert. Erstellen Sie einen Bucket, der für die Speicherklasse definiert ist, die Sie verwenden möchten.
+
+

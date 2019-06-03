@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-05-21"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -150,31 +150,34 @@ subcollection: swift
 
 이제 {{site.data.keyword.dev_cli_short}}를 사용하여 애플리케이션을 빌드, 실행 및 배치할 수 있습니다
 
-1. **빌드**
+### 앱 빌드
+{: #swift-build-cli}
 
-  이제 애플리케이션 실행을 위한 전제조건인 애플리케이션을 빌드할 수 있습니다. 애플리케이션 디렉토리의 루트에서 다음 명령을 사용하여 앱을 빌드하십시오.
-  ```
+이제 애플리케이션 실행을 위한 전제조건인 애플리케이션을 빌드할 수 있습니다. 애플리케이션 디렉토리의 루트에서 다음 명령을 사용하여 앱을 빌드하십시오.
+```
   ibmcloud dev build
-  ```
-  {: codeblock}
+```
+{: codeblock}
 
-2. **실행**
+### 앱 실행
+{: #swift-run-cli}
 
-  빌드를 완료한 후 다음 명령을 사용하여 로컬 컨테이너에서 애플리케이션을 실행할 수 있습니다.
-  ```
+빌드를 완료한 후 다음 명령을 사용하여 로컬 컨테이너에서 애플리케이션을 실행할 수 있습니다.
+```
   ibmcloud dev run
-  ```
-  {: codeblock}
+```
+{: codeblock}
 
-  명령이 실행되면 애플리케이션의 랜딩 페이지를 볼 수 있는 로컬 호스트 및 포트가 표시됩니다.
+명령이 실행되면 애플리케이션의 랜딩 페이지를 볼 수 있는 로컬 호스트 및 포트가 표시됩니다.
 
-3. **배치**
+### 앱 배치
+{: #swift-deploy-cli}
 
-  `deploy` 명령을 실행하여 애플리케이션을 {{site.data.keyword.cloud_notm}}에 배치하십시오.
-  ```
+`deploy` 명령을 실행하여 애플리케이션을 {{site.data.keyword.cloud_notm}}에 배치하십시오.
+```
   ibmcloud dev deploy
-  ```
-  {: codeblock}
+```
+{: codeblock}
 
 ## 다음 단계
 {: #swift-cli-next notoc}

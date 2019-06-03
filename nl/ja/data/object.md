@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -38,19 +38,19 @@ Object Storage は、クラウド・コンピューティングにおける基�
 
 {{site.data.keyword.cos_full}} API は、オブジェクトを読み書きするための REST ベースの API です。 この API は、アプリケーションを {{site.data.keyword.cloud_notm}} に簡単にマイグレーションできるように、S3 API のサブセットをサポートしています。 {{site.data.keyword.cos_full}} を使用するために、任意の S3 SDK を利用できます。 詳しくは、[{{site.data.keyword.cos_short}} API リファレンス](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)を参照してください。
 
-## セキュリティー
+## オブジェクト・ストレージの保護
 {: #security-cos}
 
 {{site.data.keyword.cos_full_notm}} は、高いセキュリティー性を備えています。 最初に {{site.data.keyword.cos_full_notm}} サービスにアクセスできるのは、そのサービスを作成したバケット所有者およびオブジェクト所有者のみです。 さらに、データにアクセスするユーザーの認証もサポートしています。 バケット・ポリシーなどのアクセス制御メカニズムを利用すると、ユーザーとアプリケーションにアクセス権限を選択的に付与できます。 {{site.data.keyword.cos_short}} へのデータ転送は、HTTPS プロトコルを使用することで SSL エンドポイントを介して安全に行うことができます。 追加のセキュリティーが必要な場合は、サーバー・サイドの暗号化 (SSE) オプションまたはお客様が用意した鍵によるサーバー・サイドの暗号化 (SSE-C) オプションを使用することで、保存されているデータを暗号化できます。 {{site.data.keyword.cos_full_notm}} は、SSE と SSE-C の両方の暗号化テクノロジーを提供しています。 代わりの方法として、独自の暗号化ライブラリーを使用してデータを暗号化してから、Cloud Object Storage に保管することもできます。
 
 以下のアクセス制御メカニズムを利用して、{{site.data.keyword.cos_full_notm}} でデータを保護することができます。
 
-**Identity and Access Management (IAM) ポリシー**
+### Identity and Access Management (IAM) ポリシー
 {: #iam-cos}
 
 多数の社員がいる組織では、IAM を利用すると、1 つのアカウントで複数のユーザーを作成および管理できます。 企業は IAM ポリシーを使用することで、IAM ユーザーに、{{site.data.keyword.cos_short}} バケットを制御する権限を付与することができます。
 
-**アクセス制御リスト (ACL)**
+### アクセス制御リスト (ACL)
 {: #acls-cos}
 
 ACL を利用すると、個々のバケットに対する特定のアクセス権限 (READ や WRITE など) を、特定のユーザーに付与することができます。
@@ -80,7 +80,7 @@ Regional 回復力は、低遅延を求める場合に向いており、デー�
 
 regional または cross-region のどちらのオプションにするかを決定する際には、以下の要素を考慮してオブジェクト・ストアの地理的ロケーションを選択してください。
 
-**地理的ロケーションに関する考慮事項**
+地理的ロケーションに関する考慮事項:
 * 冗長性のために、運用地域から遠く離れたロケーション。
 * 法的および規制上の要件を満たすロケーション。
 * データ・アクセスの待ち時間の短縮。
@@ -96,14 +96,20 @@ regional または cross-region のどちらのオプションにするかを決
 ### サンプル・ストレージ・クラス
 {: #samples-cos}
 
-**Standard**
-DevOps、コラボレーション、アクション・コンテンツのリポジトリーなど、頻繁にアクセスする必要のある非構造化データ向けのサービスです。
+- Standard
+  
+  DevOps、コラボレーション、アクション・コンテンツのリポジトリーなど、頻繁にアクセスする必要のある非構造化データ向けのサービスです。
 
-**Vault**
-バックアップ、アーカイブ、コンプライアンス・ワークロードなど、データに頻繁にアクセスしないワークロード向けのサービスです。
+- Vault
+  
+  バックアップ、アーカイブ、コンプライアンス・ワークロードなど、データに頻繁にアクセスしないワークロード向けのサービスです。
 
-**Cold Vault**
-最小限のアクセス要件、履歴レコード・コンプライアンス、長期バックアップに最適なデプロイメント・オプションです。
+- Cold Vault
+  
+  最小限のアクセス要件、履歴レコード・コンプライアンス、長期バックアップに最適なデプロイメント・オプションです。
 
-**Flex** データ・アクセス要件が変化する場合に導入し、予期しないコストの変動から予算を守ります。
-ストレージ・クラスはバケット・レベルで定義されます。 使用するストレージ・クラスに設定された、バケットを作成します。
+- Flex
+
+  データ・アクセス要件が変化する場合に導入し、予期しないコストの変動から予算を守ります。ストレージ・クラスはバケット・レベルで定義されます。 使用するストレージ・クラスに設定された、バケットを作成します。
+
+

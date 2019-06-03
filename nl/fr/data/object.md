@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -38,19 +38,19 @@ Lorsque vous créez un compartiment, vous devez sélectionner un niveau de rési
 
 L'API {{site.data.keyword.cos_full}} est un API REST pour la lecture et l'écriture d'objets. Elle prend en charge un sous-ensemble d'API S3 pour une migration facile des applications vers {{site.data.keyword.cloud_notm}}. N'importe quel logiciel SDK S3 peut utiliser {{site.data.keyword.cos_full}}. Pour plus d'informations, consultez la [Référence d'API {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)
 
-## Sécurité
+## Sécurisation du stockage d'objets
 {: #security-cos}
 
 {{site.data.keyword.cos_full_notm}} est hautement sécurisé. Initialement, seuls les propriétaires du compartiment et de l'objet ont accès au service {{site.data.keyword.cos_full_notm}} qu'ils créent. Il prend également en charge l'authentification d'utilisateur pour l'accès aux données. Utilisez des mécanismes de contrôle d'accès comme mes stratégies de compartiment pour accorder de manière sélective des droits aux utilisateurs et aux applications. Vous pouvez transférer de manière sécurisée le transfert de vos données à {{site.data.keyword.cos_short}} via des noeuds finaux SSL à l'aide du protocole HTTPS. Si vous avez besoin d'une sécurité supplémentaire, vous pouvez utiliser l'option SSE (Server-Side Encryption) ou SSE-C (Server-Side Encryption with Customer-Provided Keys) pour chiffrer les données stockées au repos. {{site.data.keyword.cos_full_notm}} fournit la technologie de chiffrement pour SSE et SSE-C. Vous pouvez aussi utiliser vos propres bibliothèques de chiffrement pour chiffrer les données avant de les stocker dans Cloud Object Storage.
 
 Vous pouvez utiliser les mécanismes de contrôle d'accès suivants pour sécuriser vos données dans {{site.data.keyword.cos_full_notm}}.
 
-**Règles IAM (Identity and Access Management)**
+### Règles IAM (Identity and Access Management)
 {: #iam-cos}
 
 IAM permet aux organisations comptant de nombreux employés de créer et de gérer plusieurs utilisateurs sous un seul compte. Grâce aux stratégies IAM, les entreprises peuvent accorder aux utilisateurs IAM le contrôle d'accès à leurs compartiments {{site.data.keyword.cos_short}}.
 
-**Listes de contrôle d'accès (ACL)**
+### Listes de contrôle d'accès (ACL)
 {: #acls-cos}
 
 Les listes de contrôle d'accès vous permettent d'accorder des droits spécifiques (par exemple des droits d'écriture ou de lecture) à des utilisateurs spécifiques pour un compartiment individuel.
@@ -80,7 +80,7 @@ Vous pouvez utiliser {{site.data.keyword.cos_full_notm}} depuis n'importe où da
 
 Tenez compte des facteurs suivants pour choisir l'emplacement géographique de votre magasin d'objets lorsque vous choisissez entre les options régionales et interrégionales.
 
-**Considérations relatives à l'emplacement géographique**:
+Considérations relatives à l'emplacement géographique
 * Un emplacement qui est distant de vos opérations pour la redondance.
 * Un emplacement pour répondre aux exigences juridiques et réglementaires.
 * Réduction de la latence d'accès aux données.
@@ -96,14 +96,20 @@ D'autres informations sur la tarification sont disponibles dans la documentation
 ### Exemple de classe de stockage
 {: #samples-cos}
 
-**Standard**
-Ce service est pour les données non structurées qui requièrent un accès fréquent, comme DevOps, des référentiels de contenu d'action et de collaboration.
+- Standard
+  
+  Ce service est pour les données non structurées qui requièrent un accès fréquent, comme DevOps, des référentiels de contenu d'action et de collaboration.
 
-**Vault**
-Ce service est pour les charges de travail avec des données peu fréquemment utilisées, comme les sauvegardes, les archives et les charges de travail de conformité.
+- Coffre
+  
+  Ce service est pour les charges de travail avec des données peu fréquemment utilisées, comme les sauvegardes, les archives et les charges de travail de conformité. 
 
-**Coffre froid**
-Cette option de déploiement est idéale pour les exigences d'accès minimum, la conformité des enregistrements historiques et les sauvegardes à long terme.
+- Coffre froid
+  
+  Cette option de déploiement est idéale pour les exigences d'accès minimum, la conformité des enregistrements historiques et les sauvegardes à long terme. 
 
-**Flex** Déploiement pour les exigences d'accès aux données variables et la protection de votre budget face aux fluctuations de coût imprévues.
-Les classes de stockage sont définies au niveau du compartiment. Créez un compartiment défini sur la classe de stockage que vous voulez utiliser.
+- Flex
+
+  Déploiement pour les exigences d'accès aux données variables et la protection de votre budget face aux fluctuations de coût imprévues. Les classes de stockage sont définies au niveau du compartiment. Créez un compartiment défini sur la classe de stockage que vous voulez utiliser.
+
+

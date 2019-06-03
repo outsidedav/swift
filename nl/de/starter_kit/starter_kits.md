@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-05-21"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -72,10 +72,9 @@ Anwendungsfällen wie Watson, Wetter und anderes abgestimmt ist. Ausgehend von
 der Übersichtsanzeige können Sie die Dokumentation einsehen, auf
 Ausbildungsressourcen zugreifen, Services durchsuchen, unterstützte
 Starter-Kits anzeigen oder über einen Link auf eine größere Sammlung von
-Starter-Kits zugreifen. Klicken Sie im Navigationsbereich auf der linken Seite
-auf `Starter-Kits`, um die Ansicht "Starter-Kits" aufzurufen.
+Starter-Kits zugreifen. Wählen Sie im Navigationsbereich **Starter-Kits** aus, um die Ansicht "Starter-Kits" aufzurufen.
 
-![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Übersichtsanzeige](images/overview_screen.png "Übersichtsanzeige") <br> *Übersichtsanzeige in der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple*
+![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Übersichtsanzeige](images/overview_screen.png "Übersichtsanzeige")
 
 ### Ansicht 'Starter-Kits'
 {: #starter_kits_view}
@@ -84,19 +83,14 @@ Die Ansicht 'Starter-Kits' zeigt die Sammlung der Starter-Kits für einen bestim
 Starter-Kits können Sie Demos und weitere Informationen anzeigen. Durch die
 Auswahl eines Starter-Kits können Sie in die Ansicht "App erstellen" wechseln.
 
-![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'Starter-Kits'](images/starter_kits_screen.png "Ansicht 'Starter-Kits'") <br> *Ansicht "Starter-Kits" in der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple*
+![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'Starter-Kits'](images/starter_kits_screen.png "Ansicht 'Starter-Kits'")
 
 ### App-Ansicht erstellen
 {: #create_new_app_view}
 
-In der Ansicht **App erstellen** können Sie einen Namen für Ihre App angeben sowie Bereitstellungs- und Routing-Informationen zur Verfügung stellen. Auf der rechten Seite sind außerdem die Services, die bei der
-Erstellung Ihrer App bereitgestellt werden, zusammen mit den für sie
-geltenden Preistarifen und Bedingungen zu sehen. Klicken Sie auf
-`Erstellen`, um die Ansicht "App-Details" aufzurufen. Falls
-Sie noch nicht bei {{site.data.keyword.cloud_notm}} angemeldet sind,
-müssen Sie dies jetzt nachholen.
+In der Ansicht **App erstellen** können Sie einen Namen für Ihre App angeben sowie Bereitstellungs- und Routing-Informationen zur Verfügung stellen. Darüber hinaus werden die Services, die bei der Erstellung Ihrer App bereitgestellt werden, zusammen mit den für sie geltenden Preisstrukturplänen und Bedingungen angezeigt. Wählen Sie **Erstellen** aus, um die Ansicht "App-Details" aufzurufen. Falls Sie noch nicht bei {{site.data.keyword.cloud_notm}} angemeldet sind, müssen Sie dies jetzt nachholen.
 
-![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'Neue App erstellen'](images/create_new_project_screen.png "Ansicht 'Neue App erstellen'") <br> *Ansicht "Neue App erstellen" in der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple*
+![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'Neue App erstellen'](images/create_new_project_screen.png "Ansicht 'Neue App erstellen'")
 
 ## Ansicht 'App-Details'
 {: #app_details_view}
@@ -114,17 +108,17 @@ dieser Ansicht sind darüber hinaus die Serviceberechtigungsnachweise
 konsolidiert; Sie müssen daher nicht die Ansichten für jede
 einzelne Serviceinstanz aufrufen, um sie abzurufen.
 
-![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'App-Details'](images/project_details_screen.png "Ansicht 'App-Details'") <br> *Ansicht "App-Details" in der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple*
+![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'App-Details'](images/project_details_screen.png "Ansicht 'App-Details'")
 
 Mithilfe der Seite **App-Details** können Sie neue oder vorhandene Services zu Ihrer App hinzufügen, die nicht Bestandteil des ursprünglichen Starter-Kits waren. Klicken Sie auf **Service hinzufügen**, um Services hinzuzufügen. Welche Services verfügbar
 sind, richtet sich nach dem Typ der App sowie den Services, die in einer Region
 verfügbar sind. Daher können nicht alle Services allen Apps zugeordnet werden.
 
-![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Dialog 'Ressource hinzufügen'](images/add_resource_screen.png "Dialog 'Ressource hinzufügen'") <br> *Dialog "Ressource hinzufügen" in der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple*
+![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Dialog 'Ressource hinzufügen'](images/add_resource_screen.png "Dialog 'Ressource hinzufügen'")
 
 ### Eigenen Code herunterladen
 
-* Auf der Seite _App-Details_ können Sie auf Ihren Code zugreifen, indem Sie **Code herunterladen** auswählen, um den Code für Ihre App zu generieren und herunterzuladen.
+Auf der Seite _App-Details_ können Sie auf Ihren Code zugreifen, indem Sie **Code herunterladen** auswählen, um den Code für Ihre App zu generieren und herunterzuladen.
 
 ### Ansicht 'App-Liste'
 {: #app_list_view}
@@ -133,7 +127,7 @@ In der Ansicht _App-Liste_ können Sie alle erstellten Apps auflisten. Ausgehend
 von dieser Ansicht können Sie Ihre Apps umbenennen oder löschen. Wenn Sie auf
 einen App-Namen klicken, werden Sie zur Ansicht "App-Details" zurückgeführt.
 
-![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'App-Liste'](images/project_list_screen.png "Ansicht 'App-Liste'") <br> *Ansicht "App-Liste" in der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple*
+![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'App-Liste'](images/project_list_screen.png "Ansicht 'App-Liste'")
 
 Weitere Informationen finden Sie in den [Lernressourcen für die {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 {: tip}

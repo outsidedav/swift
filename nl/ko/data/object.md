@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -38,19 +38,19 @@ Object Storage는 클라우드 컴퓨팅의 기본 컴포넌트이며 Apple 개�
 
 {{site.data.keyword.cos_full}} API는 오브젝트를 읽고 쓰기 위한 REST 기반 API입니다. 애플리케이션을 {{site.data.keyword.cloud_notm}}로 쉽게 마이그레이션하기 위해 S3 API의 서브세트를 지원합니다. 모든 S3 SDK는 {{site.data.keyword.cos_full}}를 사용하기 위해 사용될 수 있습니다. 자세한 정보는 전체 [{{site.data.keyword.cos_short}} API 참조](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)를 참조하십시오.
 
-## 보안
+## 오브젝트 스토리지 보안
 {: #security-cos}
 
 {{site.data.keyword.cos_full_notm}}는 매우 안전합니다. 초기에는 버킷 및 오브젝트 소유자만 작성하는 {{site.data.keyword.cos_full_notm}} 서비스에 액세스할 수 있습니다. 데이터에 액세스하기 위해 사용자 인증도 지원합니다. 버킷 정책과 같은 액세스 제어 메커니즘을 사용하여 선택적으로 사용자 및 애플리케이션에게 권한을 부여하십시오. HTTPS 프로토콜을 사용하여 SSL 엔드포인트를 통해 데이터를 {{site.data.keyword.cos_short}}에 안전하게 전송할 수 있습니다. 추가 보안이 필요한 SSE(Server-Side Encryption) 옵션 또는 SSE-C(Server-Side Encryption with Customer-Provided Keys) 옵션을 사용하여 유휴 상태로 저장된 데이터를 암호화할 수 있습니다. {{site.data.keyword.cos_full_notm}}는 SSE 및 SSE-C 모두에 대한 암호화 기술을 제공합니다. 또는 Cloud Object Storage에 데이터를 저장하기 전에 고유한 암호화 라이브러리를 사용하여 데이터를 암호화할 수 있습니다.
 
 다음 액세스 제어 메커니즘을 사용하여 {{site.data.keyword.cos_full_notm}}의 데이터를 보호할 수 있습니다.
 
-**IAM(Identity and Access Management) 정책**
+### IAM(Identity and Access Management) 정책
 {: #iam-cos}
 
 IAM을 통해 많은 직원이 있는 조직은 하나의 계정으로 여러 명의 사용자를 작성하고 관리할 수 있습니다. IAM 정책을 사용하면 회사는 IAM 사용자에게 {{site.data.keyword.cos_short}} 버킷에 대한 제어를 부여할 수 있습니다.
 
-**ACL(Access Control Lists)**
+### 액세스 제어 목록(ACL)
 {: #acls-cos}
 
 ACL을 사용하면 개별 버킷을 위해 특정 사용자에게 특정 권한(예: READ, WRITE)을 부여할 수 있습니다.
@@ -80,7 +80,7 @@ SSE-C가 {{site.data.keyword.cos_full_notm}}에서 지원되므로 암호화를 
 
 지역과 교차 지역 옵션 중에서 결정하는 경우 오브젝트 저장소의 지리적 위치를 선택하려면 다음 요소를 고려하십시오.
 
-**지리적 위치 고려사항**:
+지리적 위치 고려사항:
 * 중복성을 위해 오퍼레이션에서 원격인 위치.
 * 법적 및 규제 요구사항을 처리할 수 있는 위치.
 * 데이터 액세스 대기 시간 단축.
@@ -96,14 +96,20 @@ SSE-C가 {{site.data.keyword.cos_full_notm}}에서 지원되므로 암호화를 
 ### 샘플 스토리지 클래스
 {: #samples-cos}
 
-**Standard**
-이 서비스는 빈번한 액세스(예: DevOps, 협업 및 조치 컨텐츠 저장소)가 필요한 구조화되지 않은 데이터에 적합합니다.
+- Standard
+  
+  이 서비스는 DevOps, 협업 및 조치 컨텐츠 저장소와 같이 빈번한 액세스가 필요한 구조화되지 않은 데이터에 적합합니다. 
 
-**Vault**
-이 서비스는 드물게 액세스되는 데이터(예: 백업, 아카이브 및 준수 워크로드)가 포함된 워크로드에 적합합니다.
+- Vault
+  
+  이 서비스는 백업, 아카이브 및 규제 준수 워크로드와 같이 드물게 액세스되는 데이터가 포함된 워크로드에 적합합니다. 
 
-**Cold Vault**
-이 배치 옵션은 최소 액세스 요구사항, 히스토리 레코드 규제 준수 및 장기 백업에 이상적입니다.
+- Cold Vault
+  
+  이 배치 옵션은 최소 액세스 요구사항, 히스토리 레코드 규제 준수 및 장기 백업에 이상적입니다. 
 
-**Flex** 다양한 데이터 액세스 요구사항에 맞게 배치하고 예상치 못한 비용 변동으로부터 예산을 보호합니다.
-스토리지 클래스는 버킷 레벨에서 정의됩니다. 사용할 스토리지 클래스로 설정된 버킷을 작성하십시오.
+- Flex
+
+  가변적인 데이터 액세스 요구사항에 맞게 배치하고 예기치 않은 비용 변동으로부터 예산을 보호합니다. 스토리지 클래스는 버킷 레벨에서 정의됩니다. 사용할 스토리지 클래스로 설정된 버킷을 작성합니다. 
+
+

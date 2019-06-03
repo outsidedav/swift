@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-05-21"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -151,31 +151,34 @@ Las herramientas siguientes garantizan que puede instalar los SDK nativos para q
 
 Ahora puede crear, ejecutar y desplegar la aplicación utilizando el {{site.data.keyword.dev_cli_short}}.
 
-1. **Crear**
+### Creación de la app
+{: #swift-build-cli}
 
-  Ahora puede crear la aplicación, que es un requisito previo para ejecutar la aplicación. Utilice el mandato siguiente en la raíz del directorio de la aplicación para crear la app:
-  ```
-  ibmcloud dev build
-  ```
-  {: codeblock}
+Ahora puede crear la aplicación, que es un requisito previo para ejecutar la aplicación. Utilice el mandato siguiente en la raíz del directorio de la aplicación para crear la app:
+```
+ibmcloud dev build
+```
+{: codeblock}
 
-2. **Ejecutar**
+### Ejecución de la app
+{: #swift-run-cli}
 
-  Después de una creación correcta, puede ejecutar la aplicación en un contenedor local con el mandato siguiente:
-  ```
-  ibmcloud dev run
-  ```
-  {: codeblock}
+Después de una creación correcta, puede ejecutar la aplicación en un contenedor local con el mandato siguiente:
+```
+ibmcloud dev run
+```
+{: codeblock}
 
-  Se visualiza un host y un puerto locales para ver la página de destino de la aplicación si el mandato se ejecuta correctamente.
+Se visualiza un host y un puerto locales para ver la página de destino de la aplicación si el mandato se ejecuta correctamente.
 
-3. **Desplegar**
+### Despliegue de la app
+{: #swift-deploy-cli}
 
-  Despliegue la aplicación en el {{site.data.keyword.cloud_notm}} con el mandato `deploy`:
-  ```
-  ibmcloud dev deploy
-  ```
-  {: codeblock}
+Despliegue la aplicación en el {{site.data.keyword.cloud_notm}} con el mandato `deploy`:
+```
+ibmcloud dev deploy
+```
+{: codeblock}
 
 ## Pasos siguientes
 {: #swift-cli-next notoc}

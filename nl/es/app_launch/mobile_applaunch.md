@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -28,26 +28,25 @@ El servicio {{site.data.keyword.engage_short}} define una característica, crea 
 
 Consulte las siguientes características del servicio {{site.data.keyword.engage_short}}:
 
- - **Acelerar el despliegue de características**
+- Acelerar el despliegue de características
 
-    Acelere la entrega de características a su app a través de releases controlados al mitigar riesgos. Publique características a un subconjunto de segmentos de público y realice despliegues más grandes o bien cambie decisiones en función de los comentarios en tiempo real. Separe las presentaciones de una característica del ciclo normal de release.
+  Acelere la entrega de características a su app a través de releases controlados al mitigar riesgos. Publique características a un subconjunto de segmentos de público y realice despliegues más grandes o bien cambie decisiones en función de los comentarios en tiempo real. Separe las presentaciones de una característica del ciclo normal de release.
 
- - **Segmentar el público**
+- Segmentar el público
 
-    Los segmentos de usuario se pueden definir en función de los atributos conductuales, demográficos y contextuales. También puede presentar características a un determinado porcentaje de toda la base de usuarios. Los indicadores clave de rendimiento se pueden definir para cada característica y código en el lado del cliente para medir los resultados.
+  Los segmentos de usuario se pueden definir en función de los atributos conductuales, demográficos y contextuales. También puede presentar características a un determinado porcentaje de toda la base de usuarios. Los indicadores clave de rendimiento se pueden definir para cada característica y código en el lado del cliente para medir los resultados.
 
- - **Adaptar la aplicación en función del contexto**
+- Adaptar la aplicación en función del contexto
 
-    Se puede personalizar el comportamiento de la aplicación, la interfaz de usuario y las notificaciones según los segmentos de público específicos. Por ejemplo, se puede cambiar el fondo de la app en función de la ubicación del usuario. Dicha personalización mejora la fidelización de los usuarios con la aplicación.
+  Se puede personalizar el comportamiento de la aplicación, la interfaz de usuario y las notificaciones según los segmentos de público específicos. Por ejemplo, se puede cambiar el fondo de la app en función de la ubicación del usuario. Dicha personalización mejora la fidelización de los usuarios con la aplicación.
 
- - **Características de pruebas A / B**
+- Características de pruebas A / B
 
-    Gane confianza experimentando. Puede comparar las dos variantes de las características de aplicación poniéndolas en funcionamiento a la vez. Podrá tomar decisiones a partir de datos concretos.
+  Gane confianza experimentando. Puede comparar las dos variantes de las características de aplicación poniéndolas en funcionamiento a la vez. Podrá tomar decisiones a partir de datos concretos.
 
- - **Incremente la fidelización del cliente**
+- Incremente la fidelización del cliente
 
-    Promueva la fidelización del usuario. Las notificaciones se pueden destinar a todos los usuarios de la aplicación o a un conjunto específico de usuarios y dispositivos. Se puede planificar el envío de mensajes. La interacción del usuario desempeña un papel vital en las relaciones con los clientes.
-
+  Promueva la fidelización del usuario. Las notificaciones se pueden destinar a todos los usuarios de la aplicación o a un conjunto específico de usuarios y dispositivos. Se puede planificar el envío de mensajes. La interacción del usuario desempeña un papel vital en las relaciones con los clientes.
 
 ## Antes de empezar
 {: #prereqs-applaunch}

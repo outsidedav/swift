@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -28,26 +28,25 @@ O serviço {{site.data.keyword.engage_short}} define um recurso, cria um públic
 
 Consulte os seguintes recursos do serviço {{site.data.keyword.engage_short}}:
 
- - **Acelerar o recurso de implementação **
+- Acelerar o recurso de implementação
 
-    Acelerar a entrega de recursos para seu app por meio de liberação controlada, minimizando os riscos. Libere recursos para um subconjunto de segmentos de público e tome decisões maiores de lançamento ou de recuperação com base em feedback em tempo real. Separe os lançamentos de recursos de ciclos de liberação regulares.
+  Acelerar a entrega de recursos para seu app por meio de liberação controlada, minimizando os riscos. Libere recursos para um subconjunto de segmentos de público e tome decisões maiores de lançamento ou de recuperação com base em feedback em tempo real. Separe os lançamentos de recursos de ciclos de liberação regulares.
 
- - **Segmento de Público **
+- Segmentar público
 
-    Os segmentos de usuário podem ser definidos com base em atributos demográficos, contextuais e comportamentais. Também é possível lançar recursos para determinada porcentagem da base do usuário inteira. Os principais indicadores de desempenho podem ser definidos para cada recurso e código do lado do cliente para medir os resultados.
+  Os segmentos de usuário podem ser definidos com base em atributos demográficos, contextuais e comportamentais. Também é possível lançar recursos para determinada porcentagem da base do usuário inteira. Os principais indicadores de desempenho podem ser definidos para cada recurso e código do lado do cliente para medir os resultados.
 
- - **Adaptar com base no contexto do aplicativo **
+- Adaptar com base no contexto do aplicativo
 
-    O comportamento do aplicativo, a interface com o usuário e as notificações podem ser customizados para segmentos de público específicos. Por exemplo, o plano de fundo do app pode mudar com base na localização do usuário. Essa personalização do usuário resulta em maior engajamento de usuários com o aplicativo.
+  O comportamento do aplicativo, a interface com o usuário e as notificações podem ser customizados para segmentos de público específicos. Por exemplo, o plano de fundo do app pode mudar com base na localização do usuário. Essa personalização do usuário resulta em maior engajamento de usuários com o aplicativo.
 
- - **A / B recursos de teste **
+- A / B recursos de teste
 
-    Obtenha confiança por experimentação. Duas variantes de recursos de aplicativos podem ser comparadas entre si apresentando ambas ao mesmo tempo. As decisões podem ser tomadas com base em dados permanentes.
+  Obtenha confiança por experimentação. Duas variantes de recursos de aplicativos podem ser comparadas entre si apresentando ambas ao mesmo tempo. As decisões podem ser tomadas com base em dados permanentes.
 
- - **Aumentar Engajamento do Cliente **
+- Aumentar o engajamento do cliente**
 
-    Promover o engajamento do usuário. As notificações podem ser destinadas a todos os usuários do aplicativo ou a um conjunto específico de usuários e dispositivos. Um planejamento mensagem pode ser definido. A interação com o usuário reproduz um papel vital nos relacionamentos do cliente.
-
+  Promover o engajamento do usuário. As notificações podem ser destinadas a todos os usuários do aplicativo ou a um conjunto específico de usuários e dispositivos. Um planejamento mensagem pode ser definido. A interação com o usuário reproduz um papel vital nos relacionamentos do cliente.
 
 ## Antes de começar
 {: #prereqs-applaunch}

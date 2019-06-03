@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -38,19 +38,19 @@ Quando crei un bucket, devi selezionare un livello di resilienza (interregionale
 
 L'API {{site.data.keyword.cos_full}} è un'API basata su REST per la lettura e la scrittura di oggetti. Supporta un sottoinsieme dell'API S3 per una facile migrazione delle applicazioni a {{site.data.keyword.cloud_notm}}. Può essere utilizzato qualsiasi SDK S3 per utilizzare {{site.data.keyword.cos_full}}. Per ulteriori informazioni, vedi la [Guida di riferimento API {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api) completa
 
-## Sicurezza
+## Protezione dell'archivio dell'oggetto 
 {: #security-cos}
 
 {{site.data.keyword.cos_full_notm}} è altamente sicuro. Inizialmente, solo i proprietari di bucket e oggetto hanno originariamente accesso al servizio {{site.data.keyword.cos_full_notm}} da essi creato. Supporta inoltre l'autenticazione utente per accedere ai dati. Utilizza i meccanismi di controllo degli accessi, come ad esempio le politiche di bucket, per concedere in modo selettivo le autorizzazioni agli utenti e alle applicazioni. Puoi trasferire in modo sicuro i dati a {{site.data.keyword.cos_short}} tramite gli endpoint SSL utilizzando il protocollo HTTPS. Se ti serve maggiore sicurezza, puoi utilizzare l'opzione SSE (Server-Side Encryption) oppure l'opzione SSE-C (Server-Side Encryption with Customer-Provided Keys) per crittografare i dati archiviati inattivi. {{site.data.keyword.cos_full_notm}} fornisce la tecnologia di codifica sia per SSE che per SSE-C. In alternativa, puoi utilizzare le tue librerie di crittografia per crittografare i dati prima di archiviarli in Cloud Object Storage.
 
 Puoi utilizzare i seguenti meccanismi di controllo accessi per proteggere i tuoi dati in {{site.data.keyword.cos_full_notm}}.
 
-**Politiche IAM (Identity and Access Management)**
+### Politiche IAM (Identity and Access Management) 
 {: #iam-cos}
 
 IAM consente alle organizzazioni con più dipendenti di creare e gestire più utenti con un singolo account. Con le politiche IAM, le aziende possono concedere agli utenti IAM il controllo dei loro bucket {{site.data.keyword.cos_short}}.
 
-**ACL (Access Control List)**
+### ACL (Access Control List) 
 {: #acls-cos}
 
 Con gli ACL, puoi concedere delle specifiche autorizzazioni (ad esempio READ, WRITE), a specifici utenti per un singolo bucket.
@@ -80,7 +80,7 @@ Puoi utilizzare {{site.data.keyword.cos_full_notm}} da qualsiasi parte del mondo
 
 Considera i seguenti fattori per selezionare l'ubicazione geografica del tuo archivio oggetti quando stai decidendo tra l'opzione regionale e quella interregionale.
 
-**Considerazioni sull'ubicazione geografica**:
+Considerazioni sull'ubicazione geografica: 
 * Un'ubicazione che sia remota rispetto alle tue operazioni per una ridondanza.
 * Un'ubicazione per rispondere a requisiti legali e normativi.
 * Riduci le latenze di accesso ai dati
@@ -96,14 +96,20 @@ Ulteriori informazioni sui prezzi sono disponibili dalla [documentazione relativ
 ### Classi di archiviazione di esempio
 {: #samples-cos}
 
-**Standard**
-Questo servizio è per i dati non strutturati che richiedono un accesso frequente, come ad esempio DevOps, i repository di contenuto di azione e collaborazione.
+- Standard
+  
+  Questo servizio è per i dati non strutturati che richiedono un accesso frequente, come ad esempio DevOps, i repository di contenuto di azione e collaborazione. 
 
-**Vault**
-Questo servizio è per i carichi di lavoro con dati a cui si accede poco di frequente, come i carichi di lavoro di backup, archivio e conformità.
+- Vault
+  
+  Questo servizio è per i carichi di lavoro con dati a cui si accede poco di frequente, come i carichi di lavoro di backup, archivio e conformità. 
 
-**Cold Vault**
-Questa opzione di distribuzione è ideale per i requisiti di accesso minimi, la conformità dei record cronologici e il backup a lungo termine.
+- Cold Vault
+  
+  Questa opzione di distribuzione è ideale per i requisiti di accesso minimi, la conformità dei record cronologici e il backup a lungo termine. 
 
-**Flex** distribuisci per requisiti di accesso ai dati variabili e proteggi il tuo budget da fluttuazioni dei costi imprevisti.
-Le classi di archiviazione sono definite a livello di bucket. Crea un bucket che è impostato sulla classe di archiviazione che vuoi utilizzare.
+- Flex
+
+  Distribuisci per requisiti di accesso ai dati variabili e proteggi il tuo budget da fluttuazioni dei costi imprevisti. Le classi di archiviazione sono definite a livello di bucket. Crea un bucket che è impostato sulla classe di archiviazione che vuoi utilizzare.
+
+

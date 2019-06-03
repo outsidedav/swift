@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-05-21"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -181,36 +181,39 @@ Jetzt können Sie Ihre Anwendung mit
 {{site.data.keyword.dev_cli_short}} erstellen, ausführen und
 bereitstellen.
 
-1. **Erstellung**
+### App erstellen
+{: #swift-build-cli}
 
-  Sie können jetzt Ihre Anwendung erstellen; dies ist eine Voraussetzung
+Sie können jetzt Ihre Anwendung erstellen; dies ist eine Voraussetzung
 für die Ausführung der Anwendung. Verwenden Sie den folgenden Befehl im
 Stammverzeichnis des Anwendungsverzeichnisses, um Ihre App zu erstellen:
-  ```
-  ibmcloud dev build
-  ```
-  {: codeblock}
+```
+ibmcloud dev build
+```
+{: codeblock}
 
-2. **Ausführung**
+### App ausführen
+{: #swift-run-cli}
 
-  Nach einer erfolgreichen Erstellung können Sie Ihre Anwendung mit dem
+Nach einer erfolgreichen Erstellung können Sie Ihre Anwendung mit dem
 folgenden Befehl in einem lokalen Container ausführen:
-  ```
-  ibmcloud dev run
-  ```
-  {: codeblock}
+```
+ibmcloud dev run
+```
+{: codeblock}
 
-  Wenn der Befehl erfolgreich ausgeführt wird, werden ein lokaler Host
+Wenn der Befehl erfolgreich ausgeführt wird, werden ein lokaler Host
 und ein lokaler Port zum Anzeigen der Landing-Page Ihrer Anwendung angezeigt.
 
-3. **Bereitstellung**
+### App bereitstellen
+{: #swift-deploy-cli}
 
-  Stellen Sie Ihre Anwendung in {{site.data.keyword.cloud_notm}}
+Stellen Sie Ihre Anwendung in {{site.data.keyword.cloud_notm}}
 mit dem Befehl `deploy` bereit:
-  ```
-  ibmcloud dev deploy
-  ```
-  {: codeblock}
+```
+ibmcloud dev deploy
+```
+{: codeblock}
 
 ## Nächste Schritte
 {: #swift-cli-next notoc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -39,42 +39,41 @@ Kundenprojekte für unterschiedliche Kategorien Ihrer App-Benutzer zu erstellen.
 
 Betrachten Sie die folgenden Funktionen des {{site.data.keyword.engage_short}}-Service:
 
- - **Beschleunigte Featurebereitstellung**
+- Beschleunigte Featurebereitstellung
 
-    Die Bereitstellung von Features für Ihre App wird durch
+  Die Bereitstellung von Features für Ihre App wird durch
 kontrollierte Releases beschleunigt, die Risiken mindern. Wenn Sie Features für eine Teilmenge von Zielgruppensegmenten freigeben, können Sie größere Rollout- oder Rollback-Entscheidungen auf der Basis von Echtzeitfeedbacks treffen. Sie können Feature-Rollouts von regulären Releasezyklen abtrennen.
 
- - **Zielgruppensegmentierung**
+- Zielgruppensegmente
 
-    Sie können Benutzersegmente definieren, die auf demografischen,
+  Sie können Benutzersegmente definieren, die auf demografischen,
 kontextorientierten und verhaltensbezogenen Attributen basieren. Sie können Funktionen auch nur auf einem bestimmten Prozentsatz der gesamten Benutzerbasis implementieren. Für jedes Feature und jeden clientseitigen Code können
 KPIs (Key Performance Indicator, wesentlicher Leistungsindikator) definiert
 werden, um die Ergebnisse zu messen.
 
- - **Auf Kontext basierende Anwendungsanpassung**
+- Auf Kontext basierende Anwendungsanpassung
 
-    Anwendungsverhalten, Benutzerschnittstelle und Benachrichtigungen
+  Anwendungsverhalten, Benutzerschnittstelle und Benachrichtigungen
 können für bestimmte Zielgruppensegmente angepasst werden. Beispielsweise kann
 ein App-Hintergrund je nach Benutzerstandort geändert werden. Diese
 Benutzerpersonalisierung führt zu einer stärkeren Bindung der Benutzer in
 Bezug auf die
 Anwendung.
 
- - **A/B-Testfeatures**
+- A/B-Testfeatures
 
-    Verlässlichkeit durch Experimente: Sie können zwei Varianten von
+  Verlässlichkeit durch Experimente: Sie können zwei Varianten von
 Anwendungsfeatures miteinander vergleichen, indem Sie sie gleichzeitig
 implementieren. Ihre Entscheidungen können Sie aufgrund von realen Fakten
 treffen.
 
- - **Erhöhung der Kundenbindung**
+- Erhöhung der Kundenbindung**
 
-    Sie können die Kundenbindung fördern: Benachrichtigungen können
+  Sie können die Kundenbindung fördern: Benachrichtigungen können
 sich an alle Anwendungsbenutzer oder an eine bestimmte Gruppe von Benutzern und
 Geräten richten. Sie haben die Möglichkeit, einen Zeitplan für Nachrichten zu
 definieren. Die Benutzerinteraktion spielt eine wesentliche Rolle bei
 Kundenbeziehungen.
-
 
 ## Vorbereitende Schritte
 {: #prereqs-applaunch}

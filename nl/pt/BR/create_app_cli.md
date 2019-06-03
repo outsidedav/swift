@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-05-21"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -151,32 +151,34 @@ administrador**.
 
 Agora é possível construir, executar e implementar seu aplicativo usando o {{site.data.keyword.dev_cli_short}}.
 
-1. **Construção**
+### Construindo seu app
+{: #swift-build-cli}
 
-  Agora é possível construir seu aplicativo, que é um pré-requisito para executá-lo. Use o comando a seguir na raiz do diretório de aplicativo para construir o seu app:
-  ```
-  ibmcloud dev build
-  ```
-  {: codeblock}
+Agora é possível construir seu aplicativo, que é um pré-requisito para executá-lo. Use o comando a seguir na raiz do diretório de aplicativo para construir o seu app:
+```
+ibmcloud dev build
+```
+{: codeblock}
 
-2. **Executar
-**
+### Executando seu app
+{: #swift-run-cli}
 
-  Após uma construção bem-sucedida, é possível executar o aplicativo em um contêiner local com o comando a seguir:
-  ```
-  ibmcloud dev run
-  ```
-  {: codeblock}
+Após uma construção bem-sucedida, é possível executar o aplicativo em um contêiner local com o comando a seguir:
+```
+ibmcloud dev run
+```
+{: codeblock}
 
-  Um host e uma porta locais para visualizar a página de entrada do seu aplicativo serão exibidos se o comando for executado com êxito.
+Um host e uma porta locais para visualizar a página de entrada do seu aplicativo serão exibidos se o comando for executado com êxito.
 
-3. ** Implementar **
+### Implementando seu app
+{: #swift-deploy-cli}
 
-  Implemente seu aplicativo no {{site.data.keyword.cloud_notm}} com o comando `deploy`:
-  ```
-  ibmcloud dev deploy
-  ```
-  {: codeblock}
+Implemente seu aplicativo no {{site.data.keyword.cloud_notm}} com o comando `deploy`:
+```
+ibmcloud dev deploy
+```
+{: codeblock}
 
 ## Próximas etapas
 {: #swift-cli-next notoc}

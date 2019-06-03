@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-05-21"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -36,22 +36,22 @@ Quando você criar um depósito, deverá selecionar um nível de resiliência (r
 ## API
 {: #api-cos}
 
-A API do {{site.data.keyword.cos_full}} é uma API baseada em REST para objetos de leitura e composição. Ela suporta um subconjunto da API do S3 para migração fácil de aplicativos para o {{site.data.keyword.cloud_notm}}. Qualquer S3 SDK pode ser usado para usar o {{site.data.keyword.cos_full}}. Para obter mais informações, consulte a [Referência de API integral do {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)
+A API do {{site.data.keyword.cos_full}} é uma API baseada em REST para objetos de leitura e composição. Ela suporta um subconjunto da API do S3 para migração fácil de aplicativos para o {{site.data.keyword.cloud_notm}}. Qualquer S3 SDK pode ser usado para usar o {{site.data.keyword.cos_full}}. Para obter mais informações, consulte a [Referência de API do {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api) completa.
 
-## Segurança
+## Protegendo o armazenamento de objetos
 {: #security-cos}
 
 {{site.data.keyword.cos_full_notm}}  é altamente seguro. Inicialmente, apenas os proprietários do depósito e do objeto originalmente têm acesso ao serviço {{site.data.keyword.cos_full_notm}} que eles criam. Ele também suporta a autenticação do usuário para acessar os dados. Use mecanismos de controle de acesso, como políticas do depósito, para conceder permissões seletivamente a usuários e aplicativos. É possível transferir com segurança seus dados para o {{site.data.keyword.cos_short}} por meio de terminais SSL usando o protocolo HTTPS. Se precisar de segurança extra, será possível usar a opção Server-Side Encryption (SSE) ou a opção Server-Side Encryption with Customer-Provided Keys (SSE-C) para criptografar dados armazenados em repouso. O {{site.data.keyword.cos_full_notm}} fornece a tecnologia de criptografia para SSE e SSE-C. Como alternativa, é possível usar suas próprias bibliotecas de criptografia para criptografar dados antes de armazená-los no Cloud Object Storage.
 
 É possível usar os mecanismos de controle de acesso a seguir para proteger seus dados no {{site.data.keyword.cos_full_notm}}.
 
-**Políticas do Identity and Access Management (IAM)**
+### Políticas do Identity and Access Management (IAM)
 {: #iam-cos}
 
 O IAM permite que as organizações com vários funcionários criem e gerenciem vários usuários
 sob uma única conta. Com políticas do IAM, as empresas podem conceder aos usuários do IAM controle para seus depósitos do {{site.data.keyword.cos_short}}.
 
-**Listas de controle acesso (ACLs)**
+### ACLs (Listas de Controle de Acesso)
 {: #acls-cos}
 
 Com as ACLs, é possível conceder permissões específicas (por exemplo, READ, WRITE) para usuários específicos para um depósito individual.
@@ -81,7 +81,7 @@ A resiliência regional é para baixa latência e seus dados são distribuídos 
 
 Considere os fatores a seguir para selecionar a localização geográfica de seu armazenamento de objeto quando estiver decidindo entre opções regionais e de região cruzada.
 
-**Considerações sobre localização geográfica**:
+Considerações de localização geográfica:
 * Um local que é remoto de suas operações para redundância.
 * Um local para tratar os requisitos legais e regulamentares.
 * Reduza as latências de acesso a dados.
@@ -92,19 +92,25 @@ Considere os fatores a seguir para selecionar a localização geográfica de seu
 
 Dependendo de seu caso de uso, é possível reduzir custos selecionando um plano de serviço que atenda às suas necessidades. As operações de arquivamento que envolvem o acesso mínimo ao armazenamento de objeto não precisam da velocidade e durabilidade de um objeto acessado frequentemente, e essa distinção é refletida no suporte à Classe de armazenamento e no plano de precificação para seus aplicativos. As classes de armazenamento são definidas no nível de depósito, portanto, é possível usar uma combinação de planos para atender às suas necessidades. Crie um depósito que esteja configurado para a classe de armazenamento que você deseja usar.
 
-Mais informações sobre a precificação estão disponíveis na documentação do [{{site.data.keyword.cos_short}} Storage Class](/docs/services/cloud-object-storage/help?topic=cloud-object-storage-billing#ibm-cos-pricing).
+Mais informações sobre a precificação estão disponíveis por meio da documentação [Classe de armazenamento do {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/help?topic=cloud-object-storage-billing#ibm-cos-pricing).
 
 ### Classes de Armazenamento de Amostra
 {: #samples-cos}
 
-**Padrão**
-Esse serviço é para dados não estruturados que requerem acesso frequente, como o DevOps, colaboração e repositórios de conteúdo de ação.
+- Norma
+  
+  Esse serviço é para dados não estruturados que requerem acesso frequente, como o DevOps, colaboração e repositórios de conteúdo de ação.
 
-**Área segura**
-Esse serviço é para cargas de trabalho com dados acessados com pouca frequência, como cargas de trabalho de backup, de archive e de conformidade.
+- Segurança
+  
+  Esse serviço é para cargas de trabalho com dados acessados com pouca frequência, como cargas de trabalho de backup, de archive e de conformidade.
 
-**Área segura fria**
-Essa opção de implementação é ideal para requisitos de acesso mínimos, conformidade de registros históricos e backup de longo prazo.
+- Área Segura-fria
+  
+  Essa ação de implementação é ideal para requisitos de acesso mínimos, conformidade de registros históricos e backup de longo prazo.
 
-**Flex** Implementação para variar os requisitos de acesso a dados e proteger seu orçamento de flutuações de custo inesperadas.
-As classes de armazenamento são definidas no nível de depósito. Crie um depósito que esteja configurado para a classe de armazenamento que você deseja usar.
+- Flexível
+
+  Implemente para vários requisitos de acesso a dados e proteja seu orçamento contra flutuações de custo inesperadas. As classes de armazenamento são definidas no nível de depósito. Crie um depósito que esteja configurado para a classe de armazenamento que você deseja usar.
+
+
