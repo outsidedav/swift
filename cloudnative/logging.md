@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-05"
 
 keywords: swift logging, ios logging, debug swift, add logging swift, heliumlogger swift, loggerapi swift, logger swift, starter kit swift logger
 
@@ -62,7 +62,7 @@ Swift apps that are created by using the {{site.data.keyword.cloud_notm}} App Se
 ```
 {: screen}
 
-These messages are found in `stdout` locally, or in the logs for [CloudFoundry](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs) and [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") deployments, which are accessed by `ibmcloud app logs --recent <APP_NAME>` and `kubectl logs <deployment name>`.
+These messages are found in `stdout` (standard output) locally, or in the logs for Cloud Foundry and Kubernetes deployments, which are accessed by `[ibmcloud app logs --recent <APP_NAME>]`(/docs/cli/reference?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_logs) and `[kubectl logs <deployment name>`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 
 In the `/Sources/AppName/main.swift` file, you can see the following code:
 ```swift
@@ -77,7 +77,7 @@ The log level is explicitly set to `.info` to log informational level messages l
 {: #next-logging notoc}
 
 Learn more about viewing the logs in each of your deployment targets:
-* [Kubernetes Logs](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")
+* [Kubernetes Logs](https://kubernetes.io/docs/concepts/cluster-administration/logging/#basic-logging-in-kubernetes){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")
 * [Cloud Foundry Logs](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_cli)
 * [Cloud Foundry Enterprise Environment - Auditing and logging](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
 * [{{site.data.keyword.openwhisk}} Logs & Monitoring](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
