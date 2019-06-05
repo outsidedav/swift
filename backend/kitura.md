@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-21"
+lastupdated: "2019-06-05"
 
 keywords: foodtrackerbackend, kitura swift, urlsession sdk, alamofire, restkit, kiturakit, kitura, xcode kitura, meals swift, rest api kitura, rest api swift
 
@@ -39,7 +39,7 @@ First, be sure that you have the following prerequisites ready to go:
 ## Step 1. Creating a Kitura app by using the browser
 {: #create_kitura}
 
-1. Go to the Starter Kits section of the Apple Development Console. Select a pre-defined starter, such as the "Swift for Backend for Frontend API" or create a custom app by using the **Create app** tile. Click **Create app**.
+1. Go to the Starter Kits section of the Apple Development Console. Select a pre-defined starter, such as the **Swift for Backend for Frontend API**, or create a custom app by using the **Create app** tile. Click **Create app**.
 
 2. Give your app a name and select where you want your app to be deployed. If you're unsure where the application is to be deployed, use the default values, as they can be changed later.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-06-05"
 
 keywords: watson swift, swift developer, apple development, ios oveview, developer console, swift, apple console
 
@@ -43,7 +43,7 @@ The {{site.data.keyword.cloud_notm}} platform offers many more capabilities and 
 ## Overview of {{site.data.keyword.cloud_notm}} capabilities
 {: #capabilities}
 
-The {{site.data.keyword.cloud_notm}} developer console helps you start building apps the "right" way in minutes. Essential elements of the developer console are:
+The {{site.data.keyword.cloud_notm}} developer console helps you start building apps the "correct" way in minutes. Essential elements of the developer console are:
 
 * A set of topic or channel-centric developer consoles found across the {{site.data.keyword.cloud_notm}} platform.
 * Specific use-case starter kits that produce production-ready starter apps in various languages and architectural patterns.
