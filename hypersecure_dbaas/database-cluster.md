@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-06-05"
 
 keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
 
@@ -119,34 +119,16 @@ https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project direc
   ```
   {: codeblock}
 
-  Where:
-  <table>
-  <tr>
-    <th> Parameter </th>
-    <th> Description </th>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_ID</em>&gt; </td>
-    <td> Is the user ID of the database administrator as specified in [Creating a database cluster](#create_dbcluster).
-  </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_pwd</em>&gt; </td>
-    <td> Is the user ID of the administrator password as specified in [Creating a database cluster](#create_dbcluster). </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>Hostname_i</em>&gt; </td>
-    <td> Is a database replica <em>i</em> (<em>i</em>=1,2,3) as returned in [Creating a database cluster](create_dbcluster). </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>PortNumber_i</em>&gt; </td>
-    <td> Is a port number <em>i</em> (<em>i</em>=1,2,3) as returned in [Creating a database cluster](#create_dbcluster). </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>CA_file</em>&gt; </td>
-    <td> Is the file name of the downloaded CA file. During deployment, it is copied to the directory `/swift-project`.</td>
-  </tr>
-  </table>
+### Database parameter descriptions
+{: #db-parameter-descriptions}
+
+See the following database parameter descriptions:
+
+* `admin_ID` - The user ID of the database administrator as specified in [Creating a database cluster](#create_dbcluster).
+* `admin_pwd` - The user ID of the administrator password as specified in [Creating a database cluster](#create_dbcluster).
+* `Hostname_i` - A database replica *i* (*i*=1,2,3) as returned in [Creating a database cluster](create_dbcluster).
+* `PortNumber_i` - A port number *i* (*i*=1,2,3) as returned in [Creating a database cluster](#create_dbcluster).
+* `CA_file` - Is the file name of the downloaded CA file. During deployment, it is copied to the directory `/swift-project`.
 
 4. Edit the `Package.swift` file to add package dependencies for the use of the
 MongoKitten SDK.

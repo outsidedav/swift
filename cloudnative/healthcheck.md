@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-05"
 
 keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift, swift health check
 
@@ -50,6 +50,7 @@ The following table provides guidance on the responses that readiness, liveness,
 | Stopping | 503 - Unavailable           | 200 - OK                   | 503 - Unavailable         |
 | Down     | 503 - Unavailable           | 503 - Unavailable          | 503 - Unavailable         |
 | Errored  | 500 - Server Error          | 500 - Server Error         | 500 - Server Error        |
+{: caption="Table 1. HTTP status codes." caption-side="bottom"}
 
 ## Adding a health check to an existing Swift app
 {: #existing-app}
