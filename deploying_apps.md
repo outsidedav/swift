@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: deploy swift app, deploy swift, serverless swift, deploy swift cloud foundry, swift kubernetes, swift virtual server
 
@@ -59,4 +59,4 @@ If your account has access to {{site.data.keyword.cfee_full_notm}}, you can sele
 
 A virtual service delivers a higher degree of transparency, predictability, and automation for all workload types. Terraform is used for building, changing, and versioning your infrastructure safely and efficiently.
 
-For more information, see [Deploying to a Virtual Server](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy).
+For more information, see [Deploying to a Virtual Server](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server).

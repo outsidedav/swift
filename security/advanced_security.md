@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: swift security, add security swift, crypto swift, hyper protect swift, ios hyper protect, dbaas swift, swift key management, swift advanced security
 
@@ -24,7 +24,7 @@ subcollection: swift
 Swift Developers can easily use advanced security services that {{site.data.keyword.cloud}} offers to protect their keys and data at rest, in use, or in transit at the industry highest security level.
 {: shortdesc}
 
-As an easy approach, you can directly use the {{site.data.keyword.cloud_notm}} HyperSecure Platform Services for all advanced security services in {{site.data.keyword.cloud}}. For more information, see [Getting Started with {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform/index.html#getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits).
+As an easy approach, you can directly use the {{site.data.keyword.cloud_notm}} HyperSecure Platform Services for all advanced security services in {{site.data.keyword.cloud}}. For more information, see [Getting Started with {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform?topic=hypersecure-platform-getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits).
 
 ## Using {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}
 {: #security-swift}
@@ -75,7 +75,7 @@ To learn more about {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS, see [G
 
 {{site.data.keyword.hscontainers}} delivers powerful tools by combining Docker and Kubernetes technologies, an intuitive user experience, and built-in security and isolation to automate the deployment, operation, scaling, and monitoring of containerized apps in a cluster of compute hosts.
 
-{{site.data.keyword.hscontainers}} are only available to sponsored users. If you expect dedicated security support, register as a sponsored user with the [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") to deploy your application to the {{site.data.keyword.hscontainers}} cluster.
+{{site.data.keyword.hscontainers}} are only available to sponsored users. If you expect dedicated security support, register as a sponsored user with the [IBM Z Client Feedback Program](https://epwt-www.mybluemix.net/software/support/trial/cst/programwebsite.wss?siteId=32&tabId=71&w=q2wxm0bx&p=e3c687gujl){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") to deploy your application to the {{site.data.keyword.hscontainers}} cluster.
 {: tip}
 
-Before you become a sponsored user, you can use {{site.data.keyword.containershort_notm}} to secure your application. For more information, see [Getting started with {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-container_index#container_index).
+Before you become a sponsored user, you can use {{site.data.keyword.containershort_notm}} to secure your application. For more information, see [Getting started with {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-getting-started).

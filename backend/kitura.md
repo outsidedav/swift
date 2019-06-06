@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-05"
+lastupdated: "2019-06-06"
 
 keywords: foodtrackerbackend, kitura swift, urlsession sdk, alamofire, restkit, kiturakit, kitura, xcode kitura, meals swift, rest api kitura, rest api swift
 
@@ -20,7 +20,7 @@ subcollection: swift
 # Creating an app with Kitura
 {: #kitura}
 
-[Kitura](http://www.kitura.io){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") is a server-side Swift framework for building iOS backends and web applications. This framework creates REST APIs that can be invoked from the iOS application by using URLSession SDKs such as Alamofire, RestKit, or the [KituraKit](https://github.com/ibm-swift/kiturakit){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") SDK provided by Kitura itself.
+[Kitura](https://www.kitura.io){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") is a server-side Swift framework for building iOS backends and web applications. This framework creates REST APIs that can be invoked from the iOS application by using URLSession SDKs such as Alamofire, RestKit, or the [KituraKit](https://github.com/ibm-swift/kiturakit){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") SDK provided by Kitura itself.
 
 Kitura is able to integrate with all of the services and features that are provided by {{site.data.keyword.cloud}}, including {{site.data.keyword.appid_short}}, {{site.data.keyword.mobilepushshort}}, and {{site.data.keyword.mobileanalytics_short}}, as well as databases, machine learning, and other services. Kitura can then be deployed and automatically scaled by using either of the Cloud Foundry or Docker (Kubernetes-based) platforms in {{site.data.keyword.cloud}}.
 

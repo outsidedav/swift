@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-05"
+lastupdated: "2019-06-06"
 
 keywords: watson swift, swift developer, apple development, ios oveview, developer console, swift, apple console
 
@@ -32,11 +32,11 @@ The developer capabilities that are built in to {{site.data.keyword.cloud_notm}}
 
 * The [**{{site.data.keyword.cloud_notm}} developer console**](/docs/apps/tutorials?topic=creating-apps-tutorial-getting-started) includes a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and Cloud Native developers to start building production-ready apps. It includes automatic provisioning of services and "one-click" deployment to a DevOps toolchain.
 
-* [**IBM Watson Data Platform**](https://dataplatform.ibm.com){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") makes it simple to assemble data collections, refine the data, then visualize, discover insights, and build models for use in your cognitive app.
+* [**IBM Watson Data Platform**](https://dataplatform.cloud.ibm.com/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") makes it simple to assemble data collections, refine the data, then visualize, discover insights, and build models for use in your cognitive app.
 
 * [**IBM Streaming Analytics**](/docs/services/StreamingAnalytics?topic=StreamingAnalytics-gettingstarted#gettingstarted) helps wrangle and analyze data streams. It is an advanced analytic platform that you can use to ingest, analyze, and correlate information as it arrives from different types of data sources in real time.
 
-* The [**{{site.data.keyword.cloud_notm}} Continuous Delivery service**](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-cd_getting_started#cd_getting_started) sets up a devops toolchain to automate continuous delivery of your app. You can easily enhance the toolchain to include management functions like monitoring, logging, tracking, and alerting. You can even apply advanced machine learning to your toolchain by using the [DevOps Insights service](/docs/services/DevOpsInsights?topic=DevOpsInsights-getting-started#getting-started).
+* The [**{{site.data.keyword.cloud_notm}} Continuous Delivery service**](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started) sets up a devops toolchain to automate continuous delivery of your app. You can easily enhance the toolchain to include management functions like monitoring, logging, tracking, and alerting. You can even apply advanced machine learning to your toolchain by using the [DevOps Insights service](/docs/services/DevOpsInsights?topic=DevOpsInsights-getting-started#getting-started).
 
 The {{site.data.keyword.cloud_notm}} platform offers many more capabilities and can be used as your comprehensive development platform.
 
