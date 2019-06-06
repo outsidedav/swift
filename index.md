@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: getting started swift, custom app, create app swift, stater kit swift, apple app swift, swift dependency, ios development
 
@@ -19,7 +19,7 @@ subcollection: swift
 {:note: .note}
 
 # Getting started tutorial
-{: #getting_started_swift}
+{: #getting-started}
 
 {{site.data.keyword.cloud}} offers solutions and services to enable Swift Developers to build applications that are integrated with the security, AI, and value that your customers demand. With a broad portfolio of offerings and SDKs, you can use these services, and bring cutting-edge applications to market quickly. This Swift programming explains how to add services to a new or existing Swift application, whether it's an iOS client or server-side Swift.
 {: shortdesc}
@@ -128,7 +128,7 @@ To download the code, click **Download code** under `Apps` > `Your App`. The dow
 ## Step 6. Build out your database operations
 {: #build_ops-swift}
 
-Now that you have a working database connection and SDK set up, you can begin building out the basic [create, read, update, and destroy operations](/docs/swift/data?topic=swift-cloudant#cloudant) for your particular use case.
+Now that you have a working database connection and SDK set up, you can begin building out the basic [create, read, update, and destroy operations](/docs/swift/data?topic=swift-cloudant) for your particular use case.
 
 ## Next steps
 {: #next-swift}
@@ -138,10 +138,10 @@ Now that you have a working database connection and SDK set up, you can begin bu
 
 You can add more services to your iOS app directly from the web console, such as the following commonly used services:
 
-* [Adding the Push Notifications service](/docs/services/mobilepush?topic=mobile-pushnotification-gettingstartedtemplate#gettingstartedtemplate)
-* [Adding user authentication with App ID](/docs/services/appid?topic=appid-getting-started#getting-started)
+* [Adding the Push Notifications service](/docs/services/mobilepush?topic=mobile-pushnotification-gettingstartedtemplate)
+* [Adding user authentication with App ID](/docs/services/appid?topic=appid-getting-started)
 
 ### Using {{site.data.keyword.cloud_notm}} developer tools
 {: #devtools-swift}
 
-You can also learn how to develop Swift apps by using the [{{site.data.keyword.cloud_notm}} Developer tools](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli), which offer a command line approach to creating, developing, and deploying complete web, mobile, and microservice applications.
+You can also learn how to develop Swift apps by using the [{{site.data.keyword.cloud_notm}} Developer tools](/docs/cli?topic=cloud-cli-ibmcloud-cli), which offer a command line approach to creating, developing, and deploying complete web, mobile, and microservice applications.
