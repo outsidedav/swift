@@ -74,5 +74,5 @@ Programming with Swift on IBM Cloud
     {: .navgroup id="help"}
     [dW Answers](https://developer.ibm.com/answers/topics/swift.html)
     [StackOverflow](https://stackoverflow.com/search?q=iOS+ibm-cloud)
-    [Swift@IBM Slack](https://swift-at-ibm-slack.mybluemix.net)
+    [Swift@IBM Slack](https://swift-at-ibm.slack.com)
     {: .navgroup-end}
