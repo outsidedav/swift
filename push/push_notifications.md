@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-07"
 
 keywords: push swift, swift notifications, push notifications swift, sending push swift, configure service instance swift, provider credentials swift
 
@@ -26,7 +26,7 @@ Enhance your Swift app by using {{site.data.keyword.mobilepushshort}} service on
  - Customers can choose to subscribe to specific tags or topics for notification.
  - Enables the app owner to analyze the number of devices that are registered to receive notifications and the number of notifications sent.
 
-You can choose to use the {{site.data.keyword.mobilepushshort}} service either as a part of MobileFirst Services Starter Boilerplate or as {{site.data.keyword.cloud_notm}} [Dedicated Services](/docs/dedicated?topic=dedicated-dedicated#dedicated). You can also use an SDK (software development kit) and [REST APIs](https://mobile.{DomainName}/imfpush/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") to further develop your client applications.
+You can choose to use the {{site.data.keyword.mobilepushshort}} service either as a part of MobileFirst Services Starter Boilerplate or as {{site.data.keyword.cloud_notm}} [Dedicated Services](/docs/dedicated?topic=dedicated-dedicated#dedicated). You can also use an SDK (software development kit) and [REST APIs](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/rest-apis/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") to further develop your client applications.
 
 ![Push Overview](images/push_notification_lifecycle.jpg) Figure 1. Overview of the {{site.data.keyword.mobilepushshort}} service lifecycle
 
@@ -139,4 +139,4 @@ The {{site.data.keyword.mobilepushshort}} service provides a monitoring utility 
 
  - Starter Kits are one of the fastest ways to use the features of {{site.data.keyword.cloud_notm}}. View our available starter kits in the [Mobile Developer dashboard](https://{DomainName}/developer/mobile/dashboard){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"). Download the code. Run the App!
 
- - You can use the [Swagger UI](https://mobile.ng.bluemix.net/imfpush/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") to quickly review REST API documentation.
+ - You can use the [Swagger UI](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/rest-apis/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") to quickly review REST API documentation.

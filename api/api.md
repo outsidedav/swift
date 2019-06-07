@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-07"
 
 keywords: swift api connect, swagger swift, open api swift, api designer, loopback swift api, create swift backend, swift api parameters, swift api reference
 
@@ -25,7 +25,7 @@ You can use API Connect to manage APIs in {{site.data.keyword.cloud}}, whether t
 ## Creating an instance of API Connect
 {: #create-apiconnect}
 
-Go to the [{{site.data.keyword.cloud_notm}} catalog](https://{DomainName}/catalog/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") and create an instance of API Connect to manage your APIs.
+Go to the [{{site.data.keyword.cloud_notm}} catalog](https://{DomainName}/catalog){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") and create an instance of API Connect to manage your APIs.
 
 Use the `Menu->APIs` to access the API Connect Management console.
 
@@ -56,7 +56,7 @@ You need to configure the External Endpoint to point to the URL that links to yo
 
 You can create your backend Swift app based on this API. 
 
-From the [Apple Development console](https://{DomainName}developer/appledevelopment/dashboard){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), perform the following steps:
+From the [Apple Development console](https://{DomainName}/developer/appledevelopment/dashboard){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), perform the following steps:
 
 1. Select **Starter Kits**.
 2. Click **Create App**.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-07"
 
 keywords: watson swift, swift developer, apple development, ios oveview, developer console, swift, apple console
 
@@ -58,7 +58,7 @@ To understand how the {{site.data.keyword.cloud_notm}} developer console can hel
 
 The {{site.data.keyword.cloud_notm}} developer console includes areas of interest (like Watson, Security, or Finance) or a digital channel (like Mobile or Web Apps). The [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") was developed for Apple developers to be able to quickly experiment with applications, and services, backed by the {{site.data.keyword.cloud_notm}} platform. You can access these consoles by clicking the menu icon in the {{site.data.keyword.cloud_notm}} console. For example, see the following developer consoles:
 
-* [Watson developer console](https://{DomainName}developer/watson/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+* [Watson developer console](https://{DomainName}/developer/watson/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
 * [Mobile developer console](https://{DomainName}/developer/mobile/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
 * [Web App developer console](https://{DomainName}/developer/appservice/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
 * [Security developer console](https://{DomainName}/developer/security/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")

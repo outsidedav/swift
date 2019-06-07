@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-07"
 
 keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
 
@@ -41,7 +41,7 @@ First, be sure that you have the following prerequisites ready to go:
 
 Create an instance of the {{site.data.keyword.appid_short_notm}} service:
 
-1. In the [{{site.data.keyword.cloud_notm}} catalog](https://{DomainName}/catalog/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), select {{site.data.keyword.appid_short_notm}}. The service configuration screen opens.
+1. In the [{{site.data.keyword.cloud_notm}} catalog](https://{DomainName}/catalog){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), select {{site.data.keyword.appid_short_notm}}. The service configuration screen opens.
 2. Give your service instance a name, or use the preset name.
 3. Select your pricing plan and click **Create**.
 
