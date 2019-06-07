@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-07"
 
 keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
 
@@ -25,7 +25,7 @@ What is serverless? The serverless development pattern refers to application dev
 
 By abstracting away the infrastructure and frameworks necessary for server-side development, serverless architecture allows developers to focus on writing code to run reactively to change data.
 
-IBM's FaaS offering, [{{site.data.keyword.openwhisk}}](https://{DomainName}/openwhisk/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), strives to provide a simple, server-side development experience without needing any specialized server-side knowledge. By using serverless technology, you can quickly develop extensible backend solutions to meet practically any workload demand without the need to create resources ahead of time. For applications that have unpredictable load patterns or high server downtime, {{site.data.keyword.openwhisk_short}} can be an excellent cloud solution with improved performance, and its pay-for-what-you-use system helps to reduce costs.
+IBM's FaaS offering, [{{site.data.keyword.openwhisk}}](https://{DomainName}/openwhisk){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), strives to provide a simple, server-side development experience without needing any specialized server-side knowledge. By using serverless technology, you can quickly develop extensible backend solutions to meet practically any workload demand without the need to create resources ahead of time. For applications that have unpredictable load patterns or high server downtime, {{site.data.keyword.openwhisk_short}} can be an excellent cloud solution with improved performance, and its pay-for-what-you-use system helps to reduce costs.
 
 ## Architectural changes
 {: #comparison-serverless}
