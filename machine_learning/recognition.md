@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: swift visual recognition, train swift, cocoapods swift, swift sdk install, starter kit watson swift, image swift classify, machine learning swift
 
@@ -101,7 +101,7 @@ The following samples help you add {{site.data.keyword.visualrecognitionshort}} 
   ```
   {: codeblock}
 
-  You can check out [version parameter documentation](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") or use the date that the {site.data.keyword.conversationshort}} service was created.
+  You can check out [version parameter documentation](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") or use the date that the {site.data.keyword.conversationshort}} service was created.
   {: tip}
 
 3. Add the following code to classify an image:
@@ -126,10 +126,10 @@ There are multiple classification methods that are supported by the Visual Recog
 ## Using starter kits
 {: #recognition_starterkits}
 
-[Starter kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") are one of the fastest ways to use the capabilities of {{site.data.keyword.cloud_notm}}. You can use the {{site.data.keyword.visualrecognitionshort}} service by selecting the **Visual Recognition for iOS with Watson** starter kit. This service evaluates and classifies your images. Upload new or existing images from your mobile device, and the Visual Recognition app quickly tags and classifies the image content.
+[Starter kits](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") are one of the fastest ways to use the capabilities of {{site.data.keyword.cloud_notm}}. You can use the {{site.data.keyword.visualrecognitionshort}} service by selecting the **Visual Recognition for iOS with Watson** starter kit. This service evaluates and classifies your images. Upload new or existing images from your mobile device, and the Visual Recognition app quickly tags and classifies the image content.
 
 To get started:
-1. Select the starter kit found [here](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
+1. Select the starter kit found [here](https://{DomainName}/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 2. Create the project with the default services.
 3. Download the project by clicking **Download Code**. Service credentials are injected into the `BMSCredentials.plist` file in the corresponding key fields.
 

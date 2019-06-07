@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: watson studio swift, machine learning swift, custom model swift, data set swift, predictive swift, watson api swift, generated model swift, dataset swift
 
@@ -20,22 +20,19 @@ subcollection: swift
 # Analyzing data sets with custom generated models
 {: #dsx-overview}
 
-Watson Studio provides you with the environment and tools to solve your business problems by collaboratively analyzing data. You can choose the tools that you need to analyze, cleanse, and organize data. Learn to ingest streaming data, or to create, train, and deploy machine learning models. Watson Studio integrates with a wide range of {{site.data.keyword.cloud}} services and Watson Knowledge Catalog, which provides policy management to control assets, and catalogs to index for locating them. Learn more at https://dataplatform.ibm.com/.
+Watson Studio provides you with the environment and tools to solve your business problems by collaboratively analyzing data. You can choose the tools that you need to analyze, cleanse, and organize data. Learn to ingest streaming data, or to create, train, and deploy machine learning models. Watson Studio integrates with a wide range of {{site.data.keyword.cloud}} services and Watson Knowledge Catalog, which provides policy management to control assets, and catalogs to index for locating them. [Learn more](https://dataplatform.cloud.ibm.com/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 
-Watson Studio is structured around a project-based architecture, which organizes your resources for solving a business problem. Resources include connections to cloud and on-premises data stores, data files, collaborators, and analytic assets like models. For more information, see the [Watson Studio overview](https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
+Watson Studio is structured around a project-based architecture, which organizes your resources for solving a business problem. Resources include connections to cloud and on-premises data stores, data files, collaborators, and analytic assets like models. For more information, see the [Watson Studio overview](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/overview-ws.html){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 
 ## Machine learning for {{site.data.keyword.DSX}}
 {: #dsx-learning}
 
 By using the {{site.data.keyword.DSX}}, it is possible to train models and deploy them and then consume the results by using APIs. These APIs can then be used in your iOS or Swift applications.
 
-With IBM Watson Machine Learning, after you set up your environment, you can create models, deploy them to the cloud, and train them. For more information, see [Create, deploy, and train models with {{site.data.keyword.pm_full}} and {{site.data.keyword.DSX}}](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
+With IBM Watson Machine Learning, after you set up your environment, you can create models, deploy them to the cloud, and train them. For more information, see [Create, deploy, and train models with {{site.data.keyword.pm_full}} and {{site.data.keyword.DSX}}](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/wml-ai.html){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 
 ### Tutorials
 {: #dsx-tutorials}
-
-- [Build a logistic regression model with {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")
-- [Build a naive-Bayes model with {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")
 
 ## Setting up {{site.data.keyword.DSX}} with iOS and Swift
 {: #dsx_ios}
@@ -220,11 +217,11 @@ client.retrieveToken { token in
 ## Next steps
 {: #dsx_next notoc}
 
-Great job! Now you can analyze data sets by using custom generated machine learning models. Keep the momentum by learning more about the features that {{site.data.keyword.pm_short}} has to offer at [Data science and machine learning](https://www.ibm.com/analytics/data-science/machine-learning){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
+Great job! Now you can analyze data sets by using custom generated machine learning models. Keep the momentum by learning more about the features that {{site.data.keyword.pm_short}} has to offer at [Data science and machine learning](https://www.ibm.com/analytics/machine-learning){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 
 ### Related Links
 {: #dsx-related}
 
-* [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling?topic=services/PredictiveModeling-WMLgettingstarted#using-machine-learning-with-data-science-experience)
-* [{{site.data.keyword.DSX}}](https://datascience.ibm.com/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")
-* [{{site.data.keyword.DSX}} documentation](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")
+* [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling?topic=PredictiveModeling-WMLgettingstarted)
+* [{{site.data.keyword.DSX}}](https://www.ibm.com/cloud/watson-studio){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")
+* [{{site.data.keyword.DSX}} documentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon")

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: cloudant swift, store data swift, dbaas swift, cloudant instance swift, initialize sdk swift, create document swift, read document swift, delete document swift
 
@@ -157,5 +157,5 @@ Having trouble? Check out the [{{site.data.keyword.cloudant_short_notm}} API Ref
 Great job! You added a level of secure persistence to your app. Keep the momentum by trying one of the following options:
 
 * View the [{{site.data.keyword.cloudant_short_notm}} SDK for Swift](https://github.com/cloudant/swift-cloudant){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") source code.
-* Starter Kits are one of the fastest ways to use the capabilities of {{site.data.keyword.cloud_notm}}. The **Infinite Scrolling with Cloudant NoSQL for iOS** starter kit illustrates how to extend a `ViewController` to display data by using pagination. This pattern of app is common for iOS Developers, and is a great example for illustrating the capabilities of {{site.data.keyword.cloudant_short_notm}}. View the available starter kits in the [Mobile Developer dashboard](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"). Download the code. Run the App!
-* Learn more about and take advantage of all of the features that {{site.data.keyword.cloudant_short_notm}} offers, [check out the docs](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics#ibm-cloudant-basics)!
+* Starter Kits are one of the fastest ways to use the capabilities of {{site.data.keyword.cloud_notm}}. The **Infinite Scrolling with Cloudant NoSQL for iOS** starter kit illustrates how to extend a `ViewController` to display data by using pagination. This pattern of app is common for iOS Developers, and is a great example for illustrating the capabilities of {{site.data.keyword.cloudant_short_notm}}. View the available starter kits in the [Mobile Developer dashboard](https://{DomainName}/developer/mobile/dashboard){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"). Download the code. Run the App!
+* Learn more about and take advantage of all of the features that {{site.data.keyword.cloudant_short_notm}} offers, [check out the docs](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics)!

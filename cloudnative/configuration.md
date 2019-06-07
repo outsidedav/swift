@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: swift-cfenv, service bindings swift, environment swift, swift configuration, cloudenvironment swift, VCAP_SERVICES swift, swift credentials
 
@@ -29,7 +29,7 @@ You can follow simple guidelines to help you write portable applications, and ut
 ## Adding {{site.data.keyword.cloud_notm}} to existing Swift applications
 {: #addcloud-env}
 
-The path for abstracting environment values can differ from one cloud environment to another. The [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") library abstracts environment configuration and credentials from various cloud providers so your Swift app can consistently access the information by running locally or in Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} or virtual instances. The credentials abstraction is provided by the `CloudEnvironment` library, which internally uses [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") for Cloud Foundry configuration and [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") as a configuration manager.
+The path for abstracting environment values can differ from one cloud environment to another. The [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") library abstracts environment configuration and credentials from various cloud providers so your Swift app can consistently access the information by running locally or in Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} or virtual instances. The credentials abstraction is provided by the `CloudEnvironment` library, which internally uses [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") for Cloud Foundry configuration and [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") as a configuration manager.
 
 With `CloudEnvironment`, you can abstract low-level details from your application's source code by defining a lookup key that your Swift application can use for searching its corresponding value.
 
@@ -119,7 +119,7 @@ For more information about the `mappings.json` file, check out the [Understandin
 ## Using the Swift configuration manager from starter kit apps
 {: #configmanager-swift}
 
-Swift apps that are created with [starter kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") automatically come with the credentials and configuration that is needed to run locally, and also in many Cloud deployment targets, such as Cloud Foundry, Kubernetes, VSI, and Functions. The basic creation of the configuration manager can be found in `Sources/Application/Application.swift`. When you create a Swift-based Starter Kit app with services, a `config` folder and `mappings.json` file is created for you. If you download your app, the `config` folder includes a `localdev-config.json` file that has all of the credentials for your services, and is present in the `.gitignore` file.
+Swift apps that are created with [starter kits](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") automatically come with the credentials and configuration that is needed to run locally, and also in many Cloud deployment targets, such as Cloud Foundry, Kubernetes, VSI, and Functions. The basic creation of the configuration manager can be found in `Sources/Application/Application.swift`. When you create a Swift-based Starter Kit app with services, a `config` folder and `mappings.json` file is created for you. If you download your app, the `config` folder includes a `localdev-config.json` file that has all of the credentials for your services, and is present in the `.gitignore` file.
 
 ## Next Steps
 {: #next-configß notoc}

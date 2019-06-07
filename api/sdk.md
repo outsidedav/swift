@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: swift sdk plug-in, sdk generator swift, generated sdk swift, devops pipeline swift, open api swift, sdkgen swift, ibmcloud sdk swift
 
@@ -20,7 +20,7 @@ subcollection: swift
 # Adding back-end services to your app with a generated SDK
 {: #sdk-cli}
 
-The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli.
 
 With the {{site.data.keyword.IBM_notm}} SDK Generator plug-in, you can integrate your back-end services to your app by using a generated SDK. When a change to a REST API occurs, you can regenerate the SDK, and replace the old one to easily upgrade the SDK. You can then add the CLI into a DevOps pipeline, and ensure that the SDK is always consistent with the API spec each time the app is built.
 
@@ -31,7 +31,7 @@ The REST API definition must be valid and either hosted on a live server endpoin
 
 Ensure that you have the following prerequisites:
 
-* An [{{site.data.keyword.cloud_notm}}](http://cloud.ibm.com){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") account.
+* An [{{site.data.keyword.cloud_notm}}](https://{DomainName}){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") account.
 * A valid API definition that conforms to the [Open API](https://www.openapis.org/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") specification.
 
 ## Installing the SDK plug-in

@@ -30,7 +30,7 @@ subcollection: swift
 
 The developer capabilities that are built in to {{site.data.keyword.cloud_notm}} align to various skill sets and provide one platform to produce, deliver, run, and manage your app. For example, from the cognitive app that is mentioned, the following {{site.data.keyword.cloud_notm}} capabilities are of interest:
 
-* The [**{{site.data.keyword.cloud_notm}} developer console**](/docs/apps/tutorials?topic=creating-apps-tutorial-getting-started) includes a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and Cloud Native developers to start building production-ready apps. It includes automatic provisioning of services and "one-click" deployment to a DevOps toolchain.
+* The [**{{site.data.keyword.cloud_notm}} developer console**](/docs/apps?topic=creating-apps-getting-started) includes a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and Cloud Native developers to start building production-ready apps. It includes automatic provisioning of services and "one-click" deployment to a DevOps toolchain.
 
 * [**IBM Watson Data Platform**](https://dataplatform.cloud.ibm.com/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") makes it simple to assemble data collections, refine the data, then visualize, discover insights, and build models for use in your cognitive app.
 
@@ -56,13 +56,13 @@ To understand how the {{site.data.keyword.cloud_notm}} developer console can hel
 ## Developer consoles
 {: #developer_consoles}
 
-The {{site.data.keyword.cloud_notm}} developer console includes areas of interest (like Watson, Security, or Finance) or a digital channel (like Mobile or Web Apps). The [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") was developed for Apple developers to be able to quickly experiment with applications, and services, backed by the {{site.data.keyword.cloud_notm}} platform. You can access these consoles by clicking the menu icon in the {{site.data.keyword.cloud_notm}} console. For example, see the following developer consoles:
+The {{site.data.keyword.cloud_notm}} developer console includes areas of interest (like Watson, Security, or Finance) or a digital channel (like Mobile or Web Apps). The [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") was developed for Apple developers to be able to quickly experiment with applications, and services, backed by the {{site.data.keyword.cloud_notm}} platform. You can access these consoles by clicking the menu icon in the {{site.data.keyword.cloud_notm}} console. For example, see the following developer consoles:
 
-* [Watson developer console](https://cloud.ibm.com/developer/watson/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
-* [Mobile developer console](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
-* [Web App developer console](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
-* [Security developer console](https://cloud.ibm.com/developer/security/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
-* [Finance developer console](https://cloud.ibm.com/developer/finance/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+* [Watson developer console](https://{DomainName}developer/watson/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+* [Mobile developer console](https://{DomainName}/developer/mobile/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+* [Web App developer console](https://{DomainName}/developer/appservice/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+* [Security developer console](https://{DomainName}/developer/security/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+* [Finance developer console](https://{DomainName}/developer/finance/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
 
 <!--Cloud native development is the process of developing apps that are optimized to leverage capabilities engendered from running on the cloud.  Flexibility, portability, scaling, rapid development, continuous delivery, and a close coupling development and operations ("devops) are characteristics of cloud applications. The {{site.data.keyword.cloud}} developer console quickly gets you started building cloud native applications that are ready for team development and bound for production use.-->
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: coreml swift, core ml swift, watson swift core, create model swift, image classification swift, version parameter swift, swift coreml watson
 
@@ -126,7 +126,7 @@ The following samples help you add {{site.data.keyword.visualrecognitionshort}} 
   ```
   {: codeblock}
 
-  Check out the [version parameter documentation](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") or use the date that the {site.data.keyword.visualrecognitionshort}} service was created.
+  Check out the [version parameter documentation](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") or use the date that the {site.data.keyword.visualrecognitionshort}} service was created.
   {: tip}
 
 3. Add the following code to download or update the local Core ML model with your Watson classifier:
@@ -177,7 +177,7 @@ With starter kits, you can quickly and easily use the capabilities of {{site.dat
 
 To add {{site.data.keyword.visualrecognitionshort}} to a starter kit, complete the following steps:
 
-1. Select the [starter kit](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") with which you want to work.
+1. Select the [starter kit](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") with which you want to work.
 2. Create the app with the default services.
 3. Click **Add service > Watson > {{site.data.keyword.visualrecognitionshort}}**.
 4. Download the project by clicking **Download code**. For iOS projects, the credentials are inserted in the `BMSCredentials.plist` file in the corresponding key fields. For server-side Swift projects, you can find these credentials in the `config/local-dev.json` file.

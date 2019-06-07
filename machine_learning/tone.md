@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-24"
+lastupdated: "2019-06-06"
 
 keywords: watson swift, tone anaylzer swift, cocoapods swift, swift sdk install, starter kit watson
 
@@ -101,7 +101,7 @@ The following samples help you add {{site.data.keyword.toneanalyzershort}} capab
   ```
   {: codeblock}
 
-  Check out the [version parameter documentation](https://cloud.ibm.com/apidocs/tone-analyzer#versioning){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") or use the date that the {site.data.keyword.conversationshort}} service was created.
+  Check out the [version parameter documentation](https://{DomainName}/apidocs/tone-analyzer#versioning){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") or use the date that the {site.data.keyword.conversationshort}} service was created.
   {: tip}
 
 3. Provide text for analysis and process the results:
@@ -149,11 +149,11 @@ The following samples help you add {{site.data.keyword.toneanalyzershort}} capab
 ## Using starter kits
 {: #tone_starterkits}
 
-[Starter kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") are one of the fastest ways to use the capabilities of {{site.data.keyword.cloud_notm}}. You can use the {{site.data.keyword.toneanalyzershort}} service by selecting the **Tone Analyzer for iOS with Watson** starter kit. This service utilizes deep learning capabilities to evaluate passages of text. The Tone Analyzer application identifies the speaker's tone (happy, sad, confident, and more) as it relates to a number of categories.
+[Starter kits](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") are one of the fastest ways to use the capabilities of {{site.data.keyword.cloud_notm}}. You can use the {{site.data.keyword.toneanalyzershort}} service by selecting the **Tone Analyzer for iOS with Watson** starter kit. This service utilizes deep learning capabilities to evaluate passages of text. The Tone Analyzer application identifies the speaker's tone (happy, sad, confident, and more) as it relates to a number of categories.
 
 To get started with this starter kit:
 
-1. Select the starter kit found [here](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
+1. Select the starter kit found [here](https://{DomainName}/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 2. Create the project with the default services.
 3. Download the project by clicking **Download Code**. Service credentials are injected into the `BMSCredentials.plist` file in the corresponding key fields.
 

@@ -24,7 +24,7 @@ subcollection: swift
 {{site.data.keyword.cloud}} offers solutions and services to enable Swift Developers to build applications that are integrated with the security, AI, and value that your customers demand. With a broad portfolio of offerings and SDKs, you can use these services, and bring cutting-edge applications to market quickly. This Swift programming explains how to add services to a new or existing Swift application, whether it's an iOS client or server-side Swift.
 {: shortdesc}
 
-The following tutorial shows how to easily create a Swift mobile app with {{site.data.keyword.mobileanalytics_full}} by using an empty Starter Kit from the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon"). From the console, you add the {{site.data.keyword.mobileanalytics_short}} service, download the code, run the iOS app locally in Xcode, configure, and monitor the app.
+The following tutorial shows how to easily create a Swift mobile app with {{site.data.keyword.mobileanalytics_full}} by using an empty Starter Kit from the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon"). From the console, you add the {{site.data.keyword.mobileanalytics_short}} service, download the code, run the iOS app locally in Xcode, configure, and monitor the app.
 
 ## Step 1. Requirements for developers
 {: #dev-requirements-swift}
@@ -41,7 +41,7 @@ The best practice for developing Swift apps is by using the latest MacOS support
 
 - Install [Xcode 8+](https://developer.apple.com/xcode/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") (or higher).
 - Deploy to [iOS 8 devices](https://support.apple.com/downloads/ios){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") (or higher).
-- Review the [App Store Submission Guidelines](https://developer.apple.com/app-store/guidelines/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") before you submit apps to Apple.
+- Review the [App Store Submission Guidelines](https://developer.apple.com/app-store/resources/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") before you submit apps to Apple.
 
 ### SDKs and dependency management
 {: #swift-sdk-management}
@@ -71,9 +71,9 @@ The following tools ensure that you can install the native SDKs to work with the
 ## Step 2. Creating a custom iOS Swift app
 {: #create-ios-app-swift}
 
-1. Log in to the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+1. Log in to the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 2. Click **Create app**.
-3. On the [Empty Starter](https://cloud.ibm.com/developer/appledevelopment/create-app){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") page, you can use the default configuration, or update the fields as needed. Ensure that **iOS Swift** is the selected language. Click **Create**.
+3. On the [Empty Starter](https://{DomainName}/developer/appledevelopment/create-app){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") page, you can use the default configuration, or update the fields as needed. Ensure that **iOS Swift** is the selected language. Click **Create**.
 
 ## Step 3. Adding the {{site.data.keyword.cloudant_short_notm}} service
 {: #resources-swift}

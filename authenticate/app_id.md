@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
 
@@ -41,7 +41,7 @@ First, be sure that you have the following prerequisites ready to go:
 
 Create an instance of the {{site.data.keyword.appid_short_notm}} service:
 
-1. In the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), select {{site.data.keyword.appid_short_notm}}. The service configuration screen opens.
+1. In the [{{site.data.keyword.cloud_notm}} catalog](https://{DomainName}/catalog/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"), select {{site.data.keyword.appid_short_notm}}. The service configuration screen opens.
 2. Give your service instance a name, or use the preset name.
 3. Select your pricing plan and click **Create**.
 
@@ -168,7 +168,7 @@ To bring your own branded UI screens, only cloud directory can be enabled as an 
 To configure cloud directory:
 
 1. Open the {{site.data.keyword.appid_short_notm}} dashboard to the **Managing identity providers** tab and set cloud directory to **On**.
-2. Configure your [directory and message settings](/docs/services/appid/cloud-drectory.html).
+2. Configure your [directory and message settings](/docs/services/appid?topic=appid-cloud-directory).
 4. Choose the combinations of sign-on screens you'd like to display and place the code to call those screens in your application.
     * Sign in
         ```swift
@@ -276,7 +276,7 @@ Is everything configured correctly? You can test it out!
 3. Update the identity providers or the login widget screen in the {{site.data.keyword.appid_short_notm}} dashboard.
 4. Repeat steps 1 and 2 to see that the changes are immediately implemented. No updates to your app code are required.
 
-Having trouble? Check out [troubleshooting {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-troubleshooting#troubleshooting).
+Having trouble? Check out [troubleshooting {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-troubleshooting).
 
 ## Next steps
 {: #next-appid notoc}
@@ -284,4 +284,4 @@ Having trouble? Check out [troubleshooting {{site.data.keyword.appid_short_notm}
 Great job! You added a level of security to your app. Keep the momentum by trying one of the following options:
 
 * Learn more about and take advantage of all of the features that {{site.data.keyword.appid_short_notm}} has to offer, [check out the docs](/docs/services/appid?topic=appid-getting-started#getting-started)!
-* Starter Kits are one of the fastest ways to use the features of {{site.data.keyword.cloud_notm}}. View the available starter kits in the [Mobile Developer dashboard](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"). Download the code. Run the App!
+* Starter Kits are one of the fastest ways to use the features of {{site.data.keyword.cloud_notm}}. View the available starter kits in the [Mobile Developer dashboard](https://{DomainName}/developer/mobile/dashboard){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"). Download the code. Run the App!

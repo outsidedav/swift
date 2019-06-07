@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-06-06"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -22,7 +22,7 @@ subcollection: swift
 
 The {{site.data.keyword.cloud_notm}} Developer Console for Apple enables Apple developers to create apps from various starter kits, provision and connect key {{site.data.keyword.cloud_notm}}-optimized services, and then quickly download working code or set up for continuous delivery. Users are able to create, view, configure, and manage your app, as well as download your app's code. Using starter kits helps you to quickly evaluate, and test {{site.data.keyword.cloud_notm}} services with a brand new app.
 
-Ready to jump in? Visit the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") now to get started.
+Ready to jump in? Visit the [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") now to get started.
 {: tip}
 
 ## What is a starter kit?
@@ -82,5 +82,5 @@ You can list all of your created apps from the _App List_ view. You can rename o
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple App List view](images/project_list_screen.png "App List view"){: caption="Figure 6. {{site.data.keyword.cloud_notm}} Developer Console for Apple App List view" caption-side="bottom"}
 
-For more information, visit the [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
+For more information, visit the [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://{DomainName}/developer/appledevelopment/learning-resources){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 {: tip}

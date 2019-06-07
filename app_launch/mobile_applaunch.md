@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-06"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -214,6 +214,6 @@ You can now measure the [performance](/docs/services/app-launch?topic=app-launch
 
 Check out the following links to gain insight, and understand the features of {{site.data.keyword.engage_short}}:
 
- - Try out the [App Launch Service](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
+ - Try out the [App Launch Service](https://{DomainName}/catalog/services/app-launch){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
  - [Blogs and Videos](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
  - For more information, see the [App Launch - Getting started tutorial](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate).

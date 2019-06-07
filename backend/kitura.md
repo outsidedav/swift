@@ -80,8 +80,8 @@ After you download your app code, you can modify and develop it by using Xcode, 
 
 3. Run the Kitura server locally. 
   Click **Run** or use the `⌘+R` key shortcut to start the Kitura server. Once the server is started, you can check that the following standard Kitura URLs are running:
-  * Kitura Monitoring: [http://localhost:8080/swiftmetrics-dash/]()
-  * Kitura Health check: [http://localhost:8080/health]()
+  * Kitura Monitoring: [http://localhost:8080/swiftmetrics-dash/](http://localhost:8080/swiftmetrics-dash/)
+  * Kitura Health check: [http://localhost:8080/health](http://localhost:8080/health)
 
 ## Step 4. Adding REST APIs
 {: #add_restapi-kitura}
@@ -129,7 +129,7 @@ You now have a REST API for `GET` requests on `/meals` that responds with an arr
 
   You can test the REST API by using the following URL:  
   ```swift
-  * `GET /meals`:	[http://localhost:8080/meals]()
+  * `GET /meals`:	[http://localhost:8080/meals](http://localhost:8080/meals)
   ```
   {: codeblock}
 

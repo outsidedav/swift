@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-05"
+lastupdated: "2019-06-06"
 
 keywords: push swift, swift notifications, push notifications swift, sending push swift, configure service instance swift, provider credentials swift
 
@@ -52,7 +52,7 @@ First, be sure that you have the following prerequisites ready to go:
 ## Step 2. Obtain your notification provider credentials
 {: #get_creds-push}
 
-To set up Push Notifications service, you need to get the required credentials from the Apple Push Notification Service (APNs). Follow the steps here to [obtain and configure your APNs credentials ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}.
+To set up Push Notifications service, you need to get the required credentials from the Apple Push Notification Service (APNs). Follow the steps here to [obtain and configure your APNs credentials ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/mobilepush?topic=mobile-pushnotification-push_step_1){: new_window}.
 
 
 ## Step 3. Configure a service instance
@@ -62,7 +62,7 @@ To use the {{site.data.keyword.mobilepushshort}} service to send notifications, 
 
 After the `.cer` file is in your key chain access, export it to your computer to create a `.p12` certificate.
 
-For more information about using the APNs, see [iOS Developer Library: Local and Push Notification Programming Guide](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
+For more information about using the APNs, see [iOS Developer Library: Local and Push Notification Programming Guide](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
 
 To set up APNs on the Push Notification services console, complete the steps:
 
@@ -77,10 +77,10 @@ To set up APNs on the Push Notification services console, complete the steps:
 	- For **Web** option
 		- In the Safari Push section, update the form with the required information.
 		- **Website Name**: The website name provided in the Notification center.
-		- **Website Push ID**: Update with the reverse-domain string for your Website Push ID. For example, web.com.acmebanks.www.
-		- **Website URL**: Provide the URL of the website that is subscribed to push notifications. For example, https://www.acmebanks.com.
+		- **Website Push ID**: Update with the reverse-domain string for your Website Push ID. For example, `web.com.example.www`.
+		- **Website URL**: Provide the URL of the website that is subscribed to push notifications. For example, `https://www.example.com`.
 		- **Allowed Domains**: (optional parameter) A list of websites that request permission from the user. Ensure that the URLs are comma separated values. The values in Website URL are used if the info isn't provided.
-		- **URL Format String**: The URL to resolve when the notification is clicked. For example, ["https://www.acmebanks.com"]. Ensure that the URL uses http or https schema.
+		- **URL Format String**: The URL to resolve when the notification is clicked. For example, `https://www.example.com`. Ensure that the URL uses http or https schema.
 		-**Safari web push certificate**: Upload the `.p12` certificate and provide the password.
 4. Click **Save**.
   ![{{site.data.keyword.mobilepushshort}} console](images/push_configure_safari.jpg)
@@ -133,10 +133,10 @@ The {{site.data.keyword.mobilepushshort}} service provides a monitoring utility 
 ## Next steps
 {: #next-push notoc}
 
- - To learn more about the service and take advantage of all of the features, read through our [documentation](/docs/services/mobilepush/c_overview_push.html).
+ - To learn more about the service and take advantage of all of the features, read through our [documentation](/docs/services/mobilepush?topic=mobile-pushnotification-overview-push).
 
  - For an introduction to working with Mobile services and {{site.data.keyword.cloud_notm}}, see [Getting started with Mobile apps on {{site.data.keyword.cloud_notm}}](/docs/services/mobile?topic=mobile-about).
 
- - Starter Kits are one of the fastest ways to use the features of {{site.data.keyword.cloud_notm}}. View our available starter kits in the [Mobile Developer dashboard](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"). Download the code. Run the App!
+ - Starter Kits are one of the fastest ways to use the features of {{site.data.keyword.cloud_notm}}. View our available starter kits in the [Mobile Developer dashboard](https://{DomainName}/developer/mobile/dashboard){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"). Download the code. Run the App!
 
  - You can use the [Swagger UI](https://mobile.ng.bluemix.net/imfpush/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") to quickly review REST API documentation.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
 
@@ -110,7 +110,7 @@ The following samples help you add {{site.data.keyword.conversationshort}} capab
   ```
   {: codeblock}
 
-  **Tip**: This example saves the context to state. For a better understanding of this object and how to adapt it for your use case, see the [context variable documentation](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables). Check out the [version parameter documentation](https://cloud.ibm.com/apidocs/assistant#versioning){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") or use the date that the {site.data.keyword.conversationshort}} service was created.
+  **Tip**: This example saves the context to state. For a better understanding of this object and how to adapt it for your use case, see the [context variable documentation](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables). Check out the [version parameter documentation](https://{DomainName}/apidocs/assistant#versioning){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") or use the date that the {site.data.keyword.conversationshort}} service was created.
 
 3. Initialize the conversation. Depending on how your assistant is configured, it can provide an initial response to the user:
   ```swift
@@ -174,7 +174,7 @@ Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11a
 
 With starter kits, you can quickly and easily use the capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.conversationshort}} to any server-side back end by using the starter kits. The Chatbot for iOS with Watson Starter Kit illustrates how to use the deep learning capabilities of {{site.data.keyword.conversationshort}} by adding a natural language interface to your application that automates interactions with your users.
 
-1. Select the [starter kit](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") with which you want to work.
+1. Select the [starter kit](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") with which you want to work.
 2. Create the app with the default services.
 3. Click **Add service > Watson > {{site.data.keyword.conversationshort}}**.
 4. Download the project by clicking **Download code**. You can find the service credentials in the `config/local-dev.json` file.
