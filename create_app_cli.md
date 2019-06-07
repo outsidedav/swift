@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-07"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -70,7 +70,7 @@ The following tools ensure that you can install the native SDKs to work with the
 ## Step 2. Installing tools for local development
 {: #swift-cli-install-tools}
 
-The {{site.data.keyword.cloud}} provides local CLI tools that help you work with various aspects of the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.dev_cli_long}} Information](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). You can use the tools for testing a Swift backend in a local Docker image before cloud deployment.
+The {{site.data.keyword.cloud}} provides local CLI tools that help you work with various aspects of the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.dev_cli_long}} Information](/docs/cli?topic=cloud-cli-getting-started). You can use the tools for testing a Swift backend in a local Docker image before cloud deployment.
 
 * For MacOS and Linux, run the following command:
   ```

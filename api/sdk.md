@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-07"
 
 keywords: swift sdk plug-in, sdk generator swift, generated sdk swift, devops pipeline swift, open api swift, sdkgen swift, ibmcloud sdk swift
 
@@ -20,7 +20,7 @@ subcollection: swift
 # Adding back-end services to your app with a generated SDK
 {: #sdk-cli}
 
-The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli.
+The {{site.data.keyword.IBM}} SDK Generator plug-in can be installed in the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started).
 
 With the {{site.data.keyword.IBM_notm}} SDK Generator plug-in, you can integrate your back-end services to your app by using a generated SDK. When a change to a REST API occurs, you can regenerate the SDK, and replace the old one to easily upgrade the SDK. You can then add the CLI into a DevOps pipeline, and ensure that the SDK is always consistent with the API spec each time the app is built.
 
@@ -37,7 +37,7 @@ Ensure that you have the following prerequisites:
 ## Installing the SDK plug-in
 {: #install-sdk-cli}
 
-1. [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+1. [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started).
 
 2. Install the SDK plug-in:
   ```
@@ -45,7 +45,7 @@ Ensure that you have the following prerequisites:
   ```
   {: codeblock}
 
-You can install the [{{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#install_plug-in) which include the base {{site.data.keyword.cloud_notm}} CLI, and also includes the `sdk-gen` plug-in along with other useful local tools.
+You can install the [{{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-getting-started) which include the base {{site.data.keyword.cloud_notm}} CLI, and also includes the `sdk-gen` plug-in along with other useful local tools.
 {: tip}
 
 ## Generating the SDK
