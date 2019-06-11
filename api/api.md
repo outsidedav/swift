@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-10"
 
 keywords: swift api connect, swagger swift, open api swift, api designer, loopback swift api, create swift backend, swift api parameters, swift api reference
 
@@ -31,7 +31,7 @@ Use the `Menu->APIs` to access the API Connect Management console.
 
 ![API Connect](images/apiconnect.png)
 
-If you're defining your own API contract before you start backend, and front end development, use the API Connect tools to accelerate this process. You can work with your digital development team to build and define contract of API between your iOS App and your backend logic. This logic can be delivered by using [{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-index#index) or through the [Swift runtime](/docs/runtimes/swift?topic=Swift-swift_runtime#swift_runtime) with Kubernetes or [Cloud Foundry](/docs/cloud-foundry?topic=cloud-foundry-about#about).
+If you're defining your own API contract before you start backend, and front end development, use the API Connect tools to accelerate this process. You can work with your digital development team to build and define contract of API between your iOS App and your backend logic. This logic can be delivered by using [{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-getting-started) or through the [Swift runtime](/docs/runtimes/swift?topic=Swift-swift_runtime#swift_runtime) with Kubernetes or [Cloud Foundry](/docs/cloud-foundry?topic=cloud-foundry-about#about).
 
 Once your API is defined, you can define Open API Specifications (Swagger) in a number of different tools:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-10"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -72,7 +72,7 @@ First, ensure that you have the following prerequisites ready to go:
 The service provides platform-specific SDKs to simplify application development. The {{site.data.keyword.cloud_notm}} Mobile Services Swift SDKs can be installed with either CocoaPods or Carthage.
 
 1. Click **Settings**.
-2. Install the [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). For more information, see the `README` file that includes installation steps and technical concepts.
+2. Install the [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon"). For more information, see the `README` file that includes installation steps and technical concepts.
 3. Copy the configuration keys to initialize your app. Use the app secret, app GUID, and client secret to configure your app and create engagements.
 
 ## Step 3. Creating a feature
@@ -216,4 +216,4 @@ Check out the following links to gain insight, and understand the features of {{
 
  - Try out the [App Launch Service](https://{DomainName}/catalog/services/app-launch){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
  - [Blogs and Videos](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
- - For more information, see the [App Launch - Getting started tutorial](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate).
+ - For more information, see the [App Launch - Getting started tutorial](/docs/services/app-launch?topic=app-launch-getting-started).
