@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-12"
 
 keywords: watson studio swift, machine learning swift, custom model swift, data set swift, predictive swift, watson api swift, generated model swift, dataset swift
 
@@ -39,7 +39,7 @@ With IBM Watson Machine Learning, after you set up your environment, you can cre
 
 1. To make the integration of the credentials easier, you must add the {{site.data.keyword.pm_short}} instance to your iOS app or back-end app. For ease of accessibility, your credentials are included on your project dashboard.
 
-![Machine Learning in your App](images/ios-machinelearning-app.png)
+![App details](images/ios-machinelearning-app.png "App details"){: caption="Figure 1. App details" caption-side="bottom"}
 
 2. Download the app code.
 3. Initialization

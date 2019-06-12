@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-12"
 
 keywords: coreml swift, core ml swift, watson swift core, create model swift, image classification swift, version parameter swift, swift coreml watson
 
@@ -16,6 +16,7 @@ subcollection: swift
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:gif: data-image-type='gif'}
 
 # Using Core ML with Watson
 {: #swift-coreml}
@@ -76,7 +77,7 @@ If a current model does not exist, the first model that is discovered remotely, 
 
 2. From the sidebar, upload the model training courses in compressed `.zip` files. Then, select each data set and add them to your model from the drop-down menu. Feel free to add more classes that use your own image sets to enhance the classifier!
 
-![Adding Classes](images/add_classes.png)
+![Adding Classes](images/add_classes.png "Link service to Watson Studio"){: caption="Figure 1. Link service to Watson Studio" caption-side="bottom"}
 
 3. Select **Train Model**, and then wait for the model to be fully trained.
 

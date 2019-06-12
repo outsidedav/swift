@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-11"
 
 keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
 
@@ -86,9 +86,9 @@ After you initialize the SDK in your app, you can start configuring your {{site.
   ```
   {: codeblock}
 
-4. Pass the `tenant ID` and `region` parameters to initialize the SDK. A common, though not mandatory, place to put the code is in the `application:didFinishLaunchingWithOptions` method of the `AppDelegate` in your app.
+4. Pass the `tenantID` and `AppID_region` parameters to initialize the SDK. A common, though not mandatory, place to put the code is in the `application:didFinishLaunchingWithOptions` method of the `AppDelegate` in your app.
   ```swift
-  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <AppID_region>);
   ```
   {: codeblock}
   
@@ -103,7 +103,7 @@ After you initialize the SDK in your app, you can start configuring your {{site.
       </tr>
       <tr>
         <td><em>AppID_region</em></td>
-        <td>The {{site.data.keyword.appid_short_notm}} region is the {{site.data.keyword.cloud_notm}}} region in which you're working with the service. This region can be found in the service dashboard and can be <em>AppID.REGION_US_SOUTH</em>,<em>AppID.REGION_SYDNEY</em>,<em>AppID.REGION_UK</em>.</td>
+        <td>The {{site.data.keyword.appid_short_notm}} region is the {{site.data.keyword.cloud_notm}} region in which you're working with the service. This region can be found in the service dashboard and can be <em>AppID.REGION_US_SOUTH</em>,<em>AppID.REGION_SYDNEY</em>,<em>AppID.REGION_UK</em>.</td>
       </tr>
     </tbody>
   </table>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-12"
 
 keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
 
@@ -36,7 +36,7 @@ In a more traditional architecture, the iOS application offloads network intensi
 
 A serverless architecture can alter this structure to look more like the following image.
 
-![](./images/Architecture.png) Figure 1. Serverless architecture
+![Serverless architecture](./images/Architecture.png "Serverless architecture"){: caption="Figure 1. Serverless architecture flow" caption-side="bottom"}
 
 Rather than handle all of the processing and authentication logic inside a single server, a serverless architecture uses functions that encapsulate much of the server-side logic, and offloads some logic to the client (and external services).
 
@@ -77,14 +77,14 @@ By eliminating the need for system administration, and providing simple interfac
 
 ### Mobile backend
 {: #mobile-backend-serverless}
-![](./images/cloud-functions-rest-api-trigger.png)
+![Mobile backend](./images/cloud-functions-rest-api-trigger.png "Mobile backend"){: caption="Figure 2. Mobile backend" caption-side="bottom"}
 
 Mobile developers can easily access server-side logic and outsource computationally intensive tasks to a cloud platform. You can implement functions in languages like Swift and easily consume server-side functions by using the iOS SDK without any server-side experience needed.
 
 ### Data Processing
 {: #data-processing-serverless}
 
-![](./images/cloud-functions-cloudant-trigger.png)
+![Serverless data processing](./images/cloud-functions-cloudant-trigger.png "Serverless data processing"){: caption="Figure 3. Serverless data processing" caption-side="bottom"}
 
 You can execute code whenever data is updated in your data store through built-in triggers. You can also easily automate processes like audio normalization, image rotation, sharpening, noise reduction, thumbnail generation, or video transcoding through a functional server-side programming model.
 

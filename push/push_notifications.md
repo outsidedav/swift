@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-12"
 
 keywords: push swift, swift notifications, push notifications swift, sending push swift, configure service instance swift, provider credentials swift
 
@@ -28,7 +28,7 @@ Enhance your Swift app by using {{site.data.keyword.mobilepushshort}} service on
 
 You can choose to use the {{site.data.keyword.mobilepushshort}} service either as a part of MobileFirst Services Starter Boilerplate or as {{site.data.keyword.cloud_notm}} [Dedicated Services](/docs/dedicated?topic=dedicated-dedicated#dedicated). You can also use an SDK (software development kit) and [REST APIs](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/rest-apis/){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") to further develop your client applications.
 
-![Push Overview](images/push_notification_lifecycle.jpg) Figure 1. Overview of the {{site.data.keyword.mobilepushshort}} service lifecycle
+![Push overview](images/push_notification_lifecycle.jpg"Push overview"){: caption="Figure 1. Overview of the {{site.data.keyword.mobilepushshort}} service lifecycle" caption-side="bottom"}
 
 ## Before you begin
 {: #prereqs-push}
@@ -71,7 +71,7 @@ To set up APNs on the Push Notification services console, complete the steps:
 3. Choose either of the following options:
 	- For **Mobile** option
 		1. Select **Sandbox** (development) or **Production** (distribution), and then upload the `p.12` certificate that you created.
-		  ![Set {{site.data.keyword.mobilepushshort}} console](images/wizard.jpg)
+		  ![{{site.data.keyword.mobilepushshort}} console](images/wizard.jpg "Push notification mobile configuration"){: caption="Figure 2. Push notification mobile configuration" caption-side="bottom"}
 
 		2. In the **Password** field, enter the password that is associated with the `.p12` certificate file, then click **Save**.
 	- For **Web** option
@@ -83,7 +83,8 @@ To set up APNs on the Push Notification services console, complete the steps:
 		- **URL Format String**: The URL to resolve when the notification is clicked. For example, `https://www.example.com`. Ensure that the URL uses http or https schema.
 		-**Safari web push certificate**: Upload the `.p12` certificate and provide the password.
 4. Click **Save**.
-  ![{{site.data.keyword.mobilepushshort}} console](images/push_configure_safari.jpg)
+
+  ![{{site.data.keyword.mobilepushshort}} console](images/push_configure_safari.jpg "Push notification web configuration"){: caption="Figure 3. Push notification web configuration" caption-side="bottom"}
 
 ## Step 4. Set up service client SDK
 {: #service-client-push}
@@ -102,17 +103,19 @@ To send basic push notifications, complete the following steps:
 1. Select **Send Notifications**, and compose a message by choosing a **Send to** option. The supported options are **Device by Tag**, **Device Id**, **User Id**, **iOS devices**, **Web Notifications**, and **All Devices**.
 **Note**: When you select the **All Devices** option, all devices that are subscribed to {{site.data.keyword.mobilepushshort}} receive notifications.
 
-	![Notifications screen](images/tag_notification.jpg)
+  ![Send Notifications screen](images/tag_notification.jpg "Send Notifications screen"){: caption="Figure 4. Send Notifications screen" caption-side="bottom"}
 
 2. In the **Message** field, compose your message. Choose to configure the optional settings as required.
 3. Click **Send**.
 3. Verify that your devices or browser received the notification.
 
-The following screen capture shows an alert box that handles a push notification in the foreground on the device.
-	![Foreground push notification on Android](images/Android_Screenshot.jpg)
+  The following screen capture shows an alert box that handles a push notification in the foreground on the device.
+  
+  ![Foreground push notification on Android](images/Android_Screenshot.jpg "Foreground notification alert"){: caption="Figure 5. Foreground notification alert on Android" caption-side="bottom"}
 
-The following screen capture shows a push notification in the background.
-	![Background push notification on Android](images/background.png)
+  The following screen capture shows a push notification in the background.
+  
+  ![Background push notification on iOSd](images/background.png "Background notification alert"){: caption="Figure 6. Background notification alert on iOS" caption-side="bottom"}
 
 ### Optional settings
 {: #optional-push}

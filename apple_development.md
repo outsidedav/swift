@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-12"
 
 keywords: watson swift, swift developer, apple development, ios oveview, developer console, swift, apple console
 
@@ -26,7 +26,7 @@ subcollection: swift
 ## One development platform: IBM Cloud
 {: #platform}
 
- ![Developer types](images/IBM_Cloud_icon.png "IBM Cloud")
+![Cloud icon](images/IBM_Cloud_icon.png "IBM Cloud"){: caption="IBM Cloud" caption-side="bottom"}
 
 The developer capabilities that are built in to {{site.data.keyword.cloud_notm}} align to various skill sets and provide one platform to produce, deliver, run, and manage your app. For example, from the cognitive app that is mentioned, the following {{site.data.keyword.cloud_notm}} capabilities are of interest:
 

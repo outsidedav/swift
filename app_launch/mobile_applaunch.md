@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-12"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -24,7 +24,7 @@ subcollection: swift
 
 The {{site.data.keyword.engage_short}} service defines a feature, creates an audience based on device platforms (including custom audience attributes), and finally defines an engagement that choreographs the timing and placement of the feature. After SDKs are used, along with the feature and metrics attributes that are incorporated in the application, the service starts measuring audience experiences. You can now use your app based on this information to create customized customer engagements across various categories of your app users.
 
-![Cognitive Engage overview](images/process_app_launch.png) Figure 1. Overview of the {{site.data.keyword.engage_short}} service lifecycle
+![Cognitive Engage overview](images/process_app_launch.png "Cognitive Engage overview"){: caption="Figure 1. Overview of the {{site.data.keyword.engage_short}} service lifecycle caption-side="bottom"}
 
 See the following features of the {{site.data.keyword.engage_short}} service:
 

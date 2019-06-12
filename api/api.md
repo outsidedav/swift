@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-12"
 
 keywords: swift api connect, swagger swift, open api swift, api designer, loopback swift api, create swift backend, swift api parameters, swift api reference
 
@@ -29,7 +29,7 @@ Go to the [{{site.data.keyword.cloud_notm}} catalog](https://{DomainName}/catalo
 
 Use the `Menu->APIs` to access the API Connect Management console.
 
-![API Connect](images/apiconnect.png)
+![API Connect](images/apiconnect.png "API Connect Management Console"){: caption="Figure 1. API Connect Management console." caption-side="bottom"}
 
 If you're defining your own API contract before you start backend, and front end development, use the API Connect tools to accelerate this process. You can work with your digital development team to build and define contract of API between your iOS App and your backend logic. This logic can be delivered by using [{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-getting-started) or through the [Swift runtime](/docs/runtimes/swift?topic=Swift-swift_runtime#swift_runtime) with Kubernetes or [Cloud Foundry](/docs/cloud-foundry?topic=cloud-foundry-about#about).
 
@@ -126,7 +126,7 @@ To consume the backend API in your iOS App, create a Mobile starter kit by using
 
 Click **Add service** and select an API. 
 
-![API Dialog](../images/apidialog.png)
+![API Dialog](../images/apidialog.png "Select an API."){: caption="Figure 2. List of APIs to select." caption-side="bottom"}
 
 The API is added to your iOS App. If you *Download* the code for the App, you can see a folder that is included in the iOS Source folders that is named after the API.
 
@@ -134,11 +134,11 @@ Follow the Knowledge Guide steps to `pod update` any dependant SDKs into you iOS
 
 The iOS App includes a folder with the generated SDK binding for the API. This folder includes the following three subfolders `Assets`,`Source`, and `Docs`. 
 
-![iOS Folder](../images/sdkfolder.png)
+![iOS Folder](../images/sdkfolder.png "iOS Folder view"){: caption="Figure 3. iOS app folder contents" caption-side="bottom"}
 
 In the `Assets` folder, is a file that manages the URL to your API, which by default is `localhost:3000`. You must change the value to reference the API Route. The API definition is made up of an API Name and Route section. Click **Copy** at the end of the route to copy the URL. Check that the *Expose Managed API* option is turned on to enable external clients to make API calls.
 
-![API Route](../images/apiroute.png)  
+![API Route](../images/apiroute.png "API Route"){: caption="Figure 4. Copy the API Route" caption-side="bottom"}
 
 Open the `PLIST` file and replace the host value with the value that is copied from the API route that enables the SDK to call the API into the {{site.data.keyword.cloud_notm}}.
 
@@ -158,7 +158,7 @@ To enable the creation of an SDK, use the Open API Specification (Swagger) YAML 
 2. Select the API you that want to retrieve the latest Open API Specification from. 
 3. Then, select the **Explorer** menu.
 
-![API Explorer](../images/downloadyaml.png)
+![API Explorer](../images/downloadyaml.png "API Explorer"){: caption="Figure 5. Using API Explorer to update the Open API specification." caption-side="bottom"}
 
 4. Select the download icon to download the yaml for the API and save this file in your iOS App project directory.
 
