@@ -26,8 +26,6 @@ subcollection: swift
 ## One development platform: IBM Cloud
 {: #platform}
 
- ![Developer types](images/IBM_Cloud_icon.png "IBM Cloud")
-
 The developer capabilities that are built in to {{site.data.keyword.cloud_notm}} align to various skill sets and provide one platform to produce, deliver, run, and manage your app. For example, from the cognitive app that is mentioned, the following {{site.data.keyword.cloud_notm}} capabilities are of interest:
 
 * The [**{{site.data.keyword.cloud_notm}} developer console**](/docs/apps?topic=creating-apps-getting-started) includes a set of capabilities on {{site.data.keyword.cloud_notm}} that helps digital and Cloud Native developers to start building production-ready apps. It includes automatic provisioning of services and "one-click" deployment to a DevOps toolchain.
