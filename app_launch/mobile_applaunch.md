@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-12"
+lastupdated: "2019-06-17"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -207,7 +207,7 @@ Complete the following steps to create an engagement that uses the Messaging opt
 
   The new engagement now appears in the Engagement Details window.
 
-You can now measure the [performance](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) of your engagement.
+You can now measure the [performance](/docs/services/app-launch?topic=app-launch-applaunch_type) of your engagement.
 
 ## Quick Links
 {: #links-applaunch notoc}
@@ -215,5 +215,5 @@ You can now measure the [performance](/docs/services/app-launch?topic=app-launch
 Check out the following links to gain insight, and understand the features of {{site.data.keyword.engage_short}}:
 
  - Try out the [App Launch Service](https://{DomainName}/catalog/services/app-launch){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon").
- - [Blogs and Videos](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
- - For more information, see the [App Launch - Getting started tutorial](/docs/services/app-launch?topic=app-launch-getting-started).
+ - [Blogs and Videos](/docs/services/app-launch?topic=app-launch-blogs-and-videos)
+ - For more information, see the [App Launch documentation](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate).
