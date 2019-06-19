@@ -49,7 +49,6 @@ Programming with Swift on IBM Cloud
     Using SDKs
         getting_started/installing.md
         api/api.md
-        backend/cli_sdkgen.md
         api/sdk.md
     
     {: .topicgroup}

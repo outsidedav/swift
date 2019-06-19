@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-19"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -49,7 +49,7 @@ Develop Swift apps with best practice by using the latest MacOS supported hardwa
 
 The following tools ensure that you can install the native SDKs to work with the various {{site.data.keyword.cloud_notm}} Services.
 
-- [Install CocoaPods for IBM Cloud SDKs](https://cocoapods.org/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+- [Install CocoaPods for {{site.data.keyword.cloud_notm}} SDKs](https://cocoapods.org/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
   ```
   sudo gem install cocoapods
   ```
@@ -128,18 +128,6 @@ The {{site.data.keyword.cloud}} provides local CLI tools that help you work with
 3. Provide a name for your application:
   ```
   ? Enter a name for your application> swift_project
-  ```
-  {: screen}
-
-4. Choose to enable OpenAPI 2.0 support:
-  ```
-  ? Enable your application based on an OpenAPI 2.0 Specification document? [y/n]> y
-  ```
-  {: screen}
-
-  If OpenAPI 2.0 support is enabled, you must provide a path to the OpenAPI 2.0 document as a url:
-  ```
-  ? Path to OpenAPI 2.0 document as a url (both yaml and json formats supported)> http://hostname.domain.com/path/to/file.json
 
   Generating application ...
   ```

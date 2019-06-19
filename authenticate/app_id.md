@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-11"
+lastupdated: "2019-06-19"
 
 keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
 
@@ -92,23 +92,10 @@ After you initialize the SDK in your app, you can start configuring your {{site.
   ```
   {: codeblock}
   
-  <table>
-    <thead>
-      <th colspan=2><img src="images/idea.png" alt=""/> Understanding the commands components </th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><em>tenantID</em></td>
-        <td>The tenant ID is a unique identifier that is used to initialize your app. You can find the value in the {{site.data.keyword.appid_short_notm}} dashboard. In the <b>Service Credentials</b> tab, click <b>View Credentials</b>.</td>
-      </tr>
-      <tr>
-        <td><em>AppID_region</em></td>
-        <td>The {{site.data.keyword.appid_short_notm}} region is the {{site.data.keyword.cloud_notm}} region in which you're working with the service. This region can be found in the service dashboard and can be <em>AppID.REGION_US_SOUTH</em>,<em>AppID.REGION_SYDNEY</em>,<em>AppID.REGION_UK</em>.</td>
-      </tr>
-    </tbody>
-  </table>
+  * `tenantID`: The tenant ID is a unique identifier that is used to initialize your app. You can find the value in the {{site.data.keyword.appid_short_notm}} dashboard by selecting the **Service Credentials** tab, and then click **View Credentials**.
+  * `AppID_region`: The {{site.data.keyword.appid_short_notm}} region is the {{site.data.keyword.cloud_notm}} region in which you're working with the service. This region can be found in the service dashboard and can be `AppID.REGION_US_SOUTH`, `AppID.REGION_SYDNEY`, and `AppID.REGION_UK`.
 
-5. Add the following code to your AppDelegate file.
+5. Add the following code to your `AppDelegate` file.
     ```swift
     func application(_ application: UIApplication, open url: URL, options :[UIApplicationOpenURLOptionsKey : Any]) -> Bool {
             return AppID.sharedInstance.application(application, open: url, options: options)
@@ -155,7 +142,6 @@ To configure social identity providers:
     AppID.sharedInstance.loginWidget?.launch(delegate: delegate())
     ```
     {: codeblock}
-
 
 ### Cloud directory
 {: #cloud-dir-appid}

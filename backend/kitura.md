@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-19"
 
 keywords: foodtrackerbackend, kitura swift, urlsession sdk, alamofire, restkit, kiturakit, kitura, xcode kitura, meals swift, rest api kitura, rest api swift
 
@@ -45,9 +45,7 @@ First, be sure that you have the following prerequisites ready to go:
 
 3. Select the Swift language. A server-side Swift app is created. Also displayed, is the Host and Domain options, which forms the URL for the application. If you're unsure, use the defaults and you can also provide your own custom domain from a domain provider where the application is to reside.
 
-4. You can provide an OpenAPI (also known as Swagger) definition for the REST API that you want to build. If you have such a definition, a REST API is created that includes the corresponding handler functions in Kitura. If you don't have an OpenAPI definition, don't worry as Kitura makes it easy for you to manually create REST APIs by using its Router APIs.
-
-5. Click **Create app**.
+4. Click **Create app**.
 
 An app is created, but one that doesn't yet use any additional services. You can add services by clicking **Add service** or **Download code** button to get the code for the app. You can also easily add services to an existing app.
 
