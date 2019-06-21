@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-21"
 
 keywords: install sdk swift, sdk client swift, carthage, cocoapods, swift package manager, ios sdk
 

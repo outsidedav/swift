@@ -18,6 +18,7 @@ Programming with Swift on IBM Cloud
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
+    installing_sdks.md
     push/push_notifications.md
     app_launch/mobile_applaunch.md
     
@@ -45,12 +46,6 @@ Programming with Swift on IBM Cloud
         machine_learning/coreml.md
         machine_learning/dsx.md
 
-    {: .topicgroup}
-    Using SDKs
-        getting_started/installing.md
-        api/api.md
-        api/sdk.md
-    
     {: .topicgroup}
     Developing server-side Swift apps
         cloudnative/configuration.md
