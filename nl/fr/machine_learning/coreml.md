@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-12"
 
 keywords: coreml swift, core ml swift, watson swift core, create model swift, image classification swift, version parameter swift, swift coreml watson
 
@@ -16,6 +16,7 @@ subcollection: swift
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:gif: data-image-type='gif'}
 
 # Utilisation de Core ML avec Watson
 {: #swift-coreml}
@@ -76,7 +77,7 @@ S'il n'existe aucun modèle en cours, le premier modèle détecté à distance o
 
 2. Depuis la barre latérale, envoyez par téléchargement les cours de formation au format `.zip`. Sélectionnez ensuite chaque jeu de données et ajoutez-les à votre modèle à l'aide du menu déroulant. N'hésitez pas à ajouter plusieurs classes qui utilisent vos propres jeux d'images pour améliorer le classifieur.
 
-![Ajout de classes](images/add_classes.png)
+![Ajout de classes](images/add_classes.png "Lier le service à Watson Studio")
 
 3. Sélectionnez **Train Model**, puis patientez jusqu'à ce que le modèle soit entièrement entraîné.
 
@@ -126,7 +127,7 @@ Les exemples suivants vous aident à ajouter les fonctions Core ML de {{site.dat
   ```
   {: codeblock}
 
-  Consultez la [documentation sur les paramètres de version](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") ou utilisez la date à laquelle le service {site.data.keyword.visualrecognitionshort}} a été créé.
+  Consultez la [documentation sur les paramètres de version](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") ou utilisez la date à laquelle le service {site.data.keyword.visualrecognitionshort}} a été créé.
   {: tip}
 
 3. Ajoutez le code suivant pour télécharger et mettre à jour le modèle Core ML local avec votre classifieur Watson :
@@ -177,7 +178,7 @@ Les kits de démarrage constituent un moyen facile et rapide d'utiliser les fonc
 
 Pour ajouter {{site.data.keyword.visualrecognitionshort}} à un kit de démarrage, procédez comme suit :
 
-1. Sélectionnez le [kit de démarrage](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") avec lequel vous voulez démarrer.
+1. Sélectionnez le [kit de démarrage](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") avec lequel vous voulez démarrer.
 2. Créez l'application avec les services par défaut.
 3. Cliquez sur **Ajout d'un service > Watson > {{site.data.keyword.visualrecognitionshort}}**.
 4. Téléchargez le projet en cliquant sur **Télécharger le code**. Pour les projets iOS, les données d'identification sont insérées dans le fichier `BMSCredentials.plist` des zones clés correspondantes. Pour les projets Swift côté serveur, vous trouverez ces données d'identification dans le fichier `config/local-dev.json`.

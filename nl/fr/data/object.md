@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-07"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -36,7 +36,7 @@ Lorsque vous créez un compartiment, vous devez sélectionner un niveau de rési
 ## API
 {: #api-cos}
 
-L'API {{site.data.keyword.cos_full}} est un API REST pour la lecture et l'écriture d'objets. Elle prend en charge un sous-ensemble d'API S3 pour une migration facile des applications vers {{site.data.keyword.cloud_notm}}. N'importe quel logiciel SDK S3 peut utiliser {{site.data.keyword.cos_full}}. Pour plus d'informations, consultez la [Référence d'API {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)
+L'API {{site.data.keyword.cos_full}} est un API REST pour la lecture et l'écriture d'objets. Elle prend en charge un sous-ensemble d'API S3 pour une migration facile des applications vers {{site.data.keyword.cloud_notm}}. N'importe quel logiciel SDK S3 peut utiliser {{site.data.keyword.cos_full}}. Pour plus d'informations, voir la documentation détaillée [{{site.data.keyword.cos_short}} API Reference](/docs/services/cloud-object-storage?topic=cloud-object-storage-compatibility-api).
 
 ## Sécurisation du stockage d'objets
 {: #security-cos}
@@ -102,11 +102,11 @@ D'autres informations sur la tarification sont disponibles dans la documentation
 
 - Coffre
   
-  Ce service est pour les charges de travail avec des données peu fréquemment utilisées, comme les sauvegardes, les archives et les charges de travail de conformité. 
+  Ce service est pour les charges de travail avec des données peu fréquemment utilisées, comme les sauvegardes, les archives et les charges de travail de conformité.
 
 - Coffre froid
   
-  Cette option de déploiement est idéale pour les exigences d'accès minimum, la conformité des enregistrements historiques et les sauvegardes à long terme. 
+  Cette option de déploiement est idéale pour les exigences d'accès minimum, la conformité des enregistrements historiques et les sauvegardes à long terme.
 
 - Flex
 

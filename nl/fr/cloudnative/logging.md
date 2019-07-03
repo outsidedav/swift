@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-10"
 
 keywords: swift logging, ios logging, debug swift, add logging swift, heliumlogger swift, loggerapi swift, logger swift, starter kit swift logger
 
@@ -62,7 +62,7 @@ Les applications Swift qui sont créées à l'aide du service d'application {{si
 ```
 {: screen}
 
-Ces messages sont situés localement dans `stdout`, ou dans les journaux de déploiement [CloudFoundry](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs) et [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"), qui sont accessibles par `ibmcloud app logs --recent <APP_NAME>` et `kubectl logs <deployment name>`.
+Ces messages se trouvent localement dans `stdout` (sortie standard), ou dans les journaux des déploiements Cloud Foundry et Kubernetes, accessibles via `[ibmcloud app logs --recent <APP_NAME>]`(/docs/cli/reference?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_logs) et `[kubectl logs <deployment name>`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
 
 Dans le fichier `/Sources/AppName/main.swift`, vous pouvez voir le code suivant :
 ```swift
@@ -76,11 +76,11 @@ Le niveau de journalisation est défini de manière explicite sur `.info` afin d
 ## Etapes suivantes
 {: #next-logging notoc}
 
-En savoir plus sur l'affichage des journaux dans chacune de vos cibles de déploiement : 
-* [Journaux de Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")
+En savoir plus sur l'affichage des journaux dans chacune de vos cibles de déploiement :
+* [Journaux de Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/#basic-logging-in-kubernetes){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")
 * [Journaux de Cloud Foundry](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_cli)
 * [Cloud Foundry Enterprise Environment - Contrôle et journalisation](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
-* [{{site.data.keyword.openwhisk}} - Journaux & surveillance](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
+* [Journaux & surveillance d'{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-logs)
 
 Découvrez comment implémenter et utiliser un regroupeur de journaux :
 * [Analyse de journal {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)

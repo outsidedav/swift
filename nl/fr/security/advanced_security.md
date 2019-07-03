@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-17"
 
 keywords: swift security, add security swift, crypto swift, hyper protect swift, ios hyper protect, dbaas swift, swift key management, swift advanced security
 
@@ -24,7 +24,7 @@ subcollection: swift
 Les services de sécurité avancés d'{{site.data.keyword.cloud}} permettent aux développeurs Swift de protéger leurs clés et leurs données (au repos, en utilisation, ou en transit) de manière simple et bénéficiant du plus haut niveau de sécurité de l'industrie.
 {: shortdesc}
 
-Une méthode simple consiste à utiliser directement les services de plateforme hypersécurisés {{site.data.keyword.cloud_notm}} pour l'ensemble des services de sécurité avancés dans {{site.data.keyword.cloud}}. Pour plus d'informations, voir [Initiation aux services de plateforme hypersécurisés {{site.data.keyword.cloud_notm}}](/docs/services/hypersecure-platform/index.html#getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits).
+Une méthode simple consiste à utiliser directement les services de plateforme hypersécurisés {{site.data.keyword.cloud_notm}} pour l'ensemble des services de sécurité avancés dans {{site.data.keyword.cloud}}. Pour plus d'informations, voir [Initiation aux services de plateforme hypersécurisés {{site.data.keyword.cloud_notm}}](/docs/services/hypersecure-platform?topic=hypersecure-platform-getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits).
 
 ## Utilisation du service {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}
 {: #security-swift}
@@ -75,7 +75,7 @@ Pour en savoir plus sur {{site.data.keyword.cloud_notm}} Hyper Protect DBaaS, vo
 
 {{site.data.keyword.hscontainers}} propose des outils puissants en combinant les technologies Docker et Kubernetes, une expérience utilisateur intuitive et une sécurité et un isolement intégrés pour automatiser le déploiement, l'exploitation, la mise à l'échelle et la surveillance d'applications conteneurisées dans un cluster d'hôtes de calcul.
 
-{{site.data.keyword.hscontainers}} n'est disponible que pour les utilisateurs sponsorisés. Si vous souhaitez une assistance de sécurité dédiée, enregistrez-vous en tant qu'utilisateur sponsor auprès d'[IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") afin de déployer votre application dans le cluster {{site.data.keyword.hscontainers}}.
+{{site.data.keyword.hscontainers}} n'est disponible que pour les utilisateurs sponsorisés. Si vous souhaitez une assistance de sécurité dédiée, enregistrez-vous en tant qu'utilisateur sponsor auprès d'[IBM Z Client Feedback Program](https://www.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zwelcome.shtml){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") afin de déployer votre application dans le cluster {{site.data.keyword.hscontainers}}.
 {: tip}
 
-Avant de devenir un utilisateur sponsor, vous pouvez utiliser {{site.data.keyword.containershort_notm}} pour sécuriser votre application. Pour plus d'informations, voir [Initiation à {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-container_index#container_index).
+Avant de devenir un utilisateur sponsor, vous pouvez utiliser {{site.data.keyword.containershort_notm}} pour sécuriser votre application. Pour plus d'informations, voir [Initiation à {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-getting-started).

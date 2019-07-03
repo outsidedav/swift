@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-07"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -36,7 +36,7 @@ Object Storage は、クラウド・コンピューティングにおける基�
 ## API
 {: #api-cos}
 
-{{site.data.keyword.cos_full}} API は、オブジェクトを読み書きするための REST ベースの API です。 この API は、アプリケーションを {{site.data.keyword.cloud_notm}} に簡単にマイグレーションできるように、S3 API のサブセットをサポートしています。 {{site.data.keyword.cos_full}} を使用するために、任意の S3 SDK を利用できます。 詳しくは、[{{site.data.keyword.cos_short}} API リファレンス](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)を参照してください。
+{{site.data.keyword.cos_full}} API は、オブジェクトを読み書きするための REST ベースの API です。 この API は、アプリケーションを {{site.data.keyword.cloud_notm}} に簡単にマイグレーションできるように、S3 API のサブセットをサポートしています。 {{site.data.keyword.cos_full}} を使用するために、任意の S3 SDK を利用できます。 詳しくは、[{{site.data.keyword.cos_short}} API リファレンス](/docs/services/cloud-object-storage?topic=cloud-object-storage-compatibility-api)を参照してください。
 
 ## オブジェクト・ストレージの保護
 {: #security-cos}
@@ -110,6 +110,6 @@ regional または cross-region のどちらのオプションにするかを決
 
 - Flex
 
-  データ・アクセス要件が変化する場合に導入し、予期しないコストの変動から予算を守ります。ストレージ・クラスはバケット・レベルで定義されます。 使用するストレージ・クラスに設定された、バケットを作成します。
+  データ・アクセス要件が変化する場合に導入し、予期しないコストの変動から予算を守ります。 ストレージ・クラスはバケット・レベルで定義されます。 使用するストレージ・クラスに設定された、バケットを作成します。
 
 

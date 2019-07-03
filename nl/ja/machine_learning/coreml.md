@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-12"
 
 keywords: coreml swift, core ml swift, watson swift core, create model swift, image classification swift, version parameter swift, swift coreml watson
 
@@ -16,11 +16,12 @@ subcollection: swift
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:gif: data-image-type='gif'}
 
 # Watson での Core ML の使用
 {: #swift-coreml}
 
-[Core ML](https://developer.apple.com/documentation/coreml){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用すると、さまざまなタイプの機械学習モデルをアプリに統合できます。30 を超えるタイプのレイヤーによる高度なディープ・ラーニングのサポートに加え、ツリー・アンサンブル、SVM、一般化線形モデルなどの標準的なモデルもサポートされています。 Core ML では、分析するデータをリモート送信するのではなく、Metal や Accelerate などの低レベルのテクノロジーを使用し、CPU や GPU のメリットをシームレスに活用することにより最大限のパフォーマンスや効率を提供します。
+[Core ML](https://developer.apple.com/documentation/coreml){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用すると、さまざまなタイプの機械学習モデルをアプリに統合できます。 30 を超えるタイプのレイヤーによる高度なディープ・ラーニングのサポートに加え、ツリー・アンサンブル、SVM、一般化線形モデルなどの標準的なモデルもサポートされています。 Core ML では、分析するデータをリモート送信するのではなく、Metal や Accelerate などの低レベルのテクノロジーを使用し、CPU や GPU のメリットをシームレスに活用することにより最大限のパフォーマンスや効率を提供します。
 
 Core ML と Watson Visual Recognition を Swift アプリケーションに追加するには、以下の手順に従ってモデルをトレーニングおよび作成し、依存関係をダウンロードして作成し、画像分類機能を追加します。
 {: shortdesc}
@@ -36,7 +37,7 @@ Core ML と Watson Visual Recognition を Swift で使用するには、次の�
 * CocoaPods、Carthage、または Swift Package Manager
 
 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、または [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
-を使用することにより、[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") をインストールできます。CocoaPods を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得することになります。CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
+を使用することにより、[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") をインストールできます。 CocoaPods を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得することになります。 CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
 
 ```console
 sudo gem install cocoapods
@@ -77,7 +78,7 @@ sudo gem install cocoapods
 
 2. サイドバーから、圧縮 `.zip` ファイルに入れたモデル・トレーニング・コースをアップロードします。 その後、各データ・セットを選択し、ドロップダウン・メニューからモデルにそれらを追加します。 独自の画像セットを使用するクラスを追加することにより、分類子を拡張することもできます。
 
-![クラスの追加](images/add_classes.png)
+![クラスの追加](images/add_classes.png "Watson Studio へのサービスのリンク")
 
 3. **「トレーニング・モデル (Train Model)」**を選択し、モデルが十分にトレーニングされるまで待ちます。
 
@@ -127,7 +128,7 @@ Pod build が失敗しないようにするため、プロジェクトを Xcode 
   ```
   {: codeblock}
 
-  [バージョン・パラメーターの資料](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認するか、{site.data.keyword.visualrecognitionshort}} サービスが作成された日付を使用してください。
+  [バージョン・パラメーターの資料](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認するか、{site.data.keyword.visualrecognitionshort}} サービスが作成された日付を使用してください。
   {: tip}
 
 3. Watson 分類子を使用してローカル Core ML モデルをダウンダウンロードまたは更新するため、次のコードを追加します。
@@ -178,7 +179,7 @@ Pod build が失敗しないようにするため、プロジェクトを Xcode 
 
 {{site.data.keyword.visualrecognitionshort}} をスターター・キットに追加するには、次の手順を実行します。
 
-1. 使用する[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を選択します。
+1. 使用する[スターター・キット](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を選択します。
 2. デフォルト・サービスを使用してアプリを作成します。
 3. **「サービスの追加」>「Watson」>「{{site.data.keyword.visualrecognitionshort}}」**をクリックします。
 4. **「コードのダウンロード (Download code)」**をクリックしてプロジェクトをダウンロードします。 iOS プロジェクトでは、対応するキー・フィールドの `BMSCredentials.plist` ファイルに資格情報が挿入されます。 サーバー・サイドの Swift プロジェクトでは、`config/local-dev.json` ファイルの中にそれらの資格情報が含まれています。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-06-12"
 
 keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
 
@@ -14,7 +14,7 @@ subcollection: swift
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
-{:gif: .gif}
+{:gif: data-image-type='gif'}
 {:tip: .tip}
 
 # 可用性の高いセキュアなデータベースの作成
@@ -24,11 +24,10 @@ subcollection: swift
 
 現時点で、{{site.data.keyword.ihsdbaas_full}} を使用する際にサポートされるプログラミング言語は、MongoKitten SDK 4.0.0 での Swift 4.0 です。
 
-
 ## ステップ 1. データベース・クラスターの作成
 {: #create_dbcluster}
 
-1. [{{site.data.keyword.ihsdbaas_full}} サービス構成](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") 画面にアクセスします。
+1. [{{site.data.keyword.ihsdbaas_full}} サービス構成](https://{DomainName}/catalog/services/hyper-protect-dbaas){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") 画面にアクセスします。
 
 2. 以下の情報を指定します。
 
@@ -85,7 +84,7 @@ subcollection: swift
 
 このスターター・キットから作成された既存のプロジェクトを使用するか、または新規プロジェクトを作成します。
 
-1. [{{site.data.keyword.cloud_notm}}「アプリ・サービス」ダッシュボード](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を開きます。
+1. [{{site.data.keyword.cloud_notm}}「アプリ・サービス」ダッシュボード](https://{DomainName}/developer/appservice/dashboard){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を開きます。
 
 2. **「スターター・キット」**タブを選択します。
 
@@ -102,13 +101,13 @@ subcollection: swift
 ## ステップ 3. データベースへの接続
 {: #connect_db}
 
-セキュアなデータ転送を行えるように、https://api.hypersecuredbaas.ibm.com/cert.pem から認証局 (CA) ファイルをダウンロードし、プロジェクト・ディレクトリーにコピーします。
+セキュアなデータ転送を行えるように、認証局 (CA) ファイルをダウンロードし、プロジェクト・ディレクトリーにコピーします。
 
 1. ダウンロードした解凍済みのコード・ファイルがある、プロジェクト・ディレクトリーに変更します。
 
 2. データベース・クラスターに対するアクセス資格情報を格納する、`cred.json` という名前の JSON ファイルを作成します。
 
-3. [データベース・クラスターの作成](#create_dbcluster)の手順で収集した値を入力します。 それらの値は、単一行で指定する必要があります。
+3. [データベース・クラスターの作成](/docs/swift?topic=swift-create-database-cluster#create_dbcluster)の手順で収集した値を入力します。 それらの値は、単一行で指定する必要があります。
   ```hljs
   {
   "uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
@@ -118,34 +117,16 @@ subcollection: swift
   ```
   {: codeblock}
 
-  各部の意味は次のとおりです。
-  <table>
-  <tr>
-    <th> パラメーター </th>
-    <th> 説明 </th>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_ID</em>&gt; </td>
-    <td> [データベース・クラスターの作成](#create_dbcluster)で指定したデータベース管理者のユーザー ID です。
-  </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_pwd</em>&gt; </td>
-    <td> [データベース・クラスターの作成](#create_dbcluster)で指定した管理者パスワードのユーザー ID です。 </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>Hostname_i</em>&gt; </td>
-    <td> [データベース・クラスターの作成](create_dbcluster)で返されたデータベース・レプリカ <em>i</em> (<em>i</em>=1,2,3) です。 </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>PortNumber_i</em>&gt; </td>
-    <td> [データベース・クラスターの作成](#create_dbcluster)で返されたポート番号 <em>i</em> (<em>i</em>=1,2,3) です。 </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>CA_file</em>&gt; </td>
-    <td> ダウンロードした CA ファイルのファイル名です。 デプロイメント中に、このファイル名がディレクトリー `/swift-project` にコピーされます。</td>
-  </tr>
-  </table>
+### データベース・パラメーターの説明
+{: #db-parameter-descriptions}
+
+以下のデータベース・パラメーターの説明を参照してください。
+
+* `admin_ID` - [データベース・クラスターの作成](/docs/swift?topic=swift-create-database-cluster#create_dbcluster)で指定したデータベース管理者のユーザー ID。
+* `admin_pwd` - [データベース・クラスターの作成](/docs/swift?topic=swift-create-database-cluster#create_dbcluster)で指定した管理者パスワードのユーザー ID。
+* `Hostname_i` - [データベース・クラスターの作成](/docs/swift?topic=swift-create-database-cluster#create_dbcluster)で返されたデータベース・レプリカ *i* (*i*=1,2,3)。
+* `PortNumber_i` - [データベース・クラスターの作成](/docs/swift?topic=swift-create-database-cluster#create_dbcluster)で返されたポート番号 *i* (*i*=1,2,3)。
+* `CA_file` - ダウンロードした CA ファイルのファイル名。 デプロイメント中に、このファイル名がディレクトリー `/swift-project` にコピーされます。
 
 4. MongoKitten SDK の使用に必要なパッケージ依存関係を追加するために、
 `Package.swift` ファイルを編集します。
@@ -251,7 +232,8 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 
 アプリケーションは、必要なビルド・ツールを使用して[ローカルで](/docs/swift?topic=swift-swift_cli#swift-install-tools)実行するか、または {{site.data.keyword.cloud_notm}} にデプロイすることができます。
 
-ダッシュボードでデプロイメント・ツールチェーンを作成するには、**「デプロイ」**をクリックします。選択した方式の説明に従って、デプロイメント・ターゲットをセットアップします。
-  * **[{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**にデプロイします。このオプションは、高可用性のアプリケーション・コンテナーをデプロイして管理するためのワーカー・ノードというホスト・クラスターを作成します。 クラスターを作成したり、既存のクラスターにデプロイしたりすることができます。
-  * **Cloud Foundry にデプロイ**します。 このオプションはクラウド・ネイティブなアプリをデプロイします。ユーザーが基礎にあるインフラストラクチャーを管理する必要はありません。 ご使用のアカウントに {{site.data.keyword.cfee_full_notm}} へのアクセス権限がある場合、デプロイヤー・タイプとして、**[パブリック・クラウド](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)**または**[エンタープライズ環境](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**のいずれかを選択できます。エンタープライズ環境を使用すると、自社専用に Cloud Foundry アプリケーションをホスティングする隔離された環境を作成して管理できます。
-  * **[仮想サーバー](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**にデプロイします。このオプションによって、仮想サーバー・インスタンスがプロビジョンされ、アプリを含むイメージがロードされ、DevOps ツールチェーンが作成され、最初のデプロイメント・サイクルが開始されます。
+ダッシュボードでデプロイメント・ツールチェーンを作成するには、**「デプロイ」**をクリックします。 次の方法のうちの選択する方法に応じた手順に従って、デプロイメント・ターゲットをセットアップします。
+  * **IBM Kubernetes Service にデプロイします**。 このオプションでは、可用性の高いアプリ・コンテナーをデプロイして管理するためのワーカー・ノードと呼ばれるホストのクラスターを作成します。 クラスターを作成したり、既存のクラスターにデプロイしたりすることができます。 詳しくは、[Kubernetes クラスターへのアプリのデプロイ](/docs/containers?topic=containers-app)を参照してください。
+  * **Cloud Foundry へのデプロイ**。 このオプションでは、基礎となるインフラストラクチャーの管理を必要とせずに、クラウド・ネイティブ・アプリをデプロイします。 ご使用のアカウントに {{site.data.keyword.cfee_full_notm}} へのアクセス権限がある場合、デプロイヤー・タイプとして、**パブリック・クラウド**または**エンタープライズ環境**のいずれかを選択できます。エンタープライズ環境を使用すると、自社専用に Cloud Foundry アプリをホスティングする隔離された環境を作成して管理できます。 詳しくは、[Cloud Foundry パブリックへのアプリのデプロイ](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps)と[{{site.data.keyword.cfee_full_notm}} へのアプリのデプロイ](/docs/cloud-foundry?topic=cloud-foundry-deploy_apps)を参照してください。
+  * **仮想サーバーにデプロイします**。 このオプションによって、仮想サーバー・インスタンスがプロビジョンされ、アプリを含むイメージがロードされ、DevOps ツールチェーンが作成され、最初のデプロイメント・サイクルが開始されます。 詳しくは、[仮想サーバーへのアプリのデプロイ](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server)を参照してください。
+  

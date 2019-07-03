@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
 
@@ -27,7 +27,7 @@ La liste suivante présente le flux des travaux d'intégration :
 1. Les utilisateurs interagissent avec l'interface implémentée dans votre application.
 2. Votre application envoie une entrée utilisateur à {{site.data.keyword.conversationshort}} à l'aide du logiciel SDK Swift {{site.data.keyword.watson}}.
 3. Le logiciel SDK {{site.data.keyword.watson}} Swift se connecte à un espace de travail, qui est un conteneur pour votre flux de dialogues et vos données d'apprentissage.
-4. L'espace de travail interprète l'entrée utilisateur et dirige le flux de la conversation, en envoyant une réponse à votre application.
+4. L'espace de travail interprète l'entrée utilisateur et dirige le flux des conversations, en envoyant une réponse à votre application.
 5. Votre application affiche la réponse à l'utilisateur.
 
 ## Avant de commencer
@@ -110,8 +110,7 @@ Les exemples suivants vous aident à ajouter des fonctions {{site.data.keyword.c
   ```
   {: codeblock}
 
-  **Astuce **: cet exemple sauvegarde le contexte à énoncer. Pour une meilleure compréhension de cet objet et pour savoir comment l'adapter à votre scénario d'utilisation, consultez la [documentation sur les variables de contexte](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables). Consultez la [documentation sur les paramètres de version](https://cloud.ibm.com/apidocs/assistant#versioning){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") ou utilisez la date à laquelle le service {site.data.keyword.conversationshort}} a été créé.
-  
+  **Astuce **: cet exemple sauvegarde le contexte à énoncer. Pour une meilleure compréhension de cet objet et pour savoir comment l'adapter à votre scénario d'utilisation, consultez la [documentation sur les variables de contexte](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables). Consultez la [documentation sur les paramètres de version](https://{DomainName}/apidocs/assistant#versioning){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") ou utilisez la date à laquelle le service {site.data.keyword.conversationshort}} a été créé.
 
 3. Initialisez la conversation. Suivant la manière dont votre assistant est configuré, il peut fournir une réponse initiale à l'utilisateur :
   ```swift
@@ -173,9 +172,9 @@ Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11a
 ## Utilisation des kits de démarrage
 {: #starterkits-chatbot}
 
-Les kits de démarrage constituent un moyen facile et rapide d'utiliser les fonctionnalités d'{{site.data.keyword.cloud_notm}}. Grâce à eux, vous pourrez ajouter {{site.data.keyword.conversationshort}} à un système de back end côté serveur. Le kit de démarrage Chatbot for iOS with Watson montre comment utiliser les fonctions d'apprentissage en profondeur de {{site.data.keyword.conversationshort}}, en ajoutant une interface en langage naturel à votre application, qui automatise les interactions avec vos utilisateurs.
+Les kits de démarrage vous permettent d'utiliser les fonctionnalités d'{{site.data.keyword.cloud_notm}} de manière rapide et facile. Vous pouvez ajouter {{site.data.keyword.conversationshort}} à un système de back-end côté serveur avec les kits de démarrage. Le kit de démarrage Chatbot for iOS with Watson montre comment utiliser les fonctions d'apprentissage en profondeur de {{site.data.keyword.conversationshort}}, en ajoutant une interface en langage naturel à votre application, qui automatise les interactions avec vos utilisateurs.
 
-1. Sélectionnez le [kit de démarrage](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") avec lequel vous voulez démarrer.
+1. Sélectionnez le [kit de démarrage](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") avec lequel vous voulez démarrer.
 2. Créez l'application avec les services par défaut.
 3. Cliquez sur **Ajout d'un service > Watson > {{site.data.keyword.conversationshort}}**.
 4. Téléchargez le projet en cliquant sur **Télécharger le code**. Vous trouverez les données d'identification du service dans le fichier `config/local-dev.json`.

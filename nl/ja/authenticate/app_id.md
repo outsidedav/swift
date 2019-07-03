@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-19"
 
 keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
 
@@ -41,7 +41,7 @@ subcollection: swift
 
 {{site.data.keyword.appid_short_notm}} サービスのインスタンスを次のように作成します。
 
-1. [{{site.data.keyword.cloud_notm}} カタログ](https://cloud.ibm.com/catalog/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、{{site.data.keyword.appid_short_notm}} を選択します。 サービス構成画面が開きます。
+1. [{{site.data.keyword.cloud_notm}} カタログ](https://{DomainName}/catalog){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、{{site.data.keyword.appid_short_notm}} を選択します。 サービス構成画面が開きます。
 2. サービス・インスタンスに名前を付けます。または、事前設定された名前を使用します。
 3. 料金プランを選択し、**「作成」**をクリックします。
 
@@ -86,29 +86,16 @@ subcollection: swift
   ```
   {: codeblock}
 
-4. `tenant ID` および `region` パラメーターを渡して、SDK を初期化します。 このコードを入れる一般的な場所 (ただし必須の場所ではありません) は、アプリの `AppDelegate` の `application:didFinishLaunchingWithOptions` メソッド内です。
+4. `tenantID` および `AppID_region` パラメーターを渡して、SDK を初期化します。 このコードを入れる一般的な場所 (ただし必須の場所ではありません) は、アプリの `AppDelegate` の `application:didFinishLaunchingWithOptions` メソッド内です。
   ```swift
-  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <AppID_region>);
   ```
   {: codeblock}
   
-  <table>
-    <thead>
-      <th colspan=2><img src="images/idea.png" alt=""/> コマンドの構成要素の説明 </th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><em>tenantID</em></td>
-        <td>テナント ID は、アプリの初期化に使用される固有 ID です。 この値は {{site.data.keyword.appid_short_notm}} ダッシュボードで確認することができます。 <b>「サービス資格情報 (Service Credentials)」</b>タブの<b>「資格情報の表示 (View Credentials)」</b>をクリックします。</td>
-      </tr>
-      <tr>
-        <td><em>AppID_region</em></td>
-        <td>{{site.data.keyword.appid_short_notm}} リージョンは、サービスの操作場所の {{site.data.keyword.cloud_notm}} リージョンです。 このリージョンはサービス・ダッシュボードにあり、<em>AppID.REGION_US_SOUTH</em>、<em>AppID.REGION_SYDNEY</em>、<em>AppID.REGION_UK</em> のいずれかになります。</td>
-      </tr>
-    </tbody>
-  </table>
+  * `tenantID`: テナント ID は、アプリの初期化に使用される固有 ID です。 この値は、{{site.data.keyword.appid_short_notm}} ダッシュボードで**「サービス資格情報」**タブを選択し、**「資格情報の表示」**をクリックすることによって見つけることができます。
+  * `AppID_region`: {{site.data.keyword.appid_short_notm}} リージョンは、サービスの操作場所の {{site.data.keyword.cloud_notm}} リージョンです。 このリージョンはサービス・ダッシュボードにあり、`AppID.REGION_US_SOUTH`、`AppID.REGION_SYDNEY`、および `AppID.REGION_UK` のいずれかになります。
 
-5. 以下のコードを AppDelegate ファイルに追加します。
+5. 以下のコードを `AppDelegate` ファイルに追加します。
     ```swift
     func application(_ application: UIApplication, open url: URL, options :[UIApplicationOpenURLOptionsKey : Any]) -> Bool {
             return AppID.sharedInstance.application(application, open: url, options: options)
@@ -156,7 +143,6 @@ ID プロバイダーが提供するユーザー認証情報を使用して、�
     ```
     {: codeblock}
 
-
 ### クラウド・ディレクトリー
 {: #cloud-dir-appid}
 
@@ -168,7 +154,7 @@ ID プロバイダーが提供するユーザー認証情報を使用して、�
 クラウド・ディレクトリーを構成するには、次のようにします。
 
 1. {{site.data.keyword.appid_short_notm}} ダッシュボードを開き、**「ID プロバイダーの管理」**タブに移動して、クラウド・ディレクトリーを**「オン」**に設定します。
-2. [ディレクトリーおよびメッセージの設定](/docs/services/appid/cloud-drectory.html)を行います。
+2. [ディレクトリーおよびメッセージの設定](/docs/services/appid?topic=appid-cloud-directory)を構成します。
 4. 表示するサインオン画面の組み合わせを選択し、それらの画面を呼び出すコードをアプリケーション内に配置します。
     * サインイン
         ```swift
@@ -276,7 +262,7 @@ ID プロバイダーが提供するユーザー認証情報を使用して、�
 3. {{site.data.keyword.appid_short_notm}} ダッシュボードで ID プロバイダーまたはログイン・ウィジェットの画面を更新します。
 4. ステップ 1 と 2 を繰り返して、変更が即時に実装されることを確認します。 アプリ・コードを更新する必要はありません。
 
-問題が発生する場合は、 [{{site.data.keyword.appid_short_notm}} のトラブルシューティング](/docs/services/appid?topic=appid-troubleshooting#troubleshooting)を確認してください。
+問題がある場合は、 [{{site.data.keyword.appid_short_notm}} のトラブルシューティング](/docs/services/appid?topic=appid-troubleshooting)を確認してください。
 
 ## 次のステップ
 {: #next-appid notoc}
@@ -284,4 +270,4 @@ ID プロバイダーが提供するユーザー認証情報を使用して、�
 お疲れさまでした。 これでアプリに一定のレベルのセキュリティーが追加されました。 この調子で、以下のいずれかのオプションを試してみてください。
 
 * {{site.data.keyword.appid_short_notm}} に備わっているすべての機能を確認して利用するには、[ドキュメント](/docs/services/appid?topic=appid-getting-started#getting-started)をご確認ください。
-* スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 [モバイル開発者ダッシュボード ](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、使用可能なスターター・キットを確認できます。 コードをダウンロードし、 アプリを実行します。
+* スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 [モバイル開発者ダッシュボード](https://{DomainName}/developer/mobile/dashboard){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、使用可能なスターター・キットを確認できます。 コードをダウンロードして アプリを実行します。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
 
@@ -41,7 +41,7 @@ subcollection: swift
 * Swift 4.1 以上
 * CocoaPods、Carthage、または Swift Package Manager
 
-[CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、または [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用することにより、[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") をインストールできます。CocoaPods を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得することになります。CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
+[CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、または [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用することにより、[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") をインストールできます。 CocoaPods を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得することになります。 CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
 
 ```console
 sudo gem install cocoapods
@@ -110,7 +110,7 @@ Pod build が失敗しないようにするため、プロジェクトを Xcode 
   ```
   {: codeblock}
 
-  **ヒント**: この例では、後から会話を続行するためのコンテキストが保存されます。 このオブジェクトについて、またユース・ケースにこのオブジェクトを適応させる方法について詳しくは、[コンテキスト変数の資料](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables)を参照してください。 [バージョン・パラメーターの資料](https://cloud.ibm.com/apidocs/assistant#versioning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認するか、{site.data.keyword.conversationshort}} サービスが作成された日付を使用してください。
+  **ヒント**: この例では、後から会話を続行するためのコンテキストが保存されます。 このオブジェクトについて、またユース・ケースにこのオブジェクトを適応させる方法について詳しくは、[コンテキスト変数の資料](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables)を参照してください。 [バージョン・パラメーターの資料](https://{DomainName}/apidocs/assistant#versioning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認するか、{site.data.keyword.conversationshort}} サービスが作成された日付を使用してください。
 
 3. 会話を初期化します。 アシスタントの構成方法によっては、ユーザーに対する最初の応答を提供できます。
   ```swift
@@ -174,10 +174,10 @@ Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11a
 
 スターター・キットを使用すると、{{site.data.keyword.cloud_notm}} の機能を素早く簡単に利用できます。 スターター・キットを使用して、{{site.data.keyword.conversationshort}} を任意のサーバー・サイドのバックエンドに追加できます。 Chatbot for iOS with Watson Starter Kit は、ユーザーとの対話を自動化するアプリケーションに自然言語インターフェースを追加することによって {{site.data.keyword.conversationshort}} のディープ・ラーニング機能を使用する方法について説明しています。
 
-1. 使用する[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を選択します。
+1. 使用する[スターター・キット](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を選択します。
 2. デフォルト・サービスを使用してアプリを作成します。
 3. **「サービスの追加」>「Watson」>「{{site.data.keyword.conversationshort}}」**をクリックします。
-4. **「コードのダウンロード (Download code)」**をクリックしてプロジェクトをダウンロードします。サービス資格情報は、`config/local-dev.json` ファイルにあります。
+4. **「コードのダウンロード (Download code)」**をクリックしてプロジェクトをダウンロードします。 サービス資格情報は、`config/local-dev.json` ファイルにあります。
 
 ## 次のステップ
 {: #next-chatbot notoc}

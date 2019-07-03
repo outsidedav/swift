@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="swift" audience="platform" arm="4088034" href="/docs/swift/index.html" path="swift"}
+{: .toc subcollection="swift" category="devops" audience="platform" arm="4088034" href="/docs/swift?topic=swift-getting-started" path="swift"}
 Programmation avec Swift sur IBM Cloud
 
     {: .navgroup id="learn"}
@@ -18,6 +18,7 @@ Programmation avec Swift sur IBM Cloud
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
+    installing_sdks.md
     push/push_notifications.md
     app_launch/mobile_applaunch.md
     
@@ -46,13 +47,6 @@ Programmation avec Swift sur IBM Cloud
         machine_learning/dsx.md
 
     {: .topicgroup}
-    Utilisation de logiciels SDK
-        getting_started/installing.md
-        api/api.md
-        backend/cli_sdkgen.md
-        api/sdk.md
-    
-    {: .topicgroup}
     Développement d'applications Swift côté serveur
         cloudnative/configuration.md
         cloudnative/appmetrics.md
@@ -74,5 +68,5 @@ Programmation avec Swift sur IBM Cloud
     {: .navgroup id="help"}
     [dW Answers](https://developer.ibm.com/answers/topics/swift.html)
     [StackOverflow](https://stackoverflow.com/search?q=iOS+ibm-cloud)
-    [Swift@IBM Slack](https://swift-at-ibm-slack.mybluemix.net)
+    [Swift@IBM Slack](https://swift-at-ibm.slack.com)
     {: .navgroup-end}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-17"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -24,7 +24,7 @@ subcollection: swift
 
 {{site.data.keyword.engage_short}} サービスは、フィーチャーを定義し、デバイス・プラットフォームに基づいてオーディエンス (カスタム・オーディエンス属性を含む) を作成し、最後にフィーチャーのタイミングと配置を定めるエンゲージメントを定義します。 アプリケーションに組み込まれているフィーチャーおよびメトリック属性と共に SDK を使用すると、当サービスはオーディエンス経験の測定を始めます。 この情報に基づいてアプリを使用して、アプリ・ユーザーのさまざまなカテゴリーにわたって、カスタマイズされたカスタマー・エンゲージメントを作成することができます。
 
-![コグニティブ・エンゲージの概要](images/process_app_launch.png) 図 1. {{site.data.keyword.engage_short}} サービス・ライフサイクルの概要
+![コグニティブ・エンゲージの概要](images/process_app_launch.png "コグニティブ・エンゲージの概要")
 
 {{site.data.keyword.engage_short}} サービスのフィーチャーについて以下に説明します。
 
@@ -72,7 +72,7 @@ subcollection: swift
 サービスによって、アプリケーション開発を簡略化するためのプラットフォーム固有の SDK が提供されます。 {{site.data.keyword.cloud_notm}} Mobile Services Swift SDK は、CocoaPods と Carthage のどちらにもインストールできます。
 
 1. **「設定」**をクリックします。
-2. [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch) をインストールします。 詳細については、インストールのステップと技術概念が記されている `README` ファイルをご覧ください。
+2. [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") をインストールします。 詳細については、インストールのステップと技術概念が記されている `README` ファイルをご覧ください。
 3. アプリを初期設定するため、構成キーをコピーします。 アプリ・シークレット、アプリ GUID、クライアント・シークレットを使用して、アプリを構成し、エンゲージメントを作成します。
 
 ## ステップ 3. フィーチャーの作成
@@ -207,13 +207,13 @@ In-app メッセージの例を以下に示します。
 
   「エンゲージメントの詳細 (Engagement Details)」ウィンドウに、新しいエンゲージメントが表示されます。
 
-これで、エンゲージメントの[パフォーマンス](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type)を測定できます。
+これで、エンゲージメントの[パフォーマンス](/docs/services/app-launch?topic=app-launch-applaunch_type)を測定できます。
 
 ## クイック・リンク
 {: #links-applaunch notoc}
 
 以下のリンクを確認して、{{site.data.keyword.engage_short}} のフィーチャーに関する洞察や理解を得てください。
 
- - [アプリ起動サービス](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")をお試しください。
- - [ブログとビデオ](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
- - 詳しくは、[App Launch - 入門チュートリアル](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate)を参照してください。
+ - [アプリ起動サービス](https://{DomainName}/catalog/services/app-launch){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")をお試しください。
+ - [ブログとビデオ](/docs/services/app-launch?topic=app-launch-blogs-and-videos)
+ - 詳しくは、[App Launch の資料](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate)を参照してください。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-05"
 
 keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift, swift health check
 
@@ -20,41 +20,42 @@ subcollection: swift
 # Swift アプリでのヘルス・チェックの使用
 {: #healthcheck}
 
-ヘルス・チェックは、サーバー・サイド・アプリケーションが正常に動作しているかどうかを調べるための単純なメカニズムです。 定期的に health エンドポイントをポーリングして、サービスのインスタンスがトラフィックを受け入れる準備ができているかどうかを判断するよう、[Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") や [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") などのクラウド環境を構成することができます。
+ヘルス・チェックには、サーバー・サイド・アプリケーションが正常に動作しているかどうかを判別するための単純なメカニズムが備わっています。 定期的に health エンドポイントをポーリングして、サービスのインスタンスがトラフィックを受け入れる準備ができているかどうかを判断するよう、[Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") や [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") などのクラウド環境を構成することができます。
 {: shortdesc}
 
 ## ヘルス・チェックの概要
 {: #overview}
 
-ヘルス・チェックは、サーバー・サイド・アプリケーションが正常に動作しているかどうかを調べるための単純なメカニズムです。 通常は HTTP を介して使用され、UP または DOWN の状況を示す標準の戻りコードを使用します。 ヘルス・チェックの戻り値は変数ですが、`{"status": "UP"}` といった最小限の JSON 応答が標準的です。
+ヘルス・チェックには、サーバー・サイド・アプリケーションが正常に動作しているかどうかを判別するための単純なメカニズムが備わっています。 通常は HTTP を介して使用され、標準的な戻りコードで UP または DOWN 状況が示されます。 ヘルス・チェックの戻り値は変数ですが、`{"status": "UP"}` のような最小の JSON 応答が標準です。
 
-Kubernetes には、プロセスの正常性を詳細に示す概念があります。 次の 2 つのプローブが定義されています。
+Kubernetes には、プロセス正常性についての詳細な概念があります。 次の 2 つのプローブが定義されています。
 
-- _**readiness**_ プローブは、プロセスで要求を処理可能 (ルーティング可能) かどうかを示すために使用します。
+- _**readiness**_ プローブは、プロセスが要求を扱えるかどうか (ルーティング可能かどうか) を示すために使用されます。
 
-  Kubernetes は、readiness プローブに失敗したコンテナーに処理をルーティングしません。 サービスが初期化を完了していない場合、ビジーまたは過負荷の状態にある場合、あるいは要求を処理できない場合に、readiness プローブは失敗します。
+  Kubernetes は、readiness プローブが失敗したコンテナーには作業をルーティングしません。 サービスが初期化を完了していない場合、あるいはそれ以外でビジー状態である場合、過負荷である場合、または要求を処理できない場合、readiness プローブは失敗する可能性があります。
 
-- _**liveness**_ プローブは、プロセスを再始動する必要があるかどうかを示すために使用します。
+- _**liveness**_ プローブは、プロセスを再始動する必要があるかどうかを示すために使用されます。
 
-  Kubernetes は、liveness プローブに失敗したコンテナーを停止して再始動します。 liveness プローブは、内部プロセスがクラッシュした後にコンテナーが適切に停止しなかった場合や、メモリーが枯渇した場合など、リカバリー不能状態のプロセスをクリーンアップするために使用します。
+  Kubernetes は、liveness プローブが失敗したコンテナーを停止して再始動します。 liveness プローブは、内部プロセスがクラッシュした後にコンテナーが適切に停止しなかった場合や、メモリーが枯渇した場合など、リカバリー不能状態のプロセスをクリーンアップするために使用します。
 
-なお、比較として、Cloud Foundry では 1 つの health エンドポイントを使用します。 このチェックが失敗するとプロセスは再始動しますが、成功すると要求はプロセスにルーティングされます。 この環境では、プロセスがライブ状態のとき、エンドポイントの成功は最小限になります。 再始動サイクルを回避するため、サービスの初期化が完了するまでヘルス・チェックを遅らせるように、初期待機時間を構成します。
+なお、比較として、Cloud Foundry では 1 つの health エンドポイントを使用します。 この検査が失敗するとプロセスは再始動されますが、成功した場合、要求はプロセスにルーティングされます。 この環境では、プロセスがライブ状態であればエンドポイントは最低限成功します。 再始動サイクルを回避するため、サービスの初期化が完了するまでヘルス・チェックを遅らせるように、初期待機時間を構成します。
 
 以下の表では、readiness、liveness、単一の health の各エンドポイントで提供される応答について示します。
 
-| 状態    | Readiness (作動可能)                   | Liveness (活性)                   | Health (正常性)                    |
+| 状態    | readiness                   | liveness                   | health                    |
 |----------|-----------------------------|----------------------------|---------------------------|
-|          | OK 以外ではロードなし       | OK 以外では再始動      | OK 以外では再始動     |
-| Starting (開始中) | 503 - 使用不可           | 200 - OK                   | 遅延によりテストを回避   |
-| Up (稼働中)       | 200 - OK                    | 200 - OK                   | 200 - OK                  |
-| Stopping (停止中) | 503 - 使用不可           | 200 - OK                   | 503 - 使用不可         |
-| Down (ダウン)     | 503 - 使用不可           | 503 - 使用不可          | 503 - 使用不可         |
-| Errored (エラー)  | 500 - サーバー・エラー          | 500 - サーバー・エラー         | 500 - サーバー・エラー        |
+|          | OK 以外はロードなし       | OK 以外は再始動      | OK 以外は再始動     |
+| Starting | 503 - 使用不可           | 200 - OK                   | テスト回避のために遅延を使用   |
+| Up       | 200 - OK                    | 200 - OK                   | 200 - OK                  |
+| Stopping | 503 - 使用不可           | 200 - OK                   | 503 - 使用不可         |
+| Down     | 503 - 使用不可           | 503 - 使用不可          | 503 - 使用不可         |
+| Errored  | 500 - サーバー・エラー          | 500 - サーバー・エラー         | 500 - サーバー・エラー        |
+{: caption="表 1. HTTP 状況コード。" caption-side="bottom"}
 
 ## 既存の Swift アプリへのヘルス・チェックの追加
 {: #existing-app}
 
-[Health](https://github.com/IBM-Swift/Health){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") ライブラリーを利用すれば、Swift アプリケーションにヘルス・チェックを簡単に追加できます。ヘルス・チェックは拡張できます。 DoS 攻撃を回避するための [キャッシング](https://github.com/IBM-Swift/Health#caching){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") や、[カスタム・チェック](https://github.com/IBM-Swift/Health#implementing-a-health-check){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") の追加について詳しくは、[Health](https://github.com/IBM-Swift/Health){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") ライブラリーを参照してください。
+[Health](https://github.com/IBM-Swift/Health){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") ライブラリーを利用すれば、Swift アプリケーションにヘルス・チェックを簡単に追加できます。 ヘルス・チェックは拡張できます。 DoS 攻撃を回避するための [キャッシング](https://github.com/IBM-Swift/Health#caching){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") や、[カスタム・チェック](https://github.com/IBM-Swift/Health#implementing-a-health-check){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") の追加について詳しくは、[Health](https://github.com/IBM-Swift/Health){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") ライブラリーを参照してください。
 
 Health ライブラリーを既存の Swift アプリに追加するには、以下の手順を参照してください。
 
@@ -94,7 +95,7 @@ Health ライブラリーを既存の Swift アプリに追加するには、以
 ## サーバー・サイド Swift スターター・キット・アプリのヘルス・チェック
 {: #healthcheck-starterkit}
 
-スターター・キットを使用して Kitura ベースの Swift アプリを生成する場合、基本のヘルス・チェック・エンドポイントの `/health` がデフォルトで組み込まれます。このエンドポイントでは、Swift 4 で使用できる Codable プロトコルを利用します。このプロトコルは、[Health](https://github.com/IBM-Swift/Health){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") ライブラリーでサポートされています。
+スターター・キットを使用して Kitura ベースの Swift アプリを生成する場合、基本のヘルス・チェック・エンドポイントの `/health` がデフォルトで組み込まれます。 このエンドポイントでは、Swift 4 で使用できる Codable プロトコルを利用します。このプロトコルは、[Health](https://github.com/IBM-Swift/Health){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") ライブラリーでサポートされています。
 
 基本の初期化コード (Health オブジェクトの初期化など) は、`Sources/Application.swift` で実行されます。 ヘルス・チェック・エンドポイント自体は、`/Sources/Application/Routes/HealthRoutes.swift` ファイルによって提供され、次のコードを使用します。
 
@@ -127,33 +128,33 @@ func initializeHealthRoutes(app: App) {
 ## readiness プローブと liveness プローブに関する推奨事項
 {: #recommend-probes}
 
-Readiness チェックの結果には、ダウンストリームのサービスが使用不可の際に受け入れ可能なフォールバックが存在しない場合、ダウンストリーム・サービスへの接続の存続性が含まれていなければなりません。 ただし、ダウンストリーム・サービスによって提供されるヘルス・チェックを直接呼び出すわけではありません。それはインフラストラクチャーによってチェックされるからです。 代わりに、アプリケーションにある、ダウンストリーム・サービスに対する既存の参照の正常性を検査することを検討してください。これは、WebSphere MQ への JMS 接続、あるいは初期化されたKafka コンシューマーまたはプロデューサーが考えられます。 ダウンストリーム・サービスに対する内部参照の存続性をチェックする場合は、アプリケーションに及ぼすヘルス・チェックの影響を最小限に抑えるため、結果をキャッシュに入れてください。
+Readiness チェックの結果には、ダウンストリームのサービスが使用不可の際に受け入れ可能なフォールバックが存在しない場合、ダウンストリーム・サービスへの接続の存続性が含まれていなければなりません。 これは、ダウンストリーム・サービスが備えているヘルス・チェックを直接呼び出すということではありません。それはインフラストラクチャーが検査することになります。 代わりに、アプリケーションにおけるダウンストリーム・サービスへの既存の参照の正常性を検査することを検討してください。これに該当するものとして、WebSphere MQ への JMS 接続、あるいは初期化された Kafka コンシューマーまたはプロデューサーが考えられます。 ダウンストリーム・サービスへの内部参照の実行可能性を実際に検査する場合は、ヘルス・チェックがアプリケーションに与える影響を最小限に抑えるために、結果をキャッシュしてください。
 
-一方、liveness プローブでは、失敗するとプロセスが即時に終了するため、チェック対象について注意を要します。 状況コードが `200` の `{"status": "UP"}` を常に戻す、単純な HTTP エンドポイントが妥当な選択です。
+一方、liveness プローブでは、失敗するとプロセスが即時に終了するため、チェック対象について注意を要します。 状況コードが `200` の `{"status": "UP"}` を常に返す単純な HTTP エンドポイントが妥当な選択です。
 
 ### Kubernetes の Readiness および Liveness のサポートを Swift アプリに追加する
 {: #kube-readiness-swift}
 
-**Codable** や標準の辞書の使用などの代替実装については、[Health ライブラリーの例](https://github.com/IBM-Swift/Health#usage){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。これらの実装の中には、バッキング・サービスに対して実行されるチェックをキャッシングするためのサポートによって、拡張可能なヘルス・チェックの作成を簡略化できるものがあります。 このシナリオでは、単純な liveness テストを、より堅固で詳細な readiness チェックから分離することができます。
+**Codable** や標準の辞書の使用などの代替実装については、[Health ライブラリーの例](https://github.com/IBM-Swift/Health#usage){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。 これらの実装の中には、バッキング・サービスに対して実行されるチェックをキャッシングするためのサポートによって、拡張可能なヘルス・チェックの作成を簡略化できるものがあります。 このシナリオでは、単純な liveness テストを、より堅固で詳細な readiness チェックから分離することができます。
 
-## Kubernetes での readiness および liveness プローブの構成
+## Kubernetes の readiness プローブと liveness プローブの構成
 {: #config-kube-readiness}
 
-Kubernetes デプロイメントと共に liveness および readiness プローブを宣言します。 これらのプローブは両方とも、以下の同じ構成パラメーターを使用します。
+Kubernetes デプロイメントと併せて liveness プローブと readiness プローブを宣言します。 両方のプローブが同じ構成パラメーターを使用します。
 
-* kubelet は、最初のプローブまで `initialDelaySeconds` 待機します。
+* kubelet は最初のプローブの前に `initialDelaySeconds` 秒間待機します。
 
-* kubelet は、`periodSeconds` 秒ごとにサービスをプローブします。 デフォルトは、1 です。
+* `periodSeconds` 秒おきに kubelet がサービスをプローブします。 デフォルトは、1 です。
 
-* プローブは、`timeoutSeconds` 秒後にタイムアウトになります。 デフォルトおよび最小値は 1 です。
+* `timeoutSeconds` 秒経過するとプローブがタイムアウトになります。 デフォルト値および最小値は 1 です。
 
-* プローブは、失敗の後に `successThreshold` 回成功すると、成功となります。 デフォルトおよび最小値は 1 です。liveness プローブの場合、この値は 1 でなければなりません。
+* 失敗後 `successThreshold` 回成功するとプローブは成功です。 デフォルト値および最小値は 1 です。liveness プローブの場合、値は 1 でなければなりません。
 
 * ポッドが開始され、プローブが失敗すると、Kubernetes はポッドの再始動を `failureThreshold` 回試行してから試行を停止します。 最小値は 1、デフォルト値は 3 です。
-    - liveness プローブの場合、試行停止により、ポッドは再始動します。
-    - readiness プローブの場合、試行停止により、ポッドは `Unready` とマーク付けされます。
+    - liveness プローブの場合、「中止する」はポッドを再始動することを意味します。
+    - readiness プローブの場合、「中止する」はポッドに `Unready` のマークを付けることを意味します。
 
-再始動サイクルを回避するには、`livenessProbe.initialDelaySeconds` を、サービスの初期化に要する時間よりも十分長く設定してください。 その後、`readinessProbe.initialDelaySeconds` にそれより短い値を設定することで、サービスの準備ができ次第、要求をサービスにルーティングできるようにします。
+再始動サイクルを避けるために、安全を見てサービスの初期化時間よりも十分に長い時間を `livenessProbe.initialDelaySeconds` の値として設定してください。 `readinessProbe.initialDelaySeconds` にそれよりも短い値を使用することで、サービスの準備ができ次第、要求をサービスにルーティングできるようにします。
 
 次の `yaml` の例を参照してください。
 ```yaml

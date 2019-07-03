@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-12"
 
 keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
 
@@ -25,7 +25,7 @@ subcollection: swift
 
 サーバーレス・アーキテクチャーでは、サーバー・サイドの開発に必要なインフラストラクチャーとフレームワークを除外することにより、変更データに応じて実行されるコードを作成することに開発者が集中できるようになります。
 
-IBM の FaaS オファリングである [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") は、専門的なサーバー・サイドの知識を必要としない、シンプルなサーバー・サイドの開発エクスペリエンスを提供するように努めています。サーバーレス・テクノロジーを利用すると、前もってリソースを作成しなくても、事実上どんなワークロード要求にも対応できる、拡張可能なバックエンド・ソリューションを迅速に開発できます。 負荷のパターンが予測できなかったり、サーバーのダウン時間が長かったりするアプリケーションの場合、{{site.data.keyword.openwhisk_short}} は、パフォーマンスを向上させる優れたクラウド・ソリューションとなります。また、使用した分だけ支払うシステムなので、コストの削減にも役立ちます。
+IBM の FaaS オファリングである [{{site.data.keyword.openwhisk}}](https://{DomainName}/openwhisk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") は、専門的なサーバー・サイドの知識を必要としない、シンプルなサーバー・サイドの開発エクスペリエンスを提供するように努めています。 サーバーレス・テクノロジーを利用すると、前もってリソースを作成しなくても、事実上どんなワークロード要求にも対応できる、拡張可能なバックエンド・ソリューションを迅速に開発できます。 負荷のパターンが予測できなかったり、サーバーのダウン時間が長かったりするアプリケーションの場合、{{site.data.keyword.openwhisk_short}} は、パフォーマンスを向上させる優れたクラウド・ソリューションとなります。また、使用した分だけ支払うシステムなので、コストの削減にも役立ちます。
 
 ## アーキテクチャーの変更点
 {: #comparison-serverless}
@@ -36,7 +36,7 @@ FaaS に切り替えた場合のアーキテクチャー上の利点を理解す
 
 サーバーレス・アーキテクチャーはこの構造を変更して、以下のイメージのようにすることができます。
 
-![](./images/Architecture.png)図 1. サーバーレス・アーキテクチャー
+![サーバーレス・アーキテクチャー](./images/Architecture.png "サーバーレス・アーキテクチャー")
 
 サーバーレス・アーキテクチャーでは、単一のサーバー内ですべての処理や認証のロジックを処理せずに、サーバー・サイドのロジックの多くをカプセル化する機能を利用し、一部のロジックをクライアント (および外部サービス) にオフロードします。
 
@@ -77,14 +77,14 @@ FaaS に切り替えた場合のアーキテクチャー上の利点を理解す
 
 ### モバイル・バックエンド
 {: #mobile-backend-serverless}
-![](./images/cloud-functions-rest-api-trigger.png)
+![モバイル・バックエンド](./images/cloud-functions-rest-api-trigger.png "モバイル・バックエンド")
 
-モバイル開発者は、サーバー・サイドのロジックに簡単にアクセスし、計算主体の作業をクラウド・プラットフォームに外部委託することができます。サーバー・サイドの経験がなくても、iOS SDK を使用して、Swift などの言語で機能を実装し、簡単にサーバー・サイド機能を利用できます。
+モバイル開発者は、サーバー・サイドのロジックに簡単にアクセスし、計算主体の作業をクラウド・プラットフォームに外部委託することができます。 サーバー・サイドの経験がなくても、iOS SDK を使用して、Swift などの言語で機能を実装し、簡単にサーバー・サイド機能を利用できます。
 
 ### データ処理
 {: #data-processing-serverless}
 
-![](./images/cloud-functions-cloudant-trigger.png)
+![サーバーレス・データ処理](./images/cloud-functions-cloudant-trigger.png "サーバーレス・データ処理")
 
 組み込みのトリガーにより、データ・ストア内のデータが更新されるたびにコードを実行できます。 また、機能的なサーバー・サイド・プログラミング・モデルにより、音声正規化、画像回転、鮮明化、ノイズ低減、サムネール生成、ビデオ・トランスコーディングなどの処理を簡単に自動化できます。
 
@@ -102,12 +102,12 @@ FaaS に切り替えた場合のアーキテクチャー上の利点を理解す
 {: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [REST API](https://cloud.ibm.com/apidocs){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
+* [REST API](https://{DomainName}/apidocs){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
 
 ## 関連リンク
 {: #related-serverless notoc}
 
 * [ディスカバー {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
-* [Apache OpenWhisk プロジェクトの Web サイト](http://openwhisk.org){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
+* [Apache OpenWhisk プロジェクトの Web サイト](http://openwhisk.incubator.apache.org/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
 * [サーバーレスに関する詳細](https://martinfowler.com/articles/serverless.html){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")

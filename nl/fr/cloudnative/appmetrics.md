@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: swiftmetrics-dash, swiftmetrics, prometheus swift, application metrics swift, swift performance, slow swift, swift dashboard, metris swift
 
@@ -20,7 +20,7 @@ subcollection: swift
 # Utilisation de métriques d'application avec les applications Swift
 {: #metrics}
 
-Les métriques d'application sont importantes pour la surveillance des performances de votre application. Il est essentiel de disposer d'une vue en direct des métriques (UC, mémoire, latence et mesures HTTP) pour garantir un fonctionnement efficace de votre application dans le temps. Des services Kubernetes et Cloud Foundry, par exemple la [mise à l'échelle automatique](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started), reposent sur ces métriques pour déterminer quand il est nécessaire d'ajouter ou de retirer de manière dynamique des instances en fonction de la charge, et de nettoyer des instances qui ne sont plus nécessaires, et ce afin de réduire les coûts.
+Les métriques d'application sont importantes pour la surveillance des performances de votre application. Il est essentiel de disposer d'une vue en direct des métriques (UC, mémoire, latence et mesures HTTP) pour garantir un fonctionnement efficace de votre application dans le temps. Des services Kubernetes et Cloud Foundry, par exemple la [mise à l'échelle automatique](/docs/services/Auto-Scaling?topic=Auto-Scaling-get-started), reposent sur ces métriques pour déterminer quand il est nécessaire d'ajouter ou de retirer de manière dynamique des instances en fonction de la charge, et de nettoyer des instances qui ne sont plus nécessaires, et ce afin de réduire les coûts.
 
 Les métriques d'application sont capturées sous forme de données de séries temporelles. L'agrégation et la visualisation des métriques capturées permettent d'identifier des problèmes courants liés aux performances tels que :
 
@@ -102,4 +102,4 @@ func initializeMetrics(router: Router) {
 
 Une fois votre application lancée, vous pouvez accéder au tableau de bord à partir du noeud final `/swiftmetrics-dash`.
 
-Par défaut, `SwiftMetricsPrometheus` fournit le [noeud final Prometheus](https://prometheus.io/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") sous `http://<hostname>:<port>/metrics`.
+Par défaut, `SwiftMetricsPrometheus` fournit le [noeud final Prometheus](https://prometheus.io/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe") sous `http://<hostname>:<port>/metrics`. 

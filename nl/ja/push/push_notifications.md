@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-24"
+lastupdated: "2019-06-21"
 
 keywords: push swift, swift notifications, push notifications swift, sending push swift, configure service instance swift, provider credentials swift
 
@@ -26,9 +26,9 @@ subcollection: swift
  - お客様は、通知の対象として特定のタグまたはトピックへのサブスクライブを選択できます。
  - アプリ所有者が、通知を受信するように登録されているデバイスの数や、送信された通知の数を分析することを可能にします。
 
-{{site.data.keyword.mobilepushshort}} サービスは、MobileFirst Services のスターター・ボイラープレートの一部として、または {{site.data.keyword.cloud_notm}} [専用サービス](/docs/dedicated?topic=dedicated-dedicated#dedicated)として、使用することができます。 また、SDK (Software Development Kit) と [REST API ](https://mobile.{DomainName}/imfpush/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用して、クライアント・アプリケーションをさらに開発することもできます。
+{{site.data.keyword.mobilepushshort}} サービスは、MobileFirst Services のスターター・ボイラープレートの一部として、または {{site.data.keyword.cloud_notm}} [専用サービス](/docs/dedicated?topic=dedicated-dedicated#dedicated)として、使用することができます。 また、SDK (Software Development Kit) と [REST API ](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/rest-apis/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用して、クライアント・アプリケーションをさらに開発することもできます。
 
-![プッシュの概説](images/push_notification_lifecycle.jpg) 図 1. {{site.data.keyword.mobilepushshort}} サービスのライフサイクルの概要
+![プッシュの概要](images/push_notification_lifecycle.jpg "プッシュの概要")
 
 ## 始める前に
 {: #prereqs-push}
@@ -52,7 +52,7 @@ subcollection: swift
 ## ステップ 2. 通知プロバイダーの資格情報の取得
 {: #get_creds-push}
 
-Push Notification サービスをセットアップするには、Apple Push Notification Service (APN) から、必要な資格情報を取得する必要があります。 ここに示すステップを実行して、[APN 資格情報を取得および構成します ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}。
+Push Notification サービスをセットアップするには、Apple Push Notification Service (APN) から、必要な資格情報を取得する必要があります。 ここに示すステップを実行して、[APN 資格情報を取得および構成します ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](/docs/services/mobilepush?topic=mobile-pushnotification-push_step_1){: new_window}。
 
 
 ## ステップ 3. サービス・インスタンスの構成
@@ -62,7 +62,7 @@ Push Notification サービスをセットアップするには、Apple Push Not
 
 `.cer` ファイルがキー・チェーン・アクセスに配置された後に、それをコンピューターにエクスポートして`.p12` 証明書を作成します。
 
-APN の使用について詳しくは、[iOS Developer Library: Local and Push Notification Programming Guide ](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")を参照してください。
+APN の使用について詳しくは、[iOS Developer Library: Local and Push Notification Programming Guide ](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")を参照してください。
 
 Push Notification サービス・コンソールで APN をセットアップするには、以下のステップを実行します。
 
@@ -71,19 +71,20 @@ Push Notification サービス・コンソールで APN をセットアップす
 3. 次のいずれかのオプションを選択します。
 	- **「モバイル」**オプションの場合
 		1. **「サンドボックス」**(開発) または**「実動」**(配布) を選択し、作成した `p.12` 証明書をアップロードします。
-![{{site.data.keyword.mobilepushshort}} コンソールの設定](images/wizard.jpg)
+		  ![{{site.data.keyword.mobilepushshort}} コンソール](images/wizard.jpg "プッシュ通知のモバイル構成")
 
 		2. **「パスワード」**フィールドに、`.p12` 証明書ファイルに関連付けられているパスワードを入力し、次に**「保存」**をクリックします。
 	- **「Web」**オプションの場合
 		- 「Safari Push (Safari Push)」セクションで、必要な情報を指定してフォームを更新します。
 		- **Web サイト名 (Website Name)**: 通知センターで提供される Web サイト名。
-		- **Web サイト・プッシュ ID (Website Push ID)**: Web サイトのプッシュ ID の反転ドメイン・ストリングを使用して更新します。 例: web.com.acmebanks.www
-		- **Web サイト URL (Website URL)**: プッシュ通知をサブスクライブする必要がある Web サイトの URL を指定します。 例: https://www.acmebanks.com
+		- **Web サイト・プッシュ ID (Website Push ID)**: Web サイトのプッシュ ID の反転ドメイン・ストリングを使用して更新します。 例えば、`web.com.example.www` です。
+		- **Web サイト URL (Website URL)**: プッシュ通知をサブスクライブする必要がある Web サイトの URL を指定します。 例えば、`https://www.example.com` です。
 		- **許可されたドメイン (Allowed Domains)**: (オプション・パラメーター) ユーザーからの許可を要求する Web サイトのリスト。 URL は、必ずコンマ区切りの値で指定します。 情報を指定しない場合、Web サイト URL の中の値が使用されます。
-		- **URL 形式文字列 (URL Format String)**: 通知がクリックされたときに解決される URL。 例: ["https://www.acmebanks.com"]。 その URL で http または https のスキーマが使用されていることを確認してください。
+		- **URL 形式文字列 (URL Format String)**: 通知がクリックされたときに解決される URL。 例えば、`https://www.example.com` です。その URL で http または https のスキーマが使用されていることを確認してください。
 		-**Safari Web プッシュ証明書 (Safari web push certificate)**: `.p12` 証明書をアップロードし、パスワードを指定します。
 4. **「保存」**をクリックします。
-![{{site.data.keyword.mobilepushshort}} コンソール](images/push_configure_safari.jpg)
+
+  ![{{site.data.keyword.mobilepushshort}} コンソール](images/push_configure_safari.jpg "プッシュ通知の Web 構成")
 
 ## ステップ 4. サービス・クライアント SDK のセットアップ
 {: #service-client-push}
@@ -102,17 +103,19 @@ iOS アプリケーションがデバイスへのプッシュ通知を受信で�
 1. **「通知の送信 (Send Notifications)」**を選択し、**「送信先 (Send To)」**オプションを選択することでメッセージを構成します。 サポートされるオプションは、**「タグ指定によるデバイス (Device by Tag)」**、**「デバイス ID」**、**「ユーザー ID」**、**「iOS デバイス (iOS devices)」**、**「Web 通知 (Web Notifications)」**、および**「すべてのデバイス」**です。
 **注**: **「すべてのデバイス」**オプションを選択すると、{{site.data.keyword.mobilepushshort}}をサブスクライブしているすべてのデバイスが通知を受け取ることになります。
 
-	![通知画面](images/tag_notification.jpg)
+  ![「通知の送信 (Send Notifications)」画面](images/tag_notification.jpg "「通知の送信 (Send Notifications)」画面")
 
 2. **「メッセージ」**フィールドで、メッセージを作成します。 必要に応じてオプションの設定を構成してください。
 3. **「送信」**をクリックします。
 3. デバイスまたはブラウザーが通知を受信したことを確認します。
 
-次の画面キャプチャーは、デバイスのフォアグラウンドでプッシュ通知を処理する、アラート・ボックスを示しています。
-	![Android でのフォアグラウンド・プッシュ通知](images/Android_Screenshot.jpg)
+  次の画面キャプチャーは、デバイスのフォアグラウンドでプッシュ通知を処理する、アラート・ボックスを示しています。
+  
+  ![フォアグラウンド・プッシュ通知 (Android)](images/Android_Screenshot.jpg "フォアグラウンド通知アラート")
 
-次の画面キャプチャーは、バックグラウンドでのプッシュ通知を示しています。
-	![Android でのバックグラウンド・プッシュ通知](images/background.png)
+  次の画面キャプチャーは、バックグラウンドでのプッシュ通知を示しています。
+  
+  ![バックグラウンド・プッシュ通知 (iOSd)](images/background.png "バックグラウンド通知アラート")
 
 ### オプションの設定
 {: #optional-push}
@@ -133,10 +136,10 @@ iOS デバイスに通知を送信するための {{site.data.keyword.mobilepush
 ## 次のステップ
 {: #next-push notoc}
 
- - サービスについての詳細情報を参照し、すべての機能を活用するには、[ドキュメンテーション](/docs/services/mobilepush/c_overview_push.html#overview-push)を参照してください。
+ - サービスについての詳細情報を参照し、すべての機能を活用するには、[ドキュメンテーション](/docs/services/mobilepush?topic=mobile-pushnotification-overview-push)を参照してください。
 
- - モバイル・サービスと {{site.data.keyword.cloud_notm}} の作業の概要については、[Getting started with Mobile apps on {{site.data.keyword.cloud_notm}}](/docs/services/mobile/index.html) を参照してください。
+ - モバイル・サービスと {{site.data.keyword.cloud_notm}} の作業の概要については、[Getting started with Mobile apps on {{site.data.keyword.cloud_notm}}](/docs/services/mobile?topic=mobile-about) を参照してください。
 
- - スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 [モバイル開発者ダッシュボード](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、使用可能なスターター・キットを確認できます。コードをダウンロードし、アプリを実行します。
+ - スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 [モバイル開発者ダッシュボード](https://{DomainName}/developer/mobile/dashboard){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、使用可能なスターター・キットを確認できます。 コードをダウンロードして アプリを実行します。
 
- - [Swagger UI](https://mobile.ng.bluemix.net/imfpush/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用すると、REST API 資料を迅速に確認できます。
+ - [Swagger UI](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/rest-apis/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用すると、REST API 資料を迅速に確認できます。

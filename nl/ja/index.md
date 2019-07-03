@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: getting started swift, custom app, create app swift, stater kit swift, apple app swift, swift dependency, ios development
 
@@ -19,12 +19,12 @@ subcollection: swift
 {:note: .note}
 
 # 入門チュートリアル
-{: #getting_started_swift}
+{: #getting-started}
 
 {{site.data.keyword.cloud}} には、顧客が求めるセキュリティー、AI、価値を組み込んだアプリケーションを Swift 開発者が作成できるようにする、ソリューションとサービスが用意されています。 幅広いオファリングのポートフォリオや SDK が用意されているので、これらのサービスを使用して最先端のアプリケーションを迅速にリリースすることが可能になります。 この Swift プログラミングでは、新規または既存の Swift アプリケーションにサービスを追加する方法について説明します (iOS クライアントまたはサーバー・サイド Swift のいずれでも構いません)。
 {: shortdesc}
 
-以下のチュートリアルでは、[{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") の空のスターター・キットを使用して、{{site.data.keyword.mobileanalytics_full}} で簡単に Swift モバイル・アプリを作成する方法を示します。{{site.data.keyword.mobileanalytics_short}} サービスを追加したり、コードをダウンロードしたり、iOS アプリを Xcode を使用してローカルで実行したり、アプリを構成したり、アプリをモニターしたりといった作業を、コンソールから行います。
+以下のチュートリアルでは、[{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") の空のスターター・キットを使用して、{{site.data.keyword.mobileanalytics_full}} で簡単に Swift モバイル・アプリを作成する方法を示します。 {{site.data.keyword.mobileanalytics_short}} サービスを追加したり、コードをダウンロードしたり、iOS アプリを Xcode を使用してローカルで実行したり、アプリを構成したり、アプリをモニターしたりといった作業を、コンソールから行います。
 
 ## ステップ 1. 開発者向けの要件
 {: #dev-requirements-swift}
@@ -36,13 +36,12 @@ subcollection: swift
 
 Swift アプリを開発する際のベスト・プラクティスは、MacOS がサポートする最新のハードウェアを使用し、最新の iOS リリースでテストすることです。 [Apple Developer](https://developer.apple.com/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") アカウントに登録して、物理デバイス上でテストできるようにしてください。
 
-
 ### iOS および Xcode
 {: #ios_and_xcode}
 
 - [Xcode 8](https://developer.apple.com/xcode/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") (以上) をインストールします。
 - [iOS 8 デバイス](https://support.apple.com/downloads/ios){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") (以上) にデプロイします。
-- Apple にアプリを提出する前に、[App Store の提出に関するガイドライン](https://developer.apple.com/app-store/guidelines/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") を確認してください。
+- Apple にアプリを提出する前に、[App Store の提出に関するガイドライン](https://developer.apple.com/app-store/resources/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") を確認してください。
 
 ### SDK と依存関係の管理
 {: #swift-sdk-management}
@@ -55,7 +54,7 @@ Swift アプリを開発する際のベスト・プラクティスは、MacOS �
   ```
   {: codeblock}
 
-* **Carthage を使用する場合** - 一部の SDK は、[Carthage](https://github.com/Carthage/Carthage){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") または [Swift Package Manager](https://swift.org/package-manager/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") の依存関係マネージャーからも入手できます。依存関係の管理に Carthage を使用する場合は、次の手順を実行します。
+* **Carthage を使用する場合** - 一部の SDK は、[Carthage](https://github.com/Carthage/Carthage){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") または [Swift Package Manager](https://swift.org/package-manager/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") の依存関係マネージャーからも入手できます。 依存関係の管理に Carthage を使用する場合は、次の手順を実行します。
 
   Carthage のインストールを支援するために、[Homebrew](https://brew.sh/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") をインストールします。
   ```
@@ -72,16 +71,16 @@ Swift アプリを開発する際のベスト・プラクティスは、MacOS �
 ## ステップ 2. カスタム iOS Swift アプリの作成
 {: #create-ios-app-swift}
 
-1. [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") にログインします。
+1. [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") にログインします。
 2. **「アプリの作成」**をクリックします。
-3. [空のスターター](https://cloud.ibm.com/developer/appledevelopment/create-app){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")・ページでは、デフォルトの構成を使用することも、必要に応じて各フィールドを更新することもできます。選択されている言語が **iOS Swift** であることを確認してください。 **「作成」**をクリックします。
+3. [空のスターター](https://{DomainName}/developer/appledevelopment/create-app){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")・ページでは、デフォルトの構成を使用することも、必要に応じて各フィールドを更新することもできます。 選択されている言語が **iOS Swift** であることを確認してください。 **「作成」**をクリックします。
 
 ## ステップ 3. {{site.data.keyword.cloudant_short_notm}} サービスの追加
 {: #resources-swift}
 
 これで、Swift アプリケーションにサービスを追加できます。 このチュートリアルでは、{{site.data.keyword.cloudant_short_notm}} サービスを Swift アプリに追加します。これにより、完全に管理された分散型 `JSON` ドキュメント・データベースが作成されます。 Cloudant は、データを安全に保護し同期した状態で維持する軽量のフレームワークで、スケーラビリティー、高可用性、耐久性をアプリに提供します。
 
-1. **アプリの詳細**ページで、**「サービスの追加」**をクリックします。
+1. **「アプリの詳細」**ページで、**「サービスの追加」**をクリックします。
 2. **「データ」**を選択し、**「次へ」**をクリックします。
 3. **「Cloudant」**を選択し、**「次へ」**をクリックします。
 4. **「作成」**をクリックします。
@@ -90,7 +89,7 @@ Swift アプリを開発する際のベスト・プラクティスは、MacOS �
 ## ステップ 4. コードのダウンロードとクライアント SDK のセットアップ
 {: #run-locally-swift}
 
-コードをダウンロードするには、`「アプリ」`>`「アプリ (Your App)」`の下にある**「コードのダウンロード (Download Code)」**をクリックします。ダウンロードされるコードには、[SwiftCloudant SDK](https://github.com/cloudant/swift-cloudant){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") といくつかの基本的な初期設定コードが含まれています。クライアント SDK は CocoaPods および Swift Package Manager で入手できます。 このソリューションでは CocoaPods を使用します。
+コードをダウンロードするには、`「アプリ」`>`「アプリ (Your App)」`の下にある**「コードのダウンロード (Download Code)」**をクリックします。 ダウンロードされるコードには、[SwiftCloudant SDK](https://github.com/cloudant/swift-cloudant){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") といくつかの基本的な初期設定コードが含まれています。 クライアント SDK は CocoaPods および Swift Package Manager で入手できます。 このソリューションでは CocoaPods を使用します。
 
 1. ダウンロードしたコードを解凍します。 次に、端末を使用して、解凍したフォルダーにナビゲートします。
   ```
@@ -129,7 +128,7 @@ Swift アプリを開発する際のベスト・プラクティスは、MacOS �
 ## ステップ 6. データベース操作の作成
 {: #build_ops-swift}
 
-作業データベースの接続と SDK の設定が完了したため、特定のユース・ケースについて基本的な[作成操作、読み取り操作、更新操作、および破棄操作](/docs/swift/data?topic=swift-cloudant#cloudant)の作成を開始できます。
+作業データベースの接続と SDK の設定が完了したため、特定のユース・ケースについて基本的な[作成操作、読み取り操作、更新操作、および破棄操作](/docs/swift/data?topic=swift-cloudant)の作成を開始できます。
 
 ## 次のステップ
 {: #next-swift}
@@ -139,10 +138,10 @@ Swift アプリを開発する際のベスト・プラクティスは、MacOS �
 
 以下のような一般的に使用されるサービスを、Web コンソールから iOS アプリに直接追加できます。
 
-* [プッシュ通知サービスの追加](/docs/services/mobilepush?topic=mobile-pushnotification-gettingstartedtemplate#gettingstartedtemplate)
-* [アプリ ID を使用したユーザー認証の追加](/docs/services/appid?topic=appid-getting-started#getting-started)
+* [プッシュ通知サービスの追加](/docs/services/mobilepush?topic=mobile-pushnotification-gettingstartedtemplate)
+* [アプリ ID を使用したユーザー認証の追加](/docs/services/appid?topic=appid-getting-started)
 
 ### {{site.data.keyword.cloud_notm}} 開発者ツールの使用
 {: #devtools-swift}
 
-また、[{{site.data.keyword.cloud_notm}} 開発者ツール](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)を使用して、Swift アプリの開発方法を学習することもできます。このツールは、完全な Web アプリケーション、モバイル・アプリケーション、マイクロサービス・アプリケーションの作成と開発とデプロイを行うためのコマンド・ライン・アプローチを提供します。
+また、[{{site.data.keyword.cloud_notm}} 開発者ツール](/docs/cli?topic=cloud-cli-getting-started)を使用して、Swift アプリの開発方法を学習することもできます。このツールは、完全な Web アプリケーション、モバイル・アプリケーション、マイクロサービス・アプリケーションの作成と開発とデプロイを行うためのコマンド・ライン・アプローチを提供します。

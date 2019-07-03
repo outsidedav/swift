@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-12"
 
 keywords: watson studio swift, machine learning swift, custom model swift, data set swift, predictive swift, watson api swift, generated model swift, dataset swift
 
@@ -20,29 +20,26 @@ subcollection: swift
 # カスタム生成モデルによるデータ・セットの分析
 {: #dsx-overview}
 
-Watson Studio には、データ分析で協力することによりビジネス上の問題を解決するための環境やツールが用意されています。 データを分析、クレンジング、および編成するために必要なツールを選択できます。 ストリーミング・データの取り込み、または機械学習モデルの作成、トレーニング、およびデプロイについて説明します。 Watson Studio は、さまざまな {{site.data.keyword.cloud}} サービスおよび Watson ナレッジ・カタログに統合されています。それは、資産を制御するためのポリシー管理機能を提供し、カタログすることによりそれらを検索するためのインデックスを作成します。 詳しくは、https://dataplatform.ibm.com/ を参照してください。
+Watson Studio には、データ分析で協力することによりビジネス上の問題を解決するための環境やツールが用意されています。 データを分析、クレンジング、および編成するために必要なツールを選択できます。 ストリーミング・データの取り込み、または機械学習モデルの作成、トレーニング、およびデプロイについて説明します。 Watson Studio は、さまざまな {{site.data.keyword.cloud}} サービスおよび Watson ナレッジ・カタログに統合されています。それは、資産を制御するためのポリシー管理機能を提供し、カタログすることによりそれらを検索するためのインデックスを作成します。 [詳細はこちら](https://dataplatform.cloud.ibm.com/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")。
 
-Watson Studio は、プロジェクト・ベースのアーキテクチャーを基に構造化されています。それにより、ビジネス上の問題を解決するようにリソースが編成されます。 リソースには、クラウドおよびオンプレミスのデータ・ストアへの接続、データ・ファイル、コラボレーター、およびモデルのなどの分析アセットが含まれます。 詳しくは、[Watson Studio の概要](https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。
+Watson Studio は、プロジェクト・ベースのアーキテクチャーを基に構造化されています。それにより、ビジネス上の問題を解決するようにリソースが編成されます。 リソースには、クラウドおよびオンプレミスのデータ・ストアへの接続、データ・ファイル、コラボレーター、およびモデルのなどの分析アセットが含まれます。 詳しくは、[Watson Studio の概要](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/overview-ws.html){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。
 
 ## {{site.data.keyword.DSX}} の機械学習
 {: #dsx-learning}
 
 {{site.data.keyword.DSX}} を使用することにより、モデルをトレーニングし、それらをデプロイしてから、API を使用して結果を利用することができます。 それらの API は、iOS または Swift のアプリケーションで使用できます。
 
-IBM Watson Machine Learning を使用すると、自分の環境をセットアップした後、モデルを作成し、それらをクラウドにデプロイし、それらをトレーニングすることができます。 詳しくは、「[{{site.data.keyword.pm_full}} および {{site.data.keyword.DSX}} によるモデルの作成、デプロイ、およびトレーニング](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")」を参照してください。
+IBM Watson Machine Learning を使用すると、自分の環境をセットアップした後、モデルを作成し、それらをクラウドにデプロイし、それらをトレーニングすることができます。 詳しくは、「[{{site.data.keyword.pm_full}} および {{site.data.keyword.DSX}} によるモデルの作成、デプロイ、およびトレーニング](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/wml-ai.html){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")」を参照してください。
 
 ### チュートリアル
 {: #dsx-tutorials}
-
-- [{{site.data.keyword.pm_short}} によるロジスティック回帰モデルのビルド](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
-- [{{site.data.keyword.pm_short}} による単純ベイズ・モデルのビルド](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
 
 ## iOS および Swift による {{site.data.keyword.DSX}} のセットアップ
 {: #dsx_ios}
 
 1. 資格情報の統合を容易にするため、{{site.data.keyword.pm_short}} インスタンスを iOS アプリまたはバックエンド・アプリに追加する必要があります。 アクセシビリティーを容易にするため、資格情報がプロジェクト・ダッシュボードに含められます。
 
-![アプリでの機械学習機能](images/ios-machinelearning-app.png)
+![アプリの詳細](images/ios-machinelearning-app.png "アプリの詳細")
 
 2. アプリ・コードをダウンロードします。
 3. 初期化
@@ -220,11 +217,11 @@ client.retrieveToken { token in
 ## 次のステップ
 {: #dsx_next notoc}
 
-お疲れさまでした。 これで、カスタム生成の機械学習モデルを使用してデータ・セットを分析できるようになりました。 この調子で {{site.data.keyword.pm_short}} が提供する機能について、[Data science and machine learning](https://www.ibm.com/analytics/data-science/machine-learning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") でさらに学習してください。
+お疲れさまでした。 これで、カスタム生成の機械学習モデルを使用してデータ・セットを分析できるようになりました。 この調子で {{site.data.keyword.pm_short}} が提供する機能について、[Data science and machine learning](https://www.ibm.com/analytics/machine-learning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") でさらに学習してください。
 
 ### 関連リンク
 {: #dsx-related}
 
-* [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling?topic=services/PredictiveModeling-WMLgettingstarted#using-machine-learning-with-data-science-experience)
-* [{{site.data.keyword.DSX}}](https://datascience.ibm.com/){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
-* [{{site.data.keyword.DSX}} の資料 ](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
+* [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling?topic=PredictiveModeling-WMLgettingstarted)
+* [{{site.data.keyword.DSX}}](https://www.ibm.com/cloud/watson-studio){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
+* [{{site.data.keyword.DSX}} の資料 ](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")

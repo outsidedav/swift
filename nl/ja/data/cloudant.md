@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: cloudant swift, store data swift, dbaas swift, cloudant instance swift, initialize sdk swift, create document swift, read document swift, delete document swift
 
@@ -17,10 +17,10 @@ subcollection: swift
 {:pre: .pre}
 {:tip: .tip}
 
-# {{site.data.keyword.cloud_notm}} へのドキュメントの保管
+# {{site.data.keyword.cloud_notm}} への文書の保管
 {: #cloudant}
 
-{{site.data.keyword.cloudantfull}} は、ドキュメント指向の DataBase as a Service (DBaaS) です。 JSON フォーマットのドキュメントとしてデータを保管します。 スケーラビリティー、高可用性、耐久性を考慮に入れて構築されており、Swift アプリケーション用に構成しやすくなっています。 MapReduce、{{site.data.keyword.cloudant_short_notm}} Query、フルテキスト索引付け、地理情報索引付けなどのさまざまな索引付けオプションが用意されています。 複製機能により、データベース・クラスター、デスクトップ PC、モバイル・デバイス間で簡単にデータを同期させておくことができます。 
+{{site.data.keyword.cloudantfull}} は、ドキュメント指向の DataBase as a Service (DBaaS) です。 JSON 形式の文書としてデータを保管します。 スケーラビリティー、高可用性、耐久性を考慮に入れて構築されており、Swift アプリケーション用に構成しやすくなっています。 MapReduce、{{site.data.keyword.cloudant_short_notm}} Query、フルテキスト索引付け、地理情報索引付けなどのさまざまな索引付けオプションが用意されています。 複製機能により、データベース・クラスター、デスクトップ PC、モバイル・デバイス間で簡単にデータを同期させておくことができます。 
 {: shortdesc}
 
 {{site.data.keyword.cloudant_short_notm}} を使用するためのすべての方法については、[{{site.data.keyword.cloudant_short_notm}} Basics](/docs/services/Cloudant/basics?topic=cloudant-ibm-cloudant-basics#cloudant-nosql-db-basics) を参照してください。
@@ -37,7 +37,7 @@ subcollection: swift
 [{{site.data.keyword.cloudant_short_notm}} SDK for Swift ](https://github.com/cloudant/swift-cloudant){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") は、Swift 3.2 を使用して作成されています。 {{site.data.keyword.cloudant_short_notm}} を Kitura で使用する予定の場合は、Swift 4.0 で作成された [Kitura-CouchDB ライブラリー ](https://github.com/IBM-Swift/Kitura-CouchDB){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認してください。
 {: tip}
 
-## ステップ 1. {{site.data.keyword.cloudant_short_notm}} インスタンスの作成
+## 手順 1. {{site.data.keyword.cloudant_short_notm}} インスタンスの作成
 {: #create-instance-cloudant}
 
 [{{site.data.keyword.cloud_notm}} での IBM Cloudant インスタンスの作成に関するチュートリアル](/docs/services/Cloudant/tutorials?topic=cloudant-creating-an-ibm-cloudant-instance-on-ibm-cloud#creating-an-ibm-cloudant-instance-on-ibm-cloud){:new_window} を参照して、サービスのインスタンスを作成してください。
@@ -140,16 +140,16 @@ client.add(operation: delete)
 ```
 {: codeblock}
 
-## ステップ 4. アプリのテスト
+## 手順 4. アプリのテスト
 {: #cloudant_testing}
 
-すべて正しく構成されましたか? テストしてみましょう!
+すべて正しく構成されましたか? テストしてみましょう。
 
 1. アプリケーションを実行して、初期化操作と各操作 (文書作成など) を開始します。
 2. Web ブラウザーで既に作成した {{site.data.keyword.cloudant_short_notm}} サービス・インスタンスに戻り、サービス・ダッシュボードを開きます。
 3. 使用されているデータベースを選択すると、ダッシュボードにドキュメントが表示されます。
 
-問題が発生する場合は、 [{{site.data.keyword.cloudant_short_notm}} API リファレンス](/docs/services/Cloudant/api?topic=cloudant-ibm-cloudant-basics#api-reference-overview)を確認してください。
+問題がある場合は、 [{{site.data.keyword.cloudant_short_notm}} API リファレンス](/docs/services/Cloudant/api?topic=cloudant-ibm-cloudant-basics#api-reference-overview)を確認してください。
 
 ## 次のステップ
 {: #cloudant_next notoc}
@@ -157,5 +157,5 @@ client.add(operation: delete)
 お疲れさまでした。 ある程度のセキュア・パーシスタンスをアプリに追加しました。 この調子で、以下のいずれかのオプションを試してみてください。
 
 * [{{site.data.keyword.cloudant_short_notm}} SDK for Swift ](https://github.com/cloudant/swift-cloudant){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") のソース・コードを調べる。
-* スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 **Infinite Scrolling with Cloudant NoSQL for iOS** スターター・キットは、`ViewController` を拡張してページ編集を使用してデータを表示する方法を示しています。 このパターンのアプリは iOS 開発者にとって一般的なもので、{{site.data.keyword.cloudant_short_notm}} の機能を示すための良い例です。 [モバイル開発者ダッシュボード](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、使用可能なスターター・キットを確認できます。コードをダウンロードし、 アプリを実行します。
-* {{site.data.keyword.cloudant_short_notm}} に用意されているすべての機能の詳細を確認して利用するには、[この資料](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics#ibm-cloudant-basics)を参照してください。
+* スターター・キットは、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 **Infinite Scrolling with Cloudant NoSQL for iOS** スターター・キットは、`ViewController` を拡張してページ編集を使用してデータを表示する方法を示しています。 このパターンのアプリは iOS 開発者にとって一般的なもので、{{site.data.keyword.cloudant_short_notm}} の機能を示すための良い例です。 [モバイル開発者ダッシュボード](https://{DomainName}/developer/mobile/dashboard){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で、使用可能なスターター・キットを確認できます。 コードをダウンロードして アプリを実行します。
+* {{site.data.keyword.cloudant_short_notm}} に用意されているすべての機能の詳細を確認して利用するには、[この資料](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics)を参照してください。

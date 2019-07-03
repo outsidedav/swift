@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-17"
 
 keywords: swift security, add security swift, crypto swift, hyper protect swift, ios hyper protect, dbaas swift, swift key management, swift advanced security
 
@@ -24,7 +24,7 @@ subcollection: swift
 Swift 開発者は、{{site.data.keyword.cloud}} が提供する高度なセキュリティー・サービスを簡単に使用し、保存中、使用中、または転送中の鍵とデータを、業界で最高のセキュリティー・レベルで保護できます。
 {: shortdesc}
 
-簡単なアプローチとして、 {{site.data.keyword.cloud_notm}} HyperSecure プラットフォーム・サービスを {{site.data.keyword.cloud}} のすべての高度なセキュリティー・サービスで直接利用できます。 詳しくは、『[{{site.data.keyword.cloud_notm}}HyperSecure Platform Services の開始](/docs/services/hypersecure-platform/index.html#getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits)』を参照してください。
+簡単なアプローチとして、 {{site.data.keyword.cloud_notm}} HyperSecure プラットフォーム・サービスを {{site.data.keyword.cloud}} のすべての高度なセキュリティー・サービスで直接利用できます。 詳しくは、『[{{site.data.keyword.cloud_notm}} HyperSecure Platform Services の開始](/docs/services/hypersecure-platform?topic=hypersecure-platform-getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits)』を参照してください。
 
 ## {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} の使用
 {: #security-swift}
@@ -74,7 +74,7 @@ Swift 開発者は、{{site.data.keyword.cloud}} が提供する高度なセキ�
 
 {{site.data.keyword.hscontainers}} は、Docker と Kubernetes テクノロジーを結合させた強力なツール、直観的なユーザー・エクスペリエンス、標準装備のセキュリティーと分離機能を提供します。これらの機能を使用することで、コンピュート・ホストから成るクラスター内でコンテナー化アプリのデプロイメント、操作、スケーリング、モニタリングを自動化することができます。
 
-{{site.data.keyword.hscontainers}} は、スポンサー・ユーザーのみが使用できます。 専用セキュリティー・サポートが必要な場合は、[IBM Z クライアント・フィードバック・プログラム](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用してスポンサー・ユーザーとして登録し、アプリケーションを {{site.data.keyword.hscontainers}} クラスターにデプロイします。
+{{site.data.keyword.hscontainers}} は、スポンサー・ユーザーのみが使用できます。 専用セキュリティー・サポートが必要な場合は、[IBM Z クライアント・フィードバック・プログラム](https://www.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zwelcome.shtml){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を使用してスポンサー・ユーザーとして登録し、アプリケーションを {{site.data.keyword.hscontainers}} クラスターにデプロイします。
 {: tip}
 
-スポンサー・ユーザーになる前に、{{site.data.keyword.containershort_notm}} を使用してアプリケーションを保護することができます。 詳しくは、『[{{site.data.keyword.containershort_notm}} の概要](/docs/containers?topic=containers-container_index#container_index)』を参照してください。
+スポンサー・ユーザーになる前に、{{site.data.keyword.containershort_notm}} を使用してアプリケーションを保護することができます。 詳しくは、『[{{site.data.keyword.containershort_notm}} の概要](/docs/containers?topic=containers-getting-started)』を参照してください。

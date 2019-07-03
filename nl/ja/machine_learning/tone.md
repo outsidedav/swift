@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-24"
+lastupdated: "2019-06-06"
 
 keywords: watson swift, tone anaylzer swift, cocoapods swift, swift sdk install, starter kit watson
 
@@ -19,7 +19,7 @@ subcollection: swift
 # {{site.data.keyword.toneanalyzershort}}
 {: #tone}
 
-{{site.data.keyword.ibmwatson}} {{site.data.keyword.toneanalyzershort}} サービスは、テキスト内の感情やトーンをアプリが理解できるようにします。このサービスを使用すれば、ユーザーの会話をより良く理解したり、ユーザーが自分が書き込んだ内容がどのように受け取られているかを理解できるよう支援したりすることができます。
+{{site.data.keyword.ibmwatson}} {{site.data.keyword.toneanalyzershort}} サービスは、テキスト内の感情やトーンをアプリが理解できるようにします。 このサービスを使用すれば、ユーザーの会話をより良く理解したり、ユーザーが自分が書き込んだ内容がどのように受け取られているかを理解できるよう支援したりすることができます。
 
 ## 動作の仕組み
 {: #how-it-works-tone}
@@ -40,7 +40,7 @@ subcollection: swift
 * CocoaPods、Carthage、または Swift Package Manager
 
 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、または [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
-を使用することにより、[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") をインストールできます。CocoaPods を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得することになります。CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
+を使用することにより、[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") をインストールできます。 CocoaPods を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得することになります。 CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
 
 ```bash
 $ sudo gem install cocoapods
@@ -102,7 +102,8 @@ Pod build が失敗しないようにするため、プロジェクトを Xcode 
   ```
   {: codeblock}
 
-  [バージョン・パラメーターの資料](https://cloud.ibm.com/apidocs/tone-analyzer#versioning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認するか、{site.data.keyword.conversationshort}} サービスが作成された日付を使用してください。{: tip}
+  [バージョン・パラメーターの資料](https://{DomainName}/apidocs/tone-analyzer#versioning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認するか、{site.data.keyword.conversationshort}} サービスが作成された日付を使用してください。
+  {: tip}
 
 3. 分析するテキストを指定し、分析結果を処理します。
   ```swift
@@ -149,13 +150,13 @@ Pod build が失敗しないようにするため、プロジェクトを Xcode 
 ## スターター・キットの使用
 {: #tone_starterkits}
 
-[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")は、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。**Tone Analyzer for iOS with Watson** スターター・キットを選択することにより、{{site.data.keyword.toneanalyzershort}} サービスを使用できます。 このサービスは、ディープ・ラーニングの機能を利用して、一まとまりのテキストを評価します。 Tone Analyzer アプリケーションは、いくつかのカテゴリーに関連付けて、話者のトーン (幸福、悲しい、自信がある、など) を識別します。
+[スターター・キット](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")は、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 **Tone Analyzer for iOS with Watson** スターター・キットを選択することにより、{{site.data.keyword.toneanalyzershort}} サービスを使用できます。 このサービスは、ディープ・ラーニングの機能を利用して、一まとまりのテキストを評価します。 Tone Analyzer アプリケーションは、いくつかのカテゴリーに関連付けて、話者のトーン (幸福、悲しい、自信がある、など) を識別します。
 
 このスターター・キットを開始するには、次のようにします。
 
-1. [ここ](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") にあるスターター・キットを選択します。
+1. [ここ](https://{DomainName}/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") にあるスターター・キットを選択します。
 2. デフォルト・サービスを使用してプロジェクトを作成します。
-3. **「コードのダウンロード (Download Code)」**をクリックしてプロジェクトをダウンロードします。 サービスの資格情報が、対応するキー・フィールドの `BMSCredentials.plist` ファイルに注入されます。
+3. **「コードのダウンロード」**をクリックして、プロジェクトをダウンロードします。 サービスの資格情報が、対応するキー・フィールドの `BMSCredentials.plist` ファイルに注入されます。
 
 ## 次のステップ
 {: #tone_next notoc}

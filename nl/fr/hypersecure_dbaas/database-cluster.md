@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-06-12"
 
 keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
 
@@ -14,7 +14,7 @@ subcollection: swift
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
-{:gif: .gif}
+{:gif: data-image-type='gif'}
 {:tip: .tip}
 
 # Création d'une base de données hautement disponible et sécurisée
@@ -28,7 +28,7 @@ est Swift 4.0 avec MongoKitten SDK 4.0.0.
 ## Etape 1. Création d'un cluster de base de données
 {: #create_dbcluster}
 
-1. Accédez à l'écran de [configuration du service {{site.data.keyword.ihsdbaas_full}}](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
+1. Accédez à l'écran [Configuration du service {{site.data.keyword.ihsdbaas_full}}](https://{DomainName}/catalog/services/hyper-protect-dbaas){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
 
 2. Fournissez les informations suivantes :
 
@@ -85,7 +85,7 @@ Vous avez besoin d'un kit qui repose sur l'infrastructure Web Swift côté serve
 
 Utilisez un projet existant qui a été créé à partir de ce kit de démarrage, ou créez-en un nouveau.
 
-1. Ouvrez le [tableau de bord App Service d'{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
+1. Ouvrez le [tableau de bord {{site.data.keyword.cloud_notm}} App Service](https://{DomainName}/developer/appservice/dashboard){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
 
 2. Sélectionnez l'onglet **Kits de démarrage**.
 
@@ -102,14 +102,13 @@ Utilisez un projet existant qui a été créé à partir de ce kit de démarrage
 ## Etape 3. Connexion à la base de données
 {: #connect_db}
 
-Pour garantir un transfert sécurisé des données, téléchargez le fichier de l'autorité de certification à l'adresse
-https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project directory.
+Pour garantir un transfert de données sécurisé, téléchargez le fichier de l'autorité de certification (CA) et copiez-le dans répertoire de votre projet.
 
 1. Accédez au répertoire de votre projet où se trouvent les fichiers de code téléchargés développés.
 
 2. Créez un fichier JSON nommé `cred.json` pour stocker vos données d'identification d'accès au cluster de base de données.
 
-3. Entrez les valeurs collectées dans les étapes de [Création d'un cluster de base de données](#create_dbcluster). Les valeurs doivent être spécifiées sur une seule ligne.
+3. Entrez les valeurs collectées dans les étapes de [Création d'un cluster de base de données](/docs/swift?topic=swift-create-database-cluster#create_dbcluster). Les valeurs doivent être spécifiées sur une seule ligne.
   ```hljs
   {
   "uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
@@ -119,34 +118,16 @@ https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project direc
   ```
   {: codeblock}
 
-  Où :
-  <table>
-  <tr>
-    <th> Paramètre </th>
-    <th> Description </th>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_ID</em>&gt; </td>
-    <td> ID utilisateur de l'administrateur de base de données comme indiqué dans [Création d'un cluster de base de données](#create_dbcluster).
-  </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_pwd</em>&gt; </td>
-    <td> ID utilisateur du mot de passe de l'administrateur de base de données comme indiqué dans [Création d'un cluster de base de données](#create_dbcluster). </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>Hostname_i</em>&gt; </td>
-    <td> Réplique de base de données <em>i</em> (<em>i</em>=1,2,3) telle que retournée dans [Création d'un cluster de base de données](create_dbcluster). </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>PortNumber_i</em>&gt; </td>
-    <td> Numéro de port <em>i</em> (<em>i</em>=1,2,3) tel que retourné dans [Création d'un cluster de base de données](#create_dbcluster). </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>CA_file</em>&gt; </td>
-    <td> Nom de fichier du fichier de l'autorité de certification téléchargé. Lors du déploiement, il est copié dans le répertoire `/rapide-projet`.</td>
-  </tr>
-  </table>
+### Description des paramètres de base de données
+{: #db-parameter-descriptions}
+
+Consultez les descriptions de paramètre de base de données suivantes :
+
+* `admin_ID` - ID utilisateur de l'administrateur de base de données comme indiqué dans [Création d'un cluster de base de données](/docs/swift?topic=swift-create-database-cluster#create_dbcluster). 
+* `admin_pwd` - ID utilisateur du mot de passe de l'administrateur de base de données comme indiqué dans [Création d'un cluster de base de données](/docs/swift?topic=swift-create-database-cluster#create_dbcluster). 
+* `Hostname_i` - Réplique de base de données *i* (*i*=1,2,3) telle que retournée dans [Création d'un cluster de base de données](/docs/swift?topic=swift-create-database-cluster#create_dbcluster). 
+* `PortNumber_i` - Numéro de port *i* (*i*=1,2,3) tel que retourné dans [Création d'un cluster de base de données](/docs/swift?topic=swift-create-database-cluster#create_dbcluster). 
+* `CA_file` - Nom de fichier du fichier de l'autorité de certification téléchargé. Lors du déploiement, il est copié dans le répertoire `/rapide-projet`.
 
 4. Editez le fichier `Package.swift` afin d'ajouter les dépendances de package pour l'utilisation
 du MongoKitten.
@@ -253,6 +234,7 @@ Vous pouvez maintenant ajouter votre propre code d'application au projet. Pour p
 Vous pouvez exécuter l'application [localement](/docs/swift?topic=swift-swift_cli#swift-install-tools) avec les outils de génération requis ou déployer sur {{site.data.keyword.cloud_notm}}.
 
 Pour créer une chaîne d'outils de déploiement dans le tableau de bord, cliquez sur **Déployer**. Configurez votre cible de déploiement en fonction des instructions s'appliquant à la méthode choisie :
-  * **Déployer dans [{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**. Cette option crée un cluster d'hôtes, appelé noeuds worker, afin de déployer et de gérer des conteneurs d'application à haute disponibilité. Vous pouvez créer un cluster ou déployer vers un cluster existant.
-  * **Déployer dans Cloud Foundry**. Cette option déploie votre application cloud native sans qu'il soit nécessaire de gérer l'infrastructure sous-jacente. Si votre compte a accès à {{site.data.keyword.cfee_full_notm}}, vous pouvez sélectionner le type de déployeur **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** ou **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**, que vous pouvez utiliser pour créer et gérer des environnements isolés pour l'hébergement de vos applications Cloud Foundry exclusivement pour votre entreprise.
-  * **Déployer sur un [serveur virtuel](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**. Cette option met à disposition une instance de serveur virtuel, charge une image qui inclut votre application, crée une chaîne d'outils DevOps et initie pour vous le premier cycle de déploiement.
+  * **Déployer dans IBM Kubernetes Service**. Cette option crée un cluster d'hôtes, appelé noeuds worker, afin de déployer et de gérer des conteneurs d'application haute disponibilité. Vous pouvez créer un cluster ou effectuer un déploiement sur un cluster existant. Pour plus d'informations, voir [Déploiement d'applications dans des clusters Kubernetes](/docs/containers?topic=containers-app).
+  * **Déployer dans Cloud Foundry**. Cette option déploie votre application cloud native sans qu'il soit nécessaire de gérer l'infrastructure sous-jacente. Si votre compte a accès à {{site.data.keyword.cfee_full_notm}}, vous pouvez sélectionner un déployeur de type **Public Cloud** ou **Enterprise Environment**, que vous pouvez utiliser pour créer et gérer des environnements isolés pour l'hébergement de vos applications Cloud Foundry exclusivement pour votre entreprise.Pour plus d'informations, voir [Déploiement d'applications dans Cloud Foundry Public](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps) et [Déploiement d'applications dans {{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-deploy_apps).
+  * **Déployer sur un serveur virtuel**. Cette option met à disposition une instance de serveur virtuel, charge une image qui inclut votre application, crée une chaîne d'outils DevOps et initie pour vous le premier cycle de déploiement. Pour plus d'informations, voir [Déploiement d'applications dans un serveur virtuel](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server).
+  

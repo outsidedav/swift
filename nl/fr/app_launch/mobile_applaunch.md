@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-17"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -24,7 +24,7 @@ subcollection: swift
 
 Le service {{site.data.keyword.engage_short}} définit une fonction, crée un public sur la base de plateformes d'appareil (y compris les attributs de public personnalisés), et définit finalement une interaction qui orchestre l'heure et l'emplacement de la fonction. Une fois les logiciels SDK utilisés, ainsi que la fonction et les attributs de métrique qui sont incorporés dans l'application, le service commence à mesurer les expériences du public. Vous pouvez maintenant utiliser votre application en fonction de ces informations pour créer des engagements clients personnalisés à travers les différentes catégories d'utilisateurs de votre application.
 
-![Aperçu de l'engagement cognitif](images/process_app_launch.png) Figure 1. Vue d'ensemble du cycle de vie du service {{site.data.keyword.engage_short}}
+![Présentation de l'engagement cognitif](images/process_app_launch.png "Présentation de l'engagement cognitif")
 
 Les fonctions du service {{site.data.keyword.engage_short}} sont les suivantes :
 
@@ -72,7 +72,7 @@ Tout d'abord, assurez-vous que la configuration prérequise suivante est respect
 Le service fournit des logiciels SDK spécifiques à la plateforme afin de simplifier le développement d'application. Les logiciels SDK Swift d'{{site.data.keyword.cloud_notm}} Mobile Services peuvent être installés avec CocoaPods ou Carthage.
 
 1. Cliquez sur **Paramètres**.
-2. Installez le logiciel [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Pour plus d'informations, consultez le fichier `README` qui contient les étapes d'installation et des concepts techniques.
+2. Installez le logiciel [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"). Pour plus d'informations, consultez le fichier `README` qui contient les étapes d'installation et des concepts techniques.
 3. Copiez les clés de configuration pour initialiser votre application. Utilisez la valeur confidentielle de l'application, l'identificateur global unique de l'application et la valeur confidentielle du client pour configurer votre application et créer des engagements.
 
 ## Etape 3. Création d'une fonction
@@ -150,7 +150,7 @@ Procédez comme suit pour créer un engagement à l'aide de la fonction Feature 
 
 2. Entrez un nom et une description pour le nouvel engagement. Assurez-vous de fournir un nom d'engagement unique, pas un nom déjà répertorié dans la liste Engagements.
   - Sélectionnez le type d'engagement**** **Feature Control**.
-  - Pour effectuer une expérience contrôlée avec plusieurs variantes de la fonction, sélectionnez **A/B testing** sous  **Select Experimentation Type**. Cliquez sur **Next**.
+  - Pour effectuer une expérience contrôlée avec plusieurs variantes de la fonction, sélectionnez **A/B testing** sous **Select Experimentation Type**. Cliquez sur **Next**.
 
 3. Sélectionnez la fonction que vous avez créée. Vous pouvez également choisir d'ajouter et de définir des variantes que vous souhaiterez peut-être expérimenter. Cliquez sur **Next**.
 
@@ -207,13 +207,13 @@ Procédez comme suit pour créer un engagement qui utilise l'option de messageri
 
   Le nouvel engagement apparaît maintenant dans la fenêtre des détails d'engagement.
 
-Vous pouvez maintenant mesurer les [performances](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) de votre engagement.
+Vous pouvez maintenant mesurer les [performances](/docs/services/app-launch?topic=app-launch-applaunch_type) de votre engagement.
 
 ## Onglet Quick Links
 {: #links-applaunch notoc}
 
 Consultez les liens suivants pour évaluer et comprendre les fonctions de {{site.data.keyword.engage_short}} :
 
- - Essayez le [service App Launch](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
- - [Blogues et Vidéos](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
- - Pour plus d'informations, voir le [tutoriel d'initiation à App Launch](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate).
+ - Essayez le [service App Launch](https://{DomainName}/catalog/services/app-launch){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
+ - [Blogues et Vidéos](/docs/services/app-launch?topic=app-launch-blogs-and-videos)
+ - Pour plus d'informations, voir la [documentation App Launch](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-05"
 
 keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift, swift health check
 
@@ -50,6 +50,7 @@ Le tableau suivant donne des indications sur les réponses que les noeuds finaux
 | Stopping | 503 - Unavailable           | 200 - OK                   | 503 - Unavailable         |
 | Down     | 503 - Unavailable           | 503 - Unavailable          | 503 - Unavailable         |
 | Errored  | 500 - Server Error          | 500 - Server Error         | 500 - Server Error        |
+{: caption="Tableau 1. Codes d'état HTTP" caption-side="bottom"}
 
 ## Ajout d'un diagnostic d'intégrité à une application Swift existante
 {: #existing-app}
@@ -117,7 +118,7 @@ func initializeHealthRoutes(app: App) {
 ```
 {: codeblock}
 
-L'exemple utilise le dictionnaire standard, qui génère un contenu tel que : 
+L'exemple utilise le dictionnaire standard, qui génère un contenu tel que :
 ```
 {"status":"UP","details":[],"timestamp":"2018-07-31T17:41:16+0000"}
 ```

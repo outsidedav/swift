@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: cloudant swift, store data swift, dbaas swift, cloudant instance swift, initialize sdk swift, create document swift, read document swift, delete document swift
 
@@ -158,5 +158,5 @@ Vous rencontrez des problèmes ? Consultez la section [Référence d'API {{site.
 Félicitations ! Vous avez ajouté un niveau de persistance sécurisé à votre application. Continuez sur votre lancée en essayant l'une des options suivantes :
 
 * Affichez le code source du [logiciel SDK pour Swift {{site.data.keyword.cloudant_short_notm}}](https://github.com/cloudant/swift-cloudant){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe").
-* Les kits de démarrage constituent l'un des moyens les plus rapides d'utiliser les fonctionnalités d'{{site.data.keyword.cloud_notm}}. Le kit de démarrage **Infinite Scrolling with Cloudant NoSQL for iOS** illustre comment étendre un `ViewController` pour afficher les données à l'aide de la pagination. Ce modèle d'application est commun pour les développeurs iOS et il s'agit d'un bon exemple pour illustrer les possibilités de {{site.data.keyword.cloudant_short_notm}}. Affichez les kits de démarrage disponibles dans le [tableau de bord Mobile Developer ](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"). Téléchargez le code. Exécutez l'application.
-* Pour découvrir et bénéficier de toutes les fonctions offertes par {{site.data.keyword.cloudant_short_notm}}, [consultez les documentations](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics#ibm-cloudant-basics) !
+* Les kits de démarrage constituent l'un des moyens les plus rapides pour utiliser les fonctionnalités d'{{site.data.keyword.cloud_notm}}. Le kit de démarrage **Infinite Scrolling with Cloudant NoSQL for iOS** illustre comment étendre un `ViewController` pour afficher les données à l'aide de la pagination. Ce modèle d'application est commun pour les développeurs iOS et il s'agit d'un bon exemple pour illustrer les possibilités de {{site.data.keyword.cloudant_short_notm}}. Affichez les kits de démarrage disponibles dans le [tableau de bord Mobile Developer ](https://{DomainName}/developer/mobile/dashboard){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"). Téléchargez le code. Exécutez l'application.
+* Pour découvrir et bénéficier de toutes les fonctions offertes par {{site.data.keyword.cloudant_short_notm}}, [consultez les documentations](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics) !

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-06"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -22,13 +22,13 @@ subcollection: swift
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple は、Apple の開発者がさまざまなスターター・キットからアプリを作成し、{{site.data.keyword.cloud_notm}} 用に最適化された主要サービスをプロビジョンして接続し、作業用コードを素早くダウンロードしたり継続的デリバリーのためのセットアップを行ったりすることを支援します。 ユーザーは、アプリのコードをダウンロードできるだけでなく、アプリを作成、表示、構成、管理できます。 スターター・キットの使用により、まったく新しいアプリを使用して {{site.data.keyword.cloud_notm}} サービスを素早く評価およびテストすることができます。
 
-開始の準備ができましたか? 今すぐ [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") にアクセスして始めましょう。
+開始の準備ができましたか? 今すぐ [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") にアクセスして始めましょう。
 {: tip}
 
 ## スターター・キットとは
 {: #starterkits-what}
 
-{{site.data.keyword.cloud_notm}} Developer Experience では、さまざまなスターター・キットの中から選択できます。 スターター・キットにより、{{site.data.keyword.cloud_notm}} は、開発者が選択した言語で、クラウド・デプロイメントの準備が完了したスケルトン実動アプリを動的にアセンブルします。 各スターター・キットは、コードを再作成するのではなく、コードを再利用できる、特定の実世界のユース・ケースの言語、フレームワーク、およびパターンを具体化します。
+{{site.data.keyword.cloud_notm}} 開発者コンソールでは、さまざまなスターター・キットの中から選択できます。 スターター・キットにより、{{site.data.keyword.cloud_notm}} は、開発者が選択した言語で、クラウド・デプロイメントの準備が完了したスケルトン実動アプリを動的にアセンブルします。 各スターター・キットは、コードを再作成するのではなく、コードを再利用できる、特定の実世界のユース・ケースの言語、フレームワーク、およびパターンを具体化します。
 
 スターター・キットは、実動準備が完了しており、(例えば Swift などの) ランタイムを使用してキー・パターンの実装を示すことに重点を置いています。 場合によっては、スターター・キットは、サービスの統合を強調するためのシンプルなユーザー・エクスペリエンスを提供します。 スターター・キットが、高度なユース・ケースのカスタマイズ可能な実装を表している場合もあります。
 
@@ -56,7 +56,7 @@ subcollection: swift
 ### 「アプリの作成」ビュー
 {: #create_new_app_view}
 
-**「アプリの作成」**ビューから、アプリに名前を付けたり、デプロイメントおよびルーティング情報を提供したりできます。 アプリの作成時に自動的にプロビジョンするサービス、価格プラン、およびそれぞれのご利用条件も表示されます。**「作成」**を選択して、「アプリの詳細 (App Details)」ビューに移動します。{{site.data.keyword.cloud_notm}} にログインしていない場合は、ここでログインする必要があります。
+**「アプリの作成」**ビューから、アプリに名前を付けたり、デプロイメントおよびルーティング情報を提供したりできます。 アプリの作成時に自動的にプロビジョンするサービス、価格プラン、およびそれぞれのご利用条件も表示されます。 **「作成」**を選択して、「アプリの詳細 (App Details)」ビューに移動します。 {{site.data.keyword.cloud_notm}} にログインしていない場合は、ここでログインする必要があります。
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple の「アプリの新規作成 (Create New App)」ビュー](images/create_new_project_screen.png "「アプリの新規作成 (Create New App)」ビュー")
 
@@ -82,5 +82,5 @@ _「アプリのリスト (App List)」_ビューから作成したアプリを�
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple の「アプリのリスト (App List)」ビュー](images/project_list_screen.png "「アプリのリスト (App List)」ビュー")
 
-詳しくは、[{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")を参照してください。
+詳しくは、[{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://{DomainName}/developer/appledevelopment/learning-resources){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")を参照してください。
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-12"
 
 keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
 
@@ -25,7 +25,7 @@ Que signifie développement sans serveur ? Le modèle de développement sans ser
 
 En faisant abstraction de l'infrastructure et des canevas nécessaires au développement côté serveur, l'architecture sans serveur permet aux développeurs de se concentrer sur l'écriture de code pour une meilleure réactivité en cas de modification des données.
 
-L'offre FaaS d'IBM, [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"), est conçue pour fournir une expérience simple côté serveur, sans connaissance spécialisée en développement côté serveur. Grâce à la technologie sans serveur, vous pouvez rapidement développer des solutions de back-end extensibles pour répondre à pratiquement n'importe quelle demande de charge de travail sans avoir besoin de créer des ressources à l'avance. Pour les applications qui ont des modèles de charge imprévisibles ou des temps d'arrêt de serveur élevés, {{site.data.keyword.openwhisk_short}} peut être une excellente solution de cloud offrant des performances améliorées. En outre, son système de "paiement à l'utilisation" permet de réduire les coûts.
+L'offre FaaS d'IBM, [{{site.data.keyword.openwhisk}}](https://{DomainName}/openwhisk){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"), est conçue pour fournir une expérience simple côté serveur, sans connaissance spécialisée en développement côté serveur. Grâce à la technologie sans serveur, vous pouvez rapidement développer des solutions de back-end extensibles pour répondre à pratiquement n'importe quelle demande de charge de travail sans avoir besoin de créer des ressources à l'avance. Pour les applications qui ont des modèles de charge imprévisibles ou des temps d'arrêt de serveur élevés, {{site.data.keyword.openwhisk_short}} peut être une excellente solution de cloud offrant des performances améliorées. En outre, son système de paiement à l'utilisation permet de réduire les coûts.
 
 ## Modifications architecturales
 {: #comparison-serverless}
@@ -36,7 +36,7 @@ Dans une architecture plus traditionnelle, l'application iOS déleste le réseau
 
 Une architecture sans serveur peut modifier cette structure afin qu'elle ressemble davantage à l'image suivante.
 
-![](./images/Architecture.png) Figure 1. Architecture sans serveur
+![Architecture sans serveur](./images/Architecture.png "Architecture sans serveur")
 
 Plutôt que de gérer toute la logique de traitement et d'authentification à l'intérieur d'un seul serveur, une architecture sans serveur utilise des fonctions qui encapsulent une grande partie de la logique côté serveur, et décharge une partie de la logique vers le client (et les services externes).
 
@@ -52,7 +52,7 @@ Dans le schéma présenté, vous pouvez constater les éléments suivants :
 
 Dans un modèle purement sans serveur, le client prend souvent des responsabilités supplémentaires en raison de l'impossibilité de stocker l'état de l'utilisateur. L'autorisation est traitée par le client et le service du fournisseur d'identité {{site.data.keyword.appid_short_notm}}.
 
-Bien que les architectures sans serveur ne soient pas toujours idéales, elles peuvent apporter de nombreux avantages dans des conditions d'équipe et d'utilisation appropriées. Pour en apprendre davantage, consultez des exemples plus spécifiques dans quelques-uns des [cas d'utilisation](#use_cases) les plus courants.
+Même si les architectures sans serveur ne soient pas toujours idéales, elles peuvent apporter de nombreux avantages dans des conditions d'équipe et d'utilisation appropriées. Pour en apprendre davantage, consultez des exemples plus spécifiques dans quelques-uns des [cas d'utilisation](#use_cases) les plus courants.
 
 ## Avantages du développement sans serveur
 {: #benefits-serverless}
@@ -77,14 +77,14 @@ En éliminant la nécessité de recourir à l'administration de système, et gr�
 
 ### Back-end mobile
 {: #mobile-backend-serverless}
-![](./images/cloud-functions-rest-api-trigger.png)
+![Back end mobile](./images/cloud-functions-rest-api-trigger.png "Back end mobile")
 
 Les développeurs mobiles peuvent facilement accéder à la logique côté serveur et externaliser des tâches de calcul intensives sur une plate-forme cloud. Vous pouvez implémenter des fonctions dans des langages tels que Swift et consommer facilement les fonctions côté serveur à l'aide du logiciel SDK iOS sans qu'une expérience côté serveur soit nécessaire.
 
 ### Traitement des données
 {: #data-processing-serverless}
 
-![](./images/cloud-functions-cloudant-trigger.png)
+![Traitement de données sans serveur](./images/cloud-functions-cloudant-trigger.png "Traitement de données sans serveur")
 
 Vous pouvez exécuter du code chaque fois que des données sont mises à jour dans votre magasin de données grâce à des déclencheurs intégrés. Vous pouvez aussi facilement automatiser les processus comme la normalisation audio, la rotation d'image, l'affûtage, la réduction du bruit, la génération de miniatures ou le transcodage vidéo à travers un modèle de programmation côté serveur opérationnel.
 
@@ -102,12 +102,12 @@ Exécutez vos fonctions périodiquement et définissez des programmes qui suiven
 {: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [API REST ](https://cloud.ibm.com/apidocs){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")
+* [API REST ](https://{DomainName}/apidocs){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")
 
 ## Liens connexes
 {: #related-serverless notoc}
 
 * [Découvrez {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
-* [Site Web du projet Apache OpenWhisk](http://openwhisk.org){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")
+* [Site Web du projet Apache OpenWhisk](http://openwhisk.incubator.apache.org/){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")
 * [En savoir plus sur Serverless](https://martinfowler.com/articles/serverless.html){: new_window} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")

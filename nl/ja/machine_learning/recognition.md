@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: swift visual recognition, train swift, cocoapods swift, swift sdk install, starter kit watson swift, image swift classify, machine learning swift
 
@@ -41,7 +41,7 @@ subcollection: swift
 * CocoaPods、Carthage、または Swift Package Manager
 
 [CocoaPods](https://github.com/watson-developer-cloud/swift-sdk#cocoapods){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、[Carthage](https://github.com/watson-developer-cloud/swift-sdk#carthage){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")、または [Swift Package Manager](https://github.com/watson-developer-cloud/swift-sdk#swift-package-manager){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")
-を使用することにより、[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") をインストールできます。CocoaPods (https://cocoapods.org/) を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得します。 CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
+を使用することにより、[Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") をインストールできます。 CocoaPods (https://cocoapods.org/) を使用して依存関係を管理する場合、Watson Swift SDK 全体ではなく、必要なフレームワークだけを取得します。 CocoaPods を使用したことがない場合は、次のように簡単にインストールできます。
 ```console
 sudo gem install cocoapods
 ```
@@ -102,7 +102,7 @@ Pod build が失敗しないようにするため、プロジェクトを Xcode 
   ```
   {: codeblock}
 
-  [バージョン・パラメーターの資料](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認するか、{site.data.keyword.conversationshort}} サービスが作成された日付を使用できます。
+  [バージョン・パラメーターの資料](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") を確認するか、{site.data.keyword.conversationshort}} サービスが作成された日付を使用できます。
   {: tip}
 
 3. 画像を分類するため、次のコードを追加します。
@@ -127,12 +127,12 @@ Visual Recognition フレームワークでは複数の分類方法がサポー�
 ## スターター・キットの使用
 {: #recognition_starterkits}
 
-[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")は、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。**Visual Recognition for iOS with Watson** スターター・キットを選択することにより、{{site.data.keyword.visualrecognitionshort}} サービスを使用できます。 このサービスは、画像を評価して分類します。 モバイル・デバイスから新しい画像や既存の画像をアップロードすると、Visual Recognition アプリがその画像コンテンツを素早くタグ付けし、分類します。
+[スターター・キット](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")は、{{site.data.keyword.cloud_notm}} の機能を素早く使用する方法の 1 つです。 **Visual Recognition for iOS with Watson** スターター・キットを選択することにより、{{site.data.keyword.visualrecognitionshort}} サービスを使用できます。 このサービスは、画像を評価して分類します。 モバイル・デバイスから新しい画像や既存の画像をアップロードすると、Visual Recognition アプリがその画像コンテンツを素早くタグ付けし、分類します。
 
 開始するには、以下のようにします。
-1. [ここ](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") にあるスターター・キットを選択します。
+1. [ここ](https://{DomainName}/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") にあるスターター・キットを選択します。
 2. デフォルト・サービスを使用してプロジェクトを作成します。
-3. **「コードのダウンロード (Download Code)」**をクリックしてプロジェクトをダウンロードします。 サービスの資格情報が、対応するキー・フィールドの `BMSCredentials.plist` ファイルに注入されます。
+3. **「コードのダウンロード」**をクリックして、プロジェクトをダウンロードします。 サービスの資格情報が、対応するキー・フィールドの `BMSCredentials.plist` ファイルに注入されます。
 
 ## 次のステップ
 {: #recognition_next notoc}

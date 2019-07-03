@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-13"
 
 keywords: deploy swift app, deploy swift, serverless swift, deploy swift cloud foundry, swift kubernetes, swift virtual server
 
@@ -16,6 +16,7 @@ subcollection: swift
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:note: .note}
 
 # Déploiement et intégration d'applications Swift
 {: #deploy_apps-swift}
@@ -43,20 +44,23 @@ Pour plus d'informations, voir [Intégration de services de back-end avec un log
 ## Déploiement dans un cluster Kubernetes
 {: #deploy_kube-swift}
 
-Vous pouvez apprendre à utiliser le service Kubernetes {{site.data.keyword.cloud_notm}} pour déployer une application conteneurisée qui s'appuie sur Watson Tone Analyzer. Dans le scénario fourni, une firme PR fictive utilise le service {{site.data.keyword.cloud_notm}} pour analyser ses communiqués de presse et recevoir des commentaires en retour sur le ton de ses messages. Pour plus d'informations, voir le tutoriel [Déploiement d'applications dans des clusters Kubernetes](/docs/containers?topic=containers-cs_apps_tutorial#cs_apps_tutorial).
+Vous pouvez apprendre à utiliser le service Kubernetes {{site.data.keyword.cloud_notm}} pour déployer une application conteneurisée qui s'appuie sur Watson Tone Analyzer. Dans le scénario fourni, une firme PR fictive utilise le service {{site.data.keyword.cloud_notm}} pour analyser ses communiqués de presse et recevoir des commentaires en retour sur le ton de ses messages. Pour plus d'informations, voir le tutoriel [Déploiement d'applications dans les clusters Kubernetes](/docs/containers?topic=containers-cs_apps_tutorial).
 
 ## Déploiement dans Cloud Foundry
 {: #swift-deploy-cf}
 
 Cette option déploie votre application cloud native sans qu'il soit nécessaire de gérer l'infrastructure sous-jacente.
 
-Si vous envisagez de déployer votre application dans [{{site.data.keyword.cfee_full}}](/docs/cloud-foundry?topic=cloud-foundry-about#about), vous devez [préparer votre compte {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry?topic=cloud-foundry-prepare#prepare).
+Si vous envisagez de déployer votre application dans [{{site.data.keyword.cfee_full}}](/docs/cloud-foundry?topic=cloud-foundry-about), vous devez [préparer votre compte {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry?topic=cloud-foundry-prepare).
 
-Si votre compte a accès à {{site.data.keyword.cfee_full_notm}}, vous pouvez sélectionner le type de déployeur **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** ou **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**, que vous pouvez utiliser pour créer et gérer des environnements isolés pour l'hébergement de vos applications Cloud Foundry exclusivement pour votre entreprise.
+Si votre compte a accès à {{site.data.keyword.cfee_full_notm}}, vous pouvez sélectionner un déployeur de type **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf)** ou **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee)**, que vous pouvez utiliser pour créer et gérer des environnements isolés pour l'hébergement de vos applications Cloud Foundry exclusivement pour votre entreprise.
 
 ## Déploiement sur un serveur virtuel
 {: #virtual_deploy-swift}
 
 Un service virtuel offre un plus haut degré de transparence, de prévisibilité et d'automatisation pour tous les types de charge de travail. Terraform est utilisé pour générer, changer et gérer les versions de votre infrastructure en toute sécurité et de manière efficace.
 
-Pour plus d'informations, voir [Déploiement sur un serveur virtuel](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy).
+  Le déploiement de VSI est disponible pour certains kits de démarrage. Pour utiliser cette fonctionnalité, accédez au [tableau de bord {{site.data.keyword.cloud_notm}}](https://{DomainName}) et cliquez sur **Créer une application** dans la vignette **Applications**.
+  {: note}
+
+Pour plus d'informations, voir [Déploiement sur un serveur virtuel](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server).
