@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-13"
 
 keywords: swift-cfenv, service bindings swift, environment swift, swift configuration, cloudenvironment swift, VCAP_SERVICES swift, swift credentials
 
@@ -16,20 +16,21 @@ subcollection: swift
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:note: .note}
 
 # Swift 환경 구성
 {: #configuration}
 
 클라우드 네이티브 개발에는 구성 데이터를 처리하는 방법에서 교차하는 밀접하게 관련된 두 가지 관행이 있습니다. 첫 번째는 개발부터 프로덕션에 이르는 애플리케이션의 과정에서 오류가 발생할 가능성을 최소화하기 위해 변하지 않는 아티팩트를 빌드해야 한다는 것입니다. 두 번째는 환경별 코드로 작성되는 문제를 방지하기 위해 개발 및 프로덕션 환경 간의 동일성을 위해 노력해야 한다는 것입니다. 
 
-서비스 구성 및 인증 정보(서비스 바인딩) 관리는 플랫폼별로 다릅니다. Cloud Foundry는 환경 변수 `VCAP_SERVICES`로 애플리케이션에 문자열로 표시되는 JSON 오브젝트로 서비스 바인딩 세부사항을 저장합니다. Kubernetes는 환경 변수로 컨테이너화된 애플리케이션에 전달되거나 임시 볼륨으로 마운트될 수 있는 `ConfigMaps` 또는 `Secrets`의 문자열로 표시되는 JSON 또는 플랫 속성으로 서비스를 저장합니다. 로컬 테스팅이 종종 클라우드에 실행되는 모든 항목에서 간소화된 형태로 파생되므로 로컬 개발에는 고유한 구성이 있습니다. 환경별 코드 경로 없이 포터블(portable) 방식으로 이러한 변형에 대해 작업하는 것은 어려운 문제일 수 있습니다.
+서비스 구성 및 인증 정보(서비스 바인딩)의 관리는 플랫폼마다 다릅니다. Cloud Foundry는 환경 변수 `VCAP_SERVICES`로 애플리케이션에 문자열로 표시되는 JSON 오브젝트로 서비스 바인딩 세부사항을 저장합니다. Kubernetes는 환경 변수로 컨테이너화된 애플리케이션에 전달되거나 임시 볼륨으로 마운트될 수 있는 `ConfigMaps` 또는 `Secrets`의 문자열로 표시되는 JSON 또는 플랫 속성으로 서비스를 저장합니다. 로컬 테스팅이 종종 클라우드에 실행되는 모든 항목에서 간소화된 형태로 파생되므로 로컬 개발에는 고유한 구성이 있습니다. 환경별 코드 경로 없이 포터블(portable) 방식으로 이러한 변형에 대해 작업하는 것은 어려운 문제일 수 있습니다.
 
 포터블 애플리케이션과 환경별 위치에서 서비스 바인딩(또는 기타 구성) 찾기를 캡슐화하기 위해 사용할 수 있는 유틸리티를 작성하는 데 도움이 되는 간단한 가이드라인을 따를 수 있습니다.클라우드 지원을 기존 애플리케이션에 추가해야 하거나 스타터 킷으로 앱을 작성해야 하는 경우 모두 목표는 많은 개발 플랫폼에 사용될 Swift 앱의 이식성을 제공하는 것입니다.
 
 ## 기존 Swift 애플리케이션에 {{site.data.keyword.cloud_notm}} 추가
 {: #addcloud-env}
 
-특정 환경 값을 추상화하기 위한 경로는 하나의 클라우드 환경과 다른 클라우드 환경 간에 다를 수 있습니다. [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 라이브러리는 여러 클라우드 제공자에서 환경 구성 및 인증 정보를 추상화하므로 Swift 앱은 로컬로 또는 Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} 또는 가상 인스턴스에서 지속적으로 정보에 액세스할 수 있습니다. 인증 정보 추상화는 `CloudEnvironment` 라이브러리에서 제공하며, 이는 내부적으로 Cloud Foundry 구성을 위해 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 사용하고 구성 관리자로 [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 사용합니다. 
+특정 환경 값을 추상화하기 위한 경로는 하나의 클라우드 환경과 다른 클라우드 환경 간에 다를 수 있습니다. [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 라이브러리는 여러 클라우드 제공자에서 환경 구성 및 인증 정보를 추상화하므로 Swift 앱은 로컬로 또는 Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} 또는 가상 인스턴스에서 지속적으로 정보에 액세스할 수 있습니다. 인증 정보 추상화는 `CloudEnvironment` 라이브러리에서 제공하며, 이는 내부적으로 Cloud Foundry 구성을 위해 [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 사용하고 구성 관리자로 [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 사용합니다.
 
 `CloudEnvironment`를 통해 Swift 애플리케이션이 해당 값을 검색하기 위해 사용할 수 있는 검색 키를 정의하여 애플리케이션의 소스 코드에서 하위 레벨 세부사항을 추상화할 수 있습니다.
 
@@ -119,7 +120,12 @@ let url = cloudEnv.url
 ## 스타터 킷 앱에서 Swift 구성 관리자 사용
 {: #configmanager-swift}
 
-[스타터 킷](https://cloud.ibm.com/developer/appledevelopment/starter-kits/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")으로 작성된 Swift 앱은 로컬로, 그리고 여러 Cloud 배치 대상(CF, K8, VSI 및 Functions)에서도 실행하는 데 필요한 인증 정보 및 구성과 함께 자동으로 제공됩니다. 구성 관리자의 기본 작성은 `Sources/Application/Application.swift`에서 찾을 수 있습니다. 서비스가 포함된 Swift 기반 스타터 킷을 작성하는 경우 `config` 폴더 및 `mappings.json` 파일이 사용자를 위해 작성됩니다. 앱을 다운로드하는 경우 `config` 폴더는 사용자의 서비스를 위한 모든 인증 정보가 있는 `localdev-config.json` 파일을 포함하며 `.gitignore` 파일에 있습니다.
+[스타터 킷](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")으로 작성된 Swift 앱은 로컬로, 그리고 여러 클라우드 배치 대상(예: [Kubernetes](/docs/containers?topic=containers-getting-started), [Cloud Foundry](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf), [{{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-about), [Virtual Server(VSI)](/docs/vsi?topic=virtual-servers-getting-started-tutorial) 또는 [{{site.data.keyword.openwhisk_short}}](/docs/openwhisk?topic=cloud-functions-getting_started))에서도 실행하는 데 필요한 인증 정보 및 구성과 함께 자동으로 제공됩니다.
+
+  VSI 배치는 일부 스타터 킷에 사용할 수 있습니다. 이 기능을 사용하려면 [{{site.data.keyword.cloud_notm}} 대시보드](https://{DomainName})로 이동하여 **앱** 타일에서 **앱 작성**을 클릭하십시오.
+  {: note}
+
+구성 관리자의 기본 작성은 `Sources/Application/Application.swift`에서 찾을 수 있습니다. 서비스가 포함된 Swift 기반 스타터 킷을 작성하는 경우 `config` 폴더 및 `mappings.json` 파일이 사용자를 위해 작성됩니다. 앱을 다운로드하는 경우 `config` 폴더는 사용자의 서비스를 위한 모든 인증 정보가 있는 `localdev-config.json` 파일을 포함하며 `.gitignore` 파일에 있습니다.
 
 ## 다음 단계
 {: #next-configß notoc}

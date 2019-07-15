@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: sql swift, database swift, persistence swift, data swift, orm swift, kuery swift, kitura swift
 
@@ -32,9 +32,9 @@ Con ORM (Object-Relational Mapping), puoi associare gli oggetti ai database rela
 ## Passo 1. Introduzione a ORM
 {: #start-orm}
 
-Utilizza [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") con un plugin SQL come [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") o [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
+Utilizza [Swift-Kuery-ORM](https://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") con un plugin SQL come [PostgreSQL](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") o [MySQL](https://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 
-Per questo esempio, viene utilizzato il plug-in [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"). Attieniti alle istruzioni per [installare il plug-in](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
+Per questo esempio, viene utilizzato il plug-in [PostgreSQL](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"). Attieniti alle istruzioni per [installare il plug-in](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 
 ## Passo 2. Importazione di ORM nella tua applicazione
 {: #import-orm}
@@ -169,4 +169,4 @@ Per facilitare la prova di ORM, l'[esercitazione FoodTrackerBackend](https://git
 ## Utilizzo di Swift-Kuery direttamente
 {: #swift-kuery}
 
-Se ORM ti limita perché hai bisogno di più controllo sul tuo database, puoi utilizzare il livello di astrazione SQL [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"), dove puoi effettuare una query SQL.
+Se ORM ti limita perché hai bisogno di più controllo sul tuo database, puoi utilizzare il livello di astrazione SQL [Swift-Kuery](https://github.com/IBM-Swift/Swift-Kuery){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"), dove puoi effettuare una query SQL.

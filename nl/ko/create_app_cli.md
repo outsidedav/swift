@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-19"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -25,7 +25,7 @@ subcollection: swift
 
 다음 안내서를 참조하여 서버 측 Swift 앱을 빌드하고 로컬로 실행하고 배치할 수 있습니다. 표준 명령으로 이러한 조치를 실행하려면 {{site.data.keyword.dev_cli_long}} 사용 방법을 알아보십시오.
 
-{{site.data.keyword.dev_cli_short}}를 사용하여 12개가 넘는 명령을 통해 서버 측 애플리케이션을 관리할 수 있습니다. [{{site.data.keyword.dev_cli_notm}} CLI](/docs/cli/idt?topic=cloud-cli-idt-cli#idt-cli)에서 `ibmcloud dev` 명령에 대해 알아보십시오.
+{{site.data.keyword.dev_cli_short}}를 사용하여 12개가 넘는 명령을 통해 서버 측 애플리케이션을 관리할 수 있습니다. [{{site.data.keyword.dev_cli_notm}} CLI](/docs/cli/idt?topic=cloud-cli-idt-cli)에서 `ibmcloud dev` 명령에 대해 알아보십시오.
 
 ## 1단계. 개발자를 위한 요구사항
 {: #prereqs-swift-cli}
@@ -42,14 +42,14 @@ subcollection: swift
 
 - [Xcode 8+(이상) 설치](https://developer.apple.com/xcode/){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")
 - [iOS 디바이스 8(이상)에 배치](https://support.apple.com/downloads/ios){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")
-- Apple에 앱을 제출하기 전에 [앱 스토어 제출 가이드라인](https://developer.apple.com/app-store/guidelines/){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")을 검토하십시오.
+- Apple에 앱을 제출하기 전에 [앱 스토어 제출 가이드라인](https://developer.apple.com/app-store/resources/){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")을 검토하십시오.
 
 ### SDK 및 종속성 관리
 {: #swift-cli-sdk-dependency}
 
 다음 도구를 통해 다양한 {{site.data.keyword.cloud_notm}} 서비스에서 작동하도록 네이티브 SDK를 설치할 수 있습니다.
 
-- [IBM Cloud SDK를 위한 CocoaPods 설치](https://cocoapods.org/){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")
+- [{{site.data.keyword.cloud_notm}} SDK를 위한 CocoaPods 설치](https://cocoapods.org/){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")
   ```
   sudo gem install cocoapods
   ```
@@ -70,7 +70,7 @@ subcollection: swift
 ## 2단계. 로컬 개발을 위한 도구 설치
 {: #swift-cli-install-tools}
 
-{{site.data.keyword.cloud}}는 {{site.data.keyword.cloud_notm}}의 다양한 측면에서 작업하는 데 도움이 되는 로컬 CLI 도구를 제공합니다. 자세한 정보는 [{{site.data.keyword.dev_cli_long}} 정보](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)를 참조하십시오. 클라우드 배치 전에 로컬 Docker 이미지에서 Swift 백엔드를 테스트하기 위해 도구를 사용할 수 있습니다.
+{{site.data.keyword.cloud}}는 {{site.data.keyword.cloud_notm}}의 다양한 측면에서 작업하는 데 도움이 되는 로컬 CLI 도구를 제공합니다. 자세한 정보는 [{{site.data.keyword.dev_cli_long}} 정보](/docs/cli?topic=cloud-cli-getting-started)를 참조하십시오. 클라우드 배치 전에 로컬 Docker 이미지에서 Swift 백엔드를 테스트하기 위해 도구를 사용할 수 있습니다.
 
 * MacOS 및 Linux의 경우 다음 명령을 실행하십시오.
   ```
@@ -96,7 +96,7 @@ subcollection: swift
   ```
   {: codeblock}
 
-  프로젝트를 작성하려면 {{site.data.keyword.cloud_notm}} 계정으로 로그인해야 합니다. 처음 사용하는 사용자는 무료 계정으로 [등록 ](https://cloud.ibm.com/registration){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")할 수 있습니다. `ibmcloud login` 명령을 사용하여 명령행에 로그인하십시오.
+  프로젝트를 작성하려면 {{site.data.keyword.cloud_notm}} 계정으로 로그인해야 합니다. 처음 사용하는 사용자는 무료 계정으로 [등록 ](https://{DomainName}/registration){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")할 수 있습니다. `ibmcloud login` 명령을 사용하여 명령행에 로그인하십시오.
   {: tip}
 
 2. 프롬프트되면 다음 예에서 표시된 대로 옵션 1, 옵션 6, 옵션 2를 차례대로 선택하십시오.
@@ -128,18 +128,6 @@ subcollection: swift
 3. 애플리케이션의 이름을 제공하십시오.
   ```
   ? Enter a name for your application> swift_project
-  ```
-  {: screen}
-
-4. OpenAPI 2.0 지원을 사용하도록 선택하십시오.
-  ```
-  ? Enable your application based on an OpenAPI 2.0 Specification document? [y/n]> y
-  ```
-  {: screen}
-
-  OpenAPI 2.0 지원이 사용 가능한 경우 URL로 OpenAPI 2.0 문서에 대한 경로를 제공해야 합니다.
-  ```
-  ? Path to OpenAPI 2.0 document as a url (both yaml and json formats supported)> http://hostname.domain.com/path/to/file.json
 
   Generating application ...
   ```
@@ -184,7 +172,7 @@ subcollection: swift
 
 개발자가 여러 스타터 킷에서 앱을 작성하고 핵심 {{site.data.keyword.cloud_notm}} 최적화 서비스를 프로비저닝하고 연결한 후 작업 코드를 빠르게 다운로드(또는 지속적 딜리버리를 위해 설정)할 수 있도록 {{site.data.keyword.cloud_notm}} Developer Console for Apple을 사용하는 방법에 대해 알아보십시오. 사용자는 앱을 작성, 보기, 구성 및 관리하고 앱의 코드를 다운로드할 수 있습니다. Developer Console for Apple을 사용하여 빠르게 평가하고 새 앱으로 {{site.data.keyword.cloud_notm}} 서비스를 테스트할 수 있습니다.
 
-시작하시겠습니까? [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")에 방문하여 시작하십시오.
+시작하시겠습니까? [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")에 방문하여 시작하십시오.
 {: tip}
 
 자세한 정보는 [스타터 킷으로 Swift 앱 개발](/docs/swift/starter_kit?topic=swift-starterkits-intro#starterkits-intro)을 참조하십시오.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-10"
 
 keywords: swift logging, ios logging, debug swift, add logging swift, heliumlogger swift, loggerapi swift, logger swift, starter kit swift logger
 
@@ -22,7 +22,7 @@ subcollection: swift
 
 I messaggi di log sono stringhe con informazioni contestuali sullo stato e sull'attività del microservizio nel momento in cui viene creata la voce di log. I log sono necessari per diagnosticare come e perché i servizi hanno esito negativo e hanno un ruolo di supporto per le [metriche dell'applicazione](/docs/swift/cloudnative?topic=swift-metrics#metrics) nel monitoraggio dell'integrità dell'applicazione.
 
-Data la natura transitoria dei processi negli ambienti cloud, i log devono essere raccolti e inviati altrove, di norma a un'ubicazione centralizzata per l'analisi. Il modo più congruente per registrare negli ambienti cloud consiste nell'inviare le voci di log a flussi di output e di errore standard che lasciano all'infrastruttura di gestire il resto.
+Data la natura transitoria dei processi negli ambienti cloud, i log devono essere raccolti e inviati altrove, di norma a un'ubicazione centralizzata per l'analisi. Il modo più congruente per registrare negli ambienti cloud consiste nell'inviare le voci di log a flussi di output e di errore standard e lasciare che l'infrastruttura gestisca il resto.
 
 ## Aggiunta della registrazione alla tua applicazione Swift
 {: #logging-add}
@@ -62,7 +62,7 @@ Le applicazioni Swift che vengono create utilizzando il servizio dell'applicazio
 ```
 {: screen}
 
-Questi messaggi si trovano in `stdout` in locale oppure nei log per le distribuzioni [CloudFoundry](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs) e [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") a cui si accede, rispettivamente, mediante `ibmcloud app logs --recent <APP_NAME>` e `kubectl logs <deployment name>`.
+Questi messaggi si trovano in `stdout` in locale (output standard) oppure nei log per le distribuzioni Cloud Foundry e Kubernetes a cui si accede, rispettivamente, mediante `[ibmcloud app logs --recent <APP_NAME>]`(/docs/cli/reference?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_logs) e `[kubectl logs <deployment name>`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 
 Nel file `/Sources/AppName/main.swift`, puoi vedere il seguente codice:
 ```swift
@@ -76,12 +76,12 @@ Il livello di log è esplicitamente impostato su `.info` per registrare i messag
 ## Passi successivi
 {: #next-logging notoc}
 
-Ulteriori informazioni sulla visualizzazione dei log in ciascuna delle tue destinazioni di distribuzione:
-* [Kubernetes Logs](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")
-* [Log Cloud Foundry](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_cli)
+Ulteriori informazioni sulla visualizzazione dei log in ciascuna delle tue destinazioni di distribuzione;
+* [Log Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/#basic-logging-in-kubernetes){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")
+* [Cloud Foundry Logs](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_cli)
 * [Cloud Foundry Enterprise Environment - Controllo e registrazione](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
-* [Log e monitoraggio {{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
+* [{{site.data.keyword.openwhisk}} Logs & Monitoring](/docs/openwhisk?topic=cloud-functions-logs)
 
 Scopri come implementare ed utilizzare un aggregatore di log:
-* [Analisi dei log {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)
-* [{{site.data.keyword.cloud_notm}} Private ELK stack](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")
+* [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)
+* [{{site.data.keyword.cloud_notm}} Stack ELK privato stack](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")

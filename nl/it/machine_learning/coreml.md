@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-12"
 
 keywords: coreml swift, core ml swift, watson swift core, create model swift, image classification swift, version parameter swift, swift coreml watson
 
@@ -16,6 +16,7 @@ subcollection: swift
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:gif: data-image-type='gif'}
 
 # Utilizzo di Core ML con Watson
 {: #swift-coreml}
@@ -42,7 +43,7 @@ sudo gem install cocoapods
 ```
 {: codeblock}
 
-## Passo 1. Formazione di un modello con {{site.data.keyword.watson}} {{site.data.keyword.visualrecognitionshort}}
+## Passo 1. Training di un modello con {{site.data.keyword.watson}} {{site.data.keyword.visualrecognitionshort}}
 {: #train-module-coreml}
 
 Se non esiste un modello corrente, viene utilizzato il primo modello rilevato in remoto o qualsiasi altro che esista localmente. Il seguente gif e le istruzioni a suo corredo mostrano come puoi collegare il tuo servizio a Watson Studio ed eseguire la formazione del tuo modello.
@@ -76,9 +77,9 @@ Se non esiste un modello corrente, viene utilizzato il primo modello rilevato in
 
 2. Dalla barra laterale, carica i corsi di formazione del modello nei file `.zip` compressi. Seleziona quindi ogni dataset ed eseguine l'aggiunta al tuo modello dal menu a discesa. Puoi liberamente aggiungere ulteriori classi che usano delle tue serie di immagini per migliorare il classificatore.
 
-![Aggiunta di classi](images/add_classes.png)
+![Aggiunta di classi](images/add_classes.png "Servizio di collegamento a Watson Studio")
 
-3. Seleziona **Train Model** e attendi quindi che la formazione del modello sia completo.
+3. Seleziona **Train Model** e attendi quindi che il training del modello sia completo.
 
 È tutto pronto. Ora sei pronto a scaricare il tuo modello Core ML e integrarlo nella tua applicazione utilizzando l'[SDK Swift di Watson Developer Cloud](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 
@@ -126,7 +127,7 @@ I seguenti esempi ti aiutano ad aggiungere le funzionalità di {{site.data.keywo
   ```
   {: codeblock}
 
-  Consulta la [documentazione dei parametri di versione](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") oppure usa la data in cui è stato creato il servizio {site.data.keyword.visualrecognitionshort}}.
+  Consulta la [documentazione dei parametri di versione](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") oppure usa la data in cui è stato creato il servizio {site.data.keyword.visualrecognitionshort}}.
   {: tip}
 
 3. Aggiungi il seguente codice per scaricare o aggiornare il modello Core ML locale con il tuo classificatore Watson:
@@ -177,7 +178,7 @@ Con i kit starter, puoi utilizzare rapidamente e facilmente le funzionalità di 
 
 Per aggiungere {{site.data.keyword.visualrecognitionshort}} a un kit starter, completa la seguente procedura:
 
-1. Seleziona il [kit starter](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") con cui vuoi lavorare.
+1. Seleziona il [kit starter](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") con cui vuoi lavorare.
 2. Crea l'applicazione con i servizi predefiniti.
 3. Fai clic su **Add service > Watson > {{site.data.keyword.visualrecognitionshort}}**.
 4. Scarica il progetto facendo clic su **Download code**. Per i progetti iOS, le credenziali vengono inserite nel file `BMSCredentials.plist` nei campi chiave corrispondenti. Per i progetti Swift lato server, puoi trovare queste credenziali nel file `config/local-dev.json`.

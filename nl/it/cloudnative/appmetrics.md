@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: swiftmetrics-dash, swiftmetrics, prometheus swift, application metrics swift, swift performance, slow swift, swift dashboard, metris swift
 
@@ -20,11 +20,11 @@ subcollection: swift
 # Utilizzo delle metriche dell'applicazione con le applicazioni Swift
 {: #metrics}
 
-Le metriche dell'applicazione sono importanti per monitorare le prestazioni della tua applicazione. Avere una vista in diretta delle metriche come CPU, memoria, latenza e HTTP è essenziale per garantire che l'esecuzione della tua applicazione sia efficace nel tempo. I servizi Kubernetes e Cloud Foundry come il [ridimensionamento automatico](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started) si basano sulle metriche per determinare quando aggiungere o rimuovere in modo dinamico le istanze in base al carico ed eliminare le istanze che non sono più necessarie per mantenere bassi i costi.
+Le metriche dell'applicazione sono importanti per il monitoraggio delle prestazioni della tua applicazione. Avere una vista in diretta delle metriche come CPU, memoria, latenza e HTTP è essenziale per garantire che l'esecuzione della tua applicazione sia efficace nel tempo. I servizi Kubernetes e Cloud Foundry come il [ridimensionamento automatico](/docs/services/Auto-Scaling?topic=Auto-Scaling-get-started) si basano sulle metriche per determinare quando aggiungere o rimuovere in modo dinamico le istanze in base al carico ed eliminare le istanze che non sono più necessarie per mantenere bassi i costi.
 
-Le metriche dell'applicazione sono acquisite come dati delle serie temporali. L'aggregazione e la visualizzazione delle metriche acquisite possono aiutare a identificare problemi di prestazioni comuni come:
+Le metriche dell'applicazione vengono acquisite come dati delle serie temporali. L'aggregazione e la visualizzazione delle metriche acquisite possono essere di ausilio nell'identificazione di problemi delle prestazioni comuni quali:
 
-* Dei tempi di risposta HTTP lenti su qualcuno degli instradamenti o su tutti
+* Tempi di risposta HTTP lenti su qualche instradamento o su tutti gli instradamenti
 * Una scarsa velocità effettiva nell'applicazione
 * Dei picchi di richiesta che causano un rallentamento
 * Un utilizzo della CPU più elevato del previsto

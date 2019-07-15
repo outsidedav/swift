@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-05"
 
 keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift, swift health check
 
@@ -20,13 +20,13 @@ subcollection: swift
 # Utilizzo di un controllo di integrità nella tua applicazione Swift
 {: #healthcheck}
 
-I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente. Gli ambienti cloud come [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") e [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") possono essere configurati per eseguire periodicamente il polling degli endpoint di integrità per determinare se un'istanza del tuo servizio è pronta ad accettare traffico.
+I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente o meno. Gli ambienti cloud come [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") e [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") possono essere configurati per eseguire periodicamente il polling degli endpoint di integrità per determinare se un'istanza del tuo servizio è pronta ad accettare traffico.
 {: shortdesc}
 
 ## Panoramica sul controllo di integrità
 {: #overview}
 
-I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente. Normalmente sono utilizzati tramite HTTP e utilizzano i codici di ritorno standard per indicare lo stato UP o DOWN. Il valore di ritorno di un controllo di integrità è variabile, ma una risposta JSON minima, come `{"status": "UP"}`, è normale.
+I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente o meno. Normalmente sono utilizzati tramite HTTP e utilizzano i codici di ritorno standard per indicare lo stato UP o DOWN. Il valore di ritorno di un controllo di integrità è variabile, ma una risposta JSON minima, come `{"status": "UP"}`, è normale.
 
 Kubernetes ha una nozione con più sfumature dell'integrità del processo. Definisce due probe:
 
@@ -50,6 +50,7 @@ La seguente tabella fornisce le indicazioni sulle risposte che possono essere fo
 | In arresto | 503 - Non disponibile           | 200 - OK                   | 503 - Non disponibile         |
 | Non attivo     | 503 - Non disponibile           | 503 - Non disponibile          | 503 - Non disponibile         |
 | In errore  | 500 - Errore server          | 500 - Errore server         | 500 - Errore server        |
+{: caption="Tabella 1. Codici di stato HTTP. " caption-side="bottom"}
 
 ## Aggiunta di un controllo di integrità a un'applicazione Swift esistente
 {: #existing-app}
@@ -89,7 +90,7 @@ Per aggiungere la libreria Health a un'applicazione Swift esistente, vedi la seg
     ```
     {: codeblock}
 
-4. Controlla lo stato dell'applicazione con un browser accedendo all'endpoint `/health`. Il codice restituisce un payload `{"status": "UP"}`, come definito dal semplice dizionario.
+4. Controlla lo stato dell'applicazione con un browser accedendo all'endpoint `/health`. Il codice restituisce un payload `{"status": "UP"}`, come definito dal dizionario semplice.
 
 ## Controllo dell'integrità di un'applicazione kit starter Swift lato server
 {: #healthcheck-starterkit}

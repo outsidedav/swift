@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-13"
 
 keywords: swift-cfenv, service bindings swift, environment swift, swift configuration, cloudenvironment swift, VCAP_SERVICES swift, swift credentials
 
@@ -16,20 +16,21 @@ subcollection: swift
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:note: .note}
 
 # Configurazione dell'ambiente Swift
 {: #configuration}
 
-Lo sviluppo nativo cloud ha due prassi strettamente correlate che si intersecano nel modo in cui gestisci i dati di configurazione. La prima è che devi creare delle risorse immutabili per ridurre al minimo la probabilità di introdurre errori nel graduale passaggio della tua applicazione dallo sviluppo alla produzione. La seconda è che devi sforzarti di ottenere una parità tra gli ambienti di sviluppo e produzione per evitare problemi creati da codice specifico per l'ambiente. 
+Lo sviluppo nativo cloud ha due prassi strettamente correlate che si intersecano nel modo in cui gestisci i dati di configurazione. La prima è che devi creare delle risorse immutabili per ridurre al minimo la probabilità di introdurre errori nel graduale passaggio della tua applicazione dallo sviluppo alla produzione. La seconda è che devi cercare la parità tra i tuoi ambienti di sviluppo e di produzione, per evitare i problemi creati dal codice specifico dell'ambiente. 
 
-La gestione della configurazione del servizio e delle credenziali (bind di servizio) varia da piattaforma a piattaforma. Cloud Foundry memorizza i dettagli del bind di servizio in un oggetto JSON in stringhe che viene passato all'applicazione come variabile di ambiente `VCAP_SERVICES`. Kubernetes memorizza i bind di servizio come attributi semplici o JSON in stringhe in `ConfigMaps` o `Secrets` che possono essere passati all'applicazione inserita nel contenitore come variabili di ambiente o montati come un volume temporaneo. Lo sviluppo locale ha una propria configurazione poiché la verifica locale è spesso un derivato semplificato di qualsiasi cosa sia in esecuzione nel cloud. Lavorare tra queste variazioni in modo portatile senza avere percorsi di codice specifico dell'ambiente può essere difficile.
+La gestione della configurazione e delle credenziali del servizio (bind dei servizi) varia tra le piattaforme. Cloud Foundry memorizza i dettagli del bind di servizio in un oggetto JSON in stringhe che viene passato all'applicazione come variabile di ambiente `VCAP_SERVICES`. Kubernetes memorizza i bind del servizio come JSON convertito in stringa o attributi semplici in `ConfigMaps` o `Secrets`, che possono essere passati all'applicazione inserita in un contenitore come variabili di ambiente o montati come un volume temporaneo. Lo sviluppo locale ha una propria configurazione poiché la verifica locale è spesso un derivato semplificato di qualsiasi cosa sia in esecuzione nel cloud. Lavorare su queste variazioni in modo trasportabile senza avere percorsi di codice specifici per l'ambiente può essere una sfida.
 
 Puoi attenerti a semplici linee guida per aiutarti a scrivere delle applicazioni portatili e i programmi di utilità che puoi usare per incapsulare i bind di servizio di ricerca (o altra configurazione) in ubicazioni specifiche per l'ambiente.Sia che tu debba aggiungere il supporto cloud alle applicazioni esistenti oppure creare delle applicazioni con i kit starter, l'obiettivo è fornire la portabilità alle applicazioni Swift da utilizzare in molte piattaforme di distribuzione.
 
 ## Aggiunta di {{site.data.keyword.cloud_notm}} alle applicazioni Swift esistenti
 {: #addcloud-env}
 
-Il percorso per astrarre i valori di ambiente può differire da un ambiente cloud ad un altro. La libreria [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") astrae le credenziali e la configurazione dell'ambiente da vari provider cloud in modo che la tua applicazione Swift possa accedere in modo congruente alle informazioni mediante l'esecuzione in locale o in Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} o nelle istanze virtuali. L'astrazione delle credenziali è fornita dalla libreria `CloudEnvironment`, che utilizza internamente [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") per la configurazione Cloud Foundry e [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") come un gestore della configurazione.
+Il percorso per astrarre i valori di ambiente può differire da un ambiente cloud ad un altro. La libreria [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") astrae le credenziali e la configurazione dell'ambiente da vari provider cloud in modo che la tua applicazione Swift possa accedere in modo congruente alle informazioni mediante l'esecuzione in locale o in Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} o nelle istanze virtuali. L'astrazione delle credenziali è fornita dalla libreria `CloudEnvironment`, che utilizza internamente [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") per la configurazione Cloud Foundry e [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") come un gestore della configurazione.
 
 Con `CloudEnvironment`, puoi astrarre i dettagli di basso livello dal codice sorgente della tua applicazione definendo una chiave di ricerca che la tua applicazione Swift può utilizzare per cercare il suo valore corrispondente.
 
@@ -76,12 +77,12 @@ Questo esempio fornisce l'accesso alla serie di credenziali per i servizi, che �
 ## Descrizione delle credenziali del servizio
 {: #service_creds}
 
-La libreria `CloudEnvironment` utilizza un file denominato `mappings.json`, disponibile nella directory `config`, per comunicare dove sono memorizzate le credenziali per ciascun servizio. Il file `mappings.json` supporta la ricerca di valori che utilizzano i seguenti tre tipi di pattern di ricerca:
-- **`cloudfoundry`** - un tipo di pattern utilizzato per cerca un valore nella variabile di ambiente dei servizi di Cloud Foundry (`VCAP_SERVICES`). Per Cloud Foundry Enrprise Edition, vedi questa [esercitazione introduttiva](/docs/cloud-foundry?topic=cloud-foundry-getting-started#getting-started) per ulteriori informazioni.
-- **`env`** - un tipo di pattern utilizzato per cercare un valore che è associato a una variabile di ambiente, come ad esempio in Kubernetes o Functions.
-- **`file`** - un tipo di pattern utilizzato per cercare un valore in un file JSON. Il percorso deve essere relativo alla cartella root della tua applicazione Swift.
+La libreria `CloudEnvironment` utilizza un file denominato `mappings.json`, disponibile nella directory `config`, per comunicare dove sono memorizzate le credenziali per ciascun servizio. Il file `mappings.json` supporta la ricerca dei valori che utilizzano i seguenti tre tipi di modello di ricerca:
+- **`cloudfoundry`** - Un tipo di modello utilizzato per ricercare un valore nella variabile di ambiente dei servizi di Cloud Foundry (`VCAP_SERVICES`). Per Cloud Foundry Enrprise Edition, vedi questa [esercitazione introduttiva](/docs/cloud-foundry?topic=cloud-foundry-getting-started#getting-started) per ulteriori informazioni.
+- **`env`** - Un tipo di modello utilizzato per ricercare un valore associato a una variabile di ambiente, come in Kubernetes o Functions.
+- **`file`** - Un tipo di modello utilizzato per ricercare un valore in un file JSON. Il percorso deve essere relativo alla cartella root della tua applicazione Swift.
 
-L'array di valori associati a una chiave di ricerca viene ricercato nell'ordine in cui tali valori vengono visualizzati.
+Viene eseguita la ricerca nell'array dei valori associati a una chiave di ricerca nell'ordine in cui vengono visualizzati.
 
 Di seguito viene riportato un esempio di un file `mappings.json`:
 ```javascript
@@ -112,14 +113,19 @@ In questo esempio, `cloudant-credentials` e `object-storage-credentials` sono le
 
 Quando l'applicazione viene eseguita localmente, puoi utilizzare le credenziali memorizzate in un file, come `localdev/my-awesome-object-storage-credentials.json` come mostrato nell'esempio precedente. Le informazioni di connessione per i servizi per cui desideri l'accesso in locale, quali nome utente, password e nome host, sono tutti da memorizzare in questo file. 
 
-Per motivi di sicurezza, i file di credenziali non appartengono ai repository. Nell'esempio precedente, una cartella `localdev` viene utilizzata per memorizzare le credenziali locali, quindi devi aggiungere tale cartella al file `.gitignore` per evitare un commit accidentale. Se stai utilizzando un'applicazione kit starter, questa cartella viene creata per tuo conto ed è presente nel file `.gitignore`.
+Per motivi di sicurezza, i file di credenziali non appartengono ai repository. Nell'esempio precedente, viene utilizzata una cartella `localdev` per memorizzare le credenziali locali per cui devi aggiungere questa cartella al file `.gitignore` per evitare commit accidentale. Se stai utilizzando un'applicazione kit starter, questa cartella viene creata per tuo conto ed è presente nel file `.gitignore`.
 
-Per ulteriori informazioni sul file `mappings.json`, controlla la sezione [Descrizione delle credenziali del servizio ](#service_creds).
+Per ulteriori informazioni sul file `mappings.json`, controlla la sezione [Comprensione delle credenziali del servizio](#service_creds).
 
 ## Utilizzo del gestore configurazione Swift dalle applicazioni kit starter
 {: #configmanager-swift}
 
-Le applicazioni Swift create con i [kit starter](https://cloud.ibm.com/developer/appledevelopment/starter-kits/){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") sono automaticamente fornite con le credenziali e la configurazione necessarie per l'esecuzione in locale e anche in molte destinazioni di distribuzione cloud, ad esempio Cloud Foundry, Kubernetes, VSI e Functions. La creazione di base del gestore configurazione è disponibile in `Sources/Application/Application.swift`. Quando crei un'applicazione kit starter basata su Swift con i servizi, vengono creati per tuo conto una cartella `config` e un file `mappings.json`. Se scarichi la tua applicazione, la cartella `config` include un file `localdev-config.json` che ha tutte le credenziali per i tuoi servizi ed è presente nel file `.gitignore`.
+Le applicazioni Swift create con i [Kit starter](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") vengono automaticamente fornite con le credenziali e le configurazioni necessarie per l'esecuzione in locale ed anche in molte destinazioni di distribuzione cloud, ad esempio [Kubernetes](/docs/containers?topic=containers-getting-started), [Cloud Foundry](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf), [{{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-about), [Virtual Server (VSI)](/docs/vsi?topic=virtual-servers-getting-started-tutorial) o [{{site.data.keyword.openwhisk_short}}](/docs/openwhisk?topic=cloud-functions-getting_started).
+
+  La distribuzione di VSI è disponibile per alcuni kit starter. Per utilizzare questa funzione, vai al [dashboard {{site.data.keyword.cloud_notm}}](https://{DomainName}) e fai clic su **Create an app** nel tile **Apps**.
+  {: note}
+
+La creazione di base del gestore configurazione è disponibile in `Sources/Application/Application.swift`. Quando crei un'applicazione kit starter basata su Swift con i servizi, vengono creati per tuo conto una cartella `config` e un file `mappings.json`. Se scarichi la tua applicazione, la cartella `config` include un file `localdev-config.json` che ha tutte le credenziali per i tuoi servizi ed è presente nel file `.gitignore`.
 
 ## Passi successivi
 {: #next-configß notoc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-17"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -24,7 +24,7 @@ O {{site.data.keyword.engage_full}} permite que os desenvolvedores construam app
 
 O serviço {{site.data.keyword.engage_short}} define um recurso, cria um público baseado em plataformas de dispositivo (incluindo atributos de público customizados) e, finalmente, define um engajamento que coreografa a sincronização e o posicionamento do recurso. Depois que os SDKs são usados, junto aos atributos de recurso e de métricas incorporados no aplicativo, o serviço começa a medir as experiências do público. Agora é possível usar o app com base nessas informações para criar engajamentos do cliente customizados em várias categorias de usuários do app.
 
-![Visão geral do Cognitive Engage](images/process_app_launch.png) Figura 1. Visão geral do ciclo de vida do serviço {{site.data.keyword.engage_short}}
+![Visão geral do Cognitive Engage](images/process_app_launch.png "Visão geral do Cognitive Engage")
 
 Consulte os seguintes recursos do serviço {{site.data.keyword.engage_short}}:
 
@@ -72,7 +72,7 @@ Primeiro, assegure-se de que tenha os seguintes pré-requisitos prontos para exe
 O serviço fornece SDKs específicos de plataforma para simplificar o desenvolvimento de aplicativo. Os SDKs do {{site.data.keyword.cloud_notm}} Mobile Services Swift podem ser instalados com o CocoaPods ou o Carthage.
 
 1. Clique em **Configurações**.
-2. Instale o  [ SDK ](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Para obter mais informações, consulte o arquivo `README` que inclui as etapas de instalação e os conceitos técnicos.
+2. Instale o [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"). Para obter mais informações, consulte o arquivo `README` que inclui as etapas de instalação e os conceitos técnicos.
 3. Copie as chaves de configuração para inicializar o app. Use o segredo do app, o GUID do app e o segredo do cliente para configurar o app e criar engajamentos.
 
 ## Etapa 3. Criando um Recurso
@@ -207,13 +207,13 @@ Conclua as etapas a seguir para criar um engajamento que use a opção Sistema d
 
   O novo engajamento agora aparece na janela Detalhes de engajamento.
 
-Agora é possível medir o [desempenho](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) de seu engajamento.
+Agora é possível medir o [desempenho](/docs/services/app-launch?topic=app-launch-applaunch_type) de seu engajamento.
 
 ## Links Rápidos
 {: #links-applaunch notoc}
 
 Verifique os links a seguir para obter insight e entender os recursos do {{site.data.keyword.engage_short}}:
 
- - Experimente o [Serviço de ativação do app](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
- - [Blogs e vídeos](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
- - Para obter mais informações, consulte [Ativação de app: tutorial de introdução](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate).
+ - Experimente o [Serviço de ativação do app](https://{DomainName}/catalog/services/app-launch){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
+ - [Blogs e vídeos](/docs/services/app-launch?topic=app-launch-blogs-and-videos)
+ - Para obter mais informações, consulte a [Documentação do App Launch](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate).

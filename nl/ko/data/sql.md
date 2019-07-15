@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: sql swift, database swift, persistence swift, data swift, orm swift, kuery swift, kitura swift
 
@@ -32,9 +32,9 @@ ORM(Object-Relational Mapping)을 사용하면 SQL문을 처리하지 않고도 
 ## 1단계. ORM 시작하기
 {: #start-orm}
 
-SQL 플러그인(예: [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 또는 [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘"))으로 [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 사용하십시오. 
+SQL 플러그인(예: [PostgreSQL](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 또는 [MySQL](https://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘"))으로 [Swift-Kuery-ORM](https://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 사용하십시오.
 
-이 예제에서는 [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 플러그인이 사용됩니다. 지시사항에 따라 [플러그인을 설치](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")하십시오. 
+이 예제에서는 [PostgreSQL](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 플러그인이 사용됩니다. 지시사항에 따라 [플러그인을 설치](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")하십시오.
 
 ## 2단계. 애플리케이션에 ORM 가져오기
 {: #import-orm}
@@ -169,4 +169,4 @@ ORM을 좀 더 쉽게 시험 사용해 볼 수 있도록 [FoodTrackerBackend 튜
 ## Swift-Kuery 직접 사용
 {: #swift-kuery}
 
-데이터베이스에 대한 더 많은 제어가 필요하므로 ORM이 사용자를 제한하는 경우 SQL 조회를 작성할 수 있는 SQL 추상화 계층인 [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 사용할 수 있습니다.
+데이터베이스에 대한 더 많은 제어가 필요하므로 ORM이 사용자를 제한하는 경우 SQL 조회를 작성할 수 있는 SQL 추상화 계층인 [Swift-Kuery](https://github.com/IBM-Swift/Swift-Kuery){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 사용할 수 있습니다.

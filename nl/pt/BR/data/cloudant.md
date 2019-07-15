@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: cloudant swift, store data swift, dbaas swift, cloudant instance swift, initialize sdk swift, create document swift, read document swift, delete document swift
 
@@ -29,7 +29,7 @@ clusters de banco de dados, PCs desktop e dispositivos móveis.
 
 Para todas as maneiras que é possível usar o {{site.data.keyword.cloudant_short_notm}}, consulte [Noções básicas do {{site.data.keyword.cloudant_short_notm}}](/docs/services/Cloudant/basics?topic=cloudant-ibm-cloudant-basics#cloudant-nosql-db-basics).
 
-## Antes de começar
+## Antes de iniciar
 {: #prereqs-cloudant}
 
 Primeiro, verifique se os pré-requisitos a seguir estão prontos para execução:
@@ -158,5 +158,5 @@ Tendo problemas? Verifique a [Referência de API do {{site.data.keyword.cloudant
 Ótimo trabalho! Você incluiu um nível de persistência segura em seu app. Tente uma das opções a seguir para manter o ritmo:
 
 * Visualize o código-fonte do [{{site.data.keyword.cloudant_short_notm}} SDK for Swift](https://github.com/cloudant/swift-cloudant){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
-* Os Kits do Iniciador são uma das maneiras mais rápidas de usar os recursos do {{site.data.keyword.cloud_notm}}. O kit do iniciador **Rolagem infinita com o Cloudant NoSQL for iOS** ilustra como estender um `ViewController` para exibir dados usando a paginação. Esse padrão de app é comum para os desenvolvedores do iOS e é um ótimo exemplo para ilustrar os recursos do {{site.data.keyword.cloudant_short_notm}}. Visualize os kits de iniciador disponíveis no [Painel do Mobile Developer ](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"). Faça download do código. Execute o app.
-* Obtenha mais informações e aproveite todos os recursos que o {{site.data.keyword.cloudant_short_notm}} tem para oferecer: [verifique os documentos](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics#ibm-cloudant-basics).
+* Os Kits do Iniciador são uma das maneiras mais rápidas de usar os recursos do {{site.data.keyword.cloud_notm}}. O kit do iniciador **Rolagem infinita com o Cloudant NoSQL for iOS** ilustra como estender um `ViewController` para exibir dados usando a paginação. Esse padrão de app é comum para os desenvolvedores do iOS e é um ótimo exemplo para ilustrar os recursos do {{site.data.keyword.cloudant_short_notm}}. Visualize os kits de iniciador disponíveis no [Painel do Mobile Developer ](https://{DomainName}/developer/mobile/dashboard){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"). Faça download do código. Execute o app.
+* Obtenha mais informações e aproveite todos os recursos que o {{site.data.keyword.cloudant_short_notm}} tem para oferecer: [verifique os documentos](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-06"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -22,13 +22,13 @@ subcollection: swift
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple consente agli sviluppatori Apple di creare applicazioni da diversi kit starter, di eseguire il provisioning e la connessione di servizi chiave ottimizzati per {{site.data.keyword.cloud_notm}} e di scaricare quindi rapidamente il codice funzionante o di eseguire la configurazione per una fornitura continua. Gli utenti possono creare, visualizzare, configurare e gestire la tua applicazione, nonché scaricare il codice della tua applicazione. L'utilizzo dei kit starter ti aiuta a valutare e testare rapidamente i servizi {{site.data.keyword.cloud_notm}} con una nuova applicazione.
 
-Pronto a cominciare? Per un'introduzione, visita [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
+Pronto a cominciare? Per un'introduzione, visita [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 {: tip}
 
 ## Cos'è un kit starter?
 {: #starterkits-what}
 
-Con {{site.data.keyword.cloud_notm}} Developer Experience, puoi scegliere tra diversi kit starter. I kit starter indicano a {{site.data.keyword.cloud_notm}} di assemblare dinamicamente un'applicazione di produzione di base nel linguaggio da te scelto, pronta per la distribuzione cloud. Ogni kit starter rappresenta un linguaggio, un framework e un modello per uno specifico caso d'uso del mondo reale che consente di riutilizzare il codice invece di reinventarlo.
+Con la console per gli sviluppatori {{site.data.keyword.cloud_notm}}, puoi scegliere tra diversi kit starter. I kit starter indicano a {{site.data.keyword.cloud_notm}} di assemblare dinamicamente un'applicazione di produzione di base nel linguaggio da te scelto, pronta per la distribuzione cloud. Ogni kit starter rappresenta un linguaggio, un framework e un modello per uno specifico caso d'uso del mondo reale che consente di riutilizzare il codice invece di reinventarlo.
 
 I kit starter sono pronti per la produzione e si focalizzano sulla dimostrazione di un'implementazione del modello chiave utilizzando un runtime (ad esempio Swift). In alcuni casi, i kit starter offrono un'esperienza utente semplice per mettere in evidenza l'integrazione del servizio. In altri casi i kit starter rappresentano un'implementazione personalizzabile di un caso d'uso sofisticato.
 
@@ -82,5 +82,5 @@ Puoi elencare tutte le tue applicazioni create dalla vista _App List_. Puoi rino
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple - vista App List](images/project_list_screen.png "Vista App List")
 
-Per ulteriori informazioni, visita la pagina delle [risorse didattiche di {{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
+Per ulteriori informazioni, visita la pagina delle [risorse didattiche di {{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/learning-resources){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 {: tip}

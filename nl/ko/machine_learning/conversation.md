@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
 
@@ -110,7 +110,7 @@ Pod 빌드 실패를 방지하려면 Xcode에서 프로젝트를 열 때 `.xcode
   ```
   {: codeblock}
 
-  **팁**: 이 예에서는 표시할 컨텍스트를 저장합니다. 이 오브젝트에 대한 이해를 돕고 사용자의 유스 케이스에 맞게 조정하는 방법을 보려면 [컨텍스트 변수 문서](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables)를 참조하십시오. [버전 매개변수 문서](https://cloud.ibm.com/apidocs/assistant#versioning){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하거나 {site.data.keyword.conversationshort}} 서비스가 작성된 날짜를 사용하십시오. 
+  **팁**: 이 예에서는 표시할 컨텍스트를 저장합니다. 이 오브젝트에 대한 이해를 돕고 사용자의 유스 케이스에 맞게 조정하는 방법을 보려면 [컨텍스트 변수 문서](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables)를 참조하십시오. [버전 매개변수 문서](https://{DomainName}/apidocs/assistant#versioning){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하거나 {site.data.keyword.conversationshort}} 서비스가 작성된 날짜를 사용하십시오.
 
 3. 대화를 초기화하십시오. 어시스턴트 구성 방법에 따라 다음과 같이 사용자에게 초기 응답을 제공할 수 있습니다.
   ```swift
@@ -167,14 +167,14 @@ Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11a
 ```
 {: screen}
 
-5. Watson SDK [Assistant 문서](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV1/index.html){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 탐색하여 애플리케이션의 기능을 빌드하십시오. 
+5. Watson SDK [Assistant 문서](https://watson-developer-cloud.github.io/swift-sdk/services/AssistantV1/index.html){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 탐색하여 애플리케이션의 기능을 빌드하십시오.
 
 ## 스타터 킷 사용
 {: #starterkits-chatbot}
 
 스터터 킷을 사용하면 {{site.data.keyword.cloud_notm}}의 기능을 빠르고 쉽게 이용할 수 있습니다. 스타터 킷을 사용하여 {{site.data.keyword.conversationshort}}을 서버 측 백엔드에 추가할 수 있습니다. Chatbot for iOS with Watson 스타터 킷은 애플리케이션에 사용자와의 상호작용을 자동화하는 자연어 인터페이스를 추가하여 {{site.data.keyword.conversationshort}}의 심화 학습 기능을 사용하는 방법을 보여줍니다.
 
-1. 작업할 [스타터 킷](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 선택하십시오.
+1. 작업할 [스타터 킷](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 선택하십시오.
 2. 기본 서비스를 사용하여 앱을 작성하십시오.
 3. **서비스 추가 > Watson > {{site.data.keyword.conversationshort}}**을 클릭하십시오.
 4. **코드 다운로드**를 클릭하여 프로젝트를 다운로드하십시오. `config/local-dev.json` 파일에서 서비스 인증 정보를 찾을 수 있습니다.
@@ -184,6 +184,6 @@ Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11a
 
 잘 하셨습니다! 앱에 AI 어시스턴트를 추가했습니다. 다음 옵션 중 하나를 사용하여 계속 진행하십시오.
 
-* [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하고 기타 지원되는 Watson 서비스를 탐색하십시오. 
+* [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하고 기타 지원되는 Watson 서비스를 탐색하십시오.
 * [{{site.data.keyword.conversationshort}}](/docs/services/assistant?topic=assistant-index#index)에서 제공하는 모든 기능을 활용하십시오.
 * GitHub에서 {{site.data.keyword.watson}} Swift SDK를 시연하는 [Simple Chat 샘플 앱](https://github.com/watson-developer-cloud/simple-chat-swift){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")의 소스 코드를 보십시오.

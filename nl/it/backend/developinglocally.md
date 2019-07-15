@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: develop swift, swift local, service credentials swift, developer tools swift, swift cli, ibmcloud build swift, ibmcloud swift
 
@@ -21,7 +21,7 @@ subcollection: swift
 
 Eseguendo uno sviluppo in locale, puoi facilmente creare, eseguire e verificare applicazioni Swift. Utilizzi {{site.data.keyword.dev_cli_short}} per eseguire tali azioni servendoti di comandi standard. 
 
-Puoi utilizzare {{site.data.keyword.dev_cli_short}} per gestire le tue applicazioni lato server con più di una dozzina di comandi. Accedi ad ulteriori informazioni sui diversi comandi nel documento relativo ai [{{site.data.keyword.dev_cli_notm}}comandi `ibmcloud dev` della CLI](/docs/cli/idt?topic=cloud-cli-idt-cli#idt-cli).
+Puoi utilizzare {{site.data.keyword.dev_cli_short}} per gestire le tue applicazioni lato server con più di una dozzina di comandi. Accedi ad ulteriori informazioni sui diversi comandi nel documento relativo ai [{{site.data.keyword.dev_cli_notm}}comandi `ibmcloud dev` della CLI](/docs/cli/idt?topic=cloud-cli-idt-cli).
 
 ## Prima di cominciare
 {: #prereqs-local}
@@ -32,7 +32,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 ```
 {: codeblock}
 
-Vedi il documento relativo alla [Configurazione della CLI {{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) per ulteriori informazioni sulla configurazione e l'utilizzo della {{site.data.keyword.dev_cli_notm}}.
+Vedi il documento relativo alla [Configurazione della CLI {{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-getting-started) per ulteriori informazioni sulla configurazione e l'utilizzo della {{site.data.keyword.dev_cli_notm}}.
 
 ## Richiamo delle credenziali del servizio
 {: #credentials-local}

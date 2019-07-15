@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-21"
+lastupdated: "2019-06-19"
 
 keywords: foodtrackerbackend, kitura swift, urlsession sdk, alamofire, restkit, kiturakit, kitura, xcode kitura, meals swift, rest api kitura, rest api swift
 
@@ -20,7 +20,7 @@ subcollection: swift
 # Creazione di un'applicazione con Kitura
 {: #kitura}
 
-[Kitura](http://www.kitura.io){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") è un framework Swift lato server per creare applicazioni web e backend iOS. Questo framework crea delle API REST che possono essere richiamate dall'applicazione iOS utilizzando gli SDK URLSession quali Alamofire, RestKit oppure l'SDK [KituraKit](https://github.com/ibm-swift/kiturakit){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") fornito da Kitura stesso.
+[Kitura](https://www.kitura.io){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") è un framework Swift lato server per creare applicazioni web e backend iOS. Questo framework crea delle API REST che possono essere richiamate dall'applicazione iOS utilizzando gli SDK URLSession quali Alamofire, RestKit oppure l'SDK [KituraKit](https://github.com/ibm-swift/kiturakit){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") fornito da Kitura stesso.
 
 Kitura è in grado di integrarsi con tutti i servizi e tutte le funzioni forniti da {{site.data.keyword.cloud}}, compresi {{site.data.keyword.appid_short}}, {{site.data.keyword.mobilepushshort}} e {{site.data.keyword.mobileanalytics_short}}, così come con database, machine learning e altri servizi. Kitura può quindi essere distribuito e ridimensionato automaticamente utilizzando le piattaforme Cloud Foundry o Docker (basata su Kubernetes) in {{site.data.keyword.cloud}}.
 
@@ -39,15 +39,13 @@ Assicurati innanzitutto di disporre dei seguenti prerequisiti pronti a essere ut
 ## Passo 1. Creazione di un'applicazione Kitura utilizzando il browser
 {: #create_kitura}
 
-1. Vai alla sezione Kit starter della Apple Development Console. Seleziona uno starter predefinito, come ad esempio "Swift for Backend for Frontend API" oppure crea un'applicazione personalizzata utilizzando il tile **Create app** . Fai clic su **Create app**.
+1. Vai alla sezione Kit starter della Apple Development Console. Seleziona uno starter predefinito, come ad esempio **Swift for Backend for Frontend API** oppure crea un'applicazione personalizzata utilizzando il tile **Create app**. Fai clic su **Create app**.
 
 2. Dai alla tua applicazione un nome e seleziona dove vuoi che venga distribuita la tua applicazione. Se non sei sicuro di dove deve essere distribuita l'applicazione, utilizza i valori predefiniti poiché è possibile modificarli in un secondo momento.
 
 3. Seleziona il linguaggio Swift. Viene creata un'applicazione Swift lato server. Sono visualizzate anche le opzioni Host e Domain, che formano l'URL per l'applicazione. Se non sei sicuro, utilizza i valori predefiniti; puoi anche fornire un tuo dominio personalizzato da un provider di domini dove l'applicazione deve risiedere.
 
-4. Puoi fornire una definizione OpenAPI (nota anche come Swagger) per l'API REST che vuoi eseguire l'attività di creazione. Se disponi di una tale definizione, viene creata una API REST che include le funzioni di gestore corrispondenti in Kitura. Se non hai una definizione OpenAPI, non preoccuparti poiché Kitura ti aiuta a creare facilmente in modo manuale le API REST utilizzando le sue API Router.
-
-5. Fai clic su **Create app**.
+4. Fai clic su **Create app**.
 
 Viene creata un'applicazione che però non utilizza ancora alcun servizio aggiuntivo. Puoi aggiungere dei servizi facendo clic sul pulsante **Add service** o **Download code** per ottenere il codice per l'applicazione. Puoi anche aggiungere facilmente dei servizi a un'applicazione esistente.
 
@@ -80,8 +78,8 @@ Dopo che hai scaricato il tuo codice dell'applicazione, puoi modificarlo e svilu
 
 3. Esegui il server Kitura localmente. 
   Fai clic su **Run** oppure utilizza la scelta rapida da tastiera `⌘+R` per avviare il server Kitura. Una volta avviato il server, puoi controllare che i seguenti URL Kitura standard siano in esecuzione.
-  * Kitura Monitoring: [http://localhost:8080/swiftmetrics-dash/]()
-  * Kitura Health check: [http://localhost:8080/health]()
+  * Kitura Monitoring: [http://localhost:8080/swiftmetrics-dash/](http://localhost:8080/swiftmetrics-dash/)
+  * Kitura Health check: [http://localhost:8080/health](http://localhost:8080/health)
 
 ## Passo 4. Aggiunta di API REST
 {: #add_restapi-kitura}
@@ -120,7 +118,7 @@ Viene creato un server Kitura di base che però non fornisce alcuna API REST che
   ```
   {: codeblock"}
 
-Ora hai una API REST per le richieste `GET` su `/meals` che risponde con un array di `Meals` o un errore.
+Ora hai un'API REST per le richieste `GET` su `/meals` che risponde con un array di `Meals` o un errore.
 
 5. Esegui il progetto.  
   Fai clic su **Run** oppure utilizza la scelta rapida da tastiera `⌘+R`. Se ti viene richiesto, seleziona **Allow incoming network connections**.
@@ -129,7 +127,7 @@ Ora hai una API REST per le richieste `GET` su `/meals` che risponde con un arra
 
   Puoi verificare l'API REST utilizzando il seguente URL:  
   ```swift
-  * `GET /meals`:	[http://localhost:8080/meals]()
+  * `GET /meals`:	[http://localhost:8080/meals](http://localhost:8080/meals)
   ```
   {: codeblock}
 

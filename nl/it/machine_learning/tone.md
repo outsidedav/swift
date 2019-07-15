@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-24"
+lastupdated: "2019-06-06"
 
 keywords: watson swift, tone anaylzer swift, cocoapods swift, swift sdk install, starter kit watson
 
@@ -52,7 +52,7 @@ $ sudo gem install cocoapods
 Esegui il provisioning di un'istanza del servizio {{site.data.keyword.toneanalyzershort}}:
 
 1. Nel catalogo {{site.data.keyword.cloud_notm}}, seleziona {{site.data.keyword.toneanalyzershort}}. Viene visualizzata la schermata di configurazione del servizio.
-2. Assegna un nome alla tua istanza del servizio oppure utilizza il nome preimpostato.
+2. Dai un nome alla tua istanza del servizio oppure utilizza il nome preimpostato.
 3. Seleziona un'applicazione dal menu Connect se vuoi eseguire il bind della tua istanza a un'applicazione.
 4. Seleziona un piano di prezzi e fai clic su **Create**.
 5. Seleziona la scheda **Credentials** per visualizzare le tue credenziali del servizio. Questi valori vengono utilizzati per connettersi al servizio dalla tua applicazione.
@@ -101,7 +101,7 @@ I seguenti esempi ti aiutano ad aggiungere le funzionalità di {{site.data.keywo
   ```
   {: codeblock}
 
-  Consulta la [documentazione dei parametri di versione](https://cloud.ibm.com/apidocs/tone-analyzer#versioning){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") oppure usa la data in cui è stato creato il servizio {site.data.keyword.conversationshort}}.
+  Consulta la [documentazione dei parametri di versione](https://{DomainName}/apidocs/tone-analyzer#versioning){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") oppure usa la data in cui è stato creato il servizio {site.data.keyword.conversationshort}}.
   {: tip}
 
 3. Fornisci il testo per l'analisi ed elabora i risultati.
@@ -149,11 +149,11 @@ Tentative: 0.867377
 ## Utilizzo dei kit starter
 {: #tone_starterkits}
 
-I [Kit starter](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") sono uno dei modi più rapidi per utilizzare le funzionalità di {{site.data.keyword.cloud_notm}}. Puoi utilizzare il servizio {{site.data.keyword.toneanalyzershort}} selezionando il kit starter **Tone Analyzer for iOS with Watson**. Questo servizio utilizza le funzionalità di apprendimento approfondito (deep learning) per valutare dei passaggi di testo. L'applicazione Tone Analyzer identifica il tono del parlante (felice, triste, sicuro e altro) e lo correla e diverse categorie.
+I [Kit starter](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") sono uno dei modi più rapidi per utilizzare le funzionalità di {{site.data.keyword.cloud_notm}}. Puoi utilizzare il servizio {{site.data.keyword.toneanalyzershort}} selezionando il kit starter **Tone Analyzer for iOS with Watson**. Questo servizio utilizza le funzionalità di apprendimento approfondito (deep learning) per valutare dei passaggi di testo. L'applicazione Tone Analyzer identifica il tono del parlante (felice, triste, sicuro e altro) e lo correla e diverse categorie.
 
 Per iniziare con questo kit starter:
 
-1. Seleziona il kit starter trovato [qui](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
+1. Seleziona il kit starter trovato [qui](https://{DomainName}/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 2. Crea il progetto con i servizi predefiniti.
 3. Scarica il progetto facendo clic su **Download Code**. Le credenziali del servizio vengono inserite nel file `BMSCredentials.plist` nei campi chiave corrispondenti.
 

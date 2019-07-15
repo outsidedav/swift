@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-21"
+lastupdated: "2019-06-19"
 
 keywords: foodtrackerbackend, kitura swift, urlsession sdk, alamofire, restkit, kiturakit, kitura, xcode kitura, meals swift, rest api kitura, rest api swift
 
@@ -20,7 +20,7 @@ subcollection: swift
 # Kitura로 앱 작성
 {: #kitura}
 
-[Kitura](http://www.kitura.io){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")는 iOS 백엔드 및 웹 애플리케이션을 빌드하기 위한 서버 측 Swift 프레임워크입니다. 이 프레임워크는 Alamofire, RestKit 또는 Kitura에서 자체적으로 제공하는 [KituraKit](https://github.com/ibm-swift/kiturakit){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") SDK와 같은 URLSession SDK를 사용하여 iOS 애플리케이션에서 호출할 수 있는 REST API를 작성합니다.
+[Kitura](https://www.kitura.io){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")는 iOS 백엔드 및 웹 애플리케이션을 빌드하기 위한 서버 측 Swift 프레임워크입니다. 이 프레임워크는 Alamofire, RestKit 또는 Kitura에서 자체적으로 제공하는 [KituraKit](https://github.com/ibm-swift/kiturakit){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") SDK와 같은 URLSession SDK를 사용하여 iOS 애플리케이션에서 호출할 수 있는 REST API를 작성합니다.
 
 Kitura는 데이터베이스, 기계 학습 및 기타 서비스를 비롯하여 {{site.data.keyword.appid_short}}, {{site.data.keyword.mobilepushshort}} 및 {{site.data.keyword.mobileanalytics_short}}를 포함한 {{site.data.keyword.cloud}}에서 제공하는 모든 서비스 및 기능과 통합할 수 있습니다. 그런 다음 Kitura는 배치되고 {{site.data.keyword.cloud}}에서 Cloud Foundry 또는 Docker(Kubernetes 기반) 플랫폼 중 하나를 사용하여 자동으로 스케일링될 수 있습니다.
 
@@ -39,15 +39,13 @@ Kitura는 Kitura 애플리케이션의 작성, 빌드, 테스트 및 배치를 �
 ## 1단계. 브라우저를 사용하여 Kitura 앱 작성
 {: #create_kitura}
 
-1. Apple 개발 콘솔의 스타터 킷 섹션으로 이동하십시오. 사전 정의된 스타터(예: "프론트엔드 API를 위한 백엔드용 Swift")를 선택하거나 **앱 작성** 타일을 사용하여 사용자 정의 앱을 작성하십시오. **앱 작성**을 클릭하십시오.
+1. Apple 개발 콘솔의 스타터 킷 섹션으로 이동하십시오. 사전 정의된 스타터(예: **프론트엔드 API를 위한 백엔드용 Swift**)를 선택하거나 **앱 작성** 타일을 사용하여 사용자 정의 앱을 작성하십시오. **앱 작성**을 클릭하십시오.
 
 2. 앱 이름을 지정하고 앱을 배치할 위치를 선택하십시오. 애플리케이션을 배치할 위치가 확실하지 않으면 나중에 변경할 수 있으므로 기본값을 사용하십시오.
 
 3. Swift 언어를 선택하십시오. 서버 측 Swift 앱이 작성됩니다. 또한 표시되는 항목은 호스트 및 도메인 옵션이며 애플리케이션을 위한 URL을 구성합니다. 확실하지 않으면 기본값을 사용하고 애플리케이션이 상주하는 도메인 제공자에서 고유한 사용자 정의 도메인을 제공할 수도 있습니다.
 
-4. 빌드한 REST API를 위한 OpenAPI(Swagger라고도 함) 정의를 제공할 수 있습니다. OpenAPI 정의가 있는 경우, REST API는 Kitura에 해당 핸들러 기능을 포함하도록 작성됩니다. OpenAPI 정의가 없는 경우, Kitura를 통해 Router API를 사용하여 REST API를 수동으로 쉽게 작성할 수 있으므로 문제가 되지 않습니다.
-
-5. **앱 작성**을 클릭하십시오.
+4. **앱 작성**을 클릭하십시오.
 
 앱이 작성되며, 작성된 앱은 아직 추가 서비스는 사용하지 않습니다. **서비스 추가**를 클릭하거나 **코드 다운로드** 단추를 클릭함으로써 서비스를 추가하여 앱의 코드를 가져올 수 있습니다. 또한 서비스를 기존 앱에 쉽게 추가할 수도 있습니다.
 
@@ -80,8 +78,8 @@ Kitura는 Kitura 애플리케이션의 작성, 빌드, 테스트 및 배치를 �
 
 3. Kitura 서버를 로컬로 실행하십시오. 
   **실행**을 클릭하거나 `⌘+R` 단축키를 사용하여 Kitura 서버를 시작하십시오. 서버가 시작되면 다음 표준 Kitura URL이 실행 중인지 확인할 수 있습니다.
-  * Kitura 모니터링: [http://localhost:8080/swiftmetrics-dash/]()
-  * Kitura 상태 검사: [http://localhost:8080/health]()
+  * Kitura 모니터링: [http://localhost:8080/swiftmetrics-dash/](http://localhost:8080/swiftmetrics-dash/)
+  * Kitura 상태 검사: [http://localhost:8080/health](http://localhost:8080/health)
 
 ## 4단계. REST API 추가
 {: #add_restapi-kitura}
@@ -129,7 +127,7 @@ Kitura는 Kitura 애플리케이션의 작성, 빌드, 테스트 및 배치를 �
 
   다음 URL을 사용하여 REST API를 테스트할 수 있습니다.  
   ```swift
-  * `GET /meals`:	[http://localhost:8080/meals]()
+  * `GET /meals`:	[http://localhost:8080/meals](http://localhost:8080/meals)
   ```
   {: codeblock}
 

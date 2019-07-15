@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-24"
+lastupdated: "2019-06-21"
 
 keywords: push swift, swift notifications, push notifications swift, sending push swift, configure service instance swift, provider credentials swift
 
@@ -26,11 +26,11 @@ Aprimore seu app Swift usando o serviço {{site.data.keyword.mobilepushshort}} n
  - Os clientes podem optar por assinar tags ou tópicos específicos para notificação.
  - Permite que o proprietário do app analise o número de dispositivos registrados para receber notificações e o número de notificações enviadas.
 
-É possível optar por usar o serviço {{site.data.keyword.mobilepushshort}} como uma parte do Modelo MobileFirst Services Starter ou como o {{site.data.keyword.cloud_notm}} [Dedicated Services](/docs/dedicated?topic=dedicated-dedicated#dedicated). Também é possível usar um SDK (kit de desenvolvimento de software) e [APIs de REST ](https://mobile.{DomainName}/imfpush/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "External link icon") para desenvolver adicionalmente seus aplicativos clientes.
+É possível optar por usar o serviço {{site.data.keyword.mobilepushshort}} como uma parte do Modelo MobileFirst Services Starter ou como o {{site.data.keyword.cloud_notm}} [Dedicated Services](/docs/dedicated?topic=dedicated-dedicated#dedicated). Também é possível usar um SDK (kit de desenvolvimento de software) e [APIs de REST ](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/rest-apis/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "External link icon") para desenvolver adicionalmente seus aplicativos clientes.
 
-![Visão geral do push](images/push_notification_lifecycle.jpg) Figura 1. Visão geral do ciclo de vida do serviço {{site.data.keyword.mobilepushshort}}
+![Visão geral de push](images/push_notification_lifecycle.jpg "Visão geral de push")
 
-## Antes de começar
+## Antes de iniciar
 {: #prereqs-push}
 
 Primeiro, verifique se os pré-requisitos a seguir estão prontos para execução:
@@ -44,15 +44,16 @@ Primeiro, verifique se os pré-requisitos a seguir estão prontos para execuçã
 {: #push_create}
 
 1. No catálogo do {{site.data.keyword.cloud_notm}}, clique em **Remoto** > **{{site.data.keyword.mobilepushshort}}**. A tela de configuração de serviço é aberta.
-2. Dê um nome à sua instância de serviço ou use o nome de pré-configuração.
-3. Clique em **Criar**.
+2. Dê à sua instância de serviço um nome ou use o nome predefinido.
+3. Clique em
+**Criar**.
 4. Na área de janela de navegação, clique em **Conexões** para selecionar um app e ligá-lo a seu serviço. É possível ligar a instância de serviço ao seu app posteriormente se ele não estiver vinculado durante a criação.
 
 
 ## Etapa 2. Obtenha suas credenciais do provedor de notificação
 {: #get_creds-push}
 
-Para configurar o serviço de Notificações de push, é necessário obter as credenciais necessárias por meio do Apple Push Notification Service (APNs). Siga as etapas aqui para [obter e configurar as credenciais do APNs ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}.
+Para configurar o serviço de Notificações de push, é necessário obter as credenciais necessárias por meio do Apple Push Notification Service (APNs). Siga as etapas aqui para [obter e configurar as credenciais do APNs ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](/docs/services/mobilepush?topic=mobile-pushnotification-push_step_1){: new_window}.
 
 
 ## Etapa 3. Configurar uma instância de serviço
@@ -63,7 +64,7 @@ usada para fazer upload de um certificado APNs.
 
 Depois que o arquivo `.cer` estiver em seu acesso à cadeia de chaves, exporte-o para seu computador para criar um certificado `.p12`.
 
-Para obter mais informações sobre o uso de APNs, veja [iOS Developer Library: Local and Push Notification Programming Guide ](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "External link icon").
+Para obter mais informações sobre o uso de APNs, veja [iOS Developer Library: Local and Push Notification Programming Guide ](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "External link icon").
 
 Para configurar o APNs no console de serviços de Notificação push, conclua as etapas:
 
@@ -73,8 +74,8 @@ as informações no formulário **Credenciais push de
 APNs**.
 3. Escolha uma das seguintes opções:
 	- Para **Mobile** opção
-		1. Selecione **Ambiente de simulação** (desenvolvimento) ou **Produção** (distribuição) e, em seguida, faça upload do certificado `p.12` criado.
-		  ![Configurar o console do {{site.data.keyword.mobilepushshort}}](images/wizard.jpg)
+		1. Selecione **Ambiente de simulação** (desenvolvimento) ou **Produção** (distribuição) e, em seguida, faça upload do certificado `p.12` que você criou.
+		  ![Console do {{site.data.keyword.mobilepushshort}}](images/wizard.jpg "Configuração de dispositivo móvel de notificação de push")
 
 		2. No campo **Senha**, insira a senha que está
 associada ao arquivo de certificado `.p12`; em seguida, clique em
@@ -83,12 +84,14 @@ associada ao arquivo de certificado `.p12`; em seguida, clique em
 		- Na seção Push do Safari, atualize o formulário com as informações necessárias.
 		- **Nome do website**: o nome do website fornecido no centro de Notificação.
 		- **ID de push do website**: atualize com a sequência de domínio reversa para seu
-ID de push do website. Por exemplo, web.com.acmebanks.www.
-		- **URL do website**: forneça a URL do website que está inscrita para enviar notificações de push. Por exemplo, https://www.acmebanks.com.
+ID de push do website. Por exemplo, `web.com.example.www`.
+		- **URL do website**: forneça a URL do website que está inscrita para enviar notificações de push. Por exemplo, `https://www.example.com`.
 		- **Domínios permitidos**: (parâmetro opcional) uma lista de websites que solicitam permissão do usuário. Certifique-se de que as URLs sejam valores separados por vírgula. Os valores na URL do website serão usados se as informações não forem fornecidas.
-		- **Sequência de formatações de URL**: a URL a ser resolvida quando a notificação é clicada. Por exemplo, [ "https: //www.acmebanks.com " ]. Assegure-se de que a URL use o esquema http ou https.
+		- **Sequência de formatações de URL**: a URL a ser resolvida quando a notificação é clicada. Por exemplo, `https://www.example.com`. Assegure-se de que a URL use o esquema http ou https.
 		-**Certificado push da web do Safari**: faça upload do certificado `.p12` e forneça a senha.
-4. Clique em  ** Salvar **.  ![{} console](images/push_configure_safari.jpg)
+4. Clique em  ** Salvar **.
+
+  ![Console do {{site.data.keyword.mobilepushshort}}](images/push_configure_safari.jpg "Configuração da web de notificação de push")
 
 ## Etapa 4. Configurar SDK do cliente de serviço
 {: #service-client-push}
@@ -108,18 +111,20 @@ Para enviar notificações push básicas, conclua as etapas a seguir:
 escolhendo uma opção **Enviar para**. As opções suportadas são **Dispositivo por tag**, **ID do dispositivo**, **ID do usuário**, **Dispositivos iOS**, **Notificações da web** e **Todos os dispositivos**.
 **Nota**: quando você seleciona a opção **Todos os dispositivos**, todos os dispositivos que estão inscritos para {{site.data.keyword.mobilepushshort}} recebem notificações.
 
-	![Notifications screen](images/tag_notification.jpg)
+  ![Tela Enviar notificações](images/tag_notification.jpg "Tela Enviar notificações")
 
 2. No campo **Mensagem**, componha sua mensagem. Escolha a
 configurar das definições opcionais conforme necessário.
 3. Clique em  ** Enviar **.
 3. Verifique se os dispositivos ou o navegador receberam a notificação.
 
-A captura de tela a seguir mostra uma caixa de alerta que manipula uma notificação de push em primeiro plano no dispositivo.
-	![Notificação push de primeiro plano no Android](images/Android_Screenshot.jpg)
+  A captura de tela a seguir mostra uma caixa de alerta que manipula uma notificação de push em primeiro plano no dispositivo.
+  
+  ![Notificação de push de primeiro plano no Android](images/Android_Screenshot.jpg "Alerta de notificação de primeiro plano")
 
-A seguinte captura de tela mostra uma notificação de push em segundo plano.
-	![Notificação push de segundo plano no Android](images/background.png)
+  A seguinte captura de tela mostra uma notificação de push em segundo plano.
+  
+  ![Notificação de push de segundo plano no iOSd](images/background.png "Alerta de notificação de segundo plano")
 
 ### Configurações opcionais
 {: #optional-push}
@@ -140,10 +145,10 @@ O serviço {{site.data.keyword.mobilepushshort}} fornece um utilitário de monit
 ## Próximas etapas
 {: #next-push notoc}
 
- - Para saber mais sobre o serviço e aproveitar todos os recursos, leia toda a nossa [documentação](/docs/services/mobilepush/c_overview_push.html#overview-push).
+ - Para saber mais sobre o serviço e aproveitar todos os recursos, leia toda a nossa [documentação](/docs/services/mobilepush?topic=mobile-pushnotification-overview-push).
 
- - Para obter uma introdução ao trabalho com serviços Mobile e o {{site.data.keyword.cloud_notm}}, consulte [Introdução aos apps Mobile no {{site.data.keyword.cloud_notm}}](/docs/services/mobile/index.html).
+ - Para obter uma introdução ao trabalho com serviços Mobile e o {{site.data.keyword.cloud_notm}}, consulte [Introdução aos apps Mobile no {{site.data.keyword.cloud_notm}}](/docs/services/mobile?topic=mobile-about).
 
- - Os kits do iniciador são uma das maneiras mais rápidas de usar os recursos do {{site.data.keyword.cloud_notm}}. Visualize os nossos kits do iniciador disponíveis no [Painel do Mobile Developer](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"). Faça download do código. Execute o app.
+ - Os kits do iniciador são uma das maneiras mais rápidas de usar os recursos do {{site.data.keyword.cloud_notm}}. Visualize os nossos kits do iniciador disponíveis no [Painel do Mobile Developer](https://{DomainName}/developer/mobile/dashboard){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"). Faça download do código. Execute o app.
 
- - É possível usar a [IU do Swagger](https://mobile.ng.bluemix.net/imfpush/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") para revisar rapidamente a documentação da API de REST.
+ - É possível usar a [IU do Swagger](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/rest-apis/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") para revisar rapidamente a documentação da API de REST.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-10"
 
 keywords: swift logging, ios logging, debug swift, add logging swift, heliumlogger swift, loggerapi swift, logger swift, starter kit swift logger
 
@@ -22,7 +22,7 @@ subcollection: swift
 
 Mensagens de log são sequências com informações contextuais sobre o estado e a atividade do microsserviço no momento em que a entrada de log é feita. Os logs são necessários para diagnosticar como e por que os serviços falham e desempenha uma função de suporte para as [métricas de app](/docs/swift/cloudnative?topic=swift-metrics#metrics) no monitoramento do funcionamento do aplicativo.
 
-Dada a natureza transitória de processos em ambientes de nuvem, os logs devem ser coletados e enviados para outros lugares, geralmente para um local centralizado para análise. A maneira mais consistente de efetuar login nos ambientes de nuvem é enviar entradas de log para fluxos de saída padrão e de erro, o que deixa a infraestrutura para manipular o resto.
+Dada a natureza transitória de processos em ambientes de nuvem, os logs devem ser coletados e enviados para outros lugares, geralmente para um local centralizado para análise. A maneira mais consistente de efetuar login em ambientes de nuvem é enviar entradas de log para fluxos de saída e erro padrão, deixando a infraestrutura manipular o restante.
 
 ## Incluindo a criação de log no app do Swift
 {: #logging-add}
@@ -62,7 +62,7 @@ Os apps Swift criados usando o {{site.data.keyword.cloud_notm}} App Service vêm
 ```
 {: screen}
 
-Essas mensagens são localizadas em `stdout` localmente ou nos logs para implementações do [CloudFoundry](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs) e do [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window}![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"), que são acessadas por `ibmcloud app logs --recent <APP_NAME>`  e  ` logs kubectl <deployment name>`.
+Essas mensagens são localizadas em `stdout` (saída padrão) localmente ou nos logs para implementações do Cloud Foundry e Kubernetes, que são acessadas por `[ibmcloud app logs --recent <APP_NAME>]`(/docs/cli/reference?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_logs) e `[kubectl logs <deployment name>`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
 
 No arquivo `/Sources/AppName/main.swift`, é possível ver o código a seguir:
 ```swift
@@ -77,10 +77,10 @@ O nível de log é explicitamente configurado como `.info` para registrar as men
 {: #next-logging notoc}
 
 Saiba mais sobre como visualizar os logs em cada um dos destinos de implementação:
-* [Logs do Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")
+* [Logs do Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/#basic-logging-in-kubernetes){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")
 * [ Logs do Cloud Foundry ](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_cli)
 * [Cloud Foundry Enterprise Environment - Auditoria e criação de log](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
-* [{{site.data.keyword.openwhisk}} Logs & Monitoramento](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
+* [{{site.data.keyword.openwhisk}} Logs & Monitoramento](/docs/openwhisk?topic=cloud-functions-logs)
 
 Aprenda como implementar e usar um agregador de log:
 * [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: swiftmetrics-dash, swiftmetrics, prometheus swift, application metrics swift, swift performance, slow swift, swift dashboard, metris swift
 
@@ -20,15 +20,15 @@ subcollection: swift
 # Swift 앱으로 애플리케이션 메트릭 사용
 {: #metrics}
 
-애플리케이션 메트릭은 애플리케이션의 성능을 모니터하는 데 중요합니다. CPU, 메모리, 대기 시간 및 HTTP 메트릭과 같은 메트릭의 라이브 보기가 있는 경우 시간 경과에 따라 효율적으로 실행 중인지 확인하는 것은 필수입니다. [Auto-Scaling](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started)과 같은 Kubernetes 및 Cloud Foundry 서비스는 메트릭에 의존하여 로드에 따라 인스턴스를 동적으로 추가하거나 제거하고 비용 절감을 위해 더 이상 필요하지 않은 인스턴스를 정리하는 시기를 결정할 수 있습니다.
+애플리케이션 메트릭은 애플리케이션의 성능을 모니터하는 데 중요합니다. CPU, 메모리, 대기 시간 및 HTTP 메트릭과 같은 메트릭의 실시간 보기가 있는 경우 시간 경과에 따라 효율적으로 실행 중인지 확인하는 것은 필수입니다. [Auto-Scaling](/docs/services/Auto-Scaling?topic=Auto-Scaling-get-started)과 같은 Kubernetes 및 Cloud Foundry 서비스는 메트릭에 의존하여 로드에 따라 인스턴스를 동적으로 추가하거나 제거하고 비용 절감을 위해 더 이상 필요하지 않은 인스턴스를 정리하는 시기를 결정할 수 있습니다.
 
 애플리케이션 메트릭은 시계열 데이터로 캡처됩니다. 캡처된 메트릭의 집계 및 시각화는 다음과 같은 일반적인 성능 문제점을 식별하는 데 도움이 될 수 있습니다.
 
 * 일부 또는 모든 라우트에서의 느린 HTTP 응답 시간
 * 애플리케이션의 낮은 처리량
-* 성능 저하의 원인이 되는 수요 급증
+* 성능 저하의 원인이 되는 수요의 급증
 * 예상보다 높은 CPU 사용량
-* 높거나 증가하는 메모리 사용량(잠재적인 메모리 누수)
+* 높거나 증가하는 메모리 사용량(잠재적 메모리 누수)
 
 ## 기존 Swift 애플리케이션에 애플리케이션 메트릭 추가
 {: #add-appmetrics-existing}
@@ -102,4 +102,4 @@ func initializeMetrics(router: Router) {
 
 애플리케이션이 실행되면 `/swiftmetrics-dash` 엔드포인트를 사용하여 대시보드에 액세스할 수 있습니다.
 
-기본적으로 `SwiftMetricsPrometheus`는 `http://<hostname>:<port>/metrics` 아래에 [Prometheus 엔드포인트](https://prometheus.io/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 제공합니다. 
+기본적으로 `SwiftMetricsPrometheus`는 `http://<hostname>:<port>/metrics` 아래에 [Prometheus 엔드포인트](https://prometheus.io/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 제공합니다.

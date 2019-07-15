@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-12"
 
 keywords: coreml swift, core ml swift, watson swift core, create model swift, image classification swift, version parameter swift, swift coreml watson
 
@@ -16,6 +16,7 @@ subcollection: swift
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:gif: data-image-type='gif'}
 
 # Watson과 함께 Core ML 사용
 {: #swift-coreml}
@@ -76,7 +77,7 @@ Swift로 Core ML 및 Watson Visual Recognition을 사용하려면 다음 컴포�
 
 2. 사이드바에서 `.zip` 파일로 모델 훈련 과정을 업로드하십시오. 그런 다음 각 데이터 세트를 선택하고 드롭 다운 메뉴에서 해당 데이터 세트를 모델에 추가하십시오. 분류자를 향상시키기 위해 고유한 이미지 세트를 사용하는 더 많은 클래스를 추가할 수 있습니다!
 
-![클래스 추가](images/add_classes.png)
+![클래스 추가](images/add_classes.png "Watson Studio에 서비스 링크")
 
 3. **모델 훈련**을 선택한 다음 모델이 완전히 훈련될 때까지 기다리십시오.
 
@@ -126,7 +127,7 @@ Pod 빌드 실패를 방지하려면 Xcode에서 프로젝트를 열 때 `.xcode
   ```
   {: codeblock}
 
-  [버전 매개변수 문서](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하거나 {site.data.keyword.visualrecognitionshort}} 서비스가 작성된 날짜를 사용하십시오.
+  [버전 매개변수 문서](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하거나 {site.data.keyword.visualrecognitionshort}} 서비스가 작성된 날짜를 사용하십시오.
   {: tip}
 
 3. 다음 코드를 추가하여 Watson 분류자가 포함된 로컬 Core ML 모델을 다운로드하거나 업데이트하십시오.
@@ -168,7 +169,7 @@ Pod 빌드 실패를 방지하려면 Xcode에서 프로젝트를 열 때 `.xcode
   ```
   {: codeblock}
 
-5. Watson SDK에서 지원되는 기타 [Core ML 분류 기능](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 탐색하십시오. 
+5. Watson SDK에서 지원되는 기타 [Core ML 분류 기능](https://watson-developer-cloud.github.io/swift-sdk/services/VisualRecognitionV3/index.html){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 탐색하십시오.
 
 ## 4단계. 스타터 킷 사용
 {: #coreml_starterkits}
@@ -177,7 +178,7 @@ Pod 빌드 실패를 방지하려면 Xcode에서 프로젝트를 열 때 `.xcode
 
 {{site.data.keyword.visualrecognitionshort}}을 스타터 킷에 추가하려면 다음 단계를 완료하십시오.
 
-1. 작업할 [스타터 킷](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 선택하십시오.
+1. 작업할 [스타터 킷](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")을 선택하십시오.
 2. 기본 서비스를 사용하여 앱을 작성하십시오.
 3. **서비스 추가 > Watson > {{site.data.keyword.visualrecognitionshort}}**을 클릭하십시오.
 4. **코드 다운로드**를 클릭하여 프로젝트를 다운로드하십시오. iOS 프로젝트의 경우 인증 정보가 해당 키 필드의 `BMSCredentials.plist` 파일에 삽입됩니다. 서버 측 Swift 프로젝트의 경우 `config/local-dev.json` 파일에서 이 인증 정보를 찾을 수 있습니다.
@@ -187,6 +188,6 @@ Pod 빌드 실패를 방지하려면 Xcode에서 프로젝트를 열 때 `.xcode
 
 이제 사용자 정의 생성 Core ML 모델을 사용하여 이미지를 분석할 수 있습니다. 다음 옵션 중 하나를 사용하여 계속 진행하십시오.
 
-* [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하고 기타 지원되는 Watson 서비스를 탐색하십시오. 
+* [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하고 기타 지원되는 Watson 서비스를 탐색하십시오.
 * 클라우드 로직을 추가하십시오. [서버리스(serverless) 앱 개발](/docs/swift/backend?topic=swift-serverless-dev-swift#serverless-dev-swift)을 시작하십시오.
 * {{site.data.keyword.visualrecognitionshort}}에서 제공하는 모든 기능을 활용하십시오. 자세한 내용은 [문서](/docs/services/visual-recognition?topic=visual-recognition-index#index)를 참조하십시오.

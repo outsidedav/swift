@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-06"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -22,13 +22,13 @@ subcollection: swift
 
 O {{site.data.keyword.cloud_notm}} Developer Console for Apple permite que os desenvolvedores da Apple criem apps por meio de vários kits do iniciador, provisionem e conectem serviços essenciais otimizados pelo {{site.data.keyword.cloud_notm}} e, em seguida, façam download rapidamente do código de trabalho ou configurem para entrega contínua. Os usuários são capazes de criar, visualizar, configurar e gerenciar o seu app, bem como fazer download do código do seu app. O uso de kits do iniciador ajuda a avaliar e testar rapidamente os serviços do {{site.data.keyword.cloud_notm}} com um aplicativo totalmente novo.
 
-Pronto para saltar? Visite o [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") agora para começar.
+Pronto para saltar? Visite o [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") agora para começar.
 {: tip}
 
 ## O que é um kit do iniciador?
 {: #starterkits-what}
 
-Com o {{site.data.keyword.cloud_notm}} Developer Experience, é possível escolher entre vários kits de iniciador. Os kits do iniciador instruem o {{site.data.keyword.cloud_notm}} a montar dinamicamente um app de produção de estrutura básica, na linguagem de sua escolha, pronto para implementação na nuvem. Cada kit do iniciador incorpora uma linguagem, uma estrutura e um padrão para um caso de uso específico do mundo real que permite reutilizar código, em vez de reinventá-lo.
+Com o console do desenvolvedor do {{site.data.keyword.cloud_notm}}, é possível escolher entre vários kits do iniciador. Os kits do iniciador instruem o {{site.data.keyword.cloud_notm}} a montar dinamicamente um app de produção de estrutura básica, na linguagem de sua escolha, pronto para implementação na nuvem. Cada kit do iniciador incorpora uma linguagem, uma estrutura e um padrão para um caso de uso específico do mundo real que permite reutilizar código, em vez de reinventá-lo.
 
 Os kits do iniciador estão prontos para produção e concentram-se em demonstrar uma implementação de padrão chave usando um tempo de execução (por exemplo, Swift). Em alguns casos, os kits do iniciador oferecem uma experiência do usuário simples para destacar a integração do serviço. Em outros casos, os kits do iniciador representam uma implementação customizável de um caso de uso sofisticado.
 
@@ -82,5 +82,5 @@ Na página _Detalhes do app_, é possível acessar o seu código selecionando **
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple - Visualização Lista de apps](images/project_list_screen.png "Visualização Lista de apps")
 
-Para obter mais informações, visite o [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
+Para obter mais informações, visite o [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://{DomainName}/developer/appledevelopment/learning-resources){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
 {: tip}

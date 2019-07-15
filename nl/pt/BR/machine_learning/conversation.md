@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
 
@@ -30,7 +30,7 @@ A lista a seguir descreve o fluxo de como a integração funciona:
 4. A área de trabalho interpreta a entrada do usuário e direciona o fluxo da conversa, enviando uma resposta para o app.
 5. Seu app exibe a resposta para o usuário.
 
-## Antes de começar
+## Antes de iniciar
 {: #prereqs-chatbot}
 
 Assegure-se de que você tenha os pré-requisitos a seguir:
@@ -54,7 +54,7 @@ sudo gem install cocoapods
 Provisem uma instância do serviço  {{site.data.keyword.conversationshort}} :
 
 1. No catálogo do {{site.data.keyword.cloud_notm}}, selecione **{{site.data.keyword.conversationshort}}**. A tela de configuração de serviço é aberta.
-2. Dê um nome à sua instância de serviço ou use o nome de pré-configuração.
+2. Dê à sua instância de serviço um nome ou use o nome predefinido.
 3. Selecione um app no menu **Conectar** se quiser ligar sua instância a um app.
 4. Selecione um plano de precificação e clique em **Criar**.
 5. Selecione a guia **Credenciais** para visualizar as suas credenciais de serviço. Esses valores são usados para se conectar ao serviço por meio de seu app.
@@ -120,7 +120,7 @@ por exemplo, `import Assistant`.
   {: codeblock}
 
   **Dica**: esse exemplo salva o contexto no estado. Para um melhor entendimento desse objeto e como adaptá-lo ao seu caso de uso, veja a [documentação da variável
-de contexto](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables). Verifique a [documentação do parâmetro de versão](https://cloud.ibm.com/apidocs/assistant#versioning){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") ou use a data em que o serviço {site.data.keyword.conversationshort}} foi criado.
+de contexto](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables). Verifique a [documentação do parâmetro de versão](https://{DomainName}/apidocs/assistant#versioning){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") ou use a data em que o serviço {site.data.keyword.conversationshort}} foi criado.
 
 3. Inicialize a conversa. Dependendo de como o seu assistente é configurado, ele pode fornecer
 uma resposta inicial para o usuário:
@@ -182,7 +182,7 @@ Com kits do iniciador, é possível usar os recursos do {{site.data.keyword.clou
 como usar os recursos de deep learning do {{site.data.keyword.conversationshort}} incluindo uma
 interface de língua natural em seu aplicativo, a qual automatiza interações com seus usuários.
 
-1. Selecione o [kit do iniciador](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") com o qual você deseja trabalhar.
+1. Selecione o [kit do iniciador](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") com o qual você deseja trabalhar.
 2. Crie o app com os serviços padrão.
 3. Clique em **Incluir serviço > Watson > {{site.data.keyword.conversationshort}}**.
 4. Faça download do projeto clicando em **Fazer download do código**. É possível localizar as credenciais de serviço no arquivo `config/local-dev.json`.

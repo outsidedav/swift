@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-17"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -24,23 +24,23 @@ subcollection: swift
 
 Il servizio {{site.data.keyword.engage_short}} definisce una funzione, crea i destinatari sulla base delle piattaforme del dispositivo (compresi gli attributi di destinatari personalizzati) e, infine, definisce un piano che coreografa la tempistica e il posizionamento della funzione. Dopo che vengono utilizzati gli SDK, insieme agli attributi di funzione e metriche incorporati nell'applicazione, il servizio inizia a misurare le esperienze dei destinatari. Puoi ora utilizzare la tua applicazione in base a queste informazioni per creare dei coinvolgimenti dei clienti personalizzati su varie categorie dei tuoi utenti dell'applicazione.
 
-![Panoramica di Cognitive Engage](images/process_app_launch.png) Figura 1. Panoramica del ciclo di vita del servizio {{site.data.keyword.engage_short}}
+![Panoramica Cognitive Engage](images/process_app_launch.png "Panoramica Cognitive Engage")
 
 Consulta le seguenti funzioni del servizio {{site.data.keyword.engage_short}}:
 
-- Accelerare la distribuzione delle funzioni 
+- Accelerare la distribuzione delle funzioni
 
   Accelera la distribuzione di funzioni alla tua applicazione mediante un rilascio controllato riducendo i rischi. Rilascia le funzioni a un sottoinsieme di segmenti di destinatari e prendi decisioni di lancio o di ripristino di una versione valida precedente di maggiore entità in base al feedback in tempo reale. Separa i lanci di funzioni dai regolari cicli di rilascio.
 
-- Segmentare i destinatari 
+- Segmentare i destinatari
 
   I segmenti utente possono essere definiti in base ad attributi demografici, contestuali e comportamentali. Puoi anche distribuire le funzioni a una specifica percentuale dell'intera base utenti. Gli indicatori delle prestazioni chiave possono essere definiti per ogni funzione e codice lato client per misurare i risultati.
 
-- Adattare l'applicazione in base al contesto 
+- Adattare l'applicazione in base al contesto
 
   Il comportamento dell'applicazione, l'interfaccia utente e le notifiche possono essere personalizzati per specifici segmenti di destinatari. Ad esempio, lo sfondo dell'applicazione può essere modificato in base all'ubicazione dell'utente. Questa personalizzazione dell'utente comporta un maggiore coinvolgimento degli utenti con l'applicazione.
 
-- Funzioni di test A / B 
+- Funzioni di test A / B
 
   Acquisire sicurezza mediante sperimentazione. Due varianti delle funzioni dell'applicazione possono essere messe a confronto tra loro eseguendo il lancio di entrambe contemporaneamente. È possibile prendere decisioni sulla base di dati concreti.
 
@@ -72,7 +72,7 @@ Assicurati innanzitutto di disporre dei seguenti prerequisiti pronti a essere ut
 Il servizio fornisce degli SDK specifici per la piattaforma per semplificare lo sviluppo delle applicazioni. Gli SDK Swift {{site.data.keyword.cloud_notm}} Mobile Services possono essere installati con CocoaPods o Carthage.
 
 1. Fai clic su **Settings**.
-2. Installa l'[SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Per ulteriori informazioni, vedi il file `README` che include la procedura di installazione e i concetti tecnici.
+2. Installa l'[SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"). Per ulteriori informazioni, vedi il file `README` che include la procedura di installazione e i concetti tecnici.
 3. Copia le chiavi di configurazione per inizializzare la tua applicazione. Utilizza il segreto dell'applicazione, il GUID dell'applicazione e il segreto del client per configurare la tua applicazione e creare coinvolgimenti.
 
 ## Passo 3. Creazione di una funzione
@@ -207,13 +207,13 @@ Completa la seguente procedura per creare un coinvolgimento che utilizza l'opzio
 
   Il nuovo coinvolgimento è ora visualizzato nella finestra Engagement Details.
 
-Puoi ora misurare le [prestazioni](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) del tuo coinvolgimento.
+Puoi ora misurare le [prestazioni](/docs/services/app-launch?topic=app-launch-applaunch_type) del tuo coinvolgimento.
 
 ## Link rapidi
 {: #links-applaunch notoc}
 
 Controlla i seguenti link per acquisire informazioni approfondite e comprendere le funzioni di {{site.data.keyword.engage_short}}:
 
- - Prova il [servizio App Launch](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
- - [Blog e video](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
- - Per ulteriori informazioni, consulta [App Launch - Esercitazione introduttiva](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate).
+ - Prova il [servizio App Launch](https://{DomainName}/catalog/services/app-launch){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
+ - [Blog e video](/docs/services/app-launch?topic=app-launch-blogs-and-videos)
+ - Per ulteriori informazioni, consulta la [documentazione App Launch](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate).

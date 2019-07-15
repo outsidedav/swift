@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-12"
 
 keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
 
@@ -25,7 +25,7 @@ subcollection: swift
 
 서버 측 개발에 필요한 인프라 및 프레임워크를 추상화하여, 서버리스 아키텍처를 통해 개발자는 반응적으로 실행하여 데이터를 변경하는 코드를 작성하는 데 중점을 둘 수 있습니다.
 
-IBM의 FaaS 오퍼링인 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")는 서버 측 전문 지식을 필요로 하지 않으면서 단순한 서버 측 개발 경험을 제공하는 데 주력합니다. 서버리스 기술을 통해 사용자는 확장 가능한 백엔드 솔루션을 빠르게 개발하여 미리 리소스를 프로비저닝할 필요 없이 실질적으로 워크로드 요구를 충족시킬 수 있습니다. 예측 불가능한 로드 패턴 또는 높은 서버 작동 중지 시간이 있는 애플리케이션의 경우 {{site.data.keyword.openwhisk_short}}는 향상된 성능을 갖춘 뛰어난 클라우드 솔루션이 될 수 있으며 "종량과금제" 시스템을 통해 비용을 줄일 수 있습니다.
+IBM의 FaaS 오퍼링인 [{{site.data.keyword.openwhisk}}](https://{DomainName}/openwhisk){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")는 서버 측 전문 지식을 필요로 하지 않으면서 단순한 서버 측 개발 경험을 제공하는 데 주력합니다. 서버리스 기술을 통해 사용자는 확장 가능한 백엔드 솔루션을 빠르게 개발하여 미리 리소스를 프로비저닝할 필요 없이 실질적으로 워크로드 요구를 충족시킬 수 있습니다. 예측 불가능한 로드 패턴 또는 높은 서버 작동 중지 시간이 있는 애플리케이션의 경우 {{site.data.keyword.openwhisk_short}}는 향상된 성능을 갖춘 뛰어난 클라우드 솔루션이 될 수 있으며 종량과금제 시스템을 통해 비용을 줄일 수 있습니다.
 
 ## 아키텍처 변경
 {: #comparison-serverless}
@@ -36,7 +36,7 @@ IBM의 FaaS 오퍼링인 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com
 
 서버리스 아키텍처는 다음 이미지와 더욱 유사하게 보이도록 이 구조를 변경할 수 있습니다.
 
-![](./images/Architecture.png) 그림 1. 서버리스 아키텍처
+![서버리스 아키텍처](./images/Architecture.png "서버리스 아키텍처")
 
 단일 서버 내에서 모든 처리 및 인증 로직을 처리하는 대신, 서버리스 아키텍처는 많은 서버 측 로직을 캡슐화하는 기능을 사용하며 일부 로직을 클라이언트(및 외부 서비스)에 오프로드합니다.
 
@@ -52,7 +52,7 @@ Schematic을 보면 다음 사항을 확인할 수 있습니다.
 
 순수 서버리스 모델에서는 사용자 상태를 저장할 수 없기 때문에 클라이언트에 추가 책임이 부여되기도 합니다. 권한 부여는 클라이언트 및 {{site.data.keyword.appid_short_notm}} ID 제공자 서비스로 처리됩니다.
 
-서비리스 아키텍처가 항상 이상적이지는 않지만, 적절한 팀과 사용 조건 하에서는 큰 이점을 제공할 수 있습니다. 가장 일반적인 [유스 케이스](#use_cases) 몇 가지에 대해 자세히 알아보려면 몇 가지 구체적인 예제를 확인하십시오.
+서비리스 아키텍처가 항상 이상적이지는 않지만, 올바른 팀과 사용 조건 하에서는 큰 이점을 제공할 수 있습니다. 가장 일반적인 [유스 케이스](#use_cases) 몇 가지에 대해 자세히 알아보려면 몇 가지 구체적인 예제를 확인하십시오.
 
 ## 서버리스의 이점
 {: #benefits-serverless}
@@ -77,14 +77,14 @@ Schematic을 보면 다음 사항을 확인할 수 있습니다.
 
 ### 모바일 백엔드
 {: #mobile-backend-serverless}
-![](./images/cloud-functions-rest-api-trigger.png)
+![모바일 백엔드](./images/cloud-functions-rest-api-trigger.png "모바일 백엔드")
 
 모바일 개발자는 쉽게 서버 측 로직에 액세스하고 컴퓨팅 집약적 태스크를 클라우드 플랫폼으로 아웃소싱할 수 있습니다. Swift와 같은 언어로 기능을 구현하고 필요한 서버 측 경험 없이 iOS SDK를 사용하여 서버 측 기능을 쉽게 이용할 수 있습니다.
 
 ### 데이터 처리
 {: #data-processing-serverless}
 
-![](./images/cloud-functions-cloudant-trigger.png)
+![서버리스 데이터 처리](./images/cloud-functions-cloudant-trigger.png "서버리스 데이터 처리")
 
 내장 트리거를 통해 데이터가 데이터 저장소에서 업데이트될 때마다 코드를 실행할 수 있습니다. 오디오 표준화, 이미지 회전, 선명 효과, 소음 감소, 썸네일 생성 또는 비디오 트랜스코딩과 같은 프로세스를 쉽게 자동화할 수 있습니다.
 
@@ -102,12 +102,12 @@ Schematic을 보면 다음 사항을 확인할 수 있습니다.
 {: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [REST API](https://cloud.ibm.com/apidocs){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")
+* [REST API](https://{DomainName}/apidocs){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")
 
 ## 관련 링크
 {: #related-serverless notoc}
 
 * [검색 {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
-* [Apache OpenWhisk 프로젝트 웹 사이트](http://openwhisk.org){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")
+* [Apache OpenWhisk 프로젝트 웹 사이트](http://openwhisk.incubator.apache.org/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")
 * [서버리스에 대해 알아보기](https://martinfowler.com/articles/serverless.html){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")

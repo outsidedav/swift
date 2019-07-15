@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: swift visual recognition, train swift, cocoapods swift, swift sdk install, starter kit watson swift, image swift classify, machine learning swift
 
@@ -20,7 +20,7 @@ subcollection: swift
 # {{site.data.keyword.visualrecognitionshort}}
 {: #recognition}
 
-Il servizio {{site.data.keyword.visualrecognitionfull}} consente alla tua applicazione di contrassegnare con tag, classificare ed eseguire la formazione di contenuto visivo utilizzando il machine learning. Il servizio può aiutare a classificare praticamente qualsiasi tipo di contenuto visivo, ad eseguire la formazione del tuo modello personalizzato nel giro di qualche minuto e a rilevare i volti.
+Il servizio {{site.data.keyword.visualrecognitionfull}} consente alla tua applicazione di contrassegnare con tag, classificare ed eseguire il training di contenuto visivo utilizzando il machine learning. Il servizio può aiutare a classificare praticamente qualsiasi tipo di contenuto visivo, ad eseguire il training del tuo modello personalizzato nel giro di qualche minuto e a rilevare i volti.
 
 ## Come funziona
 {: #how-it-works-recognition}
@@ -52,7 +52,7 @@ sudo gem install cocoapods
 Esegui il provisioning di un'istanza del servizio {{site.data.keyword.visualrecognitionshort}}:
 
 1. Nel catalogo {{site.data.keyword.cloud_notm}}, seleziona **{{site.data.keyword.visualrecognitionshort}}**. Viene visualizzata la schermata di configurazione del servizio.
-2. Assegna un nome alla tua istanza del servizio oppure utilizza il nome preimpostato.
+2. Dai un nome alla tua istanza del servizio oppure utilizza il nome preimpostato.
 3. Seleziona un'applicazione dal menu **Connect** se vuoi eseguire il bind della tua istanza a un'applicazione.
 4. Seleziona un piano di prezzi e fai clic su **Create**.
 5. Seleziona la scheda **Credentials** per visualizzare le tue credenziali del servizio. Questi valori vengono utilizzati per connettersi al servizio dalla tua applicazione.
@@ -101,7 +101,7 @@ I seguenti esempi ti aiutano ad aggiungere le funzionalità di {{site.data.keywo
   ```
   {: codeblock}
 
-  Puoi consultare la [documentazione dei parametri di versione](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") o utilizzare la data in cui è stato creato il servizio {site.data.keyword.conversationshort}}.
+  Puoi consultare la [documentazione dei parametri di versione](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") o utilizzare la data in cui è stato creato il servizio {site.data.keyword.conversationshort}}.
   {: tip}
 
 3. Aggiungi il seguente codice per classificare un'immagine:
@@ -126,10 +126,10 @@ Ci sono più metodi di classificazione che sono supportati dal framework Visual 
 ## Utilizzo dei kit starter
 {: #recognition_starterkits}
 
-I [Kit starter](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") sono uno dei modi più rapidi per utilizzare le funzionalità di {{site.data.keyword.cloud_notm}}. Puoi utilizzare il servizio {{site.data.keyword.visualrecognitionshort}} selezionando il kit starter **Visual Recognition for iOS with Watson**. Questo servizio valuta e classifica le tue immagini. Carica le immagini nuove o esistenti dal tuo dispositivo mobile; l'applicazione Visual Recognition contrassegna con tag e classifica rapidamente il contenuto delle immagini.
+I [Kit starter](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") sono uno dei modi più rapidi per utilizzare le funzionalità di {{site.data.keyword.cloud_notm}}. Puoi utilizzare il servizio {{site.data.keyword.visualrecognitionshort}} selezionando il kit starter **Visual Recognition for iOS with Watson**. Questo servizio valuta e classifica le tue immagini. Carica le immagini nuove o esistenti dal tuo dispositivo mobile; l'applicazione Visual Recognition contrassegna con tag e classifica rapidamente il contenuto delle immagini.
 
 Per iniziare:
-1. Seleziona il kit starter trovato [qui](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
+1. Seleziona il kit starter trovato [qui](https://{DomainName}/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 2. Crea il progetto con i servizi predefiniti.
 3. Scarica il progetto facendo clic su **Download Code**. Le credenziali del servizio vengono inserite nel file `BMSCredentials.plist` nei campi chiave corrispondenti.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: swift client sdk, swift sdk, add sdk swift, swift sdk service, server sdk swift, swift bms, clientsdk swift, client storage swifts
 
@@ -52,7 +52,7 @@ Se hai un'applicazione server Swift, puoi utilizzare i seguenti SDK per comunica
 {: #use-serverside}
 
 - [{{site.data.keyword.appid_short}} SDK server Swift ](https://github.com/ibm-cloud-security/appid-serversdk-swift){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")
-- [{{site.data.keyword.openwhisk_short}} per iOS ](https://cloud.ibm.com/openwhisk/learn/ios-sdk){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")
+- [{{site.data.keyword.openwhisk_short}} per iOS ](https://{DomainName}/openwhisk/learn/ios-sdk){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")
 - [ KituraKit ](https://github.com/IBM-Swift/KituraKit){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")
 - [{{site.data.keyword.mobilepushshort}} SDK server Swift ](https://github.com/ibm-bluemix-mobile-services/bms-pushnotifications-serversdk-swift){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")
 - [SDK Swift Watson ](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")

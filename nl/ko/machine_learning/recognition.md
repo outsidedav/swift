@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: swift visual recognition, train swift, cocoapods swift, swift sdk install, starter kit watson swift, image swift classify, machine learning swift
 
@@ -101,7 +101,7 @@ Pod 빌드 실패를 방지하려면 Xcode에서 프로젝트를 열 때 `.xcode
   ```
   {: codeblock}
 
-  [버전 매개변수 문서](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하거나 {site.data.keyword.conversationshort}} 서비스가 작성된 날짜를 사용하십시오.
+  [버전 매개변수 문서](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하거나 {site.data.keyword.conversationshort}} 서비스가 작성된 날짜를 사용하십시오.
   {: tip}
 
 3. 다음 코드를 추가하여 이미지를 분류하십시오.
@@ -126,10 +126,10 @@ Visual Recognition 프레임워크에서 지원되는 여러 가지 분류 방�
 ## 스타터 킷 사용
 {: #recognition_starterkits}
 
-[스타터 킷](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")은 {{site.data.keyword.cloud_notm}}의 기능을 사용할 수 있는 가장 빠른 방법 중 하나입니다. **Visual Recognition for iOS with Watson** 스타터 킷을 선택하여 {{site.data.keyword.visualrecognitionshort}} 서비스를 사용할 수 있습니다. 이 서비스는 이미지를 평가하고 분류합니다. 모바일 디바이스에서 신규 또는 기존 이미지를 업로드하고, Visual Recognition 앱이 이미지 컨텐츠의 태그를 빠르게 지정하고 이미지 컨텐츠를 분류합니다.
+[스타터 킷](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")은 {{site.data.keyword.cloud_notm}}의 기능을 사용할 수 있는 가장 빠른 방법 중 하나입니다. **Visual Recognition for iOS with Watson** 스타터 킷을 선택하여 {{site.data.keyword.visualrecognitionshort}} 서비스를 사용할 수 있습니다. 이 서비스는 이미지를 평가하고 분류합니다. 모바일 디바이스에서 신규 또는 기존 이미지를 업로드하고, Visual Recognition 앱이 이미지 컨텐츠의 태그를 빠르게 지정하고 이미지 컨텐츠를 분류합니다.
 
 시작하려면 다음을 수행하십시오.
-1. [여기](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")에서 스타터 킷을 선택하십시오.
+1. [여기](https://{DomainName}/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")에서 스타터 킷을 선택하십시오.
 2. 기본 서비스를 사용하여 프로젝트를 작성하십시오.
 3. **코드 다운로드**를 클릭하여 프로젝트를 다운로드하십시오. 서비스 인증 정보가 해당 키 필드의 `BMSCredentials.plist`에 삽입됩니다.
 
@@ -137,5 +137,5 @@ Visual Recognition 프레임워크에서 지원되는 여러 가지 분류 방�
 {: #recognition_next notoc}
 
 잘 하셨습니다! 이제 앱에서 Visual Recognition을 사용할 수 있습니다. 다음 옵션 중 하나를 사용하여 계속 진행하십시오.
-* [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하고 기타 지원되는 Watson 서비스를 탐색하십시오. 
+* [Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하고 기타 지원되는 Watson 서비스를 탐색하십시오.
 * 자세한 정보는 [IBM Watson {{site.data.keyword.visualrecognitionshort}}](https://www.ibm.com/watson/services/visual-recognition/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 참조하십시오.

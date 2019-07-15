@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: cloudant swift, store data swift, dbaas swift, cloudant instance swift, initialize sdk swift, create document swift, read document swift, delete document swift
 
@@ -38,7 +38,7 @@ Assicurati innanzitutto di disporre dei seguenti prerequisiti pronti a essere ut
 L'[SDK {{site.data.keyword.cloudant_short_notm}} per Swift](https://github.com/cloudant/swift-cloudant){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") viene creato con Swift 3.2. Se intendi utilizzare {{site.data.keyword.cloudant_short_notm}} con Kitura, controlla la [libreria Kitura-CouchDB ](https://github.com/IBM-Swift/Kitura-CouchDB){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"), che è creata con Swift 4.0.
 {: tip}
 
-## Passo 1: Creazione di un'istanza di {{site.data.keyword.cloudant_short_notm}}
+## Passo 1. Creazione di un'istanza di {{site.data.keyword.cloudant_short_notm}}
 {: #create-instance-cloudant}
 
 Vedi l'esercitazione [Creazione di un'istanza IBM Cloudant su {{site.data.keyword.cloud_notm}}](/docs/services/Cloudant/tutorials?topic=cloudant-creating-an-ibm-cloudant-instance-on-ibm-cloud#creating-an-ibm-cloudant-instance-on-ibm-cloud){:new_window} per creare un'istanza del servizio.
@@ -141,22 +141,22 @@ client.add(operation: delete)
 ```
 {: codeblock}
 
-## Passo 4. Verifica della tua applicazione
+## Passo 4. Verifica la tua applicazione
 {: #cloudant_testing}
 
-È tutto configurato correttamente? Verificalo.
+È tutto configurato correttamente? Verificalo eseguendo dei test.
 
 1. Esegui la tua applicazione, assicurandoti di avviare l'inizializzazione e le rispettive operazioni, come ad esempio la creazione di un documento.
 2. Ritorna all'istanza del servizio {{site.data.keyword.cloudant_short_notm}} creata precedentemente nel tuo browser web e apri il dashboard del servizio.
 3. Seleziona il database utilizzato; puoi vedere i documenti nel dashboard.
 
-Problemi? Controlla la [Guida di riferimento API {{site.data.keyword.cloudant_short_notm}}](/docs/services/Cloudant/api?topic=cloudant-ibm-cloudant-basics#api-reference-overview).
+Hai riscontrato dei problemi? Controlla la [Guida di riferimento API {{site.data.keyword.cloudant_short_notm}}](/docs/services/Cloudant/api?topic=cloudant-ibm-cloudant-basics#api-reference-overview).
 
 ## Passi successivi
 {: #cloudant_next notoc}
 
-Ottimo lavoro. Hai aggiunto un livello di persistenza sicura alla tua applicazione. Non fermarti ora e continua provando una delle seguenti opzioni:
+Ottimo lavoro. Hai aggiunto un livello di persistenza protetta alla tua applicazione. Non fermarti ora e continua provando una delle seguenti opzioni:
 
 * Visualizza il codice sorgente dell'[SDK {{site.data.keyword.cloudant_short_notm}} per Swift](https://github.com/cloudant/swift-cloudant){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
-* I kit starter sono uno dei modi più rapidi per utilizzare le funzionalità di {{site.data.keyword.cloud_notm}}. Il kit starter **Infinite Scrolling with Cloudant NoSQL for iOS** illustra come estendere un `ViewController` per visualizzare i dati utilizzando la paginazione. Questo modello di applicazione è comune per gli sviluppatori iOS ed è un ottimo esempio per illustrare le funzionalità di {{site.data.keyword.cloudant_short_notm}}. Visualizza i kit starter disponibili nel [Dashboard dello sviluppatore mobile ](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"). Scarica il codice. Esegui l'applicazione!
-* Scopri di più e avvaliti di tutte le funzioni offerte da {{site.data.keyword.cloudant_short_notm}}, [controlla la documentazione](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics#ibm-cloudant-basics)!
+* I kit starter sono uno dei modi più rapidi per utilizzare le funzionalità di {{site.data.keyword.cloud_notm}}. Il kit starter **Infinite Scrolling with Cloudant NoSQL for iOS** illustra come estendere un `ViewController` per visualizzare i dati utilizzando la paginazione. Questo modello di applicazione è comune per gli sviluppatori iOS ed è un ottimo esempio per illustrare le funzionalità di {{site.data.keyword.cloudant_short_notm}}. Visualizza i kit starter disponibili nel [Dashboard dello sviluppatore mobile ](https://{DomainName}/developer/mobile/dashboard){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno"). Scarica il codice. Esegui l'applicazione!
+* Scopri di più e avvaliti di tutte le funzioni offerte da {{site.data.keyword.cloudant_short_notm}}, [controlla la documentazione](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics)!

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: getting started swift, custom app, create app swift, stater kit swift, apple app swift, swift dependency, ios development
 
@@ -19,12 +19,12 @@ subcollection: swift
 {:note: .note}
 
 # Esercitazione introduttiva
-{: #getting_started_swift}
+{: #getting-started}
 
 {{site.data.keyword.cloud}} offre soluzioni e servizi per abilitare gli sviluppatori Swift a creare applicazioni integrate con la protezione, l'intelligenza artificiale e il valore richiesti dai tuoi clienti. Con un ampio portfolio di offerte ed SDK, puoi utilizzare questi servizi e immettere rapidamente sul mercato applicazioni all'avanguardia. Questa programmazione Swift ti spiega come aggiungere i servizi a un'applicazione Swift nuova o esistente, indipendentemente dal fatto che sia per Swift lato server o lato client iOS.
 {: shortdesc}
 
-La seguente esercitazione ti mostra come creare facilmente un'applicazione mobile Swift con {{site.data.keyword.mobileanalytics_full}} utilizzando un kit starter vuoto dalla [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno"). Dalla console, aggiungi il servizio {{site.data.keyword.mobileanalytics_short}}, scarichi il codice, esegui l'applicazione iOS in locale in Xcode e configuri e monitori l'applicazione.
+La seguente esercitazione ti mostra come creare facilmente un'applicazione mobile Swift con {{site.data.keyword.mobileanalytics_full}} utilizzando un kit starter vuoto dalla [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno"). Dalla console, aggiungi il servizio {{site.data.keyword.mobileanalytics_short}}, scarichi il codice, esegui l'applicazione iOS in locale in Xcode e configuri e monitori l'applicazione.
 
 ## Passo 1. Requisiti per gli sviluppatori
 {: #dev-requirements-swift}
@@ -41,7 +41,7 @@ La prassi migliore per lo sviluppo delle applicazioni Swift è di utilizzare l'h
 
 - Installa [Xcode 8+](https://developer.apple.com/xcode/){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") (o superiore).
 - Distribuisci ai [dispositivi iOS 8](https://support.apple.com/downloads/ios){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") (o superiore).
-- Prima di inoltrare le applicazioni ad Apple, leggi attentamente le [linee guida sugli inoltri all'App Store](https://developer.apple.com/app-store/guidelines/){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
+- Prima di inoltrare le applicazioni ad Apple, leggi attentamente le [linee guida sugli inoltri all'App Store](https://developer.apple.com/app-store/resources/){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
 
 ### Gestione di dipendenze ed SDK
 {: #swift-sdk-management}
@@ -71,9 +71,9 @@ I seguenti strumenti assicurano che tu possa installare gli SDK nativi per lavor
 ## Passo 2. Creazione di un'applicazione Swift iOS personalizzata
 {: #create-ios-app-swift}
 
-1. Esegui l'accesso alla [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
+1. Esegui l'accesso alla [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
 2. Fai clic su **Create app**.
-3. Nella pagina [Empty Starter](https://cloud.ibm.com/developer/appledevelopment/create-app){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno"), puoi utilizzare la configurazione predefinita oppure aggiornare i campi come necessario. Assicurati che **iOS Swift** sia il linguaggio selezionato. Fai clic su **Create**.
+3. Nella pagina [Empty Starter](https://{DomainName}/developer/appledevelopment/create-app){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno"), puoi utilizzare la configurazione predefinita oppure aggiornare i campi come necessario. Assicurati che **iOS Swift** sia il linguaggio selezionato. Fai clic su **Create**.
 
 ## Passo 3. Aggiunta del servizio {{site.data.keyword.cloudant_short_notm}}
 {: #resources-swift}
@@ -128,7 +128,7 @@ Per scaricare il codice, fai clic su **Download code** in `Apps` > `Your App`. I
 ## Passo 6. Crea le tue operazioni di database
 {: #build_ops-swift}
 
-Ora che hai una connessione al database funzionante ed SDK configurato, puoi iniziare a creare le [operazioni di creazione, lettura, aggiornamento ed eliminazione](/docs/swift/data?topic=swift-cloudant#cloudant) di base per il tuo specifico caso d'uso.
+Ora che hai una connessione al database funzionante ed SDK configurato, puoi iniziare a creare le [operazioni di creazione, lettura, aggiornamento ed eliminazione](/docs/swift/data?topic=swift-cloudant) di base per il tuo specifico caso d'uso.
 
 ## Passi successivi
 {: #next-swift}
@@ -138,10 +138,10 @@ Ora che hai una connessione al database funzionante ed SDK configurato, puoi ini
 
 Puoi aggiungere altri servizi alla tua applicazione iOS direttamente dalla console web, come i seguenti servizi comunemente utilizzati:
 
-* [Aggiunta del servizio Push Notifications](/docs/services/mobilepush?topic=mobile-pushnotification-gettingstartedtemplate#gettingstartedtemplate)
-* [Aggiunta dell'autenticazione utente con l'ID applicazione](/docs/services/appid?topic=appid-getting-started#getting-started)
+* [Aggiunta del servizio Push Notifications](/docs/services/mobilepush?topic=mobile-pushnotification-gettingstartedtemplate)
+* [Aggiunta dell'autenticazione utente con l'ID applicazione](/docs/services/appid?topic=appid-getting-started)
 
 ### Utilizzo degli strumenti per sviluppatori {{site.data.keyword.cloud_notm}}
 {: #devtools-swift}
 
-Puoi anche imparare a sviluppare applicazioni Swift utilizzando gli [strumenti per gli sviluppatori {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli), che offrono un approccio da riga di comando per la creazione, lo sviluppo e la distribuzione di applicazioni del microservizio, mobili e web complete.
+Puoi anche imparare a sviluppare applicazioni Swift utilizzando gli [strumenti per gli sviluppatori {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started), che offrono un approccio da riga di comando per la creazione, lo sviluppo e la distribuzione di applicazioni del microservizio, mobili e web complete.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-19"
 
 keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
 
@@ -41,7 +41,7 @@ Primeiro, verifique se os pré-requisitos a seguir estão prontos para execuçã
 
 Crie uma instância de serviço do {{site.data.keyword.appid_short_notm}}:
 
-1. No [catálogo do {{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"), selecione {{site.data.keyword.appid_short_notm}}. A tela de configuração de serviço é aberta.
+1. No [catálogo do {{site.data.keyword.cloud_notm}}](https://{DomainName}/catalog){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"), selecione {{site.data.keyword.appid_short_notm}}. A tela de configuração de serviço é aberta.
 2. Dê um nome à sua instância de serviço ou use o nome de pré-configuração.
 3. Selecione o seu plano de precificação e clique em **Criar**.
 
@@ -86,29 +86,16 @@ Depois de inicializar o SDK em seu app, é possível iniciar a configuração de
   ```
   {: codeblock}
 
-4. Passe os parâmetros `tenant ID` e `region` para inicializar o SDK. Um local comum, embora não obrigatório, para colocar o código é no método `application:didFinishLaunchingWithOptions` do `AppDelegate` no app.
+4. Passe os parâmetros `tenantID` e `AppID_region` para inicializar o SDK. Um local comum, embora não obrigatório, para colocar o código é no método `application:didFinishLaunchingWithOptions` do `AppDelegate` no app.
   ```swift
-  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <AppID_region>);
   ```
   {: codeblock}
   
-  <table>
-    <thead>
-      <th colspan=2><img src="images/idea.png" alt=""/>  Entendendo os Componentes de Comandos </th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><em> tenantID </em></td>
-        <td>O ID do locatário é um identificador exclusivo usado para inicializar o aplicativo. É possível localizar o valor no painel do {{site.data.keyword.appid_short_notm}}. Na guia <b>Credenciais de serviço</b>, clique em <b>Visualizar credenciais</b>.</td>
-      </tr>
-      <tr>
-        <td><em> AppID_region </em></td>
-        <td>A região {{site.data.keyword.appid_short_notm}} é a região do {{site.data.keyword.cloud_notm}}} na qual você está trabalhando com o serviço. Esta região pode ser localizada no painel de serviço e pode ser <em>AppID.REGION_US_SOUTH</em>, <em>AppID.REGION_SYDNEY</em> e <em>AppID.REGION_UK</em>.</td>
-      </tr>
-    </tbody>
-  </table>
+  * `tenantID`: o ID do locatário é um identificador exclusivo que é usado para inicializar o seu app. É possível localizar o valor no painel do {{site.data.keyword.appid_short_notm}} selecionando a guia **Credenciais de serviço** e, em seguida, clique em **Visualizar credenciais**.
+  * `AppID_region`: a região do {{site.data.keyword.appid_short_notm}} é a região do {{site.data.keyword.cloud_notm}} na qual você está trabalhando com o serviço. Essa região pode ser localizada no painel de serviço e pode ser `AppID.REGION_US_SOUTH`, `AppID.REGION_SYDNEY` e `AppID.REGION_UK`.
 
-5. Inclua o código a seguir em seu arquivo AppDelegate.
+5. Inclua o código a seguir em seu arquivo `AppDelegate`.
     ```swift
     func application(_ application: UIApplication, open url: URL, options :[UIApplicationOpenURLOptionsKey : Any]) -> Bool {
             return AppID.sharedInstance.application(application, open: url, options: options)
@@ -156,7 +143,6 @@ Para configurar provedores de identidade social:
     ```
     {: codeblock}
 
-
 ### Diretório da nuvem
 {: #cloud-dir-appid}
 
@@ -168,7 +154,7 @@ Para trazer suas próprias telas de marca da IU, apenas o diretório da nuvem po
 Para configurar o diretório de nuvem:
 
 1. Abra o painel do {{site.data.keyword.appid_short_notm}} na guia **Gerenciando provedores de identidade** e configure o diretório da nuvem como **Ativado**.
-2. Configure seu  [ diretório e configurações de mensagem ](/docs/services/appid/cloud-drectory.html).
+2. Configure seu  [ diretório e configurações de mensagem ](/docs/services/appid?topic=appid-cloud-directory).
 4. Escolha as combinações de telas de conexão que gostaria de exibir e coloque o código para chamar essas telas no aplicativo.
     * Efetuar sign in
         ```swift
@@ -271,7 +257,7 @@ Tudo está configurado corretamente? Você pode testá-lo!
 3. Atualize os provedores de identidade ou a tela do widget de login no painel do {{site.data.keyword.appid_short_notm}}.
 4. Repita as etapas 1 e 2 para ver se as mudanças são implementadas imediatamente. Não são necessárias atualizações para o código do app.
 
-Tendo problemas? Efetue o registro de saída de  [ resolução de problemas  {{site.data.keyword.appid_short_notm}} ](/docs/services/appid?topic=appid-troubleshooting#troubleshooting).
+Tendo problemas? Efetue o registro de saída de  [ resolução de problemas  {{site.data.keyword.appid_short_notm}} ](/docs/services/appid?topic=appid-troubleshooting).
 
 ## Próximas etapas
 {: #next-appid notoc}
@@ -279,4 +265,4 @@ Tendo problemas? Efetue o registro de saída de  [ resolução de problemas  {{s
 Ótimo trabalho! Você incluiu um nível de segurança no app. Tente uma das opções a seguir para manter o ritmo:
 
 * Obtenha mais informações e aproveite todos os recursos que o {{site.data.keyword.appid_short_notm}} tem a oferecer; [verifique os docs](/docs/services/appid?topic=appid-getting-started#getting-started).
-* Os kits do iniciador são uma das maneiras mais rápidas de usar os recursos do {{site.data.keyword.cloud_notm}}. Visualize os kits de iniciador disponíveis no [Painel do Mobile Developer ](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"). Faça download do código. Execute o app.
+* Os kits do iniciador são uma das maneiras mais rápidas de usar os recursos do {{site.data.keyword.cloud_notm}}. Visualize os kits de iniciador disponíveis no [Painel do Mobile Developer ](https://{DomainName}/developer/mobile/dashboard){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo"). Faça download do código. Execute o app.

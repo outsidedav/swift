@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: swift client sdk, swift sdk, add sdk swift, swift sdk service, server sdk swift, swift bms, clientsdk swift, client storage swifts
 
@@ -52,7 +52,7 @@ Swift 서버 애플리케이션이 설치되어 있으면 다음 SDK를 사용�
 {: #use-serverside}
 
 - [{{site.data.keyword.appid_short}} Swift Server SDK ](https://github.com/ibm-cloud-security/appid-serversdk-swift){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")
-- [iOS용 {{site.data.keyword.openwhisk_short}}](https://cloud.ibm.com/openwhisk/learn/ios-sdk){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")
+- [iOS용 {{site.data.keyword.openwhisk_short}}](https://{DomainName}/openwhisk/learn/ios-sdk){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")
 - [KituraKit ](https://github.com/IBM-Swift/KituraKit){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")
 - [{{site.data.keyword.mobilepushshort}} Swift Server SDK ](https://github.com/ibm-bluemix-mobile-services/bms-pushnotifications-serversdk-swift){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")
 - [Watson Swift SDK ](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")

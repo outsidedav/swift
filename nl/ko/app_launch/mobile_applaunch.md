@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-17"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -24,7 +24,7 @@ subcollection: swift
 
 {{site.data.keyword.engage_short}} 서비스는 기능을 정의하고, 디바이스 플랫폼을 기반으로 잠재고객(audience)을 작성하며(사용자 정의 잠재고객 속성 포함), 최종적으로 기능의 타이밍 및 배치를 구성하는 참여(engagement)를 정의합니다. SDK가 사용된 후 애플리케이션에 포함된 기능 및 메트릭 속성과 함께 서비스는 잠재고객의 경험 측정을 시작합니다. 이제 이 정보를 기반으로 앱을 사용하여 앱 사용자의 여러 카테고리 전체에서 사용자 정의된 고객 참여를 작성할 수 있습니다.
 
-![코그너티브 참여 개요](images/process_app_launch.png) 그림 1. {{site.data.keyword.engage_short}} 서비스 라이프사이클의 개요
+![Cognitive Engage 개요](images/process_app_launch.png "Cognitive Engage 개요")
 
 다음 {{site.data.keyword.engage_short}} 서비스 기능을 참조하십시오.
 
@@ -72,7 +72,7 @@ subcollection: swift
 서비스는 플랫폼별 SDK를 제공하여 애플리케이션 개발을 간소화합니다. {{site.data.keyword.cloud_notm}} Mobile Services Swift SDK는 CocoaPods 또는 Carthage로 설치할 수 있습니다.
 
 1. **설정**을 클릭하십시오.
-2. [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch)를 설치하십시오. 자세한 정보는 설치 단계 및 기술 개념이 포함된 `README` 파일을 참조하십시오.
+2. [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 설치하십시오. 자세한 정보는 설치 단계 및 기술 개념이 포함된 `README` 파일을 참조하십시오.
 3. 구성 키를 복사하여 앱을 초기화하십시오. 앱 시크릿, 앱 GUID 및 클라이언트 시크릿을 사용하여 앱을 구성하고 참여를 작성하십시오.
 
 ## 3단계. 기능 작성
@@ -207,13 +207,13 @@ subcollection: swift
 
   이제 새 참여가 참여 세부사항 창에 표시됩니다.
 
-이제 참여의 [성능](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type)을 측정할 수 있습니다.
+이제 참여의 [성능](/docs/services/app-launch?topic=app-launch-applaunch_type)을 측정할 수 있습니다.
 
 ## 빠른 링크
 {: #links-applaunch notoc}
 
 다음 링크를 확인하여 인사이트를 얻고 {{site.data.keyword.engage_short}}의 기능을 이해하십시오.
 
- - [앱 실행 서비스](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 사용해 보기
- - [블로그 및 비디오](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
- - 자세한 정보는 [App 실행 - 튜토리얼 시작하기](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate) 문서를 참조하십시오.
+ - [앱 실행 서비스](https://{DomainName}/catalog/services/app-launch){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘") 사용해 보기
+ - [블로그 및 비디오](/docs/services/app-launch?topic=app-launch-blogs-and-videos)
+ - 자세한 정보는 [앱 실행 문서](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate)를 참조하십시오.

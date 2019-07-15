@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-13"
 
 keywords: deploy swift app, deploy swift, serverless swift, deploy swift cloud foundry, swift kubernetes, swift virtual server
 
@@ -16,6 +16,7 @@ subcollection: swift
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:note: .note}
 
 # Implementando e integrando apps Swift
 {: #deploy_apps-swift}
@@ -44,21 +45,23 @@ Para obter mais informações, consulte [Integrando serviços de backend com um 
 ## Implementando em um Cluster do Kubernetes
 {: #deploy_kube-swift}
 
-É possível aprender como usar o {{site.data.keyword.cloud_notm}} Kubernetes Service para implementar um app conteinerizado que alavanca o Watson Tone Analyzer. No cenário fornecido, uma firma PR fictícia usa o serviço {{site.data.keyword.cloud_notm}} para analisar seus press releases e receber feedback sobre o sinal de suas mensagens. Para obter mais informações, veja o tutorial [Implementando apps nos
-clusters do Kubernetes](/docs/containers?topic=containers-cs_apps_tutorial#cs_apps_tutorial).
+É possível aprender como usar o {{site.data.keyword.cloud_notm}} Kubernetes Service para implementar um app conteinerizado que alavanca o Watson Tone Analyzer. No cenário fornecido, uma firma PR fictícia usa o serviço {{site.data.keyword.cloud_notm}} para analisar seus press releases e receber feedback sobre o sinal de suas mensagens. Para obter mais informações, consulte o tutorial [Implementando apps em clusters Kubernetes](/docs/containers?topic=containers-cs_apps_tutorial).
 
 ## Implementando no Cloud Foundry
 {: #swift-deploy-cf}
 
 Essa opção implementa o seu app nativo de nuvem sem você precisar gerenciar a infraestrutura subjacente.
 
-Se você planejar implementar o seu app no [{{site.data.keyword.cfee_full}}](/docs/cloud-foundry?topic=cloud-foundry-about#about), deverá [preparar a sua conta do {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry?topic=cloud-foundry-prepare#prepare).
+Se você planeja implementar seu app no [{{site.data.keyword.cfee_full}}](/docs/cloud-foundry?topic=cloud-foundry-about), deve-se [preparar sua conta do {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry?topic=cloud-foundry-prepare).
 
-Se a sua conta tiver acesso ao {{site.data.keyword.cfee_full_notm}}, será possível selecionar um tipo de implementador do **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** ou do **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**, que é possível usar para criar e gerenciar ambientes isolados para hospedar aplicativos do Cloud Foundry exclusivamente para a sua empresa.
+Se a sua conta tiver acesso ao {{site.data.keyword.cfee_full_notm}}, será possível selecionar um tipo de implementador do **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf)** ou do **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee)**, que é possível usar para criar e gerenciar ambientes isolados para hospedar aplicativos do Cloud Foundry exclusivamente para a sua empresa.
 
 ## Implementando em um Virtual Server
 {: #virtual_deploy-swift}
 
 Um serviço virtual entrega um grau mais alto de transparência, de previsibilidade e de automação para todos os tipos de carga de trabalho. O Terraform é usado para construir, mudar e criar versões de sua infraestrutura de maneira segura e eficiente.
 
-Para obter mais informações, consulte [Implementando em um Virtual Server](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy).
+  A implementação do VSI está disponível para alguns kits do iniciador. Para usar esse recurso, acesse o [painel do {{site.data.keyword.cloud_notm}}](https://{DomainName}) e clique em **Criar um app** no ladrilho **Apps**.
+  {: note}
+
+Para obter mais informações, consulte [Implementando em um Virtual Server](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server).

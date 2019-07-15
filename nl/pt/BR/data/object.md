@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-07"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -36,7 +36,7 @@ Quando você criar um depósito, deverá selecionar um nível de resiliência (r
 ## API
 {: #api-cos}
 
-A API do {{site.data.keyword.cos_full}} é uma API baseada em REST para objetos de leitura e composição. Ela suporta um subconjunto da API do S3 para migração fácil de aplicativos para o {{site.data.keyword.cloud_notm}}. Qualquer S3 SDK pode ser usado para usar o {{site.data.keyword.cos_full}}. Para obter mais informações, consulte a [Referência de API do {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api) completa.
+A API do {{site.data.keyword.cos_full}} é uma API baseada em REST para objetos de leitura e composição. Ela suporta um subconjunto da API do S3 para migração fácil de aplicativos para o {{site.data.keyword.cloud_notm}}. Qualquer S3 SDK pode ser usado para usar o {{site.data.keyword.cos_full}}. Para obter mais informações, consulte a [Referência de API do {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-compatibility-api) integral.
 
 ## Protegendo o armazenamento de objetos
 {: #security-cos}
@@ -92,7 +92,7 @@ Considerações de localização geográfica:
 
 Dependendo de seu caso de uso, é possível reduzir custos selecionando um plano de serviço que atenda às suas necessidades. As operações de arquivamento que envolvem o acesso mínimo ao armazenamento de objeto não precisam da velocidade e durabilidade de um objeto acessado frequentemente, e essa distinção é refletida no suporte à Classe de armazenamento e no plano de precificação para seus aplicativos. As classes de armazenamento são definidas no nível de depósito, portanto, é possível usar uma combinação de planos para atender às suas necessidades. Crie um depósito que esteja configurado para a classe de armazenamento que você deseja usar.
 
-Mais informações sobre a precificação estão disponíveis por meio da documentação [Classe de armazenamento do {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/help?topic=cloud-object-storage-billing#ibm-cos-pricing).
+Mais informações sobre a precificação estão disponíveis na documentação do [{{site.data.keyword.cos_short}} Storage Class](/docs/services/cloud-object-storage/help?topic=cloud-object-storage-billing#ibm-cos-pricing).
 
 ### Classes de Armazenamento de Amostra
 {: #samples-cos}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-12"
 
 keywords: watson studio swift, machine learning swift, custom model swift, data set swift, predictive swift, watson api swift, generated model swift, dataset swift
 
@@ -20,29 +20,26 @@ subcollection: swift
 # Analisando conjuntos de dados com modelos gerados customizados
 {: #dsx-overview}
 
-O Watson Studio fornece o ambiente e as ferramentas para resolver seus problemas de negócios, analisando dados de forma colaborativa. É possível escolher as ferramentas que você precisa para analisar, purificar e organizar dados. Aprenda a alimentar dados de fluxo ou a criar, treinar e implementar modelos de aprendizado de máquina. O Watson Studio integra-se a uma ampla variedade de serviços do {{site.data.keyword.cloud}} e ao Watson Knowledge Catalog, que fornece gerenciamento de política para controlar ativos e catálogos para indexação para localizá-los. Saiba mais em https://dataplatform.ibm.com/.
+O Watson Studio fornece o ambiente e as ferramentas para resolver seus problemas de negócios, analisando dados de forma colaborativa. É possível escolher as ferramentas que você precisa para analisar, purificar e organizar dados. Aprenda a alimentar dados de fluxo ou a criar, treinar e implementar modelos de aprendizado de máquina. O Watson Studio integra-se a uma ampla variedade de serviços do {{site.data.keyword.cloud}} e ao Watson Knowledge Catalog, que fornece gerenciamento de política para controlar ativos e catálogos para indexação para localizá-los. [Saiba mais](https://dataplatform.cloud.ibm.com/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
 
-O Watson Studio é estruturado em torno de uma arquitetura baseada em projeto, que organiza seus recursos para resolver um problema de negócios. Os recursos incluem conexões com armazenamentos de dados na nuvem e no local, arquivos de dados, colaboradores e recursos analíticos como modelos. Para obter mais informações, consulte a [Visão geral do Watson Studio](https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
+O Watson Studio é estruturado em torno de uma arquitetura baseada em projeto, que organiza seus recursos para resolver um problema de negócios. Os recursos incluem conexões com armazenamentos de dados na nuvem e no local, arquivos de dados, colaboradores e recursos analíticos como modelos. Para obter mais informações, consulte a [Visão geral do Watson Studio](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/overview-ws.html){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
 
 ## Aprendizado de máquina para o {{site.data.keyword.DSX}}
 {: #dsx-learning}
 
 Ao usar o {{site.data.keyword.DSX}}, é possível treinar modelos e implementá-los e, em seguida, consumir os resultados usando APIs. Essas APIs podem, então, ser usadas nos aplicativos iOS ou Swift.
 
-Com o IBM Watson Machine Learning, depois de configurar seu ambiente, é possível criar modelos, implementá-los na nuvem e treiná-los. Para obter mais informações, consulte [Criar, implementar e treinar modelos com o {{site.data.keyword.pm_full}} e o {{site.data.keyword.DSX}}](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
+Com o IBM Watson Machine Learning, depois de configurar seu ambiente, é possível criar modelos, implementá-los na nuvem e treiná-los. Para obter mais informações, consulte [Criar, implementar e treinar modelos com o {{site.data.keyword.pm_full}} e o {{site.data.keyword.DSX}}](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/wml-ai.html){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
 
 ### Tutoriais
 {: #dsx-tutorials}
-
-- [Construa um modelo de regressão logístico com o {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")
-- [Construa um modelo de Bayes ingênuo com o {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")
 
 ## Configurando o  {{site.data.keyword.DSX}}  com o iOS e o Swift
 {: #dsx_ios}
 
 1. Para facilitar a integração das credenciais, deve-se incluir a instância do {{site.data.keyword.pm_short}} no app iOS ou de backend. Para facilitar a acessibilidade, suas credenciais são incluídas no painel do projeto.
 
-![Machine Learning in your App](images/ios-machinelearning-app.png)
+![Detalhes do App](images/ios-machinelearning-app.png "Detalhes do App")
 
 2. Faça download do código do aplicativo.
 3. Inicialização
@@ -182,7 +179,7 @@ Com o IBM Watson Machine Learning, depois de configurar seu ambiente, é possív
   ```
   {: codeblock}
 
-### Exemplo
+### Exemplo:
 {: #dsx-example}
 
 **Nome do cenário:** Predição da linha de produto
@@ -221,11 +218,11 @@ client.retrieveToken { token in
 ## Próximas etapas
 {: #dsx_next notoc}
 
-Ótimo trabalho! Agora é possível analisar conjuntos de dados usando modelos de aprendizado de máquina gerados customizados. Mantenha o ritmo aprendendo mais sobre os recursos que o {{site.data.keyword.pm_short}} tem a oferecer em [Ciência de dados e aprendizado de máquina](https://www.ibm.com/analytics/data-science/machine-learning){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
+Ótimo trabalho! Agora é possível analisar conjuntos de dados usando modelos de aprendizado de máquina gerados customizados. Mantenha o ritmo aprendendo mais sobre os recursos que o {{site.data.keyword.pm_short}} tem a oferecer em [Ciência de dados e aprendizado de máquina](https://www.ibm.com/analytics/machine-learning){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo").
 
-### Links Relacionados
+### Links relacionados
 {: #dsx-related}
 
-* [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling?topic=services/PredictiveModeling-WMLgettingstarted#using-machine-learning-with-data-science-experience)
-* [{{site.data.keyword.DSX}}](https://datascience.ibm.com/){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")
-* [Documentação do {{site.data.keyword.DSX}}](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")
+* [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling?topic=PredictiveModeling-WMLgettingstarted)
+* [{{site.data.keyword.DSX}}](https://www.ibm.com/cloud/watson-studio){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")
+* [ documentação do {{site.data.keyword.DSX}}](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html){: new_window} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-06-12"
 
 keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
 
@@ -14,7 +14,7 @@ subcollection: swift
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
-{:gif: .gif}
+{:gif: data-image-type='gif'}
 {:tip: .tip}
 
 # Creazione di un database protetto e altamente disponibile
@@ -28,7 +28,7 @@ Attualmente, il linguaggio di programmazione supportato per l'utilizzo di {{site
 ## Passo 1. Creazione di un cluster di database
 {: #create_dbcluster}
 
-1. Accesso alla schermata di [configurazione del servizio {{site.data.keyword.ihsdbaas_full}}](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
+1. Accesso alla schermata di [configurazione del servizio {{site.data.keyword.ihsdbaas_full}}](https://{DomainName}/catalog/services/hyper-protect-dbaas){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 
 2. Fornisci le seguenti informazioni:
 
@@ -85,7 +85,7 @@ Ti serve un kit starter basato sul framework web Swift lato server Kitura.
 
 Utilizza un progetto esistente che era stato creato da questo kit starter oppure crea un nuovo progetto.
 
-1. Apri il [dashboard {{site.data.keyword.cloud_notm}} App Service](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
+1. Apri il [dashboard {{site.data.keyword.cloud_notm}} App Service](https://{DomainName}/developer/appservice/dashboard){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno").
 
 2. Seleziona la scheda **Kit starter**.
 
@@ -102,14 +102,13 @@ Utilizza un progetto esistente che era stato creato da questo kit starter oppure
 ## Passo 3. Connessione al database
 {: #connect_db}
 
-Per garantire un trasferimento dati protetto, scarica il file dell'autorità di certificazione (o CA, certificate authority) da
-https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project directory.
+Per garantire un trasferimento dati protetto, scarica il file dell'autorità di certificazione (o CA, certificate authority) e copialo nella tua directory del progetto.
 
 1. Passa alla directory del tuo progetto dove si trovano i file di codice scaricati espansi.
 
 2. Crea un file JSON denominato `cred.json` per memorizzare le credenziali di accesso al cluster di database.
 
-3. Immetti i valori raccolti dai passi in [Creazione di un cluster di database](#create_dbcluster). I valori devono essere specificati in una singola riga.
+3. Immetti i valori raccolti dai passi in [Creazione di un cluster di database](/docs/swift?topic=swift-create-database-cluster#create_dbcluster). I valori devono essere specificati in una singola riga.
   ```hljs
   {
   "uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
@@ -119,34 +118,16 @@ https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project direc
   ```
   {: codeblock}
 
-  Dove:
-  <table>
-  <tr>
-    <th> Parametro </th>
-    <th> Descrizione </th>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_ID</em>&gt; </td>
-    <td> È l'ID utente dell'amministratore del database come specificato in [Creazione di un cluster di database](#create_dbcluster).
-  </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_pwd</em>&gt; </td>
-    <td> È l'ID utente della password dell'amministratore come specificato in [Creazione di un cluster di database](#create_dbcluster). </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>Hostname_i</em>&gt; </td>
-    <td> È una replica del database <em>i</em> (<em>i</em>=1,2,3) come restituita in [Creazione di un cluster di database](create_dbcluster). </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>PortNumber_i</em>&gt; </td>
-    <td> È il numero di porta <em>i</em> (<em>i</em>=1,2,3) come restituito in [Creazione di un cluster di database](#create_dbcluster). </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>CA_file</em>&gt; </td>
-    <td> È il nome del file CA scaricato. Durante la distribuzione, viene copiato nella directory `/swift-project`.</td>
-  </tr>
-  </table>
+### Descrizioni del parametro di database
+{: #db-parameter-descriptions}
+
+Consulta le seguenti descrizioni del parametro di database:
+
+* `admin_ID` - L'ID utente dell'amministratore del database come specificato in [Creazione di un cluster di database](/docs/swift?topic=swift-create-database-cluster#create_dbcluster).
+* `admin_pwd` - L'ID utente della password dell'amministratore come specificato in [Creazione di un cluster di database](/docs/swift?topic=swift-create-database-cluster#create_dbcluster).
+* `Hostname_i` - Una replica del database *i* (*i*=1,2,3) come restituita in [Creazione di un cluster di database](/docs/swift?topic=swift-create-database-cluster#create_dbcluster).
+* `PortNumber_i` - Un numero di porta *i* (*i*=1,2,3) come restituito in [Creazione di un cluster di database](/docs/swift?topic=swift-create-database-cluster#create_dbcluster).
+* `CA_file` - È il nome del file CA scaricato. Durante la distribuzione, viene copiato nella directory `/swift-project`.
 
 4. Modifica il file `Package.swift` per aggiungere le dipendenze di pacchetto per l'utilizzo dell'SDK
 MongoKitten.
@@ -253,6 +234,7 @@ Puoi ora aggiungere il tuo codice dell'applicazione al progetto. Per ulteriori i
 Puoi eseguire l'applicazione [in locale](/docs/swift?topic=swift-swift_cli#swift-install-tools) con gli strumenti di creazione necessari oppure eseguire la distribuzione a {{site.data.keyword.cloud_notm}}.
 
 Per creare una toolchain di distribuzione nel dashboard, fai clic su **Distribuisci**. Configura la tua destinazione di distribuzione in base alle istruzioni per il metodo che scegli:
-  * **Distribuisci a [{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**. Questa opzione crea un cluster di host, denominati nodi di lavoro, per distribuire e gestire contenitori applicazione ad elevata disponibilità. Puoi creare un cluster o eseguire la distribuzione a un cluster esistente.
-  * **Distribuisci a Cloud Foundry**. Questa opzione distribuisce la tua applicazione nativa del cloud senza che tu debba gestire l'infrastruttura sottostante. Se il tuo account ha accesso a {{site.data.keyword.cfee_full_notm}}, puoi selezionare un tipo di deployer **[Cloud pubblico](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** o **[Ambiente aziendale](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**, che puoi utilizzare per creare e gestire ambienti isolati per ospitare applicazioni Cloud Foundry esclusivamente per la tua azienda.
-  * **Distribuisci a un [Virtual Server](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**. Questa opzione esegue il provisioning di un'istanza del server virtuale, carica un'immagine che include la tua applicazione, crea una toolchain DevOps e avvia il primo ciclo di distribuzione per tuo conto.
+  * **Distribuisci a IBM Kubernetes Service**. Questa opzione crea un cluster di host, denominati nodi di lavoro, per distribuire e gestire contenitori applicazione ad elevata disponibilità. Puoi creare un cluster o distribuire un cluster esistente. Per ulteriori informazioni, vedi [Distribuzione delle applicazioni ai cluster Kubernetes](/docs/containers?topic=containers-app).
+  * **Distribuisci a Cloud Foundry**. Questa opzione distribuisce la tua applicazione nativa del cloud senza che tu debba gestire l'infrastruttura sottostante. Se il tuo account ha accesso a {{site.data.keyword.cfee_full_notm}}, puoi selezionare un tipo di deployer **Cloud pubblico** o **Ambiente aziendale**, che puoi utilizzare per creare e gestire ambienti isolati per ospitare applicazioni Cloud Foundry esclusivamente per la tua azienda. Per ulteriori informazioni, vedi [Distribuzione delle applicazioni a Cloud Foundry Public](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps) e [Distribuzione delle applicazioni a {{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-deploy_apps). 
+  * **Distribuisci a Virtual Server**. Questa opzione esegue il provisioning di un'istanza del server virtuale, carica un'immagine che include la tua applicazione, crea una toolchain DevOps e avvia il primo ciclo di distribuzione per tuo conto. Per ulteriori informazioni, vedi [Distribuzione delle applicazioni a un server virtuale](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server). 
+  

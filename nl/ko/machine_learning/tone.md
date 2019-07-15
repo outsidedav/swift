@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-24"
+lastupdated: "2019-06-06"
 
 keywords: watson swift, tone anaylzer swift, cocoapods swift, swift sdk install, starter kit watson
 
@@ -101,7 +101,7 @@ Pod 빌드 실패를 방지하려면 Xcode에서 프로젝트를 열 때 `.xcode
   ```
   {: codeblock}
 
-  [버전 매개변수 문서](https://cloud.ibm.com/apidocs/tone-analyzer#versioning){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하거나 {site.data.keyword.conversationshort}} 서비스가 작성된 날짜를 사용하십시오.
+  [버전 매개변수 문서](https://{DomainName}/apidocs/tone-analyzer#versioning){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 확인하거나 {site.data.keyword.conversationshort}} 서비스가 작성된 날짜를 사용하십시오.
   {: tip}
 
 3. 분석용 텍스트를 제공하고 결과를 처리하십시오.
@@ -144,16 +144,16 @@ Tentative: 0.867377
   ```
   {: screen}
 
-4. Watson SDK [Tone Analyzer 문서](https://watson-developer-cloud.github.io/swift-sdk/services/ToneAnalyzerV3/index.html){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 탐색하여 애플리케이션의 기능을 빌드하십시오. 
+4. Watson SDK [Tone Analyzer 문서](https://watson-developer-cloud.github.io/swift-sdk/services/ToneAnalyzerV3/index.html){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 탐색하여 애플리케이션의 기능을 빌드하십시오.
 
 ## 스타터 킷 사용
 {: #tone_starterkits}
 
-[스타터 킷](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")은 {{site.data.keyword.cloud_notm}}의 기능을 사용할 수 있는 가장 빠른 방법 중 하나입니다. **Tone Analyzer for iOS with Watson** 스타터 킷을 선택하여 {{site.data.keyword.toneanalyzershort}} 서비스를 사용할 수 있습니다. 이 서비스는 심화 학습 기능을 활용하여 텍스트의 문구를 평가합니다. Tone Analyzer 애플리케이션은 많은 카테고리와 관련되어 있으므로 발표자의 톤(행복, 슬픔, 자신감 등)을 식별합니다.
+[스타터 킷](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")은 {{site.data.keyword.cloud_notm}}의 기능을 사용할 수 있는 가장 빠른 방법 중 하나입니다. **Tone Analyzer for iOS with Watson** 스타터 킷을 선택하여 {{site.data.keyword.toneanalyzershort}} 서비스를 사용할 수 있습니다. 이 서비스는 심화 학습 기능을 활용하여 텍스트의 문구를 평가합니다. Tone Analyzer 애플리케이션은 많은 카테고리와 관련되어 있으므로 발표자의 톤(행복, 슬픔, 자신감 등)을 식별합니다.
 
 이 스타터 킷 사용을 시작하려면 다음을 수행하십시오.
 
-1. [여기](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")에서 스타터 킷을 선택하십시오.
+1. [여기](https://{DomainName}/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")에서 스타터 킷을 선택하십시오.
 2. 기본 서비스를 사용하여 프로젝트를 작성하십시오.
 3. **코드 다운로드**를 클릭하여 프로젝트를 다운로드하십시오. 서비스 인증 정보가 해당 키 필드의 `BMSCredentials.plist`에 삽입됩니다.
 
@@ -162,5 +162,5 @@ Tentative: 0.867377
 
 잘 하셨습니다! 이제 {{site.data.keyword.toneanalyzershort}}가 앱에 추가되었습니다. 다음 옵션 중 하나를 사용하여 계속 진행하십시오.
 
-* [GitHub에서 Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 보고 기타 지원되는 Watson 서비스를 탐색하십시오. 
+* [GitHub에서 Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 보고 기타 지원되는 Watson 서비스를 탐색하십시오.
 * 자세한 정보는 [IBM Watson {{site.data.keyword.toneanalyzershort}}](https://www.ibm.com/watson/services/tone-analyzer/){: new_window} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")를 참조하십시오.

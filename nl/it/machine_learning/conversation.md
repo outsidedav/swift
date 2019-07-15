@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
 
@@ -26,7 +26,7 @@ L'elenco seguente illustra il flusso della modalità di funzionamento dell'integ
 
 1. Gli utenti interagiscono con l'interfaccia che è implementata nella tua applicazione.
 2. La tua applicazione invia l'input utente a {{site.data.keyword.conversationshort}} utilizzando l'SDK Swift {{site.data.keyword.watson}}.
-3. L'SDK Swift {{site.data.keyword.watson}} stabilisce una connessione a uno spazio di lavoro, che è un contenitore per il tuo flusso di dialogo e i tuoi dati di formazione.
+3. L'SDK Swift {{site.data.keyword.watson}} stabilisce una connessione a uno spazio di lavoro, che è un contenitore per il tuo flusso di dialogo e i tuoi dati di training.
 4. Lo spazio di lavoro interpreta l'input utente e indirizza il flusso della conversazione, inviando una risposta alla tua applicazione.
 5. La tua applicazione visualizza la risposta per l'utente.
 
@@ -54,7 +54,7 @@ sudo gem install cocoapods
 Esegui il provisioning di un'istanza del servizio {{site.data.keyword.conversationshort}}:
 
 1. Nel catalogo {{site.data.keyword.cloud_notm}}, seleziona **{{site.data.keyword.conversationshort}}**. Viene visualizzata la schermata di configurazione del servizio.
-2. Assegna un nome alla tua istanza del servizio oppure utilizza il nome preimpostato.
+2. Dai un nome alla tua istanza del servizio oppure utilizza il nome preimpostato.
 3. Seleziona un'applicazione dal menu **Connect** se vuoi eseguire il bind della tua istanza a un'applicazione.
 4. Seleziona un piano di prezzi e fai clic su **Create**.
 5. Seleziona la scheda **Credentials** per visualizzare le tue credenziali del servizio. Questi valori vengono utilizzati per connettersi al servizio dalla tua applicazione.
@@ -110,7 +110,7 @@ I seguenti esempi ti aiutano ad aggiungere le funzionalità di {{site.data.keywo
   ```
   {: codeblock}
 
-  **Suggerimento**: questo esempio salva il contesto nello stato in cui si trova. Per una migliore comprensione di questo oggetto e di come adattarlo per il tuo caso d'uso, vedi la [documentazione delle variabili di contesto](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables). Consulta la [documentazione dei parametri di versione](https://cloud.ibm.com/apidocs/assistant#versioning){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") oppure usa la data in cui è stato creato il servizio {site.data.keyword.conversationshort}}.
+  **Suggerimento**: questo esempio salva il contesto nello stato in cui si trova. Per una migliore comprensione di questo oggetto e di come adattarlo per il tuo caso d'uso, vedi la [documentazione delle variabili di contesto](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables). Consulta la [documentazione dei parametri di versione](https://{DomainName}/apidocs/assistant#versioning){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") oppure usa la data in cui è stato creato il servizio {site.data.keyword.conversationshort}}.
 
 3. Inizializza la conversazione. A seconda di come è configurato il tuo assistente, può fornire una risposta iniziale all'utente:
   ```swift
@@ -174,7 +174,7 @@ Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11a
 
 Con i kit starter, puoi velocemente e facilmente utilizzare le funzionalità di {{site.data.keyword.cloud_notm}}. Puoi aggiungere {{site.data.keyword.conversationshort}} a qualsiasi back-end lato server utilizzando i kit starter. Il kit starter Watson Chatbot for iOS illustra come utilizzare le funzionalità di apprendimento approfondito di {{site.data.keyword.conversationshort}} aggiungendo un'interfaccia di linguaggio naturale alla tua applicazione che automatizza le interazioni con i tuoi utenti.
 
-1. Seleziona il [kit starter](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") con cui vuoi lavorare.
+1. Seleziona il [kit starter](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno") con cui vuoi lavorare.
 2. Crea l'applicazione con i servizi predefiniti.
 3. Fai clic su **Add service > Watson > {{site.data.keyword.conversationshort}}**.
 4. Scarica il progetto facendo clic su **Download code**. Puoi trovare le credenziali del servizio nel file `config/local-dev.json`.

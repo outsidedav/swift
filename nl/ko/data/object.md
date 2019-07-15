@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-07"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -19,7 +19,7 @@ subcollection: swift
 # 정적 컨텐츠에 Object Storage 사용
 {: #object-storage}
 
-Object Storage는 클라우드 컴퓨팅의 기본 컴포넌트이며 Apple 개발자와 애플리케이션에게 강력한 기능을 제공합니다. 파일 계층 구조(예: 블록 또는 파일 스토리지)와 달리, 오브젝트 저장소는 버킷으로 알려진 콜렉션에 저장된 파일 및 메타데이터로만 구성됩니다. 정의대로 이러한 오브젝트는 변하지 않으며 이에 따라 이미지, 비디오 및 기타 정적 문서와 같은 데이터에 최적화됩니다. 종종 변경되거나 관계형인 데이터의 경우 [Cloudant](/docs/swift/data?topic=swift-cloudant#cloudant) 및 [SQL](/docs/swift/data?topic=swift-sql_data#sql_data) 데이터베이스 서비스를 사용할 수 있습니다.
+Object Storage는 클라우드 컴퓨팅의 기본 컴포넌트이며 Apple 개발자와 애플리케이션에게 강력한 기능을 제공합니다. 파일 계층 구조(예: 블록 또는 파일 스토리지)와 달리, 오브젝트 저장소는 버킷으로 알려진 콜렉션에 저장된 파일 및 메타데이터로만 구성됩니다. 정의상 이러한 오브젝트는 불변이며, 따라서 이미지, 동영상 및 기타 정적 문서에 대해 매우 적합합니다. 종종 변경되거나 관계형인 데이터의 경우 [Cloudant](/docs/swift/data?topic=swift-cloudant#cloudant) 및 [SQL](/docs/swift/data?topic=swift-sql_data#sql_data) 데이터베이스 서비스를 사용할 수 있습니다.
 
 {{site.data.keyword.cos_full_notm}}(COS)는 유연하고 비용 효과적이며 스케일링 가능한 구조화되지 않은 데이터를 저장하는 데 사용될 수 있는 스토리지 시스템입니다. 데이터는 SDK를 통하거나 IBM 사용자 인터페이스를 사용하여 액세스할 수 있습니다. {{site.data.keyword.cos_full_notm}}를 사용하여 RESTful API 및 SDK로 지원되는 셀프 서비스 포털을 통해 구조화되지 않은 데이터에 액세스할 수 있습니다. 
 
@@ -36,7 +36,7 @@ Object Storage는 클라우드 컴퓨팅의 기본 컴포넌트이며 Apple 개�
 ## API
 {: #api-cos}
 
-{{site.data.keyword.cos_full}} API는 오브젝트를 읽고 쓰기 위한 REST 기반 API입니다. 애플리케이션을 {{site.data.keyword.cloud_notm}}로 쉽게 마이그레이션하기 위해 S3 API의 서브세트를 지원합니다. 모든 S3 SDK는 {{site.data.keyword.cos_full}}를 사용하기 위해 사용될 수 있습니다. 자세한 정보는 전체 [{{site.data.keyword.cos_short}} API 참조](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)를 참조하십시오.
+{{site.data.keyword.cos_full}} API는 오브젝트를 읽고 쓰기 위한 REST 기반 API입니다. 애플리케이션을 {{site.data.keyword.cloud_notm}}로 쉽게 마이그레이션하기 위해 S3 API의 서브세트를 지원합니다. 모든 S3 SDK는 {{site.data.keyword.cos_full}}를 사용하기 위해 사용될 수 있습니다. 자세한 정보는 전체 [{{site.data.keyword.cos_short}} API 참조](/docs/services/cloud-object-storage?topic=cloud-object-storage-compatibility-api)를 참조하십시오.
 
 ## 오브젝트 스토리지 보안
 {: #security-cos}
@@ -98,18 +98,18 @@ SSE-C가 {{site.data.keyword.cos_full_notm}}에서 지원되므로 암호화를 
 
 - Standard
   
-  이 서비스는 DevOps, 협업 및 조치 컨텐츠 저장소와 같이 빈번한 액세스가 필요한 구조화되지 않은 데이터에 적합합니다. 
+  이 서비스는 DevOps, 협업 및 조치 컨텐츠 저장소와 같이 빈번한 액세스가 필요한 구조화되지 않은 데이터에 적합합니다.
 
 - Vault
   
-  이 서비스는 백업, 아카이브 및 규제 준수 워크로드와 같이 드물게 액세스되는 데이터가 포함된 워크로드에 적합합니다. 
+  이 서비스는 백업, 아카이브 및 규제 준수 워크로드와 같이 드물게 액세스되는 데이터가 포함된 워크로드에 적합합니다.
 
 - Cold Vault
   
-  이 배치 옵션은 최소 액세스 요구사항, 히스토리 레코드 규제 준수 및 장기 백업에 이상적입니다. 
+  이 배치 옵션은 최소 액세스 요구사항, 히스토리 레코드 규제 준수 및 장기 백업에 이상적입니다.
 
 - Flex
 
-  가변적인 데이터 액세스 요구사항에 맞게 배치하고 예기치 않은 비용 변동으로부터 예산을 보호합니다. 스토리지 클래스는 버킷 레벨에서 정의됩니다. 사용할 스토리지 클래스로 설정된 버킷을 작성합니다. 
+  가변적인 데이터 액세스 요구사항에 맞게 배치하고 예기치 않은 비용 변동으로부터 예산을 보호합니다. 스토리지 클래스는 버킷 레벨에서 정의됩니다. 사용할 스토리지 클래스로 설정된 버킷을 작성합니다.
 
 
