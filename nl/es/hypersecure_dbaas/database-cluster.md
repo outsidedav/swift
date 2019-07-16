@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-06-12"
 
 keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
 
@@ -14,7 +14,7 @@ subcollection: swift
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
-{:gif: .gif}
+{:gif: data-image-type='gif'}
 {:tip: .tip}
 
 # Creación de una base de datos segura y de alta disponibilidad
@@ -28,7 +28,7 @@ es Swift 4.0 con MongoKitten SDK 4.0.0.
 ## Paso 1. Creación de un clúster de base de datos
 {: #create_dbcluster}
 
-1. Acceda a la pantalla [Configuración del servicio {{site.data.keyword.ihsdbaas_full}}](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
+1. Acceda a la pantalla [Configuración del servicio {{site.data.keyword.ihsdbaas_full}}](https://{DomainName}/catalog/services/hyper-protect-dbaas){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
 2. Proporcione la siguiente información:
 
@@ -85,7 +85,7 @@ Necesita un kit de inicio que se base en la infraestructura web de Swift del lad
 
 Utilice un proyecto existente creado a partir de este kit de inicio, o cree un proyecto nuevo.
 
-1. Abra el [Panel de control de servicio de app de {{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
+1. Abra el [Panel de control de servicio de app de {{site.data.keyword.cloud_notm}}](https://{DomainName}/developer/appservice/dashboard){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
 2. Seleccione el separador **Kits de inicio**.
 
@@ -102,14 +102,13 @@ Utilice un proyecto existente creado a partir de este kit de inicio, o cree un p
 ## Paso 3. Conectarse a la base de datos
 {: #connect_db}
 
-Para garantizar la transferencia segura de datos, descargue el archivo de la entidad emisora de certificados (CA) desde
-https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project directory.
+Para garantizar una transferencia de datos segura, descargue el archivo de la entidad emisora de certificados (CA) y cópielo en el directorio del proyecto.
 
 1. Vaya al directorio del proyecto en el que hay los archivos de código de descarga ampliados.
 
 2. Cree un archivo JSON que se denomine `cred.json` para almacenar las credenciales de acceso en el clúster de base de datos.
 
-3. Especifique los valores que ha obtenido en los pasos del apartado [Creación de un clúster de base de datos](#create_dbcluster). Los valores deben especificarse en una sola línea.
+3. Especifique los valores que ha obtenido en los pasos del apartado [Creación de un clúster de base de datos](/docs/swift?topic=swift-create-database-cluster#create_dbcluster). Los valores deben especificarse en una sola línea.
   ```hljs
   {
   "uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
@@ -119,34 +118,16 @@ https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project direc
   ```
   {: codeblock}
 
-  Donde:
-  <table>
-  <tr>
-    <th> Parámetro </th>
-    <th> Descripción </th>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_ID</em>&gt; </td>
-    <td> Es el ID de usuario del administrador de base de datos tal como se especifica en [Creación de un clúster de base de datos](#create_dbcluster).
-  </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_pwd</em>&gt; </td>
-    <td> Es el ID de usuario de la contraseña del administrador tal como se especifica en [Creación de un clúster de base de datos](#create_dbcluster). </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>Hostname_i</em>&gt; </td>
-    <td> Es una réplica de base de datos <em>i</em> (<em>i</em>=1,2,3) tal como se devuelve en [Creación de un clúster de base de datos](create_dbcluster). </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>PortNumber_i</em>&gt; </td>
-    <td> Es un número de puerto <em>i</em> (<em>i</em>=1,2,3) tal como se devuelve en [Creación de un clúster de base de datos](#create_dbcluster). </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>CA_file</em>&gt; </td>
-    <td> Es el nombre de archivo del archivo CA descargado. Durante el despliegue, se copia en el directorio `/swift-project`.</td>
-  </tr>
-  </table>
+### Descripciones de parámetros de base de datos
+{: #db-parameter-descriptions}
+
+Consulte las descripciones de parámetros de base de datos siguientes:
+
+* `admin_ID`: El ID de usuario del administrador de base de datos tal como se especifica en [Creación de un clúster de base de datos](/docs/swift?topic=swift-create-database-cluster#create_dbcluster).
+* `admin_pwd`: El ID de usuario de la contraseña del administrador tal como se especifica en [Creación de un clúster de base de datos](/docs/swift?topic=swift-create-database-cluster#create_dbcluster).
+* `Hostname_i`: Una réplica de base de datos *i* (*i*=1,2,3) tal como se devuelve en [Creación de un clúster de base de datos](/docs/swift?topic=swift-create-database-cluster#create_dbcluster).
+* `PortNumber_i`: Un número de puerto *i* (*i*=1,2,3) tal como se devuelve en [Creación de un clúster de base de datos](/docs/swift?topic=swift-create-database-cluster#create_dbcluster).
+* `CA_file`: El nombre de archivo del archivo CA descargado. Durante el despliegue, se copia en el directorio `/swift-project`.
 
 4. Edite el archivo `Package.swift` para añadir dependencias de paquetes para el uso del SDK de MongoKitten.
 
@@ -182,10 +163,10 @@ https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project direc
         /* Leer credenciales del archivo cred.json */
         struct ResponseData: Decodable {
             var uri: String
-	        }
-	        let data = try? Data(contentsOf: URL(fileURLWithPath: myCredFile))
-	        let decoder = JSONDecoder()
-	        let jsonData = try decoder.decode(ResponseData.self, from: data!)
+        }
+        let data = try? Data(contentsOf: URL(fileURLWithPath: myCredFile))
+        let decoder = JSONDecoder()
+        let jsonData = try decoder.decode(ResponseData.self, from: data!)
 
         /* Ejecutar inicializadores de servicios */
         let server = try Server(jsonData.uri)
@@ -254,7 +235,10 @@ Ahora puede añadir su propio código de aplicación al proyecto. Para obtener m
 Puede ejecutar la aplicación [en local](/docs/swift?topic=swift-swift_cli#swift-install-tools) con las herramientas de compilación necesarias, o bien desplegar a {{site.data.keyword.cloud_notm}}.
 
 Para crear una cadena de herramientas de despliegue en el panel de control, pulse **Desplegar**. Configure el destino de despliegue de acuerdo con las instrucciones correspondientes al método que elija:
-  * **Desplegar en
-[{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**. Esta opción crea un clúster de hosts, llamado nodos de trabajador, para desplegar y gestionar contenedores de aplicaciones de alta disponibilidad. Puede crear un clúster o desplegar en un clúster existente.
-  * **Desplegar en Cloud Foundry**. Esta opción despliega la app nativa de cloud sin la necesidad de gestionar la infraestructura subyacente. Si su cuenta tiene acceso a {{site.data.keyword.cfee_full_notm}}, puede seleccionar el tipo de desplegador **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** o **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**, que puede utilizar para crear y gestionar entornos aislados para el alojamiento de aplicaciones Cloud Foundry exclusivamente para su empresa.
-  * **Desplegar en un [Servidor virtual](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**. Esta opción proporciona una instancia de servidor virtual, carga una imagen que incluye su app, crea una cadena de herramientas DevOps e inicia el primer ciclo de despliegue automáticamente.
+  * **Desplegar en el servicio IBM Kubernetes**. Esta opción crea un clúster de hosts, denominado nodos trabajadores, para desplegar y gestionar contenedores de apps de alta disponibilidad. Puede crear un clúster o desplegar en un clúster existente. Para obtener más información, consulte [Despliegue de apps en clústeres de Kubernetes](/docs/containers?topic=containers-app).
+  * **Desplegar en Cloud Foundry**. Esta opción despliega la app nativa de la nube sin necesidad de gestionar la infraestructura subyacente. Si la cuenta tiene acceso a {{site.data.keyword.cfee_full_notm}}, puede seleccionar el tipo de desplegador de **nube pública** o de **entorno de empresa**, que puede utilizar para crear y gestionar entornos aislados para alojar apps de Cloud Foundry exclusivamente para su empresa. Para obtener más información, consulte
+[Despliegue de apps en Cloud Foundry Public](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps) y
+[Despliegue de apps en {{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-deploy_apps).
+  * **Desplegar en un servidor virtual**. Esta opción proporciona una instancia de servidor virtual, carga una imagen que incluye la app, crea una cadena de herramientas DevOps e inicia automáticamente el primer ciclo de despliegue. Para obtener más información, consulte
+[Despliegue de apps en un servidor virtual](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server).
+  

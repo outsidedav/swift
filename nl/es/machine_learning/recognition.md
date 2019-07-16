@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: swift visual recognition, train swift, cocoapods swift, swift sdk install, starter kit watson swift, image swift classify, machine learning swift
 
@@ -112,7 +112,7 @@ puede ampliar las llamadas de Reconocimiento visual (Visual Recognition) para su
   {: codeblock}
 
   Puede revisar la [documentación del parámetro de
-versión](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") o utilice la fecha creada por el servicio {site.data.keyword.conversationshort}}.
+versión](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") o utilice la fecha creada por el servicio {site.data.keyword.conversationshort}}.
   {: tip}
 
 3. Añada el código siguiente para clasificar una imagen:
@@ -138,11 +138,11 @@ Hay varios métodos de clasificación admitidos por la infraestructura de Recono
 ## Utilización de los kits de inicio
 {: #recognition_starterkits}
 
-Los [Kits de inicio](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") son una de las formas
+Los [Kits de inicio](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") son una de las formas
 más rápidas de utilizar las prestaciones de {{site.data.keyword.cloud_notm}}. Puede utilizar el servicio de {{site.data.keyword.visualrecognitionshort}} seleccionando el kit de inicio de **Visual Recognition for iOS with Watson**. Este servicio evalúa y clasifica las imágenes. Cargue imágenes nuevas o existentes desde su dispositivo móvil, y la app de Visual Recognition etiqueta y clasifica rápidamente el contenido de la imagen.
 
 Para empezar:
-1. Seleccione el kit de inicio que se encuentra [aquí](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
+1. Seleccione el kit de inicio que se encuentra [aquí](https://{DomainName}/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 2. Cree el proyecto con los servicios predeterminados.
 3. Descargue el proyecto pulsando **Descargar código**. Las credenciales de servicio se inyectan en el archivo `BMSCredentials.plist` en los campos clave correspondientes.
 

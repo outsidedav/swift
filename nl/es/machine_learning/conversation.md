@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
 
@@ -113,7 +113,7 @@ Los ejemplos siguientes le ayudan a añadir prestaciones de {{site.data.keyword.
   {: codeblock}
 
   **Sugerencia**: este ejemplo guarda el contexto en el estado. Para entender mejor este objeto y saber cómo adaptarlo a su caso de uso, consulte la [documentación de variable de contexto](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables). Compruebe la [documentación del parámetro de
-versión](https://cloud.ibm.com/apidocs/assistant#versioning){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")
+versión](https://{DomainName}/apidocs/assistant#versioning){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")
 o utilice la fecha creada por el servicio {site.data.keyword.conversationshort}}.
 
 3. Inicializar la conversación. En función de cómo esté configurado el asistente, puede proporcionar una respuesta inicial al usuario:
@@ -179,7 +179,7 @@ del SDK de Watson para crear la funcionalidad de su aplicación.
 
 Con los kits de inicio, puede utilizar de forma rápida y sencilla las funciones de {{site.data.keyword.cloud_notm}}. Puede añadir {{site.data.keyword.conversationshort}} a cualquier programa de fondo de lado del servidor utilizando los kits de inicio. El Chatbot for iOS con Watson Starter Kit ilustra cómo utilizar las funciones de aprendizaje profundo de {{site.data.keyword.conversationshort}} añadiendo una interfaz de lenguaje natural a la aplicación que automatiza las interacciones con los usuarios.
 
-1. Seleccione el [kit de inicio](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") con el que desee trabajar.
+1. Seleccione el [kit de inicio](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") con el que desee trabajar.
 2. Cree la app con los servicios predeterminados.
 3. Pulse **Añadir servicio > Watson > {{site.data.keyword.conversationshort}}**.
 4. Descargue el proyecto pulsando **Descargar código**. Puede encontrar las credenciales de servicio en el archivo `config/local-dev.json`.

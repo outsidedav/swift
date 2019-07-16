@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: cloudant swift, store data swift, dbaas swift, cloudant instance swift, initialize sdk swift, create document swift, read document swift, delete document swift
 
@@ -36,7 +36,7 @@ Primero, asegúrese de cumplir los siguientes requisitos previos:
  * MacOS (versión 10.11.5 o posterior)
  * Xcode (versión 9.0.1 o posterior)
 
-El [{{site.data.keyword.cloudant_short_notm}} SDK for Swift](https://github.com/cloudant/swift-cloudant){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") se crea con Swift 3.2. Si está pensando en utilizar {{site.data.keyword.cloudant_short_notm}} con Kitura, consulte [Kitura-CouchDB Library ](https://github.com/IBM-Swift/Kitura-CouchDB){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"), que se crea con Swift 4.0.
+El [{{site.data.keyword.cloudant_short_notm}} SDK for Swift](https://github.com/cloudant/swift-cloudant){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") se crea con Swift 3.2. Si está pensando en utilizar {{site.data.keyword.cloudant_short_notm}} con Kitura, consulte [Kitura-CouchDB Library](https://github.com/IBM-Swift/Kitura-CouchDB){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"), que se crea con Swift 4.0.
 {: tip}
 
 ## Paso 1. Creación de una instancia de {{site.data.keyword.cloudant_short_notm}}
@@ -51,7 +51,7 @@ Consulte la
 ### Instalación del SDK de Swift de iOS
 {: #install-swift-sdk-cloudant}
 
-Utilice el SDK de Cloudant de Swift para ayudarle a facilitar la codificación de la app. El SDK debe estar instalado en el código de la app.
+Utilice el SDK de Cloudant de Swift para facilitar la programación de la app. El SDK debe estar instalado en el código de la app.
 
 1. Abra el directorio de proyecto Xcode existente en el archivo `Podfile`.
 2. En el destino de proyectos, añada una dependencia para el pod `SwiftCloudant`. Asegúrese de que el mandato `use_frameworks!` también esté bajo su destino, tal como se muestra en el siguiente ejemplo.
@@ -160,5 +160,5 @@ client.add(operation: delete)
 ¡Buen trabajo! Ha añadido un nivel de persistencia segura a la app. Mantenga el ritmo probando una de las opciones siguientes:
 
 * Visualice el código fuente de [{{site.data.keyword.cloudant_short_notm}} SDK for Swift](https://github.com/cloudant/swift-cloudant){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
-* Los kits de inicio son una de las formas más rápidas de utilizar las prestaciones de {{site.data.keyword.cloud_notm}}. El kit de inicio **Infinite Scrolling with Cloudant NoSQL for iOS** muestra cómo ampliar un `ViewController` para visualizar los datos utilizando la paginación. Este patrón de app es común para los desarrolladores de iOS, y es un buen ejemplo para ilustrar las prestaciones de {{site.data.keyword.cloudant_short_notm}}. Vea los kits de inicio disponibles en el [panel de control de desarrollador de Mobile](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"). Descargue el código. Ejecute la app.
-* Obtenga más información y aproveche todas las características que {{site.data.keyword.cloudant_short_notm}} ofrece: [consulte la documentación](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics#ibm-cloudant-basics).
+* Los kits de inicio son una de las formas más rápidas de utilizar las prestaciones de {{site.data.keyword.cloud_notm}}. El kit de inicio **Infinite Scrolling with Cloudant NoSQL for iOS** muestra cómo ampliar un `ViewController` para visualizar los datos utilizando la paginación. Este patrón de app es común para los desarrolladores de iOS, y es un buen ejemplo para ilustrar las prestaciones de {{site.data.keyword.cloudant_short_notm}}. Vea los kits de inicio disponibles en el [panel de control de desarrollador de Mobile](https://{DomainName}/developer/mobile/dashboard){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"). Descargue el código. Ejecute la app.
+* Obtenga más información y aproveche todas las características que {{site.data.keyword.cloudant_short_notm}} ofrece: [consulte la documentación](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics).

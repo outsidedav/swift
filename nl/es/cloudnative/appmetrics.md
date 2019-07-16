@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: swiftmetrics-dash, swiftmetrics, prometheus swift, application metrics swift, swift performance, slow swift, swift dashboard, metris swift
 
@@ -20,7 +20,7 @@ subcollection: swift
 # Utilización de métricas de aplicación con apps Swift
 {: #metrics}
 
-Las métricas de aplicación son importantes para supervisar el rendimiento de la aplicación. Tener una vista en directo de métricas como CPU, memoria, latencia y métricas HTTP es esencial para asegurarse de que la aplicación se ejecuta de forma efectiva a lo largo del tiempo. Los servicios de Kubernetes y Cloud Foundry como [Autoscaling](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started) se basan en las métricas para determinar cuándo se deben añadir o eliminar instancias de forma dinámica en función de la carga y limpiar las instancias que ya no son necesarias para mantener los costes bajos.
+Las métricas de aplicación son importantes para supervisar el rendimiento de la aplicación. Tener una vista en directo de métricas como CPU, memoria, latencia y métricas HTTP es esencial para asegurarse de que la aplicación se ejecuta de forma efectiva a lo largo del tiempo. Los servicios de Kubernetes y Cloud Foundry como [Autoscaling](/docs/services/Auto-Scaling?topic=Auto-Scaling-get-started) se basan en las métricas para determinar cuándo se deben añadir o eliminar instancias de forma dinámica en función de la carga y limpiar las instancias que ya no son necesarias para mantener los costes bajos.
 
 Las métricas de aplicación se capturan como datos de serie temporal. La agregación y visualización de métricas capturadas puede ayudar a identificar problemas de rendimiento comunes como, por ejemplo:
 

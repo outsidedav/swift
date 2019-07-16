@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-13"
 
 keywords: deploy swift app, deploy swift, serverless swift, deploy swift cloud foundry, swift kubernetes, swift virtual server
 
@@ -16,6 +16,7 @@ subcollection: swift
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:note: .note}
 
 # Despliegue e integración de apps Swift
 {: #deploy_apps-swift}
@@ -43,20 +44,24 @@ Para obtener más información, consulte [Integración de los servicios de fondo
 ## Despliegue en un clúster de Kubernetes
 {: #deploy_kube-swift}
 
-Puede aprender a utilizar el servicio {{site.data.keyword.cloud_notm}} Kubernetes para desplegar una app contenerizada que aproveche Watson Tone Analyzer. En el caso de ejemplo proporcionado, una empresa PR ficticia utiliza el servicio {{site.data.keyword.cloud_notm}} para analizar sus notas de prensa y recibir comentarios sobre el tono de sus mensajes. Para obtener más información, consulte el tutorial [Despliegue de apps en clústeres de Kubernetes](/docs/containers?topic=containers-cs_apps_tutorial#cs_apps_tutorial).
+Puede aprender a utilizar el servicio {{site.data.keyword.cloud_notm}} Kubernetes para desplegar una app contenerizada que aproveche Watson Tone Analyzer. En el caso de ejemplo proporcionado, una empresa PR ficticia utiliza el servicio {{site.data.keyword.cloud_notm}} para analizar sus notas de prensa y recibir comentarios sobre el tono de sus mensajes. Para obtener más información, consulte la guía de aprendizaje [Despliegue de clústeres de Kubernetes](/docs/containers?topic=containers-cs_apps_tutorial).
 
 ## Despliegue en Cloud Foundry
 {: #swift-deploy-cf}
 
 Esta opción despliega la app nativa de cloud sin la necesidad de gestionar la infraestructura subyacente.
 
-Si tiene intención de desplegar la app en [{{site.data.keyword.cfee_full}}](/docs/cloud-foundry?topic=cloud-foundry-about#about), debe [preparar la cuenta de {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry?topic=cloud-foundry-prepare#prepare).
+Si tiene intención de desplegar la app en [{{site.data.keyword.cfee_full}}](/docs/cloud-foundry?topic=cloud-foundry-about), debe [preparar la cuenta de {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry?topic=cloud-foundry-prepare).
 
-Si su cuenta tiene acceso a {{site.data.keyword.cfee_full_notm}}, puede seleccionar el tipo de desplegador **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** o **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**, que puede utilizar para crear y gestionar entornos aislados para el alojamiento de aplicaciones Cloud Foundry exclusivamente para su empresa.
+Si la cuenta tiene acceso a {{site.data.keyword.cfee_full_notm}}, puede seleccionar el tipo de desplegador de **[nube pública](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf)** o de **[entorno de empresa](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee)**, que puede utilizar para crear y gestionar entornos aislados para alojar aplicaciones de Cloud Foundry exclusivamente para su empresa.
 
 ## Despliegue en un servidor virtual
 {: #virtual_deploy-swift}
 
 Un servicio virtual ofrece un nivel más alto de transparencia, predictibilidad y automatización para todos los tipos de carga de trabajo. Terraform se utiliza para crear, cambiar y versionar su infraestructura de forma segura y eficiente.
 
-Para obtener más información, consulte [Despliegue en un servidor virtual](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy).
+  El despliegue de VSI está disponible para algunos kits de inicio. Para utilizar esta característica, vaya al
+[panel de control de {{site.data.keyword.cloud_notm}}](https://{DomainName}) y pulse **Crear una app** en el mosaico **Apps**.
+  {: note}
+
+Para obtener más información, consulte [Despliegue en un servidor virtual](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server).

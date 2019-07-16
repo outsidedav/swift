@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-12"
 
 keywords: coreml swift, core ml swift, watson swift core, create model swift, image classification swift, version parameter swift, swift coreml watson
 
@@ -16,6 +16,7 @@ subcollection: swift
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:gif: data-image-type='gif'}
 
 # Uso de Core ML con Watson
 {: #swift-coreml}
@@ -78,7 +79,7 @@ Si no existe un modelo actual, se utilizará el primer modelo descubierto de for
 
 2. Desde la barra lateral, cargue los cursos de entrenamiento del modelo en `.zip` comprimidos. A continuación, seleccione cada conjunto de datos y añádalos al modelo desde el menú desplegable. Empiece a añadir más clases que utilicen sus propios conjuntos de imágenes para mejorar el clasificador.
 
-![Adición de clases](images/add_classes.png)
+![Adición de clases](images/add_classes.png "Enlazar el servicio a Watson Studio")
 
 3. Seleccione **Modelo de entrenamiento** y, a continuación, espere a que el modelo esté completamente entrenado.
 
@@ -136,7 +137,7 @@ puede ampliar las llamadas de modelo local para su caso de uso.
   {: codeblock}
 
   Compruebe la [documentación del parámetro de
-versión](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")
+versión](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")
 o utilice la fecha creada por el servicio {site.data.keyword.visualrecognitionshort}}.
   {: tip}
 
@@ -188,7 +189,7 @@ Con los kits de inicio, puede utilizar de forma rápida y sencilla las funciones
 
 Para añadir {{site.data.keyword.visualrecognitionshort}} a un kit de inicio, siga los pasos siguientes:
 
-1. Seleccione el [kit de inicio](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") con el que desee trabajar.
+1. Seleccione el [kit de inicio](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") con el que desee trabajar.
 2. Cree la app con los servicios predeterminados.
 3. Pulse **Añadir servicio > Watson > {{site.data.keyword.visualrecognitionshort}}**.
 4. Descargue el proyecto pulsando **Descargar código**. Para los proyectos de iOS, las credenciales se insertan en el archivo `BMSCredentials.plist` en los campos clave correspondientes. En el caso de proyectos Swift de lado del servidor, puede encontrar estas credenciales en el archivo `config/local-dev.json`.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-19"
 
 keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
 
@@ -41,15 +41,14 @@ Primero, asegúrese de cumplir los siguientes requisitos previos:
 
 Cree una instancia del servicio {{site.data.keyword.appid_short_notm}}:
 
-1. En el [catálogo de {{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"), seleccione
-{{site.data.keyword.appid_short_notm}}. Se abre la pantalla de configuración del servicio.
+1. En el [catálogo de {{site.data.keyword.cloud_notm}}](https://{DomainName}/catalog){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"), seleccione {{site.data.keyword.appid_short_notm}}. Se abre la pantalla de configuración del servicio.
 2. Dé un nombre a la instancia de servicio, o utilice el nombre preestablecido.
 3. Seleccione el plan de precios y pulse **Crear**.
 
 ## Paso 2. Instalación del SDK de Swift de iOS
 {: #install-sdk-appid}
 
-El servicio proporciona un SDK para ayudarle a facilitar la codificación de la app. El SDK debe estar instalado en el código de la app.
+El servicio proporciona un SDK para facilitar la programación de la app. El SDK debe estar instalado en el código de la app.
 
 1. Abra el directorio de proyecto Xcode existente en el archivo `Podfile`.
 
@@ -87,29 +86,16 @@ Después de inicializar el SDK en la app, puede empezar a configurar las prefere
   ```
   {: codeblock}
 
-4. Pase los parámetros `tenantID` y `region` para inicializar el SDK. Un lugar común, aunque no obligatorio, donde poner el código es en el método `application:didFinishLaunchingWithOptions` del `AppDelegate` de la app.
+4. Pase los parámetros `tenantID` y `AppID_region` para inicializar el SDK. Un lugar común, aunque no obligatorio, donde poner el código es en el método `application:didFinishLaunchingWithOptions` del `AppDelegate` de la app.
   ```swift
-  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <AppID_region>);
   ```
   {: codeblock}
   
-  <table>
-    <thead>
-      <th colspan=2><img src="images/idea.png" alt=""/> Comprensión de los componentes de mandatos </th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><em>tenantID</em></td>
-        <td>El ID de arrendatario es un identificador exclusivo que se utiliza para inicializar la app. Puede encontrar el valor en el panel de control de {{site.data.keyword.appid_short_notm}}. En el separador <b>Credenciales de servicio</b>, pulse <b>Ver credenciales</b>.</td>
-      </tr>
-      <tr>
-        <td><em>AppID_region</em></td>
-        <td>La región de {{site.data.keyword.appid_short_notm}} es la región de {{site.data.keyword.cloud_notm}}} en la que está trabajando con el servicio. Esta región se puede encontrar en el panel de control de servicio y puede ser <em>AppID.REGION_US_SOUTH</em>,<em>AppID.REGION_SYDNEY</em>,<em>AppID.REGION_UK</em>.</td>
-      </tr>
-    </tbody>
-  </table>
+  * `tenantID`: El ID de arrendatario es un identificador exclusivo que se utiliza para inicializar la app. Puede encontrar el valor en el panel de control de {{site.data.keyword.appid_short_notm}} seleccionando el separador **Credenciales de servicio** y pulsando **Ver credenciales**.
+  * `AppID_region`: La región de {{site.data.keyword.appid_short_notm}} es la región de {{site.data.keyword.cloud_notm}} en la que está trabajando con el servicio. Esta región se puede encontrar en el panel de control de servicio y puede ser `AppID.REGION_US_SOUTH`, `AppID.REGION_SYDNEY` y `AppID.REGION_UK`.
 
-5. Añada el código siguiente al archivo AppDelegate.
+5. Añada el código siguiente al archivo `AppDelegate`.
     ```swift
   func application(_ application: UIApplication, open url: URL, options :[UIApplicationOpenURLOptionsKey : Any]) -> Bool {
             return AppID.sharedInstance.application(application, open: url, options: options)
@@ -157,7 +143,6 @@ Para configurar los proveedores de identidad social:
     ```
     {: codeblock}
 
-
 ### Directorio en la nube
 {: #cloud-dir-appid}
 
@@ -169,7 +154,7 @@ Para traer sus propias pantallas de interfaz de usuario de marca, solo se puede 
 Para configurar el directorio en la nube:
 
 1. Abra el panel de control de {{site.data.keyword.appid_short_notm}} en el separador **Gestión de proveedores de identidad** y establezca el directorio en la nube en **Activado**.
-2. Configure los [valores de directorios y mensajes](/docs/services/appid/cloud-drectory.html).
+2. Configure los [valores de directorios y mensajes](/docs/services/appid?topic=appid-cloud-directory).
 4. Elija las combinaciones de pantallas de inicio de sesión que desee mostrar y coloque el código para llamar a dichas pantallas en la aplicación.
     * Iniciar sesión
         ```swift
@@ -277,7 +262,7 @@ Para configurar el directorio en la nube:
 3. Actualice los proveedores de identidades o la pantalla del widget de inicio de sesión en el panel de control de {{site.data.keyword.appid_short_notm}}.
 4. Repita los pasos 1 y 2 para ver que los cambios se implementan inmediatamente. No es necesario realizar actualizaciones en el código de la app.
 
-¿Tiene problemas? Consulte [resolución de problemas de {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-troubleshooting#troubleshooting).
+¿Tiene problemas? Consulte [resolución de problemas de {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-troubleshooting).
 
 ## Pasos siguientes
 {: #next-appid notoc}
@@ -285,4 +270,4 @@ Para configurar el directorio en la nube:
 ¡Buen trabajo! Ha añadido un nivel de seguridad a la app. Mantenga el ritmo probando una de las opciones siguientes:
 
 * Obtenga más información y aproveche todas las características que {{site.data.keyword.appid_short_notm}} tiene que ofrecer, [consulte los documentos](/docs/services/appid?topic=appid-getting-started#getting-started).
-* Los kits de inicio son una de las formas más rápidas de utilizar las características de {{site.data.keyword.cloud_notm}}. Vea los kits de inicio disponibles en el [panel de control de desarrollador de Mobile](https://cloud.ibm.com/developer/mobile/dashboard){: new_window}![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"). Descargue el código. Ejecute la app.
+* Los kits de inicio son una de las formas más rápidas de utilizar las características de {{site.data.keyword.cloud_notm}}. Vea los kits de inicio disponibles en el [panel de control de desarrollador de Mobile](https://{DomainName}/developer/mobile/dashboard){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"). Descargue el código. Ejecute la app.

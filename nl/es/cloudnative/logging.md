@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-10"
 
 keywords: swift logging, ios logging, debug swift, add logging swift, heliumlogger swift, loggerapi swift, logger swift, starter kit swift logger
 
@@ -62,7 +62,9 @@ De forma predeterminada, las apps Swift creadas utilizando {{site.data.keyword.c
 ```
 {: screen}
 
-Estos mensajes se encuentran en `stdout` o en los registros de los despliegues de [CloudFoundry](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs) y [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"), a los que se accede mediante `ibmcloud app logs --recent <APP_NAME>` y `kubectl logs <deployment name>`.
+Estos mensajes se encuentran en `stdout` (salida estándar) de manera local, o en los registros de los despliegues de Cloud Foundry y Kubernetes, a los que se accede mediante
+`[ibmcloud app logs --recent <APP_NAME>]`(/docs/cli/reference?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_logs) y
+`[kubectl logs <deployment name>`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
 En el archivo `/Sources/AppName/main.swift`, puede ver el código siguiente:
 ```swift
@@ -77,10 +79,10 @@ El nivel de registro se establece explícitamente en `.info` para registrar mens
 {: #next-logging notoc}
 
 Obtenga más información sobre la visualización de los registros en cada uno de los destinos de despliegue:
-* [Registros de Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")
+* [Registros de Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/#basic-logging-in-kubernetes){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")
 * [Registros de Cloud Foundry](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_cli)
 * [Cloud Foundry Enterprise Environment: Auditoría y registro](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
-* [Supervisión y registro de {{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
+* [Registros y supervisión de {{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-logs)
 
 Más información sobre cómo implementar y utilizar un agregador de registros:
 * [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)

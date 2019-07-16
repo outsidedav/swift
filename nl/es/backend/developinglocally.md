@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: develop swift, swift local, service credentials swift, developer tools swift, swift cli, ibmcloud build swift, ibmcloud swift
 
@@ -21,7 +21,7 @@ subcollection: swift
 
 Al desarrollar localmente, puede crear, ejecutar y probar fácilmente las apps de Swift. Utilice el {{site.data.keyword.dev_cli_short}} para realizar estas acciones mediante los mandatos estándares. 
 
-Puede utilizar el {{site.data.keyword.dev_cli_short}} para gestionar las aplicaciones del lado del servidor con más de doce mandatos. Obtenga más información sobre los diversos mandatos en [Mandatos `ibmcloud dev` de la CLI de {{site.data.keyword.dev_cli_notm}}](/docs/cli/idt?topic=cloud-cli-idt-cli#idt-cli).
+Puede utilizar el {{site.data.keyword.dev_cli_short}} para gestionar las aplicaciones del lado del servidor con más de doce mandatos. Obtenga más información sobre los diversos mandatos en [Mandatos `ibmcloud dev` de la CLI de {{site.data.keyword.dev_cli_notm}}](/docs/cli/idt?topic=cloud-cli-idt-cli).
 
 ## Antes de empezar
 {: #prereqs-local}
@@ -32,7 +32,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 ```
 {: codeblock}
 
-Consulte [Configuración de la CLI de {{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) para obtener más información sobre la configuración y el uso de
+Consulte [Configuración de la CLI de {{site.data.keyword.dev_cli_notm}}](/docs/cli?topic=cloud-cli-getting-started) para obtener más información sobre la configuración y el uso de
 {{site.data.keyword.dev_cli_notm}}.
 
 ## Recuperación de las credenciales de servicio

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-07"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -37,8 +37,7 @@ Al crear un grupo, debe seleccionar un nivel de resiliencia (varias regiones o r
 ## API
 {: #api-cos}
 
-La API de {{site.data.keyword.cos_full}} es una API basada en REST para leer y escribir objetos. Da soporte a un subconjunto de la API de S3 para facilitar la migración de aplicaciones a {{site.data.keyword.cloud_notm}}. Cualquier SDK de S3 se puede utilizar para usar {{site.data.keyword.cos_full}}. Para obtener más información, consulte la
-[Referencia de la API de {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api) completa
+La API de {{site.data.keyword.cos_full}} es una API basada en REST para leer y escribir objetos. Da soporte a un subconjunto de la API de S3 para facilitar la migración de aplicaciones a {{site.data.keyword.cloud_notm}}. Cualquier SDK de S3 se puede utilizar para usar {{site.data.keyword.cos_full}}. Para obtener más información, consulte la [Referencia de la API de {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-compatibility-api) completa.
 
 ## Protección del almacenamiento de objetos
 {: #security-cos}

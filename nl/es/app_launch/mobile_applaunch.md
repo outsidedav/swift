@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-17"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -24,7 +24,7 @@ subcollection: swift
 
 El servicio {{site.data.keyword.engage_short}} define una característica, crea público en función de las plataformas de dispositivo (incluidos atributos de público personalizados) y, por último, define la fidelización que coordinará la temporización y el posicionamiento de la característica. Una vez utilizados los SDK junto con los atributos de métrica y característica que se incorporan en la aplicación, el servicio empieza a medir la experiencia del público. De acuerdo con esta información, puede utilizar su app para crear fidelizaciones de cliente personalizadas en diferentes categorías de usuarios de la app.
 
-![Visión general de Cognitive Engage](images/process_app_launch.png) Figura 1. Visión general del ciclo de vida del servicio {{site.data.keyword.engage_short}}
+![Visión general de Cognitive Engage](images/process_app_launch.png "Visión general de Cognitive Engage")
 
 Consulte las siguientes características del servicio {{site.data.keyword.engage_short}}:
 
@@ -72,7 +72,7 @@ Primero, asegúrese de cumplir los siguientes requisitos previos:
 El servicio proporciona SDK específicos de la plataforma para simplificar el desarrollo de aplicaciones. Los SDK de Swift de {{site.data.keyword.cloud_notm}} Mobile Services se pueden instalar con CocoaPods o Carthage.
 
 1. Pulse **Valores**.
-2. Instale el [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Para obtener más información, consulte el archivo `README` que incluye los pasos de instalación y los conceptos técnicos.
+2. Instale el [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"). Para obtener más información, consulte el archivo `README` que incluye los pasos de instalación y los conceptos técnicos.
 3. Copie las claves de configuración para inicializar la app. Utilice el secreto de app, el GUID de app y el secreto de cliente para configurar su app y crear fidelizaciones.
 
 ## Paso 3. Creación de una característica
@@ -207,13 +207,13 @@ Efectúe los pasos siguientes para crear una fidelización que utiliza la opció
 
   La nueva fidelización aparecerá en la ventana Detalles de fidelización.
 
-Ahora puede medir el [rendimiento](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type) de su fidelización.
+Ahora puede medir el [rendimiento](/docs/services/app-launch?topic=app-launch-applaunch_type) de su fidelización.
 
 ## Enlaces rápidos
 {: #links-applaunch notoc}
 
 Consulte los enlaces siguientes para obtener una visión general y conocer las características de {{site.data.keyword.engage_short}}:
 
- - Pruebe el [Servicio de App Launch](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
- - [Blogs y vídeos](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
- - Para obtener más información, consulte la [Guía de aprendizaje de iniciación de App Launch](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate).
+ - Pruebe el [Servicio de App Launch](https://{DomainName}/catalog/services/app-launch){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
+ - [Blogs y vídeos](/docs/services/app-launch?topic=app-launch-blogs-and-videos)
+ - Para obtener más información, consulte la [documentación de App Launch](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate).

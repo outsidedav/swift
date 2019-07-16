@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-06"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -22,13 +22,13 @@ subcollection: swift
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple permite a los desarrolladores crear apps a partir de varios kits de inicio, a suministrar y conectar servicios clave optimizados para {{site.data.keyword.cloud_notm}} y a descargar rápidamente código funcional o a realizar la configuración para un suministro continuo. Los usuarios pueden crear, ver, configurar y gestionar la app, así como descargar el código de la misma. El uso de kits de inicio le ayuda a evaluar y probar con rapidez los servicios de {{site.data.keyword.cloud_notm}} con una app completamente nueva.
 
-¿Listo para lanzarse? Visite la [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") ahora para empezar.
+¿Listo para lanzarse? Visite la [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") ahora para empezar.
 {: tip}
 
 ## ¿Qué es un kit de inicio?
 {: #starterkits-what}
 
-Con la {{site.data.keyword.cloud_notm}} Developer Experience, puede elegir entre varios kits de inicio. Los kits de inicio instruyen a {{site.data.keyword.cloud_notm}} a ensamblar una app de producción de esqueleto, en el lenguaje de su elección, listo para el despliegue en la nube. Cada kit de inicio incluye un lenguaje, una infraestructura y un patrón para un caso de uso específico en el mundo real que permite reutilizar el código en lugar de reinventarlo.
+Con la consola del desarrollador de {{site.data.keyword.cloud_notm}}, puede elegir entre varios kits de inicio. Los kits de inicio instruyen a {{site.data.keyword.cloud_notm}} a ensamblar una app de producción de esqueleto, en el lenguaje de su elección, listo para el despliegue en la nube. Cada kit de inicio incluye un lenguaje, una infraestructura y un patrón para un caso de uso específico en el mundo real que permite reutilizar el código en lugar de reinventarlo.
 
 Los kits de inicio están listos para ser utilizados en producción y se centran en demostrar una implementación de un patrón clave utilizando un tiempo de ejecución (por ejemplo, Swift). En algunos casos, los kits de inicio ofrecen una experiencia de usuario simple para resaltar la integración del servicio. En otros casos, los kits de inicio representan una implementación personalizable de un caso de uso sofisticado.
 
@@ -82,5 +82,5 @@ Puede obtener una lista de todas las apps creadas desde la vista _Lista de apps_
 
 ![Vista Lista de apps de {{site.data.keyword.cloud_notm}} Developer Console for Apple](images/project_list_screen.png "Vista Lista de apps")
 
-Para obtener más información, visite [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
+Para obtener más información, visite [{{site.data.keyword.cloud_notm}} Developer Console for Apple Learning Resources](https://{DomainName}/developer/appledevelopment/learning-resources){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 {: tip}

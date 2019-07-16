@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: sql swift, database swift, persistence swift, data swift, orm swift, kuery swift, kitura swift
 
@@ -32,11 +32,11 @@ Con ORM (Object-Relational Mapping), puede correlacionar objetos con bases de da
 ## Paso 1. Iniciación a ORM
 {: #start-orm}
 
-Utilice [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") con un plugin SQL como
-[PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") o
-[MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
+Utilice [Swift-Kuery-ORM](https://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") con un plugin SQL como
+[PostgreSQL](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") o
+[MySQL](https://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
-Para este ejemplo, se utiliza el plugin de [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"). Siga las instrucciones para
+Para este ejemplo, se utiliza el plugin de [PostgreSQL](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"). Siga las instrucciones para
 [instalar el plugin](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 
 ## Paso 2. Importación de ORM en la aplicación
@@ -172,4 +172,4 @@ Para facilitar la prueba de ORM, la [guía de aprendizaje de FoodTrackerBackend]
 ## Utilización de Swift-Kuery directamente
 {: #swift-kuery}
 
-Si ORM le limita porque necesita un mayor control sobre la base de datos, puede utilizar la capa de abstracción de SQL, [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"), donde puede realizar una consulta SQL.
+Si ORM le limita porque necesita un mayor control sobre la base de datos, puede utilizar la capa de abstracción de SQL, [Swift-Kuery](https://github.com/IBM-Swift/Swift-Kuery){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"), donde puede realizar una consulta SQL.

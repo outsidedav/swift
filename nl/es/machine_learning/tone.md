@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-24"
+lastupdated: "2019-06-06"
 
 keywords: watson swift, tone anaylzer swift, cocoapods swift, swift sdk install, starter kit watson
 
@@ -112,7 +112,7 @@ puede ampliar las llamadas de Tone Analyzer para su caso de uso.
   {: codeblock}
 
   Compruebe la [documentación del parámetro de
-versión](https://cloud.ibm.com/apidocs/tone-analyzer#versioning){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")
+versión](https://{DomainName}/apidocs/tone-analyzer#versioning){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")
 o utilice la fecha creada por el servicio {site.data.keyword.conversationshort}}.
   {: tip}
 
@@ -162,12 +162,12 @@ del SDK de Watson para crear la funcionalidad de su aplicación.
 ## Utilización de los kits de inicio
 {: #tone_starterkits}
 
-Los [Kits de inicio](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") son una de las formas
+Los [Kits de inicio](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo") son una de las formas
 más rápidas de utilizar las prestaciones de {{site.data.keyword.cloud_notm}}. Puede utilizar el servicio {{site.data.keyword.toneanalyzershort}} seleccionando el kit de inicio de **Tone Analyzer for iOS with Watson**. Este servicio utiliza funciones de aprendizaje profundo para evaluar los pasajes de texto. La aplicación Tone Analyzer identifica el tono del orador (feliz, triste, seguro, etc.), ya que se relaciona con varias categorías.
 
 Para empezar con este kit de inicio:
 
-1. Seleccione el kit de inicio que se encuentra [aquí](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
+1. Seleccione el kit de inicio que se encuentra [aquí](https://{DomainName}/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo").
 2. Cree el proyecto con los servicios predeterminados.
 3. Descargue el proyecto pulsando **Descargar código**. Las credenciales de servicio se inyectan en el archivo `BMSCredentials.plist` en los campos clave correspondientes.
 

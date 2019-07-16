@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-05"
 
 keywords: liveness probe swift, readiness probe swift, health swift, healthcheck swift, swift app status, kubernetes endpoint swift, health endpoint swift, swift health check
 
@@ -51,6 +51,7 @@ La tabla siguiente proporciona una orientación sobre las respuestas que los pun
 | Deteniendo | 503 - No disponible           | 200 - Correcto                   | 503 - No disponible         |
 | Inactivo     | 503 - No disponible           | 503 - No disponible          | 503 - No disponible         |
 | Con errores  | 500 - Error del servidor          | 500 - Error del servidor         | 500 - Error del servidor        |
+{: caption="Tabla 1. Códigos de estado HTTP." caption-side="bottom"}
 
 ## Adición de una comprobación de estado a una app de Swift existente
 {: #existing-app}
