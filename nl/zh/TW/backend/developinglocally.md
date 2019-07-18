@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: develop swift, swift local, service credentials swift, developer tools swift, swift cli, ibmcloud build swift, ibmcloud swift
 
@@ -21,7 +21,7 @@ subcollection: swift
 
 藉由本端開發，您可以輕鬆地建置、執行及測試 Swift 應用程式。使用 {{site.data.keyword.dev_cli_short}}，可以利用標準指令來執行這些動作。 
 
-您可以使用 {{site.data.keyword.dev_cli_short}}，利用許多指令來管理您的伺服器端應用程式。在 [{{site.data.keyword.dev_cli_notm}} CLI `ibmcloud dev` 指令](/docs/cli/idt?topic=cloud-cli-idt-cli#idt-cli)中，可進一步瞭解各種指令。
+您可以使用 {{site.data.keyword.dev_cli_short}}，利用許多指令來管理您的伺服器端應用程式。在 [{{site.data.keyword.dev_cli_notm}} CLI `ibmcloud dev` 指令](/docs/cli/idt?topic=cloud-cli-idt-cli)中，可進一步瞭解各種指令。
 
 ## 開始之前
 {: #prereqs-local}
@@ -32,7 +32,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 ```
 {: codeblock}
 
-請參閱[設定 {{site.data.keyword.dev_cli_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)，以進一步瞭解 {{site.data.keyword.dev_cli_notm}} 的配置與用法。
+請參閱[設定 {{site.data.keyword.dev_cli_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started)，以進一步瞭解 {{site.data.keyword.dev_cli_notm}} 的配置與用法。
 
 ## 擷取服務認證
 {: #credentials-local}
@@ -58,7 +58,7 @@ ibmcloud dev get-credentials
   ```
   {: codeblock}
 
-  如果指令執行成功，則會顯示本端主機及埠，以檢視您應用程式的登入頁面。
+  如果指令執行順利，則會顯示本端主機及埠，以檢視您應用程式的登入頁面。
 
 3. **部署** - 使用 `deploy` 指令，將您的應用程式部署至 {{site.data.keyword.cloud_notm}}：
   ```

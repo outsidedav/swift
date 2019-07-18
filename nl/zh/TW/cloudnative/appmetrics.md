@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: swiftmetrics-dash, swiftmetrics, prometheus swift, application metrics swift, swift performance, slow swift, swift dashboard, metris swift
 
@@ -20,7 +20,7 @@ subcollection: swift
 # 搭配使用應用程式度量值與 Swift 應用程式
 {: #metrics}
 
-應用程式度量值對於監視應用程式的效能而言，非常重要。具有 CPU、記憶體、延遲及 HTTP 這類度量值的度量值即時視圖非常重要，可確保應用程式有效地執行一段時間。[自動調整](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started)這類 Kubernetes 及 Cloud Foundry 服務會根據度量值來判斷何時根據負載動態新增或移除實例，以及清除不再需要的實例以保留低成本。
+應用程式度量值對於監視應用程式的效能而言，非常重要。具有 CPU、記憶體、延遲及 HTTP 這類度量值的度量值即時視圖非常重要，可確保應用程式有效地執行一段時間。[自動調整](/docs/services/Auto-Scaling?topic=Auto-Scaling-get-started)這類 Kubernetes 及 Cloud Foundry 服務會根據度量值來判斷何時根據負載動態新增或移除實例，以及清除不再需要的實例以保留低成本。
 
 應用程式度量值會擷取為時間序列資料。聚集及視覺化擷取的度量值有助於識別一般效能問題，例如：
 
@@ -45,7 +45,7 @@ subcollection: swift
 ```
 {: codeblock}
 
-新增下列檢測代碼，以起始設定 `SwiftMetrics` 程式碼：
+新增下列設備測試代碼，以起始設定 `SwiftMetrics` 程式碼：
 ```swift
 import SwiftMetrics
 import SwiftMetricsKitura

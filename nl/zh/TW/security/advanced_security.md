@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-17"
 
 keywords: swift security, add security swift, crypto swift, hyper protect swift, ios hyper protect, dbaas swift, swift key management, swift advanced security
 
@@ -24,7 +24,7 @@ subcollection: swift
 Swift 開發人員可以輕鬆地使用 {{site.data.keyword.cloud}} 提供的進階安全服務，以業界最高的安全層次保護靜態、使用中或傳輸中的金鑰及資料。
 {: shortdesc}
 
-因為方法很簡單，您可以直接對 {{site.data.keyword.cloud}} 中的所有進階安全服務，使用 {{site.data.keyword.cloud_notm}} HyperSecure Platform Services。如需相關資訊，請參閱[開始使用 {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform/index.html#getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits)。
+因為方法很簡單，您可以直接對 {{site.data.keyword.cloud}} 中的所有進階安全服務，使用 {{site.data.keyword.cloud_notm}} HyperSecure Platform Services。如需相關資訊，請參閱[開始使用 {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform?topic=hypersecure-platform-getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits)。
 
 ## 使用 {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}
 {: #security-swift}
@@ -75,7 +75,7 @@ Swift 開發人員可以輕鬆地使用 {{site.data.keyword.cloud}} 提供的進
 {{site.data.keyword.hscontainers}} 藉由結合 Docker 和 Kubernetes 技術、直覺式使用者體驗以及內建安全和隔離來提供功能強大的工具，以在運算主機的叢集中自動部署、操作、擴充及監視容器化應用程式。
 
 
-{{site.data.keyword.hscontainers}} 僅供贊助者使用者使用。如果您預期專用的安全支援，請使用 [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 登錄為贊助者使用者，以將您的應用程式部署至 {{site.data.keyword.hscontainers}} 叢集。
+{{site.data.keyword.hscontainers}} 僅供贊助者使用者使用。如果您預期專用的安全支援，請使用 [IBM Z Client Feedback Program](https://www.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zwelcome.shtml){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 登錄為贊助者使用者，以將您的應用程式部署至 {{site.data.keyword.hscontainers}} 叢集。
 {: tip}
 
-在變成贊助者使用者之前，您可以使用 {{site.data.keyword.containershort_notm}} 來保護您的應用程式。如需相關資訊，請參閱[開始使用 {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-container_index#container_index)。
+在變成贊助者使用者之前，您可以使用 {{site.data.keyword.containershort_notm}} 來保護您的應用程式。如需相關資訊，請參閱[開始使用 {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-getting-started)。

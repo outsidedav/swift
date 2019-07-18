@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-19"
 
 keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
 
@@ -23,7 +23,7 @@ subcollection: swift
 
 應用程式安全非常複雜。對於大部分開發人員而言，這是建立應用程式較困難的作業之一。如何才能確定您正在保護使用者資訊？藉由將 {{site.data.keyword.appid_full}} 整合至您的應用程式，即可保護資源並新增鑑別，即使您沒有太多的安全經驗也可以做到。
 
-要求使用者登入，即可儲存使用者資料，例如，應用程式喜好設定（或公用社交設定檔中的資訊），然後使用該資料來自訂應用程式內的每個使用者經驗。{{site.data.keyword.appid_short_notm}} 為您提供一個登入架構，但是您也可以帶入自創品牌的登入畫面，以與雲端目錄搭配使用。
+若要求使用者登入，即可儲存使用者資料，例如，應用程式喜好設定（或公用社交設定檔中的資訊），然後使用該資料來自訂應用程式內的每個使用者經驗。{{site.data.keyword.appid_short_notm}} 為您提供一個登入架構，但是您也可以帶入自創品牌的登入畫面，以與雲端目錄搭配使用。
 
 如需可以使用 {{site.data.keyword.appid_short_notm}} 的所有方式以及架構資訊，請參閱[關於 {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-about#about)。
 
@@ -41,14 +41,14 @@ subcollection: swift
 
 建立 {{site.data.keyword.appid_short_notm}} 服務的實例：
 
-1. 在 [{{site.data.keyword.cloud_notm}} 型錄](https://cloud.ibm.com/catalog/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中，選取 {{site.data.keyword.appid_short_notm}}。即會開啟服務配置畫面。
+1. 在 [{{site.data.keyword.cloud_notm}} 型錄](https://{DomainName}/catalog){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中，選取 {{site.data.keyword.appid_short_notm}}。即會開啟服務配置畫面。
 2. 提供服務實例的名稱，或使用預設名稱。
 3. 選取定價方案，然後按一下**建立**。
 
 ## 步驟 2. 安裝 iOS Swift SDK
 {: #install-sdk-appid}
 
-此服務提供 SDK，以協助您輕鬆地以程式碼編寫應用程式。SDK 必須安裝在應用程式程式碼中。
+此服務提供 SDK，以協助您輕鬆地以程式碼撰寫應用程式。SDK 必須安裝在應用程式程式碼中。
 
 1. 開啟現有 Xcode 專案目錄的 `Podfile`。
 
@@ -88,29 +88,16 @@ subcollection: swift
   ```
   {: codeblock}
 
-4. 傳遞 `tenantId` 及 `region` 參數，以起始設定 SDK。放置程式碼的一般工作區（但非一定）位於您應用程式中 `AppDelegate` 的 `application:didFinishLaunchingWithOptions` 方法中。
+4. 傳遞 `tenantID` 和 `AppID_region` 參數，以起始設定 SDK。放置程式碼的一般工作區（但非一定）位於您應用程式中 `AppDelegate` 的 `application:didFinishLaunchingWithOptions` 方法中。
   ```swift
-  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <AppID_region>);
   ```
   {: codeblock}
   
-  <table>
-    <thead>
-      <th colspan=2><img src="images/idea.png" alt=""/>瞭解指令元件</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><em>tenantID</em></td>
-        <td>承租戶 ID 是一個唯一 ID，用來起始設定應用程式。您可以在 {{site.data.keyword.appid_short_notm}} 儀表板中找到此值。在<b>服務認證</b>標籤中，按一下<b>檢視認證</b>。</td>
-      </tr>
-      <tr>
-        <td><em>AppID_region</em></td>
-        <td>{{site.data.keyword.appid_short_notm}} 地區是您在其中使用服務的 {{site.data.keyword.cloud_notm}} 地區。可在服務儀表板中找到此地區，且可為 <em>AppID.REGION_US_SOUTH</em>、<em>AppID.REGION_SYDNEY</em>、<em>AppID.REGION_UK</em>。</td>
-      </tr>
-    </tbody>
-  </table>
+  * `tenantID`：租戶 ID 是用於起始設定應用程式的唯一 ID。在 {{site.data.keyword.appid_short_notm}} 儀表板中，透過選取**服務認證**標籤，然後按一下**檢視認證**，可以找到該值。
+  * `AppID_region`：{{site.data.keyword.appid_short_notm}} 地區是您要在其中使用服務的 {{site.data.keyword.cloud_notm}} 地區。此地區可以在服務儀表板中找到，可以是 `AppID.REGION_US_SOUTH`、`AppID.REGION_SYDNEY` 和 `AppID.REGION_UK`。
 
-5. 將下列程式碼新增至 AppDelegate 檔案。
+5. 將下列代碼新增到 `AppDelegate` 檔案。
     ```swift
     func application(_ application: UIApplication, open url: URL, options :[UIApplicationOpenURLOptionsKey : Any]) -> Bool {
             return AppID.sharedInstance.application(application, open: url, options: options)
@@ -158,7 +145,6 @@ subcollection: swift
     ```
     {: codeblock}
 
-
 ### 雲端目錄
 {: #cloud-dir-appid}
 
@@ -170,7 +156,7 @@ subcollection: swift
 若要配置雲端目錄，請執行下列動作：
 
 1. 開啟 {{site.data.keyword.appid_short_notm}} 儀表板的**管理身分提供者**標籤，然後將雲端目錄設為**開啟**。
-2. 配置[目錄及訊息設定](/docs/services/appid/cloud-drectory.html)。
+2. 配置[目錄及訊息設定](/docs/services/appid?topic=appid-cloud-directory)。
 4. 選擇您要顯示的登入畫面組合，並在應用程式中放置程式碼以呼叫那些畫面。
     * 登入
         ```swift
@@ -278,7 +264,7 @@ subcollection: swift
 3. 更新 {{site.data.keyword.appid_short_notm}} 儀表板中的身分提供者或登入小組件畫面。
 4. 重複步驟 1 和 2，查看變更是否立即實作。不需要更新應用程式程式碼。
 
-有困難嗎？請參閱[疑難排解 {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-troubleshooting#troubleshooting)。
+有困難嗎？請參閱[疑難排解 {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-troubleshooting)。
 
 ## 後續步驟
 {: #next-appid notoc}
@@ -286,4 +272,4 @@ subcollection: swift
 做得好！您已為應用程式新增一個安全等級。嘗試下列其中一個選項，以保持動力：
 
 * 進一步瞭解並充分運用 {{site.data.keyword.appid_short_notm}} 提供的所有特性，[請參閱文件](/docs/services/appid?topic=appid-getting-started#getting-started)！
-* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中的可用入門範本套件。下載程式碼。執行應用程式！
+* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://{DomainName}/developer/mobile/dashboard){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中的可用入門範本套件。下載程式碼。執行應用程式！

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: sql swift, database swift, persistence swift, data swift, orm swift, kuery swift, kitura swift
 
@@ -33,9 +33,9 @@ Swift 最重要的特性之一就是其類型安全。搭配使用 SQL Database 
 ## 步驟 1. 開始使用 ORM
 {: #start-orm}
 
-請使用 [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 搭配 SQL 外掛程式，例如 [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 或 [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
+請使用 [Swift-Kuery-ORM](https://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 搭配 SQL 外掛程式，例如 [PostgreSQL](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 或 [MySQL](https://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
-此範例使用 [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 外掛程式。請遵循指示以[安裝外掛程式](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
+此範例使用 [PostgreSQL](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 外掛程式。請遵循指示以[安裝外掛程式](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
 ## 步驟 2. 將 ORM 匯入應用程式
 {: #import-orm}
@@ -170,4 +170,4 @@ Grade.delete(id: 1) { error in
 ## 直接使用 Swift-Kuery
 {: #swift-kuery}
 
-如果因為您需要對資料庫有更多的控制權，而受到 ORM 的限制，您可以使用 SQL 抽象層 [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，在其中您可以建立 SQL 查詢。
+如果因為您需要對資料庫有更多的控制權，而受到 ORM 的限制，您可以使用 SQL 抽象層 [Swift-Kuery](https://github.com/IBM-Swift/Swift-Kuery){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，在其中您可以建立 SQL 查詢。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
 
@@ -110,8 +110,7 @@ Cocoapods 會下載 {{site.data.keyword.conversationshort}} 架構，並且會�
   ```
   {: codeblock}
 
-  **提示**：此範例會將環境定義儲存至狀態。為了更加瞭解此目標，以及如何為您的使用案例調整它，請參閱[環境定義變數文件](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables)。參閱[版本參數文件](https://cloud.ibm.com/apidocs/assistant#versioning){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，或使用建立 {{site.data.keyword.conversationshort}} 服務的日期。
-  
+  **提示**：此範例會將環境定義儲存至狀態。為了更加瞭解此目標，以及如何為您的使用案例調整它，請參閱[環境定義變數文件](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables)。查看[版本參數文件](https://{DomainName}/apidocs/assistant#versioning){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 或者使用建立 {site.data.keyword.conversationshort}} 服務的日期。
 
 3. 起始設定交談。視您的助理配置情形而定，它可以提供起始回應給使用者：
   ```swift
@@ -175,7 +174,7 @@ Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11a
 
 使用入門範本套件，您可以快速且輕鬆地運用 {{site.data.keyword.cloud_notm}} 的功能。您可以使用入門範本套件，將 {{site.data.keyword.conversationshort}} 新增至任何伺服器端後端。Chatbot for iOS with Watson Starter Kit 說明如何藉由將自動與使用者互動的自然語言介面新增至您的應用程式，來使用 {{site.data.keyword.conversationshort}} 的深度學習功能。
 
-1. 選取您要使用的[入門範本套件](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
+1. 選取您要使用的[入門範本套件](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 2. 建立含有預設服務的應用程式。
 3. 按一下**新增服務 > Watson > {{site.data.keyword.conversationshort}}**。
 4. 按一下**下載程式碼**，以下載專案。您可以在 `config/local-dev.json` 檔案中找到服務認證。

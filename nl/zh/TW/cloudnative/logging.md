@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-10"
 
 keywords: swift logging, ios logging, debug swift, add logging swift, heliumlogger swift, loggerapi swift, logger swift, starter kit swift logger
 
@@ -37,7 +37,7 @@ subcollection: swift
 ```
 {: codeblock}
 
-新增下列檢測代碼，以起始設定 `HeliumLogger`，並將其設為 `LoggerAPI` 所使用的日誌程式：
+新增下列設備測試代碼，以起始設定 `HeliumLogger`，並將其設為 `LoggerAPI` 所使用的日誌程式：
 ```swift
 import HeliumLogger
 import LoggerAPI
@@ -62,7 +62,7 @@ Log.info("This is an informational log message.")
 ```
 {: screen}
 
-這些訊息位於本端的 `stdout` 中，或 [CloudFoundry](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs) 及 [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 部署的日誌中，其由 `ibmcloud app logs --recent <APP_NAME>` 及 `kubectl logs <deployment name>` 存取。
+這些訊息可在本端的 `stdout`（標準輸出）中或 Cloud Foundry 和 Kubernetes 部署的日誌中找到，可透過 `[ibmcloud app logs --recent <APP_NAME>]`(/docs/cli/reference?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_logs) 和 `[kubectl logs <deployment name>`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 對日誌進行存取。
 
 在 `/Sources/AppName/main.swift` 檔案中，您可以看到下列程式碼：
 ```swift
@@ -77,10 +77,10 @@ HeliumLogger.use(LoggerMessageType.info)
 {: #next-logging notoc}
 
 進一步瞭解在每一個部署目標中檢視日誌：
-* [Kubernetes 日誌](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")
+* [Kubernetes 日誌](https://kubernetes.io/docs/concepts/cluster-administration/logging/#basic-logging-in-kubernetes){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")
 * [Cloud Foundry 日誌](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_cli)
 * [Cloud Foundry Enterprise Environment - 審核及記載](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
-* [{{site.data.keyword.openwhisk}} 日誌及監視](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
+* [{{site.data.keyword.openwhisk}} Logs & Monitoring](/docs/openwhisk?topic=cloud-functions-logs)
 
 了解如何實作及使用日誌聚集器：
 * [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)

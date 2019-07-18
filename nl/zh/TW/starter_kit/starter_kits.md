@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-06"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -22,13 +22,13 @@ subcollection: swift
 
 {{site.data.keyword.cloud_notm}} Developer Console for Apple 可讓 Apple 開發人員透過各種入門範本套件建立應用程式、佈建及連接重要的 {{site.data.keyword.cloud_notm}} 最佳化服務，然後快速下載工作中的程式碼，或針對持續交付進行設定。使用者可以建立、檢視、配置及管理您的應用程式，以及下載您應用程式的程式碼。使用入門範本套件可協助您快速評估，並以全新的應用程式來測試 {{site.data.keyword.cloud_notm}} 服務。
 
-準備好了嗎？請立即造訪 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以開始使用。
+準備好了嗎？請立即造訪 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以開始使用。
 {: tip}
 
 ## 何謂入門範本套件？
 {: #starterkits-what}
 
-使用 {{site.data.keyword.cloud_notm}} Developer Experience，您可以從各種入門範本套件中進行選擇。入門範本套件會指示 {{site.data.keyword.cloud_notm}} 以您選擇的語言，動態組裝架構正式作業應用程式，並準備好進行雲端部署。每個入門範本套件都包含一種語言、一個架構以及一個用於特定即時世界使用案例的型樣，其容許重複使用程式碼，而非重建程式碼。
+透過 {{site.data.keyword.cloud_notm}} 開發人員主控台，可以從各種入門範本套件中進行選擇。入門範本套件會指示 {{site.data.keyword.cloud_notm}} 以您選擇的語言，動態組裝架構正式作業應用程式，並準備好進行雲端部署。每個入門範本套件都包含一種語言、一個架構以及一個用於特定即時世界使用案例的型樣，其容許重複使用程式碼，而非重建程式碼。
 
 入門範本套件已備妥正式作業，且主要討論利用運行環境（例如，Swift）來示範重要的型樣實作。在某些情況下，入門範本套件提供簡單的使用者體驗，以突顯服務的整合。在其他情況下，入門範本套件代表更準確使用案例的可自訂實作。
 
@@ -82,5 +82,5 @@ subcollection: swift
 
 ![{{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式清單視圖](images/project_list_screen.png "應用程式清單視圖"){: caption="圖 6. {{site.data.keyword.cloud_notm}} Developer Console for Apple 應用程式清單視圖" caption-side="bottom"}
 
-如需相關資訊，請造訪[{{site.data.keyword.cloud_notm}} Developer Console for Apple 學習資源](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
+如需相關資訊，請造訪[{{site.data.keyword.cloud_notm}} Developer Console for Apple 學習資源](https://{DomainName}/developer/appledevelopment/learning-resources){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 {: tip}

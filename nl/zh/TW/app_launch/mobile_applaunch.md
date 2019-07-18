@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-17"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -24,7 +24,7 @@ subcollection: swift
 
 {{site.data.keyword.engage_short}} 服務可定義特性、根據裝置平台來建立對象（包括自訂對象屬性），最後定義一個參與，編排特性的時間及位置。使用 SDK 之後，隨著應用程式中合併的特性與度量值屬性，服務會開始測量對象經驗。您現在可以根據此資訊，使用應用程式來建立應用程式使用者的各種類之間的自訂客戶參與。
 
-![Cognitive Engage 概觀](images/process_app_launch.png) 圖 1. {{site.data.keyword.engage_short}} 服務生命週期的概觀
+![Cognitive Engage 概觀圖](images/process_app_launch.png "Cognitive Engage 概觀圖")
 
 請參閱 {{site.data.keyword.engage_short}} 服務的下列特性：
 
@@ -72,7 +72,7 @@ subcollection: swift
 此服務提供平台專用的 SDK，用來簡化應用程式開發作業。{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK 可與 CocoaPods 或 Carthage 一同安裝。
 
 1. 按一下**設定**。
-2. 安裝[SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch)。如需相關資訊，請參閱包括安裝步驟與技術概念的 `README` 檔。
+2. 安裝 [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。如需相關資訊，請參閱包括安裝步驟與技術概念的 `README` 檔。
 3. 複製配置金鑰，以起始設定應用程式。使用應用程式密碼、應用程式 GUID 以及用戶端密碼，來配置應用程式及建立參與。
 
 ## 步驟 3. 建立特性
@@ -207,13 +207,13 @@ subcollection: swift
 
   新的參與現在出現在「參與詳細資料」視窗中。
 
-您現在可以測量參與的[效能](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type)。
+您現在可以測量參與的[效能](/docs/services/app-launch?topic=app-launch-applaunch_type)。
 
 ## 快速鏈結
 {: #links-applaunch notoc}
 
 請查看下列鏈結以取得見解，並瞭解 {{site.data.keyword.engage_short}} 的特性：
 
- - 試試 [App Launch 服務](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
- - [部落格及視訊](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
- - 如需相關資訊，請參閱 [App Launch - 入門指導教學](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate)。
+ - 試試 [App Launch 服務](https://{DomainName}/catalog/services/app-launch){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
+ - [部落格及視訊](/docs/services/app-launch?topic=app-launch-blogs-and-videos)
+ - 如需相關資訊，請參閱 [App Launch 文件](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate)。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-12"
 
 keywords: watson studio swift, machine learning swift, custom model swift, data set swift, predictive swift, watson api swift, generated model swift, dataset swift
 
@@ -20,29 +20,26 @@ subcollection: swift
 # 使用自訂產生的模型來分析資料集
 {: #dsx-overview}
 
-Watson Studio 提供的環境及工具，可讓您藉由協同分析資料來解決商業問題。您可以選擇需要的工具，來分析、清理及組織資料。學習汲取多媒體串流資料，或建立、訓練及部署機器學習模型。Watson Studio 與各式各樣的 {{site.data.keyword.cloud}} 服務及 Watson Knowledge Catalog 整合，提供原則管理來控制資產，並提供型錄來建立索引，以進行定位。如需進一步瞭解，請造訪 https://dataplatform.ibm.com/。
+Watson Studio 提供的環境及工具，可讓您藉由協同分析資料來解決商業問題。您可以選擇需要的工具，來分析、清理及組織資料。學習汲取多媒體串流資料，或建立、訓練及部署機器學習模型。Watson Studio 與各式各樣的 {{site.data.keyword.cloud}} 服務及 Watson Knowledge Catalog 整合，提供原則管理來控制資產，並提供型錄來建立索引，以進行定位。[進一步瞭解資訊](https://dataplatform.cloud.ibm.com/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
-Watson Studio 的結構為專案型架構，其會組織您的資源以解決商業問題。資源包括與雲端的連線，以及內部部署資料儲存、資料檔案、合作程式以及分析資產（例如，模型）。如需相關資訊，請參閱 [Watson Studio 概觀](https://datascience.ibm.com/docs/content/getting-started/overview-ws.html?context=analytics){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
+Watson Studio 的結構為專案型架構，其會組織您的資源以解決商業問題。資源包括與雲端的連線，以及內部部署資料儲存、資料檔案、合作程式以及分析資產（例如，模型）。如需相關資訊，請參閱 [Watson Studio 概觀](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/overview-ws.html){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
 ## {{site.data.keyword.DSX}} 的機器學習
 {: #dsx-learning}
 
 使用 {{site.data.keyword.DSX}}，即可利用 API 來訓練模型然後進行部署，最後再好好利用結果。然後，可以在您的 iOS 或 Swift 應用程式中使用這些 API。
 
-使用 IBM Watson Machine Learning，在設定環境之後，您可以建立模型、將其部署至雲端，然後進行訓練。如需相關資訊，請參閱[使用 {{site.data.keyword.pm_full}} 及 {{site.data.keyword.DSX}} 來建立、部署及訓練模型](https://datascience.ibm.com/docs/content/analyze-data/wml-ai.html?context=analytics){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
+使用 IBM Watson Machine Learning，在設定環境之後，您可以建立模型、將其部署至雲端，然後進行訓練。如需相關資訊，請參閱[使用 {{site.data.keyword.pm_full}} 和 {{site.data.keyword.DSX}}](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/wml-ai.html){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 建立、部署和訓練模型。
 
 ### 指導教學
 {: #dsx-tutorials}
-
-- [Build a logistic regression model with {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-log-regress.html?context=analytics){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")
-- [Build a naive-Bayes model with {{site.data.keyword.pm_short}}](https://datascience.ibm.com/docs/content/analyze-data/ml-example-naive-bayes.html?context=analytics){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")
 
 ## 使用 iOS 及 Swift 來設定 {{site.data.keyword.DSX}}
 {: #dsx_ios}
 
 1. 若要讓認證整合更加簡單，您必須將 {{site.data.keyword.pm_short}} 實例新增至 iOS 應用程式或後端應用程式。為了更方便存取，您的認證包括在專案儀表板上。
 
-![應用程式中的 Machine Learning](images/ios-machinelearning-app.png)
+![應用程式詳細資料](images/ios-machinelearning-app.png "應用程式詳細資料")
 
 2. 下載應用程式程式碼。
 3. 起始設定
@@ -220,11 +217,11 @@ client.retrieveToken { token in
 ## 後續步驟
 {: #dsx_next notoc}
 
-做得好！現在，您可以使用自訂產生的機器學習模型來分析資料集。藉由在[資料科學及機器學習](https://www.ibm.com/analytics/data-science/machine-learning){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中進一步瞭解 {{site.data.keyword.pm_short}} 提供的特性，來保持動力。
+做得好！現在，您可以使用自訂產生的機器學習模型來分析資料集。藉由在[資料科學及機器學習](https://www.ibm.com/analytics/machine-learning){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中進一步瞭解 {{site.data.keyword.pm_short}} 提供的特性，來保持動力。
 
 ### 相關鏈結
 {: #dsx-related}
 
-* [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling?topic=services/PredictiveModeling-WMLgettingstarted#using-machine-learning-with-data-science-experience)
-* [{{site.data.keyword.DSX}}](https://datascience.ibm.com/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")
-* [{{site.data.keyword.DSX}} 文件 ](https://datascience.ibm.com/docs/content/getting-started/welcome-main.html?context=analytics){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")
+* [{{site.data.keyword.pm_short}}](/docs/services/PredictiveModeling?topic=PredictiveModeling-WMLgettingstarted)
+* [{{site.data.keyword.DSX}}](https://www.ibm.com/cloud/watson-studio){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")
+* [{{site.data.keyword.DSX}} 文件 ](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-24"
+lastupdated: "2019-06-06"
 
 keywords: watson swift, tone anaylzer swift, cocoapods swift, swift sdk install, starter kit watson
 
@@ -102,7 +102,7 @@ Cocoapods 會下載 {{site.data.keyword.toneanalyzershort}} 架構，並且會�
   ```
   {: codeblock}
 
-  參閱[版本參數文件](https://cloud.ibm.com/apidocs/tone-analyzer#versioning){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，或使用建立 {{site.data.keyword.conversationshort}} 服務的日期。
+  查看[版本參數文件](https://{DomainName}/apidocs/tone-analyzer#versioning){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 或者使用建立 {site.data.keyword.conversationshort}} 服務的日期。
   {: tip}
 
 3. 提供分析用的文字，然後處理結果：
@@ -150,11 +150,11 @@ Cocoapods 會下載 {{site.data.keyword.toneanalyzershort}} 架構，並且會�
 ## 使用入門範本套件
 {: #tone_starterkits}
 
-[入門範本套件](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 是使用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。選取 **Tone Analyzer for iOS with Watson** 入門範本套件，即可使用 {{site.data.keyword.toneanalyzershort}} 服務。此服務利用深度學習功能來評估文字通道。Tone Analyzer 應用程式會識別說話者的語氣（快樂、悲傷、自信等等），因為它與許多種類有關。
+[入門範本套件](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 是使用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。選取 **Tone Analyzer for iOS with Watson** 入門範本套件，即可使用 {{site.data.keyword.toneanalyzershort}} 服務。此服務利用深度學習功能來評估文字通道。Tone Analyzer 應用程式會識別說話者的語氣（快樂、悲傷、自信等等），因為它與許多種類有關。
 
 若要開始使用此入門範本套件，請執行下列動作：
 
-1. 選取[這裡](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 找到的入門範本套件。
+1. 選取[這裡](https://{DomainName}/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 找到的入門範本套件。
 2. 建立含有預設服務的專案。
 3. 按一下**下載程式碼**，以下載專案。服務認證會注入對應金鑰欄位的 `BMSCredentials.plist` 檔案中。
 

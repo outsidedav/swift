@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: getting started swift, custom app, create app swift, stater kit swift, apple app swift, swift dependency, ios development
 
@@ -19,12 +19,12 @@ subcollection: swift
 {:note: .note}
 
 # 入門指導教學
-{: #getting_started_swift}
+{: #getting-started}
 
 {{site.data.keyword.cloud}} 提供解決方案及服務，讓 Swift 開發人員能夠建置整合了客戶所需之的安全性、AI 及價值的應用程式。有了廣泛的產品組合及 SDK，您可以使用這些服務，並將最頂尖的應用程式快速推向市場。本 Swift 程式設計說明如何將服務新增至新的或現有 Swift 應用程式，無論該應用程式是 iOS 用戶端或伺服器端 Swift。
 {: shortdesc}
 
-下列指導教學顯示如何從 [{{site.data.keyword.cloud_notm}}Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")，使用空白的「入門範本套件」來輕鬆建立含有 {{site.data.keyword.mobileanalytics_full}} 的 Swift 行動應用程式。從主控台中，新增 {{site.data.keyword.mobileanalytics_short}} 服務、下載程式碼、以 Xcode 在本端執行 iOS 應用程式、配置，然後監視應用程式。
+下列指導教學顯示如何從 [{{site.data.keyword.cloud_notm}}Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")，使用空白的「入門範本套件」來輕鬆建立含有 {{site.data.keyword.mobileanalytics_full}} 的 Swift 行動應用程式。從主控台中，新增 {{site.data.keyword.mobileanalytics_short}} 服務、下載程式碼、以 Xcode 在本端執行 iOS 應用程式、配置，然後監視應用程式。
 
 ## 步驟 1. 開發人員需求
 {: #dev-requirements-swift}
@@ -41,7 +41,7 @@ subcollection: swift
 
 - 安裝 [Xcode 8+](https://developer.apple.com/xcode/){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")（或更新版本）。
 - 部署至 [iOS 8 裝置](https://support.apple.com/downloads/ios){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")（或更新版本）。
-- 將應用程式提交至 Apple 之前，請檢閱 [App Store 提交準則](https://developer.apple.com/app-store/guidelines/){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")。
+- 將應用程式提交至 Apple 之前，請檢閱 [App Store 提交準則](https://developer.apple.com/app-store/resources/){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")。
 
 ### SDK 及相依關係管理
 {: #swift-sdk-management}
@@ -71,9 +71,9 @@ subcollection: swift
 ## 步驟 2. 建立自訂 iOS Swift 應用程式
 {: #create-ios-app-swift}
 
-1. 登入 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")。
+1. 登入 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")。
 2. 按一下**建立應用程式**。
-3. 在[空白入門範本](https://cloud.ibm.com/developer/appledevelopment/create-app){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 頁面上，您可以使用預設配置，或視需要更新欄位。確定選定的語言是 **iOS Swift**。按一下**建立**。
+3. 在[空白入門範本](https://{DomainName}/developer/appledevelopment/create-app){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 頁面上，您可以使用預設配置，或視需要更新欄位。確定選定的語言是 **iOS Swift**。按一下**建立**。
 
 ## 步驟 3. 新增 {{site.data.keyword.cloudant_short_notm}} 服務
 {: #resources-swift}
@@ -128,7 +128,7 @@ subcollection: swift
 ## 步驟 6. 建置資料庫作業
 {: #build_ops-swift}
 
-既然您已設定可運作的資料庫連線及 SDK，便可以開始為您的特定使用案例建置完備基本的[建立、讀取、更新和破壞作業](/docs/swift/data?topic=swift-cloudant#cloudant)。
+既然您已設定可運作的資料庫連線及 SDK，便可以開始為您的特定使用案例建置完備基本的[建立、讀取、更新和破壞作業](/docs/swift/data?topic=swift-cloudant)。
 
 ## 後續步驟
 {: #next-swift}
@@ -138,10 +138,10 @@ subcollection: swift
 
 您可以直接從 Web 主控台新增其他服務至您的 iOS 應用程式，例如下列常用服務：
 
-* [新增 Push Notifications 服務](/docs/services/mobilepush?topic=mobile-pushnotification-gettingstartedtemplate#gettingstartedtemplate)
-* [新增含有 App ID 的使用者鑑別](/docs/services/appid?topic=appid-getting-started#getting-started)
+* [新增 Push Notifications 服務](/docs/services/mobilepush?topic=mobile-pushnotification-gettingstartedtemplate)
+* [新增含有 App ID 的使用者鑑別](/docs/services/appid?topic=appid-getting-started)
 
 ### 使用 {{site.data.keyword.cloud_notm}} Developer Tools
 {: #devtools-swift}
 
-您也可以學習如何使用 [{{site.data.keyword.cloud_notm}} Developer Tools](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) 來開發 Swift 應用程式，該工具提供一個指令行方法來建立、開發及部署完整的 Web、行動及微服務應用程式。
+您也可以學習如何使用 [{{site.data.keyword.cloud_notm}} Developer Tools](/docs/cli?topic=cloud-cli-getting-started) 來開發 Swift 應用程式，該工具提供一個指令行方法來建立、開發及部署完整的 Web、行動及微服務應用程式。

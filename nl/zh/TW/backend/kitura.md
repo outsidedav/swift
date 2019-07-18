@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-21"
+lastupdated: "2019-06-19"
 
 keywords: foodtrackerbackend, kitura swift, urlsession sdk, alamofire, restkit, kiturakit, kitura, xcode kitura, meals swift, rest api kitura, rest api swift
 
@@ -20,7 +20,7 @@ subcollection: swift
 # 使用 Kitura 建立應用程式
 {: #kitura}
 
-[Kitura](http://www.kitura.io){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 是一個伺服器端 Swift 架構，用來建置 iOS 後端及 Web 應用程式。此架構可建立 REST API，只要使用 URLSession SDK（例如 Alamofire、RestKit），或 Kitura 自己提供的 [KituraKit](https://github.com/ibm-swift/kiturakit){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") SDK。
+[Kitura](https://www.kitura.io){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 是一個伺服器端 Swift 架構，用來建置 iOS 後端及 Web 應用程式。此架構可建立 REST API，只要使用 URLSession SDK（例如 Alamofire、RestKit），或 Kitura 自己提供的 [KituraKit](https://github.com/ibm-swift/kiturakit){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") SDK。
 
 Kitura 可與 {{site.data.keyword.cloud}} 提供的所有服務與特性整合，包括 {{site.data.keyword.appid_short}}、{{site.data.keyword.mobilepushshort}} 及 {{site.data.keyword.mobileanalytics_short}}，以及資料庫、機器學習及其他服務。然後，可以在 {{site.data.keyword.cloud}} 中，使用 Cloud Foundry 或 Docker（Kubernetes 型）平台，來部署及自動擴充 Kitura。
 
@@ -39,15 +39,13 @@ Kitura 提供 `kitura` [指令行介面 (CLI)](https://www.kitura.io/guides/kitu
 ## 步驟 1. 使用瀏覽器建立 Kitura 應用程式
 {: #create_kitura}
 
-1. 移至 Apple Development Console 的「入門範本套件」區段。選取預先定義的入門範本，例如 "Swift for Backend for Frontend API"，或使用**建立應用程式**磚來建立自訂應用程式。按一下**建立應用程式**。
+1. 移至 Apple Development Console 的「入門範本套件」區段。選取預先定義的入門範本，例如 **Swift - 服務於前端的後端 API**，或者使用**建立應用程式**磚來建立自訂應用程式。按一下**建立應用程式**。
 
 2. 為您的應用程式命名，並選取應用程式的部署位置。如果您不確定要在哪裡部署應用程式，請使用預設值，因為稍後還可以變更預設值。
 
 3. 選取 Swift 語言。即會建立伺服器端 Swift 應用程式。同時還會顯示「主機」與「網域」選項，這些選項會組成應用程式的 URL。如果不確定，請使用預設值，您也可以提供來自網域提供者、且應用程式所在的專屬自訂網域。
 
-4. 您可以為您要建置的 REST API 提供 OpenAPI（也稱為 Swagger）定義。如果您有這類定義，則會在 Kitura 中建立包括對應處理程式函數的 REST API。如果您沒有 OpenAPI 定義，也請不用擔心，因為 Kitura 可讓您使用其 Router API，輕鬆地手動建立 REST API。
-
-5. 按一下**建立應用程式**。
+4. 按一下**建立應用程式**。
 
 即會建立一個應用程式，但是該應用程式尚未使用任何其他服務。您可以按一下**新增服務**按鈕來新增服務，或者按一下**下載程式碼**按鈕來取得應用程式的程式碼。您也可以輕鬆地將服務新增至現有應用程式。
 
@@ -79,8 +77,8 @@ Kitura 提供 `kitura` [指令行介面 (CLI)](https://www.kitura.io/guides/kitu
   若要執行 Kitura 伺服器，您必須按一下工具列上的 **project_name-Package** 區段，然後選取功能表中的 **project_name** 目標，以編輯架構。請確認目標裝置已設為 **My Mac**。
 
 3. 在本端執行 Kitura 伺服器。按一下**執行**，或使用 `⌘+R` 快速鍵來啟動 Kitura 伺服器。在啟動伺服器之後，請確認下列標準 Kitura URL 正在執行：
-  * Kitura 監視：[http://localhost:8080/swiftmetrics-dash/]()
-  * Kitura 性能檢查：[http://localhost:8080/health]()
+  * Kitura 監視：[http://localhost:8080/swiftmetrics-dash/](http://localhost:8080/swiftmetrics-dash/)
+  * Kitura 性能檢查：[http://localhost:8080/health](http://localhost:8080/health)
 
 ## 步驟 4. 新增 REST API
 {: #add_restapi-kitura}
@@ -128,7 +126,7 @@ Kitura 提供 `kitura` [指令行介面 (CLI)](https://www.kitura.io/guides/kitu
 
   您可以使用下列 URL 來測試 REST API：  
   ```swift
-  * `GET /meals`:	[http://localhost:8080/meals]()
+  * `GET /meals`:	[http://localhost:8080/meals](http://localhost:8080/meals)
   ```
   {: codeblock}
 

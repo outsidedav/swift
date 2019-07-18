@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-12"
 
 keywords: coreml swift, core ml swift, watson swift core, create model swift, image classification swift, version parameter swift, swift coreml watson
 
@@ -16,6 +16,7 @@ subcollection: swift
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:gif: data-image-type='gif'}
 
 # 搭配使用 Core ML 與 Watson
 {: #swift-coreml}
@@ -77,7 +78,7 @@ sudo gem install cocoapods
 
 2. 從資訊看板，以 `.zip` 檔上傳模型訓練課程。然後，從下拉功能表選取每個資料集，並將其新增至您的模型。您可以隨意增加使用您專屬影像集的類別，以加強分類器！
 
-![新增類別](images/add_classes.png)
+![新增類別](images/add_classes.png "將服務鏈結到 Watson Studio")
 
 3. 選取**訓練模型**，然後等待模型完成訓練。
 
@@ -127,7 +128,7 @@ Cocoapods 會下載 {{site.data.keyword.visualrecognitionshort}} 架構，並且
   ```
   {: codeblock}
 
-  參閱[版本參數文件](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") ，或使用建立 {{site.data.keyword.visualrecognitionshort}} 服務的日期。
+  查看[版本參數文件](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 或者使用建立 {site.data.keyword.visualrecognitionshort}} 服務的日期。
   {: tip}
 
 3. 新增下列程式碼，以用 Watson 分類器下載或更新本端 Core ML 模型：
@@ -178,7 +179,7 @@ Cocoapods 會下載 {{site.data.keyword.visualrecognitionshort}} 架構，並且
 
 若要將 {{site.data.keyword.visualrecognitionshort}} 新增至入門範本套件，請完成下列步驟：
 
-1. 選取您要使用的[入門範本套件](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
+1. 選取您要使用的[入門範本套件](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 2. 建立含有預設服務的應用程式。
 3. 按一下**新增服務 > Watson > {{site.data.keyword.visualrecognitionshort}}**。
 4. 按一下**下載程式碼**，以下載專案。若為 iOS 專案，認證會插入對應金鑰欄位的 `BMSCredentials.plist` 檔案中。若為伺服器端 Swift 專案，您可以在 `config/local-dev.json` 檔案中找到這些認證。

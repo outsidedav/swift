@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: cloudant swift, store data swift, dbaas swift, cloudant instance swift, initialize sdk swift, create document swift, read document swift, delete document swift
 
@@ -48,7 +48,7 @@ subcollection: swift
 ### 安裝 iOS Swift SDK
 {: #install-swift-sdk-cloudant}
 
-使用 Swift Cloudant SDK，協助您輕鬆地以程式碼編寫應用程式。SDK 必須安裝在應用程式程式碼中。
+使用 Swift Cloudant SDK，協助您輕鬆地以程式碼撰寫應用程式。SDK 必須安裝在應用程式程式碼中。
 
 1. 開啟現有 Xcode 專案目錄的 `Podfile`。
 2. 在您的專案目標下，新增 `SwiftCloudant` pod 的相依關係。請確定 `use_frameworks!` 指令也在您的目標下，如下列範例所示。
@@ -157,5 +157,5 @@ client.add(operation: delete)
 做得好！您已為應用程式新增一個安全持續性等級。嘗試下列其中一個選項，以保持動力：
 
 * 檢視 [{{site.data.keyword.cloudant_short_notm}} SDK for Swift ](https://github.com/cloudant/swift-cloudant){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 原始碼。
-* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。**Infinite Scrolling with Cloudant NoSQL for iOS** 入門範本套件說明如何延伸 `ViewController`，以使用分頁來顯示資料。iOS 開發人員經常使用這個應用程式型樣，這個型樣是說明 {{site.data.keyword.cloudant_short_notm}} 的功能時的良好範例。請檢視[行動開發人員儀表板](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中的可用入門範本套件。下載程式碼。執行應用程式！
-* 進一步瞭解並充分運用 {{site.data.keyword.cloudant_short_notm}} 提供的所有特性，[請參閱文件](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics#ibm-cloudant-basics)！
+* 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 功能最快的方式之一。**Infinite Scrolling with Cloudant NoSQL for iOS** 入門範本套件說明如何延伸 `ViewController`，以使用分頁來顯示資料。iOS 開發人員經常使用這個應用程式型樣，這個型樣是說明 {{site.data.keyword.cloudant_short_notm}} 的功能時的良好範例。請檢視[行動開發人員儀表板](https://{DomainName}/developer/mobile/dashboard){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中的可用入門範本套件。下載程式碼。執行應用程式！
+* 進一步瞭解並充分運用 {{site.data.keyword.cloudant_short_notm}} 提供的所有特性，[請參閱文件](/docs/services/Cloudant?topic=cloudant-ibm-cloudant-basics)！

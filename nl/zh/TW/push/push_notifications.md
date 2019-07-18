@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-24"
+lastupdated: "2019-06-21"
 
 keywords: push swift, swift notifications, push notifications swift, sending push swift, configure service instance swift, provider credentials swift
 
@@ -26,9 +26,9 @@ subcollection: swift
  - 客戶可以選擇訂閱要接收通知的特定標籤或主題。
  - 可讓應用程式擁有者分析已登錄要接收通知的裝置數量，以及傳送的通知數量。
 
-您可以選擇將 {{site.data.keyword.mobilepushshort}} 服務當作 MobileFirst Services Starter Boilerplate 的一部分使用，或者當作 {{site.data.keyword.cloud_notm}} [專用服務](/docs/dedicated?topic=dedicated-dedicated#dedicated) 使用。您也可以使用 SDK（軟體開發套件）及 [REST API ](https://mobile.{DomainName}/imfpush/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以進一步開發用戶端應用程式。
+您可以選擇將 {{site.data.keyword.mobilepushshort}} 服務當作 MobileFirst Services Starter Boilerplate 的一部分使用，或者當作 {{site.data.keyword.cloud_notm}} [專用服務](/docs/dedicated?topic=dedicated-dedicated#dedicated) 使用。您也可以使用 SDK（軟體開發套件）及 [REST API ](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/rest-apis/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，以進一步開發用戶端應用程式。
 
-![推送概觀](images/push_notification_lifecycle.jpg) 圖 1. {{site.data.keyword.mobilepushshort}} 服務生命週期的概觀
+![Push 概觀圖](images/push_notification_lifecycle.jpg "Push 概觀圖")
 
 ## 開始之前
 {: #prereqs-push}
@@ -52,7 +52,7 @@ subcollection: swift
 ## 步驟 2. 取得您的通知提供者認證
 {: #get_creds-push}
 
-若要設定 Push Notifications 服務，您需要從 Apple Push Notification Service (APNs) 取得必要的認證。請遵循這裡的步驟，以[取得並配置您的 APNs 認證 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window}。
+若要設定 Push Notifications 服務，您需要從 Apple Push Notification Service (APNs) 取得必要的認證。請遵循這裡的步驟，以[取得並配置您的 APNs 認證 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](/docs/services/mobilepush?topic=mobile-pushnotification-push_step_1){: new_window}。
 
 
 ## 步驟 3. 配置服務實例
@@ -62,7 +62,7 @@ subcollection: swift
 
 當 `.cer` 檔案位於您的金鑰鏈存取中之後，將其匯出至您的電腦，以建立 `.p12` 憑證。
 
-如需有關使用 APNs 的相關資訊，請參閱 [iOS Developer Library: Local and Push Notification Programming Guide ](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
+如需如需使用 APNs 的相關資訊，請參閱 [iOS Developer Library: Local and Push Notification Programming Guide ](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")。
 
 若要在 Push Notification 服務主控台上設定 APNs，請完成以下步驟：
 
@@ -70,21 +70,22 @@ subcollection: swift
 2. 選擇**行動**選項，以更新 **APNs Push 認證**表單中的資訊。
 3. 選擇下列一個選項：
 	- 對於**行動**選項
-		1. 選取**沙盤推演**（開發）或**正式作業**（分佈），然後上傳您建立的 `p.12` 憑證。
-		  ![設定 {{site.data.keyword.mobilepushshort}} 主控台](images/wizard.jpg)
+		1. 選取**沙盤推演**（開發）或**正式作業**（配送），然後上傳您建立的 `p.12` 憑證。
+		  ![{{site.data.keyword.mobilepushshort}} 主控台](images/wizard.jpg "推送通知行動配置")
 
 		2. 在**密碼**欄位中，輸入與 `.p12` 憑證檔案相關聯的密碼，然後按一下**儲存**。
 
 	- 對於 **Web** 選項
 		- 在 Safari Push 區段中，使用必要的資訊更新表單。
 		- **網站名稱**：「通知」中心內所提供的網站名稱。
-		- **Website Push ID**：使用 Website Push ID 的反向網域字串來更新。例如，`web.com.acmebanks.www`。
-		- **網站 URL**：提供應該推送通知的網站 URL。例如，`https://www.acmebanks.com`。
+		- **Website Push ID**：使用 Website Push ID 的反向網域字串來更新。例如，`web.com.example.www`。
+		- **網站 URL**：提供應該推送通知的網站 URL。例如 `https://www.example.com`。
 		- **容許的網域**：（選用參數）要求使用者許可權的網站清單。請確定 URL 是以逗點區隔的值。若未提供資訊，則會使用網站 URL 中的值。
-		- **URL 格式字串**：按一下通知時要解析的 URL。例如，["`https://www.acmebanks.com`"]。確定 URL 使用 http 或 https 綱目。
+		- **URL 格式字串**：按一下通知時要解析的 URL。例如 `https://www.example.com`。確定 URL 使用 http 或 https 綱目。
 		-**Safari Web 推送憑證**：上傳 `.p12` 憑證並提供密碼。
 4. 按一下**儲存**。
-	![{{site.data.keyword.mobilepushshort}} 主控台](images/push_configure_safari.jpg)
+
+  ![{{site.data.keyword.mobilepushshort}} 主控台](images/push_configure_safari.jpg "推送通知 Web 配置")
 
 ## 步驟 4. 設定服務 Client SDK
 {: #service-client-push}
@@ -102,16 +103,19 @@ subcollection: swift
 
 1. 選取**傳送通知**，然後選擇**傳送至**選項來編寫訊息。支援的選項為**依據標籤的裝置**、**裝置 ID**、**使用者 ID**、**iOS 裝置**、**Web 通知**以及**所有裝置**。**附註**：當您選取**所有裝置**選項時，訂閱 {{site.data.keyword.mobilepushshort}} 的所有裝置都會收到通知。
 
-	![通知畫面](images/tag_notification.jpg)
+  ![傳送通知畫面](images/tag_notification.jpg "傳送通知畫面")
 
 2. 在**訊息**欄位中，編寫訊息。視需要選擇配置選用設定。
 3. 按一下**傳送**。
 3. 驗證您的裝置或瀏覽器已接收到通知。
 
-下列畫面擷取顯示裝置前景中處理推送通知的警示方框。
-	![Android 上的前景推送通知](images/Android_Screenshot.jpg)
-下列畫面擷取顯示背景中的推送通知。
-	![Android 上的背景推送通知](images/background.png)
+  下列畫面擷取顯示裝置前景中處理推送通知的警示方框。
+  
+  ![Android 上的前景推送通知](images/Android_Screenshot.jpg "前景通知警示")
+
+  下列畫面擷取顯示背景中的推送通知。
+  
+  ![iOS 上的背景推送通知](images/background.png "背景通知警示")
 
 ### 選用設定
 {: #optional-push}
@@ -133,10 +137,10 @@ subcollection: swift
 ## 後續步驟
 {: #next-push notoc}
 
- - 若要進一步瞭解服務並充分運用所有特性，請閱讀我們的[文件](/docs/services/mobilepush/c_overview_push.html#overview-push)。
+ - 若要進一步瞭解服務並充分運用所有特性，請閱讀我們的[文件](/docs/services/mobilepush?topic=mobile-pushnotification-overview-push)。
 
- - 如需使用「行動」服務及 {{site.data.keyword.cloud_notm}} 的簡介，請參閱[開始使用 {{site.data.keyword.cloud_notm}} 上的行動應用程式](/docs/services/mobile/index.html)。
+ - 如需使用行動服務和 {{site.data.keyword.cloud_notm}} 的簡介，請參閱 [{{site.data.keyword.cloud_notm}} 上的行動應用程式開始使用](/docs/services/mobile?topic=mobile-about)。
 
- - 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中的可用入門範本套件。下載程式碼。執行應用程式！
+ - 「入門範本套件」是使用 {{site.data.keyword.cloud_notm}} 特性最快的方式之一。請檢視[行動開發人員儀表板](https://{DomainName}/developer/mobile/dashboard){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 中的可用入門範本套件。下載程式碼。執行應用程式！
 
- - 您可以使用 [Swagger 使用者介面](https://mobile.ng.bluemix.net/imfpush/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，來快速檢閱 REST API 文件。
+ - 您可以使用 [Swagger 使用者介面](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/rest-apis/){: new_window} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")，來快速檢閱 REST API 文件。
