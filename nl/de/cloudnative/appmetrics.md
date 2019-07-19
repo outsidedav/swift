@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: swiftmetrics-dash, swiftmetrics, prometheus swift, application metrics swift, swift performance, slow swift, swift dashboard, metris swift
 
@@ -21,7 +21,7 @@ subcollection: swift
 {: #metrics}
 
 Anwendungsmetriken sind wichtig, um die Leistung Ihrer Anwendung zu
-überwachen. Eine Live-Ansicht von Metriken wie CPU-, Speicher-, Latenzzeit- und HTTP-Metriken ist notwendig, um sicherzustellen, dass Ihre Anwendung jederzeit effektiv ausgeführt wird. Kubernetes und Cloud Foundry-Services wie [autoscaling](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started) basieren auf Metriken, um zu ermitteln, wann Instanzen aufgrund der Arbeitslast dynamisch hinzugefügt oder entfernt werden sollen, und bereinigen Instanzen, die nicht mehr benötigt werden, um Kosten zu sparen.
+überwachen. Eine Live-Ansicht von Metriken wie CPU-, Speicher-, Latenzzeit- und HTTP-Metriken ist notwendig, um sicherzustellen, dass Ihre Anwendung jederzeit effektiv ausgeführt wird. Kubernetes- und Cloud Foundry-Services wie [autoscaling](/docs/services/Auto-Scaling?topic=Auto-Scaling-get-started) verwenden Metriken, um zu ermitteln, wann Instanzen aufgrund der Arbeitslast dynamisch hinzugefügt bzw. entfernt oder nicht mehr benötigte Instanzen bereinigt werden sollen, um Kosten zu sparen. 
 
 Anwendungsmetriken werden als Zeitreihendaten erfasst. Das Zusammenfassen und Visualisieren von erfassten Metriken kann Sie bei der Erkennung allgemeiner
 Leistungsprobleme unterstützen. Beispiele:
@@ -78,10 +78,7 @@ let smd = try SwiftMetricsDash(swiftMetricsInstance : metrics)
 ```  
 {: codeblock}
 
-`SwiftMetricsDash` startet standardmäßig einen eigenen
-Kitura-Server und stellt die Seite unter
-der Adresse `http://<hostname>:<port>/swiftmetrics-dash`
-bereit. Wenn Sie auf das Dashboard zugreifen, werden Ihre neuen
+`SwiftMetricsDash` startet standardmäßig einen eigenen Kitura-Server und stellt die Seite unter `http://<hostname>:<port>/swiftmetrics-dash` bereit. Wenn Sie auf das Dashboard zugreifen, werden Ihre neuen
 Anwendungsmetriken inklusive HTTP-Anforderungen und Ereignisschleifenlatenz
 angezeigt.
 

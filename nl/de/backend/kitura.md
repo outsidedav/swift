@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-21"
+lastupdated: "2019-06-19"
 
 keywords: foodtrackerbackend, kitura swift, urlsession sdk, alamofire, restkit, kiturakit, kitura, xcode kitura, meals swift, rest api kitura, rest api swift
 
@@ -20,7 +20,7 @@ subcollection: swift
 # App mit Kitura erstellen
 {: #kitura}
 
-[Kitura](http://www.kitura.io){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") ist ein serverseitiges Swift-Framework für die Erstellung von iOS-Back-End-Programmen und -Webanwendungen. Dieses Framework erstellt REST-APIs, die von der iOS-Anwendung aus mithilfe von SDKs für URL-Sitzungen (z. B. Alamofire, RestKit oder das von Kitura selbst bereitgestellte SDK [KituraKit](https://github.com/ibm-swift/kiturakit){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")) aufgerufen werden können.
+[Kitura](https://www.kitura.io){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") ist ein serverseitiges Swift-Framework für die Erstellung von iOS-Back-End-Programmen und -Webanwendungen. Dieses Framework erstellt REST-APIs, die von der iOS-Anwendung aus mithilfe von SDKs für URL-Sitzungen (z. B. Alamofire, RestKit oder das von Kitura selbst bereitgestellte SDK [KituraKit](https://github.com/ibm-swift/kiturakit){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")) aufgerufen werden können.
 
 Kitura kann bei allen Services und Funktionen, die von
 {{site.data.keyword.cloud}} bereitgestellt werden (inklusive
@@ -55,7 +55,7 @@ sind:
 {: #create_kitura}
 
 1. Navigieren Sie in der Entwicklerkonsole für Apple zum Abschnitt
-mit den Starter-Kits. Wählen Sie ein vordefiniertes Starter-Kit wie z. B. 'Swift for Backend for Frontend API' aus oder erstellen Sie nach Auswahl der Kachel **App erstellen** eine angepasste App. Klicken Sie auf **App erstellen**.
+mit den Starter-Kits. Wählen Sie ein vordefiniertes Starter-Kit wie **Swift for Backend for Frontend API** aus oder erstellen Sie nach Auswahl der Kachel **App erstellen** eine angepasste App. Klicken Sie auf **App erstellen**.
 
 2. Geben Sie Ihrer App einen Namen und wählen Sie die Position aus, an der Ihre App bereitgestellt werden soll. Wenn Sie sich hinsichtlich der
 Position, an der die Anwendung bereitgestellt werden soll, unsicher sind,
@@ -66,14 +66,7 @@ angezeigt, die die URL für die Anwendung bilden. Verwenden Sie bei Unsicherheit
 die Standardwerte; Sie können auch Ihre eigene angepasste Domäne aus einem
 Domänenprovider angeben, in der sich die Anwendung befinden soll.
 
-4. Für die REST-API, die Sie erstellen wollen, können Sie eine Open
-API-Definition (auch "Swagger" genannt) angeben. Falls eine solche Definition
-vorhanden ist, wird eine REST-API erstellt, die die entsprechenden
-Handlerfunktionen in Kitura enthält. Wenn Sie nicht über eine Open
-API-Definition verfügen, stellt dies kein Problem dar, denn mit den Router-APIs
-von Kitura können Sie ohne großen Aufwand REST-APIs manuell erstellen.
-
-5. Klicken Sie auf **App erstellen**.
+4. Klicken Sie auf **App erstellen**.
 
 Es wird eine App erstellt, die jedoch noch keine zusätzlichen Services nutzt. Sie können Services hinzufügen, indem Sie auf die Schaltfläche **Service hinzufügen** oder **Code herunterladen** klicken, um den Code für die App abzurufen. Zu einer vorhandenen App können ohne großen Aufwand auch Services hinzugefügt werden.
 
@@ -123,11 +116,11 @@ in der Symbolleiste auf den Abschnitt
 gestartet wurde, können Sie überprüfen, ob die folgenden Standard-URLs für
 Kitura aktiv sind:
   * Kitura-Überwachung:
-[http://localhost:8080/swiftmetrics-dash/]()
+[http://localhost:8080/swiftmetrics-dash/](http://localhost:8080/swiftmetrics-dash/)
   * Kitura-Statusprüfung:
-[http://localhost:8080/health]()
+[http://localhost:8080/health](http://localhost:8080/health)
 
-## Schritt 4. REST-APIs hinzufügen 
+## Schritt 4. REST-APIs hinzufügen
 {: #add_restapi-kitura}
 
 Das Gerüst eines Kitura-Servers wird erstellt, das jedoch keine
@@ -193,7 +186,7 @@ aus.
 
   Sie können die REST-API mit der folgenden URL testen:  
   ```swift
-  * `GET /meals`:	[http://localhost:8080/meals]()
+  * `GET /meals`:	[http://localhost:8080/meals](http://localhost:8080/meals)
   ```
   {: codeblock}
 

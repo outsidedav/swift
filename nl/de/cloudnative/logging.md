@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-10"
 
 keywords: swift logging, ios logging, debug swift, add logging swift, heliumlogger swift, loggerapi swift, logger swift, starter kit swift logger
 
@@ -73,7 +73,7 @@ erzeugt:
 ```
 {: screen}
 
-Diese Nachrichten befinden sich lokal in `stdout` oder in den Protokollen für [CloudFoundry](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs)- und [Kubernetes](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window}-Bereitstellungen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link"), auf die mit dem Befehl `ibmcloud app logs --recent <APP_NAME>` bzw. `kubectl logs <deployment name>` zugegriffen wird.
+Diese Nachrichten befinden sich lokal in `stdout` (Standardausgabe) oder in den Protokollen für Cloud Foundry- und Kubernetes-Bereitstellungen, auf die mit `[ibmcloud app logs --recent <APP_NAME>]`(/docs/cli/reference?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_logs) und `[kubectl logs <deployment name>`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") zugegriffen wird. 
 
 In der Datei `/Sources/AppName/main.swift` ist der
 folgende Code enthalten:
@@ -91,11 +91,11 @@ protokolliert werden.
 {: #next-logging notoc}
 
 Erfahren Sie mehr über das Anzeigen von Protokollen in Ihren einzelnen Bereitstellungszielen:
-* [Kubernetes-Protokolle](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
+* [Kubernetes-Protokolle](https://kubernetes.io/docs/concepts/cluster-administration/logging/#basic-logging-in-kubernetes){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
 * [Cloud
 Foundry-Protokolle](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_cli)
 * [Cloud Foundry Enterprise Environment - Prüfung und Protokollierung](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
-* [{{site.data.keyword.openwhisk}} Protokolle & Überwachung](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
+* [Protokolle & Überwachung in {{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-logs)
 
 Hier erfahren Sie, wie Sie einen Protokollaggregator implementieren und verwenden:
 * [{{site.data.keyword.cloud_notm}}-Protokollanalyse](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: develop swift, swift local, service credentials swift, developer tools swift, swift cli, ibmcloud build swift, ibmcloud swift
 
@@ -26,7 +26,7 @@ führen Sie über {{site.data.keyword.dev_cli_short}}
 mithilfe von Standardbefehlen aus. 
 
 Mit {{site.data.keyword.dev_cli_short}} können Sie über ein
-Dutzend Befehle für die Verwaltung Ihrer serverseitigen Anwendungen nutzen. Weitere Informationen zu den verschiedenen Befehlen enthält der Abschnitt [`ibmcloud dev`-Befehle der {{site.data.keyword.dev_cli_notm}}-Befehlszeilenschnittstelle](/docs/cli/idt?topic=cloud-cli-idt-cli#idt-cli).
+Dutzend Befehle für die Verwaltung Ihrer serverseitigen Anwendungen nutzen. Weitere Informationen zu den verschiedenen Befehlen finden Sie in [`ibmcloud dev`-Befehle der {{site.data.keyword.dev_cli_notm}}-Befehlszeilenschnittstelle](/docs/cli/idt?topic=cloud-cli-idt-cli). 
 
 ## Vorbereitende Schritte
 {: #prereqs-local}
@@ -39,7 +39,7 @@ curl -sL https://ibm.biz/idt-installer | bash
 ```
 {: codeblock}
 
-Weitere Informationen zum Konfigurieren und zur Verwendung der {{site.data.keyword.dev_cli_notm}} finden Sie unter [{{site.data.keyword.dev_cli_notm}}-Befehlszeilenschnittstelle einrichten](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+Weitere Informationen zur Konfiguration und Verwendung der {{site.data.keyword.dev_cli_notm}} finden Sie in [{{site.data.keyword.dev_cli_notm}}-Befehlszeilenschnittstelle einrichten](/docs/cli?topic=cloud-cli-getting-started). 
 
 ## Serviceberechtigungsnachweise abrufen
 {: #credentials-local}

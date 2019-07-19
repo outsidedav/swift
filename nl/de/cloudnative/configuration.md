@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-13"
 
 keywords: swift-cfenv, service bindings swift, environment swift, swift configuration, cloudenvironment swift, VCAP_SERVICES swift, swift credentials
 
@@ -16,6 +16,7 @@ subcollection: swift
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:note: .note}
 
 # Swift-Umgebung konfigurieren
 {: #configuration}
@@ -56,7 +57,7 @@ Portierbarkeit für Swift-Apps, damit diese auf vielen Bereitstellungsplattform 
 Swift-Anwendungen hinzufügen
 {: #addcloud-env}
 
-Der Pfad für die Abstraktion von Umgebungswerten kann von Cloudumgebung zu Cloudumgebung unterschiedlich sein. In der Bibliothek [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment.git){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") sind die Umgebungskonfigurationen und Berechtigungsnachweise verschiedener Cloud-Anbieter in abstrahierter Form enthalten, sodass Ihre Swift-App bei einer lokalen Ausführung bzw. einer Ausführung in Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} oder virtuellen Instanzen konsistent auf die Informationen zugreifen kann. Die Abstraktion der Berechtigungsnachweise wird von der Bibliothek `CloudEnvironment` bereitgestellt, die intern [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") für die Cloud Foundry-Konfiguration und [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") als Konfigurationsmanager verwendet.
+Der Pfad für die Abstraktion von Umgebungswerten kann von Cloudumgebung zu Cloudumgebung unterschiedlich sein. In der Bibliothek [CloudEnvironment](https://github.com/IBM-Swift/CloudEnvironment){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") sind die Umgebungskonfigurationen und Berechtigungsnachweise verschiedener Cloud-Anbieter in abstrahierter Form enthalten, sodass Ihre Swift-App bei einer lokalen Ausführung bzw. einer Ausführung in Cloud Foundry, Cloud Foundry Enterprise Environment, Kubernetes, {{site.data.keyword.openwhisk}} oder virtuellen Instanzen konsistent auf die Informationen zugreifen kann. Die Abstraktion der Berechtigungsnachweise wird von der Bibliothek `CloudEnvironment` bereitgestellt, die intern [Swift-cfenv](https://github.com/IBM-Swift/Swift-cfenv){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") für die Cloud Foundry-Konfiguration und [Configuration](https://github.com/IBM-Swift/Configuration){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") als Konfigurationsmanager verwendet.
 
 Mithilfe der Bibliothek `CloudEnvironment` können Sie
 maschinennahe Details aus dem Anwendungsquellcode abstrahieren, indem Sie einen
@@ -189,10 +190,15 @@ Weitere Informationen zur Datei `mappings.json` enthält
 der Abschnitt [Wissenswertes über
 Serviceberechtigungsnachweise](#service_creds).
 
-## Swift-Konfigurationsmanager aus Starter-Kit-Apps heraus verwenden
+## Swift-Konfigurationsmanager von Starter-Kit-Apps verwenden
 {: #configmanager-swift}
 
-Mit [Starter-Kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") erstellte Swift-Apps besitzen automatisch die Berechtigungsnachweise und die Konfiguration, die zur lokalen Ausführung wie auch zur Ausführung in vielen Cloudbereitstellungszielen (wie Cloud Foundry, Kubernetes, VSI und Functions) benötigt werden. Die
+Mit [Starter-Kits](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") erstellte Swift-Apps werden automatisch mit Berechtigungsnachweisen und Konfigurationen ausgestattet, die für die lokale Ausführung sowie die Ausführung in vielen Cloudbereitstellungszielen benötigt werden, z. B. [Kubernetes](/docs/containers?topic=containers-getting-started), [Cloud Foundry](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf), [{{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-about), [Virtual Server (VSI)](/docs/vsi?topic=virtual-servers-getting-started-tutorial) oder [{{site.data.keyword.openwhisk_short}}](/docs/openwhisk?topic=cloud-functions-getting_started). 
+
+  VSI-Bereitstellung ist für einige Starter-Kits verfügbar. Wenn Sie diese Funktion verwenden möchten, rufen Sie das [{{site.data.keyword.cloud_notm}}-Dashboard](https://{DomainName}) auf und klicken Sie auf **App erstellen** in der Kachel **Apps**.
+  {: note}
+
+Die
 Basiserstellung des Konfigurationsmanagers finden Sie in der Datei
 `Sources/Application/Application.swift`. Wenn Sie eine
 Starter-Kit-App auf Swift-Basis mit Services erstellen, wird automatisch der

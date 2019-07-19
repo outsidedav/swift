@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-13"
 
 keywords: deploy swift app, deploy swift, serverless swift, deploy swift cloud foundry, swift kubernetes, swift virtual server
 
@@ -16,6 +16,7 @@ subcollection: swift
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:note: .note}
 
 # Swift-Apps bereitstellen und integrieren
 {: #deploy_apps-swift}
@@ -59,31 +60,32 @@ Weitere Informationen finden Sie unter
 [Back-End-Services mit einem
 generierten SDK integrieren](/docs/swift/backend?topic=swift-sdkgen-cli#sdkgen-cli).
 
-## Anwendung in einem Kubernetes-Cluster bereitstellen
+## In einem Kubernetes-Cluster bereitstellen
 {: #deploy_kube-swift}
 
 Sie können erlernen, wie Sie mit dem Kubernetes-Service von {{site.data.keyword.cloud_notm}} eine containerisierte App bereitstellen können, die Watson Tone Analyzer nutzt. In dem
 beschriebenen Szenario verwendet eine fiktive PR-Firma
 den {{site.data.keyword.cloud_notm}}-Service, um ihre Pressemitteilungen
 zu analysieren und eine Rückmeldung auf den Tonfall ihrer Nachrichten zu
-erhalten. Weitere Informationen bietet das Lernprogramm [Apps in Kubernetes-Clustern bereitstellen](/docs/containers?topic=containers-cs_apps_tutorial#cs_apps_tutorial).
+erhalten. Weitere Informationen finden Sie im Lernprogramm [Apps in Kubernetes-Clustern bereitstellen](/docs/containers?topic=containers-cs_apps_tutorial). 
 
-## Anwendung in Cloud Foundry bereitstellen
+## In Cloud Foundry bereitstellen
 {: #swift-deploy-cf}
 
 Mit dieser Option wird die cloudnative App bereitgestellt, ohne dass Sie die zugrunde liegende Infrastruktur verwalten müssen.
 
-Wenn Sie die App in [{{site.data.keyword.cfee_full}}](/docs/cloud-foundry?topic=cloud-foundry-about#about) bereitstellen möchten, müssen Sie [Ihr {{site.data.keyword.cloud_notm}}-Konto vorbereiten](/docs/cloud-foundry?topic=cloud-foundry-prepare#prepare).
+Wenn Sie die App in [{{site.data.keyword.cfee_full}}](/docs/cloud-foundry?topic=cloud-foundry-about) bereitstellen möchten, müssen Sie [Ihr {{site.data.keyword.cloud_notm}}-Konto vorbereiten](/docs/cloud-foundry?topic=cloud-foundry-prepare).
 
-Wenn Ihr Konto über Zugriff auf {{site.data.keyword.cfee_full_notm}} verfügt, können Sie als Bereitstellertyp entweder **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** oder **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)** auswählen, das zum Erstellen und Verwalten isolierter Umgebungen für das exklusive Hosting von Cloud Foundry-Anwendungen für Ihr Unternehmen verwendet werden kann.
+Wenn Ihr Konto über Zugriff auf {{site.data.keyword.cfee_full_notm}} verfügt, können Sie als Bereitstellertyp entweder **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf)** oder **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee)** auswählen, das zum Erstellen und Verwalten isolierter Umgebungen für das exklusive Hosting von Cloud Foundry-Anwendungen für Ihr Unternehmen verwendet werden kann.
 
-## Anwendung in einem virtuellen Server bereitstellen
+## Auf einem virtuellen Server bereitstellen
 {: #virtual_deploy-swift}
 
 Ein virtueller Service bietet für alle Workloadtypen ein höheres Maß an
 Transparenz, Vorhersagbarkeit und Automatisierung. Mit Terraform kann Ihre
 Infrastruktur sicher und effizient aufgebaut, geändert und versioniert werden.
 
-Weitere Informationen enthält der Abschnitt
-[Anwendung in einem virtuellen Server
-bereitstellen](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy).
+  VSI-Bereitstellung ist für einige Starter-Kits verfügbar. Wenn Sie diese Funktion verwenden möchten, rufen Sie das [{{site.data.keyword.cloud_notm}}-Dashboard](https://{DomainName}) auf und klicken Sie auf **App erstellen** in der Kachel **Apps**.
+  {: note}
+
+Weitere Informationen finden Sie in [Auf einem virtuellen Server bereitstellen](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server). 

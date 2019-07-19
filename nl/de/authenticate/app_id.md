@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-19"
 
 keywords: authentication swift, security swift, forgot password swift, social swift, identity provider swift, tentantid swift, cloud directory swift
 
@@ -55,7 +55,7 @@ erstellen
 
 Stellen Sie eine Instanz des {{site.data.keyword.appid_short_notm}}-Service bereit:
 
-1. Wählen Sie {{site.data.keyword.appid_short_notm}} im [{{site.data.keyword.cloud_notm}}-Katalog](https://cloud.ibm.com/catalog/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") aus. Die Anzeige für die Servicekonfiguration wird geöffnet.
+1. Wählen Sie {{site.data.keyword.appid_short_notm}} im [{{site.data.keyword.cloud_notm}}-Katalog](https://{DomainName}/catalog){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") aus. Die Anzeige für die Servicekonfiguration wird geöffnet.
 2. Vergeben Sie für die Serviceinstanz einen Namen oder verwenden Sie den voreingestellten Namen.
 3. Wählen Sie Ihren Preistarif aus und
 klicken Sie auf **Erstellen**.
@@ -113,36 +113,17 @@ Ihrer Datei `AppDelegate.swift` hinzu.
   ```
   {: codeblock}
 
-4. Übergeben Sie die Parameter `tenant ID` und `region`, um die SDK zu initialisieren. Eine gängige, aber nicht verbindliche Position für den Code ist
+4. Übergeben Sie die Parameter `tenantID` und `AppID_region`, um das SDK zu initialisieren. Eine gängige, aber nicht verbindliche Position für den Code ist
 die Methode `application:didFinishLaunchingWithOptions` von `AppDelegate` in Ihrer App.
   ```swift
-  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <region>);
+  AppID.getInstance().initialize(getApplicationContext(), <tenantId>, <AppID_region>);
   ```
   {: codeblock}
   
-  <table>
-    <thead>
-      <th colspan=2><img src="images/idea.png" alt=""/> Wissenswertes zu den Befehlskomponenten </th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><em>tenantID</em></td>
-        <td>Die Tenant-ID ist eine eindeutige Kennung, die zum Initialisieren
-Ihrer App verwendet wird. Der Wert ist im
-{{site.data.keyword.appid_short_notm}}-Dashboard zu finden. Klicken Sie
-auf der Registerkarte
-<b>Serviceberechtigungsnachweise</b> auf <b>Berechtigungsnachweise anzeigen</b>.</td>
-      </tr>
-      <tr>
-        <td><em>AppID_region</em></td>
-        <td>Die {{site.data.keyword.appid_short_notm}}-Region ist die {{site.data.keyword.cloud_notm}}-Region, in der Sie mit dem Service arbeiten. Diese Region ist im
-Service-Dashboard zu finden und kann <em>AppID.REGION_US_SOUTH</em>,
-<em>AppID.REGION_SYDNEY</em> oder <em>AppID.REGION_UK</em> lauten.</td>
-      </tr>
-    </tbody>
-  </table>
+  * `tenantID`: Die Tenant-ID ist eine eindeutige Kennung, die zum Initialisieren Ihrer App verwendet wird. Sie können den Wert im {{site.data.keyword.appid_short_notm}}-Dashboard aufrufen, indem Sie die Registerkarte **Serviceberechtigungsnachweise** auswählen und anschließend auf **Berechtigungsnachweise anzeigen** klicken. 
+  * `AppID_region`: Die {{site.data.keyword.appid_short_notm}}-Region ist die {{site.data.keyword.cloud_notm}}-Region, in der Sie mit dem Service arbeiten. Diese Region ist im Service-Dashboard zu finden und kann `AppID.REGION_US_SOUTH`, `AppID.REGION_SYDNEY` oder `AppID.REGION_UK` lauten. 
 
-5. Fügen Sie den folgenden Code zu Ihrer AppDelegate-Datei hinzu.
+5. Fügen Sie Ihrer Datei `AppDelegate` den folgenden Code hinzu.
     ```swift
     func application(_ application: UIApplication, open url: URL, options :[UIApplicationOpenURLOptionsKey : Any]) -> Bool {
             return AppID.sharedInstance.application(application, open: url, options: options)
@@ -209,7 +190,6 @@ Anmeldewidget mit Ihrer App aufzurufen.
     ```
     {: codeblock}
 
-
 ### Cloudverzeichnis
 {: #cloud-dir-appid}
 
@@ -229,7 +209,7 @@ die Registerkarte **Identitätsprovider verwalten** und legen
 Sie für das Cloudverzeichnis die Einstellung **Ein** fest.
 2. Konfigurieren Sie Ihre
 [Verzeichnis- und
-Nachrichteneinstellungen](/docs/services/appid/cloud-drectory.html).
+Nachrichteneinstellungen](/docs/services/appid?topic=appid-cloud-directory).
 4. Wählen Sie die Kombinationen der Anmeldeanzeigen aus, die angezeigt
 werden sollen, und geben Sie den Code für den Aufruf dieser Anzeigen in Ihrer
 Anwendung an.
@@ -343,7 +323,7 @@ Anmeldewidget im {{site.data.keyword.appid_short_notm}}-Dashboard.
 4. Wiederholen Sie die Schritte 1 und 2, um die sofort implementierten
 Änderungen anzuzeigen. Aktualisierungen des App-Codes sind nicht erforderlich.
 
-Falls Probleme auftreten, finden Sie im Abschnitt [Fehlerbehebung bei {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-troubleshooting#troubleshooting) weitere Informationen.
+Gibt es Probleme? Werfen Sie einen Blick in den Abschnitt zur [Fehlerbehebung von {{site.data.keyword.appid_short_notm}}](/docs/services/appid?topic=appid-troubleshooting).
 
 ## Nächste Schritte
 {: #next-appid notoc}
@@ -355,4 +335,4 @@ Sie gleich eine der folgenden Optionen aus:
 {{site.data.keyword.appid_short_notm}} in der
 [Dokumentation](/docs/services/appid?topic=appid-getting-started#getting-started). Dort
 erfahren Sie auch, wie Sie alle gebotenen Funktionen nutzen können.
-* Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.
+* Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://{DomainName}/developer/mobile/dashboard){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") werden die verfügbaren Starter-Kits angezeigt. Laden Sie den Code herunter. Führen Sie die App aus! 

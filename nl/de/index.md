@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: getting started swift, custom app, create app swift, stater kit swift, apple app swift, swift dependency, ios development
 
@@ -19,7 +19,7 @@ subcollection: swift
 {:note: .note}
 
 # Lernprogramm zur Einführung
-{: #getting_started_swift}
+{: #getting-started}
 
 {{site.data.keyword.cloud}} bietet Lösungen und Services, mit denen Swift-Entwickler Anwendungen erstellen können, die dem Kundenbedarf an Sicherheit, künstlicher Intelligenz (KI) und Wertschöpfung Rechnung tragen. Dank eines
 breit aufgestellten Portfolios von Produktangeboten und SDKs können Sie durch
@@ -30,7 +30,7 @@ gleich, ob es sich um einen iOS-Client oder eine serverseitige Swift-Anwendung
 handelt.
 {: shortdesc}
 
-Das folgende Lernprogramm zeigt Ihnen, wie Sie mit {{site.data.keyword.mobileanalytics_full}} durch die Verwendung eines leeren Starter-Kits aus der [{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") ohne großen Aufwand eine mobile Swift-App erstellen können. Ausgehend von der Konsole fügen Sie den
+Das folgende Lernprogramm zeigt Ihnen, wie Sie mit {{site.data.keyword.mobileanalytics_full}} durch die Verwendung eines leeren Starter-Kits aus der [{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") ohne großen Aufwand eine mobile Swift-App erstellen können. Ausgehend von der Konsole fügen Sie den
 {{site.data.keyword.mobileanalytics_short}}-Service hinzu und laden den
 Code herunter. Anschließend können Sie die iOS-App lokal in Xcode ausführen,
 konfigurieren und überwachen.
@@ -54,7 +54,7 @@ iOS-Releases zu nutzen. Melden Sie sich für ein [Apple Developer](https://devel
 
 - Installieren Sie [Xcode 8+](https://developer.apple.com/xcode/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") (oder höher).
 - Führen Sie die Bereitstellung auf [Einheiten mit iOS 8](https://support.apple.com/downloads/ios){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") (oder höher) durch.
-- Prüfen Sie vor der Übergabe von Apps an Apple die [Richtlinien für die Übergabe an den App-Store](https://developer.apple.com/app-store/guidelines/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link").
+- Prüfen Sie vor der Übergabe von Apps an Apple die [Richtlinien für die Übergabe an den App-Store](https://developer.apple.com/app-store/resources/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link").
 
 ### SDKs und Abhängigkeitsmanagement
 {: #swift-sdk-management}
@@ -86,9 +86,9 @@ Verwendung mit den verschiedenen
 ## Schritt 2. Angepasste iOS-Swift-App erstellen
 {: #create-ios-app-swift}
 
-1. Melden Sie sich bei der [{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") an.
+1. Melden Sie sich bei der [{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") an.
 2. Klicken Sie auf **App erstellen**.
-3. Auf der Seite [Leerer Starter](https://cloud.ibm.com/developer/appledevelopment/create-app){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") können Sie die Standardkonfiguration verwenden oder die Felder wie erforderlich aktualisieren. Achten Sie darauf, dass
+3. Auf der Seite [Leerer Starter](https://{DomainName}/developer/appledevelopment/create-app){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") können Sie die Standardkonfiguration verwenden oder die Felder wie erforderlich aktualisieren. Achten Sie darauf, dass
 als Sprache **iOS Swift** ausgewählt ist. Klicken Sie auf **Erstellen**.
 
 ## Schritt 3. {{site.data.keyword.cloudant_short_notm}}-Service hinzufügen
@@ -144,7 +144,7 @@ Klicken Sie zum Herunterladen des Codes auf **Code herunterladen** unter `Apps` 
 ## Schritt 6. Eigene Datenbankoperationen erstellen
 {: #build_ops-swift}
 
-Sie verfügen nun über eine funktionierende Datenbankverbindung und SDK-Installation und können mit der Erstellung der grundlegenden [Erstell-, Lese-, Aktualisierungs- und Löschoperationen](/docs/swift/data?topic=swift-cloudant#cloudant) für Ihren jeweiligen Anwendungsfall beginnen.
+Sie verfügen nun über eine funktionierende Datenbankverbindung und SDK-Installation und können mit der Erstellung der grundlegenden [Erstell-, Lese-, Aktualisierungs- und Löschoperationen](/docs/swift/data?topic=swift-cloudant) für Ihren jeweiligen Anwendungsfall beginnen.
 
 ## Nächste Schritte
 {: #next-swift}
@@ -156,10 +156,10 @@ Direkt von der Konsole aus können Sie weitere Services zu Ihrer iOS-App
 hinzufügen, beispielsweise die folgenden häufig genutzten Services:
 
 * [Push-Benachrichtigungsservice
-hinzufügen](/docs/services/mobilepush?topic=mobile-pushnotification-gettingstartedtemplate#gettingstartedtemplate)
-* [Benutzerauthentifizierung mit App-ID hinzufügen](/docs/services/appid?topic=appid-getting-started#getting-started)
+hinzufügen](/docs/services/mobilepush?topic=mobile-pushnotification-gettingstartedtemplate)
+* [Benutzerauthentifizierung mit App-ID hinzufügen](/docs/services/appid?topic=appid-getting-started)
 
 ### {{site.data.keyword.cloud_notm}}-Entwicklertool verwenden
 {: #devtools-swift}
 
-Sie können auch lernen, wie Swift-Apps entwickelt werden, indem Sie die [{{site.data.keyword.cloud_notm}}-Entwicklertools](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) verwenden, die einen Befehlszeilenansatz zum Erstellen, Entwickeln und Bereitstellen von vollständigen Web-, Mobil- und Mikroserviceanwendungen bieten.
+Sie können auch lernen, wie Swift-Apps entwickelt werden, indem Sie die [{{site.data.keyword.cloud_notm}}-Entwicklertools](/docs/cli?topic=cloud-cli-getting-started) verwenden, die einen Befehlszeilenansatz zum Erstellen, Entwickeln und Bereitstellen von vollständigen Web-, Mobil- und Mikroserviceanwendungen bieten.

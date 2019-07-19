@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-06-12"
 
 keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
 
@@ -14,7 +14,7 @@ subcollection: swift
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
-{:gif: .gif}
+{:gif: data-image-type='gif'}
 {:tip: .tip}
 
 # Hoch verfügbare und sichere Datenbank erstellen
@@ -32,7 +32,7 @@ mit MongoKitten SDK 4.0.0 unterstützt.
 ## Schritt 1. Datenbankcluster erstellen
 {: #create_dbcluster}
 
-1. Rufen Sie die Anzeige [{{site.data.keyword.ihsdbaas_full}}-Servicekonfiguration](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") auf.
+1. Rufen Sie die Anzeige [{{site.data.keyword.ihsdbaas_full}}-Servicekonfiguration](https://{DomainName}/catalog/services/hyper-protect-dbaas){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") auf.
 
 2. Geben Sie die folgenden Informationen an:
 
@@ -95,7 +95,7 @@ Swift-Web-Framework "Kitura" basiert.
 
 Verwenden Sie ein vorhandenes Projekt, das aus diesem Starter-Kit erstellt wurde, oder erstellen Sie ein neues Projekt.
 
-1. Öffnen Sie das [{{site.data.keyword.cloud_notm}}-Dashboard für App-Services](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
+1. Öffnen Sie das [{{site.data.keyword.cloud_notm}}-Dashboard für App-Services](https://{DomainName}/developer/appservice/dashboard){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 2. Wählen Sie die Registerkarte **Starter-Kits** aus.
 
@@ -116,10 +116,7 @@ Projektseite wird angezeigt.
 ## Schritt 3. Verbindung zur Datenbank herstellen
 {: #connect_db}
 
-Um die Sicherheit der Datenübertragung zu gewährleisten, laden Sie
-die Datei der Zertifizierungsstelle unter der folgenden Adresse herunter und
-kopieren Sie sie in Ihr Projektverzeichnis:
-https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project directory.
+Um die Sicherheit der Datenübertragung zu erhöhen, laden Sie die Datei der Zertifizierungsstelle herunter und kopieren Sie sie in Ihr Projektverzeichnis. 
 
 1. Wechseln Sie in Ihr Projektverzeichnis, das die dekomprimierten
 Codedateien des Downloads enthält.
@@ -128,7 +125,7 @@ Codedateien des Downloads enthält.
 Ihre Zugriffsberechtigungsnachweise für den Datenbankcluster zu speichern.
 
 3. Geben Sie die Werte ein, die Sie in den Schritten im Abschnitt
-[Datenbankcluster erstellen](#create_dbcluster) gesammelt haben. Die Werte müssen in einer einzigen Zeile angegeben werden.
+[Datenbankcluster erstellen](/docs/swift?topic=swift-create-database-cluster#create_dbcluster) gesammelt haben. Die Werte müssen in einer einzigen Zeile angegeben werden.
   ```hljs
   {
   "uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
@@ -138,34 +135,16 @@ Ihre Zugriffsberechtigungsnachweise für den Datenbankcluster zu speichern.
   ```
   {: codeblock}
 
-  Hierbei gilt Folgendes:
-  <table>
-  <tr>
-    <th> Parameter </th>
-    <th> Beschreibung </th>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_ID</em>&gt; </td>
-    <td> Die Benutzer-ID des Datenbankadministrators, die Sie bei den Anweisungen im Abschnitt [Datenbankcluster erstellen](#create_dbcluster) angegeben haben.
-  </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_pwd</em>&gt; </td>
-    <td> Das Kennwort für die Benutzer-ID des Administrators, das Sie bei den Anweisungen im Abschnitt [Datenbankcluster erstellen](#create_dbcluster) angegeben haben. </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>Hostname_i</em>&gt; </td>
-    <td> Ein Datenbankreplikat <em>i</em> (<em>i</em>=1,2,3), das im Abschnitt [Datenbankcluster erstellen](create_dbcluster) zurückgegeben wurde. </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>PortNumber_i</em>&gt; </td>
-    <td> Eine Portnummer <em>i</em> (<em>i</em>=1,2,3), die im Abschnitt [Datenbankcluster erstellen](#create_dbcluster) zurückgegeben wurde. </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>CA_file</em>&gt; </td>
-    <td> Der Dateiname der heruntergeladenen Datei der Zertifizierungsstelle. Während der Bereitstellung wird diese Datei in das Verzeichnis `/swift-project` kopiert.</td>
-  </tr>
-  </table>
+### Beschreibungen der Datenbankparameter
+{: #db-parameter-descriptions}
+
+Beachten Sie die folgenden Beschreibungen der Datenbankparameter: 
+
+* `admin_ID` - Die Benutzer-ID des Datenbankadministrators, die in [Datenbankcluster erstellen](/docs/swift?topic=swift-create-database-cluster#create_dbcluster) angegeben wurde. 
+* `admin_pwd` - Das Kennwort der Benutzer-ID des Administrators, das in [Datenbankcluster erstellen](/docs/swift?topic=swift-create-database-cluster#create_dbcluster) angegeben wurde. 
+* `Hostname_i` - Ein Datenbankreplikat *i* (*i*=1, 2, 3), das in [Datenbankcluster erstellen](/docs/swift?topic=swift-create-database-cluster#create_dbcluster) zurückgegeben wurde. 
+* `PortNumber_i` - Eine Portnummer *i* (*i*=1, 2, 3), die in [Datenbankcluster erstellen](/docs/swift?topic=swift-create-database-cluster#create_dbcluster) zurückgegeben wurde. 
+* `CA_file` - Der Dateiname der heruntergeladenen Datei der Zertifizierungsstelle. Während der Bereitstellung wird diese Datei in das Verzeichnis `/swift-project` kopiert.
 
 4. Bearbeiten Sie die Datei `Package.swift` und fügen
 Sie Paketabhängigkeiten für die Verwendung des
@@ -284,6 +263,7 @@ Jetzt können Sie Ihren eigenen Anwendungscode zum Projekt hinzufügen. Weitere 
 Sie können die Anwendung mit den erforderlichen Build-Tools [lokal](/docs/swift?topic=swift-swift_cli#swift-install-tools) ausführen oder in {{site.data.keyword.cloud_notm}} bereitstellen.
 
 Klicken Sie zum Erstellen einer Toolchain für die Bereitstellung auf **Bereitstellen** im Dashboard. Richten Sie Ihr Bereitstellungsziel gemäß den Anweisungen für die von Ihnen gewählte Methode ein:
-  * **In [{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)** bereitstellen. Mit dieser Option wird ein Cluster mit Hosts erstellt, die als Workerknoten bezeichnet werden, um hoch verfügbare Anwendungscontainer bereitzustellen und zu verwalten. Sie können einen Cluster erstellen oder die Bereitstellung in einem vorhandenen Cluster vornehmen.
-  * **In Cloud Foundry bereitstellen**. Mit dieser Option wird die cloudnative App bereitgestellt, ohne dass Sie die zugrunde liegende Infrastruktur verwalten müssen. Wenn Ihr Konto über Zugriff auf {{site.data.keyword.cfee_full_notm}} verfügt, können Sie als Bereitstellertyp entweder **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** oder **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)** auswählen, das zum Erstellen und Verwalten isolierter Umgebungen für das exklusive Hosting von Cloud Foundry-Anwendungen für Ihr Unternehmen verwendet werden kann.
-  * **In einem [virtuellen Server](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)** bereitstellen. Mit dieser Option wird eine Instanz eines virtuellen Servers eingerichtet, ein Image mit Ihrer App geladen, eine DevOps-Toolchain erstellt und der erste Bereitstellungszyklus initiiert.
+  * **Bereitstellung in IBM Kubernetes Service**. Mit dieser Option wird ein Cluster mit Hosts erstellt, die als Workerknoten bezeichnet werden, um hoch verfügbare App-Container bereitzustellen und zu verwalten. Sie können einen Cluster erstellen oder die Bereitstellung in einem vorhandenen Cluster vornehmen. Weitere Informationen finden Sie in [Apps in Kubernetes-Clustern bereitstellen](/docs/containers?topic=containers-app). 
+  * **Bereitstellung in Cloud Foundry**. Mit dieser Option wird die cloudnative App bereitgestellt, ohne dass Sie die zugrunde liegende Infrastruktur verwalten müssen. Wenn Ihr Konto über Zugriff auf {{site.data.keyword.cfee_full_notm}} verfügt, können Sie als Bereitstellertyp entweder **Public Cloud** oder **Enterprise Environment** auswählen, das zum Erstellen und Verwalten isolierter Umgebungen für das exklusive Hosting von Cloud Foundry-Apps für Ihr Unternehmen verwendet werden kann. Weitere Informationen finden Sie in [Apps in Cloud Foundry Public bereitstellen](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps) und [Apps in {{site.data.keyword.cfee_full_notm}} bereitstellen](/docs/cloud-foundry?topic=cloud-foundry-deploy_apps). 
+  * **Bereitstellung auf einem virtuellen Server**. Mit dieser Option wird eine virtuelle Serverinstanz bereitgestellt, ein Image mit Ihrer App geladen, eine DevOps-Toolchain erstellt und der erste Bereitstellungszyklus initiiert. Weitere Informationen finden Sie in [Apps auf einem virtuellen Server bereitstellen](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server). 
+  

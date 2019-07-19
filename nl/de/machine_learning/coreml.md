@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-12"
 
 keywords: coreml swift, core ml swift, watson swift core, create model swift, image classification swift, version parameter swift, swift coreml watson
 
@@ -16,6 +16,7 @@ subcollection: swift
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:gif: data-image-type='gif'}
 
 # Core ML mit Watson nutzen
 {: #swift-coreml}
@@ -96,7 +97,7 @@ das Feld `defaultClassifierID` im Hauptansichtencontroller zu
 ohne Weiteres zusätzliche Klassen hinzufügen, die Ihre eigenen Bildbestände
 enthalten, um das Klassifikationsmerkmal zu erweitern.
 
-![Klassen hinzufügen](images/add_classes.png)
+![Klassen hinzufügen](images/add_classes.png "Service mit Watson Studio verknüpfen")
 
 3. Wählen Sie **Modell trainieren** aus und warten
 Sie, bis das Modell vollständig trainiert worden ist.
@@ -147,7 +148,7 @@ Die folgenden Beispiele unterstützen Sie beim Hinzufügen von {{site.data.keywo
   ```
   {: codeblock}
 
-  Ziehen Sie die [Dokumentation zu Versionsparametern](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") zu Rate oder verwenden Sie das Datum, an dem der Service {site.data.keyword.visualrecognitionshort}} erstellt wurde.
+  Ziehen Sie die [Dokumentation zu Versionsparametern](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") zu Rate oder verwenden Sie das Datum, an dem der Service {site.data.keyword.visualrecognitionshort}} erstellt wurde.
   {: tip}
 
 3. Fügen Sie den folgenden Code hinzu, um das lokale Core ML-Modell mit Ihrem Watson-Klassifikationsmerkmal herunterzuladen oder zu aktualisieren:
@@ -209,7 +210,7 @@ Gehen Sie zum Hinzufügen von
 {{site.data.keyword.visualrecognitionshort}} zu einem Starter-Kit wie
 folgt vor:
 
-1. Wählen Sie das [Starter-Kit](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link"), mit dem Sie arbeiten möchten.
+1. Wählen Sie das [Starter-Kit](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link"), mit dem Sie arbeiten möchten.
 2. Erstellen Sie die App mit den Standardservices.
 3. Klicken Sie auf **Service hinzufügen > Watson > {{site.data.keyword.visualrecognitionshort}}**.
 4. Laden Sie das Projekt herunter, indem Sie auf **Code herunterladen** klicken. Bei iOS-Projekten werden die

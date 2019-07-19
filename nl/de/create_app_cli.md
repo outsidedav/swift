@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-19"
 
 keywords: server-side swift, swift cli, swift dependency, swift commands app, create app swift
 
@@ -34,7 +34,7 @@ diese Aktionen unter Verwendung von
 {{site.data.keyword.dev_cli_long}} mit Standardbefehlen ausführen.
 
 Mit {{site.data.keyword.dev_cli_short}} können Sie über ein
-Dutzend Befehle für die Verwaltung Ihrer serverseitigen Anwendungen nutzen. Weitere Informationen zu den `ibmcloud dev`-Befehlen finden Sie unter [{{site.data.keyword.dev_cli_notm}}-Befehlszeilenschnittstelle](/docs/cli/idt?topic=cloud-cli-idt-cli#idt-cli).
+Dutzend Befehle für die Verwaltung Ihrer serverseitigen Anwendungen nutzen. Weitere Informationen zu den `ibmcloud dev`-Befehlen finden Sie unter [{{site.data.keyword.dev_cli_notm}}-Befehlszeilenschnittstelle](/docs/cli/idt?topic=cloud-cli-idt-cli).
 
 ## Schritt 1. Voraussetzungen für die Entwicklung
 {: #prereqs-swift-cli}
@@ -55,7 +55,7 @@ iOS-Releases zu nutzen. Melden Sie sich für ein [Apple Developer](https://devel
 
 - [Installieren Sie Xcode 8+ (oder höher)](https://developer.apple.com/xcode/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
 - [Führen Sie die Bereitstellung auf Einheiten mit iOS 8 (oder höher) durch](https://support.apple.com/downloads/ios){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
-- Prüfen Sie vor der Übergabe von Apps an Apple die [Richtlinien für die Übergabe an den App-Store](https://developer.apple.com/app-store/guidelines/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- Prüfen Sie vor der Übergabe von Apps an Apple die [Richtlinien für die Übergabe an den App-Store](https://developer.apple.com/app-store/resources/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
 
 ### SDKs und Abhängigkeitsmanagement
 {: #swift-cli-sdk-dependency}
@@ -64,7 +64,7 @@ Die folgenden Tools gewährleisten, dass Sie die nativen SDKs zur
 Verwendung mit den verschiedenen
 {{site.data.keyword.cloud_notm}}-Services installieren können.
 
-- [Installieren Sie CocoaPods für IBM Cloud-SDKs](https://cocoapods.org/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+- [CocoaPods für {{site.data.keyword.cloud_notm}}-SDKs installieren](https://cocoapods.org/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
   ```
   sudo gem install cocoapods
   ```
@@ -87,7 +87,7 @@ Verwendung mit den verschiedenen
 
 {{site.data.keyword.cloud}} stellt lokale Tools für die
 Befehlszeilenschnittstelle bereit, die Ihnen bei der Arbeit mit
-unterschiedlichen Aspekten von {{site.data.keyword.cloud_notm}} helfen. Weitere Informationen finden Sie in [{{site.data.keyword.dev_cli_long}}-Informationen](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). Sie können die Tools zum Testen eines Swift-Back-End-Programms vor der Cloudbereitstellung in einem
+unterschiedlichen Aspekten von {{site.data.keyword.cloud_notm}} helfen. Weitere Informationen finden Sie in [{{site.data.keyword.dev_cli_long}}-Informationen](/docs/cli?topic=cloud-cli-getting-started). Sie können die Tools zum Testen eines Swift-Back-End-Programms vor der Cloudbereitstellung in einem
 lokalen Docker-Image zu installieren.
 
 * Führen Sie bei Mac OS und Linux den folgenden Befehl aus:
@@ -120,7 +120,7 @@ Starter zu generieren.
   {: codeblock}
 
   Achten Sie darauf, sich zum Erstellen eines Projekts mit einem
-{{site.data.keyword.cloud_notm}}-Konto anzumelden. Erstbenutzer können sich für ein gebührenfreies Konto [registrieren](https://cloud.ibm.com/registration){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"). Melden Sie sich mit
+{{site.data.keyword.cloud_notm}}-Konto anzumelden. Erstbenutzer können sich für ein gebührenfreies Konto [registrieren](https://{DomainName}/registration){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"). Melden Sie sich mit
 dem Befehl `ibmcloud login` über die Befehlszeile an.
   {: tip}
 
@@ -154,21 +154,6 @@ folgenden Beispiel gezeigten Optionen 1, dann 6 und zuletzt 2 aus:
 3. Geben Sie einen Namen für Ihre Anwendung an:
   ```
   ? Enter a name for your application> swift_project
-  ```
-  {: screen}
-
-4. Wählen Sie aus, dass die Unterstützung von OpenAPI 2.0
-aktiviert werden soll:
-  ```
-  ? Enable your application based on an OpenAPI 2.0 Specification document? [y/n]> y
-  ```
-  {: screen}
-
-  Wenn die Unterstützung von OpenAPI 2.0 aktiviert ist, müssen Sie einen
-Pfad zum Dokument von
-OpenAPI 2.0 als URL angeben:
-  ```
-  ? Path to OpenAPI 2.0 document as a url (both yaml and json formats supported)> http://hostname.domain.com/path/to/file.json
 
   Generating application ...
   ```
@@ -229,7 +214,7 @@ Apple ermöglicht es
 Ihnen, {{site.data.keyword.cloud_notm}}-Services mit einer brandneuen
 App zügig auszuwerten und zu testen.
 
-Wollen Sie gleich loslegen? In der [{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") können Sie sofort anfangen.
+Wollen Sie gleich loslegen? In der [{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") können Sie sofort anfangen.
 {: tip}
 
 Weitere Informationen finden Sie im Abschnitt

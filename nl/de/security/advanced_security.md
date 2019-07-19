@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-17"
 
 keywords: swift security, add security swift, crypto swift, hyper protect swift, ios hyper protect, dbaas swift, swift key management, swift advanced security
 
@@ -30,7 +30,7 @@ dem höchsten branchenüblichen Sicherheitsniveau zu schützen.
 Als einfache Strategie können Sie
 {{site.data.keyword.cloud_notm}} HyperSecure Platform Services direkt für
 alle erweiterten Sicherheitsservices in {{site.data.keyword.cloud}}
-verwenden. Weitere Informationen finden Sie unter [Einführung in {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform/index.html#getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits).
+verwenden. Weitere Informationen finden Sie unter [Einführung in {{site.data.keyword.cloud_notm}} HyperSecure Platform Services](/docs/services/hypersecure-platform?topic=hypersecure-platform-getting-started-with-ibm-cloud-hyper-protect-developer-starter-kits).
 
 ## {{site.data.keyword.cloud_notm}}
 {{site.data.keyword.hscrypto}} verwenden
@@ -124,8 +124,8 @@ Isolation, um die Bereitstellung, den Betrieb, die Skalierung und die
 Überwachung von containerbasierten Apps in einem Cluster von Berechnungshosts
 zu automatisieren.
 
-{{site.data.keyword.hscontainers}} sind nur für Sponsorbenutzer verfügbar. Falls Sie eine dedizierte Unterstützung von Sicherheitsfunktionen erwarten, müssen Sie sich bei [IBM Z Client Feedback Program](https://www-01.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zcustomer.shtml){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") als Sponsorbenutzer registrieren, um Ihre Anwendung im {{site.data.keyword.hscontainers}}-Cluster bereitstellen zu können.
+{{site.data.keyword.hscontainers}} sind nur für Sponsorbenutzer verfügbar. Falls Sie eine dedizierte Unterstützung von Sicherheitsfunktionen erwarten, müssen Sie sich bei [IBM Z Client Feedback Program](https://www.ibm.com/marketing/iwm/iwmdocs/web/cc/earlyprograms/zwelcome.shtml){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") als Sponsorbenutzer registrieren, um Ihre Anwendung im {{site.data.keyword.hscontainers}}-Cluster bereitstellen zu können.
 {: tip}
 
 Solange Sie kein Sponsorbenutzer sind, können Sie Ihre Anwendung mit {{site.data.keyword.containershort_notm}} schützen. Weitere
-Informationen finden Sie unter [Einführung in {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-container_index#container_index).
+Informationen finden Sie unter [Einführung in {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-getting-started).

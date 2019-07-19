@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-24"
+lastupdated: "2019-06-21"
 
 keywords: push swift, swift notifications, push notifications swift, sending push swift, configure service instance swift, provider credentials swift
 
@@ -33,10 +33,10 @@ und Webanwendungen senden.
 Der {{site.data.keyword.mobilepushshort}}-Service kann entweder im Rahmen einer Starter-Boilerplate für MobileFirst-Services oder als [dedizierter Service](/docs/dedicated?topic=dedicated-dedicated#dedicated) von {{site.data.keyword.cloud_notm}} verwendet werden. Des Weiteren können
 Sie Ihre Clientanwendungen mithilfe eines
 SDK (Software-Development-Kit) und der
-[REST-APIs ](https://mobile.{DomainName}/imfpush/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
+[REST-APIs ](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/rest-apis/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
 weiterentwickeln.
 
-![Push-Operation im Überblick](images/push_notification_lifecycle.jpg) Abbildung 1. Lebenszyklus des {{site.data.keyword.mobilepushshort}}-Service
+![Übersicht über Push](images/push_notification_lifecycle.jpg "Übersicht über Push")
 
 ## Vorbereitende Schritte
 {: #prereqs-push}
@@ -71,7 +71,7 @@ anfordern
 Zur Einrichtung des Push Notifications-Service müssen Sie die
 erforderlichen Berechtigungsnachweise beim Apple Push Notification-Service
 (APNs) abrufen. Führen Sie die Schritte aus, die
-[hier ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](/docs/services/mobilepush/push_step_1.html#push_step_1_ios){: new_window} beschrieben sind, um Ihre APNs-Berechtigungsnachweise anzufordern und zu
+[hier ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](/docs/services/mobilepush?topic=mobile-pushnotification-push_step_1){: new_window} beschrieben sind, um Ihre APNs-Berechtigungsnachweise anzufordern und zu
 konfigurieren.
 
 
@@ -87,7 +87,7 @@ Sobald die Datei `.cer` Bestandteil Ihres
 Schlüsselkettenzugriffs ist, exportieren Sie sie auf Ihren Computer, um ein
 Zertifikat des Typs `.p12` zu erstellen.
 
-Weitere Informationen zur Verwendung der APNs finden Sie auf der Seite [iOS Developer Library: Local and Push Notification Programming Guide ](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
+Weitere Informationen zur Verwendung der APNs finden Sie auf der Seite [iOS Developer Library: Local and Push Notification Programming Guide ](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 Gehen Sie folgendermaßen vor, um APNs in der Konsole des Push Notification-Service zu konfigurieren:
 
@@ -99,11 +99,8 @@ Informationen im Formular **APNs-Berechtigungsnachweise für Push**
 zu aktualisieren.
 3. Wählen Sie eine der folgenden Optionen aus:
 	- Option **Mobil**
-		1. Wählen Sie **Sandbox** (Entwicklung) oder
-**Produktion** (Verteilung) aus und laden Sie anschließend
-das von Ihnen erstellte Zertifikat des Typs `p.12` hoch.
-		
-![Konfiguration der {{site.data.keyword.mobilepushshort}}-Konsole](images/wizard.jpg)
+		1. Wählen Sie **Sandbox** (Entwicklung) oder **Produktion** (Verteilung) aus und laden Sie anschließend das von Ihnen erstellte Zertifikat des Typs `p.12` hoch.
+    ![{{site.data.keyword.mobilepushshort}}-Konsole](images/wizard.jpg "Mobile Konfiguration für Push-Benachrichtigung")
 
 		2. Geben Sie im Feld **Kennwort** das Kennwort ein,
 das der Zertifikatsdatei `.p12` zugeordnet ist, und klicken
@@ -116,20 +113,21 @@ erforderlichen Informationen.
 angegebene Name der Website.
 		- **Push-ID für Website**: Aktualisieren Sie dieses
 Feld mit Ihrer Push-ID für die Website, bei der es sich um eine Zeichenfolge
-mit umgekehrter Domänenreihenfolge handelt. Beispiel: web.com.acmebanks.www.
+mit umgekehrter Domänenreihenfolge handelt. Beispiel: `web.com.example.www`. 
 		- **Website-URL**: Geben Sie die URL der Website
-an, die abonniert wurde, um Push-Benachrichtigungen zu erhalten. Beispiel: https://www.acmebanks.com.
+an, die abonniert wurde, um Push-Benachrichtigungen zu erhalten. Beispiel: `https://www.example.com`. 
 		- **Zulässige Domänen**: Dieser optionale Parameter
 definiert eine Liste von Websites, die vom Benutzer eine Berechtigung
 anfordern. Geben Sie die URLs als durch Kommas getrennte Werte an. Die Werte im
 Feld "Website-URL" werden verwendet, wenn die Information nicht angegeben wird.
 		- **Zeichenfolge für URL-Format**: Die URL, die
-aufgelöst werden soll, wenn auf die Benachrichtigung geklickt wird. Beispiel: ["https://www.acmebanks.com"]. Achten
+aufgelöst werden soll, wenn auf die Benachrichtigung geklickt wird. Beispiel: `https://www.example.com`. Achten
 Sie darauf, dass die URL das HTTP- oder das HTTPS-Schema verwendet.
 		-**Web-Push-Zertifikat für Safari**: Laden Sie das
 Zertifikat des Typs `.p12` hoch und geben Sie das Kennwort an.
 4. Klicken Sie auf **Speichern**.
-	![{{site.data.keyword.mobilepushshort}}-Konsole](images/push_configure_safari.jpg)
+
+  ![{{site.data.keyword.mobilepushshort}}-Konsole](images/push_configure_safari.jpg "Webkonfiguration für Push-Benachrichtigung")
 
 ## Schritt 4. Client-SDK für Service konfigurieren
 {: #service-client-push}
@@ -158,7 +156,7 @@ Geräte** auswählen, werden die Benachrichtigungen von allen Geräten
 empfangen, die
 {{site.data.keyword.mobilepushshort}} abonniert haben.
 
-	![Anzeige 'Benachrichtigungen'](images/tag_notification.jpg)
+  ![Anzeige zum Senden von Benachrichtigungen](images/tag_notification.jpg "Anzeige zum Senden von Benachrichtigungen")
 
 2. Erstellen Sie im Feld **Nachricht** Ihre
 Nachricht. Konfigurieren Sie die optionalen Einstellungen durch die
@@ -166,12 +164,14 @@ entsprechende Auswahl wie benötigt.
 3. Klicken Sie auf **Senden**.
 3. Überprüfen Sie, ob Ihre Geräte oder Browser die Benachrichtigung erhalten haben.
 
-Der folgende Screenshot zeigt ein Alertfeld, das eine
+  Der folgende Screenshot zeigt ein Alertfeld, das eine
 Push-Benachrichtigung auf dem Gerät im Vordergrund verarbeitet.
-	![Push-Benachrichtigung unter Android im Vordergrund](images/Android_Screenshot.jpg)
+  
+  ![Push-Benachrichtigung im Vordergrund unter Android](images/Android_Screenshot.jpg "Benachrichtigungsalert im Vordergrund")
 
-Der folgende Screenshot zeigt eine Push-Benachrichtigung im Hintergrund.
-	![Push-Benachrichtigung unter Android im Hintergrund](images/background.png)
+  Der folgende Screenshot zeigt eine Push-Benachrichtigung im Hintergrund.
+  
+  ![Push-Benachrichtigung im Hintergrund unter iOS](images/background.png "Benachrichtigungsalert im Hintergrund")
 
 ### Optionale Einstellungen
 {: #optional-push}
@@ -200,10 +200,10 @@ Der {{site.data.keyword.mobilepushshort}}-Service bietet ein
 ## Nächste Schritte
 {: #next-push notoc}
 
- - Weitere Informationen zum Service enthält die zugehörige [Dokumentation](/docs/services/mobilepush/c_overview_push.html#overview-push), in der Sie außerdem erfahren, wie Sie alle Funktionen nutzen können.
+ - Weitere Informationen zum Service enthält die zugehörige [Dokumentation](/docs/services/mobilepush?topic=mobile-pushnotification-overview-push), in der Sie außerdem erfahren, wie Sie alle Funktionen nutzen können.
 
- - Eine Einführung in die Arbeit mit Mobile-Services und {{site.data.keyword.cloud_notm}} finden Sie im Abschnitt [Einführung für mobile Apps in {{site.data.keyword.cloud_notm}}](/docs/services/mobile/index.html).
+ - Eine Einführung in die Arbeit mit Mobile-Services und {{site.data.keyword.cloud_notm}} finden Sie im Abschnitt [Einführung für mobile Apps in {{site.data.keyword.cloud_notm}}](/docs/services/mobile?topic=mobile-about).
 
- - Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://cloud.ibm.com/developer/mobile/dashboard){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") werden die verfügbaren Starter-Kits angezeigt. Sie können den Code herunterladen und die App ausführen.
+ - Starter-Kits bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Im [Dashboard für Entwickler für Mobilgeräte](https://{DomainName}/developer/mobile/dashboard){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") werden die verfügbaren Starter-Kits angezeigt. Laden Sie den Code herunter. Führen Sie die App aus! 
 
- - Mithilfe der [Swagger-Benutzerschnittstelle](https://mobile.ng.bluemix.net/imfpush/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") können Sie die REST-API-Dokumentation schnell prüfen.
+ - Mithilfe der [Swagger-Benutzerschnittstelle](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/rest-apis/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") können Sie die REST-API-Dokumentation schnell prüfen.

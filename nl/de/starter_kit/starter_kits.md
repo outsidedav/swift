@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-06"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -32,14 +32,13 @@ herunterladen. Die Verwendung der Starter-Kits ermöglicht es Ihnen,
 {{site.data.keyword.cloud_notm}}-Services mit einer brandneuen App
 zügig auszuwerten und zu testen.
 
-Wollen Sie gleich loslegen? In der [{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") können Sie sofort anfangen.
+Wollen Sie gleich loslegen? In der [{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") können Sie sofort anfangen.
 {: tip}
 
 ## Was ist ein Starter-Kit?
 {: #starterkits-what}
 
-Bei {{site.data.keyword.cloud_notm}} Developer Experience können
-Sie unter verschiedenen Starter-Kits wählen. Starter-Kits weisen
+Mit der {{site.data.keyword.cloud_notm}}-Entwicklerkonsole können Sie aus verschiedenen Starter-Kits auswählen. Starter-Kits weisen
 {{site.data.keyword.cloud_notm}} an, in der Sprache Ihrer Wahl ein Gerüst
 für eine einsatzfähige App dynamisch zu assemblieren, das für die
 Cloudbereitstellung vorbereitet ist. Jedes Starter-Kit deckt eine Sprache, ein
@@ -129,5 +128,5 @@ einen App-Namen klicken, werden Sie zur Ansicht "App-Details" zurückgeführt.
 
 ![{{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple - Ansicht 'App-Liste'](images/project_list_screen.png "Ansicht 'App-Liste'")
 
-Weitere Informationen finden Sie in den [Lernressourcen für die {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
+Weitere Informationen finden Sie im Abschnitt zu [Lernressourcen für die {{site.data.keyword.cloud_notm}}-Entwicklerkonsole für Apple](https://{DomainName}/developer/appledevelopment/learning-resources){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 {: tip}

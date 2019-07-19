@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: sql swift, database swift, persistence swift, data swift, orm swift, kuery swift, kitura swift
 
@@ -43,9 +43,9 @@ Syntaxanalyse und Serialisierung kümmern zu müssen.
 ## Schritt 1. Einführung in ORM
 {: #start-orm}
 
-Verwenden Sie [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") zusammen mit einem SQL-Plug-in wie beispielsweise [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") oder [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
+Verwenden Sie [Swift-Kuery-ORM](https://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") zusammen mit einem SQL-Plug-in wie beispielsweise [PostgreSQL](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") oder [MySQL](https://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
-In diesem Beispiel wird das Plug-in [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") verwendet. Folgen Sie den Anweisungen in [Plug-in installieren](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
+In diesem Beispiel wird das Plug-in [PostgreSQL](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") verwendet. Folgen Sie den Anweisungen in [Plug-in installieren](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
 
 ## Schritt 2. ORM in Ihre Anwendung importieren
 {: #import-orm}
@@ -194,4 +194,4 @@ vereinfacht werden kann.
 ## Swift-Kuery direkt verwenden
 {: #swift-kuery}
 
-Wenn Sie durch ORM eingeschränkt werden, weil Sie eine größere Steuerung für Ihre Datenbank benötigen, können Sie die SQL-Abstraktionsebene [Swift-Kuery](http://github.com/IBM-Swift/Swift-Kuery){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") verwenden, auf der Sie eine SQL-Abfrage ausgeben können.
+Wenn Sie durch ORM eingeschränkt werden, weil Sie eine größere Steuerung für Ihre Datenbank benötigen, können Sie die SQL-Abstraktionsebene [Swift-Kuery](https://github.com/IBM-Swift/Swift-Kuery){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") verwenden, auf der Sie eine SQL-Abfrage ausgeben können.

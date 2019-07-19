@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
 
@@ -124,7 +124,7 @@ Die folgenden Beispiele unterstützen Sie beim Hinzufügen von {{site.data.keywo
   ```
   {: codeblock}
 
-  **Tipp**: Bei diesem Beispiel wird der Kontext für eine spätere Fortsetzung des Dialogs gespeichert. Weitere Informationen zu diesem Objekt und zu seiner Anpassung an den Anwendungsfall finden Sie in der [Dokumentation zur Kontextvariablen](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables). Ziehen Sie die [Dokumentation zu Versionsparametern](https://cloud.ibm.com/apidocs/assistant#versioning){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") zu Rate oder verwenden Sie das Datum, an dem der Service {site.data.keyword.conversationshort}} erstellt wurde.
+  **Tipp**: Bei diesem Beispiel wird der Kontext für eine spätere Fortsetzung des Dialogs gespeichert. Weitere Informationen zu diesem Objekt und zu seiner Anpassung an den Anwendungsfall finden Sie in der [Dokumentation zur Kontextvariablen](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables). Ziehen Sie die [Dokumentation zu Versionsparametern](https://{DomainName}/apidocs/assistant#versioning){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") zu Rate oder verwenden Sie das Datum, an dem der Service {site.data.keyword.conversationshort}} erstellt wurde.
 
 3. Initialisieren Sie den Dialog. Abhängig davon, wie der Assistent konfiguriert ist, kann er eine erste Antwort an den Benutzer bereitstellen:
   ```swift
@@ -190,7 +190,7 @@ Mithilfe von Starter-Kits können Sie das Leistungsspektrum von {{site.data.keyw
 mit den Starter-Kits zu einem beliebigen serverseitigen Back-End-Programm
 hinzufügen. Das Starter-Kit "Chatbot for iOS with Watson" veranschaulicht, wie die Deep-Learning-Funktionalität von {{site.data.keyword.conversationshort}} genutzt wird, indem zu Ihrer Anwendung eine Schnittstelle in natürlicher Sprache hinzugefügt wird, die Interaktionen mit den Benutzern automatisiert.
 
-1. Wählen Sie das [Starter-Kit](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link"), mit dem Sie arbeiten möchten.
+1. Wählen Sie das [Starter-Kit](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link"), mit dem Sie arbeiten möchten.
 2. Erstellen Sie die App mit den Standardservices.
 3. Klicken Sie auf **Service hinzufügen > Watson > {{site.data.keyword.conversationshort}}**.
 4. Laden Sie das Projekt herunter, indem Sie auf **Code herunterladen** klicken. Die Serviceberechtigungsnachweise finden Sie

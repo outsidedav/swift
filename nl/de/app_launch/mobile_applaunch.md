@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-17"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -35,7 +35,7 @@ genutzt wurden, beginnt der Service mit dem Messen der Zielgruppenerfahrungen. A
 dieser Informationen können Sie nun Ihre App verwenden, um angepasste
 Kundenprojekte für unterschiedliche Kategorien Ihrer App-Benutzer zu erstellen.
 
-![Cognitive Engage im Überblick](images/process_app_launch.png) Abbildung 1. Lebenszyklus des {{site.data.keyword.engage_short}}-Service
+![Übersicht über Cognitive Engage](images/process_app_launch.png "Übersicht über Cognitive Engage")
 
 Betrachten Sie die folgenden Funktionen des {{site.data.keyword.engage_short}}-Service:
 
@@ -108,8 +108,7 @@ Anwendungsentwicklung zu vereinfachen. Die
 entweder mit CocoaPods oder Carthage installiert werden.
 
 1. Klicken Sie auf **Einstellungen**.
-2. Installieren Sie das
-[SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch). Weitere
+2. Installieren Sie das [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link"). Weitere
 Informationen enthält die `README`-Datei, in der auch die Installation und
 technische Konzepte erläutert werden.
 3. Kopieren Sie die Konfigurationsschlüssel, um Ihre App zu
@@ -313,7 +312,7 @@ Sie ein Element aus und geben Sie die Metrikdetails ein. Klicken Sie auf **Speic
 angezeigt.
 
 Jetzt können Sie die
-[Leistung](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type)
+[Leistung](/docs/services/app-launch?topic=app-launch-applaunch_type)
 Ihres Kundenprojekts messen.
 
 ## Quick Links
@@ -322,7 +321,7 @@ Ihres Kundenprojekts messen.
 Die folgenden Links vermitteln Ihnen Einblicke und Kenntnisse über die
 Features von {{site.data.keyword.engage_short}}:
 
- - Testen Sie den [Service 'App Launch'](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
+ - Testen Sie den [Service 'App Launch'](https://{DomainName}/catalog/services/app-launch){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
  - [Blogs
-und Videos](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
- - Weitere Informationen finden Sie unter [App Launch - Lernprogramm 'Einführung'](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate).
+und Videos](/docs/services/app-launch?topic=app-launch-blogs-and-videos)
+ - Weitere Informationen finden Sie in der [Dokumentation zu App Launch](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate). 

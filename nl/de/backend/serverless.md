@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-12"
 
 keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
 
@@ -32,13 +32,9 @@ Servers ausgelöst und ausgeführt werden kann.
 
 Durch die Ausgliederung der für die serverseitige Entwicklung erforderlichen Infrastruktur und Frameworks können sich Anwendungsentwickler bei der serverunabhängigen Architektur ganz darauf konzentrieren, Code zu schreiben, der zur Änderung von Daten reaktiv ausgeführt wird.
 
-[{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link"), das IBM Produktangebot für FaaS, soll eine einfache, serverseitige Entwicklungsumgebung bereitstellen, die kein Fachwissen zur Serverseite erfordert. Bei Verwendung der serverunabhängigen Technologie können
+[{{site.data.keyword.openwhisk}}](https://{DomainName}/openwhisk){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link"), das IBM Produktangebot für FaaS, soll eine einfache, serverseitige Entwicklungsumgebung bereitstellen, die kein Fachwissen zur Serverseite erfordert. Bei Verwendung der serverunabhängigen Technologie können
 Sie zeitnah erweiterbare Back-End-Lösungen für praktisch jeden Workloadbedarf
-entwickeln, ohne vorzeitig Ressourcen erstellen zu müssen. Für Anwendungen
-mit unvorhersehbaren Auslastungsmustern oder hohen Serverausfallzeiten
-kann {{site.data.keyword.openwhisk_short}} eine ausgezeichnete
-Cloudlösung mit verbesserter Leistung sein und dank seiner nutzungsabhängigen
-Gebührenstruktur zur Kosteneinsparung beitragen.
+entwickeln, ohne vorzeitig Ressourcen erstellen zu müssen. Für Anwendungen mit unvorhersehbaren Auslastungsmustern oder hohen Serverausfallzeiten kann {{site.data.keyword.openwhisk_short}} eine ausgezeichnete Cloudlösung mit verbesserter Leistung sein und dank seiner nutzungsabhängigen Gebührenstruktur zur Kosteneinsparung beitragen. 
 
 ## Architekturänderungen
 {: #comparison-serverless}
@@ -60,8 +56,7 @@ sicherzustellen.
 Eine serverunabhängige Architektur kann diese Struktur so ändern, dass
 der Zustand mehr der Darstellung in der folgenden Abbildung entspricht.
 
-![](./images/Architecture.png) Abbildung 1.
-Serverunabhängige Architektur
+![Serverunabhängige Architektur](./images/Architecture.png "Serverunabhängige Architektur")
 
 Statt die gesamte Verarbeitungs- und Authentifizierungslogik in einem
 einzigen Server zu verarbeiten, verwendet eine serverunabhängige Architektur Funktionen, die einen Großteil der serverseitigen Logik
@@ -84,9 +79,7 @@ als Web-Aktionen zugänglich gemachten serverunabhängigen Aktionen erwarten, da
 In einem rein serverunabhängigen Modell übernimmt der Client häufig zusätzliche Aufgaben, weil der Benutzerstatus nicht gespeichert werden kann. Die Autorisierung wird vom Client und dem Identitätsprovider-Service "{{site.data.keyword.appid_short_notm}}"
 abgewickelt.
 
-Serverunabhängige Architekturen sind zwar nicht immer ideal, können
-jedoch bei den richtigen Team- und Nutzungsbedingungen große Vorteile
-bieten. Über einige der häufigsten [Anwendungsfälle](#use_cases)
+Serverunabhängige Architekturen sind zwar nicht immer ideal, können jedoch bei den richtigen Team- und Nutzungsbedingungen große Vorteile bieten. Über einige der häufigsten [Anwendungsfälle](#use_cases)
 können Sie sich anhand einiger spezieller Beispiele informieren.
 
 ## Vorteile der Serverunabhängigkeit
@@ -125,7 +118,7 @@ Realität ausgeführt werden.
 
 ### Mobiles Back-End
 {: #mobile-backend-serverless}
-![](./images/cloud-functions-rest-api-trigger.png)
+![Mobiles Back-End](./images/cloud-functions-rest-api-trigger.png "Mobiles Back-End")
 
 Entwickler für Mobilgeräte können leicht auf serverseitige Logik zugreifen und rechenintensive Tasks auf eine Cloudplattform auslagern. Unter Verwendung des iOS-SDK und ohne serverseitige Erfahrungen
 besitzen zu müssen, können Sie Funktionen in Sprachen
@@ -134,7 +127,7 @@ wie Swift implementieren und problemlos serverseitige Funktionen nutzen.
 ### Datenverarbeitung
 {: #data-processing-serverless}
 
-![](./images/cloud-functions-cloudant-trigger.png)
+![Serverunabhängige Datenverarbeitung](./images/cloud-functions-cloudant-trigger.png "Serverunabhängige Datenverarbeitung")
 
 Sie können Code immer dann ausführen, wenn Daten in Ihrem Datenspeicher über integrierte Auslöser aktualisiert werden. Außerdem können Sie
 durch ein funktionales Modell für die serverseitige Programmierung Prozesse
@@ -159,12 +152,12 @@ Cron-ähnlichen Syntax angeben.
 {: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [REST-API](https://cloud.ibm.com/apidocs){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
+* [REST-API](https://{DomainName}/apidocs){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
 
 ## Zugehörige Links
 {: #related-serverless notoc}
 
 * [Entdecken Sie {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
-* [Apache OpenWhisk-Projektwebsite](http://openwhisk.org){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
+* [Apache OpenWhisk-Projektwebsite](http://openwhisk.incubator.apache.org/){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")
 * [Weitere Informationen zur Serverunabhängigkeit](https://martinfowler.com/articles/serverless.html){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")

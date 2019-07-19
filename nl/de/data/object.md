@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-07"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -59,7 +59,7 @@ für das Lesen und Schreiben von Objekten. Sie unterstützt eine Untergruppe der
 S3-API für die einfache Migration von Anwendungen auf
 {{site.data.keyword.cloud_notm}}. Zur Nutzung von
 {{site.data.keyword.cos_full}} kann jedes beliebige S3-SDK verwendet
-werden. Weitere Informationen finden Sie in der umfassenden [API-Referenz zu {{site.data.keyword.cos_short}}](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api).
+werden. Weitere Informationen finden Sie in der vollständigen [{{site.data.keyword.cos_short}}-API-Referenz](/docs/services/cloud-object-storage?topic=cloud-object-storage-compatibility-api). 
 
 ## Objektspeicher sichern
 {: #security-cos}
@@ -178,15 +178,15 @@ Weitere Informationen zur Preisstruktur finden Sie in der Dokumentation [Speiche
 
 - Standard
   
-  Dieser Service ist für unstrukturierte Daten konzipiert, auf die häufig zugegriffen werden muss, beispielsweise DevOps-Daten sowie Repositorys für die Onlinezusammenarbeit und für Aktionsinhalt. 
+  Dieser Service ist für unstrukturierte Daten konzipiert, auf die häufig zugegriffen werden muss, beispielsweise DevOps-Daten sowie Repositorys für die Onlinezusammenarbeit und für Aktionsinhalt.
 
 - Vault
   
-  Dieser Service ist für Workloads mit Daten konzipiert, auf die selten zugegriffen wird, beispielsweise zur Sicherung, Archivierung und Einhaltung von Vorschriften. 
+  Dieser Service ist für Workloads mit Daten konzipiert, auf die selten zugegriffen wird, beispielsweise zur Sicherung, Archivierung und Einhaltung von Vorschriften.
 
 - Cold Vault
   
-  Diese Bereitstellungsoption eignet sich hervorragend für Mindestzugriffsanforderungen, die Einhaltung der Protokollaufzeichnung und die langfristige Sicherung. 
+  Diese Bereitstellungsoption eignet sich hervorragend für Mindestzugriffsanforderungen, die Einhaltung der Protokollaufzeichnung und die langfristige Sicherung.
 
 - Flex
 

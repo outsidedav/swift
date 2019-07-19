@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: swift visual recognition, train swift, cocoapods swift, swift sdk install, starter kit watson swift, image swift classify, machine learning swift
 
@@ -118,7 +118,7 @@ heutige Datum verwenden), um das SDK zu initialisieren:
   ```
   {: codeblock}
 
-  Ziehen Sie die [Dokumentation zu Versionsparametern](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") zu Rate oder verwenden Sie das Datum, an dem der Service {site.data.keyword.conversationshort}} erstellt wurde.
+  Ziehen Sie die [Dokumentation zu Versionsparametern](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") zu Rate oder verwenden Sie das Datum, an dem der Service {site.data.keyword.conversationshort}} erstellt wurde.
   {: tip}
 
 3. Fügen Sie den folgenden Code hinzu, um ein Bild zu klassifizieren:
@@ -143,7 +143,7 @@ Es gibt mehrere Klassifizierungsmethoden, die vom Visual Recognition-Framework u
 ## Starter-Kits verwenden
 {: #recognition_starterkits}
 
-[Starter-Kits](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Den
+[Starter-Kits](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") bieten eine der schnellsten Möglichkeiten zur Nutzung des Leistungsspektrums von {{site.data.keyword.cloud_notm}}. Den
 {{site.data.keyword.visualrecognitionshort}}-Service können Sie
 verwenden, indem Sie das Starter-Kit
 **Visual Recognition for iOS with Watson** auswählen. Dieser
@@ -153,7 +153,7 @@ Recognition-App umgehend mit der Kennzeichnung und Klassifizierung des
 Bildinhalts.
 
 So beginnen Sie:
-1. Wählen Sie das Starter-Kit aus, das sich [hier](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} befindet ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link").
+1. Wählen Sie das Starter-Kit aus, das sich [hier](https://{DomainName}/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") befindet.
 2. Erstellen Sie das Projekt mit den Standardservices.
 3. Laden Sie das Projekt herunter, indem Sie auf
 **Code herunterladen** klicken. Die
