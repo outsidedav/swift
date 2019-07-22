@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: getting started swift, custom app, create app swift, stater kit swift, apple app swift, swift dependency, ios development
 
@@ -19,12 +19,12 @@ subcollection: swift
 {:note: .note}
 
 # 入门教程
-{: #getting_started_swift}
+{: #getting-started}
 
 {{site.data.keyword.cloud}} 提供了多种解决方案和服务，用于支持 Swift 开发者构建具有客户所要求的安全性、AI 和价值的应用程序。通过丰富的产品与 SDK 的组合，您可以使用这些服务，快速地将最新的应用程序推向市场。此 Swift 编程教程向您介绍了如何将服务添加到新的或现有 Swift 应用程序中，而不论它是 iOS 客户端还是服务器端 Swift。
 {: shortdesc}
 
-以下教程将说明如何使用 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 中的空入门模板工具包，通过 {{site.data.keyword.mobileanalytics_full}} 轻松地创建 Swift 移动应用程序。在控制台中，添加 {{site.data.keyword.mobileanalytics_short}} 服务，下载代码，在 Xcode 中本地运行 iOS 应用程序，以及配置和监视应用程序。
+以下教程说明如何使用 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 中的空入门模板工具包，通过 {{site.data.keyword.mobileanalytics_full}} 轻松创建 Swift 移动应用程序。在控制台中，添加 {{site.data.keyword.mobileanalytics_short}} 服务，下载代码，在 Xcode 中本地运行 iOS 应用程序，以及配置和监视应用程序。
 
 ## 步骤 1. 对开发者的需求
 {: #dev-requirements-swift}
@@ -41,7 +41,7 @@ subcollection: swift
 
 - 安装 [Xcode 8+](https://developer.apple.com/xcode/){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")（或更高版本）。
 - 部署到 [iOS 8 设备](https://support.apple.com/downloads/ios){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")（或更高版本）。
-- 在将应用程序提交到 Apple 之前，查看 [App Store 提交准则](https://developer.apple.com/app-store/guidelines/){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
+- 在将应用程序提交到 Apple 之前，查看 [App Store 提交准则](https://developer.apple.com/app-store/resources/){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
 
 ### SDK 和依赖项管理
 {: #swift-sdk-management}
@@ -71,9 +71,9 @@ sudo gem install cocoapods
 ## 步骤 2. 创建定制 iOS Swift 应用程序
 {: #create-ios-app-swift}
 
-1. 登录到 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
+1. 登录到 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
 2. 单击**创建应用程序**。
-3. 在[空入门模板](https://cloud.ibm.com/developer/appledevelopment/create-app){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 页面上，可以使用缺省配置或根据需要更新字段。确保 **iOS Swift** 是所选语言。单击**创建**。
+3. 在[空入门模板](https://{DomainName}/developer/appledevelopment/create-app){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 页面上，可以使用缺省配置或根据需要更新字段。确保 **iOS Swift** 是所选语言。单击**创建**。
 
 ## 步骤 3. 添加 {{site.data.keyword.cloudant_short_notm}} 服务
 {: #resources-swift}
@@ -129,7 +129,7 @@ sudo gem install cocoapods
 ## 步骤 6. 构建数据库操作
 {: #build_ops-swift}
 
-既然您拥有有效的数据库连接和 SDK 设置，您可以开始为您的特定用例构建基本的[创建、读取、更新和破坏操作](/docs/swift/data?topic=swift-cloudant#cloudant)。
+既然您拥有有效的数据库连接和 SDK 设置，您可以开始为您的特定用例构建基本的[创建、读取、更新和破坏操作](/docs/swift/data?topic=swift-cloudant)。
 
 ## 后续步骤
 {: #next-swift}
@@ -139,10 +139,10 @@ sudo gem install cocoapods
 
 可以直接在 Web 控制台中向 iOS 应用程序添加更多服务，例如以下常用服务：
 
-* [添加 Push Notifications 服务](/docs/services/mobilepush?topic=mobile-pushnotification-gettingstartedtemplate#gettingstartedtemplate)
-* [添加使用应用程序标识进行的用户认证](/docs/services/appid?topic=appid-getting-started#getting-started)
+* [添加 Push Notifications 服务](/docs/services/mobilepush?topic=mobile-pushnotification-gettingstartedtemplate)
+* [添加使用应用程序标识进行的用户认证](/docs/services/appid?topic=appid-getting-started)
 
 ### 使用 {{site.data.keyword.cloud_notm}} Developer Tools
 {: #devtools-swift}
 
-您还可以了解如何使用 [{{site.data.keyword.cloud_notm}} 开发者工具](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)来开发 Swift 应用程序。开发者工具提供了一种用于创建、开发和部署完整 Web、移动和微服务应用程序的命令行方法。
+您还可以了解如何使用 [{{site.data.keyword.cloud_notm}} 开发者工具](/docs/cli?topic=cloud-cli-getting-started)来开发 Swift 应用程序。开发者工具提供了一种用于创建、开发和部署完整 Web、移动和微服务应用程序的命令行方法。

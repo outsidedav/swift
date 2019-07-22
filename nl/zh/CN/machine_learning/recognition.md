@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: swift visual recognition, train swift, cocoapods swift, swift sdk install, starter kit watson swift, image swift classify, machine learning swift
 
@@ -101,7 +101,7 @@ Cocoapods 下载 {{site.data.keyword.visualrecognitionshort}} 框架，并在项
   ```
   {: codeblock}
 
-  您可以查看[版本参数文档 ](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 或者使用创建 {site.data.keyword.conversationshort}} 服务的日期。
+  您可以查看[版本参数文档 ](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 或者使用创建 {site.data.keyword.conversationshort}} 服务的日期。
   {: tip}
 
 3. 添加以下代码来对图像进行分类：
@@ -128,16 +128,16 @@ Visual Recognition 框架支持多个分类方法。查看 Watson SDK [Visual Re
 ## 使用入门模板工具包
 {: #recognition_starterkits}
 
-[入门模板工具包](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 是使用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。您可以通过选择 **Visual Recognition for iOS with Watson** 入门模板工具包来使用 {{site.data.keyword.visualrecognitionshort}} 服务。此服务可对图像进行评估和分类。从移动设备上传新图像或现有图像，然后 Visual Recognition 应用程序会对图像内容快速标记和分类。
+[入门模板工具包](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 是使用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。您可以通过选择 **Visual Recognition for iOS with Watson** 入门模板工具包来使用 {{site.data.keyword.visualrecognitionshort}} 服务。此服务可对图像进行评估和分类。从移动设备上传新图像或现有图像，然后 Visual Recognition 应用程序会对图像内容快速标记和分类。
 
 要开始使用，请执行以下操作：
-1. 选择在[此处 ](https://cloud.ibm.com/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 找到的入门模板工具包。
+1. 选择在[此处](https://{DomainName}/developer/appledevelopment/starter-kits/visual-recognition-for-ios-with-watson){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 找到的入门模板工具包。
 2. 使用缺省服务创建项目。
 3. 通过单击**下载代码**来下载项目。服务凭证会注入到 `BMSCredentials.plist` 文件中的相应密钥字段中。
 
 ## 后续步骤
 {: #recognition_next notoc}
 
-太棒了！现在，Visual Recognition 可用于应用程序。请一鼓作气，尝试下列其中一个选项：
+太棒了！现在，Visual Recognition 可用于应用程序。请一鼓作气尝试下列其中一个选项：
 * 查看 [Watson Swift SDK ](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")，并且探索其他受支持的 Watson 服务。
 * 有关更多信息，请参阅 [IBM Watson {{site.data.keyword.visualrecognitionshort}}](https://www.ibm.com/watson/services/visual-recognition/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。

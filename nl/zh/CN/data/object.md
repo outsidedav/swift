@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-07"
 
 keywords: object storage swift, static storage swift, file services swift, swift storage class, cos swift, swift data encryption, static swift
 
@@ -36,7 +36,7 @@ Object Storage 是云计算的基础组件，用于为 Apple 开发者及其应�
 ## API
 {: #api-cos}
 
-{{site.data.keyword.cos_full}} API 是基于 REST 的 API，用于读取和写入对象。此 API 支持 S3 API 的子集，可轻松地将应用程序迁移到 {{site.data.keyword.cloud_notm}}。在使用 {{site.data.keyword.cos_full}} 时，可以使用任何 S3 SDK。有关更多信息，请参阅完整的 [{{site.data.keyword.cos_short}} API 参考](/docs/services/cloud-object-storage/api-reference?topic=cloud-object-storage-compatibility-api-about#about-the-ibm-cloud-object-storage-api)
+{{site.data.keyword.cos_full}} API 是基于 REST 的 API，用于读取和写入对象。此 API 支持 S3 API 的子集，可轻松地将应用程序迁移到 {{site.data.keyword.cloud_notm}}。在使用 {{site.data.keyword.cos_full}} 时，可以使用任何 S3 SDK。有关更多信息，请参阅完整的 [{{site.data.keyword.cos_short}} API 参考](/docs/services/cloud-object-storage?topic=cloud-object-storage-compatibility-api)。
 
 ## 保护 Object Storage
 {: #security-cos}

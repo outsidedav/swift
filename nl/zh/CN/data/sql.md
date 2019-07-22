@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: sql swift, database swift, persistence swift, data swift, orm swift, kuery swift, kitura swift
 
@@ -32,9 +32,9 @@ Swift 中最重要的其中一个功能是其类型安全。将 SQL 数据库与
 ## 步骤 1. ORM 入门
 {: #start-orm}
 
-将 [Swift-Kuery-ORM](http://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 用于 SQL 插件，例如 [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 或 [MySQL](http://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
+将 [Swift-Kuery-ORM](https://github.com/IBM-Swift/Swift-Kuery-ORM){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 用于 SQL 插件，例如 [PostgreSQL](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 或 [MySQL](https://github.com/IBM-Swift/SwiftKueryMySQL){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
 
-对于此示例，将使用 [PostgreSQL](http://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 插件。遵循指示信息以 [安装插件](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
+对于此示例，将使用 [PostgreSQL](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 插件。遵循指示信息以 [安装插件](https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL#postgresql-client-installation){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
 
 ## 步骤 2. 将 ORM 导入应用程序
 {: #import-orm}
@@ -168,4 +168,4 @@ Grade.delete(id: 1) { error in
 ## 直接使用 Swift-Kuery
 {: #swift-kuery}
 
-如果您需要对数据库有更多控制权，但 ORM 限制了您这样做，那么可以使用 SQL 抽象层 [Swift-Kery](http://github.com/IBM-Swift/Swift-Kuery){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")，在其中可以进行 SQL 查询。
+如果您需要对数据库有更多控制权，但 ORM 限制了您这样做，那么可以使用 SQL 抽象层 [Swift-Kery](https://github.com/IBM-Swift/Swift-Kuery){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")，在其中可以进行 SQL 查询。

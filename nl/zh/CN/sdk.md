@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: swift client sdk, swift sdk, add sdk swift, swift sdk service, server sdk swift, swift bms, clientsdk swift, client storage swifts
 
@@ -52,7 +52,7 @@ subcollection: swift
 {: #use-serverside}
 
 - [{{site.data.keyword.appid_short}} Swift 服务器 SDK ](https://github.com/ibm-cloud-security/appid-serversdk-swift){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")
-- [{{site.data.keyword.openwhisk_short}} for iOS ](https://cloud.ibm.com/openwhisk/learn/ios-sdk){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")
+- [{{site.data.keyword.openwhisk_short}} for iOS ](https://{DomainName}/openwhisk/learn/ios-sdk){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")
 - [KituraKit ](https://github.com/IBM-Swift/KituraKit){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")
 - [{{site.data.keyword.mobilepushshort}} Swift 服务器 SDK ](https://github.com/ibm-bluemix-mobile-services/bms-pushnotifications-serversdk-swift){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")
 - [Watson Swift SDK ](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")

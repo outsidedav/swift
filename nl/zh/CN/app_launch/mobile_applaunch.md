@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-17"
 
 keywords: swift app service, swift versioning, audience swift, messages swift, in-app swift, engagement swift, create feature swift, feature control swift, swift feature release
 
@@ -24,7 +24,7 @@ subcollection: swift
 
 {{site.data.keyword.engage_short}} 服务可定义功能部件，根据设备平台（包括定制受众属性）创建受众，并最终定义参与来编排功能部件的计时和位置。使用 SDK 以及应用程序中包含的功能部件和度量值属性后，服务会开始度量受众体验。现在，您可以根据此信息，使用应用程序来为各种类别的应用程序用户创建定制的客户参与。
 
-![Cognitive Engage 概览图](images/process_app_launch.png) 图 1. {{site.data.keyword.engage_short}} 服务生命周期概览图
+![Cognitive Engage 概览图](images/process_app_launch.png "Cognitive Engage 概览图")
 
 {{site.data.keyword.engage_short}} 服务的功能部件如下所示：
 
@@ -72,7 +72,7 @@ subcollection: swift
 服务提供了特定于平台的 SDK 来简化应用程序开发。{{site.data.keyword.cloud_notm}} Mobile Services Swift SDK 可通过 CocoaPods 或 Carthage 来进行安装。
 
 1. 单击**设置**。
-2. 安装 [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch)。有关更多信息，请参阅包含安装步骤和技术概念的`自述`文件。
+2. 安装 [SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-applaunch){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。有关更多信息，请参阅包含安装步骤和技术概念的`自述`文件。
 3. 复制配置密钥以初始化应用程序。使用应用程序密钥、应用程序 GUID 和客户端密钥来配置应用程序并创建参与。
 
 ## 步骤 3. 创建功能部件
@@ -207,13 +207,13 @@ subcollection: swift
 
   现在，新参与将显示在“参与详细信息”窗口中。
 
-现在您可以测量参与的[性能](/docs/services/app-launch?topic=app-launch-applaunch_type#applaunch_type)了。
+现在您可以测量参与的[性能](/docs/services/app-launch?topic=app-launch-applaunch_type)了。
 
 ## 快速链接
 {: #links-applaunch notoc}
 
 查看以下链接以获得洞察，并了解 {{site.data.keyword.engage_short}} 的功能部件：
 
- - 请试用 [App Launch 服务 ](https://cloud.ibm.com/catalog/services/app-launch){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
- - [博客和视频](/docs/services/app-launch?topic=app-launch-blogs-and-videos#blogs-and-videos)
- - 有关更多信息，请参阅 [App Launch - 入门教程](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate#gettingstartedtemplate)。
+ - 请试用 [App Launch 服务 ](https://{DomainName}/catalog/services/app-launch){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
+ - [博客和视频](/docs/services/app-launch?topic=app-launch-blogs-and-videos)
+ - 有关更多信息，请参阅 [App Launch 文档](/docs/services/app-launch?topic=app-launch-gettingstartedtemplate)。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-12"
 
 keywords: coreml swift, core ml swift, watson swift core, create model swift, image classification swift, version parameter swift, swift coreml watson
 
@@ -16,6 +16,7 @@ subcollection: swift
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:gif: data-image-type='gif'}
 
 # 搭配使用 Core ML 和 Watson
 {: #swift-coreml}
@@ -77,7 +78,7 @@ sudo gem install cocoapods
 
 2. 在侧边栏，上传 `.zip` 压缩文件格式的模型训练课程。然后，从下拉菜单中选择每个数据集并将其添加到模型。请随意添加更多类，以使用自己的图像集来增强分类器！
 
-![添加类](images/add_classes.png)
+![添加类](images/add_classes.png "将服务链接到 Watson Studio")
 
 3. 选择**训练模型**，然后等待模型完成训练。
 
@@ -128,7 +129,7 @@ Cocoapods 下载 {{site.data.keyword.visualrecognitionshort}} 框架，并在项
   ```
   {: codeblock}
 
-  查看[版本参数文档](https://cloud.ibm.com/apidocs/visual-recognition#versioning){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 或者使用创建 {site.data.keyword.visualrecognitionshort}} 服务的日期。
+  查看[版本参数文档](https://{DomainName}/apidocs/visual-recognition#versioning){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 或者使用创建 {site.data.keyword.visualrecognitionshort}} 服务的日期。
   {: tip}
 
 3. 添加以下代码以下载本地 Core ML 模型或者使用 Watson 分类器更新该模型：
@@ -180,7 +181,7 @@ Cocoapods 下载 {{site.data.keyword.visualrecognitionshort}} 框架，并在项
 
 要将 {{site.data.keyword.visualrecognitionshort}} 添加到入门模板工具包，请完成以下步骤：
 
-1. 选择要使用的[入门模板工具包](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
+1. 选择要使用的[入门模板工具包](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
 2. 使用缺省服务创建应用程序。
 3. 单击**添加服务 > Watson > {{site.data.keyword.visualrecognitionshort}}**。
 4. 通过单击**下载代码**来下载项目。对于 iOS 项目，凭证会插入到 `BMSCredentials.plist` 文件中的相应密钥字段中。对于服务器端 Swift 项目，可以在 `config/local-dev.json` 文件中找到这些凭证。
@@ -188,7 +189,7 @@ Cocoapods 下载 {{site.data.keyword.visualrecognitionshort}} 框架，并在项
 ## 后续步骤
 {: #coreml_next}
 
-现在，可以使用您自己定制生成的 Core ML 模型来分析图像。请一鼓作气，尝试下列其中一个选项：
+现在，可以使用您自己定制生成的 Core ML 模型来分析图像。请一鼓作气尝试下列其中一个选项：
 
 * 查看 [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")，并探索其他受支持的 Watson 服务。
 * 添加云逻辑。首先[开发无服务器应用程序](/docs/swift/backend?topic=swift-serverless-dev-swift#serverless-dev-swift)。

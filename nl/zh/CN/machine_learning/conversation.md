@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-06-06"
 
 keywords: chatbot swift, virtual assistant swift, assistant swift, watson swift starter, assistantv2 swift, watson sdk swift, add chatbot swift, add assistant swift
 
@@ -108,7 +108,7 @@ Cocoapods 下载 {{site.data.keyword.conversationshort}} 框架，在项目的 `
   ```
   {: codeblock}
 
-  **提示**：此示例将上下文保存到状态。为了更好地了解此对象，以及如何修改对象以适应您的用例，请参阅[上下文变量文档](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables)。查看[版本参数文档](https://cloud.ibm.com/apidocs/assistant#versioning){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 或者使用创建 {site.data.keyword.conversationshort}} 服务的日期。
+  **提示**：此示例将上下文保存到状态。为了更好地了解此对象，以及如何修改对象以适应您的用例，请参阅[上下文变量文档](/docs/services/assistant?topic=assistant-dialog-runtime#context-variables)。查看[版本参数文档](https://{DomainName}/apidocs/assistant#versioning){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 或者使用创建 {site.data.keyword.conversationshort}} 服务的日期。
 
 3. 初始化对话。根据助手的配置方式，可以向用户提供初始响应：
   ```swift
@@ -170,9 +170,9 @@ Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11a
 ## 使用入门模板工具包
 {: #starterkits-chatbot}
 
-通过入门模板工具包，可以快速、轻松地利用 {{site.data.keyword.cloud_notm}} 的功能。可以使用入门模板工具包将 {{site.data.keyword.conversationshort}} 添加到任何服务器端后端。Chatbot for iOS with Watson 入门模板工具包说明了如何通过将自动与用户进行交互的自然语言界面添加到应用程序来使用 {{site.data.keyword.conversationshort}} 的深度学习功能。
+通过入门模板工具包，可以快速、轻松地使用 {{site.data.keyword.cloud_notm}} 的功能。可以使用入门模板工具包将 {{site.data.keyword.conversationshort}} 添加到任何服务器端后端。Chatbot for iOS with Watson 入门模板工具包说明了如何通过将自动与用户进行交互的自然语言界面添加到应用程序来使用 {{site.data.keyword.conversationshort}} 的深度学习功能。
 
-1. 选择要使用的[入门模板工具包](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
+1. 选择要使用的[入门模板工具包](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
 2. 使用缺省服务创建应用程序。
 3. 单击**添加服务 > Watson > {{site.data.keyword.conversationshort}}**。
 4. 通过单击**下载代码**来下载项目。可以在 `config/local-dev.json` 文件中找到服务凭证。
@@ -180,7 +180,7 @@ Response: Our hours are Monday to Friday 10am to 8pm and Friday and Saturday 11a
 ## 后续步骤
 {: #next-chatbot notoc}
 
-太棒了！您已将 AI 助手添加到应用程序。请一鼓作气，尝试下列其中一个选项：
+太棒了！您已将 AI 助手添加到应用程序。请一鼓作气尝试下列其中一个选项：
 
 * 查看 [{{site.data.keyword.watson}} Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")，并探索其他受支持的 Watson 服务。
 * 利用 [{{site.data.keyword.conversationshort}}](/docs/services/assistant?topic=assistant-index#index) 提供的所有功能。

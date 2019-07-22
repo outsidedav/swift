@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-06"
 
 keywords: swift starter kit, apple developer console, download code swift, app details swift, create swift app
 
@@ -22,13 +22,13 @@ subcollection: swift
 
 通过 {{site.data.keyword.cloud_notm}} Developer Console for Apple，Apple 开发者可利用各种入门模板工具包来创建应用程序，供应和连接 {{site.data.keyword.cloud_notm}} 优化的关键服务，然后快速下载可正常运作的代码或设置为持续交付。用户可以创建、查看、配置和管理应用程序，以及下载应用程序的代码。使用入门模板工具包可帮助您使用全新的应用程序快速评估和测试 {{site.data.keyword.cloud_notm}} 服务。
 
-准备好开始了吗？请立即访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 以开始。
+准备好开始了吗？请立即访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 以开始。
 {: tip}
 
 ## 什么是入门模板工具包？
 {: #starterkits-what}
 
-通过 {{site.data.keyword.cloud_notm}} Developer Experience，可以从各种入门模板工具包中进行选择。入门模板工具包指示 {{site.data.keyword.cloud_notm}} 以您选择的语言动态组合框架生产应用程序，该应用程序可随时进行云部署。每个入门模板工具包都包含语言、框架以及用于特定现实世界用例的模式，该用例允许复用代码，而不用重新创建代码。
+通过 {{site.data.keyword.cloud_notm}} 开发者控制台，可以从各种入门模板工具包中进行选择。入门模板工具包指示 {{site.data.keyword.cloud_notm}} 以您选择的语言动态组合框架生产应用程序，该应用程序可随时进行云部署。每个入门模板工具包都包含语言、框架以及用于特定现实世界用例的模式，该用例允许复用代码，而不用重新创建代码。
 
 入门模板工具包是生产就绪型工具包，专注于使用运行时（例如 Swift）来演示关键模式实现。在某些情况下，初学者工具包会提供简单的用户体验来着重强调服务的集成。在另一些情况下，入门模板工具包是复杂用例的可定制实现。
 
@@ -80,5 +80,5 @@ subcollection: swift
 
 您可以在_应用程序列表_视图中列出所有已创建的应用程序。可以在此处重命名或删除应用程序。单击应用程序名称行可返回到“应用程序详细信息”视图。
 
-![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序列表”视图](images/project_list_screen.png "“应用程序列表”视图")有关更多信息，请访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple 学习资源](https://cloud.ibm.com/developer/appledevelopment/learning-resources){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
+![{{site.data.keyword.cloud_notm}} Developer Console for Apple 的“应用程序列表”视图](images/project_list_screen.png "“应用程序列表”视图")有关更多信息，请访问 [{{site.data.keyword.cloud_notm}} Developer Console for Apple 学习资源](https://{DomainName}/developer/appledevelopment/learning-resources){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
 {: tip}

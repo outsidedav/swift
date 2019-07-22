@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: swiftmetrics-dash, swiftmetrics, prometheus swift, application metrics swift, swift performance, slow swift, swift dashboard, metris swift
 
@@ -20,13 +20,13 @@ subcollection: swift
 # 将 Application Metrics 与 Swift 应用程序配合使用
 {: #metrics}
 
-Application Metrics 对于监视应用程序的性能非常重要。实时查看度量值（如 CPU、内存、等待时间和 HTTP 度量值）对于确保应用程序能够长期有效地运行至关重要。Kubernetes 和 Cloud Foundry 服务（如[自动缩放](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started)）依赖于度量值来确定何时根据负载动态添加或除去实例，以及清除不再需要的实例来降低成本。
+应用程序度量值对于监视应用程序的性能非常重要。实时查看度量值（如 CPU、内存、等待时间和 HTTP 度量值）对于确保应用程序能够长期有效地运行至关重要。Kubernetes 和 Cloud Foundry 服务（如[自动缩放](/docs/services/Auto-Scaling?topic=Auto-Scaling-get-started)）依赖于度量值来确定何时根据负载动态添加或除去实例，以及清除不再需要的实例来降低成本。
 
-应用程序度量值将作为时间序列数据来进行捕获。汇总和直观查看捕获的度量值有助于识别常见的性能问题，例如：
+应用程序度量值将作为时间序列数据进行捕获。聚集和可视化捕获的度量值可帮助识别常见的性能问题，例如：
 
-* 某些路径或所有路径上的 HTTP 响应时间缓慢
+* 某些或所有路径上的 HTTP 响应时间缓慢
 * 应用程序中的吞吐量差
-* 导致速度缓慢的需求峰值
+* 导致性能下降的需求峰值
 * 高于预期 CPU 使用率
 * 内存使用量高或不断增长（潜在内存泄漏）
 
@@ -64,7 +64,7 @@ let smd = try SwiftMetricsDash(swiftMetricsInstance : metrics)
 ```  
 {: codeblock}
 
-缺省情况下，`SwiftMetricsDash` 会启动其自己的 Kitura 服务器，并在 `http://<hostname>:<port>/swiftmetrics-dash` 侦听请求。访问仪表板可查看新的应用程序度量值，包括 HTTP 请求和事件循环等待时间。
+缺省情况下，`SwiftMetricsDash` 会启动其自己的 Kitura 服务器，并在 `http://<hostname>:<port>/swiftmetrics-dash` 下侦听请求。访问仪表板可查看新的应用程序度量值，包括 HTTP 请求和事件循环等待时间。
 
 ## 在入门模板工具包中使用 Application Metrics
 {: #appmetrics-starterkits}

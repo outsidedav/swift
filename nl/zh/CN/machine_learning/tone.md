@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-24"
+lastupdated: "2019-06-06"
 
 keywords: watson swift, tone anaylzer swift, cocoapods swift, swift sdk install, starter kit watson
 
@@ -101,7 +101,7 @@ Cocoapods 下载 {{site.data.keyword.toneanalyzershort}} 框架，在项目的 `
   ```
   {: codeblock}
 
-  查看[版本参数文档](https://cloud.ibm.com/apidocs/tone-analyzer#versioning){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 或者使用创建 {site.data.keyword.conversationshort}} 服务的日期。
+  查看[版本参数文档](https://{DomainName}/apidocs/tone-analyzer#versioning){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 或者使用创建 {site.data.keyword.conversationshort}} 服务的日期。
   {: tip}
 
 3. 提供文本进行分析，并处理结果：
@@ -149,18 +149,18 @@ Tentative: 0.867377
 ## 使用入门模板工具包
 {: #tone_starterkits}
 
-[入门模板工具包](https://cloud.ibm.com/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 是使用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。您可以通过选择 **Tone Analyzer for iOS with Watson** 入门模板工具包来使用 {{site.data.keyword.toneanalyzershort}} 服务。此服务利用深度学习功能来评估文本的段落。Tone Analyzer 应用程序可识别与多个类别相关的说话人语气（高兴、悲伤、自信等）。
+[入门模板工具包](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 是使用 {{site.data.keyword.cloud_notm}} 功能的最快方法之一。您可以通过选择 **Tone Analyzer for iOS with Watson** 入门模板工具包来使用 {{site.data.keyword.toneanalyzershort}} 服务。此服务利用深度学习功能来评估文本的段落。Tone Analyzer 应用程序可识别与多个类别相关的说话人语气（高兴、悲伤、自信等）。
 
 要开始使用此入门模板工具包，请执行以下操作：
 
-1. 选择在[此处](https://cloud.ibm.com/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 找到的入门模板工具包。
+1. 选择在[此处](https://{DomainName}/developer/appledevelopment/starter-kits/tone-analyzer-for-ios-with-watson){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 找到的入门模板工具包。
 2. 使用缺省服务创建项目。
 3. 通过单击**下载代码**来下载项目。服务凭证会注入到 `BMSCredentials.plist` 文件中的相应密钥字段中。
 
 ## 后续步骤
 {: #tone_next notoc}
 
-太棒了！{{site.data.keyword.toneanalyzershort}} 已添加到应用程序。请一鼓作气，尝试下列其中一个选项：
+太棒了！{{site.data.keyword.toneanalyzershort}} 已添加到应用程序。请一鼓作气尝试下列其中一个选项：
 
 * 查看 [GitHub 上的 Watson Swift SDK](https://github.com/watson-developer-cloud/swift-sdk){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")，并且探索其他受支持的 Watson 服务。
 * 有关更多信息，请参阅 [IBM Watson {{site.data.keyword.toneanalyzershort}}](https://www.ibm.com/watson/services/tone-analyzer/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。

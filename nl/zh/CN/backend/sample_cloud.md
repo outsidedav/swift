@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-12"
 
 keywords: bluepic swift, ios bluepic, bff swift image, sample swift, swift example bff
 

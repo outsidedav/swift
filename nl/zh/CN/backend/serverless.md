@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-12"
 
 keywords: reduce cost swift, serverless swift, openwhisk swift, functions swift, faas swift, stateless swift, api reference swift, high availability swift, serverless ios
 
@@ -25,7 +25,7 @@ subcollection: swift
 
 无服务器体系结构通过抽象出服务器端开发所需的基础架构和框架，使开发者能够专注于编写代码，让代码以反应性方式运行来更改数据。
 
-IBM 的 FaaS 产品 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/openwhisk/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 致力于提供简单的服务器端开发体验，无需任何服务器端专业知识。通过使用无服务器技术，您可以快速开发可扩展的后端解决方案，以满足几乎所有工作负载需求，而不必提前创建资源。对于负载模式不可预测或服务器停机时间长的应用程序，{{site.data.keyword.openwhisk_short}} 会是一个出色的云解决方案，其性能已经过改进，而且其“按使用内容付费”机制还有助于降低成本。
+IBM 的 FaaS 产品 [{{site.data.keyword.openwhisk}}](https://{DomainName}/openwhisk){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 致力于提供简单的服务器端开发体验，无需任何服务器端专业知识。通过使用无服务器技术，您可以快速开发可扩展的后端解决方案，以满足几乎所有工作负载需求，而不必提前创建资源。对于负载模式不可预测或服务器停机时间长的应用程序，{{site.data.keyword.openwhisk_short}} 会是一个出色的云解决方案，其性能已经过改进，而且其“按使用内容付费”机制还有助于降低成本。
 
 ## 体系结构更改
 {: #comparison-serverless}
@@ -36,7 +36,7 @@ IBM 的 FaaS 产品 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/open
 
 无服务器体系结构可以将此结构变更为更类似于下图。
 
-![](./images/Architecture.png) 图 1. 无服务器体系结构
+![无服务器体系结构](./images/Architecture.png "无服务器体系结构")
 
 与在单台服务器内执行所有处理和认证逻辑不同，无服务器体系结构使用功能来封装大部分服务器端逻辑，并将某些逻辑卸载到客户端（和外部服务）。
 
@@ -52,7 +52,7 @@ IBM 的 FaaS 产品 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/open
 
 在纯无服务器模型中，由于无法存储用户状态，客户端通常会承担额外责任。授权由客户端和 {{site.data.keyword.appid_short_notm}} 身份提供者服务进行处理。
 
-虽然无服务器架构并不总是理想的，但在适当的团队和使用条件下，还是可以提供非常多的好处。请查看一些特定示例，以了解一些最常见[用例](#use_cases)的信息。
+虽然无服务器体系结构并不总是理想的，但在适当的团队和使用条件下，还是可以提供非常多的好处。请查看一些特定示例，以了解一些最常见[用例](#use_cases)的信息。
 
 ## 无服务器优点
 {: #benefits-serverless}
@@ -77,14 +77,14 @@ IBM 的 FaaS 产品 [{{site.data.keyword.openwhisk}}](https://cloud.ibm.com/open
 
 ### 移动后端
 {: #mobile-backend-serverless}
-![](./images/cloud-functions-rest-api-trigger.png)
+![移动后端](./images/cloud-functions-rest-api-trigger.png "移动后端")
 
 Mobile 开发者可以轻松地访问服务器端逻辑，还可以将计算密集型任务外包给云平台。您可以使用 iOS SDK 通过不同语言（如 Swift）来实现功能，并轻松使用服务器端功能，而不需要任何服务器端经验。
 
 ### 数据处理
 {: #data-processing-serverless}
 
-![](./images/cloud-functions-cloudant-trigger.png)
+![无服务器数据处理](./images/cloud-functions-cloudant-trigger.png "无服务器数据处理")
 
 您可以通过内置触发器在数据存储中的数据每次更新时执行代码。您还可以通过功能性服务器端编程模型，轻松地自动执行各种过程，如音频规范化、图像旋转、锐化、降噪、缩略图生成或视频转码。
 
@@ -102,12 +102,12 @@ Mobile 开发者可以轻松地访问服务器端逻辑，还可以将计算密�
 {: #apiref-serverless notoc}
 
 <!-- * [REST API Documentation](./openwhisk_reference.html#openwhisk_ref_restapi)-->
-* [REST API](https://cloud.ibm.com/apidocs){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
+* [REST API](https://{DomainName}/apidocs){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
 
 ## 相关链接
 {: #related-serverless notoc}
 
 * [Discover {{site.data.keyword.openwhisk_short}}](https://www.ibm.com/cloud/functions){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
 <!-- redirects to link above * [{{site.data.keyword.openwhisk_short}} on IBM developerWorks](https://developer.ibm.com/openwhisk/)-->
-* [Apache OpenWhisk 项目 Web 站点](http://openwhisk.org){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
+* [Apache OpenWhisk 项目 Web 站点](http://openwhisk.incubator.apache.org/){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")
 * [关于无服务器的更多信息](https://martinfowler.com/articles/serverless.html){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")

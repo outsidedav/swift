@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-06-12"
 
 keywords: swift database, secure database swift, cluster database swift, mongokitten swift, verify database swift, credentials swift, storage api swift
 
@@ -14,7 +14,7 @@ subcollection: swift
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
-{:gif: .gif}
+{:gif: data-image-type='gif'}
 {:tip: .tip}
 
 # 创建高可用性的安全数据库
@@ -27,7 +27,7 @@ subcollection: swift
 ## 步骤 1. 创建数据库集群
 {: #create_dbcluster}
 
-1. 访问[{{site.data.keyword.ihsdbaas_full}}服务配置](https://cloud.ibm.com/catalog/services/hyper-protect-dbaas){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 屏幕。
+1. 访问[{{site.data.keyword.ihsdbaas_full}}服务配置](https://{DomainName}/catalog/services/hyper-protect-dbaas){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标") 屏幕。
 
 2. 提供以下信息：
 
@@ -84,7 +84,7 @@ subcollection: swift
 
 使用通过此入门模板工具包创建的现有项目，或者创建新项目。
 
-1. 打开 [{{site.data.keyword.cloud_notm}} App Service 仪表板](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
+1. 打开 [{{site.data.keyword.cloud_notm}} App Service 仪表板](https://{DomainName}/developer/appservice/dashboard){: new_window} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")。
 
 2. 选择**入门模板工具包**选项卡。
 
@@ -99,14 +99,13 @@ subcollection: swift
 ## 步骤 3. 连接到数据库
 {: #connect_db}
 
-要确保安全数据传输，请从以下网址下载认证中心 (CA) 文件：
-https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project directory.
+要确保数据传输的安全，请下载认证中心 (CA) 文件，并将其复制到项目目录。
 
 1. 切换到包含已下载并且已展开的代码文件的项目目录。
 
 2. 创建名为 `cred.json` 的 JSON 文件，以将访问凭证存储到数据库集群。
 
-3. 输入从[创建数据库集群](#create_dbcluster)的步骤中收集的值。这些值必须在一行中指定。
+3. 输入从[创建数据库集群](/docs/swift?topic=swift-create-database-cluster#create_dbcluster)的步骤中收集的值。这些值必须在一行中指定。
   ```hljs
   {
   "uri": "mongodb://<admin_ID>:<admin_pwd>@<Hostname_1>:<PortNumber_1>,
@@ -116,35 +115,16 @@ https://api.hypersecuredbaas.ibm.com/cert.pem, and copy it to your project direc
   ```
   {: codeblock}
 
-  其中：
-  <table>
-  <tr>
-    <th> 参数    </th>
-    <th> 描述</th>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_ID</em>&gt;</td>
-    <td> [创建数据库集群](#create_dbcluster)中指定的数据库管理员的用户标识。
-	  </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>admin_pwd</em>&gt;</td>
-    <td> [创建数据库集群](#create_dbcluster)中指定的数据库管理员密码。
-	  </td>
-  </tr>
-  <tr>
-    <td> &lt;<em>Hostname_i</em>&gt;</td>
-    <td> [创建数据库集群](create_dbcluster)中返回的数据库副本 <em>i</em>（<em>i</em>=1、2、3）。</td>
-  </tr>
-  <tr>
-    <td> &lt;<em>PortNumber_i</em>&gt;</td>
-    <td> [创建数据库集群](#create_dbcluster)中返回的端口号 <em>i</em>（<em>i</em>=1、2、3）。</td>
-  </tr>
-  <tr>
-    <td> &lt;<em>CA_file</em>&gt;</td>
-    <td> 下载的 CA 文件的文件名。部署期间，会将其复制到 `/swift-project` 目录。</td>
-  </tr>
-  </table>
+### 数据库参数描述
+{: #db-parameter-descriptions}
+
+请参阅以下数据库参数描述：
+
+* `admin_ID` - [创建数据库集群](/docs/swift?topic=swift-create-database-cluster#create_dbcluster)中指定的数据库管理员的用户标识。
+* `admin_pwd` - [创建数据库集群](/docs/swift?topic=swift-create-database-cluster#create_dbcluster)中指定的管理员密码的用户标识。
+* `Hostname_i` - [创建数据库集群](/docs/swift?topic=swift-create-database-cluster#create_dbcluster)中返回的数据库副本 *i* (*i*=1,2,3)。
+* `PortNumber_i` - [创建数据库集群](/docs/swift?topic=swift-create-database-cluster#create_dbcluster)中返回的端口号 *i* (*i*=1,2,3)。
+* `CA_file` - 下载的 CA 文件的文件名。部署期间，会将其复制到 `/swift-project` 目录。
 
 4. 编辑 `Package.swift` 文件并添加包依赖项，以使用 MongoKitten SDK。
 
@@ -251,6 +231,7 @@ MongoKitten.Database&lt;mongodb:/&sol;&lt;<em>Hostname_1</em>&gt;&colon;&lt;<em>
 您可以使用必要的构建工具[在本地](/docs/swift?topic=swift-swift_cli#swift-install-tools)运行应用程序，也可以将其部署到 {{site.data.keyword.cloud_notm}}。
 
 要在仪表板中创建部署工具链，请单击**部署**。根据您所选方法的指示信息来设置部署目标：
-  * **部署到 [{{site.data.keyword.containerlong}}](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**。此选项创建称为工作程序节点的主机集群，以部署和管理高可用性应用程序容器。您可以创建一个集群，也可以部署到现有集群。
-  * **部署到 Cloud Foundry**。借助此选项，您无需管理底层的基础架构就可以部署云本机应用程序。如果您的帐户可以访问 {{site.data.keyword.cfee_full_notm}}，那么您可以选择部署程序类型**[公共云](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)**或者**[企业环境](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**，您可以将其用于创建和管理隔离环境，专门托管针对企业的 Cloud Foundry 应用程序。
-  * **部署到[虚拟服务器](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**。此选项为您供应虚拟服务器实例，装入包含应用程序的映像，创建 DevOps 工具链，并启动第一个部署周期。
+  * **部署到 IBM Kubernetes Service**。此选项将创建一个主机集群（称为工作程序节点）来部署和管理高可用性应用程序容器。可以创建集群或部署到现有集群。有关更多信息，请参阅[将应用程序部署到 Kubernetes 集群](/docs/containers?topic=containers-app)。
+  * **部署到 Cloud Foundry**。此选项可部署云本机应用程序，而无需管理底层基础架构。如果您的帐户有权访问 {{site.data.keyword.cfee_full_notm}}，那么可以选择部署程序类型**公共云**或 **Enterprise Environment**，可使用这些类型来创建和管理隔离的环境，以用于专门为您的企业托管 Cloud Foundry 应用程序。有关更多信息，请参阅[将应用程序部署到 Cloud Foundry Public](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps) 和[将应用程序部署到 {{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-deploy_apps)。
+  * **部署到虚拟服务器**。此选项会供应虚拟服务器实例，装入包含您的应用程序的映像，创建 DevOps 工具链，并为您启动第一个部署周期。有关更多信息，请参阅[将应用程序部署到虚拟服务器](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server)。
+  
