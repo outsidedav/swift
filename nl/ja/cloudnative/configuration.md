@@ -122,7 +122,7 @@ let url = cloudEnv.url
 
 [スターター・キット](https://{DomainName}/developer/appledevelopment/starter-kits){: new_window} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン") で作成された Swift アプリには、ローカルでの実行に加えて、さまざまなクラウド・デプロイメント・ターゲット ([Kubernetes](/docs/containers?topic=containers-getting-started)、[Cloud Foundry](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf)、[{{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-about)、[仮想サーバー (VSI)](/docs/vsi?topic=virtual-servers-getting-started-tutorial)、[{{site.data.keyword.openwhisk_short}}](/docs/openwhisk?topic=cloud-functions-getting_started) など) での実行にも必要な資格情報と構成が自動的に付属しています。
 
-  いくつかのスターター・キットで VSI デプロイメントを使用できます。この機能を使用するには、[{{site.data.keyword.cloud_notm}} ダッシュボード](https://{DomainName})に移動し、**「アプリ」**タイルで**「アプリの作成」**をクリックします。
+  いくつかのスターター・キットで VSI デプロイメントを使用できます。 この機能を使用するには、[{{site.data.keyword.cloud_notm}} ダッシュボード](https://{DomainName})に移動し、**「アプリ」**タイルで**「アプリの作成」**をクリックします。
   {: note}
 
 構成マネージャーの基本的な作成内容は、`Sources/Application/Application.swift` にあります。 サービスを使用して Swift ベースのスターター・キット・アプリを作成すると、`config` フォルダーと `mappings.json` ファイルが作成されます。 アプリをダウンロードすると、サービスに関するすべての資格情報がある `localdev-config.json` ファイルが `config` フォルダーに含まれ、このフォルダーは `.gitignore` ファイル内に存在します。

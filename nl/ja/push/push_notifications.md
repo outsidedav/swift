@@ -80,7 +80,7 @@ Push Notification サービス・コンソールで APN をセットアップす
 		- **Web サイト・プッシュ ID (Website Push ID)**: Web サイトのプッシュ ID の反転ドメイン・ストリングを使用して更新します。 例えば、`web.com.example.www` です。
 		- **Web サイト URL (Website URL)**: プッシュ通知をサブスクライブする必要がある Web サイトの URL を指定します。 例えば、`https://www.example.com` です。
 		- **許可されたドメイン (Allowed Domains)**: (オプション・パラメーター) ユーザーからの許可を要求する Web サイトのリスト。 URL は、必ずコンマ区切りの値で指定します。 情報を指定しない場合、Web サイト URL の中の値が使用されます。
-		- **URL 形式文字列 (URL Format String)**: 通知がクリックされたときに解決される URL。 例えば、`https://www.example.com` です。その URL で http または https のスキーマが使用されていることを確認してください。
+		- **URL 形式文字列 (URL Format String)**: 通知がクリックされたときに解決される URL。 例えば、`https://www.example.com` です。 その URL で http または https のスキーマが使用されていることを確認してください。
 		-**Safari Web プッシュ証明書 (Safari web push certificate)**: `.p12` 証明書をアップロードし、パスワードを指定します。
 4. **「保存」**をクリックします。
 

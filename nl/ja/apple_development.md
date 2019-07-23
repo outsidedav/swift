@@ -28,7 +28,7 @@ subcollection: swift
 
 {{site.data.keyword.cloud_notm}} に組み込まれている開発者機能はさまざまなスキル・セットに適合し、アプリを作成、配信、実行、管理するための単一プラットフォームを提供します。 たとえば、示されているコグニティブ・アプリの中で、次の {{site.data.keyword.cloud_notm}} 機能に注目できます。
 
-* [**{{site.data.keyword.cloud_notm}} 開発者コンソール**](/docs/apps?topic=creating-apps-getting-started)には、デジタル開発者やクラウド・ネイティブ開発者が実動用アプリのビルドを開始するのに役立つ {{site.data.keyword.cloud_notm}} の機能セットが含まれています。これには、サービスの自動プロビジョニング、および DevOps ツールチェーンへの「ワンクリック」デプロイメントが含まれます。
+* [**{{site.data.keyword.cloud_notm}} 開発者コンソール**](/docs/apps?topic=creating-apps-getting-started)には、デジタル開発者やクラウド・ネイティブ開発者が実動用アプリのビルドを開始するのに役立つ {{site.data.keyword.cloud_notm}} の機能セットが含まれています。 これには、サービスの自動プロビジョニング、および DevOps ツールチェーンへの「ワンクリック」デプロイメントが含まれます。
 
 * [**IBM Watson Data Platform**](https://dataplatform.cloud.ibm.com/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") を使用すると、データ・コレクションの組み立て、データの調整、視覚化、洞察の発見、コグニティブ・アプリ用のモデルの作成を簡単に行うことができます。
 
@@ -41,7 +41,7 @@ subcollection: swift
 ## {{site.data.keyword.cloud_notm}} 機能の概要
 {: #capabilities}
 
-{{site.data.keyword.cloud_notm}} 開発者コンソールを使用してアプリのビルドを開始すると、「適切な」ビルドを数分で行えます。開発者コンソールの主な構成要素は以下のとおりです。
+{{site.data.keyword.cloud_notm}} 開発者コンソールを使用してアプリのビルドを開始すると、「適切な」ビルドを数分で行えます。 開発者コンソールの主な構成要素は以下のとおりです。
 
 * {{site.data.keyword.cloud_notm}} プラットフォーム全体で検出される、トピックまたはチャネル中心の開発者コンソールからなるセット。
 * さまざまな言語とアーキテクチャー・パターンで実動用スターター・アプリを生成する特定のユースケース・スターター・キット。
@@ -54,7 +54,7 @@ subcollection: swift
 ## 開発者コンソール
 {: #developer_consoles}
 
-{{site.data.keyword.cloud_notm}} 開発者コンソールには、対象となる領域 (Watson、セキュリティー、金融など) またはデジタル・チャネル (モバイルや Web アプリなど) が含まれています。[{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/dashboard){: new_window}![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") を使用すると、Apple 開発者は {{site.data.keyword.cloud_notm}} プラットフォームを利用してアプリケーションやサービスを迅速に実験できます。 {{site.data.keyword.cloud_notm}} コンソールでメニュー・アイコンをクリックすると、これらのコンソールにアクセスできます。 たとえば、次の開発者コンソールをご覧ください。
+{{site.data.keyword.cloud_notm}} 開発者コンソールには、対象となる領域 (Watson、セキュリティー、金融など) またはデジタル・チャネル (モバイルや Web アプリなど) が含まれています。 [{{site.data.keyword.cloud_notm}} Developer Console for Apple](https://{DomainName}/developer/appledevelopment/dashboard){: new_window}![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") を使用すると、Apple 開発者は {{site.data.keyword.cloud_notm}} プラットフォームを利用してアプリケーションやサービスを迅速に実験できます。 {{site.data.keyword.cloud_notm}} コンソールでメニュー・アイコンをクリックすると、これらのコンソールにアクセスできます。 たとえば、次の開発者コンソールをご覧ください。
 
 * [Watson 開発者コンソール](https://{DomainName}/developer/watson/dashboard){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
 * [モバイル開発者コンソール](https://{DomainName}/developer/mobile/dashboard){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
