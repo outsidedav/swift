@@ -6,7 +6,7 @@ lastupdated: "2019-06-07"
 
 keywords: getting started swift, custom app, create app swift, stater kit swift, apple app swift, swift dependency, ios development
 
-subcollection: swift
+subcollection: Swift
 
 ---
 
